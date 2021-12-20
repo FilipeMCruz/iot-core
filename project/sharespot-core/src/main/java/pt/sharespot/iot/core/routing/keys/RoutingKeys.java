@@ -8,6 +8,8 @@ import java.util.Optional;
 
 public class RoutingKeys {
 
+    public String version;
+
     public String containerType;
 
     public String containerName;
@@ -24,7 +26,7 @@ public class RoutingKeys {
 
     public String tempC;
 
-    public RoutingKeys(String containerType, String containerName, String infoType, String sensorTypeId, String channel, String records, String gps, String tempC) {
+    public RoutingKeys(String containerType, String containerName, String version, String infoType, String sensorTypeId, String channel, String records, String gps, String tempC) {
         this.containerType = containerType;
         this.containerName = containerName;
         this.infoType = infoType;
@@ -33,6 +35,7 @@ public class RoutingKeys {
         this.records = records;
         this.gps = gps;
         this.tempC = tempC;
+        this.version = version;
     }
 
     public RoutingKeys() {
@@ -40,9 +43,10 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.#",
                 containerType,
                 containerName,
+                version,
                 infoType,
                 sensorTypeId,
                 channel,
@@ -51,12 +55,8 @@ public class RoutingKeys {
                 tempC);
     }
 
-    public static RoutingKeysBuilder supplierBuilder(String name, String type) {
-        return new RoutingKeysBuilder(name, type, RoutingKeysBuilderOptions.SUPPLIER);
-    }
-
-    public static RoutingKeysBuilder builder(String name, String type, RoutingKeysBuilderOptions options) {
-        return new RoutingKeysBuilder(name, type, options);
+    public static RoutingKeysBuilder builder(String name, String type, RoutingKeysBuilderOptions options, String version) {
+        return new RoutingKeysBuilder(name, type, options, version);
     }
 
     public static class RoutingKeysBuilder {
@@ -86,12 +86,15 @@ public class RoutingKeys {
 
         private String tempC;
 
+        private final String version;
+
         private final RoutingKeysBuilderOptions options;
 
-        private RoutingKeysBuilder(String name, String type, RoutingKeysBuilderOptions options) {
+        private RoutingKeysBuilder(String name, String type, RoutingKeysBuilderOptions options, String version) {
             this.options = options;
             this.thisContainerType = type;
             this.thisContainerName = name;
+            this.version = version;
         }
 
         public RoutingKeysBuilder withContainerType(String containerType) {
@@ -246,7 +249,7 @@ public class RoutingKeys {
                 this.containerName = thisContainerName;
                 this.containerType = thisContainerType;
             }
-            var routingKeys = new RoutingKeys(containerType, containerName, infoType, sensorTypeId, channel, records, gps, tempC);
+            var routingKeys = new RoutingKeys(containerType, containerName, version, infoType, sensorTypeId, channel, records, gps, tempC);
             return toOptional(routingKeys);
         }
 
