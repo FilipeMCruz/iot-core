@@ -1,7 +1,9 @@
 package pt.sharespot.iot.core.sensor;
 
 import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
+import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
+import java.util.Arrays;
 import java.util.UUID;
 
 public abstract class AbstractSensorDataDTO implements SensorDataDTO {
@@ -29,12 +31,7 @@ public abstract class AbstractSensorDataDTO implements SensorDataDTO {
     }
 
     @Override
-    public boolean hasGpsData() {
-        return this.data.gps.exists();
-    }
-
-    @Override
-    public boolean hasTempCData() {
-        return false;
+    public boolean hasProperties(PropertyName... properties) {
+        return Arrays.stream(properties).allMatch(this::hasProperty);
     }
 }
