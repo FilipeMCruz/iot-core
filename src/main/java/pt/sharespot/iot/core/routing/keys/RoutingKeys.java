@@ -2,6 +2,7 @@ package pt.sharespot.iot.core.routing.keys;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pt.sharespot.iot.core.sensor.ProcessedSensorDataDTO;
 import pt.sharespot.iot.core.sensor.SensorDataDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
@@ -214,6 +215,18 @@ public class RoutingKeys {
             return this;
         }
 
+        public RoutingKeysBuilder withUpdated(SensorDataDTO data) {
+            this.infoType = data instanceof ProcessedSensorDataDTO ?
+                    InfoTypeOptions.PROCESSED.value() : InfoTypeOptions.ENCODED.value();
+            this.gps = data.hasProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
+                    GPSDataOptions.WITH_GPS_DATA.value() : GPSDataOptions.WITHOUT_GPS_DATA.value();
+            this.records = data.hasProperty(PropertyName.DEVICE_RECORDS) ?
+                    RecordsOptions.WITH_RECORDS.value() : RecordsOptions.WITHOUT_RECORDS.value();
+            this.tempC = data.hasProperties(PropertyName.TEMPERATURE) ?
+                    TempCDataOptions.WITH_TEMPC_DATA.value() : TempCDataOptions.WITHOUT_TEMPC_DATA.value();
+            return this;
+        }
+
         public Optional<RoutingKeys> missingAsAny() {
             this.containerType = (this.containerType == null || this.containerType.isBlank()) ? ANY : this.containerType;
             this.containerName = (this.containerName == null || this.containerName.isBlank()) ? ANY : this.containerName;
@@ -223,16 +236,6 @@ public class RoutingKeys {
             this.records = (this.records == null || this.records.isBlank()) ? ANY : this.records;
             this.gps = (this.gps == null || this.gps.isBlank()) ? ANY : this.gps;
             this.tempC = (this.tempC == null || this.tempC.isBlank()) ? ANY : this.tempC;
-            return build();
-        }
-
-        public Optional<RoutingKeys> withUpdated(SensorDataDTO data) {
-            this.gps = data.hasProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
-                    GPSDataOptions.WITH_GPS_DATA.value() : GPSDataOptions.WITHOUT_GPS_DATA.value();
-            this.records = data.hasProperty(PropertyName.DEVICE_RECORDS) ?
-                    RecordsOptions.WITH_RECORDS.value() : RecordsOptions.WITHOUT_RECORDS.value();
-            this.tempC = data.hasProperties(PropertyName.TEMPERATURE) ?
-                    TempCDataOptions.WITH_TEMPC_DATA.value() : TempCDataOptions.WITHOUT_TEMPC_DATA.value();
             return build();
         }
 

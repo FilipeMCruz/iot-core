@@ -11,6 +11,7 @@ public class DeviceInformationWithRecordsDTO extends DeviceInformationDTO {
 
     public DeviceInformationWithRecordsDTO(UUID id, String name, DeviceRecordDTO records) {
         super(id, name);
+        this.records = records;
     }
 
     public DeviceInformationWithRecordsDTO() {

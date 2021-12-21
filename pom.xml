@@ -6,7 +6,7 @@
 
     <groupId>pt.sharespot</groupId>
     <artifactId>iot-core</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Core library to handle the structure and behaviour of messages inside an IoT environment</description>
