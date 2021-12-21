@@ -10,6 +10,7 @@
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Core library to handle the structure and behaviour of messages inside an IoT environment</description>
+    <url>https://sharespot.pt</url>
     <packaging>jar</packaging>
 
     <properties>
