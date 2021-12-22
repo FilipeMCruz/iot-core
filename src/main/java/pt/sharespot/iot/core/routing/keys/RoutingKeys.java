@@ -3,6 +3,7 @@ package pt.sharespot.iot.core.routing.keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pt.sharespot.iot.core.sensor.ProcessedSensorDataDTO;
+import pt.sharespot.iot.core.sensor.ProcessedSensorDataWithRecordsDTO;
 import pt.sharespot.iot.core.sensor.SensorDataDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
@@ -216,7 +217,7 @@ public class RoutingKeys {
         }
 
         public RoutingKeysBuilder withUpdated(SensorDataDTO data) {
-            this.infoType = data instanceof ProcessedSensorDataDTO ?
+            this.infoType = (data instanceof ProcessedSensorDataDTO || data instanceof ProcessedSensorDataWithRecordsDTO) ?
                     InfoTypeOptions.PROCESSED.value() : InfoTypeOptions.ENCODED.value();
             this.gps = data.hasProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
                     GPSDataOptions.WITH_GPS_DATA.value() : GPSDataOptions.WITHOUT_GPS_DATA.value();
