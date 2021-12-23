@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Queue;
 
 public abstract class PropertyTransformation {
-    abstract String newPath();
+    public abstract String newPath();
 
-    abstract String oldPath();
+    public abstract String oldPath();
 
     public void transfer(JsonNode old, ObjectNode processed) {
         var newPathQueue = new LinkedList<>(List.of(newPath().split("\\.")));

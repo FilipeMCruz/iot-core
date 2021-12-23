@@ -10,13 +10,17 @@ public class KnownPropertyTransformation extends PropertyTransformation {
         this.newPath = newPath;
     }
 
+    public PropertyName newPathLiteral() {
+        return newPath;
+    }
+
     @Override
-    String newPath() {
+    public String newPath() {
         return newPath.path();
     }
 
     @Override
-    String oldPath() {
+    public String oldPath() {
         return oldPath;
     }
 }

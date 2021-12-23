@@ -11,12 +11,12 @@ public class UnknownPropertyTransformation extends PropertyTransformation {
     }
 
     @Override
-    String newPath() {
+    public String newPath() {
         return newPath;
     }
 
     @Override
-    String oldPath() {
+    public String oldPath() {
         return oldPath;
     }
 }

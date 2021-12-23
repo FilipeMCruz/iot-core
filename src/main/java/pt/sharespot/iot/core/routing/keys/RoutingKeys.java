@@ -1,7 +1,5 @@
 package pt.sharespot.iot.core.routing.keys;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pt.sharespot.iot.core.sensor.ProcessedSensorDataDTO;
 import pt.sharespot.iot.core.sensor.ProcessedSensorDataWithRecordsDTO;
 import pt.sharespot.iot.core.sensor.SensorDataDTO;
@@ -64,8 +62,6 @@ public class RoutingKeys {
     }
 
     public static class RoutingKeysBuilder {
-
-        Logger logger = LoggerFactory.getLogger(RoutingKeysBuilder.class);
 
         public static final String KEEP = "<keep>";
 
@@ -272,68 +268,52 @@ public class RoutingKeys {
 
         private Optional<RoutingKeys> toOptional(RoutingKeys routingKeys) {
             if (routingKeys.containerName == null || routingKeys.containerName.isBlank()) {
-                logger.warn("Container Name Routing Key is Missing");
                 return Optional.empty();
             }
             if (routingKeys.containerType == null || routingKeys.containerType.isBlank()) {
-                logger.warn("Container Type Routing Key is Missing");
                 return Optional.empty();
             }
             if (routingKeys.infoType == null || routingKeys.infoType.isBlank()) {
-                logger.warn("Info Type Routing Key is Missing");
                 return Optional.empty();
             }
             if (routingKeys.sensorTypeId == null || routingKeys.sensorTypeId.isBlank()) {
-                logger.warn("Sensor Type ID Routing Key is Missing");
                 return Optional.empty();
             }
             if (routingKeys.channel == null || routingKeys.channel.isBlank()) {
-                logger.warn("Channel Routing Key is Missing");
                 return Optional.empty();
             }
             if (routingKeys.records == null || routingKeys.records.isBlank()) {
-                logger.warn("Records Routing Key is Missing");
                 return Optional.empty();
             }
             if (routingKeys.gps == null || routingKeys.gps.isBlank()) {
-                logger.warn("GPSData Routing Key is Missing");
                 return Optional.empty();
             }
             if (routingKeys.tempC == null || routingKeys.tempC.isBlank()) {
-                logger.warn("TempCData Routing Key is Missing");
                 return Optional.empty();
             }
             if (!routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId)) {
-                logger.warn("Sensor Type ID Routing Key is invalid");
                 return Optional.empty();
             }
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
                 if (ANY.equals(routingKeys.infoType)) {
-                    logger.warn("Info Type Routing Key can't be of type *");
                     return Optional.empty();
                 }
                 if (ANY.equals(routingKeys.sensorTypeId)) {
-                    logger.warn("Sensor Type ID Routing Key can't be of type *");
                     return Optional.empty();
                 }
                 if (ANY.equals(routingKeys.channel)) {
-                    logger.warn("Channel Routing Key can't be of type *");
                     return Optional.empty();
                 }
                 if (ANY.equals(routingKeys.records)) {
-                    logger.warn("Records Routing Key can't be of type *");
                     return Optional.empty();
                 }
                 if (ANY.equals(routingKeys.gps)) {
-                    logger.warn("GPSData Routing Key can't be of type *");
                     return Optional.empty();
                 }
                 if (ANY.equals(routingKeys.tempC)) {
-                    logger.warn("TempCData Routing Key can't be of type *");
                     return Optional.empty();
                 }
                 if (!routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+")) {
-                    logger.warn("Sensor Type ID Routing Key is invalid");
                     return Optional.empty();
                 }
             }
