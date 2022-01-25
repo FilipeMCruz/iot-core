@@ -28,7 +28,9 @@ public class RoutingKeys {
 
     public String tempC;
 
-    public RoutingKeys(String containerType, String containerName, String version, String infoType, String sensorTypeId, String channel, String records, String gps, String tempC) {
+    public String legitimacy;
+
+    public RoutingKeys(String containerType, String containerName, String version, String infoType, String sensorTypeId, String channel, String records, String gps, String tempC, String legitimacy) {
         this.containerType = containerType;
         this.containerName = containerName;
         this.infoType = infoType;
@@ -38,6 +40,7 @@ public class RoutingKeys {
         this.gps = gps;
         this.tempC = tempC;
         this.version = version;
+        this.legitimacy = legitimacy;
     }
 
     public RoutingKeys() {
@@ -45,7 +48,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.#",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.#",
                 containerType,
                 containerName,
                 version,
@@ -54,7 +57,8 @@ public class RoutingKeys {
                 channel,
                 records,
                 gps,
-                tempC);
+                tempC,
+                legitimacy);
     }
 
     public static RoutingKeysBuilder builder(String name, String type, RoutingKeysBuilderOptions options, String version) {
@@ -88,6 +92,8 @@ public class RoutingKeys {
         private String tempC;
 
         private final String version;
+
+        private String legitimacy;
 
         private final RoutingKeysBuilderOptions options;
 
@@ -212,6 +218,21 @@ public class RoutingKeys {
             return this;
         }
 
+        public RoutingKeysBuilder withLegitimacyType(DataLegitimacyOptions legitimacyType) {
+            this.legitimacy = legitimacyType.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withAnyLegitimacyType() {
+            this.legitimacy = ANY;
+            return this;
+        }
+
+        public RoutingKeysBuilder keepLegitimacyType() {
+            this.legitimacy = KEEP;
+            return this;
+        }
+
         public RoutingKeysBuilder withUpdated(SensorDataDTO data) {
             this.infoType = (data instanceof ProcessedSensorDataDTO || data instanceof ProcessedSensorDataWithRecordsDTO) ?
                     InfoTypeOptions.PROCESSED.value() : InfoTypeOptions.ENCODED.value();
@@ -233,6 +254,7 @@ public class RoutingKeys {
             this.records = (this.records == null || this.records.isBlank()) ? ANY : this.records;
             this.gps = (this.gps == null || this.gps.isBlank()) ? ANY : this.gps;
             this.tempC = (this.tempC == null || this.tempC.isBlank()) ? ANY : this.tempC;
+            this.legitimacy = (this.legitimacy == null || this.legitimacy.isBlank()) ? ANY : this.legitimacy;
             return build();
         }
 
@@ -243,6 +265,7 @@ public class RoutingKeys {
             this.records = this.records.equals(KEEP) ? consumer.records : this.records;
             this.gps = this.gps.equals(KEEP) ? consumer.gps : this.gps;
             this.tempC = this.tempC.equals(KEEP) ? consumer.tempC : this.tempC;
+            this.legitimacy = this.legitimacy.equals(KEEP) ? consumer.legitimacy : this.legitimacy;
             return build();
         }
 
@@ -254,6 +277,7 @@ public class RoutingKeys {
             this.records = splinted[6];
             this.gps = splinted[7];
             this.tempC = splinted[8];
+            this.legitimacy = splinted[9];
             return build();
         }
 
@@ -262,7 +286,7 @@ public class RoutingKeys {
                 this.containerName = thisContainerName;
                 this.containerType = thisContainerType;
             }
-            var routingKeys = new RoutingKeys(containerType, containerName, version, infoType, sensorTypeId, channel, records, gps, tempC);
+            var routingKeys = new RoutingKeys(containerType, containerName, version, infoType, sensorTypeId, channel, records, gps, tempC, legitimacy);
             return toOptional(routingKeys);
         }
 
@@ -294,6 +318,9 @@ public class RoutingKeys {
             if (!routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId)) {
                 return Optional.empty();
             }
+            if (routingKeys.legitimacy == null || routingKeys.legitimacy.isBlank()) {
+                return Optional.empty();
+            }
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
                 if (ANY.equals(routingKeys.infoType)) {
                     return Optional.empty();
@@ -311,6 +338,9 @@ public class RoutingKeys {
                     return Optional.empty();
                 }
                 if (ANY.equals(routingKeys.tempC)) {
+                    return Optional.empty();
+                }
+                if (ANY.equals(routingKeys.legitimacy)) {
                     return Optional.empty();
                 }
                 if (!routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+")) {
