@@ -134,11 +134,6 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder keepInfoType() {
-            this.infoType = KEEP;
-            return this;
-        }
-
         public RoutingKeysBuilder withSensorTypeId(String sensorTypeId) {
             this.sensorTypeId = sensorTypeId;
             return this;
@@ -149,11 +144,6 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder keepSensorTypeId() {
-            this.sensorTypeId = KEEP;
-            return this;
-        }
-
         public RoutingKeysBuilder withChannel(String channel) {
             this.channel = channel;
             return this;
@@ -161,11 +151,6 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withAnyChannel() {
             this.channel = ANY;
-            return this;
-        }
-
-        public RoutingKeysBuilder keepChannel() {
-            this.channel = KEEP;
             return this;
         }
 
@@ -183,11 +168,6 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder keepRecords() {
-            this.records = KEEP;
-            return this;
-        }
-
         public RoutingKeysBuilder withGps(GPSDataOptions gps) {
             this.gps = gps.value();
             return this;
@@ -195,11 +175,6 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withAnyGps() {
             this.gps = ANY;
-            return this;
-        }
-
-        public RoutingKeysBuilder keepGps() {
-            this.gps = KEEP;
             return this;
         }
 
@@ -213,11 +188,6 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder keepTempC() {
-            this.tempC = KEEP;
-            return this;
-        }
-
         public RoutingKeysBuilder withLegitimacyType(DataLegitimacyOptions legitimacyType) {
             this.legitimacy = legitimacyType.value();
             return this;
@@ -225,11 +195,6 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withAnyLegitimacyType() {
             this.legitimacy = ANY;
-            return this;
-        }
-
-        public RoutingKeysBuilder keepLegitimacyType() {
-            this.legitimacy = KEEP;
             return this;
         }
 
@@ -259,25 +224,26 @@ public class RoutingKeys {
         }
 
         public Optional<RoutingKeys> from(RoutingKeys consumer) {
-            this.infoType = this.infoType.equals(KEEP) ? consumer.infoType : this.infoType;
-            this.sensorTypeId = this.sensorTypeId.equals(KEEP) ? consumer.sensorTypeId : this.sensorTypeId;
-            this.channel = this.channel.equals(KEEP) ? consumer.channel : this.channel;
-            this.records = this.records.equals(KEEP) ? consumer.records : this.records;
-            this.gps = this.gps.equals(KEEP) ? consumer.gps : this.gps;
-            this.tempC = this.tempC.equals(KEEP) ? consumer.tempC : this.tempC;
-            this.legitimacy = this.legitimacy.equals(KEEP) ? consumer.legitimacy : this.legitimacy;
+            this.infoType = this.infoType == null ? consumer.infoType : this.infoType;
+            this.sensorTypeId = this.sensorTypeId == null ? consumer.sensorTypeId : this.sensorTypeId;
+            this.channel = this.channel == null ? consumer.channel : this.channel;
+            this.records = this.records == null ? consumer.records : this.records;
+            this.gps = this.gps == null ? consumer.gps : this.gps;
+            this.tempC = this.tempC == null ? consumer.tempC : this.tempC;
+            this.legitimacy = this.legitimacy == null ? consumer.legitimacy : this.legitimacy;
             return build();
         }
 
         public Optional<RoutingKeys> from(String routingKeys) {
-            var splinted = routingKeys.split("\\.");
-            this.infoType = splinted[3];
-            this.sensorTypeId = splinted[4];
-            this.channel = splinted[5];
-            this.records = splinted[6];
-            this.gps = splinted[7];
-            this.tempC = splinted[8];
-            this.legitimacy = splinted[9];
+            var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
+            var splinted = info.split("\\.");
+            this.infoType = splinted[1];
+            this.sensorTypeId = splinted[2];
+            this.channel = splinted[3];
+            this.records = splinted[4];
+            this.gps = splinted[5];
+            this.tempC = splinted[6];
+            this.legitimacy = splinted[7];
             return build();
         }
 
