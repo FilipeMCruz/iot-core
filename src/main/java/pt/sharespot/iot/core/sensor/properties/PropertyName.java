@@ -40,6 +40,11 @@ public enum PropertyName {
         public String path() {
             return "data.temp.celsius";
         }
+    },
+    MOTION {
+        public String path() {
+            return "data.status.motion";
+        }
     };
 
     public String path() {

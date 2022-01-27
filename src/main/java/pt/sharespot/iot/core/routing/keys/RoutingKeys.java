@@ -67,8 +67,6 @@ public class RoutingKeys {
 
     public static class RoutingKeysBuilder {
 
-        public static final String KEEP = "<keep>";
-
         public static final String ANY = "*";
 
         private final String thisContainerType;

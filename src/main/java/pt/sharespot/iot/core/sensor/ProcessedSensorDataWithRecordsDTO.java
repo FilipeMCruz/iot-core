@@ -26,7 +26,7 @@ public class ProcessedSensorDataWithRecordsDTO extends AbstractSensorDataDTO {
         return switch (property) {
             case DATA_ID, REPORTED_AT -> true;
             case DEVICE_ID, DEVICE_NAME, DEVICE_RECORDS -> device.hasProperty(property);
-            case LATITUDE, LONGITUDE, TEMPERATURE -> data.hasProperty(property);
+            case LATITUDE, LONGITUDE, TEMPERATURE, MOTION -> data.hasProperty(property);
         };
     }
 }

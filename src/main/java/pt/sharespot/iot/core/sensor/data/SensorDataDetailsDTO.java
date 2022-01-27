@@ -7,10 +7,13 @@ public class SensorDataDetailsDTO {
 
     public TempCDataDTO temperature;
 
+    public StatusDataDTO status;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case TEMPERATURE -> temperature != null && temperature.exists();
             case LATITUDE, LONGITUDE -> gps != null && gps.exists();
+            case MOTION -> status != null && status.hasProperty(property);
             default -> false;
         };
     }
@@ -19,6 +22,7 @@ public class SensorDataDetailsDTO {
         var details = new SensorDataDetailsDTO();
         details.gps = gps;
         details.temperature = temperature;
+        details.status = status;
         return details;
     }
 
@@ -26,6 +30,15 @@ public class SensorDataDetailsDTO {
         var details = new SensorDataDetailsDTO();
         details.gps = gps;
         details.temperature = temperature;
+        details.status = status;
+        return details;
+    }
+
+    public SensorDataDetailsDTO withStatus(StatusDataDTO status) {
+        var details = new SensorDataDetailsDTO();
+        details.gps = gps;
+        details.temperature = temperature;
+        details.status = status;
         return details;
     }
 }
