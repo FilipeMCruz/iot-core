@@ -19,26 +19,17 @@ public class SensorDataDetailsDTO {
     }
 
     public SensorDataDetailsDTO withGps(GPSDataDTO gps) {
-        var details = new SensorDataDetailsDTO();
-        details.gps = gps;
-        details.temperature = temperature;
-        details.status = status;
-        return details;
+        this.gps = gps;
+        return this;
     }
 
     public SensorDataDetailsDTO withTemperature(TempCDataDTO temperature) {
-        var details = new SensorDataDetailsDTO();
-        details.gps = gps;
-        details.temperature = temperature;
-        details.status = status;
-        return details;
+        this.temperature = temperature;
+        return this;
     }
 
     public SensorDataDetailsDTO withStatus(StatusDataDTO status) {
-        var details = new SensorDataDetailsDTO();
-        details.gps = gps;
-        details.temperature = temperature;
-        details.status = status;
-        return details;
+        this.status = status;
+        return this;
     }
 }

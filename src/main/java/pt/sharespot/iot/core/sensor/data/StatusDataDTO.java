@@ -5,8 +5,8 @@ import pt.sharespot.iot.core.sensor.properties.PropertyName;
 public class StatusDataDTO {
 
     public String motion;
-
-    public static StatusDataDTO withMotion(String motion) {
+    
+    public static StatusDataDTO fromMotion(String motion) {
         var status = new StatusDataDTO();
         if ("ACTIVE".equalsIgnoreCase(motion)) {
             status.motion = "ACTIVE";

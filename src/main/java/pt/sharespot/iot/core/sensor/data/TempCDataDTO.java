@@ -4,11 +4,10 @@ public class TempCDataDTO implements DataTypeDTO {
 
     public Double celsius;
 
-    public TempCDataDTO(Double celsius) {
-        this.celsius = celsius;
-    }
-
-    public TempCDataDTO() {
+    public static TempCDataDTO fromCelcius(Double celsius) {
+        var tempCDataDTO = new TempCDataDTO();
+        tempCDataDTO.celsius = celsius;
+        return tempCDataDTO;
     }
 
     @Override
