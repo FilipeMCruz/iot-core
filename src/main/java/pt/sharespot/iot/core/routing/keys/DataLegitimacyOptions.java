@@ -1,7 +1,6 @@
 package pt.sharespot.iot.core.routing.keys;
 
 public enum DataLegitimacyOptions {
-
     UNKNOWN,
     CORRECT,
     INCORRECT,

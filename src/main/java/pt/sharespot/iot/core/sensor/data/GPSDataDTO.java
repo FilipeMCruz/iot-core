@@ -5,7 +5,7 @@ public class GPSDataDTO implements DataTypeDTO {
     public Double latitude;
     public Double longitude;
 
-    public static GPSDataDTO fromLatLong(Double latitude, Double longitude) {
+    public static GPSDataDTO ofLatLong(Double latitude, Double longitude) {
         var gpsDataDTO = new GPSDataDTO();
         gpsDataDTO.latitude = latitude;
         gpsDataDTO.longitude = longitude;

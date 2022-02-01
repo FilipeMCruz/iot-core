@@ -38,12 +38,32 @@ public enum PropertyName {
     },
     TEMPERATURE {
         public String path() {
-            return "data.temp.celsius";
+            return "data.temp.value";
         }
     },
     MOTION {
         public String path() {
-            return "data.status.motion";
+            return "data.motion.value";
+        }
+    },
+    VELOCITY {
+        public String path() {
+            return "data.velocity.value";
+        }
+    },
+    AQI {
+        public String path() {
+            return "data.aqi.value";
+        }
+    },
+    HUMIDITY {
+        public String path() {
+            return "data.humidity.value";
+        }
+    },
+    PRESSURE {
+        public String path() {
+            return "data.pressure.value";
         }
     };
 

@@ -1,11 +1,11 @@
 package pt.sharespot.iot.core.sensor.data;
 
-public class TempCDataDTO implements DataTypeDTO {
+public class TemperatureDataDTO implements DataTypeDTO {
 
     public Double celsius;
 
-    public static TempCDataDTO fromCelcius(Double celsius) {
-        var tempCDataDTO = new TempCDataDTO();
+    public static TemperatureDataDTO of(Double celsius) {
+        var tempCDataDTO = new TemperatureDataDTO();
         tempCDataDTO.celsius = celsius;
         return tempCDataDTO;
     }

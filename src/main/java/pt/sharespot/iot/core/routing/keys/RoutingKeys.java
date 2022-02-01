@@ -1,7 +1,6 @@
 package pt.sharespot.iot.core.routing.keys;
 
-import pt.sharespot.iot.core.sensor.ProcessedSensorDataDTO;
-import pt.sharespot.iot.core.sensor.ProcessedSensorDataWithRecordsDTO;
+import pt.sharespot.iot.core.routing.keys.data.*;
 import pt.sharespot.iot.core.sensor.SensorDataDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
@@ -26,11 +25,35 @@ public class RoutingKeys {
 
     public String gps;
 
-    public String tempC;
+    public String temperature;
 
     public String legitimacy;
 
-    public RoutingKeys(String containerType, String containerName, String version, String infoType, String sensorTypeId, String channel, String records, String gps, String tempC, String legitimacy) {
+    public String aqi;
+
+    public String humidity;
+
+    public String motion;
+
+    public String velocity;
+
+    public String pressure;
+
+    public RoutingKeys(String containerType,
+                       String containerName,
+                       String version,
+                       String infoType,
+                       String sensorTypeId,
+                       String channel,
+                       String records,
+                       String gps,
+                       String tempC,
+                       String aqi,
+                       String humidity,
+                       String motion,
+                       String velocity,
+                       String pressure,
+                       String legitimacy) {
         this.containerType = containerType;
         this.containerName = containerName;
         this.infoType = infoType;
@@ -38,8 +61,13 @@ public class RoutingKeys {
         this.channel = channel;
         this.records = records;
         this.gps = gps;
-        this.tempC = tempC;
+        this.temperature = tempC;
         this.version = version;
+        this.aqi = aqi;
+        this.humidity = humidity;
+        this.motion = motion;
+        this.velocity = velocity;
+        this.pressure = pressure;
         this.legitimacy = legitimacy;
     }
 
@@ -48,7 +76,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.#",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.#",
                 containerType,
                 containerName,
                 version,
@@ -56,9 +84,14 @@ public class RoutingKeys {
                 sensorTypeId,
                 channel,
                 records,
+                legitimacy,
                 gps,
-                tempC,
-                legitimacy);
+                temperature,
+                aqi,
+                humidity,
+                motion,
+                velocity,
+                pressure);
     }
 
     public static RoutingKeysBuilder builder(String name, String type, RoutingKeysBuilderOptions options, String version) {
@@ -72,6 +105,8 @@ public class RoutingKeys {
         private final String thisContainerType;
 
         private final String thisContainerName;
+
+        private final String version;
 
         private String containerType;
 
@@ -87,9 +122,17 @@ public class RoutingKeys {
 
         private String gps;
 
-        private String tempC;
+        private String temperature;
 
-        private final String version;
+        private String aqi;
+
+        private String humidity;
+
+        private String motion;
+
+        private String velocity;
+
+        private String pressure;
 
         private String legitimacy;
 
@@ -107,18 +150,8 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withAnyContainerType() {
-            this.containerType = ANY;
-            return this;
-        }
-
         public RoutingKeysBuilder withContainerName(String containerName) {
             this.containerName = containerName;
-            return this;
-        }
-
-        public RoutingKeysBuilder withAnyContainerName() {
-            this.containerName = ANY;
             return this;
         }
 
@@ -127,18 +160,8 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withAnyInfoType() {
-            this.infoType = ANY;
-            return this;
-        }
-
         public RoutingKeysBuilder withSensorTypeId(String sensorTypeId) {
             this.sensorTypeId = sensorTypeId;
-            return this;
-        }
-
-        public RoutingKeysBuilder withAnySensorTypeId() {
-            this.sensorTypeId = ANY;
             return this;
         }
 
@@ -147,42 +170,8 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withAnyChannel() {
-            this.channel = ANY;
-            return this;
-        }
-
-        public RoutingKeysBuilder withDefaultChannel() {
-            return withChannel("default");
-        }
-
         public RoutingKeysBuilder withRecords(RecordsOptions records) {
             this.records = records.value();
-            return this;
-        }
-
-        public RoutingKeysBuilder withAnyRecords() {
-            this.records = ANY;
-            return this;
-        }
-
-        public RoutingKeysBuilder withGps(GPSDataOptions gps) {
-            this.gps = gps.value();
-            return this;
-        }
-
-        public RoutingKeysBuilder withAnyGps() {
-            this.gps = ANY;
-            return this;
-        }
-
-        public RoutingKeysBuilder withTempC(TempCDataOptions tempC) {
-            this.tempC = tempC.value();
-            return this;
-        }
-
-        public RoutingKeysBuilder withAnyTempC() {
-            this.tempC = ANY;
             return this;
         }
 
@@ -191,20 +180,71 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withAnyLegitimacyType() {
-            this.legitimacy = ANY;
+        public RoutingKeysBuilder withGps(GPSDataOptions gps) {
+            this.gps = gps.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withAQI(AirQualityDataOptions aqi) {
+            this.aqi = aqi.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withHumidity(HumidityDataOptions humidity) {
+            this.humidity = humidity.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withTemperature(TemperatureDataOptions temperature) {
+            this.temperature = temperature.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withMotion(MotionDataOptions motion) {
+            this.motion = motion.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withVelocity(VelocityDataOptions velocity) {
+            this.velocity = velocity.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withPressure(PressureDataOptions pressure) {
+            this.pressure = pressure.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withUnidentifiedData() {
+            this.temperature = TemperatureDataOptions.UNIDENTIFIED_TEMPERATURE_DATA.value();
+            this.gps = GPSDataOptions.UNIDENTIFIED_GPS_DATA.value();
+            this.aqi = AirQualityDataOptions.UNIDENTIFIED_AQI_DATA.value();
+            this.humidity = HumidityDataOptions.UNIDENTIFIED_HUMIDITY_DATA.value();
+            this.motion = HumidityDataOptions.UNIDENTIFIED_HUMIDITY_DATA.value();
+            this.velocity = VelocityDataOptions.UNIDENTIFIED_VELOCITY_DATA.value();
+            this.pressure = PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA.value();
+            this.legitimacy = DataLegitimacyOptions.UNDETERMINED.value();
             return this;
         }
 
         public RoutingKeysBuilder withUpdated(SensorDataDTO data) {
-            this.infoType = (data instanceof ProcessedSensorDataDTO || data instanceof ProcessedSensorDataWithRecordsDTO) ?
-                    InfoTypeOptions.PROCESSED.value() : InfoTypeOptions.ENCODED.value();
+            this.infoType = InfoTypeOptions.PROCESSED.value();
             this.gps = data.hasProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
                     GPSDataOptions.WITH_GPS_DATA.value() : GPSDataOptions.WITHOUT_GPS_DATA.value();
             this.records = data.hasProperty(PropertyName.DEVICE_RECORDS) ?
                     RecordsOptions.WITH_RECORDS.value() : RecordsOptions.WITHOUT_RECORDS.value();
-            this.tempC = data.hasProperties(PropertyName.TEMPERATURE) ?
-                    TempCDataOptions.WITH_TEMPC_DATA.value() : TempCDataOptions.WITHOUT_TEMPC_DATA.value();
+            this.temperature = data.hasProperties(PropertyName.TEMPERATURE) ?
+                    TemperatureDataOptions.WITH_TEMPERATURE_DATA.value() : TemperatureDataOptions.WITHOUT_TEMPERATURE_DATA.value();
+            this.aqi = data.hasProperties(PropertyName.AQI) ?
+                    AirQualityDataOptions.WITH_AQI_DATA.value() : AirQualityDataOptions.WITHOUT_AQI_DATA.value();
+            this.humidity = data.hasProperties(PropertyName.HUMIDITY) ?
+                    HumidityDataOptions.WITH_HUMIDITY_DATA.value() : HumidityDataOptions.WITHOUT_HUMIDITY_DATA.value();
+            this.motion = data.hasProperties(PropertyName.MOTION) ?
+                    MotionDataOptions.WITH_MOTION_DATA.value() : MotionDataOptions.WITHOUT_MOTION_DATA.value();
+            this.velocity = data.hasProperties(PropertyName.VELOCITY) ?
+                    VelocityDataOptions.WITH_VELOCITY_DATA.value() : VelocityDataOptions.WITHOUT_VELOCITY_DATA.value();
+            this.pressure = data.hasProperties(PropertyName.PRESSURE) ?
+                    PressureDataOptions.WITH_PRESSURE_DATA.value() : PressureDataOptions.WITHOUT_PRESSURE_DATA.value();
             return this;
         }
 
@@ -216,7 +256,12 @@ public class RoutingKeys {
             this.channel = (this.channel == null || this.channel.isBlank()) ? ANY : this.channel;
             this.records = (this.records == null || this.records.isBlank()) ? ANY : this.records;
             this.gps = (this.gps == null || this.gps.isBlank()) ? ANY : this.gps;
-            this.tempC = (this.tempC == null || this.tempC.isBlank()) ? ANY : this.tempC;
+            this.temperature = (this.temperature == null || this.temperature.isBlank()) ? ANY : this.temperature;
+            this.aqi = (this.aqi == null || this.aqi.isBlank()) ? ANY : this.aqi;
+            this.humidity = (this.humidity == null || this.humidity.isBlank()) ? ANY : this.humidity;
+            this.motion = (this.motion == null || this.motion.isBlank()) ? ANY : this.motion;
+            this.velocity = (this.velocity == null || this.velocity.isBlank()) ? ANY : this.velocity;
+            this.pressure = (this.pressure == null || this.pressure.isBlank()) ? ANY : this.pressure;
             this.legitimacy = (this.legitimacy == null || this.legitimacy.isBlank()) ? ANY : this.legitimacy;
             return build();
         }
@@ -227,7 +272,12 @@ public class RoutingKeys {
             this.channel = this.channel == null ? consumer.channel : this.channel;
             this.records = this.records == null ? consumer.records : this.records;
             this.gps = this.gps == null ? consumer.gps : this.gps;
-            this.tempC = this.tempC == null ? consumer.tempC : this.tempC;
+            this.temperature = this.temperature == null ? consumer.temperature : this.temperature;
+            this.aqi = this.aqi == null ? consumer.aqi : this.aqi;
+            this.humidity = this.humidity == null ? consumer.humidity : this.humidity;
+            this.motion = this.motion == null ? consumer.motion : this.motion;
+            this.velocity = this.velocity == null ? consumer.velocity : this.velocity;
+            this.pressure = this.pressure == null ? consumer.pressure : this.pressure;
             this.legitimacy = this.legitimacy == null ? consumer.legitimacy : this.legitimacy;
             return build();
         }
@@ -239,9 +289,13 @@ public class RoutingKeys {
             this.sensorTypeId = splinted[2];
             this.channel = splinted[3];
             this.records = splinted[4];
-            this.gps = splinted[5];
-            this.tempC = splinted[6];
-            this.legitimacy = splinted[7];
+            this.legitimacy = splinted[5];
+            this.gps = splinted[6];
+            this.aqi = splinted[7];
+            this.humidity = splinted[8];
+            this.motion = splinted[9];
+            this.velocity = splinted[10];
+            this.pressure = splinted[11];
             return build();
         }
 
@@ -250,7 +304,21 @@ public class RoutingKeys {
                 this.containerName = thisContainerName;
                 this.containerType = thisContainerType;
             }
-            var routingKeys = new RoutingKeys(containerType, containerName, version, infoType, sensorTypeId, channel, records, gps, tempC, legitimacy);
+            var routingKeys = new RoutingKeys(containerType,
+                    containerName,
+                    version,
+                    infoType,
+                    sensorTypeId,
+                    channel,
+                    records,
+                    gps,
+                    temperature,
+                    aqi,
+                    humidity,
+                    motion,
+                    velocity,
+                    pressure,
+                    legitimacy);
             return toOptional(routingKeys);
         }
 
@@ -276,7 +344,22 @@ public class RoutingKeys {
             if (routingKeys.gps == null || routingKeys.gps.isBlank()) {
                 return Optional.empty();
             }
-            if (routingKeys.tempC == null || routingKeys.tempC.isBlank()) {
+            if (routingKeys.temperature == null || routingKeys.temperature.isBlank()) {
+                return Optional.empty();
+            }
+            if (routingKeys.aqi == null || routingKeys.aqi.isBlank()) {
+                return Optional.empty();
+            }
+            if (routingKeys.humidity == null || routingKeys.humidity.isBlank()) {
+                return Optional.empty();
+            }
+            if (routingKeys.motion == null || routingKeys.motion.isBlank()) {
+                return Optional.empty();
+            }
+            if (routingKeys.velocity == null || routingKeys.velocity.isBlank()) {
+                return Optional.empty();
+            }
+            if (routingKeys.pressure == null || routingKeys.pressure.isBlank()) {
                 return Optional.empty();
             }
             if (!routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId)) {
@@ -286,28 +369,19 @@ public class RoutingKeys {
                 return Optional.empty();
             }
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
-                if (ANY.equals(routingKeys.infoType)) {
-                    return Optional.empty();
-                }
-                if (ANY.equals(routingKeys.sensorTypeId)) {
-                    return Optional.empty();
-                }
-                if (ANY.equals(routingKeys.channel)) {
-                    return Optional.empty();
-                }
-                if (ANY.equals(routingKeys.records)) {
-                    return Optional.empty();
-                }
-                if (ANY.equals(routingKeys.gps)) {
-                    return Optional.empty();
-                }
-                if (ANY.equals(routingKeys.tempC)) {
-                    return Optional.empty();
-                }
-                if (ANY.equals(routingKeys.legitimacy)) {
-                    return Optional.empty();
-                }
-                if (!routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+")) {
+                if (ANY.equals(routingKeys.infoType) ||
+                        ANY.equals(routingKeys.sensorTypeId) ||
+                        ANY.equals(routingKeys.channel) ||
+                        ANY.equals(routingKeys.records) ||
+                        ANY.equals(routingKeys.gps) ||
+                        ANY.equals(routingKeys.temperature) ||
+                        ANY.equals(routingKeys.aqi) ||
+                        ANY.equals(routingKeys.humidity) ||
+                        ANY.equals(routingKeys.motion) ||
+                        ANY.equals(routingKeys.velocity) ||
+                        ANY.equals(routingKeys.pressure) ||
+                        ANY.equals(routingKeys.legitimacy) ||
+                        !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+")) {
                     return Optional.empty();
                 }
             }
