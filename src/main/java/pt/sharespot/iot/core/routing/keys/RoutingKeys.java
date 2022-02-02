@@ -94,6 +94,25 @@ public class RoutingKeys {
                 pressure);
     }
 
+    public String details() {
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.#",
+                containerType,
+                containerName,
+                version,
+                InfoTypeOptions.details(infoType),
+                sensorTypeId,
+                channel,
+                RecordsOptions.details(records),
+                DataLegitimacyOptions.details(legitimacy),
+                GPSDataOptions.details(gps),
+                TemperatureDataOptions.details(temperature),
+                AirQualityDataOptions.details(aqi),
+                HumidityDataOptions.details(humidity),
+                MotionDataOptions.details(motion),
+                VelocityDataOptions.details(velocity),
+                PressureDataOptions.details(pressure));
+    }
+
     public static RoutingKeysBuilder builder(String name, String type, RoutingKeysBuilderOptions options, String version) {
         return new RoutingKeysBuilder(name, type, options, version);
     }
@@ -231,8 +250,6 @@ public class RoutingKeys {
             this.infoType = InfoTypeOptions.PROCESSED.value();
             this.gps = data.hasProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
                     GPSDataOptions.WITH_GPS_DATA.value() : GPSDataOptions.WITHOUT_GPS_DATA.value();
-            this.records = data.hasProperty(PropertyName.DEVICE_RECORDS) ?
-                    RecordsOptions.WITH_RECORDS.value() : RecordsOptions.WITHOUT_RECORDS.value();
             this.temperature = data.hasProperties(PropertyName.TEMPERATURE) ?
                     TemperatureDataOptions.WITH_TEMPERATURE_DATA.value() : TemperatureDataOptions.WITHOUT_TEMPERATURE_DATA.value();
             this.aqi = data.hasProperties(PropertyName.AQI) ?
@@ -285,17 +302,21 @@ public class RoutingKeys {
         public Optional<RoutingKeys> from(String routingKeys) {
             var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
             var splinted = info.split("\\.");
+            if (splinted.length < 13) {
+                return Optional.empty();
+            }
             this.infoType = splinted[1];
             this.sensorTypeId = splinted[2];
             this.channel = splinted[3];
             this.records = splinted[4];
             this.legitimacy = splinted[5];
             this.gps = splinted[6];
-            this.aqi = splinted[7];
-            this.humidity = splinted[8];
-            this.motion = splinted[9];
-            this.velocity = splinted[10];
-            this.pressure = splinted[11];
+            this.temperature = splinted[7];
+            this.aqi = splinted[8];
+            this.humidity = splinted[9];
+            this.motion = splinted[10];
+            this.velocity = splinted[11];
+            this.pressure = splinted[12];
             return build();
         }
 

@@ -6,6 +6,24 @@ public enum MotionDataOptions {
     WITHOUT_MOTION_DATA;
 
     public String value() {
-        return this.name().toLowerCase();
+        if (this == UNIDENTIFIED_MOTION_DATA) {
+            return "u";
+        } else if (this == WITH_MOTION_DATA) {
+            return "y";
+        } else {
+            return "n";
+        }
+    }
+
+    public static String details(String value) {
+        if (value.equalsIgnoreCase("u")) {
+            return MotionDataOptions.UNIDENTIFIED_MOTION_DATA.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("y")) {
+            return MotionDataOptions.WITH_MOTION_DATA.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("n")) {
+            return MotionDataOptions.WITHOUT_MOTION_DATA.toString().toLowerCase();
+        } else {
+            return "*";
+        }
     }
 }

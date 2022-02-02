@@ -6,6 +6,24 @@ public enum RecordsOptions {
     WITHOUT_RECORDS;
 
     public String value() {
-        return this.name().toLowerCase();
+        if (this == UNIDENTIFIED_RECORDS) {
+            return "u";
+        } else if (this == WITH_RECORDS) {
+            return "y";
+        } else {
+            return "n";
+        }
+    }
+
+    public static String details(String value) {
+        if (value.equalsIgnoreCase("u")) {
+            return RecordsOptions.UNIDENTIFIED_RECORDS.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("y")) {
+            return RecordsOptions.WITH_RECORDS.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("n")) {
+            return RecordsOptions.WITHOUT_RECORDS.toString().toLowerCase();
+        } else {
+            return "*";
+        }
     }
 }
