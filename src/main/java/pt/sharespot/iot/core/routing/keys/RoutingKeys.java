@@ -223,7 +223,7 @@ public class RoutingKeys {
             this.motion = HumidityDataOptions.UNIDENTIFIED_HUMIDITY_DATA.value();
             this.velocity = VelocityDataOptions.UNIDENTIFIED_VELOCITY_DATA.value();
             this.pressure = PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA.value();
-            this.legitimacy = DataLegitimacyOptions.UNDETERMINED.value();
+            this.legitimacy = DataLegitimacyOptions.UNKNOWN.value();
             return this;
         }
 
@@ -323,49 +323,21 @@ public class RoutingKeys {
         }
 
         private Optional<RoutingKeys> toOptional(RoutingKeys routingKeys) {
-            if (routingKeys.containerName == null || routingKeys.containerName.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.containerType == null || routingKeys.containerType.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.infoType == null || routingKeys.infoType.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.sensorTypeId == null || routingKeys.sensorTypeId.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.channel == null || routingKeys.channel.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.records == null || routingKeys.records.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.gps == null || routingKeys.gps.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.temperature == null || routingKeys.temperature.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.aqi == null || routingKeys.aqi.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.humidity == null || routingKeys.humidity.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.motion == null || routingKeys.motion.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.velocity == null || routingKeys.velocity.isBlank()) {
-                return Optional.empty();
-            }
-            if (routingKeys.pressure == null || routingKeys.pressure.isBlank()) {
-                return Optional.empty();
-            }
-            if (!routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId)) {
-                return Optional.empty();
-            }
-            if (routingKeys.legitimacy == null || routingKeys.legitimacy.isBlank()) {
+            if (routingKeys.containerName == null || routingKeys.containerName.isBlank() ||
+                    routingKeys.containerType == null || routingKeys.containerType.isBlank() ||
+                    routingKeys.infoType == null || routingKeys.infoType.isBlank() ||
+                    routingKeys.sensorTypeId == null || routingKeys.sensorTypeId.isBlank() ||
+                    routingKeys.channel == null || routingKeys.channel.isBlank() ||
+                    routingKeys.records == null || routingKeys.records.isBlank() ||
+                    routingKeys.gps == null || routingKeys.gps.isBlank() ||
+                    routingKeys.temperature == null || routingKeys.temperature.isBlank() ||
+                    routingKeys.aqi == null || routingKeys.aqi.isBlank() ||
+                    routingKeys.humidity == null || routingKeys.humidity.isBlank() ||
+                    routingKeys.motion == null || routingKeys.motion.isBlank() ||
+                    routingKeys.velocity == null || routingKeys.velocity.isBlank() ||
+                    routingKeys.pressure == null || routingKeys.pressure.isBlank() ||
+                    !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId) ||
+                    routingKeys.legitimacy == null || routingKeys.legitimacy.isBlank()) {
                 return Optional.empty();
             }
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
