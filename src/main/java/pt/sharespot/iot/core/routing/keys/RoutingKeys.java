@@ -39,12 +39,15 @@ public class RoutingKeys {
 
     public String pressure;
 
+    public String permissions;
+
     public RoutingKeys(String containerType,
                        String containerName,
                        String version,
                        String infoType,
                        String sensorTypeId,
                        String channel,
+                       String permissions,
                        String records,
                        String gps,
                        String tempC,
@@ -59,6 +62,7 @@ public class RoutingKeys {
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
         this.channel = channel;
+        this.permissions = permissions;
         this.records = records;
         this.gps = gps;
         this.temperature = tempC;
@@ -76,13 +80,14 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.#",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.#",
                 containerType,
                 containerName,
                 version,
                 infoType,
                 sensorTypeId,
                 channel,
+                permissions,
                 records,
                 legitimacy,
                 gps,
@@ -95,13 +100,14 @@ public class RoutingKeys {
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.#",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.#",
                 containerType,
                 containerName,
                 version,
                 InfoTypeOptions.details(infoType),
                 sensorTypeId,
                 channel,
+                PermissionsOptions.details(permissions),
                 RecordsOptions.details(records),
                 DataLegitimacyOptions.details(legitimacy),
                 GPSDataOptions.details(gps),
@@ -136,6 +142,8 @@ public class RoutingKeys {
         private String sensorTypeId;
 
         private String channel;
+
+        private String permissions;
 
         private String records;
 
@@ -191,6 +199,11 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withRecords(RecordsOptions records) {
             this.records = records.value();
+            return this;
+        }
+
+        public RoutingKeysBuilder withPermissions(PermissionsOptions permissions) {
+            this.permissions = permissions.value();
             return this;
         }
 
@@ -272,6 +285,7 @@ public class RoutingKeys {
             this.sensorTypeId = (this.sensorTypeId == null || this.sensorTypeId.isBlank()) ? ANY : this.sensorTypeId;
             this.channel = (this.channel == null || this.channel.isBlank()) ? ANY : this.channel;
             this.records = (this.records == null || this.records.isBlank()) ? ANY : this.records;
+            this.permissions = (this.permissions == null || this.permissions.isBlank()) ? ANY : this.permissions;
             this.gps = (this.gps == null || this.gps.isBlank()) ? ANY : this.gps;
             this.temperature = (this.temperature == null || this.temperature.isBlank()) ? ANY : this.temperature;
             this.aqi = (this.aqi == null || this.aqi.isBlank()) ? ANY : this.aqi;
@@ -288,6 +302,7 @@ public class RoutingKeys {
             this.sensorTypeId = this.sensorTypeId == null ? consumer.sensorTypeId : this.sensorTypeId;
             this.channel = this.channel == null ? consumer.channel : this.channel;
             this.records = this.records == null ? consumer.records : this.records;
+            this.permissions = this.permissions == null ? consumer.permissions : this.permissions;
             this.gps = this.gps == null ? consumer.gps : this.gps;
             this.temperature = this.temperature == null ? consumer.temperature : this.temperature;
             this.aqi = this.aqi == null ? consumer.aqi : this.aqi;
@@ -308,15 +323,16 @@ public class RoutingKeys {
             this.infoType = splinted[1];
             this.sensorTypeId = splinted[2];
             this.channel = splinted[3];
-            this.records = splinted[4];
-            this.legitimacy = splinted[5];
-            this.gps = splinted[6];
-            this.temperature = splinted[7];
-            this.aqi = splinted[8];
-            this.humidity = splinted[9];
-            this.motion = splinted[10];
-            this.velocity = splinted[11];
-            this.pressure = splinted[12];
+            this.permissions = splinted[4];
+            this.records = splinted[5];
+            this.legitimacy = splinted[6];
+            this.gps = splinted[7];
+            this.temperature = splinted[8];
+            this.aqi = splinted[9];
+            this.humidity = splinted[10];
+            this.motion = splinted[11];
+            this.velocity = splinted[12];
+            this.pressure = splinted[13];
             return build();
         }
 
@@ -331,6 +347,7 @@ public class RoutingKeys {
                     infoType,
                     sensorTypeId,
                     channel,
+                    permissions,
                     records,
                     gps,
                     temperature,
@@ -349,6 +366,7 @@ public class RoutingKeys {
                     routingKeys.infoType == null || routingKeys.infoType.isBlank() ||
                     routingKeys.sensorTypeId == null || routingKeys.sensorTypeId.isBlank() ||
                     routingKeys.channel == null || routingKeys.channel.isBlank() ||
+                    routingKeys.permissions == null || routingKeys.permissions.isBlank() ||
                     routingKeys.records == null || routingKeys.records.isBlank() ||
                     routingKeys.gps == null || routingKeys.gps.isBlank() ||
                     routingKeys.temperature == null || routingKeys.temperature.isBlank() ||
@@ -365,6 +383,7 @@ public class RoutingKeys {
                 if (ANY.equals(routingKeys.infoType) ||
                         ANY.equals(routingKeys.sensorTypeId) ||
                         ANY.equals(routingKeys.channel) ||
+                        ANY.equals(routingKeys.permissions) ||
                         ANY.equals(routingKeys.records) ||
                         ANY.equals(routingKeys.gps) ||
                         ANY.equals(routingKeys.temperature) ||

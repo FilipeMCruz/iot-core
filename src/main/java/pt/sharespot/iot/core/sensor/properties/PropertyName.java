@@ -21,6 +21,16 @@ public enum PropertyName {
             return "device.records";
         }
     },
+    READ_PERMISSIONS {
+        public String path() {
+            return "device.domains.read";
+        }
+    },
+    READ_WRITE_PERMISSIONS {
+        public String path() {
+            return "device.domains.readWrite";
+        }
+    },
     REPORTED_AT {
         public String path() {
             return "reportedAt";
