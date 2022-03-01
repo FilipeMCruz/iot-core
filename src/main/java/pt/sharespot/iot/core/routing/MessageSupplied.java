@@ -2,6 +2,7 @@ package pt.sharespot.iot.core.routing;
 
 import pt.sharespot.iot.core.routing.keys.RoutingKeys;
 
+import java.util.Optional;
 import java.util.UUID;
 
 public class MessageSupplied<A> {
@@ -16,20 +17,22 @@ public class MessageSupplied<A> {
 
     public int hops;
 
-    public MessageSupplied(RoutingKeys routingKeys, A data) {
-        this.oid = UUID.randomUUID();
-        this.hops = 0;
-        this.routingKeys = routingKeys;
-        this.data = data;
-    }
-
-    public <T> MessageSupplied(MessageConsumed<T> message, A updateData, RoutingKeys updateRoutingKeys) {
-        this.oid = message.oid;
-        this.hops = message.hops + 1;
+    private MessageSupplied(UUID id, int hops, A updateData, RoutingKeys updateRoutingKeys) {
+        this.oid = id;
+        this.hops = hops + 1;
         this.routingKeys = updateRoutingKeys;
         this.data = updateData;
-        if (this.hops >= TIME_TO_LIVE) {
-            throw new RuntimeException("Message has exceeded max time to live");
+    }
+
+    public static <T, A> Optional<MessageSupplied<A>> from(MessageConsumed<T> message, A updateData, RoutingKeys updateRoutingKeys) {
+        int hops = message.hops + 1;
+        if (hops >= TIME_TO_LIVE) {
+            return Optional.empty();
         }
+        return Optional.of(new MessageSupplied<>(message.oid, hops, updateData, updateRoutingKeys));
+    }
+
+    public static <A> MessageSupplied<A> create(A data, RoutingKeys routingKeys) {
+        return new MessageSupplied<>(UUID.randomUUID(), 0, data, routingKeys);
     }
 }
