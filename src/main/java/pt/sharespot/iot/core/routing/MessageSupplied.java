@@ -19,7 +19,7 @@ public class MessageSupplied<A> {
 
     private MessageSupplied(UUID id, int hops, A updateData, RoutingKeys updateRoutingKeys) {
         this.oid = id;
-        this.hops = hops + 1;
+        this.hops = hops;
         this.routingKeys = updateRoutingKeys;
         this.data = updateData;
     }

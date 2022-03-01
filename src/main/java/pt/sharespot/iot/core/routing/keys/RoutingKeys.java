@@ -256,6 +256,7 @@ public class RoutingKeys {
             this.velocity = VelocityDataOptions.UNIDENTIFIED_VELOCITY_DATA.value();
             this.pressure = PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA.value();
             this.legitimacy = DataLegitimacyOptions.UNKNOWN.value();
+            this.permissions = PermissionsOptions.UNIDENTIFIED_PERMISSIONS.value();
             return this;
         }
 
