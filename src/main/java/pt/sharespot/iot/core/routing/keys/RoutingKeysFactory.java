@@ -8,7 +8,7 @@ public class RoutingKeysFactory {
         this.version = getClass().getPackage().getImplementationVersion();
     }
 
-    public RoutingKeys.RoutingKeysBuilder getBuilder(String containerName, String containerType, RoutingKeysBuilderOptions options) {
-        return RoutingKeys.builder(containerName, containerType, options, version);
+    public RoutingKeys.RoutingKeysBuilder getBuilder(String containerType, RoutingKeysBuilderOptions options) {
+        return RoutingKeys.builder(containerType, options, version);
     }
 }

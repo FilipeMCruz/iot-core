@@ -13,8 +13,6 @@ public class RoutingKeys {
 
     public String containerType;
 
-    public String containerName;
-
     public String infoType;
 
     public String sensorTypeId;
@@ -48,7 +46,6 @@ public class RoutingKeys {
     public String permissions;
 
     public RoutingKeys(String containerType,
-                       String containerName,
                        String version,
                        String infoType,
                        String sensorTypeId,
@@ -67,7 +64,6 @@ public class RoutingKeys {
                        String illuminance,
                        String legitimacy) {
         this.containerType = containerType;
-        this.containerName = containerName;
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
         this.channel = channel;
@@ -92,9 +88,8 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
+        return MessageFormat.format("{0}.{1}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
                 containerType,
-                containerName,
                 version,
                 infoType,
                 sensorTypeId,
@@ -115,9 +110,8 @@ public class RoutingKeys {
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
+        return MessageFormat.format("{0}.{1}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
                 containerType,
-                containerName,
                 version,
                 InfoTypeOptions.details(infoType),
                 sensorTypeId,
@@ -137,8 +131,8 @@ public class RoutingKeys {
                 BatteryDataOptions.details(battery));
     }
 
-    public static RoutingKeysBuilder builder(String name, String type, RoutingKeysBuilderOptions options, String version) {
-        return new RoutingKeysBuilder(name, type, options, version);
+    public static RoutingKeysBuilder builder(String type, RoutingKeysBuilderOptions options, String version) {
+        return new RoutingKeysBuilder(type, options, version);
     }
 
     public static class RoutingKeysBuilder {
@@ -147,13 +141,9 @@ public class RoutingKeys {
 
         private final String thisContainerType;
 
-        private final String thisContainerName;
-
         private final String version;
 
         private String containerType;
-
-        private String containerName;
 
         private String infoType;
 
@@ -189,20 +179,14 @@ public class RoutingKeys {
 
         private final RoutingKeysBuilderOptions options;
 
-        private RoutingKeysBuilder(String name, String type, RoutingKeysBuilderOptions options, String version) {
+        private RoutingKeysBuilder(String type, RoutingKeysBuilderOptions options, String version) {
             this.options = options;
             this.thisContainerType = type;
-            this.thisContainerName = name;
             this.version = version;
         }
 
         public RoutingKeysBuilder withContainerType(String containerType) {
             this.containerType = containerType;
-            return this;
-        }
-
-        public RoutingKeysBuilder withContainerName(String containerName) {
-            this.containerName = containerName;
             return this;
         }
 
@@ -329,7 +313,6 @@ public class RoutingKeys {
 
         public Optional<RoutingKeys> missingAsAny() {
             this.containerType = (this.containerType == null || this.containerType.isBlank()) ? ANY : this.containerType;
-            this.containerName = (this.containerName == null || this.containerName.isBlank()) ? ANY : this.containerName;
             this.infoType = (this.infoType == null || this.infoType.isBlank()) ? ANY : this.infoType;
             this.sensorTypeId = (this.sensorTypeId == null || this.sensorTypeId.isBlank()) ? ANY : this.sensorTypeId;
             this.channel = (this.channel == null || this.channel.isBlank()) ? ANY : this.channel;
@@ -396,11 +379,9 @@ public class RoutingKeys {
 
         public Optional<RoutingKeys> build() {
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
-                this.containerName = thisContainerName;
                 this.containerType = thisContainerType;
             }
             var routingKeys = new RoutingKeys(containerType,
-                    containerName,
                     version,
                     infoType,
                     sensorTypeId,
@@ -422,8 +403,7 @@ public class RoutingKeys {
         }
 
         private Optional<RoutingKeys> toOptional(RoutingKeys routingKeys) {
-            if (routingKeys.containerName == null || routingKeys.containerName.isBlank() ||
-                    routingKeys.containerType == null || routingKeys.containerType.isBlank() ||
+            if (routingKeys.containerType == null || routingKeys.containerType.isBlank() ||
                     routingKeys.infoType == null || routingKeys.infoType.isBlank() ||
                     routingKeys.sensorTypeId == null || routingKeys.sensorTypeId.isBlank() ||
                     routingKeys.channel == null || routingKeys.channel.isBlank() ||
