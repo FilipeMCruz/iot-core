@@ -73,7 +73,7 @@ public enum PropertyName {
     },
     PRESSURE {
         public String path() {
-            return "data.pressure.value";
+            return "data.pressure.hPa";
         }
     },
     BATTERY_PERCENTAGE {
