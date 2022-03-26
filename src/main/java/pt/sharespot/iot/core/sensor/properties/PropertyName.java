@@ -53,7 +53,7 @@ public enum PropertyName {
     },
     TEMPERATURE {
         public String path() {
-            return "data.temp.value";
+            return "data.temp.celsius";
         }
     },
     MOTION {
@@ -73,7 +73,7 @@ public enum PropertyName {
     },
     HUMIDITY {
         public String path() {
-            return "data.humidity.value";
+            return "data.humidity.percentage";
         }
     },
     PRESSURE {

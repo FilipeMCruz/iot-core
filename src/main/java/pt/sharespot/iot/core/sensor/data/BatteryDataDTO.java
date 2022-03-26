@@ -15,13 +15,13 @@ public class BatteryDataDTO implements DataTypeDTO {
         return this;
     }
 
-    public static BatteryDataDTO withPercentage(Double percentage) {
+    public static BatteryDataDTO ofPercentage(Double percentage) {
         var batteryDataDTO = new BatteryDataDTO();
         batteryDataDTO.percentage = percentage;
         return batteryDataDTO;
     }
 
-    public static BatteryDataDTO withVolts(Double volts) {
+    public static BatteryDataDTO ofVolts(Double volts) {
         var batteryDataDTO = new BatteryDataDTO();
         batteryDataDTO.volts = volts;
         return batteryDataDTO;
