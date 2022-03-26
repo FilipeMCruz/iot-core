@@ -100,6 +100,11 @@ public enum PropertyName {
         public String path() {
             return "data.illuminance.lux";
         }
+    },
+    ALARM {
+        public String path() {
+            return "data.alarm.value";
+        }
     };
 
     public String path() {

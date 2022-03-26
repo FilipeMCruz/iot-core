@@ -24,6 +24,8 @@ public class SensorDataDetailsDTO {
 
     public IlluminanceDataDTO illuminance;
 
+    public AlarmDataDTO alarm;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case ALTITUDE -> gps != null && gps.existsAltitude();
@@ -44,6 +46,11 @@ public class SensorDataDetailsDTO {
 
     public SensorDataDetailsDTO withBattery(BatteryDataDTO battery) {
         this.battery = battery;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withAlarm(AlarmDataDTO alarm) {
+        this.alarm = alarm;
         return this;
     }
 

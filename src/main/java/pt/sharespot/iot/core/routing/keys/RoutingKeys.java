@@ -395,9 +395,9 @@ public class RoutingKeys {
                     motion,
                     velocity,
                     pressure,
+                    battery,
                     moisture,
                     illuminance,
-                    battery,
                     legitimacy);
             return toOptional(routingKeys);
         }
