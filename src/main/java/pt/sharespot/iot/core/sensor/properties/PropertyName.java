@@ -58,7 +58,7 @@ public enum PropertyName {
     },
     VELOCITY {
         public String path() {
-            return "data.velocity.value";
+            return "data.velocity.kmperh";
         }
     },
     AQI {
