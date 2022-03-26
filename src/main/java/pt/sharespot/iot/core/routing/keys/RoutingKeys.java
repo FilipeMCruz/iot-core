@@ -131,7 +131,7 @@ public class RoutingKeys {
                 BatteryDataOptions.details(battery));
     }
 
-    public static RoutingKeysBuilder builder(String type, RoutingKeysBuilderOptions options, String version) {
+    public static RoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
         return new RoutingKeysBuilder(type, options, version);
     }
 
@@ -179,14 +179,14 @@ public class RoutingKeys {
 
         private final RoutingKeysBuilderOptions options;
 
-        private RoutingKeysBuilder(String type, RoutingKeysBuilderOptions options, String version) {
+        private RoutingKeysBuilder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.options = options;
-            this.thisContainerType = type;
+            this.thisContainerType = type.value();
             this.version = version;
         }
 
-        public RoutingKeysBuilder withContainerType(String containerType) {
-            this.containerType = containerType;
+        public RoutingKeysBuilder withContainerType(ContainerTypeOptions containerType) {
+            this.containerType = containerType.value();
             return this;
         }
 
