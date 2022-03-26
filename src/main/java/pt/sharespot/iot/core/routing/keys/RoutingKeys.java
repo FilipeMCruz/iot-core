@@ -43,6 +43,8 @@ public class RoutingKeys {
 
     public String moisture;
 
+    public String illuminance;
+
     public String permissions;
 
     public RoutingKeys(String containerType,
@@ -62,6 +64,7 @@ public class RoutingKeys {
                        String pressure,
                        String battery,
                        String moisture,
+                       String illuminance,
                        String legitimacy) {
         this.containerType = containerType;
         this.containerName = containerName;
@@ -80,6 +83,7 @@ public class RoutingKeys {
         this.pressure = pressure;
         this.battery = battery;
         this.moisture = moisture;
+        this.illuminance = illuminance;
         this.legitimacy = legitimacy;
     }
 
@@ -88,7 +92,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.#",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
                 containerType,
                 containerName,
                 version,
@@ -106,11 +110,12 @@ public class RoutingKeys {
                 velocity,
                 pressure,
                 moisture,
+                illuminance,
                 battery);
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.#",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
                 containerType,
                 containerName,
                 version,
@@ -128,6 +133,7 @@ public class RoutingKeys {
                 VelocityDataOptions.details(velocity),
                 PressureDataOptions.details(pressure),
                 SoilMoistureDataOptions.details(moisture),
+                IlluminanceDataOptions.details(illuminance),
                 BatteryDataOptions.details(battery));
     }
 
@@ -174,6 +180,8 @@ public class RoutingKeys {
         private String pressure;
 
         private String moisture;
+
+        private String illuminance;
 
         private String battery;
 
@@ -268,6 +276,11 @@ public class RoutingKeys {
             return this;
         }
 
+        public RoutingKeysBuilder withIlluminance(IlluminanceDataOptions illuminance) {
+            this.illuminance = illuminance.value();
+            return this;
+        }
+
         public RoutingKeysBuilder withBattery(BatteryDataOptions battery) {
             this.battery = battery.value();
             return this;
@@ -283,6 +296,7 @@ public class RoutingKeys {
             this.battery = BatteryDataOptions.WITHOUT_BATTERY_DATA.value();
             this.pressure = PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA.value();
             this.moisture = SoilMoistureDataOptions.UNIDENTIFIED_SOIL_MOISTURE_DATA.value();
+            this.illuminance = IlluminanceDataOptions.UNIDENTIFIED_ILLUMINANCE_DATA.value();
             this.legitimacy = DataLegitimacyOptions.UNKNOWN.value();
             this.permissions = PermissionsOptions.UNIDENTIFIED_PERMISSIONS.value();
             return this;
@@ -306,6 +320,8 @@ public class RoutingKeys {
                     PressureDataOptions.WITH_PRESSURE_DATA.value() : PressureDataOptions.WITHOUT_PRESSURE_DATA.value();
             this.moisture = data.hasAllProperties(PropertyName.SOIL_MOISTURE) ?
                     SoilMoistureDataOptions.WITH_SOIL_MOISTURE_DATA.value() : SoilMoistureDataOptions.WITHOUT_SOIL_MOISTURE_DATA.value();
+            this.moisture = data.hasAllProperties(PropertyName.ILLUMINANCE) ?
+                    IlluminanceDataOptions.WITH_ILLUMINANCE_DATA.value() : IlluminanceDataOptions.WITHOUT_ILLUMINANCE_DATA.value();
             this.battery = data.hasAnyProperties(PropertyName.BATTERY_VOLTS, PropertyName.BATTERY_PERCENTAGE) ?
                     BatteryDataOptions.WITH_BATTERY_DATA.value() : BatteryDataOptions.WITHOUT_BATTERY_DATA.value();
             return this;
@@ -327,6 +343,7 @@ public class RoutingKeys {
             this.velocity = (this.velocity == null || this.velocity.isBlank()) ? ANY : this.velocity;
             this.pressure = (this.pressure == null || this.pressure.isBlank()) ? ANY : this.pressure;
             this.moisture = (this.moisture == null || this.moisture.isBlank()) ? ANY : this.moisture;
+            this.illuminance = (this.illuminance == null || this.illuminance.isBlank()) ? ANY : this.illuminance;
             this.battery = (this.battery == null || this.battery.isBlank()) ? ANY : this.battery;
             this.legitimacy = (this.legitimacy == null || this.legitimacy.isBlank()) ? ANY : this.legitimacy;
             return build();
@@ -347,6 +364,7 @@ public class RoutingKeys {
             this.pressure = this.pressure == null ? consumer.pressure : this.pressure;
             this.moisture = this.moisture == null ? consumer.moisture : this.moisture;
             this.battery = this.battery == null ? consumer.battery : this.battery;
+            this.illuminance = this.illuminance == null ? consumer.illuminance : this.illuminance;
             this.legitimacy = this.legitimacy == null ? consumer.legitimacy : this.legitimacy;
             return build();
         }
@@ -354,7 +372,7 @@ public class RoutingKeys {
         public Optional<RoutingKeys> from(String routingKeys) {
             var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
             var splinted = info.split("\\.");
-            if (splinted.length < 15) {
+            if (splinted.length < 16) {
                 return Optional.empty();
             }
             this.infoType = splinted[1];
@@ -371,7 +389,8 @@ public class RoutingKeys {
             this.velocity = splinted[12];
             this.pressure = splinted[13];
             this.moisture = splinted[14];
-            this.battery = splinted[15];
+            this.illuminance = splinted[15];
+            this.battery = splinted[16];
             return build();
         }
 
@@ -396,6 +415,7 @@ public class RoutingKeys {
                     velocity,
                     pressure,
                     moisture,
+                    illuminance,
                     battery,
                     legitimacy);
             return toOptional(routingKeys);
@@ -417,6 +437,7 @@ public class RoutingKeys {
                     routingKeys.velocity == null || routingKeys.velocity.isBlank() ||
                     routingKeys.pressure == null || routingKeys.pressure.isBlank() ||
                     routingKeys.moisture == null || routingKeys.moisture.isBlank() ||
+                    routingKeys.illuminance == null || routingKeys.illuminance.isBlank() ||
                     routingKeys.battery == null || routingKeys.battery.isBlank() ||
                     !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId) ||
                     routingKeys.legitimacy == null || routingKeys.legitimacy.isBlank()) {
@@ -436,6 +457,7 @@ public class RoutingKeys {
                         ANY.equals(routingKeys.velocity) ||
                         ANY.equals(routingKeys.pressure) ||
                         ANY.equals(routingKeys.moisture) ||
+                        ANY.equals(routingKeys.illuminance) ||
                         ANY.equals(routingKeys.battery) ||
                         ANY.equals(routingKeys.legitimacy) ||
                         !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+")) {
