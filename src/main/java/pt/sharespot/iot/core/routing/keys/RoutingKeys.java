@@ -290,7 +290,7 @@ public class RoutingKeys {
             this.humidity = RoutingKeyOption.of(HumidityDataOptions.UNIDENTIFIED_HUMIDITY_DATA);
             this.motion = RoutingKeyOption.of(MotionDataOptions.UNIDENTIFIED_MOTION_DATA);
             this.velocity = RoutingKeyOption.of(VelocityDataOptions.UNIDENTIFIED_VELOCITY_DATA);
-            this.battery = RoutingKeyOption.of(BatteryDataOptions.WITHOUT_BATTERY_DATA);
+            this.battery = RoutingKeyOption.of(BatteryDataOptions.UNIDENTIFIED_BATTERY_DATA);
             this.pressure = RoutingKeyOption.of(PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA);
             this.moisture = RoutingKeyOption.of(SoilMoistureDataOptions.UNIDENTIFIED_SOIL_MOISTURE_DATA);
             this.illuminance = RoutingKeyOption.of(IlluminanceDataOptions.UNIDENTIFIED_ILLUMINANCE_DATA);
