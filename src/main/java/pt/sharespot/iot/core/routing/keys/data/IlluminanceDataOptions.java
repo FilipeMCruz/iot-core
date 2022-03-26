@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum IlluminanceDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum IlluminanceDataOptions implements RoutingKey {
     UNIDENTIFIED_ILLUMINANCE_DATA,
     WITH_ILLUMINANCE_DATA,
     WITHOUT_ILLUMINANCE_DATA;
@@ -15,15 +18,19 @@ public enum IlluminanceDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<IlluminanceDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return IlluminanceDataOptions.UNIDENTIFIED_ILLUMINANCE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(IlluminanceDataOptions.UNIDENTIFIED_ILLUMINANCE_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return IlluminanceDataOptions.WITH_ILLUMINANCE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(IlluminanceDataOptions.WITH_ILLUMINANCE_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return IlluminanceDataOptions.WITHOUT_ILLUMINANCE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(IlluminanceDataOptions.WITHOUT_ILLUMINANCE_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

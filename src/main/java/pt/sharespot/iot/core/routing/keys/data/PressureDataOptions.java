@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum PressureDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum PressureDataOptions implements RoutingKey {
     UNIDENTIFIED_PRESSURE_DATA,
     WITH_PRESSURE_DATA,
     WITHOUT_PRESSURE_DATA;
@@ -15,15 +18,19 @@ public enum PressureDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<PressureDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return PressureDataOptions.WITH_PRESSURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(PressureDataOptions.WITH_PRESSURE_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return PressureDataOptions.WITHOUT_PRESSURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(PressureDataOptions.WITHOUT_PRESSURE_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

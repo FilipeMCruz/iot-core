@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum VelocityDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum VelocityDataOptions implements RoutingKey {
     UNIDENTIFIED_VELOCITY_DATA,
     WITH_VELOCITY_DATA,
     WITHOUT_VELOCITY_DATA;
@@ -15,15 +18,19 @@ public enum VelocityDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<VelocityDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return VelocityDataOptions.UNIDENTIFIED_VELOCITY_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(VelocityDataOptions.UNIDENTIFIED_VELOCITY_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return VelocityDataOptions.WITH_VELOCITY_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(VelocityDataOptions.WITH_VELOCITY_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return VelocityDataOptions.WITHOUT_VELOCITY_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(VelocityDataOptions.WITHOUT_VELOCITY_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

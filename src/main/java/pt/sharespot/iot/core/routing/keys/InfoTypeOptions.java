@@ -1,6 +1,6 @@
 package pt.sharespot.iot.core.routing.keys;
 
-public enum InfoTypeOptions {
+public enum InfoTypeOptions implements RoutingKey {
     ENCODED,
     DECODED,
     PROCESSED;
@@ -15,15 +15,19 @@ public enum InfoTypeOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<InfoTypeOptions> extract(String value) {
         if (value.equalsIgnoreCase("e")) {
-            return InfoTypeOptions.ENCODED.toString().toLowerCase();
+            return RoutingKeyOption.of(InfoTypeOptions.ENCODED);
         } else if (value.equalsIgnoreCase("d")) {
-            return InfoTypeOptions.DECODED.toString().toLowerCase();
+            return RoutingKeyOption.of(InfoTypeOptions.DECODED);
         } else if (value.equalsIgnoreCase("p")) {
-            return InfoTypeOptions.PROCESSED.toString().toLowerCase();
+            return RoutingKeyOption.of(InfoTypeOptions.PROCESSED);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

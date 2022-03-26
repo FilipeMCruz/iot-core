@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum TemperatureDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum TemperatureDataOptions implements RoutingKey {
     UNIDENTIFIED_TEMPERATURE_DATA,
     WITH_TEMPERATURE_DATA,
     WITHOUT_TEMPERATURE_DATA;
@@ -15,15 +18,19 @@ public enum TemperatureDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<TemperatureDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return TemperatureDataOptions.UNIDENTIFIED_TEMPERATURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(TemperatureDataOptions.UNIDENTIFIED_TEMPERATURE_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return TemperatureDataOptions.WITH_TEMPERATURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(TemperatureDataOptions.WITH_TEMPERATURE_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return TemperatureDataOptions.WITHOUT_TEMPERATURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(TemperatureDataOptions.WITHOUT_TEMPERATURE_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

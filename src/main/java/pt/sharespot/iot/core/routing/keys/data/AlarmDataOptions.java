@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum AlarmDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum AlarmDataOptions implements RoutingKey {
     UNIDENTIFIED_ALARM_DATA,
     WITH_ALARM_DATA,
     WITHOUT_ALARM_DATA;
@@ -15,15 +18,19 @@ public enum AlarmDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<AlarmDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return AlarmDataOptions.UNIDENTIFIED_ALARM_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(AlarmDataOptions.UNIDENTIFIED_ALARM_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return AlarmDataOptions.WITH_ALARM_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(AlarmDataOptions.WITH_ALARM_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return AlarmDataOptions.WITHOUT_ALARM_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(AlarmDataOptions.WITHOUT_ALARM_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

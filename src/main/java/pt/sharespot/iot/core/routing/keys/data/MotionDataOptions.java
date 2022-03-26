@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum MotionDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum MotionDataOptions implements RoutingKey {
     UNIDENTIFIED_MOTION_DATA,
     WITH_MOTION_DATA,
     WITHOUT_MOTION_DATA;
@@ -15,15 +18,19 @@ public enum MotionDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<MotionDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return MotionDataOptions.UNIDENTIFIED_MOTION_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(MotionDataOptions.UNIDENTIFIED_MOTION_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return MotionDataOptions.WITH_MOTION_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(MotionDataOptions.WITH_MOTION_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return MotionDataOptions.WITHOUT_MOTION_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(MotionDataOptions.WITHOUT_MOTION_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

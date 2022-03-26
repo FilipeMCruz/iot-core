@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum BatteryDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum BatteryDataOptions implements RoutingKey {
     UNIDENTIFIED_BATTERY_DATA,
     WITH_BATTERY_DATA,
     WITHOUT_BATTERY_DATA;
@@ -15,15 +18,19 @@ public enum BatteryDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<BatteryDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return BatteryDataOptions.UNIDENTIFIED_BATTERY_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(BatteryDataOptions.UNIDENTIFIED_BATTERY_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return BatteryDataOptions.WITH_BATTERY_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(BatteryDataOptions.WITH_BATTERY_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return BatteryDataOptions.WITHOUT_BATTERY_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(BatteryDataOptions.WITHOUT_BATTERY_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

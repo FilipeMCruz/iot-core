@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum AirQualityDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum AirQualityDataOptions implements RoutingKey {
     UNIDENTIFIED_AQI_DATA,
     WITH_AQI_DATA,
     WITHOUT_AQI_DATA;
@@ -15,15 +18,19 @@ public enum AirQualityDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<AirQualityDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return AirQualityDataOptions.UNIDENTIFIED_AQI_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(AirQualityDataOptions.UNIDENTIFIED_AQI_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return AirQualityDataOptions.WITH_AQI_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(AirQualityDataOptions.WITH_AQI_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return AirQualityDataOptions.WITHOUT_AQI_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(AirQualityDataOptions.WITHOUT_AQI_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

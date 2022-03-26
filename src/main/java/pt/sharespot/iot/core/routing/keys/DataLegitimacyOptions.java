@@ -1,6 +1,6 @@
 package pt.sharespot.iot.core.routing.keys;
 
-public enum DataLegitimacyOptions {
+public enum DataLegitimacyOptions implements RoutingKey {
     UNKNOWN,
     CORRECT,
     INCORRECT,
@@ -18,17 +18,21 @@ public enum DataLegitimacyOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<DataLegitimacyOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return DataLegitimacyOptions.UNKNOWN.toString().toLowerCase();
+            return RoutingKeyOption.of(DataLegitimacyOptions.UNKNOWN);
         } else if (value.equalsIgnoreCase("c")) {
-            return DataLegitimacyOptions.CORRECT.toString().toLowerCase();
+            return RoutingKeyOption.of(DataLegitimacyOptions.CORRECT);
         } else if (value.equalsIgnoreCase("i")) {
-            return DataLegitimacyOptions.INCORRECT.toString().toLowerCase();
+            return RoutingKeyOption.of(DataLegitimacyOptions.INCORRECT);
         } else if (value.equalsIgnoreCase("n")) {
-            return DataLegitimacyOptions.UNDETERMINED.toString().toLowerCase();
+            return RoutingKeyOption.of(DataLegitimacyOptions.UNDETERMINED);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

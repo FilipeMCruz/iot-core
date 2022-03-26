@@ -1,6 +1,6 @@
 package pt.sharespot.iot.core.routing.keys;
 
-public enum PermissionsOptions {
+public enum PermissionsOptions implements RoutingKey {
     UNIDENTIFIED_PERMISSIONS,
     WITH_PERMISSIONS,
     WITHOUT_PERMISSIONS;
@@ -15,15 +15,19 @@ public enum PermissionsOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<PermissionsOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return PermissionsOptions.UNIDENTIFIED_PERMISSIONS.toString().toLowerCase();
+            return RoutingKeyOption.of(PermissionsOptions.UNIDENTIFIED_PERMISSIONS);
         } else if (value.equalsIgnoreCase("y")) {
-            return PermissionsOptions.WITH_PERMISSIONS.toString().toLowerCase();
+            return RoutingKeyOption.of(PermissionsOptions.WITH_PERMISSIONS);
         } else if (value.equalsIgnoreCase("n")) {
-            return PermissionsOptions.WITHOUT_PERMISSIONS.toString().toLowerCase();
+            return RoutingKeyOption.of(PermissionsOptions.WITHOUT_PERMISSIONS);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

@@ -1,6 +1,6 @@
 package pt.sharespot.iot.core.routing.keys;
 
-public enum ContainerTypeOptions {
+public enum ContainerTypeOptions implements RoutingKey {
     DATA_GATEWAY,
     DATA_PROCESSOR,
     DATA_DECODER,
@@ -25,6 +25,10 @@ public enum ContainerTypeOptions {
             case SMART_IRRIGATION -> "irrig";
             case OTHER -> "other";
         };
+    }
+
+    public String details() {
+        return this.toString().toLowerCase();
     }
 
     public static String details(String value) {

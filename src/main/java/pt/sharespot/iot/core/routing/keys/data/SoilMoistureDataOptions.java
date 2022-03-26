@@ -1,6 +1,9 @@
 package pt.sharespot.iot.core.routing.keys.data;
 
-public enum SoilMoistureDataOptions {
+import pt.sharespot.iot.core.routing.keys.RoutingKey;
+import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
+
+public enum SoilMoistureDataOptions implements RoutingKey {
     UNIDENTIFIED_SOIL_MOISTURE_DATA,
     WITH_SOIL_MOISTURE_DATA,
     WITHOUT_SOIL_MOISTURE_DATA;
@@ -15,15 +18,19 @@ public enum SoilMoistureDataOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<SoilMoistureDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return SoilMoistureDataOptions.UNIDENTIFIED_SOIL_MOISTURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(SoilMoistureDataOptions.UNIDENTIFIED_SOIL_MOISTURE_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return SoilMoistureDataOptions.WITH_SOIL_MOISTURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(SoilMoistureDataOptions.WITH_SOIL_MOISTURE_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return SoilMoistureDataOptions.WITHOUT_SOIL_MOISTURE_DATA.toString().toLowerCase();
+            return RoutingKeyOption.of(SoilMoistureDataOptions.WITHOUT_SOIL_MOISTURE_DATA);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }

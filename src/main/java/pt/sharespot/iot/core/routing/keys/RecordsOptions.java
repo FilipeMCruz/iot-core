@@ -1,6 +1,6 @@
 package pt.sharespot.iot.core.routing.keys;
 
-public enum RecordsOptions {
+public enum RecordsOptions implements RoutingKey {
     UNIDENTIFIED_RECORDS,
     WITH_RECORDS,
     WITHOUT_RECORDS;
@@ -15,15 +15,19 @@ public enum RecordsOptions {
         }
     }
 
-    public static String details(String value) {
+    public String details() {
+        return this.toString().toLowerCase();
+    }
+
+    public static RoutingKeyOption<RecordsOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return RecordsOptions.UNIDENTIFIED_RECORDS.toString().toLowerCase();
+            return RoutingKeyOption.of(RecordsOptions.UNIDENTIFIED_RECORDS);
         } else if (value.equalsIgnoreCase("y")) {
-            return RecordsOptions.WITH_RECORDS.toString().toLowerCase();
+            return RoutingKeyOption.of(RecordsOptions.WITH_RECORDS);
         } else if (value.equalsIgnoreCase("n")) {
-            return RecordsOptions.WITHOUT_RECORDS.toString().toLowerCase();
+            return RoutingKeyOption.of(RecordsOptions.WITHOUT_RECORDS);
         } else {
-            return "*";
+            return RoutingKeyOption.any();
         }
     }
 }
