@@ -85,6 +85,11 @@ public enum PropertyName {
         public String path() {
             return "data.battery.volts";
         }
+    },
+    SOIL_MOISTURE {
+        public String path() {
+            return "data.moisture.percentage";
+        }
     };
 
     public String path() {
