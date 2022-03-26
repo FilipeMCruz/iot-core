@@ -68,7 +68,7 @@ public enum PropertyName {
     },
     AQI {
         public String path() {
-            return "data.aqi.value";
+            return "data.aqi.eaqi";
         }
     },
     HUMIDITY {
