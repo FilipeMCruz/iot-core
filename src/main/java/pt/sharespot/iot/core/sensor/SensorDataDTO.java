@@ -9,5 +9,7 @@ public interface SensorDataDTO {
 
     boolean hasProperty(PropertyName property);
 
-    boolean hasProperties(PropertyName... properties);
+    boolean hasAllProperties(PropertyName... properties);
+    
+    boolean hasAnyProperties(PropertyName... properties);
 }

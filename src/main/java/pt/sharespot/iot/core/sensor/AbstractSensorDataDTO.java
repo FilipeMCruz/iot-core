@@ -31,7 +31,12 @@ public abstract class AbstractSensorDataDTO implements SensorDataDTO {
     }
 
     @Override
-    public boolean hasProperties(PropertyName... properties) {
+    public boolean hasAllProperties(PropertyName... properties) {
         return Arrays.stream(properties).allMatch(this::hasProperty);
+    }
+
+    @Override
+    public boolean hasAnyProperties(PropertyName... properties) {
+        return Arrays.stream(properties).anyMatch(this::hasProperty);
     }
 }

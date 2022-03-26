@@ -39,6 +39,8 @@ public class RoutingKeys {
 
     public String pressure;
 
+    public String battery;
+
     public String permissions;
 
     public RoutingKeys(String containerType,
@@ -56,6 +58,7 @@ public class RoutingKeys {
                        String motion,
                        String velocity,
                        String pressure,
+                       String battery,
                        String legitimacy) {
         this.containerType = containerType;
         this.containerName = containerName;
@@ -72,6 +75,7 @@ public class RoutingKeys {
         this.motion = motion;
         this.velocity = velocity;
         this.pressure = pressure;
+        this.battery = battery;
         this.legitimacy = legitimacy;
     }
 
@@ -80,7 +84,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.#",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.#",
                 containerType,
                 containerName,
                 version,
@@ -96,11 +100,12 @@ public class RoutingKeys {
                 humidity,
                 motion,
                 velocity,
-                pressure);
+                pressure,
+                battery);
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.#",
+        return MessageFormat.format("{0}.{1}.{2}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.#",
                 containerType,
                 containerName,
                 version,
@@ -116,7 +121,8 @@ public class RoutingKeys {
                 HumidityDataOptions.details(humidity),
                 MotionDataOptions.details(motion),
                 VelocityDataOptions.details(velocity),
-                PressureDataOptions.details(pressure));
+                PressureDataOptions.details(pressure),
+                BatteryDataOptions.details(battery));
     }
 
     public static RoutingKeysBuilder builder(String name, String type, RoutingKeysBuilderOptions options, String version) {
@@ -160,6 +166,8 @@ public class RoutingKeys {
         private String velocity;
 
         private String pressure;
+
+        private String battery;
 
         private String legitimacy;
 
@@ -247,6 +255,11 @@ public class RoutingKeys {
             return this;
         }
 
+        public RoutingKeysBuilder withBattery(BatteryDataOptions battery) {
+            this.battery = battery.value();
+            return this;
+        }
+
         public RoutingKeysBuilder withUnidentifiedData() {
             this.temperature = TemperatureDataOptions.UNIDENTIFIED_TEMPERATURE_DATA.value();
             this.gps = GPSDataOptions.UNIDENTIFIED_GPS_DATA.value();
@@ -254,6 +267,7 @@ public class RoutingKeys {
             this.humidity = HumidityDataOptions.UNIDENTIFIED_HUMIDITY_DATA.value();
             this.motion = HumidityDataOptions.UNIDENTIFIED_HUMIDITY_DATA.value();
             this.velocity = VelocityDataOptions.UNIDENTIFIED_VELOCITY_DATA.value();
+            this.battery = BatteryDataOptions.WITHOUT_BATTERY_DATA.value();
             this.pressure = PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA.value();
             this.legitimacy = DataLegitimacyOptions.UNKNOWN.value();
             this.permissions = PermissionsOptions.UNIDENTIFIED_PERMISSIONS.value();
@@ -262,20 +276,22 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withUpdated(SensorDataDTO data) {
             this.infoType = InfoTypeOptions.PROCESSED.value();
-            this.gps = data.hasProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
+            this.gps = data.hasAllProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
                     GPSDataOptions.WITH_GPS_DATA.value() : GPSDataOptions.WITHOUT_GPS_DATA.value();
-            this.temperature = data.hasProperties(PropertyName.TEMPERATURE) ?
+            this.temperature = data.hasAllProperties(PropertyName.TEMPERATURE) ?
                     TemperatureDataOptions.WITH_TEMPERATURE_DATA.value() : TemperatureDataOptions.WITHOUT_TEMPERATURE_DATA.value();
-            this.aqi = data.hasProperties(PropertyName.AQI) ?
+            this.aqi = data.hasAllProperties(PropertyName.AQI) ?
                     AirQualityDataOptions.WITH_AQI_DATA.value() : AirQualityDataOptions.WITHOUT_AQI_DATA.value();
-            this.humidity = data.hasProperties(PropertyName.HUMIDITY) ?
+            this.humidity = data.hasAllProperties(PropertyName.HUMIDITY) ?
                     HumidityDataOptions.WITH_HUMIDITY_DATA.value() : HumidityDataOptions.WITHOUT_HUMIDITY_DATA.value();
-            this.motion = data.hasProperties(PropertyName.MOTION) ?
+            this.motion = data.hasAllProperties(PropertyName.MOTION) ?
                     MotionDataOptions.WITH_MOTION_DATA.value() : MotionDataOptions.WITHOUT_MOTION_DATA.value();
-            this.velocity = data.hasProperties(PropertyName.VELOCITY) ?
+            this.velocity = data.hasAllProperties(PropertyName.VELOCITY) ?
                     VelocityDataOptions.WITH_VELOCITY_DATA.value() : VelocityDataOptions.WITHOUT_VELOCITY_DATA.value();
-            this.pressure = data.hasProperties(PropertyName.PRESSURE) ?
+            this.pressure = data.hasAllProperties(PropertyName.PRESSURE) ?
                     PressureDataOptions.WITH_PRESSURE_DATA.value() : PressureDataOptions.WITHOUT_PRESSURE_DATA.value();
+            this.battery = data.hasAnyProperties(PropertyName.BATTERY_VOLTS, PropertyName.BATTERY_PERCENTAGE) ?
+                    BatteryDataOptions.WITH_BATTERY_DATA.value() : BatteryDataOptions.WITHOUT_BATTERY_DATA.value();
             return this;
         }
 
@@ -294,6 +310,7 @@ public class RoutingKeys {
             this.motion = (this.motion == null || this.motion.isBlank()) ? ANY : this.motion;
             this.velocity = (this.velocity == null || this.velocity.isBlank()) ? ANY : this.velocity;
             this.pressure = (this.pressure == null || this.pressure.isBlank()) ? ANY : this.pressure;
+            this.battery = (this.battery == null || this.battery.isBlank()) ? ANY : this.battery;
             this.legitimacy = (this.legitimacy == null || this.legitimacy.isBlank()) ? ANY : this.legitimacy;
             return build();
         }
@@ -311,6 +328,7 @@ public class RoutingKeys {
             this.motion = this.motion == null ? consumer.motion : this.motion;
             this.velocity = this.velocity == null ? consumer.velocity : this.velocity;
             this.pressure = this.pressure == null ? consumer.pressure : this.pressure;
+            this.battery = this.battery == null ? consumer.battery : this.battery;
             this.legitimacy = this.legitimacy == null ? consumer.legitimacy : this.legitimacy;
             return build();
         }
@@ -318,7 +336,7 @@ public class RoutingKeys {
         public Optional<RoutingKeys> from(String routingKeys) {
             var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
             var splinted = info.split("\\.");
-            if (splinted.length < 13) {
+            if (splinted.length < 14) {
                 return Optional.empty();
             }
             this.infoType = splinted[1];
@@ -334,6 +352,7 @@ public class RoutingKeys {
             this.motion = splinted[11];
             this.velocity = splinted[12];
             this.pressure = splinted[13];
+            this.battery = splinted[14];
             return build();
         }
 
@@ -357,6 +376,7 @@ public class RoutingKeys {
                     motion,
                     velocity,
                     pressure,
+                    battery,
                     legitimacy);
             return toOptional(routingKeys);
         }
@@ -376,6 +396,7 @@ public class RoutingKeys {
                     routingKeys.motion == null || routingKeys.motion.isBlank() ||
                     routingKeys.velocity == null || routingKeys.velocity.isBlank() ||
                     routingKeys.pressure == null || routingKeys.pressure.isBlank() ||
+                    routingKeys.battery == null || routingKeys.battery.isBlank() ||
                     !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId) ||
                     routingKeys.legitimacy == null || routingKeys.legitimacy.isBlank()) {
                 return Optional.empty();
@@ -393,6 +414,7 @@ public class RoutingKeys {
                         ANY.equals(routingKeys.motion) ||
                         ANY.equals(routingKeys.velocity) ||
                         ANY.equals(routingKeys.pressure) ||
+                        ANY.equals(routingKeys.battery) ||
                         ANY.equals(routingKeys.legitimacy) ||
                         !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+")) {
                     return Optional.empty();
