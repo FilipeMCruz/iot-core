@@ -75,6 +75,16 @@ public enum PropertyName {
         public String path() {
             return "data.pressure.value";
         }
+    },
+    BATTERY_PERCENTAGE {
+        public String path() {
+            return "data.battery.percentage";
+        }
+    },
+    BATTERY_VOLTS {
+        public String path() {
+            return "data.battery.volts";
+        }
     };
 
     public String path() {

@@ -3,6 +3,7 @@ package pt.sharespot.iot.core.sensor.data;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
 public class SensorDataDetailsDTO {
+
     public GPSDataDTO gps;
 
     public TemperatureDataDTO temperature;
@@ -17,6 +18,8 @@ public class SensorDataDetailsDTO {
 
     public PressureDataDTO pressure;
 
+    public BatteryDataDTO battery;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case LATITUDE, LONGITUDE -> gps != null && gps.exists();
@@ -26,8 +29,15 @@ public class SensorDataDetailsDTO {
             case PRESSURE -> pressure != null && pressure.exists();
             case MOTION -> motion != null && motion.exists();
             case AQI -> aqi != null && aqi.exists();
+            case BATTERY_PERCENTAGE -> battery != null && battery.existsPercentage();
+            case BATTERY_VOLTS -> battery != null && battery.existsVolts();
             default -> false;
         };
+    }
+
+    public SensorDataDetailsDTO withBattery(BatteryDataDTO battery) {
+        this.battery = battery;
+        return this;
     }
 
     public SensorDataDetailsDTO withGps(GPSDataDTO gps) {
