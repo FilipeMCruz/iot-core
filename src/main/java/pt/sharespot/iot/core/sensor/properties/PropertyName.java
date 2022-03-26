@@ -73,7 +73,7 @@ public enum PropertyName {
     },
     HUMIDITY {
         public String path() {
-            return "data.humidity.percentage";
+            return "data.humidity.gramspercubicmeter";
         }
     },
     PRESSURE {
