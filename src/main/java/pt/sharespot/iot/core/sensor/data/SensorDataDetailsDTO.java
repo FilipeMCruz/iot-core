@@ -22,6 +22,8 @@ public class SensorDataDetailsDTO {
 
     public SoilMoistureDataDTO moisture;
 
+    public IlluminanceDataDTO illuminance;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case LATITUDE, LONGITUDE -> gps != null && gps.exists();
@@ -34,12 +36,18 @@ public class SensorDataDetailsDTO {
             case BATTERY_PERCENTAGE -> battery != null && battery.existsPercentage();
             case BATTERY_VOLTS -> battery != null && battery.existsVolts();
             case SOIL_MOISTURE -> moisture != null && moisture.exists();
+            case ILLUMINANCE -> illuminance != null && illuminance.exists();
             default -> false;
         };
     }
 
     public SensorDataDetailsDTO withBattery(BatteryDataDTO battery) {
         this.battery = battery;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withIlluminance(IlluminanceDataDTO illuminance) {
+        this.illuminance = illuminance;
         return this;
     }
 

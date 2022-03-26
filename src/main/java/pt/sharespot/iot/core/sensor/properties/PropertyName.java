@@ -90,6 +90,11 @@ public enum PropertyName {
         public String path() {
             return "data.moisture.percentage";
         }
+    },
+    ILLUMINANCE {
+        public String path() {
+            return "data.illuminance.lux";
+        }
     };
 
     public String path() {
