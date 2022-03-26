@@ -26,6 +26,7 @@ public class SensorDataDetailsDTO {
 
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
+            case ALTITUDE -> gps != null && gps.existsAltitude();
             case LATITUDE, LONGITUDE -> gps != null && gps.exists();
             case TEMPERATURE -> temperature != null && temperature.exists();
             case VELOCITY -> velocity != null && velocity.exists();

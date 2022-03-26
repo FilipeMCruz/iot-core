@@ -46,6 +46,11 @@ public enum PropertyName {
             return "data.gps.longitude";
         }
     },
+    ALTITUDE {
+        public String path() {
+            return "data.gps.altitude";
+        }
+    },
     TEMPERATURE {
         public String path() {
             return "data.temp.value";
