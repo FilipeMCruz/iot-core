@@ -88,7 +88,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.#",
                 containerType,
                 version,
                 infoType,
@@ -110,7 +110,7 @@ public class RoutingKeys {
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.data.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.#",
                 containerType,
                 version,
                 InfoTypeOptions.details(infoType),

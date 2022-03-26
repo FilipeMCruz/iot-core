@@ -12,6 +12,6 @@ public class PressureDataDTO implements DataTypeDTO {
 
     @Override
     public boolean exists() {
-        return hPa != null && hPa.isNaN();
+        return hPa != null;
     }
 }

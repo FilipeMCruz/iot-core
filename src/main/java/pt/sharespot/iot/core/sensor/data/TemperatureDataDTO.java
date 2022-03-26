@@ -12,6 +12,6 @@ public class TemperatureDataDTO implements DataTypeDTO {
 
     @Override
     public boolean exists() {
-        return celsius != null && celsius.isNaN();
+        return celsius != null;
     }
 }

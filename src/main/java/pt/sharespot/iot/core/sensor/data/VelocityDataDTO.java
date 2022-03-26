@@ -12,6 +12,6 @@ public class VelocityDataDTO implements DataTypeDTO {
 
     @Override
     public boolean exists() {
-        return kmperh != null && kmperh.isNaN();
+        return kmperh != null;
     }
 }

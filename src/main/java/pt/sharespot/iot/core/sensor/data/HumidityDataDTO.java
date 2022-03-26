@@ -12,6 +12,6 @@ public class HumidityDataDTO implements DataTypeDTO {
 
     @Override
     public boolean exists() {
-        return gramspercubicmeter != null && gramspercubicmeter.isNaN();
+        return gramspercubicmeter != null;
     }
 }

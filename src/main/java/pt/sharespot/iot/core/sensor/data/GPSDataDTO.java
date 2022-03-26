@@ -23,10 +23,10 @@ public class GPSDataDTO implements DataTypeDTO {
 
     @Override
     public boolean exists() {
-        return latitude != null && longitude != null && latitude.isNaN() && longitude.isNaN();
+        return latitude != null && longitude != null;
     }
 
     public boolean existsAltitude() {
-        return altitude != null && altitude.isNaN();
+        return altitude != null;
     }
 }

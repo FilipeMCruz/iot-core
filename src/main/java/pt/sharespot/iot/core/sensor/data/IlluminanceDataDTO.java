@@ -12,6 +12,6 @@ public class IlluminanceDataDTO implements DataTypeDTO {
 
     @Override
     public boolean exists() {
-        return lux != null && lux.isNaN();
+        return lux != null;
     }
 }

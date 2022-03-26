@@ -12,6 +12,6 @@ public class SoilMoistureDataDTO implements DataTypeDTO {
 
     @Override
     public boolean exists() {
-        return percentage != null && percentage.isNaN();
+        return percentage != null;
     }
 }

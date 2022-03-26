@@ -12,6 +12,6 @@ public class AirQualityDataDTO implements DataTypeDTO {
 
     @Override
     public boolean exists() {
-        return eaqi != null && eaqi.isNaN();
+        return eaqi != null;
     }
 }
