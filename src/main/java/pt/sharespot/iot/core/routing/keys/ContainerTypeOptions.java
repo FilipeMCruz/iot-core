@@ -5,10 +5,12 @@ public enum ContainerTypeOptions {
     DATA_PROCESSOR,
     DATA_DECODER,
     DATA_VALIDATOR,
+    DATA_STORE,
     IDENTITY_MANAGEMENT,
     DEVICE_RECORDS,
     FLEET_MANAGEMENT,
-    SMART_IRRIGATION;
+    SMART_IRRIGATION,
+    OTHER;
 
     public String value() {
         return switch (this) {
@@ -16,10 +18,12 @@ public enum ContainerTypeOptions {
             case DATA_GATEWAY -> "gatew";
             case DATA_PROCESSOR -> "proce";
             case DATA_VALIDATOR -> "valid";
+            case DATA_STORE -> "store";
             case DEVICE_RECORDS -> "recor";
             case FLEET_MANAGEMENT -> "fleet";
             case IDENTITY_MANAGEMENT -> "idman";
             case SMART_IRRIGATION -> "irrig";
+            case OTHER -> "other";
         };
     }
 
@@ -32,6 +36,8 @@ public enum ContainerTypeOptions {
             return ContainerTypeOptions.DATA_PROCESSOR.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("valid")) {
             return ContainerTypeOptions.DATA_VALIDATOR.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("store")) {
+            return ContainerTypeOptions.DATA_STORE.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("recor")) {
             return ContainerTypeOptions.DEVICE_RECORDS.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("fleet")) {
@@ -40,6 +46,8 @@ public enum ContainerTypeOptions {
             return ContainerTypeOptions.IDENTITY_MANAGEMENT.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("irrig")) {
             return ContainerTypeOptions.SMART_IRRIGATION.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("other")) {
+            return ContainerTypeOptions.OTHER.toString().toLowerCase();
         } else {
             return "*";
         }
