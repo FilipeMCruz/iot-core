@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package pt.sharespot.iot.core;
+
+option java_package = "pt.sharespot.iot.core.buf";
+option java_multiple_files = true;
+
+// repensar o uso de double para tudo... tentar usar float 
+
+message Message {
+  string oid = 1;
+  string routing_keys = 2;
+  int32  hops = 3;
+  Payload payload = 4;
+}
+
+message Payload {
+  string data_id = 1;
+  int64 reported_at = 2;
+  Device device = 3;
+  Data data = 4;
+}
+
+message Data {
+  GPS gps = 1;
+  Temperature temperature = 2;
+  Motion motion = 3;
+  AirQuality aqi = 4;
+  Velocity velocity = 5;
+  Humidity humidity = 6;
+  Pressure pressure = 7;
+  Battery battery = 8;
+  SoilMoisture moisture = 9;
+  Illuminance illuminance = 10;
+  Alarm alarm = 11;
+}
+
+message GPS {
+  float latitude = 1;
+  float longitude = 2;
+  float altitude = 3;
+}
+
+message Motion {
+  MotionType value = 1;
+}
+
+enum MotionType {
+  UNKNOWN = 0;
+  ACTIVE = 1;
+  INACTIVE = 2;
+}
+
+message Temperature {
+  float celsius = 1;
+}
+
+message AirQuality {
+  float eaqi = 1;
+}
+
+message Velocity {
+  float kmperh = 1;
+}
+
+message Humidity {
+  float gramspercubicmeter = 1;
+}
+
+message Pressure {
+  float hPa = 1;
+}
+
+message Battery {
+  float percentage = 1;
+  float volts = 2;
+}
+
+message SoilMoisture {
+  float percentage = 1;
+}
+
+message Illuminance {
+  float lux = 1;
+}
+
+message Alarm {
+  bool value = 1;
+}
+
+message Device {
+  string id = 1;
+  string name = 2;
+  RecordEntry records = 3;
+  DeviceDomains domains = 4;
+}
+
+message RecordEntry {
+  repeated Entry entries = 1;
+}
+
+message Entry {
+  string label = 1;
+  string content = 2;
+}
+
+message DeviceDomains {
+  repeated string read = 1;
+  repeated string read_write = 2;
+}
