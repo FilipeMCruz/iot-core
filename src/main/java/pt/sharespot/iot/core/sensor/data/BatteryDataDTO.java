@@ -2,26 +2,26 @@ package pt.sharespot.iot.core.sensor.data;
 
 public class BatteryDataDTO implements DataTypeDTO {
 
-    public Double percentage;
-    public Double volts;
+    public Float percentage;
+    public Float volts;
 
-    public BatteryDataDTO andVolts(Double volts) {
+    public BatteryDataDTO andVolts(Float volts) {
         this.volts = volts;
         return this;
     }
 
-    public BatteryDataDTO andPercentage(Double percentage) {
+    public BatteryDataDTO andPercentage(Float percentage) {
         this.percentage = percentage;
         return this;
     }
 
-    public static BatteryDataDTO ofPercentage(Double percentage) {
+    public static BatteryDataDTO ofPercentage(Float percentage) {
         var batteryDataDTO = new BatteryDataDTO();
         batteryDataDTO.percentage = percentage;
         return batteryDataDTO;
     }
 
-    public static BatteryDataDTO ofVolts(Double volts) {
+    public static BatteryDataDTO ofVolts(Float volts) {
         var batteryDataDTO = new BatteryDataDTO();
         batteryDataDTO.volts = volts;
         return batteryDataDTO;

@@ -2,26 +2,24 @@ syntax = "proto3";
 
 package pt.sharespot.iot.core;
 
-option java_package = "pt.sharespot.iot.core.buf";
+option java_package = "pt.sharespot.iot.core.buf.model";
 option java_multiple_files = true;
-
-// repensar o uso de double para tudo... tentar usar float 
 
 message Message {
   string oid = 1;
-  string routing_keys = 2;
+  RoutingKeysBuf routing_keys = 2;
   int32  hops = 3;
-  Payload payload = 4;
-}
-
-message Payload {
-  string data_id = 1;
-  int64 reported_at = 2;
-  Device device = 3;
   Data data = 4;
 }
 
 message Data {
+  string data_id = 1;
+  int64 reported_at = 2;
+  Device device = 3;
+  SensorData sensor_data = 4;
+}
+
+message SensorData {
   GPS gps = 1;
   Temperature temperature = 2;
   Motion motion = 3;
@@ -60,11 +58,11 @@ message AirQuality {
 }
 
 message Velocity {
-  float kmperh = 1;
+  float km_per_hour = 1;
 }
 
 message Humidity {
-  float gramspercubicmeter = 1;
+  float grams_per_cubic_meter = 1;
 }
 
 message Pressure {
@@ -107,4 +105,130 @@ message Entry {
 message DeviceDomains {
   repeated string read = 1;
   repeated string read_write = 2;
+}
+
+message RoutingKeysBuf {
+  string version = 1;
+  ContainerTypeOptionsBuf container_type = 2;
+  InfoTypeOptionsBuf info_type = 3;
+  string sensor_type = 4;
+  string channel = 5;
+  RecordsOptionsBuf records = 6;
+  GPSDataOptionsBuf gps = 7;
+  TemperatureDataOptionsBuf temperature = 8;
+  DataLegitimacyOptionsBuf legitimacy = 9;
+  AirQualityDataOptionsBuf aqi = 10;
+  HumidityDataOptionsBuf humidity = 11;
+  MotionDataOptionsBuf motion = 12;
+  VelocityDataOptionsBuf velocity = 13;
+  PressureDataOptionsBuf pressure = 14;
+  BatteryDataOptionsBuf battery = 15;
+  SoilMoistureDataOptionsBuf moisture = 16;
+  IlluminanceDataOptionsBuf illuminance = 17;
+  DomainOwnershipOptionsBuf ownership = 18;
+  AlarmDataOptionsBuf alarm = 19;
+}
+
+enum AlarmDataOptionsBuf {
+  UNIDENTIFIED_ALARM_DATA = 0;
+  WITH_ALARM_DATA = 1;
+  WITHOUT_ALARM_DATA = 2;
+}
+
+enum DomainOwnershipOptionsBuf {
+  UNIDENTIFIED_DOMAIN_OWNERSHIP = 0;
+  WITH_DOMAIN_OWNERSHIP = 1;
+  WITHOUT_DOMAIN_OWNERSHIP = 2;
+}
+
+enum IlluminanceDataOptionsBuf {
+  UNIDENTIFIED_ILLUMINANCE_DATA = 0;
+  WITH_ILLUMINANCE_DATA = 1;
+  WITHOUT_ILLUMINANCE_DATA = 2;
+}
+
+enum SoilMoistureDataOptionsBuf {
+  UNIDENTIFIED_SOIL_MOISTURE_DATA = 0;
+  WITH_SOIL_MOISTURE_DATA = 1;
+  WITHOUT_SOIL_MOISTURE_DATA = 2;
+}
+
+enum BatteryDataOptionsBuf {
+  UNIDENTIFIED_BATTERY_DATA = 0;
+  WITH_BATTERY_DATA = 1;
+  WITHOUT_BATTERY_DATA = 2;
+}
+
+enum PressureDataOptionsBuf {
+  UNIDENTIFIED_PRESSURE_DATA = 0;
+  WITH_PRESSURE_DATA = 1;
+  WITHOUT_PRESSURE_DATA = 2;
+}
+
+enum VelocityDataOptionsBuf {
+  UNIDENTIFIED_VELOCITY_DATA = 0;
+  WITH_VELOCITY_DATA = 1;
+  WITHOUT_VELOCITY_DATA = 2;
+}
+
+enum MotionDataOptionsBuf {
+  UNIDENTIFIED_MOTION_DATA = 0;
+  WITH_MOTION_DATA = 1;
+  WITHOUT_MOTION_DATA = 2;
+}
+
+enum HumidityDataOptionsBuf {
+  UNIDENTIFIED_HUMIDITY_DATA = 0;
+  WITH_HUMIDITY_DATA = 1;
+  WITHOUT_HUMIDITY_DATA = 2;
+}
+
+enum AirQualityDataOptionsBuf {
+  UNIDENTIFIED_AQI_DATA = 0;
+  WITH_AQI_DATA = 1;
+  WITHOUT_AQI_DATA = 2;
+}
+
+enum DataLegitimacyOptionsBuf {
+  UNKNOWN_LEGITIMACY = 0;
+  CORRECT_LEGITIMACY = 1;
+  INCORRECT_LEGITIMACY = 2;
+  UNDETERMINED_LEGITIMACY = 3;
+}
+
+enum TemperatureDataOptionsBuf {
+  UNIDENTIFIED_TEMPERATURE_DATA = 0;
+  WITH_TEMPERATURE_DATA = 1;
+  WITHOUT_TEMPERATURE_DATA = 2;
+}
+
+enum GPSDataOptionsBuf {
+  UNIDENTIFIED_GPS_DATA = 0;
+  WITH_GPS_DATA = 1;
+  WITHOUT_GPS_DATA = 2;
+}
+
+enum RecordsOptionsBuf {
+  UNIDENTIFIED_RECORDS = 0;
+  WITH_RECORDS = 1;
+  WITHOUT_RECORDS = 2;
+}
+
+enum InfoTypeOptionsBuf {
+  ENCODED = 0;
+  DECODED = 1;
+  PROCESSED = 2;
+}
+
+enum ContainerTypeOptionsBuf {
+  OTHER = 0;
+  DATA_GATEWAY = 1;
+  DATA_PROCESSOR = 2;
+  DATA_DECODER = 3;
+  DATA_VALIDATOR = 4;
+  DATA_STORE = 5;
+  IDENTITY_MANAGEMENT = 6;
+  DEVICE_RECORDS = 7;
+  FLEET_MANAGEMENT = 8;
+  SMART_IRRIGATION = 9;
 }

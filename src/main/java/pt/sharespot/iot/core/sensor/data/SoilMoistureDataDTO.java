@@ -2,9 +2,9 @@ package pt.sharespot.iot.core.sensor.data;
 
 public class SoilMoistureDataDTO implements DataTypeDTO {
 
-    public Double percentage;
+    public Float percentage;
 
-    public static SoilMoistureDataDTO of(Double percentage) {
+    public static SoilMoistureDataDTO of(Float percentage) {
         var dataDTO = new SoilMoistureDataDTO();
         dataDTO.percentage = percentage;
         return dataDTO;

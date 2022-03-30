@@ -43,7 +43,7 @@ public class RoutingKeys {
 
     public RoutingKeyOption<IlluminanceDataOptions> illuminance;
 
-    public RoutingKeyOption<PermissionsOptions> permissions;
+    public RoutingKeyOption<DomainOwnershipOptions> ownership;
 
     public RoutingKeyOption<AlarmDataOptions> alarm;
 
@@ -52,7 +52,7 @@ public class RoutingKeys {
                        RoutingKeyOption<InfoTypeOptions> infoType,
                        String sensorTypeId,
                        String channel,
-                       RoutingKeyOption<PermissionsOptions> permissions,
+                       RoutingKeyOption<DomainOwnershipOptions> ownership,
                        RoutingKeyOption<RecordsOptions> records,
                        RoutingKeyOption<GPSDataOptions> gps,
                        RoutingKeyOption<TemperatureDataOptions> temperature,
@@ -70,7 +70,7 @@ public class RoutingKeys {
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
         this.channel = channel;
-        this.permissions = permissions;
+        this.ownership = ownership;
         this.records = records;
         this.gps = gps;
         this.temperature = temperature;
@@ -98,7 +98,7 @@ public class RoutingKeys {
                 infoType.value(),
                 sensorTypeId,
                 channel,
-                permissions.value(),
+                ownership.value(),
                 records.value(),
                 legitimacy.value(),
                 gps.value(),
@@ -121,7 +121,7 @@ public class RoutingKeys {
                 infoType.details(),
                 sensorTypeId,
                 channel,
-                permissions.details(),
+                ownership.details(),
                 records.details(),
                 legitimacy.details(),
                 gps.details(),
@@ -157,7 +157,7 @@ public class RoutingKeys {
 
         private String channel;
 
-        private RoutingKeyOption<PermissionsOptions> permissions;
+        private RoutingKeyOption<DomainOwnershipOptions> ownership;
 
         private RoutingKeyOption<RecordsOptions> records;
 
@@ -218,8 +218,8 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withPermissions(PermissionsOptions permissions) {
-            this.permissions = RoutingKeyOption.of(permissions);
+        public RoutingKeysBuilder withOnwership(DomainOwnershipOptions ownership) {
+            this.ownership = RoutingKeyOption.of(ownership);
             return this;
         }
 
@@ -295,7 +295,7 @@ public class RoutingKeys {
             this.moisture = RoutingKeyOption.of(SoilMoistureDataOptions.UNIDENTIFIED_SOIL_MOISTURE_DATA);
             this.illuminance = RoutingKeyOption.of(IlluminanceDataOptions.UNIDENTIFIED_ILLUMINANCE_DATA);
             this.legitimacy = RoutingKeyOption.of(DataLegitimacyOptions.UNKNOWN);
-            this.permissions = RoutingKeyOption.of(PermissionsOptions.UNIDENTIFIED_PERMISSIONS);
+            this.ownership = RoutingKeyOption.of(DomainOwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP);
             this.alarm = RoutingKeyOption.of(AlarmDataOptions.UNIDENTIFIED_ALARM_DATA);
             return this;
         }
@@ -333,7 +333,7 @@ public class RoutingKeys {
             this.sensorTypeId = (this.sensorTypeId == null || this.sensorTypeId.isBlank()) ? ANY : this.sensorTypeId;
             this.channel = (this.channel == null || this.channel.isBlank()) ? ANY : this.channel;
             this.records = this.records == null ? RoutingKeyOption.any() : this.records;
-            this.permissions = this.permissions == null ? RoutingKeyOption.any() : this.permissions;
+            this.ownership = this.ownership == null ? RoutingKeyOption.any() : this.ownership;
             this.gps = this.gps == null ? RoutingKeyOption.any() : this.gps;
             this.temperature = this.temperature == null ? RoutingKeyOption.any() : this.temperature;
             this.aqi = this.aqi == null ? RoutingKeyOption.any() : this.aqi;
@@ -354,7 +354,7 @@ public class RoutingKeys {
             this.sensorTypeId = this.sensorTypeId == null ? consumer.sensorTypeId : this.sensorTypeId;
             this.channel = this.channel == null ? consumer.channel : this.channel;
             this.records = this.records == null ? consumer.records : this.records;
-            this.permissions = this.permissions == null ? consumer.permissions : this.permissions;
+            this.ownership = this.ownership == null ? consumer.ownership : this.ownership;
             this.gps = this.gps == null ? consumer.gps : this.gps;
             this.temperature = this.temperature == null ? consumer.temperature : this.temperature;
             this.aqi = this.aqi == null ? consumer.aqi : this.aqi;
@@ -379,7 +379,7 @@ public class RoutingKeys {
             this.infoType = InfoTypeOptions.extract(splinted[1]);
             this.sensorTypeId = splinted[2];
             this.channel = splinted[3];
-            this.permissions = PermissionsOptions.extract(splinted[4]);
+            this.ownership = DomainOwnershipOptions.extract(splinted[4]);
             this.records = RecordsOptions.extract(splinted[5]);
             this.legitimacy = DataLegitimacyOptions.extract(splinted[6]);
             this.gps = GPSDataOptions.extract(splinted[7]);
@@ -405,7 +405,7 @@ public class RoutingKeys {
                     infoType,
                     sensorTypeId,
                     channel,
-                    permissions,
+                    ownership,
                     records,
                     gps,
                     temperature,
@@ -427,7 +427,7 @@ public class RoutingKeys {
                     routingKeys.infoType == null ||
                     routingKeys.sensorTypeId == null || routingKeys.sensorTypeId.isBlank() ||
                     routingKeys.channel == null || routingKeys.channel.isBlank() ||
-                    routingKeys.permissions == null ||
+                    routingKeys.ownership == null ||
                     routingKeys.records == null ||
                     routingKeys.gps == null ||
                     routingKeys.temperature == null ||
@@ -449,7 +449,7 @@ public class RoutingKeys {
                         routingKeys.infoType.isAny() ||
                         ANY.equals(routingKeys.sensorTypeId) ||
                         ANY.equals(routingKeys.channel) ||
-                        routingKeys.permissions.isAny() ||
+                        routingKeys.ownership.isAny() ||
                         routingKeys.records.isAny() ||
                         routingKeys.gps.isAny() ||
                         routingKeys.temperature.isAny() ||

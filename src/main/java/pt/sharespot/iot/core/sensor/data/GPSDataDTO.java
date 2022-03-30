@@ -2,18 +2,18 @@ package pt.sharespot.iot.core.sensor.data;
 
 public class GPSDataDTO implements DataTypeDTO {
 
-    public Double latitude;
-    public Double longitude;
-    public Double altitude;
+    public Float latitude;
+    public Float longitude;
+    public Float altitude;
 
-    public static GPSDataDTO ofLatLong(Double latitude, Double longitude) {
+    public static GPSDataDTO ofLatLong(Float latitude, Float longitude) {
         var gpsDataDTO = new GPSDataDTO();
         gpsDataDTO.latitude = latitude;
         gpsDataDTO.longitude = longitude;
         return gpsDataDTO;
     }
 
-    public static GPSDataDTO ofLatLongAlt(Double latitude, Double longitude, Double altitude) {
+    public static GPSDataDTO ofLatLongAlt(Float latitude, Float longitude, Float altitude) {
         var gpsDataDTO = new GPSDataDTO();
         gpsDataDTO.latitude = latitude;
         gpsDataDTO.longitude = longitude;

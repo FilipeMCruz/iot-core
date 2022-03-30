@@ -2,9 +2,9 @@ package pt.sharespot.iot.core.sensor.data;
 
 public class HumidityDataDTO implements DataTypeDTO {
 
-    public Double gramspercubicmeter;
+    public Float gramspercubicmeter;
 
-    public static HumidityDataDTO of(Double humidity) {
+    public static HumidityDataDTO of(Float humidity) {
         var dataDTO = new HumidityDataDTO();
         dataDTO.gramspercubicmeter = humidity;
         return dataDTO;

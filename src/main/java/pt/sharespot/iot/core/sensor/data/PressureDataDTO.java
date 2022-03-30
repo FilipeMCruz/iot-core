@@ -2,9 +2,9 @@ package pt.sharespot.iot.core.sensor.data;
 
 public class PressureDataDTO implements DataTypeDTO {
 
-    public Double hPa;
+    public Float hPa;
 
-    public static PressureDataDTO of(Double pressure) {
+    public static PressureDataDTO of(Float pressure) {
         var dataDTO = new PressureDataDTO();
         dataDTO.hPa = pressure;
         return dataDTO;
