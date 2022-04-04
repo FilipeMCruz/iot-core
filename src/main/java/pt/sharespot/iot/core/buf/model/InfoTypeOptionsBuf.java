@@ -113,7 +113,7 @@ public enum InfoTypeOptionsBuf
 
   private final int value;
 
-  InfoTypeOptionsBuf(int value) {
+  private InfoTypeOptionsBuf(int value) {
     this.value = value;
   }
 

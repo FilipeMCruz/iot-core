@@ -113,7 +113,7 @@ public enum DomainOwnershipOptionsBuf
 
   private final int value;
 
-  DomainOwnershipOptionsBuf(int value) {
+  private DomainOwnershipOptionsBuf(int value) {
     this.value = value;
   }
 

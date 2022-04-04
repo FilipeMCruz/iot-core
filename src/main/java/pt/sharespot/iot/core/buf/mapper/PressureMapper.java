@@ -9,4 +9,8 @@ public class PressureMapper {
         return Pressure.newBuilder()
                 .setHPa(dto.hPa);
     }
+
+    public static PressureDataDTO toModel(Pressure buf) {
+        return PressureDataDTO.of(buf.getHPa());
+    }
 }

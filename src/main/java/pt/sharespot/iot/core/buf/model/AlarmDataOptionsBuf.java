@@ -113,7 +113,7 @@ public enum AlarmDataOptionsBuf
 
   private final int value;
 
-  AlarmDataOptionsBuf(int value) {
+  private AlarmDataOptionsBuf(int value) {
     this.value = value;
   }
 

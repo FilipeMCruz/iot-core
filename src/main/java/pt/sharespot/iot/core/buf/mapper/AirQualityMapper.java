@@ -9,4 +9,8 @@ public class AirQualityMapper {
         return AirQuality.newBuilder()
                 .setEaqi(dto.eaqi);
     }
+
+    public static AirQualityDataDTO toModel(AirQuality buf) {
+        return AirQualityDataDTO.of(buf.getEaqi());
+    }
 }

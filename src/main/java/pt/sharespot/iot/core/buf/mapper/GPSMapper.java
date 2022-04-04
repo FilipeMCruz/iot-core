@@ -11,4 +11,8 @@ public class GPSMapper {
                 .setLatitude(dto.latitude)
                 .setLongitude(dto.longitude);
     }
+
+    public static GPSDataDTO toModel(GPS buf) {
+        return GPSDataDTO.ofLatLongAlt(buf.getLatitude(), buf.getLongitude(), buf.getAltitude());
+    }
 }

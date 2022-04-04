@@ -113,7 +113,7 @@ public enum MotionType
 
   private final int value;
 
-  MotionType(int value) {
+  private MotionType(int value) {
     this.value = value;
   }
 

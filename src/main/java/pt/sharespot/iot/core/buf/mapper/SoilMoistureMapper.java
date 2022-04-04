@@ -9,4 +9,8 @@ public class SoilMoistureMapper {
         return SoilMoisture.newBuilder()
                 .setPercentage(dto.percentage);
     }
+
+    public static SoilMoistureDataDTO toModel(SoilMoisture buf) {
+        return SoilMoistureDataDTO.of(buf.getPercentage());
+    }
 }

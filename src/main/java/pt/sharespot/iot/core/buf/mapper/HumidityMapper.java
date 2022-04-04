@@ -9,4 +9,8 @@ public class HumidityMapper {
         return Humidity.newBuilder()
                 .setGramsPerCubicMeter(dto.gramspercubicmeter);
     }
+
+    public static HumidityDataDTO toModel(Humidity buf) {
+        return HumidityDataDTO.of(buf.getGramsPerCubicMeter());
+    }
 }

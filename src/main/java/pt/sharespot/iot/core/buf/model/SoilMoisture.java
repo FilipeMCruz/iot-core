@@ -144,7 +144,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getPercentage())
         != java.lang.Float.floatToIntBits(
             other.getPercentage())) return false;
-    return unknownFields.equals(other.unknownFields);
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override

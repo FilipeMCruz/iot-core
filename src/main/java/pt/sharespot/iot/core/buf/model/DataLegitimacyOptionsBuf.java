@@ -122,7 +122,7 @@ public enum DataLegitimacyOptionsBuf
 
   private final int value;
 
-  DataLegitimacyOptionsBuf(int value) {
+  private DataLegitimacyOptionsBuf(int value) {
     this.value = value;
   }
 

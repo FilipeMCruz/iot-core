@@ -9,4 +9,8 @@ public class IlluminanceMapper {
         return Illuminance.newBuilder()
                 .setLux(dto.lux);
     }
+
+    public static IlluminanceDataDTO toModel(Illuminance buf) {
+        return IlluminanceDataDTO.of(buf.getLux());
+    }
 }

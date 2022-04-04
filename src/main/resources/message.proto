@@ -5,6 +5,13 @@ package pt.sharespot.iot.core;
 option java_package = "pt.sharespot.iot.core.buf.model";
 option java_multiple_files = true;
 
+message UnprocessedMessage {
+  string oid = 1;
+  RoutingKeysBuf routing_keys = 2;
+  int32  hops = 3;
+  string unprocessed_data = 4;
+}
+
 message Message {
   string oid = 1;
   RoutingKeysBuf routing_keys = 2;

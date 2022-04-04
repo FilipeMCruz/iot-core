@@ -9,4 +9,8 @@ public class VelocityMapper {
         return Velocity.newBuilder()
                 .setKmPerHour(dto.kmperh);
     }
+
+    public static VelocityDataDTO toModel(Velocity buf) {
+        return VelocityDataDTO.of(buf.getKmPerHour());
+    }
 }

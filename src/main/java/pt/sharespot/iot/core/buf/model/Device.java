@@ -326,7 +326,8 @@ private static final long serialVersionUID = 0L;
       if (!getDomains()
           .equals(other.getDomains())) return false;
     }
-    return unknownFields.equals(other.unknownFields);
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override

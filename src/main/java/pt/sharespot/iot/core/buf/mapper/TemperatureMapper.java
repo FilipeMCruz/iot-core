@@ -9,4 +9,8 @@ public class TemperatureMapper {
         return Temperature.newBuilder()
                 .setCelsius(dto.celsius);
     }
+
+    public static TemperatureDataDTO toModel(Temperature buf) {
+        return TemperatureDataDTO.of(buf.getCelsius());
+    }
 }

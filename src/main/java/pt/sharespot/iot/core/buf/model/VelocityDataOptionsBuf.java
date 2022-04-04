@@ -113,7 +113,7 @@ public enum VelocityDataOptionsBuf
 
   private final int value;
 
-  VelocityDataOptionsBuf(int value) {
+  private VelocityDataOptionsBuf(int value) {
     this.value = value;
   }
 

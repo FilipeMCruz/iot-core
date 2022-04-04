@@ -113,7 +113,7 @@ public enum HumidityDataOptionsBuf
 
   private final int value;
 
-  HumidityDataOptionsBuf(int value) {
+  private HumidityDataOptionsBuf(int value) {
     this.value = value;
   }
 

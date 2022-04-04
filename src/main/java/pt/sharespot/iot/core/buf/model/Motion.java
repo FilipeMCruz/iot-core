@@ -152,7 +152,8 @@ private static final long serialVersionUID = 0L;
     pt.sharespot.iot.core.buf.model.Motion other = (pt.sharespot.iot.core.buf.model.Motion) obj;
 
     if (value_ != other.value_) return false;
-    return unknownFields.equals(other.unknownFields);
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override

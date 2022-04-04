@@ -113,7 +113,7 @@ public enum TemperatureDataOptionsBuf
 
   private final int value;
 
-  TemperatureDataOptionsBuf(int value) {
+  private TemperatureDataOptionsBuf(int value) {
     this.value = value;
   }
 

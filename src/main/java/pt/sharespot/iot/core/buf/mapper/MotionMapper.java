@@ -16,4 +16,14 @@ public class MotionMapper {
         return Motion.newBuilder()
                 .setValue(type);
     }
+
+    public static MotionDataDTO toModel(Motion dto) {
+        var type = switch (dto.getValue()) {
+            case ACTIVE -> "ACTIVE";
+            case INACTIVE -> "INACTIVE";
+            default -> "UNKNOWN";
+        };
+
+        return MotionDataDTO.of(type);
+    }
 }

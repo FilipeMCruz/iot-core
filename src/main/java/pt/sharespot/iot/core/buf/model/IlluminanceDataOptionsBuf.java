@@ -113,7 +113,7 @@ public enum IlluminanceDataOptionsBuf
 
   private final int value;
 
-  IlluminanceDataOptionsBuf(int value) {
+  private IlluminanceDataOptionsBuf(int value) {
     this.value = value;
   }
 

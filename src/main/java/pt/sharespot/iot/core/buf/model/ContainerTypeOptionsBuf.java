@@ -176,7 +176,7 @@ public enum ContainerTypeOptionsBuf
 
   private final int value;
 
-  ContainerTypeOptionsBuf(int value) {
+  private ContainerTypeOptionsBuf(int value) {
     this.value = value;
   }
 

@@ -4,26 +4,27 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf type {@code pt.sharespot.iot.core.Message}
+ * Protobuf type {@code pt.sharespot.iot.core.UnprocessedMessage}
  */
-public final class Message extends
+public final class UnprocessedMessage extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pt.sharespot.iot.core.Message)
-    MessageOrBuilder {
+    // @@protoc_insertion_point(message_implements:pt.sharespot.iot.core.UnprocessedMessage)
+    UnprocessedMessageOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use Message.newBuilder() to construct.
-  private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UnprocessedMessage.newBuilder() to construct.
+  private UnprocessedMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Message() {
+  private UnprocessedMessage() {
     oid_ = "";
+    unprocessedData_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new Message();
+    return new UnprocessedMessage();
   }
 
   @java.lang.Override
@@ -31,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Message(
+  private UnprocessedMessage(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -74,16 +75,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            pt.sharespot.iot.core.buf.model.Data.Builder subBuilder = null;
-            if (data_ != null) {
-              subBuilder = data_.toBuilder();
-            }
-            data_ = input.readMessage(pt.sharespot.iot.core.buf.model.Data.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(data_);
-              data_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            unprocessedData_ = s;
             break;
           }
           default: {
@@ -107,15 +101,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Message_descriptor;
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_UnprocessedMessage_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Message_fieldAccessorTable
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_UnprocessedMessage_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            pt.sharespot.iot.core.buf.model.Message.class, pt.sharespot.iot.core.buf.model.Message.Builder.class);
+            pt.sharespot.iot.core.buf.model.UnprocessedMessage.class, pt.sharespot.iot.core.buf.model.UnprocessedMessage.Builder.class);
   }
 
   public static final int OID_FIELD_NUMBER = 1;
@@ -193,30 +187,42 @@ private static final long serialVersionUID = 0L;
     return hops_;
   }
 
-  public static final int DATA_FIELD_NUMBER = 4;
-  private pt.sharespot.iot.core.buf.model.Data data_;
+  public static final int UNPROCESSED_DATA_FIELD_NUMBER = 4;
+  private volatile java.lang.Object unprocessedData_;
   /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
-   * @return Whether the data field is set.
+   * <code>string unprocessed_data = 4;</code>
+   * @return The unprocessedData.
    */
   @java.lang.Override
-  public boolean hasData() {
-    return data_ != null;
+  public java.lang.String getUnprocessedData() {
+    java.lang.Object ref = unprocessedData_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      unprocessedData_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
-   * @return The data.
+   * <code>string unprocessed_data = 4;</code>
+   * @return The bytes for unprocessedData.
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.Data getData() {
-    return data_ == null ? pt.sharespot.iot.core.buf.model.Data.getDefaultInstance() : data_;
-  }
-  /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
-   */
-  @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.DataOrBuilder getDataOrBuilder() {
-    return getData();
+  public com.google.protobuf.ByteString
+      getUnprocessedDataBytes() {
+    java.lang.Object ref = unprocessedData_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      unprocessedData_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -242,8 +248,8 @@ private static final long serialVersionUID = 0L;
     if (hops_ != 0) {
       output.writeInt32(3, hops_);
     }
-    if (data_ != null) {
-      output.writeMessage(4, getData());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unprocessedData_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, unprocessedData_);
     }
     unknownFields.writeTo(output);
   }
@@ -265,9 +271,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, hops_);
     }
-    if (data_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getData());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unprocessedData_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, unprocessedData_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -279,10 +284,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof pt.sharespot.iot.core.buf.model.Message)) {
+    if (!(obj instanceof pt.sharespot.iot.core.buf.model.UnprocessedMessage)) {
       return super.equals(obj);
     }
-    pt.sharespot.iot.core.buf.model.Message other = (pt.sharespot.iot.core.buf.model.Message) obj;
+    pt.sharespot.iot.core.buf.model.UnprocessedMessage other = (pt.sharespot.iot.core.buf.model.UnprocessedMessage) obj;
 
     if (!getOid()
         .equals(other.getOid())) return false;
@@ -293,11 +298,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getHops()
         != other.getHops()) return false;
-    if (hasData() != other.hasData()) return false;
-    if (hasData()) {
-      if (!getData()
-          .equals(other.getData())) return false;
-    }
+    if (!getUnprocessedData()
+        .equals(other.getUnprocessedData())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -317,78 +319,76 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + HOPS_FIELD_NUMBER;
     hash = (53 * hash) + getHops();
-    if (hasData()) {
-      hash = (37 * hash) + DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getData().hashCode();
-    }
+    hash = (37 * hash) + UNPROCESSED_DATA_FIELD_NUMBER;
+    hash = (53 * hash) + getUnprocessedData().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(byte[] data)
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(java.io.InputStream input)
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseDelimitedFrom(java.io.InputStream input)
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseDelimitedFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Message parseFrom(
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -401,7 +401,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(pt.sharespot.iot.core.buf.model.Message prototype) {
+  public static Builder newBuilder(pt.sharespot.iot.core.buf.model.UnprocessedMessage prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -417,26 +417,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pt.sharespot.iot.core.Message}
+   * Protobuf type {@code pt.sharespot.iot.core.UnprocessedMessage}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pt.sharespot.iot.core.Message)
-      pt.sharespot.iot.core.buf.model.MessageOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pt.sharespot.iot.core.UnprocessedMessage)
+      pt.sharespot.iot.core.buf.model.UnprocessedMessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Message_descriptor;
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_UnprocessedMessage_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Message_fieldAccessorTable
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_UnprocessedMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pt.sharespot.iot.core.buf.model.Message.class, pt.sharespot.iot.core.buf.model.Message.Builder.class);
+              pt.sharespot.iot.core.buf.model.UnprocessedMessage.class, pt.sharespot.iot.core.buf.model.UnprocessedMessage.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.buf.model.Message.newBuilder()
+    // Construct using pt.sharespot.iot.core.buf.model.UnprocessedMessage.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -464,29 +464,25 @@ private static final long serialVersionUID = 0L;
       }
       hops_ = 0;
 
-      if (dataBuilder_ == null) {
-        data_ = null;
-      } else {
-        data_ = null;
-        dataBuilder_ = null;
-      }
+      unprocessedData_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Message_descriptor;
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_UnprocessedMessage_descriptor;
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Message getDefaultInstanceForType() {
-      return pt.sharespot.iot.core.buf.model.Message.getDefaultInstance();
+    public pt.sharespot.iot.core.buf.model.UnprocessedMessage getDefaultInstanceForType() {
+      return pt.sharespot.iot.core.buf.model.UnprocessedMessage.getDefaultInstance();
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Message build() {
-      pt.sharespot.iot.core.buf.model.Message result = buildPartial();
+    public pt.sharespot.iot.core.buf.model.UnprocessedMessage build() {
+      pt.sharespot.iot.core.buf.model.UnprocessedMessage result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -494,8 +490,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Message buildPartial() {
-      pt.sharespot.iot.core.buf.model.Message result = new pt.sharespot.iot.core.buf.model.Message(this);
+    public pt.sharespot.iot.core.buf.model.UnprocessedMessage buildPartial() {
+      pt.sharespot.iot.core.buf.model.UnprocessedMessage result = new pt.sharespot.iot.core.buf.model.UnprocessedMessage(this);
       result.oid_ = oid_;
       if (routingKeysBuilder_ == null) {
         result.routingKeys_ = routingKeys_;
@@ -503,11 +499,7 @@ private static final long serialVersionUID = 0L;
         result.routingKeys_ = routingKeysBuilder_.build();
       }
       result.hops_ = hops_;
-      if (dataBuilder_ == null) {
-        result.data_ = data_;
-      } else {
-        result.data_ = dataBuilder_.build();
-      }
+      result.unprocessedData_ = unprocessedData_;
       onBuilt();
       return result;
     }
@@ -546,16 +538,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof pt.sharespot.iot.core.buf.model.Message) {
-        return mergeFrom((pt.sharespot.iot.core.buf.model.Message)other);
+      if (other instanceof pt.sharespot.iot.core.buf.model.UnprocessedMessage) {
+        return mergeFrom((pt.sharespot.iot.core.buf.model.UnprocessedMessage)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Message other) {
-      if (other == pt.sharespot.iot.core.buf.model.Message.getDefaultInstance()) return this;
+    public Builder mergeFrom(pt.sharespot.iot.core.buf.model.UnprocessedMessage other) {
+      if (other == pt.sharespot.iot.core.buf.model.UnprocessedMessage.getDefaultInstance()) return this;
       if (!other.getOid().isEmpty()) {
         oid_ = other.oid_;
         onChanged();
@@ -566,8 +558,9 @@ private static final long serialVersionUID = 0L;
       if (other.getHops() != 0) {
         setHops(other.getHops());
       }
-      if (other.hasData()) {
-        mergeData(other.getData());
+      if (!other.getUnprocessedData().isEmpty()) {
+        unprocessedData_ = other.unprocessedData_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -584,11 +577,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      pt.sharespot.iot.core.buf.model.Message parsedMessage = null;
+      pt.sharespot.iot.core.buf.model.UnprocessedMessage parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (pt.sharespot.iot.core.buf.model.Message) e.getUnfinishedMessage();
+        parsedMessage = (pt.sharespot.iot.core.buf.model.UnprocessedMessage) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -824,123 +817,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private pt.sharespot.iot.core.buf.model.Data data_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.Data, pt.sharespot.iot.core.buf.model.Data.Builder, pt.sharespot.iot.core.buf.model.DataOrBuilder> dataBuilder_;
+    private java.lang.Object unprocessedData_ = "";
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
-     * @return Whether the data field is set.
+     * <code>string unprocessed_data = 4;</code>
+     * @return The unprocessedData.
      */
-    public boolean hasData() {
-      return dataBuilder_ != null || data_ != null;
-    }
-    /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
-     * @return The data.
-     */
-    public pt.sharespot.iot.core.buf.model.Data getData() {
-      if (dataBuilder_ == null) {
-        return data_ == null ? pt.sharespot.iot.core.buf.model.Data.getDefaultInstance() : data_;
+    public java.lang.String getUnprocessedData() {
+      java.lang.Object ref = unprocessedData_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unprocessedData_ = s;
+        return s;
       } else {
-        return dataBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>string unprocessed_data = 4;</code>
+     * @return The bytes for unprocessedData.
      */
-    public Builder setData(pt.sharespot.iot.core.buf.model.Data value) {
-      if (dataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        data_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getUnprocessedDataBytes() {
+      java.lang.Object ref = unprocessedData_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unprocessedData_ = b;
+        return b;
       } else {
-        dataBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>string unprocessed_data = 4;</code>
+     * @param value The unprocessedData to set.
+     * @return This builder for chaining.
      */
-    public Builder setData(
-        pt.sharespot.iot.core.buf.model.Data.Builder builderForValue) {
-      if (dataBuilder_ == null) {
-        data_ = builderForValue.build();
-        onChanged();
-      } else {
-        dataBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
-     */
-    public Builder mergeData(pt.sharespot.iot.core.buf.model.Data value) {
-      if (dataBuilder_ == null) {
-        if (data_ != null) {
-          data_ =
-            pt.sharespot.iot.core.buf.model.Data.newBuilder(data_).mergeFrom(value).buildPartial();
-        } else {
-          data_ = value;
-        }
-        onChanged();
-      } else {
-        dataBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
-     */
-    public Builder clearData() {
-      if (dataBuilder_ == null) {
-        data_ = null;
-        onChanged();
-      } else {
-        data_ = null;
-        dataBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
-     */
-    public pt.sharespot.iot.core.buf.model.Data.Builder getDataBuilder() {
-      
+    public Builder setUnprocessedData(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      unprocessedData_ = value;
       onChanged();
-      return getDataFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>string unprocessed_data = 4;</code>
+     * @return This builder for chaining.
      */
-    public pt.sharespot.iot.core.buf.model.DataOrBuilder getDataOrBuilder() {
-      if (dataBuilder_ != null) {
-        return dataBuilder_.getMessageOrBuilder();
-      } else {
-        return data_ == null ?
-            pt.sharespot.iot.core.buf.model.Data.getDefaultInstance() : data_;
-      }
+    public Builder clearUnprocessedData() {
+      
+      unprocessedData_ = getDefaultInstance().getUnprocessedData();
+      onChanged();
+      return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>string unprocessed_data = 4;</code>
+     * @param value The bytes for unprocessedData to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.Data, pt.sharespot.iot.core.buf.model.Data.Builder, pt.sharespot.iot.core.buf.model.DataOrBuilder> 
-        getDataFieldBuilder() {
-      if (dataBuilder_ == null) {
-        dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            pt.sharespot.iot.core.buf.model.Data, pt.sharespot.iot.core.buf.model.Data.Builder, pt.sharespot.iot.core.buf.model.DataOrBuilder>(
-                getData(),
-                getParentForChildren(),
-                isClean());
-        data_ = null;
-      }
-      return dataBuilder_;
+    public Builder setUnprocessedDataBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      unprocessedData_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -955,41 +905,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pt.sharespot.iot.core.Message)
+    // @@protoc_insertion_point(builder_scope:pt.sharespot.iot.core.UnprocessedMessage)
   }
 
-  // @@protoc_insertion_point(class_scope:pt.sharespot.iot.core.Message)
-  private static final pt.sharespot.iot.core.buf.model.Message DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pt.sharespot.iot.core.UnprocessedMessage)
+  private static final pt.sharespot.iot.core.buf.model.UnprocessedMessage DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new pt.sharespot.iot.core.buf.model.Message();
+    DEFAULT_INSTANCE = new pt.sharespot.iot.core.buf.model.UnprocessedMessage();
   }
 
-  public static pt.sharespot.iot.core.buf.model.Message getDefaultInstance() {
+  public static pt.sharespot.iot.core.buf.model.UnprocessedMessage getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Message>
-      PARSER = new com.google.protobuf.AbstractParser<Message>() {
+  private static final com.google.protobuf.Parser<UnprocessedMessage>
+      PARSER = new com.google.protobuf.AbstractParser<UnprocessedMessage>() {
     @java.lang.Override
-    public Message parsePartialFrom(
+    public UnprocessedMessage parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Message(input, extensionRegistry);
+      return new UnprocessedMessage(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<Message> parser() {
+  public static com.google.protobuf.Parser<UnprocessedMessage> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Message> getParserForType() {
+  public com.google.protobuf.Parser<UnprocessedMessage> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.Message getDefaultInstanceForType() {
+  public pt.sharespot.iot.core.buf.model.UnprocessedMessage getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

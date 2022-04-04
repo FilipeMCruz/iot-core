@@ -113,7 +113,7 @@ public enum SoilMoistureDataOptionsBuf
 
   private final int value;
 
-  SoilMoistureDataOptionsBuf(int value) {
+  private SoilMoistureDataOptionsBuf(int value) {
     this.value = value;
   }
 

@@ -821,7 +821,8 @@ private static final long serialVersionUID = 0L;
     if (illuminance_ != other.illuminance_) return false;
     if (ownership_ != other.ownership_) return false;
     if (alarm_ != other.alarm_) return false;
-    return unknownFields.equals(other.unknownFields);
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override

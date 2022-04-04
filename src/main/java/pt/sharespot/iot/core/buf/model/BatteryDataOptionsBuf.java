@@ -113,7 +113,7 @@ public enum BatteryDataOptionsBuf
 
   private final int value;
 
-  BatteryDataOptionsBuf(int value) {
+  private BatteryDataOptionsBuf(int value) {
     this.value = value;
   }
 

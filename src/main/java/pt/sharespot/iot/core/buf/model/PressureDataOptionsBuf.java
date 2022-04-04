@@ -113,7 +113,7 @@ public enum PressureDataOptionsBuf
 
   private final int value;
 
-  PressureDataOptionsBuf(int value) {
+  private PressureDataOptionsBuf(int value) {
     this.value = value;
   }
 

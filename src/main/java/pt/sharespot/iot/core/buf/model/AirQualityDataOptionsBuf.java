@@ -113,7 +113,7 @@ public enum AirQualityDataOptionsBuf
 
   private final int value;
 
-  AirQualityDataOptionsBuf(int value) {
+  private AirQualityDataOptionsBuf(int value) {
     this.value = value;
   }
 

@@ -113,7 +113,7 @@ public enum GPSDataOptionsBuf
 
   private final int value;
 
-  GPSDataOptionsBuf(int value) {
+  private GPSDataOptionsBuf(int value) {
     this.value = value;
   }
 

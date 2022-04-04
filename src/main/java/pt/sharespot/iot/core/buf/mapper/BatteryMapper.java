@@ -10,4 +10,9 @@ public class BatteryMapper {
                 .setPercentage(dto.percentage)
                 .setVolts(dto.volts);
     }
+
+    public static BatteryDataDTO toModel(Battery buf) {
+        return BatteryDataDTO.ofPercentage(buf.getPercentage())
+                .andVolts(buf.getVolts());
+    }
 }

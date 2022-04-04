@@ -16,4 +16,8 @@ public class RecordEntryMapper {
                         .map(Entry.Builder::build)
                         .collect(Collectors.toList()));
     }
+
+    public static DeviceRecordDTO toModel(RecordEntry buf) {
+        return new DeviceRecordDTO(buf.getEntriesList().stream().map(EntryMapper::toModel).collect(Collectors.toSet()));
+    }
 }

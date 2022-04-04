@@ -10,4 +10,8 @@ public class EntryMapper {
                 .setLabel(dto.label)
                 .setContent(dto.content);
     }
+
+    public static DeviceRecordBasicEntryDTO toModel(Entry buf) {
+        return new DeviceRecordBasicEntryDTO(buf.getLabel(), buf.getContent());
+    }
 }

@@ -9,4 +9,8 @@ public class AlarmMapper {
         return Alarm.newBuilder()
                 .setValue(dto.value);
     }
+
+    public static AlarmDataDTO toModel(Alarm buf) {
+        return AlarmDataDTO.of(buf.getValue());
+    }
 }

@@ -113,7 +113,7 @@ public enum MotionDataOptionsBuf
 
   private final int value;
 
-  MotionDataOptionsBuf(int value) {
+  private MotionDataOptionsBuf(int value) {
     this.value = value;
   }
 

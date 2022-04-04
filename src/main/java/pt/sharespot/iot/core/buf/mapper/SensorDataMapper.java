@@ -19,4 +19,19 @@ public class SensorDataMapper {
                 .setTemperature(TemperatureMapper.toBuf(dto.temperature))
                 .setVelocity(VelocityMapper.toBuf(dto.velocity));
     }
+
+    public static SensorDataDetailsDTO toModel(SensorData buf) {
+        return new SensorDataDetailsDTO()
+                .withAQI(AirQualityMapper.toModel(buf.getAqi()))
+                .withAlarm(AlarmMapper.toModel(buf.getAlarm()))
+                .withBattery(BatteryMapper.toModel(buf.getBattery()))
+                .withGps(GPSMapper.toModel(buf.getGps()))
+                .withHumidity(HumidityMapper.toModel(buf.getHumidity()))
+                .withIlluminance(IlluminanceMapper.toModel(buf.getIlluminance()))
+                .withMotion(MotionMapper.toModel(buf.getMotion()))
+                .withPressure(PressureMapper.toModel(buf.getPressure()))
+                .withSoilMoisture(SoilMoistureMapper.toModel(buf.getMoisture()))
+                .withTemperature(TemperatureMapper.toModel(buf.getTemperature()))
+                .withVelocity(VelocityMapper.toModel(buf.getVelocity()));
+    }
 }

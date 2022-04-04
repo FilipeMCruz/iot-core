@@ -298,7 +298,8 @@ private static final long serialVersionUID = 0L;
       if (!getSensorData()
           .equals(other.getSensorData())) return false;
     }
-    return unknownFields.equals(other.unknownFields);
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override

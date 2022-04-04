@@ -113,7 +113,7 @@ public enum RecordsOptionsBuf
 
   private final int value;
 
-  RecordsOptionsBuf(int value) {
+  private RecordsOptionsBuf(int value) {
     this.value = value;
   }
 
