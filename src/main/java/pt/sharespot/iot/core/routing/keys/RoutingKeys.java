@@ -1,5 +1,7 @@
 package pt.sharespot.iot.core.routing.keys;
 
+import org.slf4j.LoggerFactory;
+import pt.sharespot.iot.core.buf.mapper.RoutingKeysMapper;
 import pt.sharespot.iot.core.routing.keys.data.*;
 import pt.sharespot.iot.core.sensor.SensorDataDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
@@ -400,6 +402,7 @@ public class RoutingKeys {
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
                 this.containerType = thisContainerType;
             }
+
             var routingKeys = new RoutingKeys(containerType,
                     version,
                     infoType,

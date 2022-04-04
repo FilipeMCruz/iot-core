@@ -6,8 +6,11 @@ import pt.sharespot.iot.core.sensor.data.HumidityDataDTO;
 public class HumidityMapper {
 
     public static Humidity.Builder toBuf(HumidityDataDTO dto) {
-        return Humidity.newBuilder()
-                .setGramsPerCubicMeter(dto.gramspercubicmeter);
+        var builder = Humidity.newBuilder();
+        if (dto.exists()) {
+            builder.setGramsPerCubicMeter(dto.gramspercubicmeter);
+        }
+        return builder;
     }
 
     public static HumidityDataDTO toModel(Humidity buf) {

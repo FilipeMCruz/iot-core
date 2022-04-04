@@ -6,10 +6,15 @@ import pt.sharespot.iot.core.sensor.data.GPSDataDTO;
 public class GPSMapper {
 
     public static GPS.Builder toBuf(GPSDataDTO dto) {
-        return GPS.newBuilder()
-                .setAltitude(dto.altitude)
-                .setLatitude(dto.latitude)
-                .setLongitude(dto.longitude);
+        var builder = GPS.newBuilder();
+        if (dto.exists()) {
+            builder.setLatitude(dto.latitude)
+                    .setLongitude(dto.longitude);
+        }
+        if (dto.existsAltitude()) {
+            builder.setAltitude(dto.altitude);
+        }
+        return builder;
     }
 
     public static GPSDataDTO toModel(GPS buf) {

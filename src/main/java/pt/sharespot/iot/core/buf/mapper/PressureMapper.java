@@ -6,8 +6,11 @@ import pt.sharespot.iot.core.sensor.data.PressureDataDTO;
 public class PressureMapper {
 
     public static Pressure.Builder toBuf(PressureDataDTO dto) {
-        return Pressure.newBuilder()
-                .setHPa(dto.hPa);
+        var builder = Pressure.newBuilder();
+        if (dto.exists()) {
+            builder.setHPa(dto.hPa);
+        }
+        return builder;
     }
 
     public static PressureDataDTO toModel(Pressure buf) {

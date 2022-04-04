@@ -2,22 +2,44 @@ package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.SensorData;
 import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
+import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
 public class SensorDataMapper {
 
     public static SensorData.Builder toBuf(SensorDataDetailsDTO dto) {
-        return SensorData.newBuilder()
-                .setAqi(AirQualityMapper.toBuf(dto.aqi))
-                .setAlarm(AlarmMapper.toBuf(dto.alarm))
-                .setBattery(BatteryMapper.toBuf(dto.battery))
-                .setGps(GPSMapper.toBuf(dto.gps))
-                .setHumidity(HumidityMapper.toBuf(dto.humidity))
-                .setIlluminance(IlluminanceMapper.toBuf(dto.illuminance))
-                .setMotion(MotionMapper.toBuf(dto.motion))
-                .setPressure(PressureMapper.toBuf(dto.pressure))
-                .setMoisture(SoilMoistureMapper.toBuf(dto.moisture))
-                .setTemperature(TemperatureMapper.toBuf(dto.temperature))
-                .setVelocity(VelocityMapper.toBuf(dto.velocity));
+        var builder = SensorData.newBuilder();
+        if (dto.hasProperty(PropertyName.AQI)) builder.setAqi(AirQualityMapper.toBuf(dto.aqi));
+
+        if (dto.hasProperty(PropertyName.ALARM)) builder.setAlarm(AlarmMapper.toBuf(dto.alarm));
+
+        if (dto.hasProperty(PropertyName.BATTERY_VOLTS) || dto.hasProperty(PropertyName.BATTERY_PERCENTAGE))
+            builder.setBattery(BatteryMapper.toBuf(dto.battery));
+
+        if (dto.hasProperty(PropertyName.LONGITUDE) || dto.hasProperty(PropertyName.LATITUDE) || dto.hasProperty(PropertyName.ALTITUDE))
+            builder.setGps(GPSMapper.toBuf(dto.gps));
+
+        if (dto.hasProperty(PropertyName.HUMIDITY))
+            builder.setHumidity(HumidityMapper.toBuf(dto.humidity));
+
+        if (dto.hasProperty(PropertyName.ILLUMINANCE))
+            builder.setIlluminance(IlluminanceMapper.toBuf(dto.illuminance));
+
+        if (dto.hasProperty(PropertyName.MOTION))
+            builder.setMotion(MotionMapper.toBuf(dto.motion));
+
+        if (dto.hasProperty(PropertyName.PRESSURE))
+            builder.setPressure(PressureMapper.toBuf(dto.pressure));
+
+        if (dto.hasProperty(PropertyName.SOIL_MOISTURE))
+            builder.setMoisture(SoilMoistureMapper.toBuf(dto.moisture));
+
+        if (dto.hasProperty(PropertyName.TEMPERATURE))
+            builder.setTemperature(TemperatureMapper.toBuf(dto.temperature));
+
+        if (dto.hasProperty(PropertyName.VELOCITY))
+            builder.setVelocity(VelocityMapper.toBuf(dto.velocity));
+
+        return builder;
     }
 
     public static SensorDataDetailsDTO toModel(SensorData buf) {

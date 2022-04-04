@@ -6,8 +6,11 @@ import pt.sharespot.iot.core.sensor.data.AlarmDataDTO;
 public class AlarmMapper {
 
     public static Alarm.Builder toBuf(AlarmDataDTO dto) {
-        return Alarm.newBuilder()
-                .setValue(dto.value);
+        var builder = Alarm.newBuilder();
+        if (dto.exists()) {
+            builder.setValue(dto.value);
+        }
+        return builder;
     }
 
     public static AlarmDataDTO toModel(Alarm buf) {

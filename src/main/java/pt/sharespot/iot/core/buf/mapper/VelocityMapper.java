@@ -6,8 +6,11 @@ import pt.sharespot.iot.core.sensor.data.VelocityDataDTO;
 public class VelocityMapper {
 
     public static Velocity.Builder toBuf(VelocityDataDTO dto) {
-        return Velocity.newBuilder()
-                .setKmPerHour(dto.kmperh);
+        var builder = Velocity.newBuilder();
+        if (dto.exists()) {
+            builder.setKmPerHour(dto.kmperh);
+        }
+        return builder;
     }
 
     public static VelocityDataDTO toModel(Velocity buf) {

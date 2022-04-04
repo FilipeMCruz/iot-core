@@ -1,10 +1,15 @@
 package pt.sharespot.iot.core.buf.mapper;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import pt.sharespot.iot.core.buf.model.Message;
 import pt.sharespot.iot.core.buf.model.UnprocessedMessage;
+import pt.sharespot.iot.core.routing.MessageConsumed;
 import pt.sharespot.iot.core.routing.MessageSupplied;
 import pt.sharespot.iot.core.sensor.ProcessedSensorDataDTO;
+
+import java.util.UUID;
 
 public class MessageMapper {
 
@@ -24,5 +29,23 @@ public class MessageMapper {
                 .setRoutingKeys(RoutingKeysMapper.toBuf(message.routingKeys))
                 .setUnprocessedData(message.data.toString())
                 .build();
+    }
+
+    public static MessageConsumed<ObjectNode> toUnprocessedModel(UnprocessedMessage message) throws JsonProcessingException {
+        var consumed = new MessageConsumed<ObjectNode>();
+        consumed.hops = message.getHops();
+        consumed.oid = UUID.fromString(message.getOid());
+        consumed.routingKeys = RoutingKeysMapper.toModel(message.getRoutingKeys());
+        consumed.data = new ObjectMapper().readValue(message.getUnprocessedData(), ObjectNode.class);
+        return consumed;
+    }
+
+    public static MessageConsumed<ProcessedSensorDataDTO> toModel(Message message) {
+        var consumed = new MessageConsumed<ProcessedSensorDataDTO>();
+        consumed.hops = message.getHops();
+        consumed.oid = UUID.fromString(message.getOid());
+        consumed.routingKeys = RoutingKeysMapper.toModel(message.getRoutingKeys());
+        consumed.data = DataMapper.toModel(message.getData());
+        return consumed;
     }
 }

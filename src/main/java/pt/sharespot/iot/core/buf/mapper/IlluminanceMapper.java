@@ -6,8 +6,11 @@ import pt.sharespot.iot.core.sensor.data.IlluminanceDataDTO;
 public class IlluminanceMapper {
 
     public static Illuminance.Builder toBuf(IlluminanceDataDTO dto) {
-        return Illuminance.newBuilder()
-                .setLux(dto.lux);
+        var builder = Illuminance.newBuilder();
+        if (dto.exists()) {
+            builder.setLux(dto.lux);
+        }
+        return builder;
     }
 
     public static IlluminanceDataDTO toModel(Illuminance buf) {

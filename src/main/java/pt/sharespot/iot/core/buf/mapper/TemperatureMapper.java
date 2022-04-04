@@ -6,8 +6,11 @@ import pt.sharespot.iot.core.sensor.data.TemperatureDataDTO;
 public class TemperatureMapper {
 
     public static Temperature.Builder toBuf(TemperatureDataDTO dto) {
-        return Temperature.newBuilder()
-                .setCelsius(dto.celsius);
+        var builder = Temperature.newBuilder();
+        if (dto.exists()) {
+            builder.setCelsius(dto.celsius);
+        }
+        return builder;
     }
 
     public static TemperatureDataDTO toModel(Temperature buf) {

@@ -6,9 +6,12 @@ import pt.sharespot.iot.core.sensor.data.BatteryDataDTO;
 public class BatteryMapper {
 
     public static Battery.Builder toBuf(BatteryDataDTO dto) {
-        return Battery.newBuilder()
-                .setPercentage(dto.percentage)
-                .setVolts(dto.volts);
+        var builder = Battery.newBuilder();
+        if (dto.exists()) {
+            builder.setPercentage(dto.percentage)
+                    .setVolts(dto.volts);
+        }
+        return builder;
     }
 
     public static BatteryDataDTO toModel(Battery buf) {

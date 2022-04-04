@@ -1,5 +1,6 @@
 package pt.sharespot.iot.core.buf.mapper;
 
+import org.slf4j.LoggerFactory;
 import pt.sharespot.iot.core.buf.model.*;
 import pt.sharespot.iot.core.routing.keys.*;
 import pt.sharespot.iot.core.routing.keys.data.*;
@@ -32,6 +33,7 @@ public class RoutingKeysMapper {
     public static RoutingKeys toModel(RoutingKeysBuf buf) {
         return new RoutingKeysFactory().getBuilder(toModel(buf.getContainerType()), RoutingKeysBuilderOptions.CONSUMER)
                 .withInfoType(toModel(buf.getInfoType()))
+                .withContainerType(toModel(buf.getContainerType()))
                 .withSensorTypeId(buf.getSensorType())
                 .withChannel(buf.getChannel())
                 .withRecords(toModel(buf.getRecords()))

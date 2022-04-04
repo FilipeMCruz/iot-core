@@ -2,16 +2,21 @@ package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Data;
 import pt.sharespot.iot.core.sensor.ProcessedSensorDataDTO;
+import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
 import java.util.UUID;
 
 public class DataMapper {
 
     public static Data.Builder toBuf(ProcessedSensorDataDTO dto) {
-        return Data.newBuilder()
-                .setDataId(dto.dataId.toString())
-                .setReportedAt(dto.reportedAt)
-                .setDevice(DeviceMapper.toModel(dto.device))
+        var builder = Data.newBuilder();
+        if (dto.hasProperty(PropertyName.DATA_ID))
+            builder.setDataId(dto.dataId.toString());
+
+        if (dto.hasProperty(PropertyName.REPORTED_AT))
+            builder.setReportedAt(dto.reportedAt);
+
+        return builder.setDevice(DeviceMapper.toModel(dto.device))
                 .setSensorData(SensorDataMapper.toBuf(dto.data));
     }
 
