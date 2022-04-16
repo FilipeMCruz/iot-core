@@ -12,4 +12,10 @@ public interface AirHumidityOrBuilder extends
    * @return The gramsPerCubicMeter.
    */
   float getGramsPerCubicMeter();
+
+  /**
+   * <code>float relative_percentage = 2;</code>
+   * @return The relativePercentage.
+   */
+  float getRelativePercentage();
 }

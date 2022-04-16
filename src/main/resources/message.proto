@@ -70,6 +70,7 @@ message Velocity {
 
 message AirHumidity {
   float grams_per_cubic_meter = 1;
+  float relative_percentage = 2;
 }
 
 message AirPressure {

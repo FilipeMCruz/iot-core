@@ -32,7 +32,8 @@ public class SensorDataDetailsDTO {
             case LATITUDE, LONGITUDE -> gps != null && gps.exists();
             case TEMPERATURE -> temperature != null && temperature.exists();
             case VELOCITY -> velocity != null && velocity.exists();
-            case AIR_HUMIDITY -> airHumidity != null && airHumidity.exists();
+            case AIR_HUMIDITY_RELATIVE_PERCENTAGE -> airHumidity != null && airHumidity.existsRelativePercentage();
+            case AIR_HUMIDITY_GRAMS_PER_CUBIC_METER -> airHumidity != null && airHumidity.existsGramsPerCubicMeter();
             case AIR_PRESSURE -> airPressure != null && airPressure.exists();
             case MOTION -> motion != null && motion.exists();
             case AQI -> aqi != null && aqi.exists();

@@ -71,9 +71,14 @@ public enum PropertyName {
             return "data.aqi.value";
         }
     },
-    AIR_HUMIDITY {
+    AIR_HUMIDITY_GRAMS_PER_CUBIC_METER {
         public String path() {
             return "data.airHumidity.gramsPerCubicMeter";
+        }
+    },
+    AIR_HUMIDITY_RELATIVE_PERCENTAGE {
+        public String path() {
+            return "data.airHumidity.relativePercentage";
         }
     },
     AIR_PRESSURE {

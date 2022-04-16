@@ -179,7 +179,7 @@ public class RoutingKeys {
 
         private RoutingKeyOption<IlluminanceDataOptions> illuminance;
 
-        private RoutingKeyOption<TriggerDataOptions> alarm;
+        private RoutingKeyOption<TriggerDataOptions> trigger;
 
         private RoutingKeyOption<BatteryDataOptions> battery;
 
@@ -274,7 +274,7 @@ public class RoutingKeys {
         }
 
         public RoutingKeysBuilder withAlarm(TriggerDataOptions alarm) {
-            this.alarm = RoutingKeyOption.of(alarm);
+            this.trigger = RoutingKeyOption.of(alarm);
             return this;
         }
 
@@ -296,7 +296,7 @@ public class RoutingKeys {
             this.illuminance = RoutingKeyOption.of(IlluminanceDataOptions.UNIDENTIFIED_ILLUMINANCE_DATA);
             this.legitimacy = RoutingKeyOption.of(DataLegitimacyOptions.UNKNOWN);
             this.ownership = RoutingKeyOption.of(DomainOwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP);
-            this.alarm = RoutingKeyOption.of(TriggerDataOptions.UNIDENTIFIED_TRIGGER_DATA);
+            this.trigger = RoutingKeyOption.of(TriggerDataOptions.UNIDENTIFIED_TRIGGER_DATA);
             return this;
         }
 
@@ -308,7 +308,7 @@ public class RoutingKeys {
                     TemperatureDataOptions.WITH_TEMPERATURE_DATA : TemperatureDataOptions.WITHOUT_TEMPERATURE_DATA);
             this.aqi = RoutingKeyOption.of(data.hasAllProperties(PropertyName.AQI) ?
                     AirQualityDataOptions.WITH_AQI_DATA : AirQualityDataOptions.WITHOUT_AQI_DATA);
-            this.humidity = RoutingKeyOption.of(data.hasAllProperties(PropertyName.AIR_HUMIDITY) ?
+            this.humidity = RoutingKeyOption.of(data.hasAnyProperties(PropertyName.AIR_HUMIDITY_RELATIVE_PERCENTAGE, PropertyName.AIR_HUMIDITY_GRAMS_PER_CUBIC_METER) ?
                     AirHumidityDataOptions.WITH_AIR_HUMIDITY_DATA : AirHumidityDataOptions.WITHOUT_AIR_HUMIDITY_DATA);
             this.motion = RoutingKeyOption.of(data.hasAllProperties(PropertyName.MOTION) ?
                     MotionDataOptions.WITH_MOTION_DATA : MotionDataOptions.WITHOUT_MOTION_DATA);
@@ -322,7 +322,7 @@ public class RoutingKeys {
                     IlluminanceDataOptions.WITH_ILLUMINANCE_DATA : IlluminanceDataOptions.WITHOUT_ILLUMINANCE_DATA);
             this.battery = RoutingKeyOption.of(data.hasAnyProperties(PropertyName.BATTERY_VOLTS, PropertyName.BATTERY_PERCENTAGE) ?
                     BatteryDataOptions.WITH_BATTERY_DATA : BatteryDataOptions.WITHOUT_BATTERY_DATA);
-            this.alarm = RoutingKeyOption.of(data.hasAllProperties(PropertyName.TRIGGER) ?
+            this.trigger = RoutingKeyOption.of(data.hasAllProperties(PropertyName.TRIGGER) ?
                     TriggerDataOptions.WITH_TRIGGER_DATA : TriggerDataOptions.WITHOUT_TRIGGER_DATA);
             return this;
         }
@@ -344,7 +344,7 @@ public class RoutingKeys {
             this.moisture = this.moisture == null ? RoutingKeyOption.any() : this.moisture;
             this.illuminance = this.illuminance == null ? RoutingKeyOption.any() : this.illuminance;
             this.battery = this.battery == null ? RoutingKeyOption.any() : this.battery;
-            this.alarm = this.alarm == null ? RoutingKeyOption.any() : this.alarm;
+            this.trigger = this.trigger == null ? RoutingKeyOption.any() : this.trigger;
             this.legitimacy = this.legitimacy == null ? RoutingKeyOption.any() : this.legitimacy;
             return build();
         }
@@ -365,7 +365,7 @@ public class RoutingKeys {
             this.moisture = this.moisture == null ? consumer.soilMoisture : this.moisture;
             this.battery = this.battery == null ? consumer.battery : this.battery;
             this.illuminance = this.illuminance == null ? consumer.illuminance : this.illuminance;
-            this.alarm = this.alarm == null ? consumer.trigger : this.alarm;
+            this.trigger = this.trigger == null ? consumer.trigger : this.trigger;
             this.legitimacy = this.legitimacy == null ? consumer.legitimacy : this.legitimacy;
             return build();
         }
@@ -391,7 +391,7 @@ public class RoutingKeys {
             this.pressure = AirPressureDataOptions.extract(splinted[13]);
             this.moisture = SoilMoistureDataOptions.extract(splinted[14]);
             this.illuminance = IlluminanceDataOptions.extract(splinted[15]);
-            this.alarm = TriggerDataOptions.extract(splinted[16]);
+            this.trigger = TriggerDataOptions.extract(splinted[16]);
             this.battery = BatteryDataOptions.extract(splinted[17]);
             return build();
         }
@@ -418,7 +418,7 @@ public class RoutingKeys {
                     battery,
                     moisture,
                     illuminance,
-                    alarm,
+                    trigger,
                     legitimacy);
             return toOptional(routingKeys);
         }

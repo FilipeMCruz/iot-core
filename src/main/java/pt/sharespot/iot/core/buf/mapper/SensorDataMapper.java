@@ -18,8 +18,8 @@ public class SensorDataMapper {
         if (dto.hasProperty(PropertyName.LONGITUDE) || dto.hasProperty(PropertyName.LATITUDE) || dto.hasProperty(PropertyName.ALTITUDE))
             builder.setGps(GPSMapper.toBuf(dto.gps));
 
-        if (dto.hasProperty(PropertyName.AIR_HUMIDITY))
-            builder.setAirHumidity(HumidityMapper.toBuf(dto.airHumidity));
+        if (dto.hasProperty(PropertyName.AIR_HUMIDITY_RELATIVE_PERCENTAGE) || dto.hasProperty(PropertyName.AIR_HUMIDITY_GRAMS_PER_CUBIC_METER))
+            builder.setAirHumidity(AirHumidityMapper.toBuf(dto.airHumidity));
 
         if (dto.hasProperty(PropertyName.ILLUMINANCE))
             builder.setIlluminance(IlluminanceMapper.toBuf(dto.illuminance));
@@ -48,7 +48,7 @@ public class SensorDataMapper {
                 .withAlarm(AlarmMapper.toModel(buf.getTrigger()))
                 .withBattery(BatteryMapper.toModel(buf.getBattery()))
                 .withGps(GPSMapper.toModel(buf.getGps()))
-                .withHumidity(HumidityMapper.toModel(buf.getAirHumidity()))
+                .withHumidity(AirHumidityMapper.toModel(buf.getAirHumidity()))
                 .withIlluminance(IlluminanceMapper.toModel(buf.getIlluminance()))
                 .withMotion(MotionMapper.toModel(buf.getMotion()))
                 .withPressure(PressureMapper.toModel(buf.getAirPressure()))

@@ -53,6 +53,11 @@ private static final long serialVersionUID = 0L;
             gramsPerCubicMeter_ = input.readFloat();
             break;
           }
+          case 21: {
+
+            relativePercentage_ = input.readFloat();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -96,6 +101,17 @@ private static final long serialVersionUID = 0L;
     return gramsPerCubicMeter_;
   }
 
+  public static final int RELATIVE_PERCENTAGE_FIELD_NUMBER = 2;
+  private float relativePercentage_;
+  /**
+   * <code>float relative_percentage = 2;</code>
+   * @return The relativePercentage.
+   */
+  @java.lang.Override
+  public float getRelativePercentage() {
+    return relativePercentage_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -113,6 +129,9 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(gramsPerCubicMeter_) != 0) {
       output.writeFloat(1, gramsPerCubicMeter_);
     }
+    if (java.lang.Float.floatToRawIntBits(relativePercentage_) != 0) {
+      output.writeFloat(2, relativePercentage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -125,6 +144,10 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(gramsPerCubicMeter_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, gramsPerCubicMeter_);
+    }
+    if (java.lang.Float.floatToRawIntBits(relativePercentage_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(2, relativePercentage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -144,6 +167,9 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getGramsPerCubicMeter())
         != java.lang.Float.floatToIntBits(
             other.getGramsPerCubicMeter())) return false;
+    if (java.lang.Float.floatToIntBits(getRelativePercentage())
+        != java.lang.Float.floatToIntBits(
+            other.getRelativePercentage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -158,6 +184,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + GRAMS_PER_CUBIC_METER_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getGramsPerCubicMeter());
+    hash = (37 * hash) + RELATIVE_PERCENTAGE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getRelativePercentage());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -293,6 +322,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       gramsPerCubicMeter_ = 0F;
 
+      relativePercentage_ = 0F;
+
       return this;
     }
 
@@ -320,6 +351,7 @@ private static final long serialVersionUID = 0L;
     public pt.sharespot.iot.core.buf.model.AirHumidity buildPartial() {
       pt.sharespot.iot.core.buf.model.AirHumidity result = new pt.sharespot.iot.core.buf.model.AirHumidity(this);
       result.gramsPerCubicMeter_ = gramsPerCubicMeter_;
+      result.relativePercentage_ = relativePercentage_;
       onBuilt();
       return result;
     }
@@ -370,6 +402,9 @@ private static final long serialVersionUID = 0L;
       if (other == pt.sharespot.iot.core.buf.model.AirHumidity.getDefaultInstance()) return this;
       if (other.getGramsPerCubicMeter() != 0F) {
         setGramsPerCubicMeter(other.getGramsPerCubicMeter());
+      }
+      if (other.getRelativePercentage() != 0F) {
+        setRelativePercentage(other.getRelativePercentage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -427,6 +462,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearGramsPerCubicMeter() {
       
       gramsPerCubicMeter_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float relativePercentage_ ;
+    /**
+     * <code>float relative_percentage = 2;</code>
+     * @return The relativePercentage.
+     */
+    @java.lang.Override
+    public float getRelativePercentage() {
+      return relativePercentage_;
+    }
+    /**
+     * <code>float relative_percentage = 2;</code>
+     * @param value The relativePercentage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelativePercentage(float value) {
+      
+      relativePercentage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float relative_percentage = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRelativePercentage() {
+      
+      relativePercentage_ = 0F;
       onChanged();
       return this;
     }
