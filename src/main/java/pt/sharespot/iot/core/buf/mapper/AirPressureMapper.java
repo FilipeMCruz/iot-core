@@ -3,12 +3,12 @@ package pt.sharespot.iot.core.buf.mapper;
 import pt.sharespot.iot.core.buf.model.AirPressure;
 import pt.sharespot.iot.core.sensor.data.AirPressureDataDTO;
 
-public class PressureMapper {
+public class AirPressureMapper {
 
     public static AirPressure.Builder toBuf(AirPressureDataDTO dto) {
         var builder = AirPressure.newBuilder();
         if (dto.exists()) {
-            builder.setHectoPascal(dto.hPa);
+            builder.setHectoPascal(dto.hectoPascal);
         }
         return builder;
     }

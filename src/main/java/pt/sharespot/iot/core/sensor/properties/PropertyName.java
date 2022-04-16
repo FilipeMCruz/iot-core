@@ -86,6 +86,11 @@ public enum PropertyName {
             return "data.airPressure.hectoPascal";
         }
     },
+    WATER_PRESSURE {
+        public String path() {
+            return "data.waterPressure.bar";
+        }
+    },
     BATTERY_PERCENTAGE {
         public String path() {
             return "data.battery.percentage";

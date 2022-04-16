@@ -171,4 +171,19 @@ public interface SensorDataOrBuilder extends
    * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
    */
   pt.sharespot.iot.core.buf.model.TriggerOrBuilder getTriggerOrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+   * @return Whether the waterPressure field is set.
+   */
+  boolean hasWaterPressure();
+  /**
+   * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+   * @return The waterPressure.
+   */
+  pt.sharespot.iot.core.buf.model.WaterPressure getWaterPressure();
+  /**
+   * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+   */
+  pt.sharespot.iot.core.buf.model.WaterPressureOrBuilder getWaterPressureOrBuilder();
 }

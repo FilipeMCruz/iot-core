@@ -38,6 +38,7 @@ message SensorData {
   SoilMoisture soil_moisture = 9;
   Illuminance illuminance = 10;
   Trigger trigger = 11;
+  WaterPressure water_pressure = 12;
 }
 
 message GPS {
@@ -75,6 +76,10 @@ message AirHumidity {
 
 message AirPressure {
   float hecto_pascal = 1;
+}
+
+message WaterPressure {
+  float bar = 1;
 }
 
 message Battery {
@@ -135,6 +140,7 @@ message RoutingKeysBuf {
   IlluminanceDataOptionsBuf illuminance = 17;
   DomainOwnershipOptionsBuf ownership = 18;
   TriggerDataOptionsBuf trigger = 19;
+  WaterPressureDataOptions water_pressure = 20;
 }
 
 enum TriggerDataOptionsBuf {
@@ -195,6 +201,12 @@ enum AirQualityDataOptionsBuf {
   UNIDENTIFIED_AQI_DATA = 0;
   WITH_AQI_DATA = 1;
   WITHOUT_AQI_DATA = 2;
+}
+
+enum WaterPressureDataOptions {
+  UNIDENTIFIED_WATER_PRESSURE_DATA = 0;
+  WITH_WATER_PRESSURE_DATA = 1;
+  WITHOUT_WATER_PRESSURE_DATA = 2;
 }
 
 enum DataLegitimacyOptionsBuf {

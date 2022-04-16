@@ -4,37 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.TemperatureDataOptionsBuf}
+ * Protobuf enum {@code pt.sharespot.iot.core.WaterPressureDataOptions}
  */
-public enum TemperatureDataOptionsBuf
+public enum WaterPressureDataOptions
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNIDENTIFIED_TEMPERATURE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_WATER_PRESSURE_DATA = 0;</code>
    */
-  UNIDENTIFIED_TEMPERATURE_DATA(0),
+  UNIDENTIFIED_WATER_PRESSURE_DATA(0),
   /**
-   * <code>WITH_TEMPERATURE_DATA = 1;</code>
+   * <code>WITH_WATER_PRESSURE_DATA = 1;</code>
    */
-  WITH_TEMPERATURE_DATA(1),
+  WITH_WATER_PRESSURE_DATA(1),
   /**
-   * <code>WITHOUT_TEMPERATURE_DATA = 2;</code>
+   * <code>WITHOUT_WATER_PRESSURE_DATA = 2;</code>
    */
-  WITHOUT_TEMPERATURE_DATA(2),
+  WITHOUT_WATER_PRESSURE_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNIDENTIFIED_TEMPERATURE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_WATER_PRESSURE_DATA = 0;</code>
    */
-  public static final int UNIDENTIFIED_TEMPERATURE_DATA_VALUE = 0;
+  public static final int UNIDENTIFIED_WATER_PRESSURE_DATA_VALUE = 0;
   /**
-   * <code>WITH_TEMPERATURE_DATA = 1;</code>
+   * <code>WITH_WATER_PRESSURE_DATA = 1;</code>
    */
-  public static final int WITH_TEMPERATURE_DATA_VALUE = 1;
+  public static final int WITH_WATER_PRESSURE_DATA_VALUE = 1;
   /**
-   * <code>WITHOUT_TEMPERATURE_DATA = 2;</code>
+   * <code>WITHOUT_WATER_PRESSURE_DATA = 2;</code>
    */
-  public static final int WITHOUT_TEMPERATURE_DATA_VALUE = 2;
+  public static final int WITHOUT_WATER_PRESSURE_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -51,7 +51,7 @@ public enum TemperatureDataOptionsBuf
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static TemperatureDataOptionsBuf valueOf(int value) {
+  public static WaterPressureDataOptions valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +59,24 @@ public enum TemperatureDataOptionsBuf
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static TemperatureDataOptionsBuf forNumber(int value) {
+  public static WaterPressureDataOptions forNumber(int value) {
     switch (value) {
-      case 0: return UNIDENTIFIED_TEMPERATURE_DATA;
-      case 1: return WITH_TEMPERATURE_DATA;
-      case 2: return WITHOUT_TEMPERATURE_DATA;
+      case 0: return UNIDENTIFIED_WATER_PRESSURE_DATA;
+      case 1: return WITH_WATER_PRESSURE_DATA;
+      case 2: return WITHOUT_WATER_PRESSURE_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<TemperatureDataOptionsBuf>
+  public static com.google.protobuf.Internal.EnumLiteMap<WaterPressureDataOptions>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      TemperatureDataOptionsBuf> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<TemperatureDataOptionsBuf>() {
-          public TemperatureDataOptionsBuf findValueByNumber(int number) {
-            return TemperatureDataOptionsBuf.forNumber(number);
+      WaterPressureDataOptions> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<WaterPressureDataOptions>() {
+          public WaterPressureDataOptions findValueByNumber(int number) {
+            return WaterPressureDataOptions.forNumber(number);
           }
         };
 
@@ -94,12 +94,12 @@ public enum TemperatureDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(13);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(11);
   }
 
-  private static final TemperatureDataOptionsBuf[] VALUES = values();
+  private static final WaterPressureDataOptions[] VALUES = values();
 
-  public static TemperatureDataOptionsBuf valueOf(
+  public static WaterPressureDataOptions valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +113,10 @@ public enum TemperatureDataOptionsBuf
 
   private final int value;
 
-  private TemperatureDataOptionsBuf(int value) {
+  private WaterPressureDataOptions(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.TemperatureDataOptionsBuf)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.WaterPressureDataOptions)
 }
 

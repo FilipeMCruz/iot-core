@@ -191,6 +191,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 98: {
+            pt.sharespot.iot.core.buf.model.WaterPressure.Builder subBuilder = null;
+            if (waterPressure_ != null) {
+              subBuilder = waterPressure_.toBuilder();
+            }
+            waterPressure_ = input.readMessage(pt.sharespot.iot.core.buf.model.WaterPressure.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(waterPressure_);
+              waterPressure_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -509,6 +522,32 @@ private static final long serialVersionUID = 0L;
     return getTrigger();
   }
 
+  public static final int WATER_PRESSURE_FIELD_NUMBER = 12;
+  private pt.sharespot.iot.core.buf.model.WaterPressure waterPressure_;
+  /**
+   * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+   * @return Whether the waterPressure field is set.
+   */
+  @java.lang.Override
+  public boolean hasWaterPressure() {
+    return waterPressure_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+   * @return The waterPressure.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.WaterPressure getWaterPressure() {
+    return waterPressure_ == null ? pt.sharespot.iot.core.buf.model.WaterPressure.getDefaultInstance() : waterPressure_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.WaterPressureOrBuilder getWaterPressureOrBuilder() {
+    return getWaterPressure();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -555,6 +594,9 @@ private static final long serialVersionUID = 0L;
     }
     if (trigger_ != null) {
       output.writeMessage(11, getTrigger());
+    }
+    if (waterPressure_ != null) {
+      output.writeMessage(12, getWaterPressure());
     }
     unknownFields.writeTo(output);
   }
@@ -608,6 +650,10 @@ private static final long serialVersionUID = 0L;
     if (trigger_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getTrigger());
+    }
+    if (waterPressure_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getWaterPressure());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -679,6 +725,11 @@ private static final long serialVersionUID = 0L;
       if (!getTrigger()
           .equals(other.getTrigger())) return false;
     }
+    if (hasWaterPressure() != other.hasWaterPressure()) return false;
+    if (hasWaterPressure()) {
+      if (!getWaterPressure()
+          .equals(other.getWaterPressure())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -733,6 +784,10 @@ private static final long serialVersionUID = 0L;
     if (hasTrigger()) {
       hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
       hash = (53 * hash) + getTrigger().hashCode();
+    }
+    if (hasWaterPressure()) {
+      hash = (37 * hash) + WATER_PRESSURE_FIELD_NUMBER;
+      hash = (53 * hash) + getWaterPressure().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -933,6 +988,12 @@ private static final long serialVersionUID = 0L;
         trigger_ = null;
         triggerBuilder_ = null;
       }
+      if (waterPressureBuilder_ == null) {
+        waterPressure_ = null;
+      } else {
+        waterPressure_ = null;
+        waterPressureBuilder_ = null;
+      }
       return this;
     }
 
@@ -1014,6 +1075,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.trigger_ = triggerBuilder_.build();
       }
+      if (waterPressureBuilder_ == null) {
+        result.waterPressure_ = waterPressure_;
+      } else {
+        result.waterPressure_ = waterPressureBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1094,6 +1160,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTrigger()) {
         mergeTrigger(other.getTrigger());
+      }
+      if (other.hasWaterPressure()) {
+        mergeWaterPressure(other.getWaterPressure());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2431,6 +2500,125 @@ private static final long serialVersionUID = 0L;
         trigger_ = null;
       }
       return triggerBuilder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.WaterPressure waterPressure_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.WaterPressure, pt.sharespot.iot.core.buf.model.WaterPressure.Builder, pt.sharespot.iot.core.buf.model.WaterPressureOrBuilder> waterPressureBuilder_;
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     * @return Whether the waterPressure field is set.
+     */
+    public boolean hasWaterPressure() {
+      return waterPressureBuilder_ != null || waterPressure_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     * @return The waterPressure.
+     */
+    public pt.sharespot.iot.core.buf.model.WaterPressure getWaterPressure() {
+      if (waterPressureBuilder_ == null) {
+        return waterPressure_ == null ? pt.sharespot.iot.core.buf.model.WaterPressure.getDefaultInstance() : waterPressure_;
+      } else {
+        return waterPressureBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     */
+    public Builder setWaterPressure(pt.sharespot.iot.core.buf.model.WaterPressure value) {
+      if (waterPressureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        waterPressure_ = value;
+        onChanged();
+      } else {
+        waterPressureBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     */
+    public Builder setWaterPressure(
+        pt.sharespot.iot.core.buf.model.WaterPressure.Builder builderForValue) {
+      if (waterPressureBuilder_ == null) {
+        waterPressure_ = builderForValue.build();
+        onChanged();
+      } else {
+        waterPressureBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     */
+    public Builder mergeWaterPressure(pt.sharespot.iot.core.buf.model.WaterPressure value) {
+      if (waterPressureBuilder_ == null) {
+        if (waterPressure_ != null) {
+          waterPressure_ =
+            pt.sharespot.iot.core.buf.model.WaterPressure.newBuilder(waterPressure_).mergeFrom(value).buildPartial();
+        } else {
+          waterPressure_ = value;
+        }
+        onChanged();
+      } else {
+        waterPressureBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     */
+    public Builder clearWaterPressure() {
+      if (waterPressureBuilder_ == null) {
+        waterPressure_ = null;
+        onChanged();
+      } else {
+        waterPressure_ = null;
+        waterPressureBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.WaterPressure.Builder getWaterPressureBuilder() {
+      
+      onChanged();
+      return getWaterPressureFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.WaterPressureOrBuilder getWaterPressureOrBuilder() {
+      if (waterPressureBuilder_ != null) {
+        return waterPressureBuilder_.getMessageOrBuilder();
+      } else {
+        return waterPressure_ == null ?
+            pt.sharespot.iot.core.buf.model.WaterPressure.getDefaultInstance() : waterPressure_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.WaterPressure water_pressure = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.WaterPressure, pt.sharespot.iot.core.buf.model.WaterPressure.Builder, pt.sharespot.iot.core.buf.model.WaterPressureOrBuilder> 
+        getWaterPressureFieldBuilder() {
+      if (waterPressureBuilder_ == null) {
+        waterPressureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.WaterPressure, pt.sharespot.iot.core.buf.model.WaterPressure.Builder, pt.sharespot.iot.core.buf.model.WaterPressureOrBuilder>(
+                getWaterPressure(),
+                getParentForChildren(),
+                isClean());
+        waterPressure_ = null;
+      }
+      return waterPressureBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

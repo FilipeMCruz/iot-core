@@ -47,6 +47,8 @@ public class RoutingKeys {
 
     public RoutingKeyOption<TriggerDataOptions> trigger;
 
+    RoutingKeyOption<WaterPressureDataOptions> waterPressure;
+
     public RoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
                        String version,
                        RoutingKeyOption<InfoTypeOptions> infoType,
@@ -65,7 +67,8 @@ public class RoutingKeys {
                        RoutingKeyOption<SoilMoistureDataOptions> soilMoisture,
                        RoutingKeyOption<IlluminanceDataOptions> illuminance,
                        RoutingKeyOption<TriggerDataOptions> trigger,
-                       RoutingKeyOption<DataLegitimacyOptions> legitimacy) {
+                       RoutingKeyOption<DataLegitimacyOptions> legitimacy,
+                       RoutingKeyOption<WaterPressureDataOptions> waterPressure) {
         this.containerType = containerType;
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
@@ -85,6 +88,7 @@ public class RoutingKeys {
         this.illuminance = illuminance;
         this.trigger = trigger;
         this.legitimacy = legitimacy;
+        this.waterPressure = waterPressure;
     }
 
     public RoutingKeys() {
@@ -92,7 +96,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.#",
                 containerType.value(),
                 version,
                 infoType.value(),
@@ -111,11 +115,12 @@ public class RoutingKeys {
                 soilMoisture.value(),
                 illuminance.value(),
                 trigger.value(),
-                battery.value());
+                battery.value(),
+                waterPressure.value());
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.#",
                 containerType.details(),
                 version,
                 infoType.details(),
@@ -134,7 +139,8 @@ public class RoutingKeys {
                 soilMoisture.details(),
                 illuminance.details(),
                 trigger.details(),
-                battery.details());
+                battery.details(),
+                waterPressure.details());
     }
 
     public static RoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -167,15 +173,18 @@ public class RoutingKeys {
 
         private RoutingKeyOption<AirQualityDataOptions> aqi;
 
-        private RoutingKeyOption<AirHumidityDataOptions> humidity;
+        private RoutingKeyOption<AirHumidityDataOptions> airHumidity;
 
         private RoutingKeyOption<MotionDataOptions> motion;
 
         private RoutingKeyOption<VelocityDataOptions> velocity;
 
-        private RoutingKeyOption<AirPressureDataOptions> pressure;
+        private RoutingKeyOption<AirPressureDataOptions> airPressure;
 
-        private RoutingKeyOption<SoilMoistureDataOptions> moisture;
+
+        private RoutingKeyOption<WaterPressureDataOptions> waterPressure;
+
+        private RoutingKeyOption<SoilMoistureDataOptions> soilMoisture;
 
         private RoutingKeyOption<IlluminanceDataOptions> illuminance;
 
@@ -195,6 +204,11 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withContainerType(ContainerTypeOptions containerType) {
             this.containerType = RoutingKeyOption.of(containerType);
+            return this;
+        }
+
+        public RoutingKeysBuilder withContainerType(WaterPressureDataOptions waterPressure) {
+            this.waterPressure = RoutingKeyOption.of(waterPressure);
             return this;
         }
 
@@ -218,7 +232,7 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withOnwership(DomainOwnershipOptions ownership) {
+        public RoutingKeysBuilder withOwnership(DomainOwnershipOptions ownership) {
             this.ownership = RoutingKeyOption.of(ownership);
             return this;
         }
@@ -239,7 +253,7 @@ public class RoutingKeys {
         }
 
         public RoutingKeysBuilder withHumidity(AirHumidityDataOptions humidity) {
-            this.humidity = RoutingKeyOption.of(humidity);
+            this.airHumidity = RoutingKeyOption.of(humidity);
             return this;
         }
 
@@ -259,12 +273,12 @@ public class RoutingKeys {
         }
 
         public RoutingKeysBuilder withPressure(AirPressureDataOptions pressure) {
-            this.pressure = RoutingKeyOption.of(pressure);
+            this.airPressure = RoutingKeyOption.of(pressure);
             return this;
         }
 
         public RoutingKeysBuilder withSoilMoisture(SoilMoistureDataOptions moisture) {
-            this.moisture = RoutingKeyOption.of(moisture);
+            this.soilMoisture = RoutingKeyOption.of(moisture);
             return this;
         }
 
@@ -287,16 +301,17 @@ public class RoutingKeys {
             this.temperature = RoutingKeyOption.of(TemperatureDataOptions.UNIDENTIFIED_TEMPERATURE_DATA);
             this.gps = RoutingKeyOption.of(GPSDataOptions.UNIDENTIFIED_GPS_DATA);
             this.aqi = RoutingKeyOption.of(AirQualityDataOptions.UNIDENTIFIED_AQI_DATA);
-            this.humidity = RoutingKeyOption.of(AirHumidityDataOptions.UNIDENTIFIED_AIR_HUMIDITY_DATA);
+            this.airHumidity = RoutingKeyOption.of(AirHumidityDataOptions.UNIDENTIFIED_AIR_HUMIDITY_DATA);
             this.motion = RoutingKeyOption.of(MotionDataOptions.UNIDENTIFIED_MOTION_DATA);
             this.velocity = RoutingKeyOption.of(VelocityDataOptions.UNIDENTIFIED_VELOCITY_DATA);
             this.battery = RoutingKeyOption.of(BatteryDataOptions.UNIDENTIFIED_BATTERY_DATA);
-            this.pressure = RoutingKeyOption.of(AirPressureDataOptions.UNIDENTIFIED_AIR_PRESSURE_DATA);
-            this.moisture = RoutingKeyOption.of(SoilMoistureDataOptions.UNIDENTIFIED_SOIL_MOISTURE_DATA);
+            this.airPressure = RoutingKeyOption.of(AirPressureDataOptions.UNIDENTIFIED_AIR_PRESSURE_DATA);
+            this.soilMoisture = RoutingKeyOption.of(SoilMoistureDataOptions.UNIDENTIFIED_SOIL_MOISTURE_DATA);
             this.illuminance = RoutingKeyOption.of(IlluminanceDataOptions.UNIDENTIFIED_ILLUMINANCE_DATA);
             this.legitimacy = RoutingKeyOption.of(DataLegitimacyOptions.UNKNOWN);
             this.ownership = RoutingKeyOption.of(DomainOwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP);
             this.trigger = RoutingKeyOption.of(TriggerDataOptions.UNIDENTIFIED_TRIGGER_DATA);
+            this.waterPressure = RoutingKeyOption.of(WaterPressureDataOptions.UNIDENTIFIED_WATER_PRESSURE_DATA);
             return this;
         }
 
@@ -308,15 +323,15 @@ public class RoutingKeys {
                     TemperatureDataOptions.WITH_TEMPERATURE_DATA : TemperatureDataOptions.WITHOUT_TEMPERATURE_DATA);
             this.aqi = RoutingKeyOption.of(data.hasAllProperties(PropertyName.AQI) ?
                     AirQualityDataOptions.WITH_AQI_DATA : AirQualityDataOptions.WITHOUT_AQI_DATA);
-            this.humidity = RoutingKeyOption.of(data.hasAnyProperties(PropertyName.AIR_HUMIDITY_RELATIVE_PERCENTAGE, PropertyName.AIR_HUMIDITY_GRAMS_PER_CUBIC_METER) ?
+            this.airHumidity = RoutingKeyOption.of(data.hasAnyProperties(PropertyName.AIR_HUMIDITY_RELATIVE_PERCENTAGE, PropertyName.AIR_HUMIDITY_GRAMS_PER_CUBIC_METER) ?
                     AirHumidityDataOptions.WITH_AIR_HUMIDITY_DATA : AirHumidityDataOptions.WITHOUT_AIR_HUMIDITY_DATA);
             this.motion = RoutingKeyOption.of(data.hasAllProperties(PropertyName.MOTION) ?
                     MotionDataOptions.WITH_MOTION_DATA : MotionDataOptions.WITHOUT_MOTION_DATA);
             this.velocity = RoutingKeyOption.of(data.hasAllProperties(PropertyName.VELOCITY) ?
                     VelocityDataOptions.WITH_VELOCITY_DATA : VelocityDataOptions.WITHOUT_VELOCITY_DATA);
-            this.pressure = RoutingKeyOption.of(data.hasAllProperties(PropertyName.AIR_PRESSURE) ?
+            this.airPressure = RoutingKeyOption.of(data.hasAllProperties(PropertyName.AIR_PRESSURE) ?
                     AirPressureDataOptions.WITH_AIR_PRESSURE_DATA : AirPressureDataOptions.WITHOUT_AIR_PRESSURE_DATA);
-            this.moisture = RoutingKeyOption.of(data.hasAllProperties(PropertyName.SOIL_MOISTURE) ?
+            this.soilMoisture = RoutingKeyOption.of(data.hasAllProperties(PropertyName.SOIL_MOISTURE) ?
                     SoilMoistureDataOptions.WITH_SOIL_MOISTURE_DATA : SoilMoistureDataOptions.WITHOUT_SOIL_MOISTURE_DATA);
             this.illuminance = RoutingKeyOption.of(data.hasAllProperties(PropertyName.ILLUMINANCE) ?
                     IlluminanceDataOptions.WITH_ILLUMINANCE_DATA : IlluminanceDataOptions.WITHOUT_ILLUMINANCE_DATA);
@@ -324,6 +339,8 @@ public class RoutingKeys {
                     BatteryDataOptions.WITH_BATTERY_DATA : BatteryDataOptions.WITHOUT_BATTERY_DATA);
             this.trigger = RoutingKeyOption.of(data.hasAllProperties(PropertyName.TRIGGER) ?
                     TriggerDataOptions.WITH_TRIGGER_DATA : TriggerDataOptions.WITHOUT_TRIGGER_DATA);
+            this.waterPressure = RoutingKeyOption.of(data.hasAllProperties(PropertyName.WATER_PRESSURE) ?
+                    WaterPressureDataOptions.WITH_WATER_PRESSURE_DATA : WaterPressureDataOptions.WITHOUT_WATER_PRESSURE_DATA);
             return this;
         }
 
@@ -337,15 +354,16 @@ public class RoutingKeys {
             this.gps = this.gps == null ? RoutingKeyOption.any() : this.gps;
             this.temperature = this.temperature == null ? RoutingKeyOption.any() : this.temperature;
             this.aqi = this.aqi == null ? RoutingKeyOption.any() : this.aqi;
-            this.humidity = this.humidity == null ? RoutingKeyOption.any() : this.humidity;
+            this.airHumidity = this.airHumidity == null ? RoutingKeyOption.any() : this.airHumidity;
             this.motion = this.motion == null ? RoutingKeyOption.any() : this.motion;
             this.velocity = this.velocity == null ? RoutingKeyOption.any() : this.velocity;
-            this.pressure = this.pressure == null ? RoutingKeyOption.any() : this.pressure;
-            this.moisture = this.moisture == null ? RoutingKeyOption.any() : this.moisture;
+            this.airPressure = this.airPressure == null ? RoutingKeyOption.any() : this.airPressure;
+            this.soilMoisture = this.soilMoisture == null ? RoutingKeyOption.any() : this.soilMoisture;
             this.illuminance = this.illuminance == null ? RoutingKeyOption.any() : this.illuminance;
             this.battery = this.battery == null ? RoutingKeyOption.any() : this.battery;
             this.trigger = this.trigger == null ? RoutingKeyOption.any() : this.trigger;
             this.legitimacy = this.legitimacy == null ? RoutingKeyOption.any() : this.legitimacy;
+            this.waterPressure = this.waterPressure == null ? RoutingKeyOption.any() : this.waterPressure;
             return build();
         }
 
@@ -358,15 +376,16 @@ public class RoutingKeys {
             this.gps = this.gps == null ? consumer.gps : this.gps;
             this.temperature = this.temperature == null ? consumer.temperature : this.temperature;
             this.aqi = this.aqi == null ? consumer.aqi : this.aqi;
-            this.humidity = this.humidity == null ? consumer.airHumidity : this.humidity;
+            this.airHumidity = this.airHumidity == null ? consumer.airHumidity : this.airHumidity;
             this.motion = this.motion == null ? consumer.motion : this.motion;
             this.velocity = this.velocity == null ? consumer.velocity : this.velocity;
-            this.pressure = this.pressure == null ? consumer.airPressure : this.pressure;
-            this.moisture = this.moisture == null ? consumer.soilMoisture : this.moisture;
+            this.airPressure = this.airPressure == null ? consumer.airPressure : this.airPressure;
+            this.soilMoisture = this.soilMoisture == null ? consumer.soilMoisture : this.soilMoisture;
             this.battery = this.battery == null ? consumer.battery : this.battery;
             this.illuminance = this.illuminance == null ? consumer.illuminance : this.illuminance;
             this.trigger = this.trigger == null ? consumer.trigger : this.trigger;
             this.legitimacy = this.legitimacy == null ? consumer.legitimacy : this.legitimacy;
+            this.waterPressure = this.waterPressure == null ? consumer.waterPressure : this.waterPressure;
             return build();
         }
 
@@ -385,14 +404,15 @@ public class RoutingKeys {
             this.gps = GPSDataOptions.extract(splinted[7]);
             this.temperature = TemperatureDataOptions.extract(splinted[8]);
             this.aqi = AirQualityDataOptions.extract(splinted[9]);
-            this.humidity = AirHumidityDataOptions.extract(splinted[10]);
+            this.airHumidity = AirHumidityDataOptions.extract(splinted[10]);
             this.motion = MotionDataOptions.extract(splinted[11]);
             this.velocity = VelocityDataOptions.extract(splinted[12]);
-            this.pressure = AirPressureDataOptions.extract(splinted[13]);
-            this.moisture = SoilMoistureDataOptions.extract(splinted[14]);
+            this.airPressure = AirPressureDataOptions.extract(splinted[13]);
+            this.soilMoisture = SoilMoistureDataOptions.extract(splinted[14]);
             this.illuminance = IlluminanceDataOptions.extract(splinted[15]);
             this.trigger = TriggerDataOptions.extract(splinted[16]);
             this.battery = BatteryDataOptions.extract(splinted[17]);
+            this.waterPressure = WaterPressureDataOptions.extract(splinted[18]);
             return build();
         }
 
@@ -411,15 +431,16 @@ public class RoutingKeys {
                     gps,
                     temperature,
                     aqi,
-                    humidity,
+                    airHumidity,
                     motion,
                     velocity,
-                    pressure,
+                    airPressure,
                     battery,
-                    moisture,
+                    soilMoisture,
                     illuminance,
                     trigger,
-                    legitimacy);
+                    legitimacy,
+                    waterPressure);
             return toOptional(routingKeys);
         }
 
@@ -441,6 +462,7 @@ public class RoutingKeys {
                     routingKeys.illuminance == null ||
                     routingKeys.battery == null ||
                     routingKeys.trigger == null ||
+                    routingKeys.waterPressure == null ||
                     !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId) ||
                     routingKeys.legitimacy == null) {
                 return Optional.empty();
@@ -464,6 +486,7 @@ public class RoutingKeys {
                         routingKeys.battery.isAny() ||
                         routingKeys.legitimacy.isAny() ||
                         routingKeys.trigger.isAny() ||
+                        routingKeys.waterPressure.isAny() ||
                         !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+")) {
                     return Optional.empty();
                 }

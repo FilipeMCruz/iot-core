@@ -47,7 +47,7 @@ public class RoutingKeysMapper {
                 .withBattery(toModel(buf.getBattery()))
                 .withSoilMoisture(toModel(buf.getSoilMoisture()))
                 .withIlluminance(toModel(buf.getIlluminance()))
-                .withOnwership(toModel(buf.getOwnership()))
+                .withOwnership(toModel(buf.getOwnership()))
                 .withAlarm(toModel(buf.getTrigger()))
                 .build()
                 .orElseThrow(() -> new RuntimeException("Wrong Routing Keys"));

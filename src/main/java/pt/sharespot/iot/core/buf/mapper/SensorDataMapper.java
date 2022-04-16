@@ -28,7 +28,10 @@ public class SensorDataMapper {
             builder.setMotion(MotionMapper.toBuf(dto.motion));
 
         if (dto.hasProperty(PropertyName.AIR_PRESSURE))
-            builder.setAirPressure(PressureMapper.toBuf(dto.airPressure));
+            builder.setAirPressure(AirPressureMapper.toBuf(dto.airPressure));
+
+        if (dto.hasProperty(PropertyName.WATER_PRESSURE))
+            builder.setWaterPressure(WaterPressureMapper.toBuf(dto.waterPressure));
 
         if (dto.hasProperty(PropertyName.SOIL_MOISTURE))
             builder.setSoilMoisture(SoilMoistureMapper.toBuf(dto.soilMoisture));
@@ -51,9 +54,10 @@ public class SensorDataMapper {
                 .withHumidity(AirHumidityMapper.toModel(buf.getAirHumidity()))
                 .withIlluminance(IlluminanceMapper.toModel(buf.getIlluminance()))
                 .withMotion(MotionMapper.toModel(buf.getMotion()))
-                .withPressure(PressureMapper.toModel(buf.getAirPressure()))
+                .withPressure(AirPressureMapper.toModel(buf.getAirPressure()))
                 .withSoilMoisture(SoilMoistureMapper.toModel(buf.getSoilMoisture()))
                 .withTemperature(TemperatureMapper.toModel(buf.getTemperature()))
-                .withVelocity(VelocityMapper.toModel(buf.getVelocity()));
+                .withVelocity(VelocityMapper.toModel(buf.getVelocity()))
+                .withWaterPressure(WaterPressureMapper.toModel(buf.getWaterPressure()));
     }
 }
