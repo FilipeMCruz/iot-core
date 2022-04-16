@@ -28,6 +28,8 @@ public class SensorDataDetailsDTO {
 
     public WaterPressureDataDTO waterPressure;
 
+    public PHDataDTO ph;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case ALTITUDE -> gps != null && gps.existsAltitude();
@@ -46,12 +48,18 @@ public class SensorDataDetailsDTO {
             case WATER_PRESSURE -> waterPressure != null && waterPressure.exists();
             case BATTERY_MAX_VOLTS -> battery != null && battery.existsMaxVolts();
             case BATTERY_MIN_VOLTS -> battery != null && battery.existsMinVolts();
+            case PH -> ph != null && ph.exists();
             default -> false;
         };
     }
 
     public SensorDataDetailsDTO withBattery(BatteryDataDTO battery) {
         this.battery = battery;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withPh(PHDataDTO ph) {
+        this.ph = ph;
         return this;
     }
 

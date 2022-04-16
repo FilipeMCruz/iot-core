@@ -42,6 +42,9 @@ public class SensorDataMapper {
         if (dto.hasProperty(PropertyName.VELOCITY))
             builder.setVelocity(VelocityMapper.toBuf(dto.velocity));
 
+        if (dto.hasProperty(PropertyName.PH))
+            builder.setPh(PHMapper.toBuf(dto.ph));
+
         return builder;
     }
 
@@ -58,6 +61,7 @@ public class SensorDataMapper {
                 .withSoilMoisture(SoilMoistureMapper.toModel(buf.getSoilMoisture()))
                 .withTemperature(TemperatureMapper.toModel(buf.getTemperature()))
                 .withVelocity(VelocityMapper.toModel(buf.getVelocity()))
+                .withPh(PHMapper.toModel(buf.getPh()))
                 .withWaterPressure(WaterPressureMapper.toModel(buf.getWaterPressure()));
     }
 }

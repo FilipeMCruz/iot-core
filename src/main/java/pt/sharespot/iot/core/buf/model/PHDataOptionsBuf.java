@@ -4,37 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.WaterPressureDataOptions}
+ * Protobuf enum {@code pt.sharespot.iot.core.PHDataOptionsBuf}
  */
-public enum WaterPressureDataOptions
+public enum PHDataOptionsBuf
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNIDENTIFIED_WATER_PRESSURE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_PH_DATA = 0;</code>
    */
-  UNIDENTIFIED_WATER_PRESSURE_DATA(0),
+  UNIDENTIFIED_PH_DATA(0),
   /**
-   * <code>WITH_WATER_PRESSURE_DATA = 1;</code>
+   * <code>WITH_PH_DATA = 1;</code>
    */
-  WITH_WATER_PRESSURE_DATA(1),
+  WITH_PH_DATA(1),
   /**
-   * <code>WITHOUT_WATER_PRESSURE_DATA = 2;</code>
+   * <code>WITHOUT_PH_DATA = 2;</code>
    */
-  WITHOUT_WATER_PRESSURE_DATA(2),
+  WITHOUT_PH_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNIDENTIFIED_WATER_PRESSURE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_PH_DATA = 0;</code>
    */
-  public static final int UNIDENTIFIED_WATER_PRESSURE_DATA_VALUE = 0;
+  public static final int UNIDENTIFIED_PH_DATA_VALUE = 0;
   /**
-   * <code>WITH_WATER_PRESSURE_DATA = 1;</code>
+   * <code>WITH_PH_DATA = 1;</code>
    */
-  public static final int WITH_WATER_PRESSURE_DATA_VALUE = 1;
+  public static final int WITH_PH_DATA_VALUE = 1;
   /**
-   * <code>WITHOUT_WATER_PRESSURE_DATA = 2;</code>
+   * <code>WITHOUT_PH_DATA = 2;</code>
    */
-  public static final int WITHOUT_WATER_PRESSURE_DATA_VALUE = 2;
+  public static final int WITHOUT_PH_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -51,7 +51,7 @@ public enum WaterPressureDataOptions
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static WaterPressureDataOptions valueOf(int value) {
+  public static PHDataOptionsBuf valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +59,24 @@ public enum WaterPressureDataOptions
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static WaterPressureDataOptions forNumber(int value) {
+  public static PHDataOptionsBuf forNumber(int value) {
     switch (value) {
-      case 0: return UNIDENTIFIED_WATER_PRESSURE_DATA;
-      case 1: return WITH_WATER_PRESSURE_DATA;
-      case 2: return WITHOUT_WATER_PRESSURE_DATA;
+      case 0: return UNIDENTIFIED_PH_DATA;
+      case 1: return WITH_PH_DATA;
+      case 2: return WITHOUT_PH_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<WaterPressureDataOptions>
+  public static com.google.protobuf.Internal.EnumLiteMap<PHDataOptionsBuf>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      WaterPressureDataOptions> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<WaterPressureDataOptions>() {
-          public WaterPressureDataOptions findValueByNumber(int number) {
-            return WaterPressureDataOptions.forNumber(number);
+      PHDataOptionsBuf> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<PHDataOptionsBuf>() {
+          public PHDataOptionsBuf findValueByNumber(int number) {
+            return PHDataOptionsBuf.forNumber(number);
           }
         };
 
@@ -94,12 +94,12 @@ public enum WaterPressureDataOptions
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(11);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(1);
   }
 
-  private static final WaterPressureDataOptions[] VALUES = values();
+  private static final PHDataOptionsBuf[] VALUES = values();
 
-  public static WaterPressureDataOptions valueOf(
+  public static PHDataOptionsBuf valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +113,10 @@ public enum WaterPressureDataOptions
 
   private final int value;
 
-  private WaterPressureDataOptions(int value) {
+  private PHDataOptionsBuf(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.WaterPressureDataOptions)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.PHDataOptionsBuf)
 }
 

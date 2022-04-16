@@ -204,6 +204,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 106: {
+            pt.sharespot.iot.core.buf.model.PH.Builder subBuilder = null;
+            if (ph_ != null) {
+              subBuilder = ph_.toBuilder();
+            }
+            ph_ = input.readMessage(pt.sharespot.iot.core.buf.model.PH.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(ph_);
+              ph_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -548,6 +561,32 @@ private static final long serialVersionUID = 0L;
     return getWaterPressure();
   }
 
+  public static final int PH_FIELD_NUMBER = 13;
+  private pt.sharespot.iot.core.buf.model.PH ph_;
+  /**
+   * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+   * @return Whether the ph field is set.
+   */
+  @java.lang.Override
+  public boolean hasPh() {
+    return ph_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+   * @return The ph.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.PH getPh() {
+    return ph_ == null ? pt.sharespot.iot.core.buf.model.PH.getDefaultInstance() : ph_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.PHOrBuilder getPhOrBuilder() {
+    return getPh();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -597,6 +636,9 @@ private static final long serialVersionUID = 0L;
     }
     if (waterPressure_ != null) {
       output.writeMessage(12, getWaterPressure());
+    }
+    if (ph_ != null) {
+      output.writeMessage(13, getPh());
     }
     unknownFields.writeTo(output);
   }
@@ -654,6 +696,10 @@ private static final long serialVersionUID = 0L;
     if (waterPressure_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getWaterPressure());
+    }
+    if (ph_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getPh());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -730,6 +776,11 @@ private static final long serialVersionUID = 0L;
       if (!getWaterPressure()
           .equals(other.getWaterPressure())) return false;
     }
+    if (hasPh() != other.hasPh()) return false;
+    if (hasPh()) {
+      if (!getPh()
+          .equals(other.getPh())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -788,6 +839,10 @@ private static final long serialVersionUID = 0L;
     if (hasWaterPressure()) {
       hash = (37 * hash) + WATER_PRESSURE_FIELD_NUMBER;
       hash = (53 * hash) + getWaterPressure().hashCode();
+    }
+    if (hasPh()) {
+      hash = (37 * hash) + PH_FIELD_NUMBER;
+      hash = (53 * hash) + getPh().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -994,6 +1049,12 @@ private static final long serialVersionUID = 0L;
         waterPressure_ = null;
         waterPressureBuilder_ = null;
       }
+      if (phBuilder_ == null) {
+        ph_ = null;
+      } else {
+        ph_ = null;
+        phBuilder_ = null;
+      }
       return this;
     }
 
@@ -1080,6 +1141,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.waterPressure_ = waterPressureBuilder_.build();
       }
+      if (phBuilder_ == null) {
+        result.ph_ = ph_;
+      } else {
+        result.ph_ = phBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1163,6 +1229,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasWaterPressure()) {
         mergeWaterPressure(other.getWaterPressure());
+      }
+      if (other.hasPh()) {
+        mergePh(other.getPh());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2619,6 +2688,125 @@ private static final long serialVersionUID = 0L;
         waterPressure_ = null;
       }
       return waterPressureBuilder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.PH ph_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.PH, pt.sharespot.iot.core.buf.model.PH.Builder, pt.sharespot.iot.core.buf.model.PHOrBuilder> phBuilder_;
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     * @return Whether the ph field is set.
+     */
+    public boolean hasPh() {
+      return phBuilder_ != null || ph_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     * @return The ph.
+     */
+    public pt.sharespot.iot.core.buf.model.PH getPh() {
+      if (phBuilder_ == null) {
+        return ph_ == null ? pt.sharespot.iot.core.buf.model.PH.getDefaultInstance() : ph_;
+      } else {
+        return phBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     */
+    public Builder setPh(pt.sharespot.iot.core.buf.model.PH value) {
+      if (phBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ph_ = value;
+        onChanged();
+      } else {
+        phBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     */
+    public Builder setPh(
+        pt.sharespot.iot.core.buf.model.PH.Builder builderForValue) {
+      if (phBuilder_ == null) {
+        ph_ = builderForValue.build();
+        onChanged();
+      } else {
+        phBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     */
+    public Builder mergePh(pt.sharespot.iot.core.buf.model.PH value) {
+      if (phBuilder_ == null) {
+        if (ph_ != null) {
+          ph_ =
+            pt.sharespot.iot.core.buf.model.PH.newBuilder(ph_).mergeFrom(value).buildPartial();
+        } else {
+          ph_ = value;
+        }
+        onChanged();
+      } else {
+        phBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     */
+    public Builder clearPh() {
+      if (phBuilder_ == null) {
+        ph_ = null;
+        onChanged();
+      } else {
+        ph_ = null;
+        phBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.PH.Builder getPhBuilder() {
+      
+      onChanged();
+      return getPhFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.PHOrBuilder getPhOrBuilder() {
+      if (phBuilder_ != null) {
+        return phBuilder_.getMessageOrBuilder();
+      } else {
+        return ph_ == null ?
+            pt.sharespot.iot.core.buf.model.PH.getDefaultInstance() : ph_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.PH, pt.sharespot.iot.core.buf.model.PH.Builder, pt.sharespot.iot.core.buf.model.PHOrBuilder> 
+        getPhFieldBuilder() {
+      if (phBuilder_ == null) {
+        phBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.PH, pt.sharespot.iot.core.buf.model.PH.Builder, pt.sharespot.iot.core.buf.model.PHOrBuilder>(
+                getPh(),
+                getParentForChildren(),
+                isClean());
+        ph_ = null;
+      }
+      return phBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

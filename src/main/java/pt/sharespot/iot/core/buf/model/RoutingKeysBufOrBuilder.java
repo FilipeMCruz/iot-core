@@ -220,13 +220,24 @@ public interface RoutingKeysBufOrBuilder extends
   pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf getTrigger();
 
   /**
-   * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+   * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
    * @return The enum numeric value on the wire for waterPressure.
    */
   int getWaterPressureValue();
   /**
-   * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+   * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
    * @return The waterPressure.
    */
-  pt.sharespot.iot.core.buf.model.WaterPressureDataOptions getWaterPressure();
+  pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf getWaterPressure();
+
+  /**
+   * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+   * @return The enum numeric value on the wire for ph.
+   */
+  int getPhValue();
+  /**
+   * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+   * @return The ph.
+   */
+  pt.sharespot.iot.core.buf.model.PHDataOptionsBuf getPh();
 }

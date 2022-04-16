@@ -26,7 +26,9 @@ public class RoutingKeysMapper {
                 .setSoilMoisture(toBuf(dto.soilMoisture.get()))
                 .setIlluminance(toBuf(dto.illuminance.get()))
                 .setOwnership(toBuf(dto.ownership.get()))
-                .setTrigger(toBuf(dto.trigger.get()));
+                .setTrigger(toBuf(dto.trigger.get()))
+                .setPh(toBuf(dto.ph.get()))
+                .setWaterPressure(toBuf(dto.waterPressure.get()));
     }
 
     public static RoutingKeys toModel(RoutingKeysBuf buf) {
@@ -49,6 +51,8 @@ public class RoutingKeysMapper {
                 .withIlluminance(toModel(buf.getIlluminance()))
                 .withOwnership(toModel(buf.getOwnership()))
                 .withAlarm(toModel(buf.getTrigger()))
+                .withWaterPressure(toModel(buf.getWaterPressure()))
+                .withPh(toModel(buf.getPh()))
                 .build()
                 .orElseThrow(() -> new RuntimeException("Wrong Routing Keys"));
     }
@@ -101,6 +105,22 @@ public class RoutingKeysMapper {
         };
     }
 
+    private static PHDataOptionsBuf toBuf(PHDataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_PH_DATA -> PHDataOptionsBuf.UNIDENTIFIED_PH_DATA;
+            case WITH_PH_DATA -> PHDataOptionsBuf.WITH_PH_DATA;
+            case WITHOUT_PH_DATA -> PHDataOptionsBuf.WITHOUT_PH_DATA;
+        };
+    }
+
+    private static PHDataOptions toModel(PHDataOptionsBuf buf) {
+        return switch (buf) {
+            default -> PHDataOptions.UNIDENTIFIED_PH_DATA;
+            case WITH_PH_DATA -> PHDataOptions.WITH_PH_DATA;
+            case WITHOUT_PH_DATA -> PHDataOptions.WITHOUT_PH_DATA;
+        };
+    }
+
     private static TemperatureDataOptionsBuf toBuf(TemperatureDataOptions dto) {
         return switch (dto) {
             case UNIDENTIFIED_TEMPERATURE_DATA -> TemperatureDataOptionsBuf.UNIDENTIFIED_TEMPERATURE_DATA;
@@ -148,6 +168,22 @@ public class RoutingKeysMapper {
             default -> AirQualityDataOptions.UNIDENTIFIED_AQI_DATA;
             case WITH_AQI_DATA -> AirQualityDataOptions.WITH_AQI_DATA;
             case WITHOUT_AQI_DATA -> AirQualityDataOptions.WITHOUT_AQI_DATA;
+        };
+    }
+
+    private static WaterPressureDataOptions toModel(WaterPressureDataOptionsBuf buf) {
+        return switch (buf) {
+            default -> WaterPressureDataOptions.UNIDENTIFIED_WATER_PRESSURE_DATA;
+            case WITH_WATER_PRESSURE_DATA -> WaterPressureDataOptions.WITH_WATER_PRESSURE_DATA;
+            case WITHOUT_WATER_PRESSURE_DATA -> WaterPressureDataOptions.WITHOUT_WATER_PRESSURE_DATA;
+        };
+    }
+
+    private static WaterPressureDataOptionsBuf toBuf(WaterPressureDataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_WATER_PRESSURE_DATA -> WaterPressureDataOptionsBuf.UNIDENTIFIED_WATER_PRESSURE_DATA;
+            case WITH_WATER_PRESSURE_DATA -> WaterPressureDataOptionsBuf.WITH_WATER_PRESSURE_DATA;
+            case WITHOUT_WATER_PRESSURE_DATA -> WaterPressureDataOptionsBuf.WITHOUT_WATER_PRESSURE_DATA;
         };
     }
 

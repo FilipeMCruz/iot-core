@@ -4,45 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.DataLegitimacyOptionsBuf}
+ * Protobuf enum {@code pt.sharespot.iot.core.WaterPressureDataOptionsBuf}
  */
-public enum DataLegitimacyOptionsBuf
+public enum WaterPressureDataOptionsBuf
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNKNOWN_LEGITIMACY = 0;</code>
+   * <code>UNIDENTIFIED_WATER_PRESSURE_DATA = 0;</code>
    */
-  UNKNOWN_LEGITIMACY(0),
+  UNIDENTIFIED_WATER_PRESSURE_DATA(0),
   /**
-   * <code>CORRECT_LEGITIMACY = 1;</code>
+   * <code>WITH_WATER_PRESSURE_DATA = 1;</code>
    */
-  CORRECT_LEGITIMACY(1),
+  WITH_WATER_PRESSURE_DATA(1),
   /**
-   * <code>INCORRECT_LEGITIMACY = 2;</code>
+   * <code>WITHOUT_WATER_PRESSURE_DATA = 2;</code>
    */
-  INCORRECT_LEGITIMACY(2),
-  /**
-   * <code>UNDETERMINED_LEGITIMACY = 3;</code>
-   */
-  UNDETERMINED_LEGITIMACY(3),
+  WITHOUT_WATER_PRESSURE_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNKNOWN_LEGITIMACY = 0;</code>
+   * <code>UNIDENTIFIED_WATER_PRESSURE_DATA = 0;</code>
    */
-  public static final int UNKNOWN_LEGITIMACY_VALUE = 0;
+  public static final int UNIDENTIFIED_WATER_PRESSURE_DATA_VALUE = 0;
   /**
-   * <code>CORRECT_LEGITIMACY = 1;</code>
+   * <code>WITH_WATER_PRESSURE_DATA = 1;</code>
    */
-  public static final int CORRECT_LEGITIMACY_VALUE = 1;
+  public static final int WITH_WATER_PRESSURE_DATA_VALUE = 1;
   /**
-   * <code>INCORRECT_LEGITIMACY = 2;</code>
+   * <code>WITHOUT_WATER_PRESSURE_DATA = 2;</code>
    */
-  public static final int INCORRECT_LEGITIMACY_VALUE = 2;
-  /**
-   * <code>UNDETERMINED_LEGITIMACY = 3;</code>
-   */
-  public static final int UNDETERMINED_LEGITIMACY_VALUE = 3;
+  public static final int WITHOUT_WATER_PRESSURE_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -59,7 +51,7 @@ public enum DataLegitimacyOptionsBuf
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static DataLegitimacyOptionsBuf valueOf(int value) {
+  public static WaterPressureDataOptionsBuf valueOf(int value) {
     return forNumber(value);
   }
 
@@ -67,25 +59,24 @@ public enum DataLegitimacyOptionsBuf
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static DataLegitimacyOptionsBuf forNumber(int value) {
+  public static WaterPressureDataOptionsBuf forNumber(int value) {
     switch (value) {
-      case 0: return UNKNOWN_LEGITIMACY;
-      case 1: return CORRECT_LEGITIMACY;
-      case 2: return INCORRECT_LEGITIMACY;
-      case 3: return UNDETERMINED_LEGITIMACY;
+      case 0: return UNIDENTIFIED_WATER_PRESSURE_DATA;
+      case 1: return WITH_WATER_PRESSURE_DATA;
+      case 2: return WITHOUT_WATER_PRESSURE_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<DataLegitimacyOptionsBuf>
+  public static com.google.protobuf.Internal.EnumLiteMap<WaterPressureDataOptionsBuf>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      DataLegitimacyOptionsBuf> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<DataLegitimacyOptionsBuf>() {
-          public DataLegitimacyOptionsBuf findValueByNumber(int number) {
-            return DataLegitimacyOptionsBuf.forNumber(number);
+      WaterPressureDataOptionsBuf> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<WaterPressureDataOptionsBuf>() {
+          public WaterPressureDataOptionsBuf findValueByNumber(int number) {
+            return WaterPressureDataOptionsBuf.forNumber(number);
           }
         };
 
@@ -103,12 +94,12 @@ public enum DataLegitimacyOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(13);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(12);
   }
 
-  private static final DataLegitimacyOptionsBuf[] VALUES = values();
+  private static final WaterPressureDataOptionsBuf[] VALUES = values();
 
-  public static DataLegitimacyOptionsBuf valueOf(
+  public static WaterPressureDataOptionsBuf valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -122,10 +113,10 @@ public enum DataLegitimacyOptionsBuf
 
   private final int value;
 
-  private DataLegitimacyOptionsBuf(int value) {
+  private WaterPressureDataOptionsBuf(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.DataLegitimacyOptionsBuf)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.WaterPressureDataOptionsBuf)
 }
 

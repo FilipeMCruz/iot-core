@@ -39,6 +39,7 @@ message SensorData {
   Illuminance illuminance = 10;
   Trigger trigger = 11;
   WaterPressure water_pressure = 12;
+  PH ph = 13;
 }
 
 message GPS {
@@ -62,6 +63,10 @@ message Temperature {
 }
 
 message AirQuality {
+  float value = 1;
+}
+
+message PH {
   float value = 1;
 }
 
@@ -142,9 +147,14 @@ message RoutingKeysBuf {
   IlluminanceDataOptionsBuf illuminance = 17;
   DomainOwnershipOptionsBuf ownership = 18;
   TriggerDataOptionsBuf trigger = 19;
-  WaterPressureDataOptions water_pressure = 20;
+  WaterPressureDataOptionsBuf water_pressure = 20;
+  PHDataOptionsBuf ph = 21;
 }
-
+enum PHDataOptionsBuf  {
+  UNIDENTIFIED_PH_DATA = 0;
+  WITH_PH_DATA = 1;
+  WITHOUT_PH_DATA = 2;
+}
 enum TriggerDataOptionsBuf {
   UNIDENTIFIED_TRIGGER_DATA = 0;
   WITH_TRIGGER_DATA = 1;
@@ -205,7 +215,7 @@ enum AirQualityDataOptionsBuf {
   WITHOUT_AQI_DATA = 2;
 }
 
-enum WaterPressureDataOptions {
+enum WaterPressureDataOptionsBuf {
   UNIDENTIFIED_WATER_PRESSURE_DATA = 0;
   WITH_WATER_PRESSURE_DATA = 1;
   WITHOUT_WATER_PRESSURE_DATA = 2;

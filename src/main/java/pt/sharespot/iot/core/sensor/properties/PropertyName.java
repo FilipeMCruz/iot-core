@@ -113,16 +113,25 @@ public enum PropertyName {
         }
 
     },
+    PH {
+        public String path() {
+            return "data.ph.value";
+        }
+
+    },
+
     SOIL_MOISTURE {
         public String path() {
             return "data.soilMoisture.relativePercentage";
         }
     },
+
     ILLUMINANCE {
         public String path() {
             return "data.illuminance.lux";
         }
     },
+
     TRIGGER {
         public String path() {
             return "data.trigger.value";

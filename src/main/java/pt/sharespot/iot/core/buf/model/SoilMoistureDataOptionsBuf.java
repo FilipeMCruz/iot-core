@@ -94,7 +94,7 @@ public enum SoilMoistureDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(4);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final SoilMoistureDataOptionsBuf[] VALUES = values();

@@ -36,6 +36,7 @@ private static final long serialVersionUID = 0L;
     ownership_ = 0;
     trigger_ = 0;
     waterPressure_ = 0;
+    ph_ = 0;
   }
 
   @java.lang.Override
@@ -186,6 +187,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             waterPressure_ = rawValue;
+            break;
+          }
+          case 168: {
+            int rawValue = input.readEnum();
+
+            ph_ = rawValue;
             break;
           }
           default: {
@@ -641,20 +648,39 @@ private static final long serialVersionUID = 0L;
   public static final int WATER_PRESSURE_FIELD_NUMBER = 20;
   private int waterPressure_;
   /**
-   * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+   * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
    * @return The enum numeric value on the wire for waterPressure.
    */
   @java.lang.Override public int getWaterPressureValue() {
     return waterPressure_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+   * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
    * @return The waterPressure.
    */
-  @java.lang.Override public pt.sharespot.iot.core.buf.model.WaterPressureDataOptions getWaterPressure() {
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf getWaterPressure() {
     @SuppressWarnings("deprecation")
-    pt.sharespot.iot.core.buf.model.WaterPressureDataOptions result = pt.sharespot.iot.core.buf.model.WaterPressureDataOptions.valueOf(waterPressure_);
-    return result == null ? pt.sharespot.iot.core.buf.model.WaterPressureDataOptions.UNRECOGNIZED : result;
+    pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf.valueOf(waterPressure_);
+    return result == null ? pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf.UNRECOGNIZED : result;
+  }
+
+  public static final int PH_FIELD_NUMBER = 21;
+  private int ph_;
+  /**
+   * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+   * @return The enum numeric value on the wire for ph.
+   */
+  @java.lang.Override public int getPhValue() {
+    return ph_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+   * @return The ph.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.PHDataOptionsBuf getPh() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.PHDataOptionsBuf result = pt.sharespot.iot.core.buf.model.PHDataOptionsBuf.valueOf(ph_);
+    return result == null ? pt.sharespot.iot.core.buf.model.PHDataOptionsBuf.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -728,8 +754,11 @@ private static final long serialVersionUID = 0L;
     if (trigger_ != pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf.UNIDENTIFIED_TRIGGER_DATA.getNumber()) {
       output.writeEnum(19, trigger_);
     }
-    if (waterPressure_ != pt.sharespot.iot.core.buf.model.WaterPressureDataOptions.UNIDENTIFIED_WATER_PRESSURE_DATA.getNumber()) {
+    if (waterPressure_ != pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf.UNIDENTIFIED_WATER_PRESSURE_DATA.getNumber()) {
       output.writeEnum(20, waterPressure_);
+    }
+    if (ph_ != pt.sharespot.iot.core.buf.model.PHDataOptionsBuf.UNIDENTIFIED_PH_DATA.getNumber()) {
+      output.writeEnum(21, ph_);
     }
     unknownFields.writeTo(output);
   }
@@ -813,9 +842,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(19, trigger_);
     }
-    if (waterPressure_ != pt.sharespot.iot.core.buf.model.WaterPressureDataOptions.UNIDENTIFIED_WATER_PRESSURE_DATA.getNumber()) {
+    if (waterPressure_ != pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf.UNIDENTIFIED_WATER_PRESSURE_DATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(20, waterPressure_);
+    }
+    if (ph_ != pt.sharespot.iot.core.buf.model.PHDataOptionsBuf.UNIDENTIFIED_PH_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(21, ph_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -855,6 +888,7 @@ private static final long serialVersionUID = 0L;
     if (ownership_ != other.ownership_) return false;
     if (trigger_ != other.trigger_) return false;
     if (waterPressure_ != other.waterPressure_) return false;
+    if (ph_ != other.ph_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -906,6 +940,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + trigger_;
     hash = (37 * hash) + WATER_PRESSURE_FIELD_NUMBER;
     hash = (53 * hash) + waterPressure_;
+    hash = (37 * hash) + PH_FIELD_NUMBER;
+    hash = (53 * hash) + ph_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1079,6 +1115,8 @@ private static final long serialVersionUID = 0L;
 
       waterPressure_ = 0;
 
+      ph_ = 0;
+
       return this;
     }
 
@@ -1125,6 +1163,7 @@ private static final long serialVersionUID = 0L;
       result.ownership_ = ownership_;
       result.trigger_ = trigger_;
       result.waterPressure_ = waterPressure_;
+      result.ph_ = ph_;
       onBuilt();
       return result;
     }
@@ -1235,6 +1274,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.waterPressure_ != 0) {
         setWaterPressureValue(other.getWaterPressureValue());
+      }
+      if (other.ph_ != 0) {
+        setPhValue(other.getPhValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2359,14 +2401,14 @@ private static final long serialVersionUID = 0L;
 
     private int waterPressure_ = 0;
     /**
-     * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+     * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
      * @return The enum numeric value on the wire for waterPressure.
      */
     @java.lang.Override public int getWaterPressureValue() {
       return waterPressure_;
     }
     /**
-     * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+     * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
      * @param value The enum numeric value on the wire for waterPressure to set.
      * @return This builder for chaining.
      */
@@ -2377,21 +2419,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+     * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
      * @return The waterPressure.
      */
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.WaterPressureDataOptions getWaterPressure() {
+    public pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf getWaterPressure() {
       @SuppressWarnings("deprecation")
-      pt.sharespot.iot.core.buf.model.WaterPressureDataOptions result = pt.sharespot.iot.core.buf.model.WaterPressureDataOptions.valueOf(waterPressure_);
-      return result == null ? pt.sharespot.iot.core.buf.model.WaterPressureDataOptions.UNRECOGNIZED : result;
+      pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf.valueOf(waterPressure_);
+      return result == null ? pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf.UNRECOGNIZED : result;
     }
     /**
-     * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+     * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
      * @param value The waterPressure to set.
      * @return This builder for chaining.
      */
-    public Builder setWaterPressure(pt.sharespot.iot.core.buf.model.WaterPressureDataOptions value) {
+    public Builder setWaterPressure(pt.sharespot.iot.core.buf.model.WaterPressureDataOptionsBuf value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -2401,12 +2443,66 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.WaterPressureDataOptions water_pressure = 20;</code>
+     * <code>.pt.sharespot.iot.core.WaterPressureDataOptionsBuf water_pressure = 20;</code>
      * @return This builder for chaining.
      */
     public Builder clearWaterPressure() {
       
       waterPressure_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int ph_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+     * @return The enum numeric value on the wire for ph.
+     */
+    @java.lang.Override public int getPhValue() {
+      return ph_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+     * @param value The enum numeric value on the wire for ph to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhValue(int value) {
+      
+      ph_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+     * @return The ph.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.PHDataOptionsBuf getPh() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.PHDataOptionsBuf result = pt.sharespot.iot.core.buf.model.PHDataOptionsBuf.valueOf(ph_);
+      return result == null ? pt.sharespot.iot.core.buf.model.PHDataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+     * @param value The ph to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPh(pt.sharespot.iot.core.buf.model.PHDataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      ph_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PHDataOptionsBuf ph = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPh() {
+      
+      ph_ = 0;
       onChanged();
       return this;
     }
