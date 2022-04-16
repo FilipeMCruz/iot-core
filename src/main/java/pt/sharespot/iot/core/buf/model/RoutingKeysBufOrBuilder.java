@@ -121,15 +121,15 @@ public interface RoutingKeysBufOrBuilder extends
   pt.sharespot.iot.core.buf.model.AirQualityDataOptionsBuf getAqi();
 
   /**
-   * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
-   * @return The enum numeric value on the wire for humidity.
+   * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
+   * @return The enum numeric value on the wire for airHumidity.
    */
-  int getHumidityValue();
+  int getAirHumidityValue();
   /**
-   * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
-   * @return The humidity.
+   * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
+   * @return The airHumidity.
    */
-  pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf getHumidity();
+  pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf getAirHumidity();
 
   /**
    * <code>.pt.sharespot.iot.core.MotionDataOptionsBuf motion = 12;</code>
@@ -154,15 +154,15 @@ public interface RoutingKeysBufOrBuilder extends
   pt.sharespot.iot.core.buf.model.VelocityDataOptionsBuf getVelocity();
 
   /**
-   * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
-   * @return The enum numeric value on the wire for pressure.
+   * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
+   * @return The enum numeric value on the wire for airPressure.
    */
-  int getPressureValue();
+  int getAirPressureValue();
   /**
-   * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
-   * @return The pressure.
+   * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
+   * @return The airPressure.
    */
-  pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf getPressure();
+  pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf getAirPressure();
 
   /**
    * <code>.pt.sharespot.iot.core.BatteryDataOptionsBuf battery = 15;</code>
@@ -176,15 +176,15 @@ public interface RoutingKeysBufOrBuilder extends
   pt.sharespot.iot.core.buf.model.BatteryDataOptionsBuf getBattery();
 
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
-   * @return The enum numeric value on the wire for moisture.
+   * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
+   * @return The enum numeric value on the wire for soilMoisture.
    */
-  int getMoistureValue();
+  int getSoilMoistureValue();
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
-   * @return The moisture.
+   * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
+   * @return The soilMoisture.
    */
-  pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf getMoisture();
+  pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf getSoilMoisture();
 
   /**
    * <code>.pt.sharespot.iot.core.IlluminanceDataOptionsBuf illuminance = 17;</code>
@@ -209,13 +209,13 @@ public interface RoutingKeysBufOrBuilder extends
   pt.sharespot.iot.core.buf.model.DomainOwnershipOptionsBuf getOwnership();
 
   /**
-   * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
-   * @return The enum numeric value on the wire for alarm.
+   * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
+   * @return The enum numeric value on the wire for trigger.
    */
-  int getAlarmValue();
+  int getTriggerValue();
   /**
-   * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
-   * @return The alarm.
+   * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
+   * @return The trigger.
    */
-  pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf getAlarm();
+  pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf getTrigger();
 }

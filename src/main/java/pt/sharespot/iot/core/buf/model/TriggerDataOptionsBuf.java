@@ -4,37 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.PressureDataOptionsBuf}
+ * Protobuf enum {@code pt.sharespot.iot.core.TriggerDataOptionsBuf}
  */
-public enum PressureDataOptionsBuf
+public enum TriggerDataOptionsBuf
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNIDENTIFIED_PRESSURE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_TRIGGER_DATA = 0;</code>
    */
-  UNIDENTIFIED_PRESSURE_DATA(0),
+  UNIDENTIFIED_TRIGGER_DATA(0),
   /**
-   * <code>WITH_PRESSURE_DATA = 1;</code>
+   * <code>WITH_TRIGGER_DATA = 1;</code>
    */
-  WITH_PRESSURE_DATA(1),
+  WITH_TRIGGER_DATA(1),
   /**
-   * <code>WITHOUT_PRESSURE_DATA = 2;</code>
+   * <code>WITHOUT_TRIGGER_DATA = 2;</code>
    */
-  WITHOUT_PRESSURE_DATA(2),
+  WITHOUT_TRIGGER_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNIDENTIFIED_PRESSURE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_TRIGGER_DATA = 0;</code>
    */
-  public static final int UNIDENTIFIED_PRESSURE_DATA_VALUE = 0;
+  public static final int UNIDENTIFIED_TRIGGER_DATA_VALUE = 0;
   /**
-   * <code>WITH_PRESSURE_DATA = 1;</code>
+   * <code>WITH_TRIGGER_DATA = 1;</code>
    */
-  public static final int WITH_PRESSURE_DATA_VALUE = 1;
+  public static final int WITH_TRIGGER_DATA_VALUE = 1;
   /**
-   * <code>WITHOUT_PRESSURE_DATA = 2;</code>
+   * <code>WITHOUT_TRIGGER_DATA = 2;</code>
    */
-  public static final int WITHOUT_PRESSURE_DATA_VALUE = 2;
+  public static final int WITHOUT_TRIGGER_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -51,7 +51,7 @@ public enum PressureDataOptionsBuf
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static PressureDataOptionsBuf valueOf(int value) {
+  public static TriggerDataOptionsBuf valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +59,24 @@ public enum PressureDataOptionsBuf
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static PressureDataOptionsBuf forNumber(int value) {
+  public static TriggerDataOptionsBuf forNumber(int value) {
     switch (value) {
-      case 0: return UNIDENTIFIED_PRESSURE_DATA;
-      case 1: return WITH_PRESSURE_DATA;
-      case 2: return WITHOUT_PRESSURE_DATA;
+      case 0: return UNIDENTIFIED_TRIGGER_DATA;
+      case 1: return WITH_TRIGGER_DATA;
+      case 2: return WITHOUT_TRIGGER_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<PressureDataOptionsBuf>
+  public static com.google.protobuf.Internal.EnumLiteMap<TriggerDataOptionsBuf>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      PressureDataOptionsBuf> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<PressureDataOptionsBuf>() {
-          public PressureDataOptionsBuf findValueByNumber(int number) {
-            return PressureDataOptionsBuf.forNumber(number);
+      TriggerDataOptionsBuf> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TriggerDataOptionsBuf>() {
+          public TriggerDataOptionsBuf findValueByNumber(int number) {
+            return TriggerDataOptionsBuf.forNumber(number);
           }
         };
 
@@ -94,12 +94,12 @@ public enum PressureDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(6);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(1);
   }
 
-  private static final PressureDataOptionsBuf[] VALUES = values();
+  private static final TriggerDataOptionsBuf[] VALUES = values();
 
-  public static PressureDataOptionsBuf valueOf(
+  public static TriggerDataOptionsBuf valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +113,10 @@ public enum PressureDataOptionsBuf
 
   private final int value;
 
-  private PressureDataOptionsBuf(int value) {
+  private TriggerDataOptionsBuf(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.PressureDataOptionsBuf)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.TriggerDataOptionsBuf)
 }
 

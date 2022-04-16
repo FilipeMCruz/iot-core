@@ -3,15 +3,15 @@ package pt.sharespot.iot.core.routing.keys.data;
 import pt.sharespot.iot.core.routing.keys.RoutingKey;
 import pt.sharespot.iot.core.routing.keys.RoutingKeyOption;
 
-public enum PressureDataOptions implements RoutingKey {
-    UNIDENTIFIED_PRESSURE_DATA,
-    WITH_PRESSURE_DATA,
-    WITHOUT_PRESSURE_DATA;
+public enum TriggerDataOptions implements RoutingKey {
+    UNIDENTIFIED_TRIGGER_DATA,
+    WITH_TRIGGER_DATA,
+    WITHOUT_TRIGGER_DATA;
 
     public String value() {
-        if (this == UNIDENTIFIED_PRESSURE_DATA) {
+        if (this == UNIDENTIFIED_TRIGGER_DATA) {
             return "u";
-        } else if (this == WITH_PRESSURE_DATA) {
+        } else if (this == WITH_TRIGGER_DATA) {
             return "y";
         } else {
             return "n";
@@ -22,13 +22,13 @@ public enum PressureDataOptions implements RoutingKey {
         return this.toString().toLowerCase();
     }
 
-    public static RoutingKeyOption<PressureDataOptions> extract(String value) {
+    public static RoutingKeyOption<TriggerDataOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return RoutingKeyOption.of(PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA);
+            return RoutingKeyOption.of(TriggerDataOptions.UNIDENTIFIED_TRIGGER_DATA);
         } else if (value.equalsIgnoreCase("y")) {
-            return RoutingKeyOption.of(PressureDataOptions.WITH_PRESSURE_DATA);
+            return RoutingKeyOption.of(TriggerDataOptions.WITH_TRIGGER_DATA);
         } else if (value.equalsIgnoreCase("n")) {
-            return RoutingKeyOption.of(PressureDataOptions.WITHOUT_PRESSURE_DATA);
+            return RoutingKeyOption.of(TriggerDataOptions.WITHOUT_TRIGGER_DATA);
         } else {
             return RoutingKeyOption.any();
         }

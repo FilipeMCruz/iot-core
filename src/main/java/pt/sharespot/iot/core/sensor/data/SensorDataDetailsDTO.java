@@ -14,17 +14,17 @@ public class SensorDataDetailsDTO {
 
     public VelocityDataDTO velocity;
 
-    public HumidityDataDTO humidity;
+    public AirHumidityDataDTO airHumidity;
 
-    public PressureDataDTO pressure;
+    public AirPressureDataDTO airPressure;
 
     public BatteryDataDTO battery;
 
-    public SoilMoistureDataDTO moisture;
+    public SoilMoistureDataDTO soilMoisture;
 
     public IlluminanceDataDTO illuminance;
 
-    public AlarmDataDTO alarm;
+    public TriggerDataDTO trigger;
 
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
@@ -32,13 +32,13 @@ public class SensorDataDetailsDTO {
             case LATITUDE, LONGITUDE -> gps != null && gps.exists();
             case TEMPERATURE -> temperature != null && temperature.exists();
             case VELOCITY -> velocity != null && velocity.exists();
-            case HUMIDITY -> humidity != null && humidity.exists();
-            case PRESSURE -> pressure != null && pressure.exists();
+            case AIR_HUMIDITY -> airHumidity != null && airHumidity.exists();
+            case AIR_PRESSURE -> airPressure != null && airPressure.exists();
             case MOTION -> motion != null && motion.exists();
             case AQI -> aqi != null && aqi.exists();
             case BATTERY_PERCENTAGE -> battery != null && battery.existsPercentage();
             case BATTERY_VOLTS -> battery != null && battery.existsVolts();
-            case SOIL_MOISTURE -> moisture != null && moisture.exists();
+            case SOIL_MOISTURE -> soilMoisture != null && soilMoisture.exists();
             case ILLUMINANCE -> illuminance != null && illuminance.exists();
             default -> false;
         };
@@ -49,8 +49,8 @@ public class SensorDataDetailsDTO {
         return this;
     }
 
-    public SensorDataDetailsDTO withAlarm(AlarmDataDTO alarm) {
-        this.alarm = alarm;
+    public SensorDataDetailsDTO withAlarm(TriggerDataDTO alarm) {
+        this.trigger = alarm;
         return this;
     }
 
@@ -60,7 +60,7 @@ public class SensorDataDetailsDTO {
     }
 
     public SensorDataDetailsDTO withSoilMoisture(SoilMoistureDataDTO moisture) {
-        this.moisture = moisture;
+        this.soilMoisture = moisture;
         return this;
     }
 
@@ -89,13 +89,13 @@ public class SensorDataDetailsDTO {
         return this;
     }
 
-    public SensorDataDetailsDTO withHumidity(HumidityDataDTO humidity) {
-        this.humidity = humidity;
+    public SensorDataDetailsDTO withHumidity(AirHumidityDataDTO humidity) {
+        this.airHumidity = humidity;
         return this;
     }
 
-    public SensorDataDetailsDTO withPressure(PressureDataDTO pressure) {
-        this.pressure = pressure;
+    public SensorDataDetailsDTO withPressure(AirPressureDataDTO pressure) {
+        this.airPressure = pressure;
         return this;
     }
 }

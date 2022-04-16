@@ -2,16 +2,16 @@ package pt.sharespot.iot.core.sensor.data;
 
 public class AirQualityDataDTO implements DataTypeDTO {
 
-    public Float eaqi;
+    public Float value;
 
     public static AirQualityDataDTO of(Float aqi) {
         var dataDTO = new AirQualityDataDTO();
-        dataDTO.eaqi = aqi;
+        dataDTO.value = aqi;
         return dataDTO;
     }
 
     @Override
     public boolean exists() {
-        return eaqi != null;
+        return value != null;
     }
 }

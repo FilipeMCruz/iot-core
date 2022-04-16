@@ -4,37 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.HumidityDataOptionsBuf}
+ * Protobuf enum {@code pt.sharespot.iot.core.AirHumidityDataOptionsBuf}
  */
-public enum HumidityDataOptionsBuf
+public enum AirHumidityDataOptionsBuf
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNIDENTIFIED_HUMIDITY_DATA = 0;</code>
+   * <code>UNIDENTIFIED_AIR_HUMIDITY_DATA = 0;</code>
    */
-  UNIDENTIFIED_HUMIDITY_DATA(0),
+  UNIDENTIFIED_AIR_HUMIDITY_DATA(0),
   /**
-   * <code>WITH_HUMIDITY_DATA = 1;</code>
+   * <code>WITH_AIR_HUMIDITY_DATA = 1;</code>
    */
-  WITH_HUMIDITY_DATA(1),
+  WITH_AIR_HUMIDITY_DATA(1),
   /**
-   * <code>WITHOUT_HUMIDITY_DATA = 2;</code>
+   * <code>WITHOUT_AIR_HUMIDITY_DATA = 2;</code>
    */
-  WITHOUT_HUMIDITY_DATA(2),
+  WITHOUT_AIR_HUMIDITY_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNIDENTIFIED_HUMIDITY_DATA = 0;</code>
+   * <code>UNIDENTIFIED_AIR_HUMIDITY_DATA = 0;</code>
    */
-  public static final int UNIDENTIFIED_HUMIDITY_DATA_VALUE = 0;
+  public static final int UNIDENTIFIED_AIR_HUMIDITY_DATA_VALUE = 0;
   /**
-   * <code>WITH_HUMIDITY_DATA = 1;</code>
+   * <code>WITH_AIR_HUMIDITY_DATA = 1;</code>
    */
-  public static final int WITH_HUMIDITY_DATA_VALUE = 1;
+  public static final int WITH_AIR_HUMIDITY_DATA_VALUE = 1;
   /**
-   * <code>WITHOUT_HUMIDITY_DATA = 2;</code>
+   * <code>WITHOUT_AIR_HUMIDITY_DATA = 2;</code>
    */
-  public static final int WITHOUT_HUMIDITY_DATA_VALUE = 2;
+  public static final int WITHOUT_AIR_HUMIDITY_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -51,7 +51,7 @@ public enum HumidityDataOptionsBuf
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static HumidityDataOptionsBuf valueOf(int value) {
+  public static AirHumidityDataOptionsBuf valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +59,24 @@ public enum HumidityDataOptionsBuf
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static HumidityDataOptionsBuf forNumber(int value) {
+  public static AirHumidityDataOptionsBuf forNumber(int value) {
     switch (value) {
-      case 0: return UNIDENTIFIED_HUMIDITY_DATA;
-      case 1: return WITH_HUMIDITY_DATA;
-      case 2: return WITHOUT_HUMIDITY_DATA;
+      case 0: return UNIDENTIFIED_AIR_HUMIDITY_DATA;
+      case 1: return WITH_AIR_HUMIDITY_DATA;
+      case 2: return WITHOUT_AIR_HUMIDITY_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<HumidityDataOptionsBuf>
+  public static com.google.protobuf.Internal.EnumLiteMap<AirHumidityDataOptionsBuf>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      HumidityDataOptionsBuf> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<HumidityDataOptionsBuf>() {
-          public HumidityDataOptionsBuf findValueByNumber(int number) {
-            return HumidityDataOptionsBuf.forNumber(number);
+      AirHumidityDataOptionsBuf> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AirHumidityDataOptionsBuf>() {
+          public AirHumidityDataOptionsBuf findValueByNumber(int number) {
+            return AirHumidityDataOptionsBuf.forNumber(number);
           }
         };
 
@@ -97,9 +97,9 @@ public enum HumidityDataOptionsBuf
     return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(9);
   }
 
-  private static final HumidityDataOptionsBuf[] VALUES = values();
+  private static final AirHumidityDataOptionsBuf[] VALUES = values();
 
-  public static HumidityDataOptionsBuf valueOf(
+  public static AirHumidityDataOptionsBuf valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +113,10 @@ public enum HumidityDataOptionsBuf
 
   private final int value;
 
-  private HumidityDataOptionsBuf(int value) {
+  private AirHumidityDataOptionsBuf(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.HumidityDataOptionsBuf)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.AirHumidityDataOptionsBuf)
 }
 

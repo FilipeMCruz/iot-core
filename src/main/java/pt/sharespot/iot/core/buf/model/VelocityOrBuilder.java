@@ -8,8 +8,8 @@ public interface VelocityOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float km_per_hour = 1;</code>
-   * @return The kmPerHour.
+   * <code>float kilometers_per_hour = 1;</code>
+   * @return The kilometersPerHour.
    */
-  float getKmPerHour();
+  float getKilometersPerHour();
 }

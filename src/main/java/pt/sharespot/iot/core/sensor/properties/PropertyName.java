@@ -53,7 +53,7 @@ public enum PropertyName {
     },
     TEMPERATURE {
         public String path() {
-            return "data.temp.celsius";
+            return "data.temperature.celsius";
         }
     },
     MOTION {
@@ -63,22 +63,22 @@ public enum PropertyName {
     },
     VELOCITY {
         public String path() {
-            return "data.velocity.kmperh";
+            return "data.velocity.kilometerPerHour";
         }
     },
     AQI {
         public String path() {
-            return "data.aqi.eaqi";
+            return "data.aqi.value";
         }
     },
-    HUMIDITY {
+    AIR_HUMIDITY {
         public String path() {
-            return "data.humidity.gramspercubicmeter";
+            return "data.airHumidity.gramsPerCubicMeter";
         }
     },
-    PRESSURE {
+    AIR_PRESSURE {
         public String path() {
-            return "data.pressure.hPa";
+            return "data.airPressure.hectoPascal";
         }
     },
     BATTERY_PERCENTAGE {
@@ -93,7 +93,7 @@ public enum PropertyName {
     },
     SOIL_MOISTURE {
         public String path() {
-            return "data.moisture.percentage";
+            return "data.soilMoisture.relativePercentage";
         }
     },
     ILLUMINANCE {
@@ -101,9 +101,9 @@ public enum PropertyName {
             return "data.illuminance.lux";
         }
     },
-    ALARM {
+    TRIGGER {
         public String path() {
-            return "data.alarm.value";
+            return "data.trigger.value";
         }
     };
 

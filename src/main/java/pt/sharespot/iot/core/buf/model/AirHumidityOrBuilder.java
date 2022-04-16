@@ -3,8 +3,8 @@
 
 package pt.sharespot.iot.core.buf.model;
 
-public interface HumidityOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pt.sharespot.iot.core.Humidity)
+public interface AirHumidityOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:pt.sharespot.iot.core.AirHumidity)
     com.google.protobuf.MessageOrBuilder {
 
   /**

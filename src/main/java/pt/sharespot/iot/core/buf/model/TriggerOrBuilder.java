@@ -3,13 +3,13 @@
 
 package pt.sharespot.iot.core.buf.model;
 
-public interface PressureOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pt.sharespot.iot.core.Pressure)
+public interface TriggerOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:pt.sharespot.iot.core.Trigger)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float hPa = 1;</code>
-   * @return The hPa.
+   * <code>bool value = 1;</code>
+   * @return The value.
    */
-  float getHPa();
+  boolean getValue();
 }

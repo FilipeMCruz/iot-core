@@ -4,37 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.AlarmDataOptionsBuf}
+ * Protobuf enum {@code pt.sharespot.iot.core.AirPressureDataOptionsBuf}
  */
-public enum AlarmDataOptionsBuf
+public enum AirPressureDataOptionsBuf
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNIDENTIFIED_ALARM_DATA = 0;</code>
+   * <code>UNIDENTIFIED_AIR_PRESSURE_DATA = 0;</code>
    */
-  UNIDENTIFIED_ALARM_DATA(0),
+  UNIDENTIFIED_AIR_PRESSURE_DATA(0),
   /**
-   * <code>WITH_ALARM_DATA = 1;</code>
+   * <code>WITH_AIR_PRESSURE_DATA = 1;</code>
    */
-  WITH_ALARM_DATA(1),
+  WITH_AIR_PRESSURE_DATA(1),
   /**
-   * <code>WITHOUT_ALARM_DATA = 2;</code>
+   * <code>WITHOUT_AIR_PRESSURE_DATA = 2;</code>
    */
-  WITHOUT_ALARM_DATA(2),
+  WITHOUT_AIR_PRESSURE_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNIDENTIFIED_ALARM_DATA = 0;</code>
+   * <code>UNIDENTIFIED_AIR_PRESSURE_DATA = 0;</code>
    */
-  public static final int UNIDENTIFIED_ALARM_DATA_VALUE = 0;
+  public static final int UNIDENTIFIED_AIR_PRESSURE_DATA_VALUE = 0;
   /**
-   * <code>WITH_ALARM_DATA = 1;</code>
+   * <code>WITH_AIR_PRESSURE_DATA = 1;</code>
    */
-  public static final int WITH_ALARM_DATA_VALUE = 1;
+  public static final int WITH_AIR_PRESSURE_DATA_VALUE = 1;
   /**
-   * <code>WITHOUT_ALARM_DATA = 2;</code>
+   * <code>WITHOUT_AIR_PRESSURE_DATA = 2;</code>
    */
-  public static final int WITHOUT_ALARM_DATA_VALUE = 2;
+  public static final int WITHOUT_AIR_PRESSURE_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -51,7 +51,7 @@ public enum AlarmDataOptionsBuf
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static AlarmDataOptionsBuf valueOf(int value) {
+  public static AirPressureDataOptionsBuf valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +59,24 @@ public enum AlarmDataOptionsBuf
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static AlarmDataOptionsBuf forNumber(int value) {
+  public static AirPressureDataOptionsBuf forNumber(int value) {
     switch (value) {
-      case 0: return UNIDENTIFIED_ALARM_DATA;
-      case 1: return WITH_ALARM_DATA;
-      case 2: return WITHOUT_ALARM_DATA;
+      case 0: return UNIDENTIFIED_AIR_PRESSURE_DATA;
+      case 1: return WITH_AIR_PRESSURE_DATA;
+      case 2: return WITHOUT_AIR_PRESSURE_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<AlarmDataOptionsBuf>
+  public static com.google.protobuf.Internal.EnumLiteMap<AirPressureDataOptionsBuf>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      AlarmDataOptionsBuf> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<AlarmDataOptionsBuf>() {
-          public AlarmDataOptionsBuf findValueByNumber(int number) {
-            return AlarmDataOptionsBuf.forNumber(number);
+      AirPressureDataOptionsBuf> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AirPressureDataOptionsBuf>() {
+          public AirPressureDataOptionsBuf findValueByNumber(int number) {
+            return AirPressureDataOptionsBuf.forNumber(number);
           }
         };
 
@@ -94,12 +94,12 @@ public enum AlarmDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(1);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(6);
   }
 
-  private static final AlarmDataOptionsBuf[] VALUES = values();
+  private static final AirPressureDataOptionsBuf[] VALUES = values();
 
-  public static AlarmDataOptionsBuf valueOf(
+  public static AirPressureDataOptionsBuf valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +113,10 @@ public enum AlarmDataOptionsBuf
 
   private final int value;
 
-  private AlarmDataOptionsBuf(int value) {
+  private AirPressureDataOptionsBuf(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.AlarmDataOptionsBuf)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.AirPressureDataOptionsBuf)
 }
 

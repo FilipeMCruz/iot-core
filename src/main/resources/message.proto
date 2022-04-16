@@ -32,17 +32,17 @@ message SensorData {
   Motion motion = 3;
   AirQuality aqi = 4;
   Velocity velocity = 5;
-  Humidity humidity = 6;
-  Pressure pressure = 7;
+  AirHumidity air_humidity = 6;
+  AirPressure air_pressure = 7;
   Battery battery = 8;
-  SoilMoisture moisture = 9;
+  SoilMoisture soil_moisture = 9;
   Illuminance illuminance = 10;
-  Alarm alarm = 11;
+  Trigger trigger = 11;
 }
 
 message GPS {
-  float latitude = 1;
-  float longitude = 2;
+  double latitude = 1;
+  double longitude = 2;
   float altitude = 3;
 }
 
@@ -61,19 +61,19 @@ message Temperature {
 }
 
 message AirQuality {
-  float eaqi = 1;
+  float value = 1;
 }
 
 message Velocity {
-  float km_per_hour = 1;
+  float kilometers_per_hour = 1;
 }
 
-message Humidity {
+message AirHumidity {
   float grams_per_cubic_meter = 1;
 }
 
-message Pressure {
-  float hPa = 1;
+message AirPressure {
+  float hecto_pascal = 1;
 }
 
 message Battery {
@@ -82,14 +82,14 @@ message Battery {
 }
 
 message SoilMoisture {
-  float percentage = 1;
+  float relative_percentage = 1;
 }
 
 message Illuminance {
   float lux = 1;
 }
 
-message Alarm {
+message Trigger {
   bool value = 1;
 }
 
@@ -125,21 +125,21 @@ message RoutingKeysBuf {
   TemperatureDataOptionsBuf temperature = 8;
   DataLegitimacyOptionsBuf legitimacy = 9;
   AirQualityDataOptionsBuf aqi = 10;
-  HumidityDataOptionsBuf humidity = 11;
+  AirHumidityDataOptionsBuf air_humidity = 11;
   MotionDataOptionsBuf motion = 12;
   VelocityDataOptionsBuf velocity = 13;
-  PressureDataOptionsBuf pressure = 14;
+  AirPressureDataOptionsBuf air_pressure = 14;
   BatteryDataOptionsBuf battery = 15;
-  SoilMoistureDataOptionsBuf moisture = 16;
+  SoilMoistureDataOptionsBuf soil_moisture = 16;
   IlluminanceDataOptionsBuf illuminance = 17;
   DomainOwnershipOptionsBuf ownership = 18;
-  AlarmDataOptionsBuf alarm = 19;
+  TriggerDataOptionsBuf trigger = 19;
 }
 
-enum AlarmDataOptionsBuf {
-  UNIDENTIFIED_ALARM_DATA = 0;
-  WITH_ALARM_DATA = 1;
-  WITHOUT_ALARM_DATA = 2;
+enum TriggerDataOptionsBuf {
+  UNIDENTIFIED_TRIGGER_DATA = 0;
+  WITH_TRIGGER_DATA = 1;
+  WITHOUT_TRIGGER_DATA = 2;
 }
 
 enum DomainOwnershipOptionsBuf {
@@ -166,10 +166,10 @@ enum BatteryDataOptionsBuf {
   WITHOUT_BATTERY_DATA = 2;
 }
 
-enum PressureDataOptionsBuf {
-  UNIDENTIFIED_PRESSURE_DATA = 0;
-  WITH_PRESSURE_DATA = 1;
-  WITHOUT_PRESSURE_DATA = 2;
+enum AirPressureDataOptionsBuf {
+  UNIDENTIFIED_AIR_PRESSURE_DATA = 0;
+  WITH_AIR_PRESSURE_DATA = 1;
+  WITHOUT_AIR_PRESSURE_DATA = 2;
 }
 
 enum VelocityDataOptionsBuf {
@@ -184,10 +184,10 @@ enum MotionDataOptionsBuf {
   WITHOUT_MOTION_DATA = 2;
 }
 
-enum HumidityDataOptionsBuf {
-  UNIDENTIFIED_HUMIDITY_DATA = 0;
-  WITH_HUMIDITY_DATA = 1;
-  WITHOUT_HUMIDITY_DATA = 2;
+enum AirHumidityDataOptionsBuf {
+  UNIDENTIFIED_AIR_HUMIDITY_DATA = 0;
+  WITH_AIR_HUMIDITY_DATA = 1;
+  WITHOUT_AIR_HUMIDITY_DATA = 2;
 }
 
 enum AirQualityDataOptionsBuf {

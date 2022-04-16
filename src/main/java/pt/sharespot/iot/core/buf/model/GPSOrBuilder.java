@@ -8,16 +8,16 @@ public interface GPSOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float latitude = 1;</code>
+   * <code>double latitude = 1;</code>
    * @return The latitude.
    */
-  float getLatitude();
+  double getLatitude();
 
   /**
-   * <code>float longitude = 2;</code>
+   * <code>double longitude = 2;</code>
    * @return The longitude.
    */
-  float getLongitude();
+  double getLongitude();
 
   /**
    * <code>float altitude = 3;</code>

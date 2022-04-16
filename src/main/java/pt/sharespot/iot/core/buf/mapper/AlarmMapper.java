@@ -1,19 +1,19 @@
 package pt.sharespot.iot.core.buf.mapper;
 
-import pt.sharespot.iot.core.buf.model.Alarm;
-import pt.sharespot.iot.core.sensor.data.AlarmDataDTO;
+import pt.sharespot.iot.core.buf.model.Trigger;
+import pt.sharespot.iot.core.sensor.data.TriggerDataDTO;
 
 public class AlarmMapper {
 
-    public static Alarm.Builder toBuf(AlarmDataDTO dto) {
-        var builder = Alarm.newBuilder();
+    public static Trigger.Builder toBuf(TriggerDataDTO dto) {
+        var builder = Trigger.newBuilder();
         if (dto.exists()) {
             builder.setValue(dto.value);
         }
         return builder;
     }
 
-    public static AlarmDataDTO toModel(Alarm buf) {
-        return AlarmDataDTO.of(buf.getValue());
+    public static TriggerDataDTO toModel(Trigger buf) {
+        return TriggerDataDTO.of(buf.getValue());
     }
 }

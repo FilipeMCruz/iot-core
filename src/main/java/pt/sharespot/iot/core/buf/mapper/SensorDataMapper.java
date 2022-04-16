@@ -10,7 +10,7 @@ public class SensorDataMapper {
         var builder = SensorData.newBuilder();
         if (dto.hasProperty(PropertyName.AQI)) builder.setAqi(AirQualityMapper.toBuf(dto.aqi));
 
-        if (dto.hasProperty(PropertyName.ALARM)) builder.setAlarm(AlarmMapper.toBuf(dto.alarm));
+        if (dto.hasProperty(PropertyName.TRIGGER)) builder.setTrigger(AlarmMapper.toBuf(dto.trigger));
 
         if (dto.hasProperty(PropertyName.BATTERY_VOLTS) || dto.hasProperty(PropertyName.BATTERY_PERCENTAGE))
             builder.setBattery(BatteryMapper.toBuf(dto.battery));
@@ -18,8 +18,8 @@ public class SensorDataMapper {
         if (dto.hasProperty(PropertyName.LONGITUDE) || dto.hasProperty(PropertyName.LATITUDE) || dto.hasProperty(PropertyName.ALTITUDE))
             builder.setGps(GPSMapper.toBuf(dto.gps));
 
-        if (dto.hasProperty(PropertyName.HUMIDITY))
-            builder.setHumidity(HumidityMapper.toBuf(dto.humidity));
+        if (dto.hasProperty(PropertyName.AIR_HUMIDITY))
+            builder.setAirHumidity(HumidityMapper.toBuf(dto.airHumidity));
 
         if (dto.hasProperty(PropertyName.ILLUMINANCE))
             builder.setIlluminance(IlluminanceMapper.toBuf(dto.illuminance));
@@ -27,11 +27,11 @@ public class SensorDataMapper {
         if (dto.hasProperty(PropertyName.MOTION))
             builder.setMotion(MotionMapper.toBuf(dto.motion));
 
-        if (dto.hasProperty(PropertyName.PRESSURE))
-            builder.setPressure(PressureMapper.toBuf(dto.pressure));
+        if (dto.hasProperty(PropertyName.AIR_PRESSURE))
+            builder.setAirPressure(PressureMapper.toBuf(dto.airPressure));
 
         if (dto.hasProperty(PropertyName.SOIL_MOISTURE))
-            builder.setMoisture(SoilMoistureMapper.toBuf(dto.moisture));
+            builder.setSoilMoisture(SoilMoistureMapper.toBuf(dto.soilMoisture));
 
         if (dto.hasProperty(PropertyName.TEMPERATURE))
             builder.setTemperature(TemperatureMapper.toBuf(dto.temperature));
@@ -45,14 +45,14 @@ public class SensorDataMapper {
     public static SensorDataDetailsDTO toModel(SensorData buf) {
         return new SensorDataDetailsDTO()
                 .withAQI(AirQualityMapper.toModel(buf.getAqi()))
-                .withAlarm(AlarmMapper.toModel(buf.getAlarm()))
+                .withAlarm(AlarmMapper.toModel(buf.getTrigger()))
                 .withBattery(BatteryMapper.toModel(buf.getBattery()))
                 .withGps(GPSMapper.toModel(buf.getGps()))
-                .withHumidity(HumidityMapper.toModel(buf.getHumidity()))
+                .withHumidity(HumidityMapper.toModel(buf.getAirHumidity()))
                 .withIlluminance(IlluminanceMapper.toModel(buf.getIlluminance()))
                 .withMotion(MotionMapper.toModel(buf.getMotion()))
-                .withPressure(PressureMapper.toModel(buf.getPressure()))
-                .withSoilMoisture(SoilMoistureMapper.toModel(buf.getMoisture()))
+                .withPressure(PressureMapper.toModel(buf.getAirPressure()))
+                .withSoilMoisture(SoilMoistureMapper.toModel(buf.getSoilMoisture()))
                 .withTemperature(TemperatureMapper.toModel(buf.getTemperature()))
                 .withVelocity(VelocityMapper.toModel(buf.getVelocity()));
     }

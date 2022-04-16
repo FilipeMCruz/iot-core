@@ -83,34 +83,34 @@ public interface SensorDataOrBuilder extends
   pt.sharespot.iot.core.buf.model.VelocityOrBuilder getVelocityOrBuilder();
 
   /**
-   * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
-   * @return Whether the humidity field is set.
+   * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
+   * @return Whether the airHumidity field is set.
    */
-  boolean hasHumidity();
+  boolean hasAirHumidity();
   /**
-   * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
-   * @return The humidity.
+   * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
+   * @return The airHumidity.
    */
-  pt.sharespot.iot.core.buf.model.Humidity getHumidity();
+  pt.sharespot.iot.core.buf.model.AirHumidity getAirHumidity();
   /**
-   * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+   * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
    */
-  pt.sharespot.iot.core.buf.model.HumidityOrBuilder getHumidityOrBuilder();
+  pt.sharespot.iot.core.buf.model.AirHumidityOrBuilder getAirHumidityOrBuilder();
 
   /**
-   * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
-   * @return Whether the pressure field is set.
+   * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
+   * @return Whether the airPressure field is set.
    */
-  boolean hasPressure();
+  boolean hasAirPressure();
   /**
-   * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
-   * @return The pressure.
+   * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
+   * @return The airPressure.
    */
-  pt.sharespot.iot.core.buf.model.Pressure getPressure();
+  pt.sharespot.iot.core.buf.model.AirPressure getAirPressure();
   /**
-   * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+   * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
    */
-  pt.sharespot.iot.core.buf.model.PressureOrBuilder getPressureOrBuilder();
+  pt.sharespot.iot.core.buf.model.AirPressureOrBuilder getAirPressureOrBuilder();
 
   /**
    * <code>.pt.sharespot.iot.core.Battery battery = 8;</code>
@@ -128,19 +128,19 @@ public interface SensorDataOrBuilder extends
   pt.sharespot.iot.core.buf.model.BatteryOrBuilder getBatteryOrBuilder();
 
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
-   * @return Whether the moisture field is set.
+   * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
+   * @return Whether the soilMoisture field is set.
    */
-  boolean hasMoisture();
+  boolean hasSoilMoisture();
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
-   * @return The moisture.
+   * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
+   * @return The soilMoisture.
    */
-  pt.sharespot.iot.core.buf.model.SoilMoisture getMoisture();
+  pt.sharespot.iot.core.buf.model.SoilMoisture getSoilMoisture();
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+   * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
    */
-  pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder getMoistureOrBuilder();
+  pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder getSoilMoistureOrBuilder();
 
   /**
    * <code>.pt.sharespot.iot.core.Illuminance illuminance = 10;</code>
@@ -158,17 +158,17 @@ public interface SensorDataOrBuilder extends
   pt.sharespot.iot.core.buf.model.IlluminanceOrBuilder getIlluminanceOrBuilder();
 
   /**
-   * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
-   * @return Whether the alarm field is set.
+   * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
+   * @return Whether the trigger field is set.
    */
-  boolean hasAlarm();
+  boolean hasTrigger();
   /**
-   * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
-   * @return The alarm.
+   * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
+   * @return The trigger.
    */
-  pt.sharespot.iot.core.buf.model.Alarm getAlarm();
+  pt.sharespot.iot.core.buf.model.Trigger getTrigger();
   /**
-   * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+   * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
    */
-  pt.sharespot.iot.core.buf.model.AlarmOrBuilder getAlarmOrBuilder();
+  pt.sharespot.iot.core.buf.model.TriggerOrBuilder getTriggerOrBuilder();
 }

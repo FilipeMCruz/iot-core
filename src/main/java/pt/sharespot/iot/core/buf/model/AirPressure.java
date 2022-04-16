@@ -4,25 +4,25 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf type {@code pt.sharespot.iot.core.Alarm}
+ * Protobuf type {@code pt.sharespot.iot.core.AirPressure}
  */
-public final class Alarm extends
+public final class AirPressure extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pt.sharespot.iot.core.Alarm)
-    AlarmOrBuilder {
+    // @@protoc_insertion_point(message_implements:pt.sharespot.iot.core.AirPressure)
+    AirPressureOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use Alarm.newBuilder() to construct.
-  private Alarm(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AirPressure.newBuilder() to construct.
+  private AirPressure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Alarm() {
+  private AirPressure() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new Alarm();
+    return new AirPressure();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Alarm(
+  private AirPressure(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -48,9 +48,9 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 13: {
 
-            value_ = input.readBool();
+            hectoPascal_ = input.readFloat();
             break;
           }
           default: {
@@ -74,26 +74,26 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Alarm_descriptor;
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirPressure_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Alarm_fieldAccessorTable
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirPressure_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            pt.sharespot.iot.core.buf.model.Alarm.class, pt.sharespot.iot.core.buf.model.Alarm.Builder.class);
+            pt.sharespot.iot.core.buf.model.AirPressure.class, pt.sharespot.iot.core.buf.model.AirPressure.Builder.class);
   }
 
-  public static final int VALUE_FIELD_NUMBER = 1;
-  private boolean value_;
+  public static final int HECTO_PASCAL_FIELD_NUMBER = 1;
+  private float hectoPascal_;
   /**
-   * <code>bool value = 1;</code>
-   * @return The value.
+   * <code>float hecto_pascal = 1;</code>
+   * @return The hectoPascal.
    */
   @java.lang.Override
-  public boolean getValue() {
-    return value_;
+  public float getHectoPascal() {
+    return hectoPascal_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +110,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (value_ != false) {
-      output.writeBool(1, value_);
+    if (java.lang.Float.floatToRawIntBits(hectoPascal_) != 0) {
+      output.writeFloat(1, hectoPascal_);
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +122,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (value_ != false) {
+    if (java.lang.Float.floatToRawIntBits(hectoPascal_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, value_);
+        .computeFloatSize(1, hectoPascal_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -136,13 +136,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof pt.sharespot.iot.core.buf.model.Alarm)) {
+    if (!(obj instanceof pt.sharespot.iot.core.buf.model.AirPressure)) {
       return super.equals(obj);
     }
-    pt.sharespot.iot.core.buf.model.Alarm other = (pt.sharespot.iot.core.buf.model.Alarm) obj;
+    pt.sharespot.iot.core.buf.model.AirPressure other = (pt.sharespot.iot.core.buf.model.AirPressure) obj;
 
-    if (getValue()
-        != other.getValue()) return false;
+    if (java.lang.Float.floatToIntBits(getHectoPascal())
+        != java.lang.Float.floatToIntBits(
+            other.getHectoPascal())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -154,77 +155,77 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getValue());
+    hash = (37 * hash) + HECTO_PASCAL_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getHectoPascal());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(byte[] data)
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(java.io.InputStream input)
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseDelimitedFrom(java.io.InputStream input)
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseDelimitedFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Alarm parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirPressure parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -237,7 +238,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(pt.sharespot.iot.core.buf.model.Alarm prototype) {
+  public static Builder newBuilder(pt.sharespot.iot.core.buf.model.AirPressure prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -253,26 +254,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pt.sharespot.iot.core.Alarm}
+   * Protobuf type {@code pt.sharespot.iot.core.AirPressure}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pt.sharespot.iot.core.Alarm)
-      pt.sharespot.iot.core.buf.model.AlarmOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pt.sharespot.iot.core.AirPressure)
+      pt.sharespot.iot.core.buf.model.AirPressureOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Alarm_descriptor;
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirPressure_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Alarm_fieldAccessorTable
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirPressure_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pt.sharespot.iot.core.buf.model.Alarm.class, pt.sharespot.iot.core.buf.model.Alarm.Builder.class);
+              pt.sharespot.iot.core.buf.model.AirPressure.class, pt.sharespot.iot.core.buf.model.AirPressure.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.buf.model.Alarm.newBuilder()
+    // Construct using pt.sharespot.iot.core.buf.model.AirPressure.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -290,7 +291,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      value_ = false;
+      hectoPascal_ = 0F;
 
       return this;
     }
@@ -298,17 +299,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Alarm_descriptor;
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirPressure_descriptor;
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Alarm getDefaultInstanceForType() {
-      return pt.sharespot.iot.core.buf.model.Alarm.getDefaultInstance();
+    public pt.sharespot.iot.core.buf.model.AirPressure getDefaultInstanceForType() {
+      return pt.sharespot.iot.core.buf.model.AirPressure.getDefaultInstance();
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Alarm build() {
-      pt.sharespot.iot.core.buf.model.Alarm result = buildPartial();
+    public pt.sharespot.iot.core.buf.model.AirPressure build() {
+      pt.sharespot.iot.core.buf.model.AirPressure result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -316,9 +317,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Alarm buildPartial() {
-      pt.sharespot.iot.core.buf.model.Alarm result = new pt.sharespot.iot.core.buf.model.Alarm(this);
-      result.value_ = value_;
+    public pt.sharespot.iot.core.buf.model.AirPressure buildPartial() {
+      pt.sharespot.iot.core.buf.model.AirPressure result = new pt.sharespot.iot.core.buf.model.AirPressure(this);
+      result.hectoPascal_ = hectoPascal_;
       onBuilt();
       return result;
     }
@@ -357,18 +358,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof pt.sharespot.iot.core.buf.model.Alarm) {
-        return mergeFrom((pt.sharespot.iot.core.buf.model.Alarm)other);
+      if (other instanceof pt.sharespot.iot.core.buf.model.AirPressure) {
+        return mergeFrom((pt.sharespot.iot.core.buf.model.AirPressure)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Alarm other) {
-      if (other == pt.sharespot.iot.core.buf.model.Alarm.getDefaultInstance()) return this;
-      if (other.getValue() != false) {
-        setValue(other.getValue());
+    public Builder mergeFrom(pt.sharespot.iot.core.buf.model.AirPressure other) {
+      if (other == pt.sharespot.iot.core.buf.model.AirPressure.getDefaultInstance()) return this;
+      if (other.getHectoPascal() != 0F) {
+        setHectoPascal(other.getHectoPascal());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -385,11 +386,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      pt.sharespot.iot.core.buf.model.Alarm parsedMessage = null;
+      pt.sharespot.iot.core.buf.model.AirPressure parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (pt.sharespot.iot.core.buf.model.Alarm) e.getUnfinishedMessage();
+        parsedMessage = (pt.sharespot.iot.core.buf.model.AirPressure) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -399,33 +400,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean value_ ;
+    private float hectoPascal_ ;
     /**
-     * <code>bool value = 1;</code>
-     * @return The value.
+     * <code>float hecto_pascal = 1;</code>
+     * @return The hectoPascal.
      */
     @java.lang.Override
-    public boolean getValue() {
-      return value_;
+    public float getHectoPascal() {
+      return hectoPascal_;
     }
     /**
-     * <code>bool value = 1;</code>
-     * @param value The value to set.
+     * <code>float hecto_pascal = 1;</code>
+     * @param value The hectoPascal to set.
      * @return This builder for chaining.
      */
-    public Builder setValue(boolean value) {
+    public Builder setHectoPascal(float value) {
       
-      value_ = value;
+      hectoPascal_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool value = 1;</code>
+     * <code>float hecto_pascal = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearValue() {
+    public Builder clearHectoPascal() {
       
-      value_ = false;
+      hectoPascal_ = 0F;
       onChanged();
       return this;
     }
@@ -442,41 +443,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pt.sharespot.iot.core.Alarm)
+    // @@protoc_insertion_point(builder_scope:pt.sharespot.iot.core.AirPressure)
   }
 
-  // @@protoc_insertion_point(class_scope:pt.sharespot.iot.core.Alarm)
-  private static final pt.sharespot.iot.core.buf.model.Alarm DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pt.sharespot.iot.core.AirPressure)
+  private static final pt.sharespot.iot.core.buf.model.AirPressure DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new pt.sharespot.iot.core.buf.model.Alarm();
+    DEFAULT_INSTANCE = new pt.sharespot.iot.core.buf.model.AirPressure();
   }
 
-  public static pt.sharespot.iot.core.buf.model.Alarm getDefaultInstance() {
+  public static pt.sharespot.iot.core.buf.model.AirPressure getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Alarm>
-      PARSER = new com.google.protobuf.AbstractParser<Alarm>() {
+  private static final com.google.protobuf.Parser<AirPressure>
+      PARSER = new com.google.protobuf.AbstractParser<AirPressure>() {
     @java.lang.Override
-    public Alarm parsePartialFrom(
+    public AirPressure parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Alarm(input, extensionRegistry);
+      return new AirPressure(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<Alarm> parser() {
+  public static com.google.protobuf.Parser<AirPressure> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Alarm> getParserForType() {
+  public com.google.protobuf.Parser<AirPressure> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.Alarm getDefaultInstanceForType() {
+  public pt.sharespot.iot.core.buf.model.AirPressure getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -8,8 +8,8 @@ public interface AirQualityOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float eaqi = 1;</code>
-   * @return The eaqi.
+   * <code>float value = 1;</code>
+   * @return The value.
    */
-  float getEaqi();
+  float getValue();
 }

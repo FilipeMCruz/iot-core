@@ -114,27 +114,27 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            pt.sharespot.iot.core.buf.model.Humidity.Builder subBuilder = null;
-            if (humidity_ != null) {
-              subBuilder = humidity_.toBuilder();
+            pt.sharespot.iot.core.buf.model.AirHumidity.Builder subBuilder = null;
+            if (airHumidity_ != null) {
+              subBuilder = airHumidity_.toBuilder();
             }
-            humidity_ = input.readMessage(pt.sharespot.iot.core.buf.model.Humidity.parser(), extensionRegistry);
+            airHumidity_ = input.readMessage(pt.sharespot.iot.core.buf.model.AirHumidity.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(humidity_);
-              humidity_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(airHumidity_);
+              airHumidity_ = subBuilder.buildPartial();
             }
 
             break;
           }
           case 58: {
-            pt.sharespot.iot.core.buf.model.Pressure.Builder subBuilder = null;
-            if (pressure_ != null) {
-              subBuilder = pressure_.toBuilder();
+            pt.sharespot.iot.core.buf.model.AirPressure.Builder subBuilder = null;
+            if (airPressure_ != null) {
+              subBuilder = airPressure_.toBuilder();
             }
-            pressure_ = input.readMessage(pt.sharespot.iot.core.buf.model.Pressure.parser(), extensionRegistry);
+            airPressure_ = input.readMessage(pt.sharespot.iot.core.buf.model.AirPressure.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(pressure_);
-              pressure_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(airPressure_);
+              airPressure_ = subBuilder.buildPartial();
             }
 
             break;
@@ -154,13 +154,13 @@ private static final long serialVersionUID = 0L;
           }
           case 74: {
             pt.sharespot.iot.core.buf.model.SoilMoisture.Builder subBuilder = null;
-            if (moisture_ != null) {
-              subBuilder = moisture_.toBuilder();
+            if (soilMoisture_ != null) {
+              subBuilder = soilMoisture_.toBuilder();
             }
-            moisture_ = input.readMessage(pt.sharespot.iot.core.buf.model.SoilMoisture.parser(), extensionRegistry);
+            soilMoisture_ = input.readMessage(pt.sharespot.iot.core.buf.model.SoilMoisture.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(moisture_);
-              moisture_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(soilMoisture_);
+              soilMoisture_ = subBuilder.buildPartial();
             }
 
             break;
@@ -179,14 +179,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            pt.sharespot.iot.core.buf.model.Alarm.Builder subBuilder = null;
-            if (alarm_ != null) {
-              subBuilder = alarm_.toBuilder();
+            pt.sharespot.iot.core.buf.model.Trigger.Builder subBuilder = null;
+            if (trigger_ != null) {
+              subBuilder = trigger_.toBuilder();
             }
-            alarm_ = input.readMessage(pt.sharespot.iot.core.buf.model.Alarm.parser(), extensionRegistry);
+            trigger_ = input.readMessage(pt.sharespot.iot.core.buf.model.Trigger.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(alarm_);
-              alarm_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(trigger_);
+              trigger_ = subBuilder.buildPartial();
             }
 
             break;
@@ -353,56 +353,56 @@ private static final long serialVersionUID = 0L;
     return getVelocity();
   }
 
-  public static final int HUMIDITY_FIELD_NUMBER = 6;
-  private pt.sharespot.iot.core.buf.model.Humidity humidity_;
+  public static final int AIR_HUMIDITY_FIELD_NUMBER = 6;
+  private pt.sharespot.iot.core.buf.model.AirHumidity airHumidity_;
   /**
-   * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
-   * @return Whether the humidity field is set.
+   * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
+   * @return Whether the airHumidity field is set.
    */
   @java.lang.Override
-  public boolean hasHumidity() {
-    return humidity_ != null;
+  public boolean hasAirHumidity() {
+    return airHumidity_ != null;
   }
   /**
-   * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
-   * @return The humidity.
+   * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
+   * @return The airHumidity.
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.Humidity getHumidity() {
-    return humidity_ == null ? pt.sharespot.iot.core.buf.model.Humidity.getDefaultInstance() : humidity_;
+  public pt.sharespot.iot.core.buf.model.AirHumidity getAirHumidity() {
+    return airHumidity_ == null ? pt.sharespot.iot.core.buf.model.AirHumidity.getDefaultInstance() : airHumidity_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+   * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.HumidityOrBuilder getHumidityOrBuilder() {
-    return getHumidity();
+  public pt.sharespot.iot.core.buf.model.AirHumidityOrBuilder getAirHumidityOrBuilder() {
+    return getAirHumidity();
   }
 
-  public static final int PRESSURE_FIELD_NUMBER = 7;
-  private pt.sharespot.iot.core.buf.model.Pressure pressure_;
+  public static final int AIR_PRESSURE_FIELD_NUMBER = 7;
+  private pt.sharespot.iot.core.buf.model.AirPressure airPressure_;
   /**
-   * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
-   * @return Whether the pressure field is set.
+   * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
+   * @return Whether the airPressure field is set.
    */
   @java.lang.Override
-  public boolean hasPressure() {
-    return pressure_ != null;
+  public boolean hasAirPressure() {
+    return airPressure_ != null;
   }
   /**
-   * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
-   * @return The pressure.
+   * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
+   * @return The airPressure.
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.Pressure getPressure() {
-    return pressure_ == null ? pt.sharespot.iot.core.buf.model.Pressure.getDefaultInstance() : pressure_;
+  public pt.sharespot.iot.core.buf.model.AirPressure getAirPressure() {
+    return airPressure_ == null ? pt.sharespot.iot.core.buf.model.AirPressure.getDefaultInstance() : airPressure_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+   * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.PressureOrBuilder getPressureOrBuilder() {
-    return getPressure();
+  public pt.sharespot.iot.core.buf.model.AirPressureOrBuilder getAirPressureOrBuilder() {
+    return getAirPressure();
   }
 
   public static final int BATTERY_FIELD_NUMBER = 8;
@@ -431,30 +431,30 @@ private static final long serialVersionUID = 0L;
     return getBattery();
   }
 
-  public static final int MOISTURE_FIELD_NUMBER = 9;
-  private pt.sharespot.iot.core.buf.model.SoilMoisture moisture_;
+  public static final int SOIL_MOISTURE_FIELD_NUMBER = 9;
+  private pt.sharespot.iot.core.buf.model.SoilMoisture soilMoisture_;
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
-   * @return Whether the moisture field is set.
+   * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
+   * @return Whether the soilMoisture field is set.
    */
   @java.lang.Override
-  public boolean hasMoisture() {
-    return moisture_ != null;
+  public boolean hasSoilMoisture() {
+    return soilMoisture_ != null;
   }
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
-   * @return The moisture.
+   * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
+   * @return The soilMoisture.
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.SoilMoisture getMoisture() {
-    return moisture_ == null ? pt.sharespot.iot.core.buf.model.SoilMoisture.getDefaultInstance() : moisture_;
+  public pt.sharespot.iot.core.buf.model.SoilMoisture getSoilMoisture() {
+    return soilMoisture_ == null ? pt.sharespot.iot.core.buf.model.SoilMoisture.getDefaultInstance() : soilMoisture_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+   * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder getMoistureOrBuilder() {
-    return getMoisture();
+  public pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder getSoilMoistureOrBuilder() {
+    return getSoilMoisture();
   }
 
   public static final int ILLUMINANCE_FIELD_NUMBER = 10;
@@ -483,30 +483,30 @@ private static final long serialVersionUID = 0L;
     return getIlluminance();
   }
 
-  public static final int ALARM_FIELD_NUMBER = 11;
-  private pt.sharespot.iot.core.buf.model.Alarm alarm_;
+  public static final int TRIGGER_FIELD_NUMBER = 11;
+  private pt.sharespot.iot.core.buf.model.Trigger trigger_;
   /**
-   * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
-   * @return Whether the alarm field is set.
+   * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
+   * @return Whether the trigger field is set.
    */
   @java.lang.Override
-  public boolean hasAlarm() {
-    return alarm_ != null;
+  public boolean hasTrigger() {
+    return trigger_ != null;
   }
   /**
-   * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
-   * @return The alarm.
+   * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
+   * @return The trigger.
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.Alarm getAlarm() {
-    return alarm_ == null ? pt.sharespot.iot.core.buf.model.Alarm.getDefaultInstance() : alarm_;
+  public pt.sharespot.iot.core.buf.model.Trigger getTrigger() {
+    return trigger_ == null ? pt.sharespot.iot.core.buf.model.Trigger.getDefaultInstance() : trigger_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+   * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.AlarmOrBuilder getAlarmOrBuilder() {
-    return getAlarm();
+  public pt.sharespot.iot.core.buf.model.TriggerOrBuilder getTriggerOrBuilder() {
+    return getTrigger();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -538,23 +538,23 @@ private static final long serialVersionUID = 0L;
     if (velocity_ != null) {
       output.writeMessage(5, getVelocity());
     }
-    if (humidity_ != null) {
-      output.writeMessage(6, getHumidity());
+    if (airHumidity_ != null) {
+      output.writeMessage(6, getAirHumidity());
     }
-    if (pressure_ != null) {
-      output.writeMessage(7, getPressure());
+    if (airPressure_ != null) {
+      output.writeMessage(7, getAirPressure());
     }
     if (battery_ != null) {
       output.writeMessage(8, getBattery());
     }
-    if (moisture_ != null) {
-      output.writeMessage(9, getMoisture());
+    if (soilMoisture_ != null) {
+      output.writeMessage(9, getSoilMoisture());
     }
     if (illuminance_ != null) {
       output.writeMessage(10, getIlluminance());
     }
-    if (alarm_ != null) {
-      output.writeMessage(11, getAlarm());
+    if (trigger_ != null) {
+      output.writeMessage(11, getTrigger());
     }
     unknownFields.writeTo(output);
   }
@@ -585,29 +585,29 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getVelocity());
     }
-    if (humidity_ != null) {
+    if (airHumidity_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getHumidity());
+        .computeMessageSize(6, getAirHumidity());
     }
-    if (pressure_ != null) {
+    if (airPressure_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getPressure());
+        .computeMessageSize(7, getAirPressure());
     }
     if (battery_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getBattery());
     }
-    if (moisture_ != null) {
+    if (soilMoisture_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getMoisture());
+        .computeMessageSize(9, getSoilMoisture());
     }
     if (illuminance_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getIlluminance());
     }
-    if (alarm_ != null) {
+    if (trigger_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getAlarm());
+        .computeMessageSize(11, getTrigger());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -649,35 +649,35 @@ private static final long serialVersionUID = 0L;
       if (!getVelocity()
           .equals(other.getVelocity())) return false;
     }
-    if (hasHumidity() != other.hasHumidity()) return false;
-    if (hasHumidity()) {
-      if (!getHumidity()
-          .equals(other.getHumidity())) return false;
+    if (hasAirHumidity() != other.hasAirHumidity()) return false;
+    if (hasAirHumidity()) {
+      if (!getAirHumidity()
+          .equals(other.getAirHumidity())) return false;
     }
-    if (hasPressure() != other.hasPressure()) return false;
-    if (hasPressure()) {
-      if (!getPressure()
-          .equals(other.getPressure())) return false;
+    if (hasAirPressure() != other.hasAirPressure()) return false;
+    if (hasAirPressure()) {
+      if (!getAirPressure()
+          .equals(other.getAirPressure())) return false;
     }
     if (hasBattery() != other.hasBattery()) return false;
     if (hasBattery()) {
       if (!getBattery()
           .equals(other.getBattery())) return false;
     }
-    if (hasMoisture() != other.hasMoisture()) return false;
-    if (hasMoisture()) {
-      if (!getMoisture()
-          .equals(other.getMoisture())) return false;
+    if (hasSoilMoisture() != other.hasSoilMoisture()) return false;
+    if (hasSoilMoisture()) {
+      if (!getSoilMoisture()
+          .equals(other.getSoilMoisture())) return false;
     }
     if (hasIlluminance() != other.hasIlluminance()) return false;
     if (hasIlluminance()) {
       if (!getIlluminance()
           .equals(other.getIlluminance())) return false;
     }
-    if (hasAlarm() != other.hasAlarm()) return false;
-    if (hasAlarm()) {
-      if (!getAlarm()
-          .equals(other.getAlarm())) return false;
+    if (hasTrigger() != other.hasTrigger()) return false;
+    if (hasTrigger()) {
+      if (!getTrigger()
+          .equals(other.getTrigger())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -710,29 +710,29 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
       hash = (53 * hash) + getVelocity().hashCode();
     }
-    if (hasHumidity()) {
-      hash = (37 * hash) + HUMIDITY_FIELD_NUMBER;
-      hash = (53 * hash) + getHumidity().hashCode();
+    if (hasAirHumidity()) {
+      hash = (37 * hash) + AIR_HUMIDITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAirHumidity().hashCode();
     }
-    if (hasPressure()) {
-      hash = (37 * hash) + PRESSURE_FIELD_NUMBER;
-      hash = (53 * hash) + getPressure().hashCode();
+    if (hasAirPressure()) {
+      hash = (37 * hash) + AIR_PRESSURE_FIELD_NUMBER;
+      hash = (53 * hash) + getAirPressure().hashCode();
     }
     if (hasBattery()) {
       hash = (37 * hash) + BATTERY_FIELD_NUMBER;
       hash = (53 * hash) + getBattery().hashCode();
     }
-    if (hasMoisture()) {
-      hash = (37 * hash) + MOISTURE_FIELD_NUMBER;
-      hash = (53 * hash) + getMoisture().hashCode();
+    if (hasSoilMoisture()) {
+      hash = (37 * hash) + SOIL_MOISTURE_FIELD_NUMBER;
+      hash = (53 * hash) + getSoilMoisture().hashCode();
     }
     if (hasIlluminance()) {
       hash = (37 * hash) + ILLUMINANCE_FIELD_NUMBER;
       hash = (53 * hash) + getIlluminance().hashCode();
     }
-    if (hasAlarm()) {
-      hash = (37 * hash) + ALARM_FIELD_NUMBER;
-      hash = (53 * hash) + getAlarm().hashCode();
+    if (hasTrigger()) {
+      hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
+      hash = (53 * hash) + getTrigger().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -897,17 +897,17 @@ private static final long serialVersionUID = 0L;
         velocity_ = null;
         velocityBuilder_ = null;
       }
-      if (humidityBuilder_ == null) {
-        humidity_ = null;
+      if (airHumidityBuilder_ == null) {
+        airHumidity_ = null;
       } else {
-        humidity_ = null;
-        humidityBuilder_ = null;
+        airHumidity_ = null;
+        airHumidityBuilder_ = null;
       }
-      if (pressureBuilder_ == null) {
-        pressure_ = null;
+      if (airPressureBuilder_ == null) {
+        airPressure_ = null;
       } else {
-        pressure_ = null;
-        pressureBuilder_ = null;
+        airPressure_ = null;
+        airPressureBuilder_ = null;
       }
       if (batteryBuilder_ == null) {
         battery_ = null;
@@ -915,11 +915,11 @@ private static final long serialVersionUID = 0L;
         battery_ = null;
         batteryBuilder_ = null;
       }
-      if (moistureBuilder_ == null) {
-        moisture_ = null;
+      if (soilMoistureBuilder_ == null) {
+        soilMoisture_ = null;
       } else {
-        moisture_ = null;
-        moistureBuilder_ = null;
+        soilMoisture_ = null;
+        soilMoistureBuilder_ = null;
       }
       if (illuminanceBuilder_ == null) {
         illuminance_ = null;
@@ -927,11 +927,11 @@ private static final long serialVersionUID = 0L;
         illuminance_ = null;
         illuminanceBuilder_ = null;
       }
-      if (alarmBuilder_ == null) {
-        alarm_ = null;
+      if (triggerBuilder_ == null) {
+        trigger_ = null;
       } else {
-        alarm_ = null;
-        alarmBuilder_ = null;
+        trigger_ = null;
+        triggerBuilder_ = null;
       }
       return this;
     }
@@ -984,35 +984,35 @@ private static final long serialVersionUID = 0L;
       } else {
         result.velocity_ = velocityBuilder_.build();
       }
-      if (humidityBuilder_ == null) {
-        result.humidity_ = humidity_;
+      if (airHumidityBuilder_ == null) {
+        result.airHumidity_ = airHumidity_;
       } else {
-        result.humidity_ = humidityBuilder_.build();
+        result.airHumidity_ = airHumidityBuilder_.build();
       }
-      if (pressureBuilder_ == null) {
-        result.pressure_ = pressure_;
+      if (airPressureBuilder_ == null) {
+        result.airPressure_ = airPressure_;
       } else {
-        result.pressure_ = pressureBuilder_.build();
+        result.airPressure_ = airPressureBuilder_.build();
       }
       if (batteryBuilder_ == null) {
         result.battery_ = battery_;
       } else {
         result.battery_ = batteryBuilder_.build();
       }
-      if (moistureBuilder_ == null) {
-        result.moisture_ = moisture_;
+      if (soilMoistureBuilder_ == null) {
+        result.soilMoisture_ = soilMoisture_;
       } else {
-        result.moisture_ = moistureBuilder_.build();
+        result.soilMoisture_ = soilMoistureBuilder_.build();
       }
       if (illuminanceBuilder_ == null) {
         result.illuminance_ = illuminance_;
       } else {
         result.illuminance_ = illuminanceBuilder_.build();
       }
-      if (alarmBuilder_ == null) {
-        result.alarm_ = alarm_;
+      if (triggerBuilder_ == null) {
+        result.trigger_ = trigger_;
       } else {
-        result.alarm_ = alarmBuilder_.build();
+        result.trigger_ = triggerBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1077,23 +1077,23 @@ private static final long serialVersionUID = 0L;
       if (other.hasVelocity()) {
         mergeVelocity(other.getVelocity());
       }
-      if (other.hasHumidity()) {
-        mergeHumidity(other.getHumidity());
+      if (other.hasAirHumidity()) {
+        mergeAirHumidity(other.getAirHumidity());
       }
-      if (other.hasPressure()) {
-        mergePressure(other.getPressure());
+      if (other.hasAirPressure()) {
+        mergeAirPressure(other.getAirPressure());
       }
       if (other.hasBattery()) {
         mergeBattery(other.getBattery());
       }
-      if (other.hasMoisture()) {
-        mergeMoisture(other.getMoisture());
+      if (other.hasSoilMoisture()) {
+        mergeSoilMoisture(other.getSoilMoisture());
       }
       if (other.hasIlluminance()) {
         mergeIlluminance(other.getIlluminance());
       }
-      if (other.hasAlarm()) {
-        mergeAlarm(other.getAlarm());
+      if (other.hasTrigger()) {
+        mergeTrigger(other.getTrigger());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1719,242 +1719,242 @@ private static final long serialVersionUID = 0L;
       return velocityBuilder_;
     }
 
-    private pt.sharespot.iot.core.buf.model.Humidity humidity_;
+    private pt.sharespot.iot.core.buf.model.AirHumidity airHumidity_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.Humidity, pt.sharespot.iot.core.buf.model.Humidity.Builder, pt.sharespot.iot.core.buf.model.HumidityOrBuilder> humidityBuilder_;
+        pt.sharespot.iot.core.buf.model.AirHumidity, pt.sharespot.iot.core.buf.model.AirHumidity.Builder, pt.sharespot.iot.core.buf.model.AirHumidityOrBuilder> airHumidityBuilder_;
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
-     * @return Whether the humidity field is set.
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
+     * @return Whether the airHumidity field is set.
      */
-    public boolean hasHumidity() {
-      return humidityBuilder_ != null || humidity_ != null;
+    public boolean hasAirHumidity() {
+      return airHumidityBuilder_ != null || airHumidity_ != null;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
-     * @return The humidity.
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
+     * @return The airHumidity.
      */
-    public pt.sharespot.iot.core.buf.model.Humidity getHumidity() {
-      if (humidityBuilder_ == null) {
-        return humidity_ == null ? pt.sharespot.iot.core.buf.model.Humidity.getDefaultInstance() : humidity_;
+    public pt.sharespot.iot.core.buf.model.AirHumidity getAirHumidity() {
+      if (airHumidityBuilder_ == null) {
+        return airHumidity_ == null ? pt.sharespot.iot.core.buf.model.AirHumidity.getDefaultInstance() : airHumidity_;
       } else {
-        return humidityBuilder_.getMessage();
+        return airHumidityBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
      */
-    public Builder setHumidity(pt.sharespot.iot.core.buf.model.Humidity value) {
-      if (humidityBuilder_ == null) {
+    public Builder setAirHumidity(pt.sharespot.iot.core.buf.model.AirHumidity value) {
+      if (airHumidityBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        humidity_ = value;
+        airHumidity_ = value;
         onChanged();
       } else {
-        humidityBuilder_.setMessage(value);
+        airHumidityBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
      */
-    public Builder setHumidity(
-        pt.sharespot.iot.core.buf.model.Humidity.Builder builderForValue) {
-      if (humidityBuilder_ == null) {
-        humidity_ = builderForValue.build();
+    public Builder setAirHumidity(
+        pt.sharespot.iot.core.buf.model.AirHumidity.Builder builderForValue) {
+      if (airHumidityBuilder_ == null) {
+        airHumidity_ = builderForValue.build();
         onChanged();
       } else {
-        humidityBuilder_.setMessage(builderForValue.build());
+        airHumidityBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
      */
-    public Builder mergeHumidity(pt.sharespot.iot.core.buf.model.Humidity value) {
-      if (humidityBuilder_ == null) {
-        if (humidity_ != null) {
-          humidity_ =
-            pt.sharespot.iot.core.buf.model.Humidity.newBuilder(humidity_).mergeFrom(value).buildPartial();
+    public Builder mergeAirHumidity(pt.sharespot.iot.core.buf.model.AirHumidity value) {
+      if (airHumidityBuilder_ == null) {
+        if (airHumidity_ != null) {
+          airHumidity_ =
+            pt.sharespot.iot.core.buf.model.AirHumidity.newBuilder(airHumidity_).mergeFrom(value).buildPartial();
         } else {
-          humidity_ = value;
+          airHumidity_ = value;
         }
         onChanged();
       } else {
-        humidityBuilder_.mergeFrom(value);
+        airHumidityBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
      */
-    public Builder clearHumidity() {
-      if (humidityBuilder_ == null) {
-        humidity_ = null;
+    public Builder clearAirHumidity() {
+      if (airHumidityBuilder_ == null) {
+        airHumidity_ = null;
         onChanged();
       } else {
-        humidity_ = null;
-        humidityBuilder_ = null;
+        airHumidity_ = null;
+        airHumidityBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
      */
-    public pt.sharespot.iot.core.buf.model.Humidity.Builder getHumidityBuilder() {
+    public pt.sharespot.iot.core.buf.model.AirHumidity.Builder getAirHumidityBuilder() {
       
       onChanged();
-      return getHumidityFieldBuilder().getBuilder();
+      return getAirHumidityFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
      */
-    public pt.sharespot.iot.core.buf.model.HumidityOrBuilder getHumidityOrBuilder() {
-      if (humidityBuilder_ != null) {
-        return humidityBuilder_.getMessageOrBuilder();
+    public pt.sharespot.iot.core.buf.model.AirHumidityOrBuilder getAirHumidityOrBuilder() {
+      if (airHumidityBuilder_ != null) {
+        return airHumidityBuilder_.getMessageOrBuilder();
       } else {
-        return humidity_ == null ?
-            pt.sharespot.iot.core.buf.model.Humidity.getDefaultInstance() : humidity_;
+        return airHumidity_ == null ?
+            pt.sharespot.iot.core.buf.model.AirHumidity.getDefaultInstance() : airHumidity_;
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Humidity humidity = 6;</code>
+     * <code>.pt.sharespot.iot.core.AirHumidity air_humidity = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.Humidity, pt.sharespot.iot.core.buf.model.Humidity.Builder, pt.sharespot.iot.core.buf.model.HumidityOrBuilder> 
-        getHumidityFieldBuilder() {
-      if (humidityBuilder_ == null) {
-        humidityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            pt.sharespot.iot.core.buf.model.Humidity, pt.sharespot.iot.core.buf.model.Humidity.Builder, pt.sharespot.iot.core.buf.model.HumidityOrBuilder>(
-                getHumidity(),
+        pt.sharespot.iot.core.buf.model.AirHumidity, pt.sharespot.iot.core.buf.model.AirHumidity.Builder, pt.sharespot.iot.core.buf.model.AirHumidityOrBuilder> 
+        getAirHumidityFieldBuilder() {
+      if (airHumidityBuilder_ == null) {
+        airHumidityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.AirHumidity, pt.sharespot.iot.core.buf.model.AirHumidity.Builder, pt.sharespot.iot.core.buf.model.AirHumidityOrBuilder>(
+                getAirHumidity(),
                 getParentForChildren(),
                 isClean());
-        humidity_ = null;
+        airHumidity_ = null;
       }
-      return humidityBuilder_;
+      return airHumidityBuilder_;
     }
 
-    private pt.sharespot.iot.core.buf.model.Pressure pressure_;
+    private pt.sharespot.iot.core.buf.model.AirPressure airPressure_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.Pressure, pt.sharespot.iot.core.buf.model.Pressure.Builder, pt.sharespot.iot.core.buf.model.PressureOrBuilder> pressureBuilder_;
+        pt.sharespot.iot.core.buf.model.AirPressure, pt.sharespot.iot.core.buf.model.AirPressure.Builder, pt.sharespot.iot.core.buf.model.AirPressureOrBuilder> airPressureBuilder_;
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
-     * @return Whether the pressure field is set.
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
+     * @return Whether the airPressure field is set.
      */
-    public boolean hasPressure() {
-      return pressureBuilder_ != null || pressure_ != null;
+    public boolean hasAirPressure() {
+      return airPressureBuilder_ != null || airPressure_ != null;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
-     * @return The pressure.
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
+     * @return The airPressure.
      */
-    public pt.sharespot.iot.core.buf.model.Pressure getPressure() {
-      if (pressureBuilder_ == null) {
-        return pressure_ == null ? pt.sharespot.iot.core.buf.model.Pressure.getDefaultInstance() : pressure_;
+    public pt.sharespot.iot.core.buf.model.AirPressure getAirPressure() {
+      if (airPressureBuilder_ == null) {
+        return airPressure_ == null ? pt.sharespot.iot.core.buf.model.AirPressure.getDefaultInstance() : airPressure_;
       } else {
-        return pressureBuilder_.getMessage();
+        return airPressureBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
      */
-    public Builder setPressure(pt.sharespot.iot.core.buf.model.Pressure value) {
-      if (pressureBuilder_ == null) {
+    public Builder setAirPressure(pt.sharespot.iot.core.buf.model.AirPressure value) {
+      if (airPressureBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        pressure_ = value;
+        airPressure_ = value;
         onChanged();
       } else {
-        pressureBuilder_.setMessage(value);
+        airPressureBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
      */
-    public Builder setPressure(
-        pt.sharespot.iot.core.buf.model.Pressure.Builder builderForValue) {
-      if (pressureBuilder_ == null) {
-        pressure_ = builderForValue.build();
+    public Builder setAirPressure(
+        pt.sharespot.iot.core.buf.model.AirPressure.Builder builderForValue) {
+      if (airPressureBuilder_ == null) {
+        airPressure_ = builderForValue.build();
         onChanged();
       } else {
-        pressureBuilder_.setMessage(builderForValue.build());
+        airPressureBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
      */
-    public Builder mergePressure(pt.sharespot.iot.core.buf.model.Pressure value) {
-      if (pressureBuilder_ == null) {
-        if (pressure_ != null) {
-          pressure_ =
-            pt.sharespot.iot.core.buf.model.Pressure.newBuilder(pressure_).mergeFrom(value).buildPartial();
+    public Builder mergeAirPressure(pt.sharespot.iot.core.buf.model.AirPressure value) {
+      if (airPressureBuilder_ == null) {
+        if (airPressure_ != null) {
+          airPressure_ =
+            pt.sharespot.iot.core.buf.model.AirPressure.newBuilder(airPressure_).mergeFrom(value).buildPartial();
         } else {
-          pressure_ = value;
+          airPressure_ = value;
         }
         onChanged();
       } else {
-        pressureBuilder_.mergeFrom(value);
+        airPressureBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
      */
-    public Builder clearPressure() {
-      if (pressureBuilder_ == null) {
-        pressure_ = null;
+    public Builder clearAirPressure() {
+      if (airPressureBuilder_ == null) {
+        airPressure_ = null;
         onChanged();
       } else {
-        pressure_ = null;
-        pressureBuilder_ = null;
+        airPressure_ = null;
+        airPressureBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
      */
-    public pt.sharespot.iot.core.buf.model.Pressure.Builder getPressureBuilder() {
+    public pt.sharespot.iot.core.buf.model.AirPressure.Builder getAirPressureBuilder() {
       
       onChanged();
-      return getPressureFieldBuilder().getBuilder();
+      return getAirPressureFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
      */
-    public pt.sharespot.iot.core.buf.model.PressureOrBuilder getPressureOrBuilder() {
-      if (pressureBuilder_ != null) {
-        return pressureBuilder_.getMessageOrBuilder();
+    public pt.sharespot.iot.core.buf.model.AirPressureOrBuilder getAirPressureOrBuilder() {
+      if (airPressureBuilder_ != null) {
+        return airPressureBuilder_.getMessageOrBuilder();
       } else {
-        return pressure_ == null ?
-            pt.sharespot.iot.core.buf.model.Pressure.getDefaultInstance() : pressure_;
+        return airPressure_ == null ?
+            pt.sharespot.iot.core.buf.model.AirPressure.getDefaultInstance() : airPressure_;
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Pressure pressure = 7;</code>
+     * <code>.pt.sharespot.iot.core.AirPressure air_pressure = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.Pressure, pt.sharespot.iot.core.buf.model.Pressure.Builder, pt.sharespot.iot.core.buf.model.PressureOrBuilder> 
-        getPressureFieldBuilder() {
-      if (pressureBuilder_ == null) {
-        pressureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            pt.sharespot.iot.core.buf.model.Pressure, pt.sharespot.iot.core.buf.model.Pressure.Builder, pt.sharespot.iot.core.buf.model.PressureOrBuilder>(
-                getPressure(),
+        pt.sharespot.iot.core.buf.model.AirPressure, pt.sharespot.iot.core.buf.model.AirPressure.Builder, pt.sharespot.iot.core.buf.model.AirPressureOrBuilder> 
+        getAirPressureFieldBuilder() {
+      if (airPressureBuilder_ == null) {
+        airPressureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.AirPressure, pt.sharespot.iot.core.buf.model.AirPressure.Builder, pt.sharespot.iot.core.buf.model.AirPressureOrBuilder>(
+                getAirPressure(),
                 getParentForChildren(),
                 isClean());
-        pressure_ = null;
+        airPressure_ = null;
       }
-      return pressureBuilder_;
+      return airPressureBuilder_;
     }
 
     private pt.sharespot.iot.core.buf.model.Battery battery_;
@@ -2076,123 +2076,123 @@ private static final long serialVersionUID = 0L;
       return batteryBuilder_;
     }
 
-    private pt.sharespot.iot.core.buf.model.SoilMoisture moisture_;
+    private pt.sharespot.iot.core.buf.model.SoilMoisture soilMoisture_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.SoilMoisture, pt.sharespot.iot.core.buf.model.SoilMoisture.Builder, pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder> moistureBuilder_;
+        pt.sharespot.iot.core.buf.model.SoilMoisture, pt.sharespot.iot.core.buf.model.SoilMoisture.Builder, pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder> soilMoistureBuilder_;
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
-     * @return Whether the moisture field is set.
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
+     * @return Whether the soilMoisture field is set.
      */
-    public boolean hasMoisture() {
-      return moistureBuilder_ != null || moisture_ != null;
+    public boolean hasSoilMoisture() {
+      return soilMoistureBuilder_ != null || soilMoisture_ != null;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
-     * @return The moisture.
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
+     * @return The soilMoisture.
      */
-    public pt.sharespot.iot.core.buf.model.SoilMoisture getMoisture() {
-      if (moistureBuilder_ == null) {
-        return moisture_ == null ? pt.sharespot.iot.core.buf.model.SoilMoisture.getDefaultInstance() : moisture_;
+    public pt.sharespot.iot.core.buf.model.SoilMoisture getSoilMoisture() {
+      if (soilMoistureBuilder_ == null) {
+        return soilMoisture_ == null ? pt.sharespot.iot.core.buf.model.SoilMoisture.getDefaultInstance() : soilMoisture_;
       } else {
-        return moistureBuilder_.getMessage();
+        return soilMoistureBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
      */
-    public Builder setMoisture(pt.sharespot.iot.core.buf.model.SoilMoisture value) {
-      if (moistureBuilder_ == null) {
+    public Builder setSoilMoisture(pt.sharespot.iot.core.buf.model.SoilMoisture value) {
+      if (soilMoistureBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        moisture_ = value;
+        soilMoisture_ = value;
         onChanged();
       } else {
-        moistureBuilder_.setMessage(value);
+        soilMoistureBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
      */
-    public Builder setMoisture(
+    public Builder setSoilMoisture(
         pt.sharespot.iot.core.buf.model.SoilMoisture.Builder builderForValue) {
-      if (moistureBuilder_ == null) {
-        moisture_ = builderForValue.build();
+      if (soilMoistureBuilder_ == null) {
+        soilMoisture_ = builderForValue.build();
         onChanged();
       } else {
-        moistureBuilder_.setMessage(builderForValue.build());
+        soilMoistureBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
      */
-    public Builder mergeMoisture(pt.sharespot.iot.core.buf.model.SoilMoisture value) {
-      if (moistureBuilder_ == null) {
-        if (moisture_ != null) {
-          moisture_ =
-            pt.sharespot.iot.core.buf.model.SoilMoisture.newBuilder(moisture_).mergeFrom(value).buildPartial();
+    public Builder mergeSoilMoisture(pt.sharespot.iot.core.buf.model.SoilMoisture value) {
+      if (soilMoistureBuilder_ == null) {
+        if (soilMoisture_ != null) {
+          soilMoisture_ =
+            pt.sharespot.iot.core.buf.model.SoilMoisture.newBuilder(soilMoisture_).mergeFrom(value).buildPartial();
         } else {
-          moisture_ = value;
+          soilMoisture_ = value;
         }
         onChanged();
       } else {
-        moistureBuilder_.mergeFrom(value);
+        soilMoistureBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
      */
-    public Builder clearMoisture() {
-      if (moistureBuilder_ == null) {
-        moisture_ = null;
+    public Builder clearSoilMoisture() {
+      if (soilMoistureBuilder_ == null) {
+        soilMoisture_ = null;
         onChanged();
       } else {
-        moisture_ = null;
-        moistureBuilder_ = null;
+        soilMoisture_ = null;
+        soilMoistureBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
      */
-    public pt.sharespot.iot.core.buf.model.SoilMoisture.Builder getMoistureBuilder() {
+    public pt.sharespot.iot.core.buf.model.SoilMoisture.Builder getSoilMoistureBuilder() {
       
       onChanged();
-      return getMoistureFieldBuilder().getBuilder();
+      return getSoilMoistureFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
      */
-    public pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder getMoistureOrBuilder() {
-      if (moistureBuilder_ != null) {
-        return moistureBuilder_.getMessageOrBuilder();
+    public pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder getSoilMoistureOrBuilder() {
+      if (soilMoistureBuilder_ != null) {
+        return soilMoistureBuilder_.getMessageOrBuilder();
       } else {
-        return moisture_ == null ?
-            pt.sharespot.iot.core.buf.model.SoilMoisture.getDefaultInstance() : moisture_;
+        return soilMoisture_ == null ?
+            pt.sharespot.iot.core.buf.model.SoilMoisture.getDefaultInstance() : soilMoisture_;
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoisture moisture = 9;</code>
+     * <code>.pt.sharespot.iot.core.SoilMoisture soil_moisture = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         pt.sharespot.iot.core.buf.model.SoilMoisture, pt.sharespot.iot.core.buf.model.SoilMoisture.Builder, pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder> 
-        getMoistureFieldBuilder() {
-      if (moistureBuilder_ == null) {
-        moistureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getSoilMoistureFieldBuilder() {
+      if (soilMoistureBuilder_ == null) {
+        soilMoistureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             pt.sharespot.iot.core.buf.model.SoilMoisture, pt.sharespot.iot.core.buf.model.SoilMoisture.Builder, pt.sharespot.iot.core.buf.model.SoilMoistureOrBuilder>(
-                getMoisture(),
+                getSoilMoisture(),
                 getParentForChildren(),
                 isClean());
-        moisture_ = null;
+        soilMoisture_ = null;
       }
-      return moistureBuilder_;
+      return soilMoistureBuilder_;
     }
 
     private pt.sharespot.iot.core.buf.model.Illuminance illuminance_;
@@ -2314,123 +2314,123 @@ private static final long serialVersionUID = 0L;
       return illuminanceBuilder_;
     }
 
-    private pt.sharespot.iot.core.buf.model.Alarm alarm_;
+    private pt.sharespot.iot.core.buf.model.Trigger trigger_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.Alarm, pt.sharespot.iot.core.buf.model.Alarm.Builder, pt.sharespot.iot.core.buf.model.AlarmOrBuilder> alarmBuilder_;
+        pt.sharespot.iot.core.buf.model.Trigger, pt.sharespot.iot.core.buf.model.Trigger.Builder, pt.sharespot.iot.core.buf.model.TriggerOrBuilder> triggerBuilder_;
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
-     * @return Whether the alarm field is set.
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
+     * @return Whether the trigger field is set.
      */
-    public boolean hasAlarm() {
-      return alarmBuilder_ != null || alarm_ != null;
+    public boolean hasTrigger() {
+      return triggerBuilder_ != null || trigger_ != null;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
-     * @return The alarm.
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
+     * @return The trigger.
      */
-    public pt.sharespot.iot.core.buf.model.Alarm getAlarm() {
-      if (alarmBuilder_ == null) {
-        return alarm_ == null ? pt.sharespot.iot.core.buf.model.Alarm.getDefaultInstance() : alarm_;
+    public pt.sharespot.iot.core.buf.model.Trigger getTrigger() {
+      if (triggerBuilder_ == null) {
+        return trigger_ == null ? pt.sharespot.iot.core.buf.model.Trigger.getDefaultInstance() : trigger_;
       } else {
-        return alarmBuilder_.getMessage();
+        return triggerBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
      */
-    public Builder setAlarm(pt.sharespot.iot.core.buf.model.Alarm value) {
-      if (alarmBuilder_ == null) {
+    public Builder setTrigger(pt.sharespot.iot.core.buf.model.Trigger value) {
+      if (triggerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        alarm_ = value;
+        trigger_ = value;
         onChanged();
       } else {
-        alarmBuilder_.setMessage(value);
+        triggerBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
      */
-    public Builder setAlarm(
-        pt.sharespot.iot.core.buf.model.Alarm.Builder builderForValue) {
-      if (alarmBuilder_ == null) {
-        alarm_ = builderForValue.build();
+    public Builder setTrigger(
+        pt.sharespot.iot.core.buf.model.Trigger.Builder builderForValue) {
+      if (triggerBuilder_ == null) {
+        trigger_ = builderForValue.build();
         onChanged();
       } else {
-        alarmBuilder_.setMessage(builderForValue.build());
+        triggerBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
      */
-    public Builder mergeAlarm(pt.sharespot.iot.core.buf.model.Alarm value) {
-      if (alarmBuilder_ == null) {
-        if (alarm_ != null) {
-          alarm_ =
-            pt.sharespot.iot.core.buf.model.Alarm.newBuilder(alarm_).mergeFrom(value).buildPartial();
+    public Builder mergeTrigger(pt.sharespot.iot.core.buf.model.Trigger value) {
+      if (triggerBuilder_ == null) {
+        if (trigger_ != null) {
+          trigger_ =
+            pt.sharespot.iot.core.buf.model.Trigger.newBuilder(trigger_).mergeFrom(value).buildPartial();
         } else {
-          alarm_ = value;
+          trigger_ = value;
         }
         onChanged();
       } else {
-        alarmBuilder_.mergeFrom(value);
+        triggerBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
      */
-    public Builder clearAlarm() {
-      if (alarmBuilder_ == null) {
-        alarm_ = null;
+    public Builder clearTrigger() {
+      if (triggerBuilder_ == null) {
+        trigger_ = null;
         onChanged();
       } else {
-        alarm_ = null;
-        alarmBuilder_ = null;
+        trigger_ = null;
+        triggerBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
      */
-    public pt.sharespot.iot.core.buf.model.Alarm.Builder getAlarmBuilder() {
+    public pt.sharespot.iot.core.buf.model.Trigger.Builder getTriggerBuilder() {
       
       onChanged();
-      return getAlarmFieldBuilder().getBuilder();
+      return getTriggerFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
      */
-    public pt.sharespot.iot.core.buf.model.AlarmOrBuilder getAlarmOrBuilder() {
-      if (alarmBuilder_ != null) {
-        return alarmBuilder_.getMessageOrBuilder();
+    public pt.sharespot.iot.core.buf.model.TriggerOrBuilder getTriggerOrBuilder() {
+      if (triggerBuilder_ != null) {
+        return triggerBuilder_.getMessageOrBuilder();
       } else {
-        return alarm_ == null ?
-            pt.sharespot.iot.core.buf.model.Alarm.getDefaultInstance() : alarm_;
+        return trigger_ == null ?
+            pt.sharespot.iot.core.buf.model.Trigger.getDefaultInstance() : trigger_;
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Alarm alarm = 11;</code>
+     * <code>.pt.sharespot.iot.core.Trigger trigger = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.Alarm, pt.sharespot.iot.core.buf.model.Alarm.Builder, pt.sharespot.iot.core.buf.model.AlarmOrBuilder> 
-        getAlarmFieldBuilder() {
-      if (alarmBuilder_ == null) {
-        alarmBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            pt.sharespot.iot.core.buf.model.Alarm, pt.sharespot.iot.core.buf.model.Alarm.Builder, pt.sharespot.iot.core.buf.model.AlarmOrBuilder>(
-                getAlarm(),
+        pt.sharespot.iot.core.buf.model.Trigger, pt.sharespot.iot.core.buf.model.Trigger.Builder, pt.sharespot.iot.core.buf.model.TriggerOrBuilder> 
+        getTriggerFieldBuilder() {
+      if (triggerBuilder_ == null) {
+        triggerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.Trigger, pt.sharespot.iot.core.buf.model.Trigger.Builder, pt.sharespot.iot.core.buf.model.TriggerOrBuilder>(
+                getTrigger(),
                 getParentForChildren(),
                 isClean());
-        alarm_ = null;
+        trigger_ = null;
       }
-      return alarmBuilder_;
+      return triggerBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

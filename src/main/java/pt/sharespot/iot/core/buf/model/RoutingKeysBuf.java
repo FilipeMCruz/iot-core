@@ -26,15 +26,15 @@ private static final long serialVersionUID = 0L;
     temperature_ = 0;
     legitimacy_ = 0;
     aqi_ = 0;
-    humidity_ = 0;
+    airHumidity_ = 0;
     motion_ = 0;
     velocity_ = 0;
-    pressure_ = 0;
+    airPressure_ = 0;
     battery_ = 0;
-    moisture_ = 0;
+    soilMoisture_ = 0;
     illuminance_ = 0;
     ownership_ = 0;
-    alarm_ = 0;
+    trigger_ = 0;
   }
 
   @java.lang.Override
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
           case 88: {
             int rawValue = input.readEnum();
 
-            humidity_ = rawValue;
+            airHumidity_ = rawValue;
             break;
           }
           case 96: {
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
           case 112: {
             int rawValue = input.readEnum();
 
-            pressure_ = rawValue;
+            airPressure_ = rawValue;
             break;
           }
           case 120: {
@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
           case 128: {
             int rawValue = input.readEnum();
 
-            moisture_ = rawValue;
+            soilMoisture_ = rawValue;
             break;
           }
           case 136: {
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
           case 152: {
             int rawValue = input.readEnum();
 
-            alarm_ = rawValue;
+            trigger_ = rawValue;
             break;
           }
           default: {
@@ -460,23 +460,23 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.AirQualityDataOptionsBuf.UNRECOGNIZED : result;
   }
 
-  public static final int HUMIDITY_FIELD_NUMBER = 11;
-  private int humidity_;
+  public static final int AIR_HUMIDITY_FIELD_NUMBER = 11;
+  private int airHumidity_;
   /**
-   * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
-   * @return The enum numeric value on the wire for humidity.
+   * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
+   * @return The enum numeric value on the wire for airHumidity.
    */
-  @java.lang.Override public int getHumidityValue() {
-    return humidity_;
+  @java.lang.Override public int getAirHumidityValue() {
+    return airHumidity_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
-   * @return The humidity.
+   * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
+   * @return The airHumidity.
    */
-  @java.lang.Override public pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf getHumidity() {
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf getAirHumidity() {
     @SuppressWarnings("deprecation")
-    pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf result = pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf.valueOf(humidity_);
-    return result == null ? pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf.UNRECOGNIZED : result;
+    pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf result = pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf.valueOf(airHumidity_);
+    return result == null ? pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf.UNRECOGNIZED : result;
   }
 
   public static final int MOTION_FIELD_NUMBER = 12;
@@ -517,23 +517,23 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.VelocityDataOptionsBuf.UNRECOGNIZED : result;
   }
 
-  public static final int PRESSURE_FIELD_NUMBER = 14;
-  private int pressure_;
+  public static final int AIR_PRESSURE_FIELD_NUMBER = 14;
+  private int airPressure_;
   /**
-   * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
-   * @return The enum numeric value on the wire for pressure.
+   * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
+   * @return The enum numeric value on the wire for airPressure.
    */
-  @java.lang.Override public int getPressureValue() {
-    return pressure_;
+  @java.lang.Override public int getAirPressureValue() {
+    return airPressure_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
-   * @return The pressure.
+   * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
+   * @return The airPressure.
    */
-  @java.lang.Override public pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf getPressure() {
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf getAirPressure() {
     @SuppressWarnings("deprecation")
-    pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf.valueOf(pressure_);
-    return result == null ? pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf.UNRECOGNIZED : result;
+    pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf.valueOf(airPressure_);
+    return result == null ? pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf.UNRECOGNIZED : result;
   }
 
   public static final int BATTERY_FIELD_NUMBER = 15;
@@ -555,22 +555,22 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.BatteryDataOptionsBuf.UNRECOGNIZED : result;
   }
 
-  public static final int MOISTURE_FIELD_NUMBER = 16;
-  private int moisture_;
+  public static final int SOIL_MOISTURE_FIELD_NUMBER = 16;
+  private int soilMoisture_;
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
-   * @return The enum numeric value on the wire for moisture.
+   * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
+   * @return The enum numeric value on the wire for soilMoisture.
    */
-  @java.lang.Override public int getMoistureValue() {
-    return moisture_;
+  @java.lang.Override public int getSoilMoistureValue() {
+    return soilMoisture_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
-   * @return The moisture.
+   * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
+   * @return The soilMoisture.
    */
-  @java.lang.Override public pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf getMoisture() {
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf getSoilMoisture() {
     @SuppressWarnings("deprecation")
-    pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.valueOf(moisture_);
+    pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.valueOf(soilMoisture_);
     return result == null ? pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.UNRECOGNIZED : result;
   }
 
@@ -612,23 +612,23 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.DomainOwnershipOptionsBuf.UNRECOGNIZED : result;
   }
 
-  public static final int ALARM_FIELD_NUMBER = 19;
-  private int alarm_;
+  public static final int TRIGGER_FIELD_NUMBER = 19;
+  private int trigger_;
   /**
-   * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
-   * @return The enum numeric value on the wire for alarm.
+   * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
+   * @return The enum numeric value on the wire for trigger.
    */
-  @java.lang.Override public int getAlarmValue() {
-    return alarm_;
+  @java.lang.Override public int getTriggerValue() {
+    return trigger_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
-   * @return The alarm.
+   * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
+   * @return The trigger.
    */
-  @java.lang.Override public pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf getAlarm() {
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf getTrigger() {
     @SuppressWarnings("deprecation")
-    pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf result = pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf.valueOf(alarm_);
-    return result == null ? pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf.UNRECOGNIZED : result;
+    pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf result = pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf.valueOf(trigger_);
+    return result == null ? pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -675,8 +675,8 @@ private static final long serialVersionUID = 0L;
     if (aqi_ != pt.sharespot.iot.core.buf.model.AirQualityDataOptionsBuf.UNIDENTIFIED_AQI_DATA.getNumber()) {
       output.writeEnum(10, aqi_);
     }
-    if (humidity_ != pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf.UNIDENTIFIED_HUMIDITY_DATA.getNumber()) {
-      output.writeEnum(11, humidity_);
+    if (airHumidity_ != pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf.UNIDENTIFIED_AIR_HUMIDITY_DATA.getNumber()) {
+      output.writeEnum(11, airHumidity_);
     }
     if (motion_ != pt.sharespot.iot.core.buf.model.MotionDataOptionsBuf.UNIDENTIFIED_MOTION_DATA.getNumber()) {
       output.writeEnum(12, motion_);
@@ -684,14 +684,14 @@ private static final long serialVersionUID = 0L;
     if (velocity_ != pt.sharespot.iot.core.buf.model.VelocityDataOptionsBuf.UNIDENTIFIED_VELOCITY_DATA.getNumber()) {
       output.writeEnum(13, velocity_);
     }
-    if (pressure_ != pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf.UNIDENTIFIED_PRESSURE_DATA.getNumber()) {
-      output.writeEnum(14, pressure_);
+    if (airPressure_ != pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf.UNIDENTIFIED_AIR_PRESSURE_DATA.getNumber()) {
+      output.writeEnum(14, airPressure_);
     }
     if (battery_ != pt.sharespot.iot.core.buf.model.BatteryDataOptionsBuf.UNIDENTIFIED_BATTERY_DATA.getNumber()) {
       output.writeEnum(15, battery_);
     }
-    if (moisture_ != pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.UNIDENTIFIED_SOIL_MOISTURE_DATA.getNumber()) {
-      output.writeEnum(16, moisture_);
+    if (soilMoisture_ != pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.UNIDENTIFIED_SOIL_MOISTURE_DATA.getNumber()) {
+      output.writeEnum(16, soilMoisture_);
     }
     if (illuminance_ != pt.sharespot.iot.core.buf.model.IlluminanceDataOptionsBuf.UNIDENTIFIED_ILLUMINANCE_DATA.getNumber()) {
       output.writeEnum(17, illuminance_);
@@ -699,8 +699,8 @@ private static final long serialVersionUID = 0L;
     if (ownership_ != pt.sharespot.iot.core.buf.model.DomainOwnershipOptionsBuf.UNIDENTIFIED_DOMAIN_OWNERSHIP.getNumber()) {
       output.writeEnum(18, ownership_);
     }
-    if (alarm_ != pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf.UNIDENTIFIED_ALARM_DATA.getNumber()) {
-      output.writeEnum(19, alarm_);
+    if (trigger_ != pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf.UNIDENTIFIED_TRIGGER_DATA.getNumber()) {
+      output.writeEnum(19, trigger_);
     }
     unknownFields.writeTo(output);
   }
@@ -748,9 +748,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(10, aqi_);
     }
-    if (humidity_ != pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf.UNIDENTIFIED_HUMIDITY_DATA.getNumber()) {
+    if (airHumidity_ != pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf.UNIDENTIFIED_AIR_HUMIDITY_DATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(11, humidity_);
+        .computeEnumSize(11, airHumidity_);
     }
     if (motion_ != pt.sharespot.iot.core.buf.model.MotionDataOptionsBuf.UNIDENTIFIED_MOTION_DATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -760,17 +760,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(13, velocity_);
     }
-    if (pressure_ != pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf.UNIDENTIFIED_PRESSURE_DATA.getNumber()) {
+    if (airPressure_ != pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf.UNIDENTIFIED_AIR_PRESSURE_DATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(14, pressure_);
+        .computeEnumSize(14, airPressure_);
     }
     if (battery_ != pt.sharespot.iot.core.buf.model.BatteryDataOptionsBuf.UNIDENTIFIED_BATTERY_DATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(15, battery_);
     }
-    if (moisture_ != pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.UNIDENTIFIED_SOIL_MOISTURE_DATA.getNumber()) {
+    if (soilMoisture_ != pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.UNIDENTIFIED_SOIL_MOISTURE_DATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(16, moisture_);
+        .computeEnumSize(16, soilMoisture_);
     }
     if (illuminance_ != pt.sharespot.iot.core.buf.model.IlluminanceDataOptionsBuf.UNIDENTIFIED_ILLUMINANCE_DATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -780,9 +780,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(18, ownership_);
     }
-    if (alarm_ != pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf.UNIDENTIFIED_ALARM_DATA.getNumber()) {
+    if (trigger_ != pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf.UNIDENTIFIED_TRIGGER_DATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(19, alarm_);
+        .computeEnumSize(19, trigger_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -812,15 +812,15 @@ private static final long serialVersionUID = 0L;
     if (temperature_ != other.temperature_) return false;
     if (legitimacy_ != other.legitimacy_) return false;
     if (aqi_ != other.aqi_) return false;
-    if (humidity_ != other.humidity_) return false;
+    if (airHumidity_ != other.airHumidity_) return false;
     if (motion_ != other.motion_) return false;
     if (velocity_ != other.velocity_) return false;
-    if (pressure_ != other.pressure_) return false;
+    if (airPressure_ != other.airPressure_) return false;
     if (battery_ != other.battery_) return false;
-    if (moisture_ != other.moisture_) return false;
+    if (soilMoisture_ != other.soilMoisture_) return false;
     if (illuminance_ != other.illuminance_) return false;
     if (ownership_ != other.ownership_) return false;
-    if (alarm_ != other.alarm_) return false;
+    if (trigger_ != other.trigger_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -852,24 +852,24 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + legitimacy_;
     hash = (37 * hash) + AQI_FIELD_NUMBER;
     hash = (53 * hash) + aqi_;
-    hash = (37 * hash) + HUMIDITY_FIELD_NUMBER;
-    hash = (53 * hash) + humidity_;
+    hash = (37 * hash) + AIR_HUMIDITY_FIELD_NUMBER;
+    hash = (53 * hash) + airHumidity_;
     hash = (37 * hash) + MOTION_FIELD_NUMBER;
     hash = (53 * hash) + motion_;
     hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
     hash = (53 * hash) + velocity_;
-    hash = (37 * hash) + PRESSURE_FIELD_NUMBER;
-    hash = (53 * hash) + pressure_;
+    hash = (37 * hash) + AIR_PRESSURE_FIELD_NUMBER;
+    hash = (53 * hash) + airPressure_;
     hash = (37 * hash) + BATTERY_FIELD_NUMBER;
     hash = (53 * hash) + battery_;
-    hash = (37 * hash) + MOISTURE_FIELD_NUMBER;
-    hash = (53 * hash) + moisture_;
+    hash = (37 * hash) + SOIL_MOISTURE_FIELD_NUMBER;
+    hash = (53 * hash) + soilMoisture_;
     hash = (37 * hash) + ILLUMINANCE_FIELD_NUMBER;
     hash = (53 * hash) + illuminance_;
     hash = (37 * hash) + OWNERSHIP_FIELD_NUMBER;
     hash = (53 * hash) + ownership_;
-    hash = (37 * hash) + ALARM_FIELD_NUMBER;
-    hash = (53 * hash) + alarm_;
+    hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
+    hash = (53 * hash) + trigger_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1023,23 +1023,23 @@ private static final long serialVersionUID = 0L;
 
       aqi_ = 0;
 
-      humidity_ = 0;
+      airHumidity_ = 0;
 
       motion_ = 0;
 
       velocity_ = 0;
 
-      pressure_ = 0;
+      airPressure_ = 0;
 
       battery_ = 0;
 
-      moisture_ = 0;
+      soilMoisture_ = 0;
 
       illuminance_ = 0;
 
       ownership_ = 0;
 
-      alarm_ = 0;
+      trigger_ = 0;
 
       return this;
     }
@@ -1077,15 +1077,15 @@ private static final long serialVersionUID = 0L;
       result.temperature_ = temperature_;
       result.legitimacy_ = legitimacy_;
       result.aqi_ = aqi_;
-      result.humidity_ = humidity_;
+      result.airHumidity_ = airHumidity_;
       result.motion_ = motion_;
       result.velocity_ = velocity_;
-      result.pressure_ = pressure_;
+      result.airPressure_ = airPressure_;
       result.battery_ = battery_;
-      result.moisture_ = moisture_;
+      result.soilMoisture_ = soilMoisture_;
       result.illuminance_ = illuminance_;
       result.ownership_ = ownership_;
-      result.alarm_ = alarm_;
+      result.trigger_ = trigger_;
       onBuilt();
       return result;
     }
@@ -1167,8 +1167,8 @@ private static final long serialVersionUID = 0L;
       if (other.aqi_ != 0) {
         setAqiValue(other.getAqiValue());
       }
-      if (other.humidity_ != 0) {
-        setHumidityValue(other.getHumidityValue());
+      if (other.airHumidity_ != 0) {
+        setAirHumidityValue(other.getAirHumidityValue());
       }
       if (other.motion_ != 0) {
         setMotionValue(other.getMotionValue());
@@ -1176,14 +1176,14 @@ private static final long serialVersionUID = 0L;
       if (other.velocity_ != 0) {
         setVelocityValue(other.getVelocityValue());
       }
-      if (other.pressure_ != 0) {
-        setPressureValue(other.getPressureValue());
+      if (other.airPressure_ != 0) {
+        setAirPressureValue(other.getAirPressureValue());
       }
       if (other.battery_ != 0) {
         setBatteryValue(other.getBatteryValue());
       }
-      if (other.moisture_ != 0) {
-        setMoistureValue(other.getMoistureValue());
+      if (other.soilMoisture_ != 0) {
+        setSoilMoistureValue(other.getSoilMoistureValue());
       }
       if (other.illuminance_ != 0) {
         setIlluminanceValue(other.getIlluminanceValue());
@@ -1191,8 +1191,8 @@ private static final long serialVersionUID = 0L;
       if (other.ownership_ != 0) {
         setOwnershipValue(other.getOwnershipValue());
       }
-      if (other.alarm_ != 0) {
-        setAlarmValue(other.getAlarmValue());
+      if (other.trigger_ != 0) {
+        setTriggerValue(other.getTriggerValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1829,56 +1829,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int humidity_ = 0;
+    private int airHumidity_ = 0;
     /**
-     * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
-     * @return The enum numeric value on the wire for humidity.
+     * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
+     * @return The enum numeric value on the wire for airHumidity.
      */
-    @java.lang.Override public int getHumidityValue() {
-      return humidity_;
+    @java.lang.Override public int getAirHumidityValue() {
+      return airHumidity_;
     }
     /**
-     * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
-     * @param value The enum numeric value on the wire for humidity to set.
+     * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
+     * @param value The enum numeric value on the wire for airHumidity to set.
      * @return This builder for chaining.
      */
-    public Builder setHumidityValue(int value) {
+    public Builder setAirHumidityValue(int value) {
       
-      humidity_ = value;
+      airHumidity_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
-     * @return The humidity.
+     * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
+     * @return The airHumidity.
      */
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf getHumidity() {
+    public pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf getAirHumidity() {
       @SuppressWarnings("deprecation")
-      pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf result = pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf.valueOf(humidity_);
-      return result == null ? pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf.UNRECOGNIZED : result;
+      pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf result = pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf.valueOf(airHumidity_);
+      return result == null ? pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf.UNRECOGNIZED : result;
     }
     /**
-     * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
-     * @param value The humidity to set.
+     * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
+     * @param value The airHumidity to set.
      * @return This builder for chaining.
      */
-    public Builder setHumidity(pt.sharespot.iot.core.buf.model.HumidityDataOptionsBuf value) {
+    public Builder setAirHumidity(pt.sharespot.iot.core.buf.model.AirHumidityDataOptionsBuf value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      humidity_ = value.getNumber();
+      airHumidity_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.HumidityDataOptionsBuf humidity = 11;</code>
+     * <code>.pt.sharespot.iot.core.AirHumidityDataOptionsBuf air_humidity = 11;</code>
      * @return This builder for chaining.
      */
-    public Builder clearHumidity() {
+    public Builder clearAirHumidity() {
       
-      humidity_ = 0;
+      airHumidity_ = 0;
       onChanged();
       return this;
     }
@@ -1991,56 +1991,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int pressure_ = 0;
+    private int airPressure_ = 0;
     /**
-     * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
-     * @return The enum numeric value on the wire for pressure.
+     * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
+     * @return The enum numeric value on the wire for airPressure.
      */
-    @java.lang.Override public int getPressureValue() {
-      return pressure_;
+    @java.lang.Override public int getAirPressureValue() {
+      return airPressure_;
     }
     /**
-     * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
-     * @param value The enum numeric value on the wire for pressure to set.
+     * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
+     * @param value The enum numeric value on the wire for airPressure to set.
      * @return This builder for chaining.
      */
-    public Builder setPressureValue(int value) {
+    public Builder setAirPressureValue(int value) {
       
-      pressure_ = value;
+      airPressure_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
-     * @return The pressure.
+     * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
+     * @return The airPressure.
      */
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf getPressure() {
+    public pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf getAirPressure() {
       @SuppressWarnings("deprecation")
-      pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf.valueOf(pressure_);
-      return result == null ? pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf.UNRECOGNIZED : result;
+      pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf.valueOf(airPressure_);
+      return result == null ? pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf.UNRECOGNIZED : result;
     }
     /**
-     * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
-     * @param value The pressure to set.
+     * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
+     * @param value The airPressure to set.
      * @return This builder for chaining.
      */
-    public Builder setPressure(pt.sharespot.iot.core.buf.model.PressureDataOptionsBuf value) {
+    public Builder setAirPressure(pt.sharespot.iot.core.buf.model.AirPressureDataOptionsBuf value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      pressure_ = value.getNumber();
+      airPressure_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.PressureDataOptionsBuf pressure = 14;</code>
+     * <code>.pt.sharespot.iot.core.AirPressureDataOptionsBuf air_pressure = 14;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPressure() {
+    public Builder clearAirPressure() {
       
-      pressure_ = 0;
+      airPressure_ = 0;
       onChanged();
       return this;
     }
@@ -2099,56 +2099,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int moisture_ = 0;
+    private int soilMoisture_ = 0;
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
-     * @return The enum numeric value on the wire for moisture.
+     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
+     * @return The enum numeric value on the wire for soilMoisture.
      */
-    @java.lang.Override public int getMoistureValue() {
-      return moisture_;
+    @java.lang.Override public int getSoilMoistureValue() {
+      return soilMoisture_;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
-     * @param value The enum numeric value on the wire for moisture to set.
+     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
+     * @param value The enum numeric value on the wire for soilMoisture to set.
      * @return This builder for chaining.
      */
-    public Builder setMoistureValue(int value) {
+    public Builder setSoilMoistureValue(int value) {
       
-      moisture_ = value;
+      soilMoisture_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
-     * @return The moisture.
+     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
+     * @return The soilMoisture.
      */
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf getMoisture() {
+    public pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf getSoilMoisture() {
       @SuppressWarnings("deprecation")
-      pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.valueOf(moisture_);
+      pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf result = pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.valueOf(soilMoisture_);
       return result == null ? pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf.UNRECOGNIZED : result;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
-     * @param value The moisture to set.
+     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
+     * @param value The soilMoisture to set.
      * @return This builder for chaining.
      */
-    public Builder setMoisture(pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf value) {
+    public Builder setSoilMoisture(pt.sharespot.iot.core.buf.model.SoilMoistureDataOptionsBuf value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      moisture_ = value.getNumber();
+      soilMoisture_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf moisture = 16;</code>
+     * <code>.pt.sharespot.iot.core.SoilMoistureDataOptionsBuf soil_moisture = 16;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMoisture() {
+    public Builder clearSoilMoisture() {
       
-      moisture_ = 0;
+      soilMoisture_ = 0;
       onChanged();
       return this;
     }
@@ -2261,56 +2261,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int alarm_ = 0;
+    private int trigger_ = 0;
     /**
-     * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
-     * @return The enum numeric value on the wire for alarm.
+     * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
+     * @return The enum numeric value on the wire for trigger.
      */
-    @java.lang.Override public int getAlarmValue() {
-      return alarm_;
+    @java.lang.Override public int getTriggerValue() {
+      return trigger_;
     }
     /**
-     * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
-     * @param value The enum numeric value on the wire for alarm to set.
+     * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
+     * @param value The enum numeric value on the wire for trigger to set.
      * @return This builder for chaining.
      */
-    public Builder setAlarmValue(int value) {
+    public Builder setTriggerValue(int value) {
       
-      alarm_ = value;
+      trigger_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
-     * @return The alarm.
+     * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
+     * @return The trigger.
      */
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf getAlarm() {
+    public pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf getTrigger() {
       @SuppressWarnings("deprecation")
-      pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf result = pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf.valueOf(alarm_);
-      return result == null ? pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf.UNRECOGNIZED : result;
+      pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf result = pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf.valueOf(trigger_);
+      return result == null ? pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf.UNRECOGNIZED : result;
     }
     /**
-     * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
-     * @param value The alarm to set.
+     * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
+     * @param value The trigger to set.
      * @return This builder for chaining.
      */
-    public Builder setAlarm(pt.sharespot.iot.core.buf.model.AlarmDataOptionsBuf value) {
+    public Builder setTrigger(pt.sharespot.iot.core.buf.model.TriggerDataOptionsBuf value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      alarm_ = value.getNumber();
+      trigger_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.AlarmDataOptionsBuf alarm = 19;</code>
+     * <code>.pt.sharespot.iot.core.TriggerDataOptionsBuf trigger = 19;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAlarm() {
+    public Builder clearTrigger() {
       
-      alarm_ = 0;
+      trigger_ = 0;
       onChanged();
       return this;
     }

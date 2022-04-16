@@ -1,11 +1,11 @@
 package pt.sharespot.iot.core.sensor.data;
 
-public class AlarmDataDTO implements DataTypeDTO {
+public class TriggerDataDTO implements DataTypeDTO {
 
     public Boolean value;
 
-    public static AlarmDataDTO of(Boolean value) {
-        var dataDTO = new AlarmDataDTO();
+    public static TriggerDataDTO of(Boolean value) {
+        var dataDTO = new TriggerDataDTO();
         dataDTO.value = value;
         return dataDTO;
     }

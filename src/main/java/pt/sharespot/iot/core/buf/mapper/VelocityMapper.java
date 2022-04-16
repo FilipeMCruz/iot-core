@@ -8,12 +8,12 @@ public class VelocityMapper {
     public static Velocity.Builder toBuf(VelocityDataDTO dto) {
         var builder = Velocity.newBuilder();
         if (dto.exists()) {
-            builder.setKmPerHour(dto.kmperh);
+            builder.setKilometersPerHour(dto.kilometerPerHour);
         }
         return builder;
     }
 
     public static VelocityDataDTO toModel(Velocity buf) {
-        return VelocityDataDTO.of(buf.getKmPerHour());
+        return VelocityDataDTO.of(buf.getKilometersPerHour());
     }
 }

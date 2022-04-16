@@ -8,12 +8,12 @@ public class AirQualityMapper {
     public static AirQuality.Builder toBuf(AirQualityDataDTO dto) {
         var builder = AirQuality.newBuilder();
         if (dto.exists()) {
-            builder.setEaqi(dto.eaqi);
+            builder.setValue(dto.value);
         }
         return builder;
     }
 
     public static AirQualityDataDTO toModel(AirQuality buf) {
-        return AirQualityDataDTO.of(buf.getEaqi());
+        return AirQualityDataDTO.of(buf.getValue());
     }
 }

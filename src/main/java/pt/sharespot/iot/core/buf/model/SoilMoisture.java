@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 13: {
 
-            percentage_ = input.readFloat();
+            relativePercentage_ = input.readFloat();
             break;
           }
           default: {
@@ -85,15 +85,15 @@ private static final long serialVersionUID = 0L;
             pt.sharespot.iot.core.buf.model.SoilMoisture.class, pt.sharespot.iot.core.buf.model.SoilMoisture.Builder.class);
   }
 
-  public static final int PERCENTAGE_FIELD_NUMBER = 1;
-  private float percentage_;
+  public static final int RELATIVE_PERCENTAGE_FIELD_NUMBER = 1;
+  private float relativePercentage_;
   /**
-   * <code>float percentage = 1;</code>
-   * @return The percentage.
+   * <code>float relative_percentage = 1;</code>
+   * @return The relativePercentage.
    */
   @java.lang.Override
-  public float getPercentage() {
-    return percentage_;
+  public float getRelativePercentage() {
+    return relativePercentage_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +110,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(percentage_) != 0) {
-      output.writeFloat(1, percentage_);
+    if (java.lang.Float.floatToRawIntBits(relativePercentage_) != 0) {
+      output.writeFloat(1, relativePercentage_);
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +122,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(percentage_) != 0) {
+    if (java.lang.Float.floatToRawIntBits(relativePercentage_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, percentage_);
+        .computeFloatSize(1, relativePercentage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +141,9 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.SoilMoisture other = (pt.sharespot.iot.core.buf.model.SoilMoisture) obj;
 
-    if (java.lang.Float.floatToIntBits(getPercentage())
+    if (java.lang.Float.floatToIntBits(getRelativePercentage())
         != java.lang.Float.floatToIntBits(
-            other.getPercentage())) return false;
+            other.getRelativePercentage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +155,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
+    hash = (37 * hash) + RELATIVE_PERCENTAGE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getPercentage());
+        getRelativePercentage());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      percentage_ = 0F;
+      relativePercentage_ = 0F;
 
       return this;
     }
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.SoilMoisture buildPartial() {
       pt.sharespot.iot.core.buf.model.SoilMoisture result = new pt.sharespot.iot.core.buf.model.SoilMoisture(this);
-      result.percentage_ = percentage_;
+      result.relativePercentage_ = relativePercentage_;
       onBuilt();
       return result;
     }
@@ -368,8 +368,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.SoilMoisture other) {
       if (other == pt.sharespot.iot.core.buf.model.SoilMoisture.getDefaultInstance()) return this;
-      if (other.getPercentage() != 0F) {
-        setPercentage(other.getPercentage());
+      if (other.getRelativePercentage() != 0F) {
+        setRelativePercentage(other.getRelativePercentage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,33 +400,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float percentage_ ;
+    private float relativePercentage_ ;
     /**
-     * <code>float percentage = 1;</code>
-     * @return The percentage.
+     * <code>float relative_percentage = 1;</code>
+     * @return The relativePercentage.
      */
     @java.lang.Override
-    public float getPercentage() {
-      return percentage_;
+    public float getRelativePercentage() {
+      return relativePercentage_;
     }
     /**
-     * <code>float percentage = 1;</code>
-     * @param value The percentage to set.
+     * <code>float relative_percentage = 1;</code>
+     * @param value The relativePercentage to set.
      * @return This builder for chaining.
      */
-    public Builder setPercentage(float value) {
+    public Builder setRelativePercentage(float value) {
       
-      percentage_ = value;
+      relativePercentage_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>float percentage = 1;</code>
+     * <code>float relative_percentage = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPercentage() {
+    public Builder clearRelativePercentage() {
       
-      percentage_ = 0F;
+      relativePercentage_ = 0F;
       onChanged();
       return this;
     }

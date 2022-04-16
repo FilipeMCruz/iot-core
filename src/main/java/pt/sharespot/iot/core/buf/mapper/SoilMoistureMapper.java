@@ -8,12 +8,12 @@ public class SoilMoistureMapper {
     public static SoilMoisture.Builder toBuf(SoilMoistureDataDTO dto) {
         var builder = SoilMoisture.newBuilder();
         if (dto.exists()) {
-            builder.setPercentage(dto.percentage);
+            builder.setRelativePercentage(dto.relativePercentage);
         }
         return builder;
     }
 
     public static SoilMoistureDataDTO toModel(SoilMoisture buf) {
-        return SoilMoistureDataDTO.of(buf.getPercentage());
+        return SoilMoistureDataDTO.of(buf.getRelativePercentage());
     }
 }

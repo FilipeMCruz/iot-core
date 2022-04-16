@@ -1,6 +1,5 @@
 package pt.sharespot.iot.core.buf.mapper;
 
-import org.slf4j.LoggerFactory;
 import pt.sharespot.iot.core.buf.model.*;
 import pt.sharespot.iot.core.routing.keys.*;
 import pt.sharespot.iot.core.routing.keys.data.*;
@@ -19,15 +18,15 @@ public class RoutingKeysMapper {
                 .setTemperature(toBuf(dto.temperature.get()))
                 .setLegitimacy(toBuf(dto.legitimacy.get()))
                 .setAqi(toBuf(dto.aqi.get()))
-                .setHumidity(toBuf(dto.humidity.get()))
+                .setAirHumidity(toBuf(dto.airHumidity.get()))
                 .setMotion(toBuf(dto.motion.get()))
                 .setVelocity(toBuf(dto.velocity.get()))
-                .setPressure(toBuf(dto.pressure.get()))
+                .setAirPressure(toBuf(dto.airPressure.get()))
                 .setBattery(toBuf(dto.battery.get()))
-                .setMoisture(toBuf(dto.moisture.get()))
+                .setSoilMoisture(toBuf(dto.soilMoisture.get()))
                 .setIlluminance(toBuf(dto.illuminance.get()))
                 .setOwnership(toBuf(dto.ownership.get()))
-                .setAlarm(toBuf(dto.alarm.get()));
+                .setTrigger(toBuf(dto.trigger.get()));
     }
 
     public static RoutingKeys toModel(RoutingKeysBuf buf) {
@@ -41,15 +40,15 @@ public class RoutingKeysMapper {
                 .withTemperature(toModel(buf.getTemperature()))
                 .withLegitimacyType(toModel(buf.getLegitimacy()))
                 .withAQI(toModel(buf.getAqi()))
-                .withHumidity(toModel(buf.getHumidity()))
+                .withHumidity(toModel(buf.getAirHumidity()))
                 .withMotion(toModel(buf.getMotion()))
                 .withVelocity(toModel(buf.getVelocity()))
-                .withPressure(toModel(buf.getPressure()))
+                .withPressure(toModel(buf.getAirPressure()))
                 .withBattery(toModel(buf.getBattery()))
-                .withSoilMoisture(toModel(buf.getMoisture()))
+                .withSoilMoisture(toModel(buf.getSoilMoisture()))
                 .withIlluminance(toModel(buf.getIlluminance()))
                 .withOnwership(toModel(buf.getOwnership()))
-                .withAlarm(toModel(buf.getAlarm()))
+                .withAlarm(toModel(buf.getTrigger()))
                 .build()
                 .orElseThrow(() -> new RuntimeException("Wrong Routing Keys"));
     }
@@ -152,19 +151,19 @@ public class RoutingKeysMapper {
         };
     }
 
-    private static HumidityDataOptionsBuf toBuf(HumidityDataOptions dto) {
+    private static AirHumidityDataOptionsBuf toBuf(AirHumidityDataOptions dto) {
         return switch (dto) {
-            case UNIDENTIFIED_HUMIDITY_DATA -> HumidityDataOptionsBuf.UNIDENTIFIED_HUMIDITY_DATA;
-            case WITH_HUMIDITY_DATA -> HumidityDataOptionsBuf.WITH_HUMIDITY_DATA;
-            case WITHOUT_HUMIDITY_DATA -> HumidityDataOptionsBuf.WITHOUT_HUMIDITY_DATA;
+            case UNIDENTIFIED_AIR_HUMIDITY_DATA -> AirHumidityDataOptionsBuf.UNIDENTIFIED_AIR_HUMIDITY_DATA;
+            case WITH_AIR_HUMIDITY_DATA -> AirHumidityDataOptionsBuf.WITH_AIR_HUMIDITY_DATA;
+            case WITHOUT_AIR_HUMIDITY_DATA -> AirHumidityDataOptionsBuf.WITHOUT_AIR_HUMIDITY_DATA;
         };
     }
 
-    private static HumidityDataOptions toModel(HumidityDataOptionsBuf buf) {
+    private static AirHumidityDataOptions toModel(AirHumidityDataOptionsBuf buf) {
         return switch (buf) {
-            default -> HumidityDataOptions.UNIDENTIFIED_HUMIDITY_DATA;
-            case WITH_HUMIDITY_DATA -> HumidityDataOptions.WITH_HUMIDITY_DATA;
-            case WITHOUT_HUMIDITY_DATA -> HumidityDataOptions.WITHOUT_HUMIDITY_DATA;
+            default -> AirHumidityDataOptions.UNIDENTIFIED_AIR_HUMIDITY_DATA;
+            case WITH_AIR_HUMIDITY_DATA -> AirHumidityDataOptions.WITH_AIR_HUMIDITY_DATA;
+            case WITHOUT_AIR_HUMIDITY_DATA -> AirHumidityDataOptions.WITHOUT_AIR_HUMIDITY_DATA;
         };
     }
 
@@ -200,19 +199,19 @@ public class RoutingKeysMapper {
         };
     }
 
-    private static PressureDataOptionsBuf toBuf(PressureDataOptions dto) {
+    private static AirPressureDataOptionsBuf toBuf(AirPressureDataOptions dto) {
         return switch (dto) {
-            case UNIDENTIFIED_PRESSURE_DATA -> PressureDataOptionsBuf.UNIDENTIFIED_PRESSURE_DATA;
-            case WITH_PRESSURE_DATA -> PressureDataOptionsBuf.WITH_PRESSURE_DATA;
-            case WITHOUT_PRESSURE_DATA -> PressureDataOptionsBuf.WITHOUT_PRESSURE_DATA;
+            case UNIDENTIFIED_AIR_PRESSURE_DATA -> AirPressureDataOptionsBuf.UNIDENTIFIED_AIR_PRESSURE_DATA;
+            case WITH_AIR_PRESSURE_DATA -> AirPressureDataOptionsBuf.WITH_AIR_PRESSURE_DATA;
+            case WITHOUT_AIR_PRESSURE_DATA -> AirPressureDataOptionsBuf.WITHOUT_AIR_PRESSURE_DATA;
         };
     }
 
-    private static PressureDataOptions toModel(PressureDataOptionsBuf buf) {
+    private static AirPressureDataOptions toModel(AirPressureDataOptionsBuf buf) {
         return switch (buf) {
-            default -> PressureDataOptions.UNIDENTIFIED_PRESSURE_DATA;
-            case WITH_PRESSURE_DATA -> PressureDataOptions.WITH_PRESSURE_DATA;
-            case WITHOUT_PRESSURE_DATA -> PressureDataOptions.WITHOUT_PRESSURE_DATA;
+            default -> AirPressureDataOptions.UNIDENTIFIED_AIR_PRESSURE_DATA;
+            case WITH_AIR_PRESSURE_DATA -> AirPressureDataOptions.WITH_AIR_PRESSURE_DATA;
+            case WITHOUT_AIR_PRESSURE_DATA -> AirPressureDataOptions.WITHOUT_AIR_PRESSURE_DATA;
         };
     }
 
@@ -280,19 +279,19 @@ public class RoutingKeysMapper {
         };
     }
 
-    private static AlarmDataOptionsBuf toBuf(AlarmDataOptions dto) {
+    private static TriggerDataOptionsBuf toBuf(TriggerDataOptions dto) {
         return switch (dto) {
-            case UNIDENTIFIED_ALARM_DATA -> AlarmDataOptionsBuf.UNIDENTIFIED_ALARM_DATA;
-            case WITH_ALARM_DATA -> AlarmDataOptionsBuf.WITH_ALARM_DATA;
-            case WITHOUT_ALARM_DATA -> AlarmDataOptionsBuf.WITHOUT_ALARM_DATA;
+            case UNIDENTIFIED_TRIGGER_DATA -> TriggerDataOptionsBuf.UNIDENTIFIED_TRIGGER_DATA;
+            case WITH_TRIGGER_DATA -> TriggerDataOptionsBuf.WITH_TRIGGER_DATA;
+            case WITHOUT_TRIGGER_DATA -> TriggerDataOptionsBuf.WITHOUT_TRIGGER_DATA;
         };
     }
 
-    private static AlarmDataOptions toModel(AlarmDataOptionsBuf buf) {
+    private static TriggerDataOptions toModel(TriggerDataOptionsBuf buf) {
         return switch (buf) {
-            default -> AlarmDataOptions.UNIDENTIFIED_ALARM_DATA;
-            case WITH_ALARM_DATA -> AlarmDataOptions.WITH_ALARM_DATA;
-            case WITHOUT_ALARM_DATA -> AlarmDataOptions.WITHOUT_ALARM_DATA;
+            default -> TriggerDataOptions.UNIDENTIFIED_TRIGGER_DATA;
+            case WITH_TRIGGER_DATA -> TriggerDataOptions.WITH_TRIGGER_DATA;
+            case WITHOUT_TRIGGER_DATA -> TriggerDataOptions.WITHOUT_TRIGGER_DATA;
         };
     }
 

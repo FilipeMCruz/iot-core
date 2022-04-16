@@ -4,25 +4,25 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf type {@code pt.sharespot.iot.core.Humidity}
+ * Protobuf type {@code pt.sharespot.iot.core.AirHumidity}
  */
-public final class Humidity extends
+public final class AirHumidity extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pt.sharespot.iot.core.Humidity)
-    HumidityOrBuilder {
+    // @@protoc_insertion_point(message_implements:pt.sharespot.iot.core.AirHumidity)
+    AirHumidityOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use Humidity.newBuilder() to construct.
-  private Humidity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AirHumidity.newBuilder() to construct.
+  private AirHumidity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Humidity() {
+  private AirHumidity() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new Humidity();
+    return new AirHumidity();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Humidity(
+  private AirHumidity(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -74,15 +74,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Humidity_descriptor;
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirHumidity_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Humidity_fieldAccessorTable
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirHumidity_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            pt.sharespot.iot.core.buf.model.Humidity.class, pt.sharespot.iot.core.buf.model.Humidity.Builder.class);
+            pt.sharespot.iot.core.buf.model.AirHumidity.class, pt.sharespot.iot.core.buf.model.AirHumidity.Builder.class);
   }
 
   public static final int GRAMS_PER_CUBIC_METER_FIELD_NUMBER = 1;
@@ -136,10 +136,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof pt.sharespot.iot.core.buf.model.Humidity)) {
+    if (!(obj instanceof pt.sharespot.iot.core.buf.model.AirHumidity)) {
       return super.equals(obj);
     }
-    pt.sharespot.iot.core.buf.model.Humidity other = (pt.sharespot.iot.core.buf.model.Humidity) obj;
+    pt.sharespot.iot.core.buf.model.AirHumidity other = (pt.sharespot.iot.core.buf.model.AirHumidity) obj;
 
     if (java.lang.Float.floatToIntBits(getGramsPerCubicMeter())
         != java.lang.Float.floatToIntBits(
@@ -163,69 +163,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(byte[] data)
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(java.io.InputStream input)
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseDelimitedFrom(java.io.InputStream input)
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseDelimitedFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.buf.model.Humidity parseFrom(
+  public static pt.sharespot.iot.core.buf.model.AirHumidity parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -238,7 +238,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(pt.sharespot.iot.core.buf.model.Humidity prototype) {
+  public static Builder newBuilder(pt.sharespot.iot.core.buf.model.AirHumidity prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -254,26 +254,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pt.sharespot.iot.core.Humidity}
+   * Protobuf type {@code pt.sharespot.iot.core.AirHumidity}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pt.sharespot.iot.core.Humidity)
-      pt.sharespot.iot.core.buf.model.HumidityOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pt.sharespot.iot.core.AirHumidity)
+      pt.sharespot.iot.core.buf.model.AirHumidityOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Humidity_descriptor;
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirHumidity_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Humidity_fieldAccessorTable
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirHumidity_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pt.sharespot.iot.core.buf.model.Humidity.class, pt.sharespot.iot.core.buf.model.Humidity.Builder.class);
+              pt.sharespot.iot.core.buf.model.AirHumidity.class, pt.sharespot.iot.core.buf.model.AirHumidity.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.buf.model.Humidity.newBuilder()
+    // Construct using pt.sharespot.iot.core.buf.model.AirHumidity.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -299,17 +299,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Humidity_descriptor;
+      return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_AirHumidity_descriptor;
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Humidity getDefaultInstanceForType() {
-      return pt.sharespot.iot.core.buf.model.Humidity.getDefaultInstance();
+    public pt.sharespot.iot.core.buf.model.AirHumidity getDefaultInstanceForType() {
+      return pt.sharespot.iot.core.buf.model.AirHumidity.getDefaultInstance();
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Humidity build() {
-      pt.sharespot.iot.core.buf.model.Humidity result = buildPartial();
+    public pt.sharespot.iot.core.buf.model.AirHumidity build() {
+      pt.sharespot.iot.core.buf.model.AirHumidity result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -317,8 +317,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.buf.model.Humidity buildPartial() {
-      pt.sharespot.iot.core.buf.model.Humidity result = new pt.sharespot.iot.core.buf.model.Humidity(this);
+    public pt.sharespot.iot.core.buf.model.AirHumidity buildPartial() {
+      pt.sharespot.iot.core.buf.model.AirHumidity result = new pt.sharespot.iot.core.buf.model.AirHumidity(this);
       result.gramsPerCubicMeter_ = gramsPerCubicMeter_;
       onBuilt();
       return result;
@@ -358,16 +358,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof pt.sharespot.iot.core.buf.model.Humidity) {
-        return mergeFrom((pt.sharespot.iot.core.buf.model.Humidity)other);
+      if (other instanceof pt.sharespot.iot.core.buf.model.AirHumidity) {
+        return mergeFrom((pt.sharespot.iot.core.buf.model.AirHumidity)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Humidity other) {
-      if (other == pt.sharespot.iot.core.buf.model.Humidity.getDefaultInstance()) return this;
+    public Builder mergeFrom(pt.sharespot.iot.core.buf.model.AirHumidity other) {
+      if (other == pt.sharespot.iot.core.buf.model.AirHumidity.getDefaultInstance()) return this;
       if (other.getGramsPerCubicMeter() != 0F) {
         setGramsPerCubicMeter(other.getGramsPerCubicMeter());
       }
@@ -386,11 +386,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      pt.sharespot.iot.core.buf.model.Humidity parsedMessage = null;
+      pt.sharespot.iot.core.buf.model.AirHumidity parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (pt.sharespot.iot.core.buf.model.Humidity) e.getUnfinishedMessage();
+        parsedMessage = (pt.sharespot.iot.core.buf.model.AirHumidity) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -443,41 +443,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pt.sharespot.iot.core.Humidity)
+    // @@protoc_insertion_point(builder_scope:pt.sharespot.iot.core.AirHumidity)
   }
 
-  // @@protoc_insertion_point(class_scope:pt.sharespot.iot.core.Humidity)
-  private static final pt.sharespot.iot.core.buf.model.Humidity DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pt.sharespot.iot.core.AirHumidity)
+  private static final pt.sharespot.iot.core.buf.model.AirHumidity DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new pt.sharespot.iot.core.buf.model.Humidity();
+    DEFAULT_INSTANCE = new pt.sharespot.iot.core.buf.model.AirHumidity();
   }
 
-  public static pt.sharespot.iot.core.buf.model.Humidity getDefaultInstance() {
+  public static pt.sharespot.iot.core.buf.model.AirHumidity getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Humidity>
-      PARSER = new com.google.protobuf.AbstractParser<Humidity>() {
+  private static final com.google.protobuf.Parser<AirHumidity>
+      PARSER = new com.google.protobuf.AbstractParser<AirHumidity>() {
     @java.lang.Override
-    public Humidity parsePartialFrom(
+    public AirHumidity parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Humidity(input, extensionRegistry);
+      return new AirHumidity(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<Humidity> parser() {
+  public static com.google.protobuf.Parser<AirHumidity> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Humidity> getParserForType() {
+  public com.google.protobuf.Parser<AirHumidity> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.Humidity getDefaultInstanceForType() {
+  public pt.sharespot.iot.core.buf.model.AirHumidity getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

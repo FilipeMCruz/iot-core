@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 13: {
 
-            kmPerHour_ = input.readFloat();
+            kilometersPerHour_ = input.readFloat();
             break;
           }
           default: {
@@ -85,15 +85,15 @@ private static final long serialVersionUID = 0L;
             pt.sharespot.iot.core.buf.model.Velocity.class, pt.sharespot.iot.core.buf.model.Velocity.Builder.class);
   }
 
-  public static final int KM_PER_HOUR_FIELD_NUMBER = 1;
-  private float kmPerHour_;
+  public static final int KILOMETERS_PER_HOUR_FIELD_NUMBER = 1;
+  private float kilometersPerHour_;
   /**
-   * <code>float km_per_hour = 1;</code>
-   * @return The kmPerHour.
+   * <code>float kilometers_per_hour = 1;</code>
+   * @return The kilometersPerHour.
    */
   @java.lang.Override
-  public float getKmPerHour() {
-    return kmPerHour_;
+  public float getKilometersPerHour() {
+    return kilometersPerHour_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +110,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(kmPerHour_) != 0) {
-      output.writeFloat(1, kmPerHour_);
+    if (java.lang.Float.floatToRawIntBits(kilometersPerHour_) != 0) {
+      output.writeFloat(1, kilometersPerHour_);
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +122,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(kmPerHour_) != 0) {
+    if (java.lang.Float.floatToRawIntBits(kilometersPerHour_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, kmPerHour_);
+        .computeFloatSize(1, kilometersPerHour_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +141,9 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.Velocity other = (pt.sharespot.iot.core.buf.model.Velocity) obj;
 
-    if (java.lang.Float.floatToIntBits(getKmPerHour())
+    if (java.lang.Float.floatToIntBits(getKilometersPerHour())
         != java.lang.Float.floatToIntBits(
-            other.getKmPerHour())) return false;
+            other.getKilometersPerHour())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +155,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KM_PER_HOUR_FIELD_NUMBER;
+    hash = (37 * hash) + KILOMETERS_PER_HOUR_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getKmPerHour());
+        getKilometersPerHour());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      kmPerHour_ = 0F;
+      kilometersPerHour_ = 0F;
 
       return this;
     }
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Velocity buildPartial() {
       pt.sharespot.iot.core.buf.model.Velocity result = new pt.sharespot.iot.core.buf.model.Velocity(this);
-      result.kmPerHour_ = kmPerHour_;
+      result.kilometersPerHour_ = kilometersPerHour_;
       onBuilt();
       return result;
     }
@@ -368,8 +368,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Velocity other) {
       if (other == pt.sharespot.iot.core.buf.model.Velocity.getDefaultInstance()) return this;
-      if (other.getKmPerHour() != 0F) {
-        setKmPerHour(other.getKmPerHour());
+      if (other.getKilometersPerHour() != 0F) {
+        setKilometersPerHour(other.getKilometersPerHour());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,33 +400,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float kmPerHour_ ;
+    private float kilometersPerHour_ ;
     /**
-     * <code>float km_per_hour = 1;</code>
-     * @return The kmPerHour.
+     * <code>float kilometers_per_hour = 1;</code>
+     * @return The kilometersPerHour.
      */
     @java.lang.Override
-    public float getKmPerHour() {
-      return kmPerHour_;
+    public float getKilometersPerHour() {
+      return kilometersPerHour_;
     }
     /**
-     * <code>float km_per_hour = 1;</code>
-     * @param value The kmPerHour to set.
+     * <code>float kilometers_per_hour = 1;</code>
+     * @param value The kilometersPerHour to set.
      * @return This builder for chaining.
      */
-    public Builder setKmPerHour(float value) {
+    public Builder setKilometersPerHour(float value) {
       
-      kmPerHour_ = value;
+      kilometersPerHour_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>float km_per_hour = 1;</code>
+     * <code>float kilometers_per_hour = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearKmPerHour() {
+    public Builder clearKilometersPerHour() {
       
-      kmPerHour_ = 0F;
+      kilometersPerHour_ = 0F;
       onChanged();
       return this;
     }

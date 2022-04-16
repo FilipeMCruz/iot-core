@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 13: {
 
-            eaqi_ = input.readFloat();
+            value_ = input.readFloat();
             break;
           }
           default: {
@@ -85,15 +85,15 @@ private static final long serialVersionUID = 0L;
             pt.sharespot.iot.core.buf.model.AirQuality.class, pt.sharespot.iot.core.buf.model.AirQuality.Builder.class);
   }
 
-  public static final int EAQI_FIELD_NUMBER = 1;
-  private float eaqi_;
+  public static final int VALUE_FIELD_NUMBER = 1;
+  private float value_;
   /**
-   * <code>float eaqi = 1;</code>
-   * @return The eaqi.
+   * <code>float value = 1;</code>
+   * @return The value.
    */
   @java.lang.Override
-  public float getEaqi() {
-    return eaqi_;
+  public float getValue() {
+    return value_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +110,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(eaqi_) != 0) {
-      output.writeFloat(1, eaqi_);
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
+      output.writeFloat(1, value_);
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +122,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(eaqi_) != 0) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, eaqi_);
+        .computeFloatSize(1, value_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +141,9 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.AirQuality other = (pt.sharespot.iot.core.buf.model.AirQuality) obj;
 
-    if (java.lang.Float.floatToIntBits(getEaqi())
+    if (java.lang.Float.floatToIntBits(getValue())
         != java.lang.Float.floatToIntBits(
-            other.getEaqi())) return false;
+            other.getValue())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +155,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EAQI_FIELD_NUMBER;
+    hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getEaqi());
+        getValue());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      eaqi_ = 0F;
+      value_ = 0F;
 
       return this;
     }
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.AirQuality buildPartial() {
       pt.sharespot.iot.core.buf.model.AirQuality result = new pt.sharespot.iot.core.buf.model.AirQuality(this);
-      result.eaqi_ = eaqi_;
+      result.value_ = value_;
       onBuilt();
       return result;
     }
@@ -368,8 +368,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.AirQuality other) {
       if (other == pt.sharespot.iot.core.buf.model.AirQuality.getDefaultInstance()) return this;
-      if (other.getEaqi() != 0F) {
-        setEaqi(other.getEaqi());
+      if (other.getValue() != 0F) {
+        setValue(other.getValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,33 +400,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float eaqi_ ;
+    private float value_ ;
     /**
-     * <code>float eaqi = 1;</code>
-     * @return The eaqi.
+     * <code>float value = 1;</code>
+     * @return The value.
      */
     @java.lang.Override
-    public float getEaqi() {
-      return eaqi_;
+    public float getValue() {
+      return value_;
     }
     /**
-     * <code>float eaqi = 1;</code>
-     * @param value The eaqi to set.
+     * <code>float value = 1;</code>
+     * @param value The value to set.
      * @return This builder for chaining.
      */
-    public Builder setEaqi(float value) {
+    public Builder setValue(float value) {
       
-      eaqi_ = value;
+      value_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>float eaqi = 1;</code>
+     * <code>float value = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearEaqi() {
+    public Builder clearValue() {
       
-      eaqi_ = 0F;
+      value_ = 0F;
       onChanged();
       return this;
     }

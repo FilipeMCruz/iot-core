@@ -1,19 +1,19 @@
 package pt.sharespot.iot.core.buf.mapper;
 
-import pt.sharespot.iot.core.buf.model.Humidity;
-import pt.sharespot.iot.core.sensor.data.HumidityDataDTO;
+import pt.sharespot.iot.core.buf.model.AirHumidity;
+import pt.sharespot.iot.core.sensor.data.AirHumidityDataDTO;
 
 public class HumidityMapper {
 
-    public static Humidity.Builder toBuf(HumidityDataDTO dto) {
-        var builder = Humidity.newBuilder();
+    public static AirHumidity.Builder toBuf(AirHumidityDataDTO dto) {
+        var builder = AirHumidity.newBuilder();
         if (dto.exists()) {
-            builder.setGramsPerCubicMeter(dto.gramspercubicmeter);
+            builder.setGramsPerCubicMeter(dto.gramsPerCubicMeter);
         }
         return builder;
     }
 
-    public static HumidityDataDTO toModel(Humidity buf) {
-        return HumidityDataDTO.of(buf.getGramsPerCubicMeter());
+    public static AirHumidityDataDTO toModel(AirHumidity buf) {
+        return AirHumidityDataDTO.of(buf.getGramsPerCubicMeter());
     }
 }
