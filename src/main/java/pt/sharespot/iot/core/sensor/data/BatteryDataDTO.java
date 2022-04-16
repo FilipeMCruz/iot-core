@@ -5,6 +5,10 @@ public class BatteryDataDTO implements DataTypeDTO {
     public Float percentage;
     public Float volts;
 
+    public Float maxVolts;
+
+    public Float minVolts;
+
     public BatteryDataDTO andVolts(Float volts) {
         this.volts = volts;
         return this;
@@ -27,6 +31,13 @@ public class BatteryDataDTO implements DataTypeDTO {
         return batteryDataDTO;
     }
 
+    public BatteryDataDTO with(Float maxVolts, Float minVolts) {
+        var batteryDataDTO = new BatteryDataDTO();
+        batteryDataDTO.maxVolts = maxVolts;
+        batteryDataDTO.minVolts = minVolts;
+        return batteryDataDTO;
+    }
+
     @Override
     public boolean exists() {
         return volts != null || percentage != null;
@@ -38,5 +49,13 @@ public class BatteryDataDTO implements DataTypeDTO {
 
     public boolean existsVolts() {
         return volts != null;
+    }
+
+    public boolean existsMaxVolts() {
+        return maxVolts != null;
+    }
+
+    public boolean existsMinVolts() {
+        return minVolts != null;
     }
 }

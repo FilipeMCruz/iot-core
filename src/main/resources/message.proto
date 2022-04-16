@@ -85,6 +85,8 @@ message WaterPressure {
 message Battery {
   float percentage = 1;
   float volts = 2;
+  float max_volts = 3;
+  float min_volts = 4;
 }
 
 message SoilMoisture {

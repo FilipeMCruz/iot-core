@@ -3,7 +3,7 @@ package pt.sharespot.iot.core.buf.mapper;
 import pt.sharespot.iot.core.buf.model.Trigger;
 import pt.sharespot.iot.core.sensor.data.TriggerDataDTO;
 
-public class AlarmMapper {
+public class TriggerMapper {
 
     public static Trigger.Builder toBuf(TriggerDataDTO dto) {
         var builder = Trigger.newBuilder();

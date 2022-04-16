@@ -44,6 +44,8 @@ public class SensorDataDetailsDTO {
             case SOIL_MOISTURE -> soilMoisture != null && soilMoisture.exists();
             case ILLUMINANCE -> illuminance != null && illuminance.exists();
             case WATER_PRESSURE -> waterPressure != null && waterPressure.exists();
+            case BATTERY_MAX_VOLTS -> battery != null && battery.existsMaxVolts();
+            case BATTERY_MIN_VOLTS -> battery != null && battery.existsMinVolts();
             default -> false;
         };
     }

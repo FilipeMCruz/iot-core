@@ -9,13 +9,16 @@ public class BatteryMapper {
         var builder = Battery.newBuilder();
         if (dto.exists()) {
             builder.setPercentage(dto.percentage)
-                    .setVolts(dto.volts);
+                    .setVolts(dto.volts)
+                    .setMaxVolts(dto.maxVolts)
+                    .setMinVolts(dto.minVolts);
         }
         return builder;
     }
 
     public static BatteryDataDTO toModel(Battery buf) {
         return BatteryDataDTO.ofPercentage(buf.getPercentage())
-                .andVolts(buf.getVolts());
+                .andVolts(buf.getVolts())
+                .with(buf.getMaxVolts(), buf.getMinVolts());
     }
 }

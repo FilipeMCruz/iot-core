@@ -58,6 +58,16 @@ private static final long serialVersionUID = 0L;
             volts_ = input.readFloat();
             break;
           }
+          case 29: {
+
+            maxVolts_ = input.readFloat();
+            break;
+          }
+          case 37: {
+
+            minVolts_ = input.readFloat();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -112,6 +122,28 @@ private static final long serialVersionUID = 0L;
     return volts_;
   }
 
+  public static final int MAX_VOLTS_FIELD_NUMBER = 3;
+  private float maxVolts_;
+  /**
+   * <code>float max_volts = 3;</code>
+   * @return The maxVolts.
+   */
+  @java.lang.Override
+  public float getMaxVolts() {
+    return maxVolts_;
+  }
+
+  public static final int MIN_VOLTS_FIELD_NUMBER = 4;
+  private float minVolts_;
+  /**
+   * <code>float min_volts = 4;</code>
+   * @return The minVolts.
+   */
+  @java.lang.Override
+  public float getMinVolts() {
+    return minVolts_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +164,12 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(volts_) != 0) {
       output.writeFloat(2, volts_);
     }
+    if (java.lang.Float.floatToRawIntBits(maxVolts_) != 0) {
+      output.writeFloat(3, maxVolts_);
+    }
+    if (java.lang.Float.floatToRawIntBits(minVolts_) != 0) {
+      output.writeFloat(4, minVolts_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +186,14 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(volts_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, volts_);
+    }
+    if (java.lang.Float.floatToRawIntBits(maxVolts_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(3, maxVolts_);
+    }
+    if (java.lang.Float.floatToRawIntBits(minVolts_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(4, minVolts_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -170,6 +216,12 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getVolts())
         != java.lang.Float.floatToIntBits(
             other.getVolts())) return false;
+    if (java.lang.Float.floatToIntBits(getMaxVolts())
+        != java.lang.Float.floatToIntBits(
+            other.getMaxVolts())) return false;
+    if (java.lang.Float.floatToIntBits(getMinVolts())
+        != java.lang.Float.floatToIntBits(
+            other.getMinVolts())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -187,6 +239,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + VOLTS_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getVolts());
+    hash = (37 * hash) + MAX_VOLTS_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getMaxVolts());
+    hash = (37 * hash) + MIN_VOLTS_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getMinVolts());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,6 +382,10 @@ private static final long serialVersionUID = 0L;
 
       volts_ = 0F;
 
+      maxVolts_ = 0F;
+
+      minVolts_ = 0F;
+
       return this;
     }
 
@@ -352,6 +414,8 @@ private static final long serialVersionUID = 0L;
       pt.sharespot.iot.core.buf.model.Battery result = new pt.sharespot.iot.core.buf.model.Battery(this);
       result.percentage_ = percentage_;
       result.volts_ = volts_;
+      result.maxVolts_ = maxVolts_;
+      result.minVolts_ = minVolts_;
       onBuilt();
       return result;
     }
@@ -405,6 +469,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getVolts() != 0F) {
         setVolts(other.getVolts());
+      }
+      if (other.getMaxVolts() != 0F) {
+        setMaxVolts(other.getMaxVolts());
+      }
+      if (other.getMinVolts() != 0F) {
+        setMinVolts(other.getMinVolts());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -493,6 +563,68 @@ private static final long serialVersionUID = 0L;
     public Builder clearVolts() {
       
       volts_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float maxVolts_ ;
+    /**
+     * <code>float max_volts = 3;</code>
+     * @return The maxVolts.
+     */
+    @java.lang.Override
+    public float getMaxVolts() {
+      return maxVolts_;
+    }
+    /**
+     * <code>float max_volts = 3;</code>
+     * @param value The maxVolts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxVolts(float value) {
+      
+      maxVolts_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float max_volts = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxVolts() {
+      
+      maxVolts_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float minVolts_ ;
+    /**
+     * <code>float min_volts = 4;</code>
+     * @return The minVolts.
+     */
+    @java.lang.Override
+    public float getMinVolts() {
+      return minVolts_;
+    }
+    /**
+     * <code>float min_volts = 4;</code>
+     * @param value The minVolts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinVolts(float value) {
+      
+      minVolts_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float min_volts = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMinVolts() {
+      
+      minVolts_ = 0F;
       onChanged();
       return this;
     }

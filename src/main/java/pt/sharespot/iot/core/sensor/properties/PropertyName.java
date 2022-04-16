@@ -101,6 +101,18 @@ public enum PropertyName {
             return "data.battery.volts";
         }
     },
+    BATTERY_MIN_VOLTS {
+        public String path() {
+            return "data.battery.minVolts";
+        }
+
+    },
+    BATTERY_MAX_VOLTS {
+        public String path() {
+            return "data.battery.maxVolts";
+        }
+
+    },
     SOIL_MOISTURE {
         public String path() {
             return "data.soilMoisture.relativePercentage";

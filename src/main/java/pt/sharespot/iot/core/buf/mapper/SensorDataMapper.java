@@ -10,7 +10,7 @@ public class SensorDataMapper {
         var builder = SensorData.newBuilder();
         if (dto.hasProperty(PropertyName.AQI)) builder.setAqi(AirQualityMapper.toBuf(dto.aqi));
 
-        if (dto.hasProperty(PropertyName.TRIGGER)) builder.setTrigger(AlarmMapper.toBuf(dto.trigger));
+        if (dto.hasProperty(PropertyName.TRIGGER)) builder.setTrigger(TriggerMapper.toBuf(dto.trigger));
 
         if (dto.hasProperty(PropertyName.BATTERY_VOLTS) || dto.hasProperty(PropertyName.BATTERY_PERCENTAGE))
             builder.setBattery(BatteryMapper.toBuf(dto.battery));
@@ -48,7 +48,7 @@ public class SensorDataMapper {
     public static SensorDataDetailsDTO toModel(SensorData buf) {
         return new SensorDataDetailsDTO()
                 .withAQI(AirQualityMapper.toModel(buf.getAqi()))
-                .withAlarm(AlarmMapper.toModel(buf.getTrigger()))
+                .withAlarm(TriggerMapper.toModel(buf.getTrigger()))
                 .withBattery(BatteryMapper.toModel(buf.getBattery()))
                 .withGps(GPSMapper.toModel(buf.getGps()))
                 .withHumidity(AirHumidityMapper.toModel(buf.getAirHumidity()))

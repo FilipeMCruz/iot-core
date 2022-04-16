@@ -18,4 +18,16 @@ public interface BatteryOrBuilder extends
    * @return The volts.
    */
   float getVolts();
+
+  /**
+   * <code>float max_volts = 3;</code>
+   * @return The maxVolts.
+   */
+  float getMaxVolts();
+
+  /**
+   * <code>float min_volts = 4;</code>
+   * @return The minVolts.
+   */
+  float getMinVolts();
 }
