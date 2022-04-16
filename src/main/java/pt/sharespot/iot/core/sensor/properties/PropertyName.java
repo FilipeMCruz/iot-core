@@ -125,6 +125,30 @@ public enum PropertyName {
         public String path() {
             return "data.soilConductivity.microSiemensPerCentimeter";
         }
+    }, CO2 {
+        public String path() {
+            return "data.co2.ppm";
+        }
+    }, CO {
+        public String path() {
+            return "data.co.ppm";
+        }
+    }, NH3 {
+        public String path() {
+            return "data.nh3.ppm";
+        }
+    }, O3 {
+        public String path() {
+            return "data.o3.ppm";
+        }
+    }, NO2 {
+        public String path() {
+            return "data.no2.ppm";
+        }
+    }, VOC {
+        public String path() {
+            return "data.voc.ppm";
+        }
     };
 
     public String path() {

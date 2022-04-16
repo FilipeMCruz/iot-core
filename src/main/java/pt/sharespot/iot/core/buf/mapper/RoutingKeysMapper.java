@@ -31,6 +31,12 @@ public class RoutingKeysMapper {
                 .setDistance(toBuf(dto.distance.get()))
                 .setOccupation(toBuf(dto.occupation.get()))
                 .setSoilConductivity(toBuf(dto.soilConductivity.get()))
+                .setCo2(toBuf(dto.co2.get()))
+                .setCo(toBuf(dto.co.get()))
+                .setNh3(toBuf(dto.nh3.get()))
+                .setNo2(toBuf(dto.no2.get()))
+                .setO3(toBuf(dto.o3.get()))
+                .setVoc(toBuf(dto.voc.get()))
                 .setWaterPressure(toBuf(dto.waterPressure.get()));
     }
 
@@ -59,6 +65,12 @@ public class RoutingKeysMapper {
                 .withDistance(toModel(buf.getDistance()))
                 .withOccupation(toModel(buf.getOccupation()))
                 .withSoilConductivity(toModel(buf.getSoilConductivity()))
+                .withCO2(toModel(buf.getCo2()))
+                .withCO(toModel(buf.getCo()))
+                .withNH3(toModel(buf.getNh3()))
+                .withNO2(toModel(buf.getNo2()))
+                .withO3(toModel(buf.getO3()))
+                .withVOC(toModel(buf.getVoc()))
                 .build()
                 .orElseThrow(() -> new RuntimeException("Wrong Routing Keys"));
     }
@@ -375,6 +387,102 @@ public class RoutingKeysMapper {
                     SoilConductivityDataOptionsBuf.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA;
             case WITH_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptionsBuf.WITH_SOIL_CONDUCTIVITY_DATA;
             case WITHOUT_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptionsBuf.WITHOUT_SOIL_CONDUCTIVITY_DATA;
+        };
+    }
+
+    private static CO2DataOptions toModel(CO2DataOptionsBuf buf) {
+        return switch (buf) {
+            default -> CO2DataOptions.UNIDENTIFIED_CO2_DATA;
+            case WITH_CO2_DATA -> CO2DataOptions.WITH_CO2_DATA;
+            case WITHOUT_CO2_DATA -> CO2DataOptions.WITHOUT_CO2_DATA;
+        };
+    }
+
+    private static CO2DataOptionsBuf toBuf(CO2DataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_CO2_DATA -> CO2DataOptionsBuf.UNIDENTIFIED_CO2_DATA;
+            case WITH_CO2_DATA -> CO2DataOptionsBuf.WITH_CO2_DATA;
+            case WITHOUT_CO2_DATA -> CO2DataOptionsBuf.WITHOUT_CO2_DATA;
+        };
+    }
+
+    private static CODataOptions toModel(CODataOptionsBuf buf) {
+        return switch (buf) {
+            default -> CODataOptions.UNIDENTIFIED_CO_DATA;
+            case WITH_CO_DATA -> CODataOptions.WITH_CO_DATA;
+            case WITHOUT_CO_DATA -> CODataOptions.WITHOUT_CO_DATA;
+        };
+    }
+
+    private static CODataOptionsBuf toBuf(CODataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_CO_DATA -> CODataOptionsBuf.UNIDENTIFIED_CO_DATA;
+            case WITH_CO_DATA -> CODataOptionsBuf.WITH_CO_DATA;
+            case WITHOUT_CO_DATA -> CODataOptionsBuf.WITHOUT_CO_DATA;
+        };
+    }
+
+    private static NH3DataOptions toModel(NH3DataOptionsBuf buf) {
+        return switch (buf) {
+            default -> NH3DataOptions.UNIDENTIFIED_NH3_DATA;
+            case WITH_NH3_DATA -> NH3DataOptions.WITH_NH3_DATA;
+            case WITHOUT_NH3_DATA -> NH3DataOptions.WITHOUT_NH3_DATA;
+        };
+    }
+
+    private static NH3DataOptionsBuf toBuf(NH3DataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_NH3_DATA -> NH3DataOptionsBuf.UNIDENTIFIED_NH3_DATA;
+            case WITH_NH3_DATA -> NH3DataOptionsBuf.WITH_NH3_DATA;
+            case WITHOUT_NH3_DATA -> NH3DataOptionsBuf.WITHOUT_NH3_DATA;
+        };
+    }
+
+    private static NO2DataOptions toModel(NO2DataOptionsBuf buf) {
+        return switch (buf) {
+            default -> NO2DataOptions.UNIDENTIFIED_NO2_DATA;
+            case WITH_NO2_DATA -> NO2DataOptions.WITH_NO2_DATA;
+            case WITHOUT_NO2_DATA -> NO2DataOptions.WITHOUT_NO2_DATA;
+        };
+    }
+
+    private static NO2DataOptionsBuf toBuf(NO2DataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_NO2_DATA -> NO2DataOptionsBuf.UNIDENTIFIED_NO2_DATA;
+            case WITH_NO2_DATA -> NO2DataOptionsBuf.WITH_NO2_DATA;
+            case WITHOUT_NO2_DATA -> NO2DataOptionsBuf.WITHOUT_NO2_DATA;
+        };
+    }
+
+    private static O3DataOptions toModel(O3DataOptionsBuf buf) {
+        return switch (buf) {
+            default -> O3DataOptions.UNIDENTIFIED_O3_DATA;
+            case WITH_O3_DATA -> O3DataOptions.WITH_O3_DATA;
+            case WITHOUT_O3_DATA -> O3DataOptions.WITHOUT_O3_DATA;
+        };
+    }
+
+    private static O3DataOptionsBuf toBuf(O3DataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_O3_DATA -> O3DataOptionsBuf.UNIDENTIFIED_O3_DATA;
+            case WITH_O3_DATA -> O3DataOptionsBuf.WITH_O3_DATA;
+            case WITHOUT_O3_DATA -> O3DataOptionsBuf.WITHOUT_O3_DATA;
+        };
+    }
+
+    private static VOCDataOptions toModel(VOCDataOptionsBuf buf) {
+        return switch (buf) {
+            default -> VOCDataOptions.UNIDENTIFIED_VOC_DATA;
+            case WITH_VOC_DATA -> VOCDataOptions.WITH_VOC_DATA;
+            case WITHOUT_VOC_DATA -> VOCDataOptions.WITHOUT_VOC_DATA;
+        };
+    }
+
+    private static VOCDataOptionsBuf toBuf(VOCDataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_VOC_DATA -> VOCDataOptionsBuf.UNIDENTIFIED_VOC_DATA;
+            case WITH_VOC_DATA -> VOCDataOptionsBuf.WITH_VOC_DATA;
+            case WITHOUT_VOC_DATA -> VOCDataOptionsBuf.WITHOUT_VOC_DATA;
         };
     }
 

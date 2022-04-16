@@ -57,6 +57,18 @@ public class RoutingKeys {
 
     public RoutingKeyOption<SoilConductivityDataOptions> soilConductivity;
 
+    public RoutingKeyOption<CO2DataOptions> co2;
+
+    public RoutingKeyOption<CODataOptions> co;
+
+    public RoutingKeyOption<NH3DataOptions> nh3;
+
+    public RoutingKeyOption<NO2DataOptions> no2;
+
+    public RoutingKeyOption<O3DataOptions> o3;
+
+    public RoutingKeyOption<VOCDataOptions> voc;
+
     public RoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
                        String version,
                        RoutingKeyOption<InfoTypeOptions> infoType,
@@ -80,7 +92,13 @@ public class RoutingKeys {
                        RoutingKeyOption<PHDataOptions> ph,
                        RoutingKeyOption<DistanceDataOptions> distance,
                        RoutingKeyOption<OccupationDataOptions> occupation,
-                       RoutingKeyOption<SoilConductivityDataOptions> soilConductivity) {
+                       RoutingKeyOption<SoilConductivityDataOptions> soilConductivity,
+                       RoutingKeyOption<CO2DataOptions> co2,
+                       RoutingKeyOption<CODataOptions> co,
+                       RoutingKeyOption<NH3DataOptions> nh3,
+                       RoutingKeyOption<NO2DataOptions> no2,
+                       RoutingKeyOption<O3DataOptions> o3,
+                       RoutingKeyOption<VOCDataOptions> voc) {
         this.containerType = containerType;
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
@@ -105,6 +123,12 @@ public class RoutingKeys {
         this.distance = distance;
         this.occupation = occupation;
         this.soilConductivity = soilConductivity;
+        this.co2 = co2;
+        this.co = co;
+        this.nh3 = nh3;
+        this.no2 = no2;
+        this.o3 = o3;
+        this.voc = voc;
     }
 
     public RoutingKeys() {
@@ -112,7 +136,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.{24}.{25}.{26}.{27}.{28}.{29}.#",
                 containerType.value(),
                 version,
                 infoType.value(),
@@ -136,11 +160,17 @@ public class RoutingKeys {
                 ph.value(),
                 distance.value(),
                 occupation.value(),
-                soilConductivity.value());
+                soilConductivity.value(),
+                co2.value(),
+                co.value(),
+                nh3.value(),
+                no2.value(),
+                o3.value(),
+                voc.value());
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.{24}.{25}.{26}.{27}.{28}.{29}.#",
                 containerType.details(),
                 version,
                 infoType.details(),
@@ -164,7 +194,13 @@ public class RoutingKeys {
                 ph.details(),
                 distance.details(),
                 occupation.details(),
-                soilConductivity.details());
+                soilConductivity.details(),
+                co2.details(),
+                co.details(),
+                nh3.details(),
+                no2.details(),
+                o3.details(),
+                voc.details());
     }
 
     public static RoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -225,6 +261,18 @@ public class RoutingKeys {
         private RoutingKeyOption<OccupationDataOptions> occupation;
 
         private RoutingKeyOption<SoilConductivityDataOptions> soilConductivity;
+
+        private RoutingKeyOption<CO2DataOptions> co2;
+
+        private RoutingKeyOption<CODataOptions> co;
+
+        private RoutingKeyOption<NH3DataOptions> nh3;
+
+        private RoutingKeyOption<NO2DataOptions> no2;
+
+        private RoutingKeyOption<O3DataOptions> o3;
+
+        private RoutingKeyOption<VOCDataOptions> voc;
 
         private final RoutingKeysBuilderOptions options;
 
@@ -349,6 +397,36 @@ public class RoutingKeys {
             return this;
         }
 
+        public RoutingKeysBuilder withCO(CODataOptions co) {
+            this.co = RoutingKeyOption.of(co);
+            return this;
+        }
+
+        public RoutingKeysBuilder withNH3(NH3DataOptions nh3) {
+            this.nh3 = RoutingKeyOption.of(nh3);
+            return this;
+        }
+
+        public RoutingKeysBuilder withNO2(NO2DataOptions no2) {
+            this.no2 = RoutingKeyOption.of(no2);
+            return this;
+        }
+
+        public RoutingKeysBuilder withO3(O3DataOptions o3) {
+            this.o3 = RoutingKeyOption.of(o3);
+            return this;
+        }
+
+        public RoutingKeysBuilder withVOC(VOCDataOptions voc) {
+            this.voc = RoutingKeyOption.of(voc);
+            return this;
+        }
+
+        public RoutingKeysBuilder withCO2(CO2DataOptions co2) {
+            this.co2 = RoutingKeyOption.of(co2);
+            return this;
+        }
+
         public RoutingKeysBuilder withUnidentifiedData() {
             this.temperature = RoutingKeyOption.of(TemperatureDataOptions.UNIDENTIFIED_TEMPERATURE_DATA);
             this.gps = RoutingKeyOption.of(GPSDataOptions.UNIDENTIFIED_GPS_DATA);
@@ -368,6 +446,12 @@ public class RoutingKeys {
             this.distance = RoutingKeyOption.of(DistanceDataOptions.UNIDENTIFIED_DISTANCE_DATA);
             this.occupation = RoutingKeyOption.of(OccupationDataOptions.UNIDENTIFIED_OCCUPATION_DATA);
             this.soilConductivity = RoutingKeyOption.of(SoilConductivityDataOptions.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA);
+            this.co2 = RoutingKeyOption.of(CO2DataOptions.UNIDENTIFIED_CO2_DATA);
+            this.co = RoutingKeyOption.of(CODataOptions.UNIDENTIFIED_CO_DATA);
+            this.voc = RoutingKeyOption.of(VOCDataOptions.UNIDENTIFIED_VOC_DATA);
+            this.o3 = RoutingKeyOption.of(O3DataOptions.UNIDENTIFIED_O3_DATA);
+            this.nh3 = RoutingKeyOption.of(NH3DataOptions.UNIDENTIFIED_NH3_DATA);
+            this.no2 = RoutingKeyOption.of(NO2DataOptions.UNIDENTIFIED_NO2_DATA);
             return this;
         }
 
@@ -405,6 +489,18 @@ public class RoutingKeys {
                     OccupationDataOptions.WITH_OCCUPATION_DATA : OccupationDataOptions.WITHOUT_OCCUPATION_DATA);
             this.soilConductivity = RoutingKeyOption.of(data.hasAllProperties(PropertyName.SOIL_CONDUCTIVITY) ?
                     SoilConductivityDataOptions.WITH_SOIL_CONDUCTIVITY_DATA : SoilConductivityDataOptions.WITHOUT_SOIL_CONDUCTIVITY_DATA);
+            this.co2 = RoutingKeyOption.of(data.hasAllProperties(PropertyName.CO2) ?
+                    CO2DataOptions.WITH_CO2_DATA : CO2DataOptions.WITHOUT_CO2_DATA);
+            this.co = RoutingKeyOption.of(data.hasAllProperties(PropertyName.CO) ?
+                    CODataOptions.WITH_CO_DATA : CODataOptions.WITHOUT_CO_DATA);
+            this.voc = RoutingKeyOption.of(data.hasAllProperties(PropertyName.VOC) ?
+                    VOCDataOptions.WITH_VOC_DATA : VOCDataOptions.WITHOUT_VOC_DATA);
+            this.o3 = RoutingKeyOption.of(data.hasAllProperties(PropertyName.O3) ?
+                    O3DataOptions.WITH_O3_DATA : O3DataOptions.WITHOUT_O3_DATA);
+            this.nh3 = RoutingKeyOption.of(data.hasAllProperties(PropertyName.NH3) ?
+                    NH3DataOptions.WITH_NH3_DATA : NH3DataOptions.WITHOUT_NH3_DATA);
+            this.no2 = RoutingKeyOption.of(data.hasAllProperties(PropertyName.NO2) ?
+                    NO2DataOptions.WITH_NO2_DATA : NO2DataOptions.WITHOUT_NO2_DATA);
             return this;
         }
 
@@ -432,6 +528,12 @@ public class RoutingKeys {
             this.distance = this.distance == null ? RoutingKeyOption.any() : this.distance;
             this.occupation = this.occupation == null ? RoutingKeyOption.any() : this.occupation;
             this.soilConductivity = this.soilConductivity == null ? RoutingKeyOption.any() : this.soilConductivity;
+            this.co2 = this.co2 == null ? RoutingKeyOption.any() : this.co2;
+            this.co = this.co == null ? RoutingKeyOption.any() : this.co;
+            this.voc = this.voc == null ? RoutingKeyOption.any() : this.voc;
+            this.o3 = this.o3 == null ? RoutingKeyOption.any() : this.o3;
+            this.nh3 = this.nh3 == null ? RoutingKeyOption.any() : this.nh3;
+            this.no2 = this.no2 == null ? RoutingKeyOption.any() : this.no2;
             return build();
         }
 
@@ -458,13 +560,19 @@ public class RoutingKeys {
             this.distance = this.distance == null ? consumer.distance : this.distance;
             this.occupation = this.occupation == null ? consumer.occupation : this.occupation;
             this.soilConductivity = this.soilConductivity == null ? consumer.soilConductivity : this.soilConductivity;
+            this.co2 = this.co2 == null ? consumer.co2 : this.co2;
+            this.co = this.co == null ? consumer.co : this.co;
+            this.voc = this.voc == null ? consumer.voc : this.voc;
+            this.o3 = this.o3 == null ? consumer.o3 : this.o3;
+            this.nh3 = this.nh3 == null ? consumer.nh3 : this.nh3;
+            this.no2 = this.no2 == null ? consumer.no2 : this.no2;
             return build();
         }
 
         public Optional<RoutingKeys> from(String routingKeys) {
             var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
             var splinted = info.split("\\.");
-            if (splinted.length < 22) {
+            if (splinted.length < 28) {
                 return Optional.empty();
             }
             this.infoType = InfoTypeOptions.extract(splinted[1]);
@@ -489,6 +597,12 @@ public class RoutingKeys {
             this.distance = DistanceDataOptions.extract(splinted[20]);
             this.occupation = OccupationDataOptions.extract(splinted[21]);
             this.soilConductivity = SoilConductivityDataOptions.extract(splinted[22]);
+            this.co2 = CO2DataOptions.extract(splinted[23]);
+            this.co = CODataOptions.extract(splinted[24]);
+            this.nh3 = NH3DataOptions.extract(splinted[25]);
+            this.no2 = NO2DataOptions.extract(splinted[26]);
+            this.o3 = O3DataOptions.extract(splinted[27]);
+            this.voc = VOCDataOptions.extract(splinted[28]);
             return build();
         }
 
@@ -520,7 +634,13 @@ public class RoutingKeys {
                     ph,
                     distance,
                     occupation,
-                    soilConductivity);
+                    soilConductivity,
+                    co2,
+                    co,
+                    nh3,
+                    no2,
+                    o3,
+                    voc);
             return toOptional(routingKeys);
         }
 
@@ -547,6 +667,12 @@ public class RoutingKeys {
                     routingKeys.distance == null ||
                     routingKeys.occupation == null ||
                     routingKeys.soilConductivity == null ||
+                    routingKeys.co2 == null ||
+                    routingKeys.co == null ||
+                    routingKeys.nh3 == null ||
+                    routingKeys.no2 == null ||
+                    routingKeys.o3 == null ||
+                    routingKeys.voc == null ||
                     !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+") && !ANY.equals(routingKeys.sensorTypeId) ||
                     routingKeys.legitimacy == null) {
                 return Optional.empty();
@@ -575,6 +701,12 @@ public class RoutingKeys {
                         routingKeys.distance.isAny() ||
                         routingKeys.occupation.isAny() ||
                         routingKeys.soilConductivity.isAny() ||
+                        routingKeys.co2.isAny() ||
+                        routingKeys.co.isAny() ||
+                        routingKeys.nh3.isAny() ||
+                        routingKeys.no2.isAny() ||
+                        routingKeys.o3.isAny() ||
+                        routingKeys.voc.isAny() ||
                         !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+")) {
                     return Optional.empty();
                 }

@@ -246,4 +246,94 @@ public interface SensorDataOrBuilder extends
    * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
    */
   pt.sharespot.iot.core.buf.model.SoilConductivityOrBuilder getSoilConductivityOrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+   * @return Whether the co2 field is set.
+   */
+  boolean hasCo2();
+  /**
+   * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+   * @return The co2.
+   */
+  pt.sharespot.iot.core.buf.model.CO2 getCo2();
+  /**
+   * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+   */
+  pt.sharespot.iot.core.buf.model.CO2OrBuilder getCo2OrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+   * @return Whether the co field is set.
+   */
+  boolean hasCo();
+  /**
+   * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+   * @return The co.
+   */
+  pt.sharespot.iot.core.buf.model.CO getCo();
+  /**
+   * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+   */
+  pt.sharespot.iot.core.buf.model.COOrBuilder getCoOrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+   * @return Whether the nh3 field is set.
+   */
+  boolean hasNh3();
+  /**
+   * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+   * @return The nh3.
+   */
+  pt.sharespot.iot.core.buf.model.NH3 getNh3();
+  /**
+   * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+   */
+  pt.sharespot.iot.core.buf.model.NH3OrBuilder getNh3OrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+   * @return Whether the no2 field is set.
+   */
+  boolean hasNo2();
+  /**
+   * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+   * @return The no2.
+   */
+  pt.sharespot.iot.core.buf.model.NO2 getNo2();
+  /**
+   * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+   */
+  pt.sharespot.iot.core.buf.model.NO2OrBuilder getNo2OrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+   * @return Whether the o3 field is set.
+   */
+  boolean hasO3();
+  /**
+   * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+   * @return The o3.
+   */
+  pt.sharespot.iot.core.buf.model.O3 getO3();
+  /**
+   * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+   */
+  pt.sharespot.iot.core.buf.model.O3OrBuilder getO3OrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+   * @return Whether the voc field is set.
+   */
+  boolean hasVoc();
+  /**
+   * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+   * @return The voc.
+   */
+  pt.sharespot.iot.core.buf.model.VOC getVoc();
+  /**
+   * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+   */
+  pt.sharespot.iot.core.buf.model.VOCOrBuilder getVocOrBuilder();
 }

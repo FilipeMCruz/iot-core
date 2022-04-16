@@ -273,4 +273,70 @@ public interface RoutingKeysBufOrBuilder extends
    * @return The soilConductivity.
    */
   pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf getSoilConductivity();
+
+  /**
+   * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+   * @return The enum numeric value on the wire for co2.
+   */
+  int getCo2Value();
+  /**
+   * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+   * @return The co2.
+   */
+  pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf getCo2();
+
+  /**
+   * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+   * @return The enum numeric value on the wire for co.
+   */
+  int getCoValue();
+  /**
+   * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+   * @return The co.
+   */
+  pt.sharespot.iot.core.buf.model.CODataOptionsBuf getCo();
+
+  /**
+   * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+   * @return The enum numeric value on the wire for nh3.
+   */
+  int getNh3Value();
+  /**
+   * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+   * @return The nh3.
+   */
+  pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf getNh3();
+
+  /**
+   * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+   * @return The enum numeric value on the wire for no2.
+   */
+  int getNo2Value();
+  /**
+   * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+   * @return The no2.
+   */
+  pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf getNo2();
+
+  /**
+   * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+   * @return The enum numeric value on the wire for o3.
+   */
+  int getO3Value();
+  /**
+   * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+   * @return The o3.
+   */
+  pt.sharespot.iot.core.buf.model.O3DataOptionsBuf getO3();
+
+  /**
+   * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+   * @return The enum numeric value on the wire for voc.
+   */
+  int getVocValue();
+  /**
+   * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+   * @return The voc.
+   */
+  pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf getVoc();
 }

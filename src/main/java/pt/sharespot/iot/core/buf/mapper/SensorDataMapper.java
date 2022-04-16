@@ -55,6 +55,24 @@ public class SensorDataMapper {
         if (dto.hasProperty(PropertyName.SOIL_CONDUCTIVITY))
             builder.setSoilConductivity(SoilConductivityMapper.toBuf(dto.soilConductivity));
 
+        if (dto.hasProperty(PropertyName.CO2))
+            builder.setCo2(CO2Mapper.toBuf(dto.co2));
+
+        if (dto.hasProperty(PropertyName.CO))
+            builder.setCo(COMapper.toBuf(dto.co));
+
+        if (dto.hasProperty(PropertyName.NH3))
+            builder.setNh3(NH3Mapper.toBuf(dto.nh3));
+
+        if (dto.hasProperty(PropertyName.NO2))
+            builder.setNo2(NO2Mapper.toBuf(dto.no2));
+
+        if (dto.hasProperty(PropertyName.O3))
+            builder.setO3(O3Mapper.toBuf(dto.o3));
+
+        if (dto.hasProperty(PropertyName.VOC))
+            builder.setVoc(VOCMapper.toBuf(dto.voc));
+
         return builder;
     }
 
@@ -75,6 +93,12 @@ public class SensorDataMapper {
                 .withDistance(DistanceMapper.toModel(buf.getDistance()))
                 .withOccupation(OccupationMapper.toModel(buf.getOccupation()))
                 .withSoilConductivity(SoilConductivityMapper.toModel(buf.getSoilConductivity()))
+                .withCO2(CO2Mapper.toModel(buf.getCo2()))
+                .withCO(COMapper.toModel(buf.getCo()))
+                .withNH3(NH3Mapper.toModel(buf.getNh3()))
+                .withNO2(NO2Mapper.toModel(buf.getNo2()))
+                .withO3(O3Mapper.toModel(buf.getO3()))
+                .withVOC(VOCMapper.toModel(buf.getVoc()))
                 .withWaterPressure(WaterPressureMapper.toModel(buf.getWaterPressure()));
     }
 }

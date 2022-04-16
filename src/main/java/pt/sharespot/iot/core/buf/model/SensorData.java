@@ -256,6 +256,84 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 138: {
+            pt.sharespot.iot.core.buf.model.CO2.Builder subBuilder = null;
+            if (co2_ != null) {
+              subBuilder = co2_.toBuilder();
+            }
+            co2_ = input.readMessage(pt.sharespot.iot.core.buf.model.CO2.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(co2_);
+              co2_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 146: {
+            pt.sharespot.iot.core.buf.model.CO.Builder subBuilder = null;
+            if (co_ != null) {
+              subBuilder = co_.toBuilder();
+            }
+            co_ = input.readMessage(pt.sharespot.iot.core.buf.model.CO.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(co_);
+              co_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 154: {
+            pt.sharespot.iot.core.buf.model.NH3.Builder subBuilder = null;
+            if (nh3_ != null) {
+              subBuilder = nh3_.toBuilder();
+            }
+            nh3_ = input.readMessage(pt.sharespot.iot.core.buf.model.NH3.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(nh3_);
+              nh3_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 162: {
+            pt.sharespot.iot.core.buf.model.NO2.Builder subBuilder = null;
+            if (no2_ != null) {
+              subBuilder = no2_.toBuilder();
+            }
+            no2_ = input.readMessage(pt.sharespot.iot.core.buf.model.NO2.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(no2_);
+              no2_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 170: {
+            pt.sharespot.iot.core.buf.model.O3.Builder subBuilder = null;
+            if (o3_ != null) {
+              subBuilder = o3_.toBuilder();
+            }
+            o3_ = input.readMessage(pt.sharespot.iot.core.buf.model.O3.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(o3_);
+              o3_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 178: {
+            pt.sharespot.iot.core.buf.model.VOC.Builder subBuilder = null;
+            if (voc_ != null) {
+              subBuilder = voc_.toBuilder();
+            }
+            voc_ = input.readMessage(pt.sharespot.iot.core.buf.model.VOC.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(voc_);
+              voc_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -704,6 +782,162 @@ private static final long serialVersionUID = 0L;
     return getSoilConductivity();
   }
 
+  public static final int CO2_FIELD_NUMBER = 17;
+  private pt.sharespot.iot.core.buf.model.CO2 co2_;
+  /**
+   * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+   * @return Whether the co2 field is set.
+   */
+  @java.lang.Override
+  public boolean hasCo2() {
+    return co2_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+   * @return The co2.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.CO2 getCo2() {
+    return co2_ == null ? pt.sharespot.iot.core.buf.model.CO2.getDefaultInstance() : co2_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.CO2OrBuilder getCo2OrBuilder() {
+    return getCo2();
+  }
+
+  public static final int CO_FIELD_NUMBER = 18;
+  private pt.sharespot.iot.core.buf.model.CO co_;
+  /**
+   * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+   * @return Whether the co field is set.
+   */
+  @java.lang.Override
+  public boolean hasCo() {
+    return co_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+   * @return The co.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.CO getCo() {
+    return co_ == null ? pt.sharespot.iot.core.buf.model.CO.getDefaultInstance() : co_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.COOrBuilder getCoOrBuilder() {
+    return getCo();
+  }
+
+  public static final int NH3_FIELD_NUMBER = 19;
+  private pt.sharespot.iot.core.buf.model.NH3 nh3_;
+  /**
+   * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+   * @return Whether the nh3 field is set.
+   */
+  @java.lang.Override
+  public boolean hasNh3() {
+    return nh3_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+   * @return The nh3.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.NH3 getNh3() {
+    return nh3_ == null ? pt.sharespot.iot.core.buf.model.NH3.getDefaultInstance() : nh3_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.NH3OrBuilder getNh3OrBuilder() {
+    return getNh3();
+  }
+
+  public static final int NO2_FIELD_NUMBER = 20;
+  private pt.sharespot.iot.core.buf.model.NO2 no2_;
+  /**
+   * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+   * @return Whether the no2 field is set.
+   */
+  @java.lang.Override
+  public boolean hasNo2() {
+    return no2_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+   * @return The no2.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.NO2 getNo2() {
+    return no2_ == null ? pt.sharespot.iot.core.buf.model.NO2.getDefaultInstance() : no2_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.NO2OrBuilder getNo2OrBuilder() {
+    return getNo2();
+  }
+
+  public static final int O3_FIELD_NUMBER = 21;
+  private pt.sharespot.iot.core.buf.model.O3 o3_;
+  /**
+   * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+   * @return Whether the o3 field is set.
+   */
+  @java.lang.Override
+  public boolean hasO3() {
+    return o3_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+   * @return The o3.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.O3 getO3() {
+    return o3_ == null ? pt.sharespot.iot.core.buf.model.O3.getDefaultInstance() : o3_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.O3OrBuilder getO3OrBuilder() {
+    return getO3();
+  }
+
+  public static final int VOC_FIELD_NUMBER = 22;
+  private pt.sharespot.iot.core.buf.model.VOC voc_;
+  /**
+   * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+   * @return Whether the voc field is set.
+   */
+  @java.lang.Override
+  public boolean hasVoc() {
+    return voc_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+   * @return The voc.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.VOC getVoc() {
+    return voc_ == null ? pt.sharespot.iot.core.buf.model.VOC.getDefaultInstance() : voc_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.VOCOrBuilder getVocOrBuilder() {
+    return getVoc();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -765,6 +999,24 @@ private static final long serialVersionUID = 0L;
     }
     if (soilConductivity_ != null) {
       output.writeMessage(16, getSoilConductivity());
+    }
+    if (co2_ != null) {
+      output.writeMessage(17, getCo2());
+    }
+    if (co_ != null) {
+      output.writeMessage(18, getCo());
+    }
+    if (nh3_ != null) {
+      output.writeMessage(19, getNh3());
+    }
+    if (no2_ != null) {
+      output.writeMessage(20, getNo2());
+    }
+    if (o3_ != null) {
+      output.writeMessage(21, getO3());
+    }
+    if (voc_ != null) {
+      output.writeMessage(22, getVoc());
     }
     unknownFields.writeTo(output);
   }
@@ -838,6 +1090,30 @@ private static final long serialVersionUID = 0L;
     if (soilConductivity_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getSoilConductivity());
+    }
+    if (co2_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getCo2());
+    }
+    if (co_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getCo());
+    }
+    if (nh3_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getNh3());
+    }
+    if (no2_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getNo2());
+    }
+    if (o3_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getO3());
+    }
+    if (voc_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, getVoc());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -934,6 +1210,36 @@ private static final long serialVersionUID = 0L;
       if (!getSoilConductivity()
           .equals(other.getSoilConductivity())) return false;
     }
+    if (hasCo2() != other.hasCo2()) return false;
+    if (hasCo2()) {
+      if (!getCo2()
+          .equals(other.getCo2())) return false;
+    }
+    if (hasCo() != other.hasCo()) return false;
+    if (hasCo()) {
+      if (!getCo()
+          .equals(other.getCo())) return false;
+    }
+    if (hasNh3() != other.hasNh3()) return false;
+    if (hasNh3()) {
+      if (!getNh3()
+          .equals(other.getNh3())) return false;
+    }
+    if (hasNo2() != other.hasNo2()) return false;
+    if (hasNo2()) {
+      if (!getNo2()
+          .equals(other.getNo2())) return false;
+    }
+    if (hasO3() != other.hasO3()) return false;
+    if (hasO3()) {
+      if (!getO3()
+          .equals(other.getO3())) return false;
+    }
+    if (hasVoc() != other.hasVoc()) return false;
+    if (hasVoc()) {
+      if (!getVoc()
+          .equals(other.getVoc())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1008,6 +1314,30 @@ private static final long serialVersionUID = 0L;
     if (hasSoilConductivity()) {
       hash = (37 * hash) + SOIL_CONDUCTIVITY_FIELD_NUMBER;
       hash = (53 * hash) + getSoilConductivity().hashCode();
+    }
+    if (hasCo2()) {
+      hash = (37 * hash) + CO2_FIELD_NUMBER;
+      hash = (53 * hash) + getCo2().hashCode();
+    }
+    if (hasCo()) {
+      hash = (37 * hash) + CO_FIELD_NUMBER;
+      hash = (53 * hash) + getCo().hashCode();
+    }
+    if (hasNh3()) {
+      hash = (37 * hash) + NH3_FIELD_NUMBER;
+      hash = (53 * hash) + getNh3().hashCode();
+    }
+    if (hasNo2()) {
+      hash = (37 * hash) + NO2_FIELD_NUMBER;
+      hash = (53 * hash) + getNo2().hashCode();
+    }
+    if (hasO3()) {
+      hash = (37 * hash) + O3_FIELD_NUMBER;
+      hash = (53 * hash) + getO3().hashCode();
+    }
+    if (hasVoc()) {
+      hash = (37 * hash) + VOC_FIELD_NUMBER;
+      hash = (53 * hash) + getVoc().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1238,6 +1568,42 @@ private static final long serialVersionUID = 0L;
         soilConductivity_ = null;
         soilConductivityBuilder_ = null;
       }
+      if (co2Builder_ == null) {
+        co2_ = null;
+      } else {
+        co2_ = null;
+        co2Builder_ = null;
+      }
+      if (coBuilder_ == null) {
+        co_ = null;
+      } else {
+        co_ = null;
+        coBuilder_ = null;
+      }
+      if (nh3Builder_ == null) {
+        nh3_ = null;
+      } else {
+        nh3_ = null;
+        nh3Builder_ = null;
+      }
+      if (no2Builder_ == null) {
+        no2_ = null;
+      } else {
+        no2_ = null;
+        no2Builder_ = null;
+      }
+      if (o3Builder_ == null) {
+        o3_ = null;
+      } else {
+        o3_ = null;
+        o3Builder_ = null;
+      }
+      if (vocBuilder_ == null) {
+        voc_ = null;
+      } else {
+        voc_ = null;
+        vocBuilder_ = null;
+      }
       return this;
     }
 
@@ -1344,6 +1710,36 @@ private static final long serialVersionUID = 0L;
       } else {
         result.soilConductivity_ = soilConductivityBuilder_.build();
       }
+      if (co2Builder_ == null) {
+        result.co2_ = co2_;
+      } else {
+        result.co2_ = co2Builder_.build();
+      }
+      if (coBuilder_ == null) {
+        result.co_ = co_;
+      } else {
+        result.co_ = coBuilder_.build();
+      }
+      if (nh3Builder_ == null) {
+        result.nh3_ = nh3_;
+      } else {
+        result.nh3_ = nh3Builder_.build();
+      }
+      if (no2Builder_ == null) {
+        result.no2_ = no2_;
+      } else {
+        result.no2_ = no2Builder_.build();
+      }
+      if (o3Builder_ == null) {
+        result.o3_ = o3_;
+      } else {
+        result.o3_ = o3Builder_.build();
+      }
+      if (vocBuilder_ == null) {
+        result.voc_ = voc_;
+      } else {
+        result.voc_ = vocBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1439,6 +1835,24 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasSoilConductivity()) {
         mergeSoilConductivity(other.getSoilConductivity());
+      }
+      if (other.hasCo2()) {
+        mergeCo2(other.getCo2());
+      }
+      if (other.hasCo()) {
+        mergeCo(other.getCo());
+      }
+      if (other.hasNh3()) {
+        mergeNh3(other.getNh3());
+      }
+      if (other.hasNo2()) {
+        mergeNo2(other.getNo2());
+      }
+      if (other.hasO3()) {
+        mergeO3(other.getO3());
+      }
+      if (other.hasVoc()) {
+        mergeVoc(other.getVoc());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3371,6 +3785,720 @@ private static final long serialVersionUID = 0L;
         soilConductivity_ = null;
       }
       return soilConductivityBuilder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.CO2 co2_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.CO2, pt.sharespot.iot.core.buf.model.CO2.Builder, pt.sharespot.iot.core.buf.model.CO2OrBuilder> co2Builder_;
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     * @return Whether the co2 field is set.
+     */
+    public boolean hasCo2() {
+      return co2Builder_ != null || co2_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     * @return The co2.
+     */
+    public pt.sharespot.iot.core.buf.model.CO2 getCo2() {
+      if (co2Builder_ == null) {
+        return co2_ == null ? pt.sharespot.iot.core.buf.model.CO2.getDefaultInstance() : co2_;
+      } else {
+        return co2Builder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     */
+    public Builder setCo2(pt.sharespot.iot.core.buf.model.CO2 value) {
+      if (co2Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        co2_ = value;
+        onChanged();
+      } else {
+        co2Builder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     */
+    public Builder setCo2(
+        pt.sharespot.iot.core.buf.model.CO2.Builder builderForValue) {
+      if (co2Builder_ == null) {
+        co2_ = builderForValue.build();
+        onChanged();
+      } else {
+        co2Builder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     */
+    public Builder mergeCo2(pt.sharespot.iot.core.buf.model.CO2 value) {
+      if (co2Builder_ == null) {
+        if (co2_ != null) {
+          co2_ =
+            pt.sharespot.iot.core.buf.model.CO2.newBuilder(co2_).mergeFrom(value).buildPartial();
+        } else {
+          co2_ = value;
+        }
+        onChanged();
+      } else {
+        co2Builder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     */
+    public Builder clearCo2() {
+      if (co2Builder_ == null) {
+        co2_ = null;
+        onChanged();
+      } else {
+        co2_ = null;
+        co2Builder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.CO2.Builder getCo2Builder() {
+      
+      onChanged();
+      return getCo2FieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.CO2OrBuilder getCo2OrBuilder() {
+      if (co2Builder_ != null) {
+        return co2Builder_.getMessageOrBuilder();
+      } else {
+        return co2_ == null ?
+            pt.sharespot.iot.core.buf.model.CO2.getDefaultInstance() : co2_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2 co2 = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.CO2, pt.sharespot.iot.core.buf.model.CO2.Builder, pt.sharespot.iot.core.buf.model.CO2OrBuilder> 
+        getCo2FieldBuilder() {
+      if (co2Builder_ == null) {
+        co2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.CO2, pt.sharespot.iot.core.buf.model.CO2.Builder, pt.sharespot.iot.core.buf.model.CO2OrBuilder>(
+                getCo2(),
+                getParentForChildren(),
+                isClean());
+        co2_ = null;
+      }
+      return co2Builder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.CO co_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.CO, pt.sharespot.iot.core.buf.model.CO.Builder, pt.sharespot.iot.core.buf.model.COOrBuilder> coBuilder_;
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     * @return Whether the co field is set.
+     */
+    public boolean hasCo() {
+      return coBuilder_ != null || co_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     * @return The co.
+     */
+    public pt.sharespot.iot.core.buf.model.CO getCo() {
+      if (coBuilder_ == null) {
+        return co_ == null ? pt.sharespot.iot.core.buf.model.CO.getDefaultInstance() : co_;
+      } else {
+        return coBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     */
+    public Builder setCo(pt.sharespot.iot.core.buf.model.CO value) {
+      if (coBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        co_ = value;
+        onChanged();
+      } else {
+        coBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     */
+    public Builder setCo(
+        pt.sharespot.iot.core.buf.model.CO.Builder builderForValue) {
+      if (coBuilder_ == null) {
+        co_ = builderForValue.build();
+        onChanged();
+      } else {
+        coBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     */
+    public Builder mergeCo(pt.sharespot.iot.core.buf.model.CO value) {
+      if (coBuilder_ == null) {
+        if (co_ != null) {
+          co_ =
+            pt.sharespot.iot.core.buf.model.CO.newBuilder(co_).mergeFrom(value).buildPartial();
+        } else {
+          co_ = value;
+        }
+        onChanged();
+      } else {
+        coBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     */
+    public Builder clearCo() {
+      if (coBuilder_ == null) {
+        co_ = null;
+        onChanged();
+      } else {
+        co_ = null;
+        coBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.CO.Builder getCoBuilder() {
+      
+      onChanged();
+      return getCoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.COOrBuilder getCoOrBuilder() {
+      if (coBuilder_ != null) {
+        return coBuilder_.getMessageOrBuilder();
+      } else {
+        return co_ == null ?
+            pt.sharespot.iot.core.buf.model.CO.getDefaultInstance() : co_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO co = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.CO, pt.sharespot.iot.core.buf.model.CO.Builder, pt.sharespot.iot.core.buf.model.COOrBuilder> 
+        getCoFieldBuilder() {
+      if (coBuilder_ == null) {
+        coBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.CO, pt.sharespot.iot.core.buf.model.CO.Builder, pt.sharespot.iot.core.buf.model.COOrBuilder>(
+                getCo(),
+                getParentForChildren(),
+                isClean());
+        co_ = null;
+      }
+      return coBuilder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.NH3 nh3_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.NH3, pt.sharespot.iot.core.buf.model.NH3.Builder, pt.sharespot.iot.core.buf.model.NH3OrBuilder> nh3Builder_;
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     * @return Whether the nh3 field is set.
+     */
+    public boolean hasNh3() {
+      return nh3Builder_ != null || nh3_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     * @return The nh3.
+     */
+    public pt.sharespot.iot.core.buf.model.NH3 getNh3() {
+      if (nh3Builder_ == null) {
+        return nh3_ == null ? pt.sharespot.iot.core.buf.model.NH3.getDefaultInstance() : nh3_;
+      } else {
+        return nh3Builder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     */
+    public Builder setNh3(pt.sharespot.iot.core.buf.model.NH3 value) {
+      if (nh3Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nh3_ = value;
+        onChanged();
+      } else {
+        nh3Builder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     */
+    public Builder setNh3(
+        pt.sharespot.iot.core.buf.model.NH3.Builder builderForValue) {
+      if (nh3Builder_ == null) {
+        nh3_ = builderForValue.build();
+        onChanged();
+      } else {
+        nh3Builder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     */
+    public Builder mergeNh3(pt.sharespot.iot.core.buf.model.NH3 value) {
+      if (nh3Builder_ == null) {
+        if (nh3_ != null) {
+          nh3_ =
+            pt.sharespot.iot.core.buf.model.NH3.newBuilder(nh3_).mergeFrom(value).buildPartial();
+        } else {
+          nh3_ = value;
+        }
+        onChanged();
+      } else {
+        nh3Builder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     */
+    public Builder clearNh3() {
+      if (nh3Builder_ == null) {
+        nh3_ = null;
+        onChanged();
+      } else {
+        nh3_ = null;
+        nh3Builder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.NH3.Builder getNh3Builder() {
+      
+      onChanged();
+      return getNh3FieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.NH3OrBuilder getNh3OrBuilder() {
+      if (nh3Builder_ != null) {
+        return nh3Builder_.getMessageOrBuilder();
+      } else {
+        return nh3_ == null ?
+            pt.sharespot.iot.core.buf.model.NH3.getDefaultInstance() : nh3_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3 nh3 = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.NH3, pt.sharespot.iot.core.buf.model.NH3.Builder, pt.sharespot.iot.core.buf.model.NH3OrBuilder> 
+        getNh3FieldBuilder() {
+      if (nh3Builder_ == null) {
+        nh3Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.NH3, pt.sharespot.iot.core.buf.model.NH3.Builder, pt.sharespot.iot.core.buf.model.NH3OrBuilder>(
+                getNh3(),
+                getParentForChildren(),
+                isClean());
+        nh3_ = null;
+      }
+      return nh3Builder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.NO2 no2_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.NO2, pt.sharespot.iot.core.buf.model.NO2.Builder, pt.sharespot.iot.core.buf.model.NO2OrBuilder> no2Builder_;
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     * @return Whether the no2 field is set.
+     */
+    public boolean hasNo2() {
+      return no2Builder_ != null || no2_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     * @return The no2.
+     */
+    public pt.sharespot.iot.core.buf.model.NO2 getNo2() {
+      if (no2Builder_ == null) {
+        return no2_ == null ? pt.sharespot.iot.core.buf.model.NO2.getDefaultInstance() : no2_;
+      } else {
+        return no2Builder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     */
+    public Builder setNo2(pt.sharespot.iot.core.buf.model.NO2 value) {
+      if (no2Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        no2_ = value;
+        onChanged();
+      } else {
+        no2Builder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     */
+    public Builder setNo2(
+        pt.sharespot.iot.core.buf.model.NO2.Builder builderForValue) {
+      if (no2Builder_ == null) {
+        no2_ = builderForValue.build();
+        onChanged();
+      } else {
+        no2Builder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     */
+    public Builder mergeNo2(pt.sharespot.iot.core.buf.model.NO2 value) {
+      if (no2Builder_ == null) {
+        if (no2_ != null) {
+          no2_ =
+            pt.sharespot.iot.core.buf.model.NO2.newBuilder(no2_).mergeFrom(value).buildPartial();
+        } else {
+          no2_ = value;
+        }
+        onChanged();
+      } else {
+        no2Builder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     */
+    public Builder clearNo2() {
+      if (no2Builder_ == null) {
+        no2_ = null;
+        onChanged();
+      } else {
+        no2_ = null;
+        no2Builder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.NO2.Builder getNo2Builder() {
+      
+      onChanged();
+      return getNo2FieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.NO2OrBuilder getNo2OrBuilder() {
+      if (no2Builder_ != null) {
+        return no2Builder_.getMessageOrBuilder();
+      } else {
+        return no2_ == null ?
+            pt.sharespot.iot.core.buf.model.NO2.getDefaultInstance() : no2_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2 no2 = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.NO2, pt.sharespot.iot.core.buf.model.NO2.Builder, pt.sharespot.iot.core.buf.model.NO2OrBuilder> 
+        getNo2FieldBuilder() {
+      if (no2Builder_ == null) {
+        no2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.NO2, pt.sharespot.iot.core.buf.model.NO2.Builder, pt.sharespot.iot.core.buf.model.NO2OrBuilder>(
+                getNo2(),
+                getParentForChildren(),
+                isClean());
+        no2_ = null;
+      }
+      return no2Builder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.O3 o3_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.O3, pt.sharespot.iot.core.buf.model.O3.Builder, pt.sharespot.iot.core.buf.model.O3OrBuilder> o3Builder_;
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     * @return Whether the o3 field is set.
+     */
+    public boolean hasO3() {
+      return o3Builder_ != null || o3_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     * @return The o3.
+     */
+    public pt.sharespot.iot.core.buf.model.O3 getO3() {
+      if (o3Builder_ == null) {
+        return o3_ == null ? pt.sharespot.iot.core.buf.model.O3.getDefaultInstance() : o3_;
+      } else {
+        return o3Builder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     */
+    public Builder setO3(pt.sharespot.iot.core.buf.model.O3 value) {
+      if (o3Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        o3_ = value;
+        onChanged();
+      } else {
+        o3Builder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     */
+    public Builder setO3(
+        pt.sharespot.iot.core.buf.model.O3.Builder builderForValue) {
+      if (o3Builder_ == null) {
+        o3_ = builderForValue.build();
+        onChanged();
+      } else {
+        o3Builder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     */
+    public Builder mergeO3(pt.sharespot.iot.core.buf.model.O3 value) {
+      if (o3Builder_ == null) {
+        if (o3_ != null) {
+          o3_ =
+            pt.sharespot.iot.core.buf.model.O3.newBuilder(o3_).mergeFrom(value).buildPartial();
+        } else {
+          o3_ = value;
+        }
+        onChanged();
+      } else {
+        o3Builder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     */
+    public Builder clearO3() {
+      if (o3Builder_ == null) {
+        o3_ = null;
+        onChanged();
+      } else {
+        o3_ = null;
+        o3Builder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.O3.Builder getO3Builder() {
+      
+      onChanged();
+      return getO3FieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.O3OrBuilder getO3OrBuilder() {
+      if (o3Builder_ != null) {
+        return o3Builder_.getMessageOrBuilder();
+      } else {
+        return o3_ == null ?
+            pt.sharespot.iot.core.buf.model.O3.getDefaultInstance() : o3_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3 o3 = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.O3, pt.sharespot.iot.core.buf.model.O3.Builder, pt.sharespot.iot.core.buf.model.O3OrBuilder> 
+        getO3FieldBuilder() {
+      if (o3Builder_ == null) {
+        o3Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.O3, pt.sharespot.iot.core.buf.model.O3.Builder, pt.sharespot.iot.core.buf.model.O3OrBuilder>(
+                getO3(),
+                getParentForChildren(),
+                isClean());
+        o3_ = null;
+      }
+      return o3Builder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.VOC voc_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.VOC, pt.sharespot.iot.core.buf.model.VOC.Builder, pt.sharespot.iot.core.buf.model.VOCOrBuilder> vocBuilder_;
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     * @return Whether the voc field is set.
+     */
+    public boolean hasVoc() {
+      return vocBuilder_ != null || voc_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     * @return The voc.
+     */
+    public pt.sharespot.iot.core.buf.model.VOC getVoc() {
+      if (vocBuilder_ == null) {
+        return voc_ == null ? pt.sharespot.iot.core.buf.model.VOC.getDefaultInstance() : voc_;
+      } else {
+        return vocBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     */
+    public Builder setVoc(pt.sharespot.iot.core.buf.model.VOC value) {
+      if (vocBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        voc_ = value;
+        onChanged();
+      } else {
+        vocBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     */
+    public Builder setVoc(
+        pt.sharespot.iot.core.buf.model.VOC.Builder builderForValue) {
+      if (vocBuilder_ == null) {
+        voc_ = builderForValue.build();
+        onChanged();
+      } else {
+        vocBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     */
+    public Builder mergeVoc(pt.sharespot.iot.core.buf.model.VOC value) {
+      if (vocBuilder_ == null) {
+        if (voc_ != null) {
+          voc_ =
+            pt.sharespot.iot.core.buf.model.VOC.newBuilder(voc_).mergeFrom(value).buildPartial();
+        } else {
+          voc_ = value;
+        }
+        onChanged();
+      } else {
+        vocBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     */
+    public Builder clearVoc() {
+      if (vocBuilder_ == null) {
+        voc_ = null;
+        onChanged();
+      } else {
+        voc_ = null;
+        vocBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.VOC.Builder getVocBuilder() {
+      
+      onChanged();
+      return getVocFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.VOCOrBuilder getVocOrBuilder() {
+      if (vocBuilder_ != null) {
+        return vocBuilder_.getMessageOrBuilder();
+      } else {
+        return voc_ == null ?
+            pt.sharespot.iot.core.buf.model.VOC.getDefaultInstance() : voc_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.VOC, pt.sharespot.iot.core.buf.model.VOC.Builder, pt.sharespot.iot.core.buf.model.VOCOrBuilder> 
+        getVocFieldBuilder() {
+      if (vocBuilder_ == null) {
+        vocBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.VOC, pt.sharespot.iot.core.buf.model.VOC.Builder, pt.sharespot.iot.core.buf.model.VOCOrBuilder>(
+                getVoc(),
+                getParentForChildren(),
+                isClean());
+        voc_ = null;
+      }
+      return vocBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

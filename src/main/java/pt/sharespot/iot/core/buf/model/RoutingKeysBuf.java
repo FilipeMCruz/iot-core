@@ -40,6 +40,12 @@ private static final long serialVersionUID = 0L;
     distance_ = 0;
     occupation_ = 0;
     soilConductivity_ = 0;
+    co2_ = 0;
+    co_ = 0;
+    nh3_ = 0;
+    no2_ = 0;
+    o3_ = 0;
+    voc_ = 0;
   }
 
   @java.lang.Override
@@ -214,6 +220,42 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             soilConductivity_ = rawValue;
+            break;
+          }
+          case 200: {
+            int rawValue = input.readEnum();
+
+            co2_ = rawValue;
+            break;
+          }
+          case 208: {
+            int rawValue = input.readEnum();
+
+            co_ = rawValue;
+            break;
+          }
+          case 216: {
+            int rawValue = input.readEnum();
+
+            nh3_ = rawValue;
+            break;
+          }
+          case 224: {
+            int rawValue = input.readEnum();
+
+            no2_ = rawValue;
+            break;
+          }
+          case 232: {
+            int rawValue = input.readEnum();
+
+            o3_ = rawValue;
+            break;
+          }
+          case 240: {
+            int rawValue = input.readEnum();
+
+            voc_ = rawValue;
             break;
           }
           default: {
@@ -761,6 +803,120 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf.UNRECOGNIZED : result;
   }
 
+  public static final int CO2_FIELD_NUMBER = 25;
+  private int co2_;
+  /**
+   * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+   * @return The enum numeric value on the wire for co2.
+   */
+  @java.lang.Override public int getCo2Value() {
+    return co2_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+   * @return The co2.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf getCo2() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf result = pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf.valueOf(co2_);
+    return result == null ? pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf.UNRECOGNIZED : result;
+  }
+
+  public static final int CO_FIELD_NUMBER = 26;
+  private int co_;
+  /**
+   * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+   * @return The enum numeric value on the wire for co.
+   */
+  @java.lang.Override public int getCoValue() {
+    return co_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+   * @return The co.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.CODataOptionsBuf getCo() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.CODataOptionsBuf result = pt.sharespot.iot.core.buf.model.CODataOptionsBuf.valueOf(co_);
+    return result == null ? pt.sharespot.iot.core.buf.model.CODataOptionsBuf.UNRECOGNIZED : result;
+  }
+
+  public static final int NH3_FIELD_NUMBER = 27;
+  private int nh3_;
+  /**
+   * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+   * @return The enum numeric value on the wire for nh3.
+   */
+  @java.lang.Override public int getNh3Value() {
+    return nh3_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+   * @return The nh3.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf getNh3() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf result = pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf.valueOf(nh3_);
+    return result == null ? pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf.UNRECOGNIZED : result;
+  }
+
+  public static final int NO2_FIELD_NUMBER = 28;
+  private int no2_;
+  /**
+   * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+   * @return The enum numeric value on the wire for no2.
+   */
+  @java.lang.Override public int getNo2Value() {
+    return no2_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+   * @return The no2.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf getNo2() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf result = pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf.valueOf(no2_);
+    return result == null ? pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf.UNRECOGNIZED : result;
+  }
+
+  public static final int O3_FIELD_NUMBER = 29;
+  private int o3_;
+  /**
+   * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+   * @return The enum numeric value on the wire for o3.
+   */
+  @java.lang.Override public int getO3Value() {
+    return o3_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+   * @return The o3.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.O3DataOptionsBuf getO3() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.O3DataOptionsBuf result = pt.sharespot.iot.core.buf.model.O3DataOptionsBuf.valueOf(o3_);
+    return result == null ? pt.sharespot.iot.core.buf.model.O3DataOptionsBuf.UNRECOGNIZED : result;
+  }
+
+  public static final int VOC_FIELD_NUMBER = 30;
+  private int voc_;
+  /**
+   * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+   * @return The enum numeric value on the wire for voc.
+   */
+  @java.lang.Override public int getVocValue() {
+    return voc_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+   * @return The voc.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf getVoc() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf result = pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf.valueOf(voc_);
+    return result == null ? pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -846,6 +1002,24 @@ private static final long serialVersionUID = 0L;
     }
     if (soilConductivity_ != pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA.getNumber()) {
       output.writeEnum(24, soilConductivity_);
+    }
+    if (co2_ != pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf.UNIDENTIFIED_CO2_DATA.getNumber()) {
+      output.writeEnum(25, co2_);
+    }
+    if (co_ != pt.sharespot.iot.core.buf.model.CODataOptionsBuf.UNIDENTIFIED_CO_DATA.getNumber()) {
+      output.writeEnum(26, co_);
+    }
+    if (nh3_ != pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf.UNIDENTIFIED_NH3_DATA.getNumber()) {
+      output.writeEnum(27, nh3_);
+    }
+    if (no2_ != pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf.UNIDENTIFIED_NO2_DATA.getNumber()) {
+      output.writeEnum(28, no2_);
+    }
+    if (o3_ != pt.sharespot.iot.core.buf.model.O3DataOptionsBuf.UNIDENTIFIED_O3_DATA.getNumber()) {
+      output.writeEnum(29, o3_);
+    }
+    if (voc_ != pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf.UNIDENTIFIED_VOC_DATA.getNumber()) {
+      output.writeEnum(30, voc_);
     }
     unknownFields.writeTo(output);
   }
@@ -949,6 +1123,30 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(24, soilConductivity_);
     }
+    if (co2_ != pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf.UNIDENTIFIED_CO2_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(25, co2_);
+    }
+    if (co_ != pt.sharespot.iot.core.buf.model.CODataOptionsBuf.UNIDENTIFIED_CO_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(26, co_);
+    }
+    if (nh3_ != pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf.UNIDENTIFIED_NH3_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(27, nh3_);
+    }
+    if (no2_ != pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf.UNIDENTIFIED_NO2_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(28, no2_);
+    }
+    if (o3_ != pt.sharespot.iot.core.buf.model.O3DataOptionsBuf.UNIDENTIFIED_O3_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(29, o3_);
+    }
+    if (voc_ != pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf.UNIDENTIFIED_VOC_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(30, voc_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -991,6 +1189,12 @@ private static final long serialVersionUID = 0L;
     if (distance_ != other.distance_) return false;
     if (occupation_ != other.occupation_) return false;
     if (soilConductivity_ != other.soilConductivity_) return false;
+    if (co2_ != other.co2_) return false;
+    if (co_ != other.co_) return false;
+    if (nh3_ != other.nh3_) return false;
+    if (no2_ != other.no2_) return false;
+    if (o3_ != other.o3_) return false;
+    if (voc_ != other.voc_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1050,6 +1254,18 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + occupation_;
     hash = (37 * hash) + SOIL_CONDUCTIVITY_FIELD_NUMBER;
     hash = (53 * hash) + soilConductivity_;
+    hash = (37 * hash) + CO2_FIELD_NUMBER;
+    hash = (53 * hash) + co2_;
+    hash = (37 * hash) + CO_FIELD_NUMBER;
+    hash = (53 * hash) + co_;
+    hash = (37 * hash) + NH3_FIELD_NUMBER;
+    hash = (53 * hash) + nh3_;
+    hash = (37 * hash) + NO2_FIELD_NUMBER;
+    hash = (53 * hash) + no2_;
+    hash = (37 * hash) + O3_FIELD_NUMBER;
+    hash = (53 * hash) + o3_;
+    hash = (37 * hash) + VOC_FIELD_NUMBER;
+    hash = (53 * hash) + voc_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1231,6 +1447,18 @@ private static final long serialVersionUID = 0L;
 
       soilConductivity_ = 0;
 
+      co2_ = 0;
+
+      co_ = 0;
+
+      nh3_ = 0;
+
+      no2_ = 0;
+
+      o3_ = 0;
+
+      voc_ = 0;
+
       return this;
     }
 
@@ -1281,6 +1509,12 @@ private static final long serialVersionUID = 0L;
       result.distance_ = distance_;
       result.occupation_ = occupation_;
       result.soilConductivity_ = soilConductivity_;
+      result.co2_ = co2_;
+      result.co_ = co_;
+      result.nh3_ = nh3_;
+      result.no2_ = no2_;
+      result.o3_ = o3_;
+      result.voc_ = voc_;
       onBuilt();
       return result;
     }
@@ -1403,6 +1637,24 @@ private static final long serialVersionUID = 0L;
       }
       if (other.soilConductivity_ != 0) {
         setSoilConductivityValue(other.getSoilConductivityValue());
+      }
+      if (other.co2_ != 0) {
+        setCo2Value(other.getCo2Value());
+      }
+      if (other.co_ != 0) {
+        setCoValue(other.getCoValue());
+      }
+      if (other.nh3_ != 0) {
+        setNh3Value(other.getNh3Value());
+      }
+      if (other.no2_ != 0) {
+        setNo2Value(other.getNo2Value());
+      }
+      if (other.o3_ != 0) {
+        setO3Value(other.getO3Value());
+      }
+      if (other.voc_ != 0) {
+        setVocValue(other.getVocValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2791,6 +3043,330 @@ private static final long serialVersionUID = 0L;
     public Builder clearSoilConductivity() {
       
       soilConductivity_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int co2_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+     * @return The enum numeric value on the wire for co2.
+     */
+    @java.lang.Override public int getCo2Value() {
+      return co2_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+     * @param value The enum numeric value on the wire for co2 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCo2Value(int value) {
+      
+      co2_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+     * @return The co2.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf getCo2() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf result = pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf.valueOf(co2_);
+      return result == null ? pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+     * @param value The co2 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCo2(pt.sharespot.iot.core.buf.model.CO2DataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      co2_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CO2DataOptionsBuf co2 = 25;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCo2() {
+      
+      co2_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int co_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+     * @return The enum numeric value on the wire for co.
+     */
+    @java.lang.Override public int getCoValue() {
+      return co_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+     * @param value The enum numeric value on the wire for co to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCoValue(int value) {
+      
+      co_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+     * @return The co.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.CODataOptionsBuf getCo() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.CODataOptionsBuf result = pt.sharespot.iot.core.buf.model.CODataOptionsBuf.valueOf(co_);
+      return result == null ? pt.sharespot.iot.core.buf.model.CODataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+     * @param value The co to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCo(pt.sharespot.iot.core.buf.model.CODataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      co_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.CODataOptionsBuf co = 26;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCo() {
+      
+      co_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int nh3_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+     * @return The enum numeric value on the wire for nh3.
+     */
+    @java.lang.Override public int getNh3Value() {
+      return nh3_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+     * @param value The enum numeric value on the wire for nh3 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNh3Value(int value) {
+      
+      nh3_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+     * @return The nh3.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf getNh3() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf result = pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf.valueOf(nh3_);
+      return result == null ? pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+     * @param value The nh3 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNh3(pt.sharespot.iot.core.buf.model.NH3DataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      nh3_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NH3DataOptionsBuf nh3 = 27;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNh3() {
+      
+      nh3_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int no2_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+     * @return The enum numeric value on the wire for no2.
+     */
+    @java.lang.Override public int getNo2Value() {
+      return no2_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+     * @param value The enum numeric value on the wire for no2 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNo2Value(int value) {
+      
+      no2_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+     * @return The no2.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf getNo2() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf result = pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf.valueOf(no2_);
+      return result == null ? pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+     * @param value The no2 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNo2(pt.sharespot.iot.core.buf.model.NO2DataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      no2_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.NO2DataOptionsBuf no2 = 28;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNo2() {
+      
+      no2_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int o3_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+     * @return The enum numeric value on the wire for o3.
+     */
+    @java.lang.Override public int getO3Value() {
+      return o3_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+     * @param value The enum numeric value on the wire for o3 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setO3Value(int value) {
+      
+      o3_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+     * @return The o3.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.O3DataOptionsBuf getO3() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.O3DataOptionsBuf result = pt.sharespot.iot.core.buf.model.O3DataOptionsBuf.valueOf(o3_);
+      return result == null ? pt.sharespot.iot.core.buf.model.O3DataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+     * @param value The o3 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setO3(pt.sharespot.iot.core.buf.model.O3DataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      o3_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.O3DataOptionsBuf o3 = 29;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearO3() {
+      
+      o3_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int voc_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+     * @return The enum numeric value on the wire for voc.
+     */
+    @java.lang.Override public int getVocValue() {
+      return voc_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+     * @param value The enum numeric value on the wire for voc to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVocValue(int value) {
+      
+      voc_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+     * @return The voc.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf getVoc() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf result = pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf.valueOf(voc_);
+      return result == null ? pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+     * @param value The voc to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVoc(pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      voc_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.VOCDataOptionsBuf voc = 30;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVoc() {
+      
+      voc_ = 0;
       onChanged();
       return this;
     }

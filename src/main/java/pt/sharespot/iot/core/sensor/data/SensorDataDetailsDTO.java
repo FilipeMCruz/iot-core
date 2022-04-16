@@ -36,6 +36,18 @@ public class SensorDataDetailsDTO {
 
     public SoilConductivityDataDTO soilConductivity;
 
+    public CO2DataDTO co2;
+
+    public CODataDTO co;
+
+    public NH3DataDTO nh3;
+
+    public NO2DataDTO no2;
+
+    public O3DataDTO o3;
+
+    public VOCDataDTO voc;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case ALTITUDE -> gps != null && gps.existsAltitude();
@@ -60,8 +72,44 @@ public class SensorDataDetailsDTO {
             case PH -> ph != null && ph.exists();
             case OCCUPATION -> occupation != null && occupation.exists();
             case SOIL_CONDUCTIVITY -> soilConductivity != null && soilConductivity.exists();
+            case CO2 -> co2 != null && co2.exists();
+            case CO -> co != null && co.exists();
+            case NH3 -> nh3 != null && nh3.exists();
+            case NO2 -> no2 != null && no2.exists();
+            case O3 -> o3 != null && o3.exists();
+            case VOC -> voc != null && voc.exists();
             default -> false;
         };
+    }
+
+    public SensorDataDetailsDTO withCO2(CO2DataDTO co2) {
+        this.co2 = co2;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withCO(CODataDTO co) {
+        this.co = co;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withNH3(NH3DataDTO nh3) {
+        this.nh3 = nh3;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withNO2(NO2DataDTO no2) {
+        this.no2 = no2;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withO3(O3DataDTO o3) {
+        this.o3 = o3;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withVOC(VOCDataDTO voc) {
+        this.voc = voc;
+        return this;
     }
 
     public SensorDataDetailsDTO withBattery(BatteryDataDTO battery) {

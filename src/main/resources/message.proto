@@ -43,6 +43,36 @@ message SensorData {
   Distance distance = 14;
   Occupation occupation = 15;
   SoilConductivity soil_conductivity = 16;
+  CO2 co2 = 17;
+  CO co = 18;
+  NH3 nh3 = 19;
+  NO2 no2 = 20;
+  O3 o3 = 21;
+  VOC voc = 22;
+}
+
+message CO2 {
+  float ppm = 1;
+}
+
+message CO {
+  float ppm = 1;
+}
+
+message NH3 {
+  float ppm = 1;
+}
+
+message NO2 {
+  float ppm = 1;
+}
+
+message O3 {
+  float ppm = 1;
+}
+
+message VOC {
+  float ppm = 1;
 }
 
 message GPS {
@@ -169,27 +199,74 @@ message RoutingKeysBuf {
   DistanceDataOptionsBuf distance = 22;
   OccupationDataOptionsBuf occupation = 23;
   SoilConductivityDataOptionsBuf soil_conductivity = 24;
+  CO2DataOptionsBuf co2 = 25;
+  CODataOptionsBuf co = 26;
+  NH3DataOptionsBuf nh3 = 27;
+  NO2DataOptionsBuf no2 = 28;
+  O3DataOptionsBuf o3 = 29;
+  VOCDataOptionsBuf voc = 30;
 }
+
+enum CO2DataOptionsBuf {
+  UNIDENTIFIED_CO2_DATA = 0;
+  WITH_CO2_DATA = 1;
+  WITHOUT_CO2_DATA = 2;
+}
+
+enum CODataOptionsBuf {
+  UNIDENTIFIED_CO_DATA = 0;
+  WITH_CO_DATA = 1;
+  WITHOUT_CO_DATA = 2;
+}
+
+enum NH3DataOptionsBuf {
+  UNIDENTIFIED_NH3_DATA = 0;
+  WITH_NH3_DATA = 1;
+  WITHOUT_NH3_DATA = 2;
+}
+
+enum NO2DataOptionsBuf {
+  UNIDENTIFIED_NO2_DATA = 0;
+  WITH_NO2_DATA = 1;
+  WITHOUT_NO2_DATA = 2;
+}
+
+enum O3DataOptionsBuf {
+  UNIDENTIFIED_O3_DATA = 0;
+  WITH_O3_DATA = 1;
+  WITHOUT_O3_DATA = 2;
+}
+
+enum VOCDataOptionsBuf {
+  UNIDENTIFIED_VOC_DATA = 0;
+  WITH_VOC_DATA = 1;
+  WITHOUT_VOC_DATA = 2;
+}
+
 enum SoilConductivityDataOptionsBuf {
   UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA = 0;
   WITH_SOIL_CONDUCTIVITY_DATA = 1;
   WITHOUT_SOIL_CONDUCTIVITY_DATA = 2;
 }
+
 enum OccupationDataOptionsBuf {
   UNIDENTIFIED_OCCUPATION_DATA = 0;
   WITH_OCCUPATION_DATA = 1;
   WITHOUT_OCCUPATION_DATA = 2;
 }
+
 enum PHDataOptionsBuf  {
   UNIDENTIFIED_PH_DATA = 0;
   WITH_PH_DATA = 1;
   WITHOUT_PH_DATA = 2;
 }
+
 enum DistanceDataOptionsBuf  {
   UNIDENTIFIED_DISTANCE_DATA = 0;
   WITH_DISTANCE_DATA = 1;
   WITHOUT_DISTANCE_DATA = 2;
 }
+
 enum TriggerDataOptionsBuf {
   UNIDENTIFIED_TRIGGER_DATA = 0;
   WITH_TRIGGER_DATA = 1;
