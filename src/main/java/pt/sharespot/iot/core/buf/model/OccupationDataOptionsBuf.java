@@ -94,7 +94,7 @@ public enum OccupationDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(1);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final OccupationDataOptionsBuf[] VALUES = values();

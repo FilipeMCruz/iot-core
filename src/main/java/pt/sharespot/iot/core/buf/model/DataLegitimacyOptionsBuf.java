@@ -103,7 +103,7 @@ public enum DataLegitimacyOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(15);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(16);
   }
 
   private static final DataLegitimacyOptionsBuf[] VALUES = values();

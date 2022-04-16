@@ -262,4 +262,15 @@ public interface RoutingKeysBufOrBuilder extends
    * @return The occupation.
    */
   pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf getOccupation();
+
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+   * @return The enum numeric value on the wire for soilConductivity.
+   */
+  int getSoilConductivityValue();
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+   * @return The soilConductivity.
+   */
+  pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf getSoilConductivity();
 }

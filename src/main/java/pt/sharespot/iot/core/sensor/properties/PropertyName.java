@@ -121,6 +121,10 @@ public enum PropertyName {
         public String path() {
             return "data.occupation.percentage";
         }
+    }, SOIL_CONDUCTIVITY {
+        public String path() {
+            return "data.soilConductivity.microSiemensPerCentimeter";
+        }
     };
 
     public String path() {

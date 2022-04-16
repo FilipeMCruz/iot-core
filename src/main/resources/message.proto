@@ -42,12 +42,17 @@ message SensorData {
   PH ph = 13;
   Distance distance = 14;
   Occupation occupation = 15;
+  SoilConductivity soil_conductivity = 16;
 }
 
 message GPS {
   double latitude = 1;
   double longitude = 2;
   float altitude = 3;
+}
+
+message SoilConductivity {
+  float micro_siemens_per_centimeter = 1;
 }
 
 message Motion {
@@ -163,6 +168,12 @@ message RoutingKeysBuf {
   PHDataOptionsBuf ph = 21;
   DistanceDataOptionsBuf distance = 22;
   OccupationDataOptionsBuf occupation = 23;
+  SoilConductivityDataOptionsBuf soil_conductivity = 24;
+}
+enum SoilConductivityDataOptionsBuf {
+  UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA = 0;
+  WITH_SOIL_CONDUCTIVITY_DATA = 1;
+  WITHOUT_SOIL_CONDUCTIVITY_DATA = 2;
 }
 enum OccupationDataOptionsBuf {
   UNIDENTIFIED_OCCUPATION_DATA = 0;

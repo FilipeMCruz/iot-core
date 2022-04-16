@@ -1,9 +1,6 @@
 package pt.sharespot.iot.core.buf.mapper;
 
-import pt.sharespot.iot.core.buf.model.Distance;
-import pt.sharespot.iot.core.buf.model.Occupation;
 import pt.sharespot.iot.core.buf.model.SensorData;
-import pt.sharespot.iot.core.sensor.data.OccupationDataDTO;
 import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
@@ -11,6 +8,7 @@ public class SensorDataMapper {
 
     public static SensorData.Builder toBuf(SensorDataDetailsDTO dto) {
         var builder = SensorData.newBuilder();
+
         if (dto.hasProperty(PropertyName.AQI)) builder.setAqi(AirQualityMapper.toBuf(dto.aqi));
 
         if (dto.hasProperty(PropertyName.TRIGGER)) builder.setTrigger(TriggerMapper.toBuf(dto.trigger));
@@ -54,6 +52,9 @@ public class SensorDataMapper {
         if (dto.hasProperty(PropertyName.OCCUPATION))
             builder.setOccupation(OccupationMapper.toBuf(dto.occupation));
 
+        if (dto.hasProperty(PropertyName.SOIL_CONDUCTIVITY))
+            builder.setSoilConductivity(SoilConductivityMapper.toBuf(dto.soilConductivity));
+
         return builder;
     }
 
@@ -73,6 +74,7 @@ public class SensorDataMapper {
                 .withPh(PHMapper.toModel(buf.getPh()))
                 .withDistance(DistanceMapper.toModel(buf.getDistance()))
                 .withOccupation(OccupationMapper.toModel(buf.getOccupation()))
+                .withSoilConductivity(SoilConductivityMapper.toModel(buf.getSoilConductivity()))
                 .withWaterPressure(WaterPressureMapper.toModel(buf.getWaterPressure()));
     }
 }

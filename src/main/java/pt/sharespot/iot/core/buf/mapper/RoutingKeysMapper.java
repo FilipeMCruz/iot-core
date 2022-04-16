@@ -30,6 +30,7 @@ public class RoutingKeysMapper {
                 .setPh(toBuf(dto.ph.get()))
                 .setDistance(toBuf(dto.distance.get()))
                 .setOccupation(toBuf(dto.occupation.get()))
+                .setSoilConductivity(toBuf(dto.soilConductivity.get()))
                 .setWaterPressure(toBuf(dto.waterPressure.get()));
     }
 
@@ -57,6 +58,7 @@ public class RoutingKeysMapper {
                 .withPh(toModel(buf.getPh()))
                 .withDistance(toModel(buf.getDistance()))
                 .withOccupation(toModel(buf.getOccupation()))
+                .withSoilConductivity(toModel(buf.getSoilConductivity()))
                 .build()
                 .orElseThrow(() -> new RuntimeException("Wrong Routing Keys"));
     }
@@ -364,6 +366,23 @@ public class RoutingKeysMapper {
             default -> OccupationDataOptions.UNIDENTIFIED_OCCUPATION_DATA;
             case WITH_OCCUPATION_DATA -> OccupationDataOptions.WITH_OCCUPATION_DATA;
             case WITHOUT_OCCUPATION_DATA -> OccupationDataOptions.WITHOUT_OCCUPATION_DATA;
+        };
+    }
+
+    private static SoilConductivityDataOptionsBuf toBuf(SoilConductivityDataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA ->
+                    SoilConductivityDataOptionsBuf.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA;
+            case WITH_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptionsBuf.WITH_SOIL_CONDUCTIVITY_DATA;
+            case WITHOUT_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptionsBuf.WITHOUT_SOIL_CONDUCTIVITY_DATA;
+        };
+    }
+
+    private static SoilConductivityDataOptions toModel(SoilConductivityDataOptionsBuf buf) {
+        return switch (buf) {
+            default -> SoilConductivityDataOptions.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA;
+            case WITH_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptions.WITH_SOIL_CONDUCTIVITY_DATA;
+            case WITHOUT_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptions.WITHOUT_SOIL_CONDUCTIVITY_DATA;
         };
     }
 

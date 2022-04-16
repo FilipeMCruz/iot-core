@@ -243,6 +243,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 130: {
+            pt.sharespot.iot.core.buf.model.SoilConductivity.Builder subBuilder = null;
+            if (soilConductivity_ != null) {
+              subBuilder = soilConductivity_.toBuilder();
+            }
+            soilConductivity_ = input.readMessage(pt.sharespot.iot.core.buf.model.SoilConductivity.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(soilConductivity_);
+              soilConductivity_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -665,6 +678,32 @@ private static final long serialVersionUID = 0L;
     return getOccupation();
   }
 
+  public static final int SOIL_CONDUCTIVITY_FIELD_NUMBER = 16;
+  private pt.sharespot.iot.core.buf.model.SoilConductivity soilConductivity_;
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+   * @return Whether the soilConductivity field is set.
+   */
+  @java.lang.Override
+  public boolean hasSoilConductivity() {
+    return soilConductivity_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+   * @return The soilConductivity.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.SoilConductivity getSoilConductivity() {
+    return soilConductivity_ == null ? pt.sharespot.iot.core.buf.model.SoilConductivity.getDefaultInstance() : soilConductivity_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.SoilConductivityOrBuilder getSoilConductivityOrBuilder() {
+    return getSoilConductivity();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -723,6 +762,9 @@ private static final long serialVersionUID = 0L;
     }
     if (occupation_ != null) {
       output.writeMessage(15, getOccupation());
+    }
+    if (soilConductivity_ != null) {
+      output.writeMessage(16, getSoilConductivity());
     }
     unknownFields.writeTo(output);
   }
@@ -792,6 +834,10 @@ private static final long serialVersionUID = 0L;
     if (occupation_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getOccupation());
+    }
+    if (soilConductivity_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getSoilConductivity());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -883,6 +929,11 @@ private static final long serialVersionUID = 0L;
       if (!getOccupation()
           .equals(other.getOccupation())) return false;
     }
+    if (hasSoilConductivity() != other.hasSoilConductivity()) return false;
+    if (hasSoilConductivity()) {
+      if (!getSoilConductivity()
+          .equals(other.getSoilConductivity())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -953,6 +1004,10 @@ private static final long serialVersionUID = 0L;
     if (hasOccupation()) {
       hash = (37 * hash) + OCCUPATION_FIELD_NUMBER;
       hash = (53 * hash) + getOccupation().hashCode();
+    }
+    if (hasSoilConductivity()) {
+      hash = (37 * hash) + SOIL_CONDUCTIVITY_FIELD_NUMBER;
+      hash = (53 * hash) + getSoilConductivity().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1177,6 +1232,12 @@ private static final long serialVersionUID = 0L;
         occupation_ = null;
         occupationBuilder_ = null;
       }
+      if (soilConductivityBuilder_ == null) {
+        soilConductivity_ = null;
+      } else {
+        soilConductivity_ = null;
+        soilConductivityBuilder_ = null;
+      }
       return this;
     }
 
@@ -1278,6 +1339,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.occupation_ = occupationBuilder_.build();
       }
+      if (soilConductivityBuilder_ == null) {
+        result.soilConductivity_ = soilConductivity_;
+      } else {
+        result.soilConductivity_ = soilConductivityBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1370,6 +1436,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasOccupation()) {
         mergeOccupation(other.getOccupation());
+      }
+      if (other.hasSoilConductivity()) {
+        mergeSoilConductivity(other.getSoilConductivity());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3183,6 +3252,125 @@ private static final long serialVersionUID = 0L;
         occupation_ = null;
       }
       return occupationBuilder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.SoilConductivity soilConductivity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.SoilConductivity, pt.sharespot.iot.core.buf.model.SoilConductivity.Builder, pt.sharespot.iot.core.buf.model.SoilConductivityOrBuilder> soilConductivityBuilder_;
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     * @return Whether the soilConductivity field is set.
+     */
+    public boolean hasSoilConductivity() {
+      return soilConductivityBuilder_ != null || soilConductivity_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     * @return The soilConductivity.
+     */
+    public pt.sharespot.iot.core.buf.model.SoilConductivity getSoilConductivity() {
+      if (soilConductivityBuilder_ == null) {
+        return soilConductivity_ == null ? pt.sharespot.iot.core.buf.model.SoilConductivity.getDefaultInstance() : soilConductivity_;
+      } else {
+        return soilConductivityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     */
+    public Builder setSoilConductivity(pt.sharespot.iot.core.buf.model.SoilConductivity value) {
+      if (soilConductivityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        soilConductivity_ = value;
+        onChanged();
+      } else {
+        soilConductivityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     */
+    public Builder setSoilConductivity(
+        pt.sharespot.iot.core.buf.model.SoilConductivity.Builder builderForValue) {
+      if (soilConductivityBuilder_ == null) {
+        soilConductivity_ = builderForValue.build();
+        onChanged();
+      } else {
+        soilConductivityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     */
+    public Builder mergeSoilConductivity(pt.sharespot.iot.core.buf.model.SoilConductivity value) {
+      if (soilConductivityBuilder_ == null) {
+        if (soilConductivity_ != null) {
+          soilConductivity_ =
+            pt.sharespot.iot.core.buf.model.SoilConductivity.newBuilder(soilConductivity_).mergeFrom(value).buildPartial();
+        } else {
+          soilConductivity_ = value;
+        }
+        onChanged();
+      } else {
+        soilConductivityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     */
+    public Builder clearSoilConductivity() {
+      if (soilConductivityBuilder_ == null) {
+        soilConductivity_ = null;
+        onChanged();
+      } else {
+        soilConductivity_ = null;
+        soilConductivityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.SoilConductivity.Builder getSoilConductivityBuilder() {
+      
+      onChanged();
+      return getSoilConductivityFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.SoilConductivityOrBuilder getSoilConductivityOrBuilder() {
+      if (soilConductivityBuilder_ != null) {
+        return soilConductivityBuilder_.getMessageOrBuilder();
+      } else {
+        return soilConductivity_ == null ?
+            pt.sharespot.iot.core.buf.model.SoilConductivity.getDefaultInstance() : soilConductivity_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.SoilConductivity, pt.sharespot.iot.core.buf.model.SoilConductivity.Builder, pt.sharespot.iot.core.buf.model.SoilConductivityOrBuilder> 
+        getSoilConductivityFieldBuilder() {
+      if (soilConductivityBuilder_ == null) {
+        soilConductivityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.SoilConductivity, pt.sharespot.iot.core.buf.model.SoilConductivity.Builder, pt.sharespot.iot.core.buf.model.SoilConductivityOrBuilder>(
+                getSoilConductivity(),
+                getParentForChildren(),
+                isClean());
+        soilConductivity_ = null;
+      }
+      return soilConductivityBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

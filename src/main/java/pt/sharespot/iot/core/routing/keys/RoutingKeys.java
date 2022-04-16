@@ -55,6 +55,8 @@ public class RoutingKeys {
 
     public RoutingKeyOption<OccupationDataOptions> occupation;
 
+    public RoutingKeyOption<SoilConductivityDataOptions> soilConductivity;
+
     public RoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
                        String version,
                        RoutingKeyOption<InfoTypeOptions> infoType,
@@ -77,7 +79,8 @@ public class RoutingKeys {
                        RoutingKeyOption<WaterPressureDataOptions> waterPressure,
                        RoutingKeyOption<PHDataOptions> ph,
                        RoutingKeyOption<DistanceDataOptions> distance,
-                       RoutingKeyOption<OccupationDataOptions> occupation) {
+                       RoutingKeyOption<OccupationDataOptions> occupation,
+                       RoutingKeyOption<SoilConductivityDataOptions> soilConductivity) {
         this.containerType = containerType;
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
@@ -101,6 +104,7 @@ public class RoutingKeys {
         this.ph = ph;
         this.distance = distance;
         this.occupation = occupation;
+        this.soilConductivity = soilConductivity;
     }
 
     public RoutingKeys() {
@@ -108,7 +112,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.#",
                 containerType.value(),
                 version,
                 infoType.value(),
@@ -131,11 +135,12 @@ public class RoutingKeys {
                 waterPressure.value(),
                 ph.value(),
                 distance.value(),
-                occupation.value());
+                occupation.value(),
+                soilConductivity.value());
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.#",
                 containerType.details(),
                 version,
                 infoType.details(),
@@ -158,7 +163,8 @@ public class RoutingKeys {
                 waterPressure.details(),
                 ph.details(),
                 distance.details(),
-                occupation.details());
+                occupation.details(),
+                soilConductivity.details());
     }
 
     public static RoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -218,6 +224,8 @@ public class RoutingKeys {
 
         private RoutingKeyOption<OccupationDataOptions> occupation;
 
+        private RoutingKeyOption<SoilConductivityDataOptions> soilConductivity;
+
         private final RoutingKeysBuilderOptions options;
 
         private RoutingKeysBuilder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -233,6 +241,11 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withOccupation(OccupationDataOptions occupation) {
             this.occupation = RoutingKeyOption.of(occupation);
+            return this;
+        }
+
+        public RoutingKeysBuilder withSoilConductivity(SoilConductivityDataOptions soilConductivity) {
+            this.soilConductivity = RoutingKeyOption.of(soilConductivity);
             return this;
         }
 
@@ -354,6 +367,7 @@ public class RoutingKeys {
             this.ph = RoutingKeyOption.of(PHDataOptions.UNIDENTIFIED_PH_DATA);
             this.distance = RoutingKeyOption.of(DistanceDataOptions.UNIDENTIFIED_DISTANCE_DATA);
             this.occupation = RoutingKeyOption.of(OccupationDataOptions.UNIDENTIFIED_OCCUPATION_DATA);
+            this.soilConductivity = RoutingKeyOption.of(SoilConductivityDataOptions.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA);
             return this;
         }
 
@@ -389,6 +403,8 @@ public class RoutingKeys {
                     DistanceDataOptions.WITH_DISTANCE_DATA : DistanceDataOptions.WITHOUT_DISTANCE_DATA);
             this.occupation = RoutingKeyOption.of(data.hasAllProperties(PropertyName.OCCUPATION) ?
                     OccupationDataOptions.WITH_OCCUPATION_DATA : OccupationDataOptions.WITHOUT_OCCUPATION_DATA);
+            this.soilConductivity = RoutingKeyOption.of(data.hasAllProperties(PropertyName.SOIL_CONDUCTIVITY) ?
+                    SoilConductivityDataOptions.WITH_SOIL_CONDUCTIVITY_DATA : SoilConductivityDataOptions.WITHOUT_SOIL_CONDUCTIVITY_DATA);
             return this;
         }
 
@@ -415,6 +431,7 @@ public class RoutingKeys {
             this.ph = this.ph == null ? RoutingKeyOption.any() : this.ph;
             this.distance = this.distance == null ? RoutingKeyOption.any() : this.distance;
             this.occupation = this.occupation == null ? RoutingKeyOption.any() : this.occupation;
+            this.soilConductivity = this.soilConductivity == null ? RoutingKeyOption.any() : this.soilConductivity;
             return build();
         }
 
@@ -440,13 +457,14 @@ public class RoutingKeys {
             this.ph = this.ph == null ? consumer.ph : this.ph;
             this.distance = this.distance == null ? consumer.distance : this.distance;
             this.occupation = this.occupation == null ? consumer.occupation : this.occupation;
+            this.soilConductivity = this.soilConductivity == null ? consumer.soilConductivity : this.soilConductivity;
             return build();
         }
 
         public Optional<RoutingKeys> from(String routingKeys) {
             var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
             var splinted = info.split("\\.");
-            if (splinted.length < 21) {
+            if (splinted.length < 22) {
                 return Optional.empty();
             }
             this.infoType = InfoTypeOptions.extract(splinted[1]);
@@ -470,6 +488,7 @@ public class RoutingKeys {
             this.ph = PHDataOptions.extract(splinted[19]);
             this.distance = DistanceDataOptions.extract(splinted[20]);
             this.occupation = OccupationDataOptions.extract(splinted[21]);
+            this.soilConductivity = SoilConductivityDataOptions.extract(splinted[22]);
             return build();
         }
 
@@ -500,7 +519,8 @@ public class RoutingKeys {
                     waterPressure,
                     ph,
                     distance,
-                    occupation);
+                    occupation,
+                    soilConductivity);
             return toOptional(routingKeys);
         }
 
@@ -526,6 +546,7 @@ public class RoutingKeys {
                     routingKeys.ph == null ||
                     routingKeys.distance == null ||
                     routingKeys.occupation == null ||
+                    routingKeys.soilConductivity == null ||
                     !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+") && !ANY.equals(routingKeys.sensorTypeId) ||
                     routingKeys.legitimacy == null) {
                 return Optional.empty();
@@ -553,6 +574,7 @@ public class RoutingKeys {
                         routingKeys.ph.isAny() ||
                         routingKeys.distance.isAny() ||
                         routingKeys.occupation.isAny() ||
+                        routingKeys.soilConductivity.isAny() ||
                         !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+")) {
                     return Optional.empty();
                 }

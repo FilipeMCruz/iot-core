@@ -34,6 +34,8 @@ public class SensorDataDetailsDTO {
 
     public OccupationDataDTO occupation;
 
+    public SoilConductivityDataDTO soilConductivity;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case ALTITUDE -> gps != null && gps.existsAltitude();
@@ -57,12 +59,18 @@ public class SensorDataDetailsDTO {
             case MIN_DISTANCE -> distance != null && distance.existsMinDistance();
             case PH -> ph != null && ph.exists();
             case OCCUPATION -> occupation != null && occupation.exists();
+            case SOIL_CONDUCTIVITY -> soilConductivity != null && soilConductivity.exists();
             default -> false;
         };
     }
 
     public SensorDataDetailsDTO withBattery(BatteryDataDTO battery) {
         this.battery = battery;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withSoilConductivity(SoilConductivityDataDTO soilConductivity) {
+        this.soilConductivity = soilConductivity;
         return this;
     }
 

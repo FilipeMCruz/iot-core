@@ -94,7 +94,7 @@ public enum AirHumidityDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(12);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(13);
   }
 
   private static final AirHumidityDataOptionsBuf[] VALUES = values();

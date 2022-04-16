@@ -4,37 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.SoilMoistureDataOptionsBuf}
+ * Protobuf enum {@code pt.sharespot.iot.core.SoilConductivityDataOptionsBuf}
  */
-public enum SoilMoistureDataOptionsBuf
+public enum SoilConductivityDataOptionsBuf
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNIDENTIFIED_SOIL_MOISTURE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA = 0;</code>
    */
-  UNIDENTIFIED_SOIL_MOISTURE_DATA(0),
+  UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA(0),
   /**
-   * <code>WITH_SOIL_MOISTURE_DATA = 1;</code>
+   * <code>WITH_SOIL_CONDUCTIVITY_DATA = 1;</code>
    */
-  WITH_SOIL_MOISTURE_DATA(1),
+  WITH_SOIL_CONDUCTIVITY_DATA(1),
   /**
-   * <code>WITHOUT_SOIL_MOISTURE_DATA = 2;</code>
+   * <code>WITHOUT_SOIL_CONDUCTIVITY_DATA = 2;</code>
    */
-  WITHOUT_SOIL_MOISTURE_DATA(2),
+  WITHOUT_SOIL_CONDUCTIVITY_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNIDENTIFIED_SOIL_MOISTURE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA = 0;</code>
    */
-  public static final int UNIDENTIFIED_SOIL_MOISTURE_DATA_VALUE = 0;
+  public static final int UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA_VALUE = 0;
   /**
-   * <code>WITH_SOIL_MOISTURE_DATA = 1;</code>
+   * <code>WITH_SOIL_CONDUCTIVITY_DATA = 1;</code>
    */
-  public static final int WITH_SOIL_MOISTURE_DATA_VALUE = 1;
+  public static final int WITH_SOIL_CONDUCTIVITY_DATA_VALUE = 1;
   /**
-   * <code>WITHOUT_SOIL_MOISTURE_DATA = 2;</code>
+   * <code>WITHOUT_SOIL_CONDUCTIVITY_DATA = 2;</code>
    */
-  public static final int WITHOUT_SOIL_MOISTURE_DATA_VALUE = 2;
+  public static final int WITHOUT_SOIL_CONDUCTIVITY_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -51,7 +51,7 @@ public enum SoilMoistureDataOptionsBuf
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static SoilMoistureDataOptionsBuf valueOf(int value) {
+  public static SoilConductivityDataOptionsBuf valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +59,24 @@ public enum SoilMoistureDataOptionsBuf
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static SoilMoistureDataOptionsBuf forNumber(int value) {
+  public static SoilConductivityDataOptionsBuf forNumber(int value) {
     switch (value) {
-      case 0: return UNIDENTIFIED_SOIL_MOISTURE_DATA;
-      case 1: return WITH_SOIL_MOISTURE_DATA;
-      case 2: return WITHOUT_SOIL_MOISTURE_DATA;
+      case 0: return UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA;
+      case 1: return WITH_SOIL_CONDUCTIVITY_DATA;
+      case 2: return WITHOUT_SOIL_CONDUCTIVITY_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<SoilMoistureDataOptionsBuf>
+  public static com.google.protobuf.Internal.EnumLiteMap<SoilConductivityDataOptionsBuf>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      SoilMoistureDataOptionsBuf> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<SoilMoistureDataOptionsBuf>() {
-          public SoilMoistureDataOptionsBuf findValueByNumber(int number) {
-            return SoilMoistureDataOptionsBuf.forNumber(number);
+      SoilConductivityDataOptionsBuf> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SoilConductivityDataOptionsBuf>() {
+          public SoilConductivityDataOptionsBuf findValueByNumber(int number) {
+            return SoilConductivityDataOptionsBuf.forNumber(number);
           }
         };
 
@@ -94,12 +94,12 @@ public enum SoilMoistureDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(8);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(1);
   }
 
-  private static final SoilMoistureDataOptionsBuf[] VALUES = values();
+  private static final SoilConductivityDataOptionsBuf[] VALUES = values();
 
-  public static SoilMoistureDataOptionsBuf valueOf(
+  public static SoilConductivityDataOptionsBuf valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +113,10 @@ public enum SoilMoistureDataOptionsBuf
 
   private final int value;
 
-  private SoilMoistureDataOptionsBuf(int value) {
+  private SoilConductivityDataOptionsBuf(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.SoilMoistureDataOptionsBuf)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.SoilConductivityDataOptionsBuf)
 }
 

@@ -39,6 +39,7 @@ private static final long serialVersionUID = 0L;
     ph_ = 0;
     distance_ = 0;
     occupation_ = 0;
+    soilConductivity_ = 0;
   }
 
   @java.lang.Override
@@ -207,6 +208,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             occupation_ = rawValue;
+            break;
+          }
+          case 192: {
+            int rawValue = input.readEnum();
+
+            soilConductivity_ = rawValue;
             break;
           }
           default: {
@@ -735,6 +742,25 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf.UNRECOGNIZED : result;
   }
 
+  public static final int SOIL_CONDUCTIVITY_FIELD_NUMBER = 24;
+  private int soilConductivity_;
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+   * @return The enum numeric value on the wire for soilConductivity.
+   */
+  @java.lang.Override public int getSoilConductivityValue() {
+    return soilConductivity_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+   * @return The soilConductivity.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf getSoilConductivity() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf result = pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf.valueOf(soilConductivity_);
+    return result == null ? pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -817,6 +843,9 @@ private static final long serialVersionUID = 0L;
     }
     if (occupation_ != pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf.UNIDENTIFIED_OCCUPATION_DATA.getNumber()) {
       output.writeEnum(23, occupation_);
+    }
+    if (soilConductivity_ != pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA.getNumber()) {
+      output.writeEnum(24, soilConductivity_);
     }
     unknownFields.writeTo(output);
   }
@@ -916,6 +945,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(23, occupation_);
     }
+    if (soilConductivity_ != pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(24, soilConductivity_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -957,6 +990,7 @@ private static final long serialVersionUID = 0L;
     if (ph_ != other.ph_) return false;
     if (distance_ != other.distance_) return false;
     if (occupation_ != other.occupation_) return false;
+    if (soilConductivity_ != other.soilConductivity_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1014,6 +1048,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + distance_;
     hash = (37 * hash) + OCCUPATION_FIELD_NUMBER;
     hash = (53 * hash) + occupation_;
+    hash = (37 * hash) + SOIL_CONDUCTIVITY_FIELD_NUMBER;
+    hash = (53 * hash) + soilConductivity_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1193,6 +1229,8 @@ private static final long serialVersionUID = 0L;
 
       occupation_ = 0;
 
+      soilConductivity_ = 0;
+
       return this;
     }
 
@@ -1242,6 +1280,7 @@ private static final long serialVersionUID = 0L;
       result.ph_ = ph_;
       result.distance_ = distance_;
       result.occupation_ = occupation_;
+      result.soilConductivity_ = soilConductivity_;
       onBuilt();
       return result;
     }
@@ -1361,6 +1400,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.occupation_ != 0) {
         setOccupationValue(other.getOccupationValue());
+      }
+      if (other.soilConductivity_ != 0) {
+        setSoilConductivityValue(other.getSoilConductivityValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2695,6 +2737,60 @@ private static final long serialVersionUID = 0L;
     public Builder clearOccupation() {
       
       occupation_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int soilConductivity_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+     * @return The enum numeric value on the wire for soilConductivity.
+     */
+    @java.lang.Override public int getSoilConductivityValue() {
+      return soilConductivity_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+     * @param value The enum numeric value on the wire for soilConductivity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSoilConductivityValue(int value) {
+      
+      soilConductivity_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+     * @return The soilConductivity.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf getSoilConductivity() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf result = pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf.valueOf(soilConductivity_);
+      return result == null ? pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+     * @param value The soilConductivity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSoilConductivity(pt.sharespot.iot.core.buf.model.SoilConductivityDataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      soilConductivity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.SoilConductivityDataOptionsBuf soil_conductivity = 24;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSoilConductivity() {
+      
+      soilConductivity_ = 0;
       onChanged();
       return this;
     }

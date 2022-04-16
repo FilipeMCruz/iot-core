@@ -231,4 +231,19 @@ public interface SensorDataOrBuilder extends
    * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
    */
   pt.sharespot.iot.core.buf.model.OccupationOrBuilder getOccupationOrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+   * @return Whether the soilConductivity field is set.
+   */
+  boolean hasSoilConductivity();
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+   * @return The soilConductivity.
+   */
+  pt.sharespot.iot.core.buf.model.SoilConductivity getSoilConductivity();
+  /**
+   * <code>.pt.sharespot.iot.core.SoilConductivity soil_conductivity = 16;</code>
+   */
+  pt.sharespot.iot.core.buf.model.SoilConductivityOrBuilder getSoilConductivityOrBuilder();
 }
