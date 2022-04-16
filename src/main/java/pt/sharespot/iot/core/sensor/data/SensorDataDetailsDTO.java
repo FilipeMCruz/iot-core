@@ -48,6 +48,10 @@ public class SensorDataDetailsDTO {
 
     public VOCDataDTO voc;
 
+    public PM2_5DataDTO pm2_5;
+
+    public PM10DataDTO pm10;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case ALTITUDE -> gps != null && gps.existsAltitude();
@@ -78,12 +82,24 @@ public class SensorDataDetailsDTO {
             case NO2 -> no2 != null && no2.exists();
             case O3 -> o3 != null && o3.exists();
             case VOC -> voc != null && voc.exists();
+            case PM2_5 -> pm2_5 != null && pm2_5.exists();
+            case PM10 -> pm10 != null && pm10.exists();
             default -> false;
         };
     }
 
     public SensorDataDetailsDTO withCO2(CO2DataDTO co2) {
         this.co2 = co2;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withPM2_5(PM2_5DataDTO pm2_5) {
+        this.pm2_5 = pm2_5;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withPM10(PM10DataDTO pm10) {
+        this.pm10 = pm10;
         return this;
     }
 

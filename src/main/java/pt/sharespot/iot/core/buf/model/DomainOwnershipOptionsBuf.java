@@ -94,7 +94,7 @@ public enum DomainOwnershipOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(12);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(14);
   }
 
   private static final DomainOwnershipOptionsBuf[] VALUES = values();

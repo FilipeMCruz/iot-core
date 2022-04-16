@@ -149,6 +149,14 @@ public enum PropertyName {
         public String path() {
             return "data.voc.ppm";
         }
+    }, PM2_5 {
+        public String path() {
+            return "data.pm2_5.microGramsPerCubicMeter";
+        }
+    }, PM10 {
+        public String path() {
+            return "data.pm10.microGramsPerCubicMeter";
+        }
     };
 
     public String path() {

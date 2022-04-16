@@ -336,4 +336,34 @@ public interface SensorDataOrBuilder extends
    * <code>.pt.sharespot.iot.core.VOC voc = 22;</code>
    */
   pt.sharespot.iot.core.buf.model.VOCOrBuilder getVocOrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+   * @return Whether the pm25 field is set.
+   */
+  boolean hasPm25();
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+   * @return The pm25.
+   */
+  pt.sharespot.iot.core.buf.model.PM2_5 getPm25();
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+   */
+  pt.sharespot.iot.core.buf.model.PM2_5OrBuilder getPm25OrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+   * @return Whether the pm10 field is set.
+   */
+  boolean hasPm10();
+  /**
+   * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+   * @return The pm10.
+   */
+  pt.sharespot.iot.core.buf.model.PM10 getPm10();
+  /**
+   * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+   */
+  pt.sharespot.iot.core.buf.model.PM10OrBuilder getPm10OrBuilder();
 }

@@ -94,7 +94,7 @@ public enum SoilConductivityDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(7);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(9);
   }
 
   private static final SoilConductivityDataOptionsBuf[] VALUES = values();

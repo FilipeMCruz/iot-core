@@ -339,4 +339,26 @@ public interface RoutingKeysBufOrBuilder extends
    * @return The voc.
    */
   pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf getVoc();
+
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+   * @return The enum numeric value on the wire for pm25.
+   */
+  int getPm25Value();
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+   * @return The pm25.
+   */
+  pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf getPm25();
+
+  /**
+   * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+   * @return The enum numeric value on the wire for pm10.
+   */
+  int getPm10Value();
+  /**
+   * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+   * @return The pm10.
+   */
+  pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf getPm10();
 }

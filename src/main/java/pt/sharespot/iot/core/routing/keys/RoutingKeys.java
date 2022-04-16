@@ -69,6 +69,10 @@ public class RoutingKeys {
 
     public RoutingKeyOption<VOCDataOptions> voc;
 
+    public RoutingKeyOption<PM2_5DataOptions> pm2_5;
+
+    public RoutingKeyOption<PM10DataOptions> pm10;
+
     public RoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
                        String version,
                        RoutingKeyOption<InfoTypeOptions> infoType,
@@ -98,7 +102,9 @@ public class RoutingKeys {
                        RoutingKeyOption<NH3DataOptions> nh3,
                        RoutingKeyOption<NO2DataOptions> no2,
                        RoutingKeyOption<O3DataOptions> o3,
-                       RoutingKeyOption<VOCDataOptions> voc) {
+                       RoutingKeyOption<VOCDataOptions> voc,
+                       RoutingKeyOption<PM2_5DataOptions> pm2_5,
+                       RoutingKeyOption<PM10DataOptions> pm10) {
         this.containerType = containerType;
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
@@ -129,6 +135,8 @@ public class RoutingKeys {
         this.no2 = no2;
         this.o3 = o3;
         this.voc = voc;
+        this.pm2_5 = pm2_5;
+        this.pm10 = pm10;
     }
 
     public RoutingKeys() {
@@ -136,7 +144,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.{24}.{25}.{26}.{27}.{28}.{29}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.{24}.{25}.{26}.{27}.{28}.{29}.{30}.{31}.#",
                 containerType.value(),
                 version,
                 infoType.value(),
@@ -166,11 +174,13 @@ public class RoutingKeys {
                 nh3.value(),
                 no2.value(),
                 o3.value(),
-                voc.value());
+                voc.value(),
+                pm2_5.value(),
+                pm10.value());
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.{24}.{25}.{26}.{27}.{28}.{29}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.{24}.{25}.{26}.{27}.{28}.{29}.{30}.{31}.#",
                 containerType.details(),
                 version,
                 infoType.details(),
@@ -200,7 +210,9 @@ public class RoutingKeys {
                 nh3.details(),
                 no2.details(),
                 o3.details(),
-                voc.details());
+                voc.details(),
+                pm2_5.details(),
+                pm10.details());
     }
 
     public static RoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -274,6 +286,10 @@ public class RoutingKeys {
 
         private RoutingKeyOption<VOCDataOptions> voc;
 
+        public RoutingKeyOption<PM2_5DataOptions> pm2_5;
+
+        public RoutingKeyOption<PM10DataOptions> pm10;
+
         private final RoutingKeysBuilderOptions options;
 
         private RoutingKeysBuilder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -284,6 +300,16 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withContainerType(ContainerTypeOptions containerType) {
             this.containerType = RoutingKeyOption.of(containerType);
+            return this;
+        }
+
+        public RoutingKeysBuilder withPm2_5(PM2_5DataOptions pm2_5) {
+            this.pm2_5 = RoutingKeyOption.of(pm2_5);
+            return this;
+        }
+
+        public RoutingKeysBuilder withPm10(PM10DataOptions pm10) {
+            this.pm10 = RoutingKeyOption.of(pm10);
             return this;
         }
 
@@ -452,6 +478,8 @@ public class RoutingKeys {
             this.o3 = RoutingKeyOption.of(O3DataOptions.UNIDENTIFIED_O3_DATA);
             this.nh3 = RoutingKeyOption.of(NH3DataOptions.UNIDENTIFIED_NH3_DATA);
             this.no2 = RoutingKeyOption.of(NO2DataOptions.UNIDENTIFIED_NO2_DATA);
+            this.pm2_5 = RoutingKeyOption.of(PM2_5DataOptions.WITHOUT_PM2_5_DATA);
+            this.pm10 = RoutingKeyOption.of(PM10DataOptions.UNIDENTIFIED_PM10_DATA);
             return this;
         }
 
@@ -501,6 +529,10 @@ public class RoutingKeys {
                     NH3DataOptions.WITH_NH3_DATA : NH3DataOptions.WITHOUT_NH3_DATA);
             this.no2 = RoutingKeyOption.of(data.hasAllProperties(PropertyName.NO2) ?
                     NO2DataOptions.WITH_NO2_DATA : NO2DataOptions.WITHOUT_NO2_DATA);
+            this.pm2_5 = RoutingKeyOption.of(data.hasAllProperties(PropertyName.PM2_5) ?
+                    PM2_5DataOptions.WITH_PM2_5_DATA : PM2_5DataOptions.WITHOUT_PM2_5_DATA);
+            this.pm10 = RoutingKeyOption.of(data.hasAllProperties(PropertyName.PM10) ?
+                    PM10DataOptions.WITH_PM10_DATA : PM10DataOptions.WITHOUT_PM10_DATA);
             return this;
         }
 
@@ -534,6 +566,8 @@ public class RoutingKeys {
             this.o3 = this.o3 == null ? RoutingKeyOption.any() : this.o3;
             this.nh3 = this.nh3 == null ? RoutingKeyOption.any() : this.nh3;
             this.no2 = this.no2 == null ? RoutingKeyOption.any() : this.no2;
+            this.pm10 = this.pm10 == null ? RoutingKeyOption.any() : this.pm10;
+            this.pm2_5 = this.pm2_5 == null ? RoutingKeyOption.any() : this.pm2_5;
             return build();
         }
 
@@ -566,6 +600,8 @@ public class RoutingKeys {
             this.o3 = this.o3 == null ? consumer.o3 : this.o3;
             this.nh3 = this.nh3 == null ? consumer.nh3 : this.nh3;
             this.no2 = this.no2 == null ? consumer.no2 : this.no2;
+            this.pm10 = this.pm10 == null ? consumer.pm10 : this.pm10;
+            this.pm2_5 = this.pm2_5 == null ? consumer.pm2_5 : this.pm2_5;
             return build();
         }
 
@@ -603,6 +639,8 @@ public class RoutingKeys {
             this.no2 = NO2DataOptions.extract(splinted[26]);
             this.o3 = O3DataOptions.extract(splinted[27]);
             this.voc = VOCDataOptions.extract(splinted[28]);
+            this.pm2_5 = PM2_5DataOptions.extract(splinted[29]);
+            this.pm10 = PM10DataOptions.extract(splinted[30]);
             return build();
         }
 
@@ -640,7 +678,9 @@ public class RoutingKeys {
                     nh3,
                     no2,
                     o3,
-                    voc);
+                    voc,
+                    pm2_5,
+                    pm10);
             return toOptional(routingKeys);
         }
 
@@ -673,6 +713,8 @@ public class RoutingKeys {
                     routingKeys.no2 == null ||
                     routingKeys.o3 == null ||
                     routingKeys.voc == null ||
+                    routingKeys.pm2_5 == null ||
+                    routingKeys.pm10 == null ||
                     !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+") && !ANY.equals(routingKeys.sensorTypeId) ||
                     routingKeys.legitimacy == null) {
                 return Optional.empty();
@@ -707,6 +749,8 @@ public class RoutingKeys {
                         routingKeys.no2.isAny() ||
                         routingKeys.o3.isAny() ||
                         routingKeys.voc.isAny() ||
+                        routingKeys.pm2_5.isAny() ||
+                        routingKeys.pm10.isAny() ||
                         !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+")) {
                     return Optional.empty();
                 }

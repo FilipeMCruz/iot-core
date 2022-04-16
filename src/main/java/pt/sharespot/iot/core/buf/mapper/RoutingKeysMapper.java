@@ -37,6 +37,8 @@ public class RoutingKeysMapper {
                 .setNo2(toBuf(dto.no2.get()))
                 .setO3(toBuf(dto.o3.get()))
                 .setVoc(toBuf(dto.voc.get()))
+                .setPm10(toBuf(dto.pm10.get()))
+                .setPm25(toBuf(dto.pm2_5.get()))
                 .setWaterPressure(toBuf(dto.waterPressure.get()));
     }
 
@@ -71,6 +73,8 @@ public class RoutingKeysMapper {
                 .withNO2(toModel(buf.getNo2()))
                 .withO3(toModel(buf.getO3()))
                 .withVOC(toModel(buf.getVoc()))
+                .withPm2_5(toModel(buf.getPm25()))
+                .withPm10(toModel(buf.getPm10()))
                 .build()
                 .orElseThrow(() -> new RuntimeException("Wrong Routing Keys"));
     }
@@ -390,6 +394,14 @@ public class RoutingKeysMapper {
         };
     }
 
+    private static SoilConductivityDataOptions toModel(SoilConductivityDataOptionsBuf buf) {
+        return switch (buf) {
+            default -> SoilConductivityDataOptions.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA;
+            case WITH_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptions.WITH_SOIL_CONDUCTIVITY_DATA;
+            case WITHOUT_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptions.WITHOUT_SOIL_CONDUCTIVITY_DATA;
+        };
+    }
+
     private static CO2DataOptions toModel(CO2DataOptionsBuf buf) {
         return switch (buf) {
             default -> CO2DataOptions.UNIDENTIFIED_CO2_DATA;
@@ -486,11 +498,35 @@ public class RoutingKeysMapper {
         };
     }
 
-    private static SoilConductivityDataOptions toModel(SoilConductivityDataOptionsBuf buf) {
+    private static PM2_5DataOptions toModel(PM2_5DataOptionsBuf buf) {
         return switch (buf) {
-            default -> SoilConductivityDataOptions.UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA;
-            case WITH_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptions.WITH_SOIL_CONDUCTIVITY_DATA;
-            case WITHOUT_SOIL_CONDUCTIVITY_DATA -> SoilConductivityDataOptions.WITHOUT_SOIL_CONDUCTIVITY_DATA;
+            default -> PM2_5DataOptions.UNIDENTIFIED_PM2_5_DATA;
+            case WITH_PM2_5_DATA -> PM2_5DataOptions.WITH_PM2_5_DATA;
+            case WITHOUT_PM2_5_DATA -> PM2_5DataOptions.WITHOUT_PM2_5_DATA;
+        };
+    }
+
+    private static PM2_5DataOptionsBuf toBuf(PM2_5DataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_PM2_5_DATA -> PM2_5DataOptionsBuf.UNIDENTIFIED_PM2_5_DATA;
+            case WITH_PM2_5_DATA -> PM2_5DataOptionsBuf.WITH_PM2_5_DATA;
+            case WITHOUT_PM2_5_DATA -> PM2_5DataOptionsBuf.WITHOUT_PM2_5_DATA;
+        };
+    }
+
+    private static PM10DataOptions toModel(PM10DataOptionsBuf buf) {
+        return switch (buf) {
+            default -> PM10DataOptions.UNIDENTIFIED_PM10_DATA;
+            case WITH_PM10_DATA -> PM10DataOptions.WITH_PM10_DATA;
+            case WITHOUT_PM10_DATA -> PM10DataOptions.WITHOUT_PM10_DATA;
+        };
+    }
+
+    private static PM10DataOptionsBuf toBuf(PM10DataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_PM10_DATA -> PM10DataOptionsBuf.UNIDENTIFIED_PM10_DATA;
+            case WITH_PM10_DATA -> PM10DataOptionsBuf.WITH_PM10_DATA;
+            case WITHOUT_PM10_DATA -> PM10DataOptionsBuf.WITHOUT_PM10_DATA;
         };
     }
 

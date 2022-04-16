@@ -73,6 +73,12 @@ public class SensorDataMapper {
         if (dto.hasProperty(PropertyName.VOC))
             builder.setVoc(VOCMapper.toBuf(dto.voc));
 
+        if (dto.hasProperty(PropertyName.PM10))
+            builder.setPm10(PM10Mapper.toBuf(dto.pm10));
+
+        if (dto.hasProperty(PropertyName.PM2_5))
+            builder.setPm25(PM2_5Mapper.toBuf(dto.pm2_5));
+
         return builder;
     }
 
@@ -99,6 +105,8 @@ public class SensorDataMapper {
                 .withNO2(NO2Mapper.toModel(buf.getNo2()))
                 .withO3(O3Mapper.toModel(buf.getO3()))
                 .withVOC(VOCMapper.toModel(buf.getVoc()))
+                .withPM2_5(PM2_5Mapper.toModel(buf.getPm25()))
+                .withPM10(PM10Mapper.toModel(buf.getPm10()))
                 .withWaterPressure(WaterPressureMapper.toModel(buf.getWaterPressure()));
     }
 }

@@ -46,6 +46,8 @@ private static final long serialVersionUID = 0L;
     no2_ = 0;
     o3_ = 0;
     voc_ = 0;
+    pm25_ = 0;
+    pm10_ = 0;
   }
 
   @java.lang.Override
@@ -256,6 +258,18 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             voc_ = rawValue;
+            break;
+          }
+          case 248: {
+            int rawValue = input.readEnum();
+
+            pm25_ = rawValue;
+            break;
+          }
+          case 256: {
+            int rawValue = input.readEnum();
+
+            pm10_ = rawValue;
             break;
           }
           default: {
@@ -917,6 +931,44 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf.UNRECOGNIZED : result;
   }
 
+  public static final int PM2_5_FIELD_NUMBER = 31;
+  private int pm25_;
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+   * @return The enum numeric value on the wire for pm25.
+   */
+  @java.lang.Override public int getPm25Value() {
+    return pm25_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+   * @return The pm25.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf getPm25() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf result = pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf.valueOf(pm25_);
+    return result == null ? pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf.UNRECOGNIZED : result;
+  }
+
+  public static final int PM10_FIELD_NUMBER = 32;
+  private int pm10_;
+  /**
+   * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+   * @return The enum numeric value on the wire for pm10.
+   */
+  @java.lang.Override public int getPm10Value() {
+    return pm10_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+   * @return The pm10.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf getPm10() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf result = pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf.valueOf(pm10_);
+    return result == null ? pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1020,6 +1072,12 @@ private static final long serialVersionUID = 0L;
     }
     if (voc_ != pt.sharespot.iot.core.buf.model.VOCDataOptionsBuf.UNIDENTIFIED_VOC_DATA.getNumber()) {
       output.writeEnum(30, voc_);
+    }
+    if (pm25_ != pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf.UNIDENTIFIED_PM2_5_DATA.getNumber()) {
+      output.writeEnum(31, pm25_);
+    }
+    if (pm10_ != pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf.UNIDENTIFIED_PM10_DATA.getNumber()) {
+      output.writeEnum(32, pm10_);
     }
     unknownFields.writeTo(output);
   }
@@ -1147,6 +1205,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(30, voc_);
     }
+    if (pm25_ != pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf.UNIDENTIFIED_PM2_5_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(31, pm25_);
+    }
+    if (pm10_ != pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf.UNIDENTIFIED_PM10_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(32, pm10_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1195,6 +1261,8 @@ private static final long serialVersionUID = 0L;
     if (no2_ != other.no2_) return false;
     if (o3_ != other.o3_) return false;
     if (voc_ != other.voc_) return false;
+    if (pm25_ != other.pm25_) return false;
+    if (pm10_ != other.pm10_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1266,6 +1334,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + o3_;
     hash = (37 * hash) + VOC_FIELD_NUMBER;
     hash = (53 * hash) + voc_;
+    hash = (37 * hash) + PM2_5_FIELD_NUMBER;
+    hash = (53 * hash) + pm25_;
+    hash = (37 * hash) + PM10_FIELD_NUMBER;
+    hash = (53 * hash) + pm10_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1459,6 +1531,10 @@ private static final long serialVersionUID = 0L;
 
       voc_ = 0;
 
+      pm25_ = 0;
+
+      pm10_ = 0;
+
       return this;
     }
 
@@ -1515,6 +1591,8 @@ private static final long serialVersionUID = 0L;
       result.no2_ = no2_;
       result.o3_ = o3_;
       result.voc_ = voc_;
+      result.pm25_ = pm25_;
+      result.pm10_ = pm10_;
       onBuilt();
       return result;
     }
@@ -1655,6 +1733,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.voc_ != 0) {
         setVocValue(other.getVocValue());
+      }
+      if (other.pm25_ != 0) {
+        setPm25Value(other.getPm25Value());
+      }
+      if (other.pm10_ != 0) {
+        setPm10Value(other.getPm10Value());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3367,6 +3451,114 @@ private static final long serialVersionUID = 0L;
     public Builder clearVoc() {
       
       voc_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int pm25_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+     * @return The enum numeric value on the wire for pm25.
+     */
+    @java.lang.Override public int getPm25Value() {
+      return pm25_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+     * @param value The enum numeric value on the wire for pm25 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPm25Value(int value) {
+      
+      pm25_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+     * @return The pm25.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf getPm25() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf result = pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf.valueOf(pm25_);
+      return result == null ? pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+     * @param value The pm25 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPm25(pt.sharespot.iot.core.buf.model.PM2_5DataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      pm25_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5DataOptionsBuf pm2_5 = 31;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPm25() {
+      
+      pm25_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int pm10_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+     * @return The enum numeric value on the wire for pm10.
+     */
+    @java.lang.Override public int getPm10Value() {
+      return pm10_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+     * @param value The enum numeric value on the wire for pm10 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPm10Value(int value) {
+      
+      pm10_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+     * @return The pm10.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf getPm10() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf result = pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf.valueOf(pm10_);
+      return result == null ? pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+     * @param value The pm10 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPm10(pt.sharespot.iot.core.buf.model.PM10DataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      pm10_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10DataOptionsBuf pm10 = 32;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPm10() {
+      
+      pm10_ = 0;
       onChanged();
       return this;
     }

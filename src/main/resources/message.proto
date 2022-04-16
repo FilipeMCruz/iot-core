@@ -49,6 +49,16 @@ message SensorData {
   NO2 no2 = 20;
   O3 o3 = 21;
   VOC voc = 22;
+  PM2_5 pm2_5 = 23;
+  PM10 pm10 = 24;
+}
+
+message PM2_5 {
+  float micro_grams_per_cubic_meter = 1;
+}
+
+message PM10 {
+  float micro_grams_per_cubic_meter = 1;
 }
 
 message CO2 {
@@ -205,6 +215,20 @@ message RoutingKeysBuf {
   NO2DataOptionsBuf no2 = 28;
   O3DataOptionsBuf o3 = 29;
   VOCDataOptionsBuf voc = 30;
+  PM2_5DataOptionsBuf pm2_5 = 31;
+  PM10DataOptionsBuf pm10 = 32;
+}
+
+enum PM10DataOptionsBuf {
+  UNIDENTIFIED_PM10_DATA = 0;
+  WITH_PM10_DATA = 1;
+  WITHOUT_PM10_DATA = 2;
+}
+
+enum PM2_5DataOptionsBuf {
+  UNIDENTIFIED_PM2_5_DATA = 0;
+  WITH_PM2_5_DATA = 1;
+  WITHOUT_PM2_5_DATA = 2;
 }
 
 enum CO2DataOptionsBuf {

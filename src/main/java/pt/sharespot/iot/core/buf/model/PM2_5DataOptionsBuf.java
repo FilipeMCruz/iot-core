@@ -4,37 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.IlluminanceDataOptionsBuf}
+ * Protobuf enum {@code pt.sharespot.iot.core.PM2_5DataOptionsBuf}
  */
-public enum IlluminanceDataOptionsBuf
+public enum PM2_5DataOptionsBuf
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNIDENTIFIED_ILLUMINANCE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_PM2_5_DATA = 0;</code>
    */
-  UNIDENTIFIED_ILLUMINANCE_DATA(0),
+  UNIDENTIFIED_PM2_5_DATA(0),
   /**
-   * <code>WITH_ILLUMINANCE_DATA = 1;</code>
+   * <code>WITH_PM2_5_DATA = 1;</code>
    */
-  WITH_ILLUMINANCE_DATA(1),
+  WITH_PM2_5_DATA(1),
   /**
-   * <code>WITHOUT_ILLUMINANCE_DATA = 2;</code>
+   * <code>WITHOUT_PM2_5_DATA = 2;</code>
    */
-  WITHOUT_ILLUMINANCE_DATA(2),
+  WITHOUT_PM2_5_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNIDENTIFIED_ILLUMINANCE_DATA = 0;</code>
+   * <code>UNIDENTIFIED_PM2_5_DATA = 0;</code>
    */
-  public static final int UNIDENTIFIED_ILLUMINANCE_DATA_VALUE = 0;
+  public static final int UNIDENTIFIED_PM2_5_DATA_VALUE = 0;
   /**
-   * <code>WITH_ILLUMINANCE_DATA = 1;</code>
+   * <code>WITH_PM2_5_DATA = 1;</code>
    */
-  public static final int WITH_ILLUMINANCE_DATA_VALUE = 1;
+  public static final int WITH_PM2_5_DATA_VALUE = 1;
   /**
-   * <code>WITHOUT_ILLUMINANCE_DATA = 2;</code>
+   * <code>WITHOUT_PM2_5_DATA = 2;</code>
    */
-  public static final int WITHOUT_ILLUMINANCE_DATA_VALUE = 2;
+  public static final int WITHOUT_PM2_5_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -51,7 +51,7 @@ public enum IlluminanceDataOptionsBuf
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static IlluminanceDataOptionsBuf valueOf(int value) {
+  public static PM2_5DataOptionsBuf valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +59,24 @@ public enum IlluminanceDataOptionsBuf
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static IlluminanceDataOptionsBuf forNumber(int value) {
+  public static PM2_5DataOptionsBuf forNumber(int value) {
     switch (value) {
-      case 0: return UNIDENTIFIED_ILLUMINANCE_DATA;
-      case 1: return WITH_ILLUMINANCE_DATA;
-      case 2: return WITHOUT_ILLUMINANCE_DATA;
+      case 0: return UNIDENTIFIED_PM2_5_DATA;
+      case 1: return WITH_PM2_5_DATA;
+      case 2: return WITHOUT_PM2_5_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<IlluminanceDataOptionsBuf>
+  public static com.google.protobuf.Internal.EnumLiteMap<PM2_5DataOptionsBuf>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      IlluminanceDataOptionsBuf> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<IlluminanceDataOptionsBuf>() {
-          public IlluminanceDataOptionsBuf findValueByNumber(int number) {
-            return IlluminanceDataOptionsBuf.forNumber(number);
+      PM2_5DataOptionsBuf> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<PM2_5DataOptionsBuf>() {
+          public PM2_5DataOptionsBuf findValueByNumber(int number) {
+            return PM2_5DataOptionsBuf.forNumber(number);
           }
         };
 
@@ -94,12 +94,12 @@ public enum IlluminanceDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(15);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(2);
   }
 
-  private static final IlluminanceDataOptionsBuf[] VALUES = values();
+  private static final PM2_5DataOptionsBuf[] VALUES = values();
 
-  public static IlluminanceDataOptionsBuf valueOf(
+  public static PM2_5DataOptionsBuf valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +113,10 @@ public enum IlluminanceDataOptionsBuf
 
   private final int value;
 
-  private IlluminanceDataOptionsBuf(int value) {
+  private PM2_5DataOptionsBuf(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.IlluminanceDataOptionsBuf)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.PM2_5DataOptionsBuf)
 }
 

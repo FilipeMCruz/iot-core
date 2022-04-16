@@ -334,6 +334,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 186: {
+            pt.sharespot.iot.core.buf.model.PM2_5.Builder subBuilder = null;
+            if (pm25_ != null) {
+              subBuilder = pm25_.toBuilder();
+            }
+            pm25_ = input.readMessage(pt.sharespot.iot.core.buf.model.PM2_5.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pm25_);
+              pm25_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 194: {
+            pt.sharespot.iot.core.buf.model.PM10.Builder subBuilder = null;
+            if (pm10_ != null) {
+              subBuilder = pm10_.toBuilder();
+            }
+            pm10_ = input.readMessage(pt.sharespot.iot.core.buf.model.PM10.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pm10_);
+              pm10_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -938,6 +964,58 @@ private static final long serialVersionUID = 0L;
     return getVoc();
   }
 
+  public static final int PM2_5_FIELD_NUMBER = 23;
+  private pt.sharespot.iot.core.buf.model.PM2_5 pm25_;
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+   * @return Whether the pm25 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPm25() {
+    return pm25_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+   * @return The pm25.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.PM2_5 getPm25() {
+    return pm25_ == null ? pt.sharespot.iot.core.buf.model.PM2_5.getDefaultInstance() : pm25_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.PM2_5OrBuilder getPm25OrBuilder() {
+    return getPm25();
+  }
+
+  public static final int PM10_FIELD_NUMBER = 24;
+  private pt.sharespot.iot.core.buf.model.PM10 pm10_;
+  /**
+   * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+   * @return Whether the pm10 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPm10() {
+    return pm10_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+   * @return The pm10.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.PM10 getPm10() {
+    return pm10_ == null ? pt.sharespot.iot.core.buf.model.PM10.getDefaultInstance() : pm10_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.PM10OrBuilder getPm10OrBuilder() {
+    return getPm10();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1017,6 +1095,12 @@ private static final long serialVersionUID = 0L;
     }
     if (voc_ != null) {
       output.writeMessage(22, getVoc());
+    }
+    if (pm25_ != null) {
+      output.writeMessage(23, getPm25());
+    }
+    if (pm10_ != null) {
+      output.writeMessage(24, getPm10());
     }
     unknownFields.writeTo(output);
   }
@@ -1114,6 +1198,14 @@ private static final long serialVersionUID = 0L;
     if (voc_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(22, getVoc());
+    }
+    if (pm25_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(23, getPm25());
+    }
+    if (pm10_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getPm10());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1240,6 +1332,16 @@ private static final long serialVersionUID = 0L;
       if (!getVoc()
           .equals(other.getVoc())) return false;
     }
+    if (hasPm25() != other.hasPm25()) return false;
+    if (hasPm25()) {
+      if (!getPm25()
+          .equals(other.getPm25())) return false;
+    }
+    if (hasPm10() != other.hasPm10()) return false;
+    if (hasPm10()) {
+      if (!getPm10()
+          .equals(other.getPm10())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1338,6 +1440,14 @@ private static final long serialVersionUID = 0L;
     if (hasVoc()) {
       hash = (37 * hash) + VOC_FIELD_NUMBER;
       hash = (53 * hash) + getVoc().hashCode();
+    }
+    if (hasPm25()) {
+      hash = (37 * hash) + PM2_5_FIELD_NUMBER;
+      hash = (53 * hash) + getPm25().hashCode();
+    }
+    if (hasPm10()) {
+      hash = (37 * hash) + PM10_FIELD_NUMBER;
+      hash = (53 * hash) + getPm10().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1604,6 +1714,18 @@ private static final long serialVersionUID = 0L;
         voc_ = null;
         vocBuilder_ = null;
       }
+      if (pm25Builder_ == null) {
+        pm25_ = null;
+      } else {
+        pm25_ = null;
+        pm25Builder_ = null;
+      }
+      if (pm10Builder_ == null) {
+        pm10_ = null;
+      } else {
+        pm10_ = null;
+        pm10Builder_ = null;
+      }
       return this;
     }
 
@@ -1740,6 +1862,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.voc_ = vocBuilder_.build();
       }
+      if (pm25Builder_ == null) {
+        result.pm25_ = pm25_;
+      } else {
+        result.pm25_ = pm25Builder_.build();
+      }
+      if (pm10Builder_ == null) {
+        result.pm10_ = pm10_;
+      } else {
+        result.pm10_ = pm10Builder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1853,6 +1985,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasVoc()) {
         mergeVoc(other.getVoc());
+      }
+      if (other.hasPm25()) {
+        mergePm25(other.getPm25());
+      }
+      if (other.hasPm10()) {
+        mergePm10(other.getPm10());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4499,6 +4637,244 @@ private static final long serialVersionUID = 0L;
         voc_ = null;
       }
       return vocBuilder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.PM2_5 pm25_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.PM2_5, pt.sharespot.iot.core.buf.model.PM2_5.Builder, pt.sharespot.iot.core.buf.model.PM2_5OrBuilder> pm25Builder_;
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     * @return Whether the pm25 field is set.
+     */
+    public boolean hasPm25() {
+      return pm25Builder_ != null || pm25_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     * @return The pm25.
+     */
+    public pt.sharespot.iot.core.buf.model.PM2_5 getPm25() {
+      if (pm25Builder_ == null) {
+        return pm25_ == null ? pt.sharespot.iot.core.buf.model.PM2_5.getDefaultInstance() : pm25_;
+      } else {
+        return pm25Builder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     */
+    public Builder setPm25(pt.sharespot.iot.core.buf.model.PM2_5 value) {
+      if (pm25Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pm25_ = value;
+        onChanged();
+      } else {
+        pm25Builder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     */
+    public Builder setPm25(
+        pt.sharespot.iot.core.buf.model.PM2_5.Builder builderForValue) {
+      if (pm25Builder_ == null) {
+        pm25_ = builderForValue.build();
+        onChanged();
+      } else {
+        pm25Builder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     */
+    public Builder mergePm25(pt.sharespot.iot.core.buf.model.PM2_5 value) {
+      if (pm25Builder_ == null) {
+        if (pm25_ != null) {
+          pm25_ =
+            pt.sharespot.iot.core.buf.model.PM2_5.newBuilder(pm25_).mergeFrom(value).buildPartial();
+        } else {
+          pm25_ = value;
+        }
+        onChanged();
+      } else {
+        pm25Builder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     */
+    public Builder clearPm25() {
+      if (pm25Builder_ == null) {
+        pm25_ = null;
+        onChanged();
+      } else {
+        pm25_ = null;
+        pm25Builder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.PM2_5.Builder getPm25Builder() {
+      
+      onChanged();
+      return getPm25FieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.PM2_5OrBuilder getPm25OrBuilder() {
+      if (pm25Builder_ != null) {
+        return pm25Builder_.getMessageOrBuilder();
+      } else {
+        return pm25_ == null ?
+            pt.sharespot.iot.core.buf.model.PM2_5.getDefaultInstance() : pm25_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM2_5 pm2_5 = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.PM2_5, pt.sharespot.iot.core.buf.model.PM2_5.Builder, pt.sharespot.iot.core.buf.model.PM2_5OrBuilder> 
+        getPm25FieldBuilder() {
+      if (pm25Builder_ == null) {
+        pm25Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.PM2_5, pt.sharespot.iot.core.buf.model.PM2_5.Builder, pt.sharespot.iot.core.buf.model.PM2_5OrBuilder>(
+                getPm25(),
+                getParentForChildren(),
+                isClean());
+        pm25_ = null;
+      }
+      return pm25Builder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.PM10 pm10_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.PM10, pt.sharespot.iot.core.buf.model.PM10.Builder, pt.sharespot.iot.core.buf.model.PM10OrBuilder> pm10Builder_;
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     * @return Whether the pm10 field is set.
+     */
+    public boolean hasPm10() {
+      return pm10Builder_ != null || pm10_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     * @return The pm10.
+     */
+    public pt.sharespot.iot.core.buf.model.PM10 getPm10() {
+      if (pm10Builder_ == null) {
+        return pm10_ == null ? pt.sharespot.iot.core.buf.model.PM10.getDefaultInstance() : pm10_;
+      } else {
+        return pm10Builder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     */
+    public Builder setPm10(pt.sharespot.iot.core.buf.model.PM10 value) {
+      if (pm10Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pm10_ = value;
+        onChanged();
+      } else {
+        pm10Builder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     */
+    public Builder setPm10(
+        pt.sharespot.iot.core.buf.model.PM10.Builder builderForValue) {
+      if (pm10Builder_ == null) {
+        pm10_ = builderForValue.build();
+        onChanged();
+      } else {
+        pm10Builder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     */
+    public Builder mergePm10(pt.sharespot.iot.core.buf.model.PM10 value) {
+      if (pm10Builder_ == null) {
+        if (pm10_ != null) {
+          pm10_ =
+            pt.sharespot.iot.core.buf.model.PM10.newBuilder(pm10_).mergeFrom(value).buildPartial();
+        } else {
+          pm10_ = value;
+        }
+        onChanged();
+      } else {
+        pm10Builder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     */
+    public Builder clearPm10() {
+      if (pm10Builder_ == null) {
+        pm10_ = null;
+        onChanged();
+      } else {
+        pm10_ = null;
+        pm10Builder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.PM10.Builder getPm10Builder() {
+      
+      onChanged();
+      return getPm10FieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.PM10OrBuilder getPm10OrBuilder() {
+      if (pm10Builder_ != null) {
+        return pm10Builder_.getMessageOrBuilder();
+      } else {
+        return pm10_ == null ?
+            pt.sharespot.iot.core.buf.model.PM10.getDefaultInstance() : pm10_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.PM10 pm10 = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.PM10, pt.sharespot.iot.core.buf.model.PM10.Builder, pt.sharespot.iot.core.buf.model.PM10OrBuilder> 
+        getPm10FieldBuilder() {
+      if (pm10Builder_ == null) {
+        pm10Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.PM10, pt.sharespot.iot.core.buf.model.PM10.Builder, pt.sharespot.iot.core.buf.model.PM10OrBuilder>(
+                getPm10(),
+                getParentForChildren(),
+                isClean());
+        pm10_ = null;
+      }
+      return pm10Builder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
