@@ -217,6 +217,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 114: {
+            pt.sharespot.iot.core.buf.model.Distance.Builder subBuilder = null;
+            if (distance_ != null) {
+              subBuilder = distance_.toBuilder();
+            }
+            distance_ = input.readMessage(pt.sharespot.iot.core.buf.model.Distance.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(distance_);
+              distance_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -587,6 +600,32 @@ private static final long serialVersionUID = 0L;
     return getPh();
   }
 
+  public static final int DISTANCE_FIELD_NUMBER = 14;
+  private pt.sharespot.iot.core.buf.model.Distance distance_;
+  /**
+   * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+   * @return Whether the distance field is set.
+   */
+  @java.lang.Override
+  public boolean hasDistance() {
+    return distance_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+   * @return The distance.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.Distance getDistance() {
+    return distance_ == null ? pt.sharespot.iot.core.buf.model.Distance.getDefaultInstance() : distance_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.DistanceOrBuilder getDistanceOrBuilder() {
+    return getDistance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -639,6 +678,9 @@ private static final long serialVersionUID = 0L;
     }
     if (ph_ != null) {
       output.writeMessage(13, getPh());
+    }
+    if (distance_ != null) {
+      output.writeMessage(14, getDistance());
     }
     unknownFields.writeTo(output);
   }
@@ -700,6 +742,10 @@ private static final long serialVersionUID = 0L;
     if (ph_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getPh());
+    }
+    if (distance_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getDistance());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -781,6 +827,11 @@ private static final long serialVersionUID = 0L;
       if (!getPh()
           .equals(other.getPh())) return false;
     }
+    if (hasDistance() != other.hasDistance()) return false;
+    if (hasDistance()) {
+      if (!getDistance()
+          .equals(other.getDistance())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -843,6 +894,10 @@ private static final long serialVersionUID = 0L;
     if (hasPh()) {
       hash = (37 * hash) + PH_FIELD_NUMBER;
       hash = (53 * hash) + getPh().hashCode();
+    }
+    if (hasDistance()) {
+      hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getDistance().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1055,6 +1110,12 @@ private static final long serialVersionUID = 0L;
         ph_ = null;
         phBuilder_ = null;
       }
+      if (distanceBuilder_ == null) {
+        distance_ = null;
+      } else {
+        distance_ = null;
+        distanceBuilder_ = null;
+      }
       return this;
     }
 
@@ -1146,6 +1207,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.ph_ = phBuilder_.build();
       }
+      if (distanceBuilder_ == null) {
+        result.distance_ = distance_;
+      } else {
+        result.distance_ = distanceBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1232,6 +1298,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasPh()) {
         mergePh(other.getPh());
+      }
+      if (other.hasDistance()) {
+        mergeDistance(other.getDistance());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2807,6 +2876,125 @@ private static final long serialVersionUID = 0L;
         ph_ = null;
       }
       return phBuilder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.Distance distance_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.Distance, pt.sharespot.iot.core.buf.model.Distance.Builder, pt.sharespot.iot.core.buf.model.DistanceOrBuilder> distanceBuilder_;
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     * @return Whether the distance field is set.
+     */
+    public boolean hasDistance() {
+      return distanceBuilder_ != null || distance_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     * @return The distance.
+     */
+    public pt.sharespot.iot.core.buf.model.Distance getDistance() {
+      if (distanceBuilder_ == null) {
+        return distance_ == null ? pt.sharespot.iot.core.buf.model.Distance.getDefaultInstance() : distance_;
+      } else {
+        return distanceBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     */
+    public Builder setDistance(pt.sharespot.iot.core.buf.model.Distance value) {
+      if (distanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        distance_ = value;
+        onChanged();
+      } else {
+        distanceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     */
+    public Builder setDistance(
+        pt.sharespot.iot.core.buf.model.Distance.Builder builderForValue) {
+      if (distanceBuilder_ == null) {
+        distance_ = builderForValue.build();
+        onChanged();
+      } else {
+        distanceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     */
+    public Builder mergeDistance(pt.sharespot.iot.core.buf.model.Distance value) {
+      if (distanceBuilder_ == null) {
+        if (distance_ != null) {
+          distance_ =
+            pt.sharespot.iot.core.buf.model.Distance.newBuilder(distance_).mergeFrom(value).buildPartial();
+        } else {
+          distance_ = value;
+        }
+        onChanged();
+      } else {
+        distanceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     */
+    public Builder clearDistance() {
+      if (distanceBuilder_ == null) {
+        distance_ = null;
+        onChanged();
+      } else {
+        distance_ = null;
+        distanceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.Distance.Builder getDistanceBuilder() {
+      
+      onChanged();
+      return getDistanceFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.DistanceOrBuilder getDistanceOrBuilder() {
+      if (distanceBuilder_ != null) {
+        return distanceBuilder_.getMessageOrBuilder();
+      } else {
+        return distance_ == null ?
+            pt.sharespot.iot.core.buf.model.Distance.getDefaultInstance() : distance_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.Distance, pt.sharespot.iot.core.buf.model.Distance.Builder, pt.sharespot.iot.core.buf.model.DistanceOrBuilder> 
+        getDistanceFieldBuilder() {
+      if (distanceBuilder_ == null) {
+        distanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.Distance, pt.sharespot.iot.core.buf.model.Distance.Builder, pt.sharespot.iot.core.buf.model.DistanceOrBuilder>(
+                getDistance(),
+                getParentForChildren(),
+                isClean());
+        distance_ = null;
+      }
+      return distanceBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

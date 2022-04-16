@@ -201,4 +201,19 @@ public interface SensorDataOrBuilder extends
    * <code>.pt.sharespot.iot.core.PH ph = 13;</code>
    */
   pt.sharespot.iot.core.buf.model.PHOrBuilder getPhOrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+   * @return Whether the distance field is set.
+   */
+  boolean hasDistance();
+  /**
+   * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+   * @return The distance.
+   */
+  pt.sharespot.iot.core.buf.model.Distance getDistance();
+  /**
+   * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
+   */
+  pt.sharespot.iot.core.buf.model.DistanceOrBuilder getDistanceOrBuilder();
 }

@@ -51,6 +51,8 @@ public class RoutingKeys {
 
     public RoutingKeyOption<PHDataOptions> ph;
 
+    public RoutingKeyOption<DistanceDataOptions> distance;
+
     public RoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
                        String version,
                        RoutingKeyOption<InfoTypeOptions> infoType,
@@ -71,7 +73,8 @@ public class RoutingKeys {
                        RoutingKeyOption<TriggerDataOptions> trigger,
                        RoutingKeyOption<DataLegitimacyOptions> legitimacy,
                        RoutingKeyOption<WaterPressureDataOptions> waterPressure,
-                       RoutingKeyOption<PHDataOptions> ph) {
+                       RoutingKeyOption<PHDataOptions> ph,
+                       RoutingKeyOption<DistanceDataOptions> distance) {
         this.containerType = containerType;
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
@@ -93,6 +96,7 @@ public class RoutingKeys {
         this.legitimacy = legitimacy;
         this.waterPressure = waterPressure;
         this.ph = ph;
+        this.distance = distance;
     }
 
     public RoutingKeys() {
@@ -100,7 +104,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.#",
                 containerType.value(),
                 version,
                 infoType.value(),
@@ -121,11 +125,12 @@ public class RoutingKeys {
                 trigger.value(),
                 battery.value(),
                 waterPressure.value(),
-                ph.value());
+                ph.value(),
+                distance.value());
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.#",
                 containerType.details(),
                 version,
                 infoType.details(),
@@ -146,7 +151,8 @@ public class RoutingKeys {
                 trigger.details(),
                 battery.details(),
                 waterPressure.details(),
-                ph.details());
+                ph.details(),
+                distance.value());
     }
 
     public static RoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -202,6 +208,8 @@ public class RoutingKeys {
 
         private RoutingKeyOption<PHDataOptions> ph;
 
+        private RoutingKeyOption<DistanceDataOptions> distance;
+
         private final RoutingKeysBuilderOptions options;
 
         private RoutingKeysBuilder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -217,6 +225,11 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withWaterPressure(WaterPressureDataOptions waterPressure) {
             this.waterPressure = RoutingKeyOption.of(waterPressure);
+            return this;
+        }
+
+        public RoutingKeysBuilder withDistance(DistanceDataOptions distance) {
+            this.distance = RoutingKeyOption.of(distance);
             return this;
         }
 
@@ -326,6 +339,7 @@ public class RoutingKeys {
             this.trigger = RoutingKeyOption.of(TriggerDataOptions.UNIDENTIFIED_TRIGGER_DATA);
             this.waterPressure = RoutingKeyOption.of(WaterPressureDataOptions.UNIDENTIFIED_WATER_PRESSURE_DATA);
             this.ph = RoutingKeyOption.of(PHDataOptions.UNIDENTIFIED_PH_DATA);
+            this.distance = RoutingKeyOption.of(DistanceDataOptions.UNIDENTIFIED_DISTANCE_DATA);
             return this;
         }
 
@@ -357,6 +371,8 @@ public class RoutingKeys {
                     WaterPressureDataOptions.WITH_WATER_PRESSURE_DATA : WaterPressureDataOptions.WITHOUT_WATER_PRESSURE_DATA);
             this.ph = RoutingKeyOption.of(data.hasAllProperties(PropertyName.PH) ?
                     PHDataOptions.WITH_PH_DATA : PHDataOptions.WITHOUT_PH_DATA);
+            this.distance = RoutingKeyOption.of(data.hasAllProperties(PropertyName.DISTANCE) ?
+                    DistanceDataOptions.WITH_DISTANCE_DATA : DistanceDataOptions.WITHOUT_DISTANCE_DATA);
             return this;
         }
 
@@ -381,6 +397,7 @@ public class RoutingKeys {
             this.legitimacy = this.legitimacy == null ? RoutingKeyOption.any() : this.legitimacy;
             this.waterPressure = this.waterPressure == null ? RoutingKeyOption.any() : this.waterPressure;
             this.ph = this.ph == null ? RoutingKeyOption.any() : this.ph;
+            this.distance = this.distance == null ? RoutingKeyOption.any() : this.distance;
             return build();
         }
 
@@ -404,6 +421,7 @@ public class RoutingKeys {
             this.legitimacy = this.legitimacy == null ? consumer.legitimacy : this.legitimacy;
             this.waterPressure = this.waterPressure == null ? consumer.waterPressure : this.waterPressure;
             this.ph = this.ph == null ? consumer.ph : this.ph;
+            this.distance = this.distance == null ? consumer.distance : this.distance;
             return build();
         }
 
@@ -432,6 +450,7 @@ public class RoutingKeys {
             this.battery = BatteryDataOptions.extract(splinted[17]);
             this.waterPressure = WaterPressureDataOptions.extract(splinted[18]);
             this.ph = PHDataOptions.extract(splinted[19]);
+            this.distance = DistanceDataOptions.extract(splinted[20]);
             return build();
         }
 
@@ -460,7 +479,8 @@ public class RoutingKeys {
                     trigger,
                     legitimacy,
                     waterPressure,
-                    ph);
+                    ph,
+                    distance);
             return toOptional(routingKeys);
         }
 
@@ -484,7 +504,8 @@ public class RoutingKeys {
                     routingKeys.trigger == null ||
                     routingKeys.waterPressure == null ||
                     routingKeys.ph == null ||
-                    !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+") && !ANY.equals(routingKeys.sensorTypeId) ||
+                    routingKeys.distance == null ||
+                    !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+") && !ANY.equals(routingKeys.sensorTypeId) ||
                     routingKeys.legitimacy == null) {
                 return Optional.empty();
             }
@@ -509,7 +530,8 @@ public class RoutingKeys {
                         routingKeys.trigger.isAny() ||
                         routingKeys.waterPressure.isAny() ||
                         routingKeys.ph.isAny() ||
-                        !routingKeys.sensorTypeId.matches("[a-zA-Z0-9]+")) {
+                        routingKeys.distance.isAny() ||
+                        !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+")) {
                     return Optional.empty();
                 }
             }

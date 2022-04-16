@@ -40,6 +40,7 @@ message SensorData {
   Trigger trigger = 11;
   WaterPressure water_pressure = 12;
   PH ph = 13;
+  Distance distance = 14;
 }
 
 message GPS {
@@ -68,6 +69,12 @@ message AirQuality {
 
 message PH {
   float value = 1;
+}
+
+message Distance {
+  float millimeters = 1;
+  float maxMillimeters = 2;
+  float minMillimeters = 3;
 }
 
 message Velocity {
@@ -149,11 +156,17 @@ message RoutingKeysBuf {
   TriggerDataOptionsBuf trigger = 19;
   WaterPressureDataOptionsBuf water_pressure = 20;
   PHDataOptionsBuf ph = 21;
+  DistanceDataOptionsBuf distance = 22;
 }
 enum PHDataOptionsBuf  {
   UNIDENTIFIED_PH_DATA = 0;
   WITH_PH_DATA = 1;
   WITHOUT_PH_DATA = 2;
+}
+enum DistanceDataOptionsBuf  {
+  UNIDENTIFIED_DISTANCE_DATA = 0;
+  WITH_DISTANCE_DATA = 1;
+  WITHOUT_DISTANCE_DATA = 2;
 }
 enum TriggerDataOptionsBuf {
   UNIDENTIFIED_TRIGGER_DATA = 0;

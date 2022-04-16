@@ -28,6 +28,7 @@ public class RoutingKeysMapper {
                 .setOwnership(toBuf(dto.ownership.get()))
                 .setTrigger(toBuf(dto.trigger.get()))
                 .setPh(toBuf(dto.ph.get()))
+                .setDistance(toBuf(dto.distance.get()))
                 .setWaterPressure(toBuf(dto.waterPressure.get()));
     }
 
@@ -53,6 +54,7 @@ public class RoutingKeysMapper {
                 .withAlarm(toModel(buf.getTrigger()))
                 .withWaterPressure(toModel(buf.getWaterPressure()))
                 .withPh(toModel(buf.getPh()))
+                .withDistance(toModel(buf.getDistance()))
                 .build()
                 .orElseThrow(() -> new RuntimeException("Wrong Routing Keys"));
     }
@@ -328,6 +330,22 @@ public class RoutingKeysMapper {
             default -> TriggerDataOptions.UNIDENTIFIED_TRIGGER_DATA;
             case WITH_TRIGGER_DATA -> TriggerDataOptions.WITH_TRIGGER_DATA;
             case WITHOUT_TRIGGER_DATA -> TriggerDataOptions.WITHOUT_TRIGGER_DATA;
+        };
+    }
+
+    private static DistanceDataOptionsBuf toBuf(DistanceDataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_DISTANCE_DATA -> DistanceDataOptionsBuf.UNIDENTIFIED_DISTANCE_DATA;
+            case WITH_DISTANCE_DATA -> DistanceDataOptionsBuf.WITH_DISTANCE_DATA;
+            case WITHOUT_DISTANCE_DATA -> DistanceDataOptionsBuf.WITHOUT_DISTANCE_DATA;
+        };
+    }
+
+    private static DistanceDataOptions toModel(DistanceDataOptionsBuf buf) {
+        return switch (buf) {
+            default -> DistanceDataOptions.UNIDENTIFIED_DISTANCE_DATA;
+            case WITH_DISTANCE_DATA -> DistanceDataOptions.WITH_DISTANCE_DATA;
+            case WITHOUT_DISTANCE_DATA -> DistanceDataOptions.WITHOUT_DISTANCE_DATA;
         };
     }
 

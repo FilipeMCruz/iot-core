@@ -37,6 +37,7 @@ private static final long serialVersionUID = 0L;
     trigger_ = 0;
     waterPressure_ = 0;
     ph_ = 0;
+    distance_ = 0;
   }
 
   @java.lang.Override
@@ -193,6 +194,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             ph_ = rawValue;
+            break;
+          }
+          case 176: {
+            int rawValue = input.readEnum();
+
+            distance_ = rawValue;
             break;
           }
           default: {
@@ -683,6 +690,25 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.PHDataOptionsBuf.UNRECOGNIZED : result;
   }
 
+  public static final int DISTANCE_FIELD_NUMBER = 22;
+  private int distance_;
+  /**
+   * <code>.pt.sharespot.iot.core.DistanceDataOptionsBuf distance = 22;</code>
+   * @return The enum numeric value on the wire for distance.
+   */
+  @java.lang.Override public int getDistanceValue() {
+    return distance_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.DistanceDataOptionsBuf distance = 22;</code>
+   * @return The distance.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf getDistance() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf result = pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf.valueOf(distance_);
+    return result == null ? pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -759,6 +785,9 @@ private static final long serialVersionUID = 0L;
     }
     if (ph_ != pt.sharespot.iot.core.buf.model.PHDataOptionsBuf.UNIDENTIFIED_PH_DATA.getNumber()) {
       output.writeEnum(21, ph_);
+    }
+    if (distance_ != pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf.UNIDENTIFIED_DISTANCE_DATA.getNumber()) {
+      output.writeEnum(22, distance_);
     }
     unknownFields.writeTo(output);
   }
@@ -850,6 +879,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(21, ph_);
     }
+    if (distance_ != pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf.UNIDENTIFIED_DISTANCE_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(22, distance_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -889,6 +922,7 @@ private static final long serialVersionUID = 0L;
     if (trigger_ != other.trigger_) return false;
     if (waterPressure_ != other.waterPressure_) return false;
     if (ph_ != other.ph_) return false;
+    if (distance_ != other.distance_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -942,6 +976,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + waterPressure_;
     hash = (37 * hash) + PH_FIELD_NUMBER;
     hash = (53 * hash) + ph_;
+    hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+    hash = (53 * hash) + distance_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1117,6 +1153,8 @@ private static final long serialVersionUID = 0L;
 
       ph_ = 0;
 
+      distance_ = 0;
+
       return this;
     }
 
@@ -1164,6 +1202,7 @@ private static final long serialVersionUID = 0L;
       result.trigger_ = trigger_;
       result.waterPressure_ = waterPressure_;
       result.ph_ = ph_;
+      result.distance_ = distance_;
       onBuilt();
       return result;
     }
@@ -1277,6 +1316,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.ph_ != 0) {
         setPhValue(other.getPhValue());
+      }
+      if (other.distance_ != 0) {
+        setDistanceValue(other.getDistanceValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2503,6 +2545,60 @@ private static final long serialVersionUID = 0L;
     public Builder clearPh() {
       
       ph_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int distance_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.DistanceDataOptionsBuf distance = 22;</code>
+     * @return The enum numeric value on the wire for distance.
+     */
+    @java.lang.Override public int getDistanceValue() {
+      return distance_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.DistanceDataOptionsBuf distance = 22;</code>
+     * @param value The enum numeric value on the wire for distance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDistanceValue(int value) {
+      
+      distance_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.DistanceDataOptionsBuf distance = 22;</code>
+     * @return The distance.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf getDistance() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf result = pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf.valueOf(distance_);
+      return result == null ? pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.DistanceDataOptionsBuf distance = 22;</code>
+     * @param value The distance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDistance(pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      distance_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.DistanceDataOptionsBuf distance = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDistance() {
+      
+      distance_ = 0;
       onChanged();
       return this;
     }

@@ -28,6 +28,8 @@ public class SensorDataDetailsDTO {
 
     public WaterPressureDataDTO waterPressure;
 
+    public DistanceDataDTO distance;
+
     public PHDataDTO ph;
 
     public boolean hasProperty(PropertyName property) {
@@ -48,6 +50,9 @@ public class SensorDataDetailsDTO {
             case WATER_PRESSURE -> waterPressure != null && waterPressure.exists();
             case BATTERY_MAX_VOLTS -> battery != null && battery.existsMaxVolts();
             case BATTERY_MIN_VOLTS -> battery != null && battery.existsMinVolts();
+            case DISTANCE -> distance != null && distance.exists();
+            case MAX_DISTANCE -> distance != null && distance.existsMaxDistance();
+            case MIN_DISTANCE -> distance != null && distance.existsMinDistance();
             case PH -> ph != null && ph.exists();
             default -> false;
         };
@@ -55,6 +60,11 @@ public class SensorDataDetailsDTO {
 
     public SensorDataDetailsDTO withBattery(BatteryDataDTO battery) {
         this.battery = battery;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withDistance(DistanceDataDTO distance) {
+        this.distance = distance;
         return this;
     }
 
