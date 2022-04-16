@@ -1,7 +1,9 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Distance;
+import pt.sharespot.iot.core.buf.model.Occupation;
 import pt.sharespot.iot.core.buf.model.SensorData;
+import pt.sharespot.iot.core.sensor.data.OccupationDataDTO;
 import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
@@ -49,6 +51,9 @@ public class SensorDataMapper {
         if (dto.hasProperty(PropertyName.DISTANCE))
             builder.setDistance(DistanceMapper.toBuf(dto.distance));
 
+        if (dto.hasProperty(PropertyName.OCCUPATION))
+            builder.setOccupation(OccupationMapper.toBuf(dto.occupation));
+
         return builder;
     }
 
@@ -67,6 +72,7 @@ public class SensorDataMapper {
                 .withVelocity(VelocityMapper.toModel(buf.getVelocity()))
                 .withPh(PHMapper.toModel(buf.getPh()))
                 .withDistance(DistanceMapper.toModel(buf.getDistance()))
+                .withOccupation(OccupationMapper.toModel(buf.getOccupation()))
                 .withWaterPressure(WaterPressureMapper.toModel(buf.getWaterPressure()));
     }
 }

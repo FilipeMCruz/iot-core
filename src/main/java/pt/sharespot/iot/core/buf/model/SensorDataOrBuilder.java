@@ -216,4 +216,19 @@ public interface SensorDataOrBuilder extends
    * <code>.pt.sharespot.iot.core.Distance distance = 14;</code>
    */
   pt.sharespot.iot.core.buf.model.DistanceOrBuilder getDistanceOrBuilder();
+
+  /**
+   * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+   * @return Whether the occupation field is set.
+   */
+  boolean hasOccupation();
+  /**
+   * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+   * @return The occupation.
+   */
+  pt.sharespot.iot.core.buf.model.Occupation getOccupation();
+  /**
+   * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+   */
+  pt.sharespot.iot.core.buf.model.OccupationOrBuilder getOccupationOrBuilder();
 }

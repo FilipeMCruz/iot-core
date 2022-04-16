@@ -117,6 +117,10 @@ public enum PropertyName {
         public String path() {
             return "data.distance.maxMillimeters";
         }
+    }, OCCUPATION {
+        public String path() {
+            return "data.occupation.percentage";
+        }
     };
 
     public String path() {

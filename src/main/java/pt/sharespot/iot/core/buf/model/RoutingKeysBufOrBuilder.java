@@ -251,4 +251,15 @@ public interface RoutingKeysBufOrBuilder extends
    * @return The distance.
    */
   pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf getDistance();
+
+  /**
+   * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+   * @return The enum numeric value on the wire for occupation.
+   */
+  int getOccupationValue();
+  /**
+   * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+   * @return The occupation.
+   */
+  pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf getOccupation();
 }

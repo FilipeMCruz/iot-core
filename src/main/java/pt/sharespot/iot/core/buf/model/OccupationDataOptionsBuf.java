@@ -4,37 +4,37 @@
 package pt.sharespot.iot.core.buf.model;
 
 /**
- * Protobuf enum {@code pt.sharespot.iot.core.AirQualityDataOptionsBuf}
+ * Protobuf enum {@code pt.sharespot.iot.core.OccupationDataOptionsBuf}
  */
-public enum AirQualityDataOptionsBuf
+public enum OccupationDataOptionsBuf
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNIDENTIFIED_AQI_DATA = 0;</code>
+   * <code>UNIDENTIFIED_OCCUPATION_DATA = 0;</code>
    */
-  UNIDENTIFIED_AQI_DATA(0),
+  UNIDENTIFIED_OCCUPATION_DATA(0),
   /**
-   * <code>WITH_AQI_DATA = 1;</code>
+   * <code>WITH_OCCUPATION_DATA = 1;</code>
    */
-  WITH_AQI_DATA(1),
+  WITH_OCCUPATION_DATA(1),
   /**
-   * <code>WITHOUT_AQI_DATA = 2;</code>
+   * <code>WITHOUT_OCCUPATION_DATA = 2;</code>
    */
-  WITHOUT_AQI_DATA(2),
+  WITHOUT_OCCUPATION_DATA(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNIDENTIFIED_AQI_DATA = 0;</code>
+   * <code>UNIDENTIFIED_OCCUPATION_DATA = 0;</code>
    */
-  public static final int UNIDENTIFIED_AQI_DATA_VALUE = 0;
+  public static final int UNIDENTIFIED_OCCUPATION_DATA_VALUE = 0;
   /**
-   * <code>WITH_AQI_DATA = 1;</code>
+   * <code>WITH_OCCUPATION_DATA = 1;</code>
    */
-  public static final int WITH_AQI_DATA_VALUE = 1;
+  public static final int WITH_OCCUPATION_DATA_VALUE = 1;
   /**
-   * <code>WITHOUT_AQI_DATA = 2;</code>
+   * <code>WITHOUT_OCCUPATION_DATA = 2;</code>
    */
-  public static final int WITHOUT_AQI_DATA_VALUE = 2;
+  public static final int WITHOUT_OCCUPATION_DATA_VALUE = 2;
 
 
   public final int getNumber() {
@@ -51,7 +51,7 @@ public enum AirQualityDataOptionsBuf
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static AirQualityDataOptionsBuf valueOf(int value) {
+  public static OccupationDataOptionsBuf valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,24 +59,24 @@ public enum AirQualityDataOptionsBuf
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static AirQualityDataOptionsBuf forNumber(int value) {
+  public static OccupationDataOptionsBuf forNumber(int value) {
     switch (value) {
-      case 0: return UNIDENTIFIED_AQI_DATA;
-      case 1: return WITH_AQI_DATA;
-      case 2: return WITHOUT_AQI_DATA;
+      case 0: return UNIDENTIFIED_OCCUPATION_DATA;
+      case 1: return WITH_OCCUPATION_DATA;
+      case 2: return WITHOUT_OCCUPATION_DATA;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<AirQualityDataOptionsBuf>
+  public static com.google.protobuf.Internal.EnumLiteMap<OccupationDataOptionsBuf>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      AirQualityDataOptionsBuf> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<AirQualityDataOptionsBuf>() {
-          public AirQualityDataOptionsBuf findValueByNumber(int number) {
-            return AirQualityDataOptionsBuf.forNumber(number);
+      OccupationDataOptionsBuf> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<OccupationDataOptionsBuf>() {
+          public OccupationDataOptionsBuf findValueByNumber(int number) {
+            return OccupationDataOptionsBuf.forNumber(number);
           }
         };
 
@@ -94,12 +94,12 @@ public enum AirQualityDataOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(13);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(1);
   }
 
-  private static final AirQualityDataOptionsBuf[] VALUES = values();
+  private static final OccupationDataOptionsBuf[] VALUES = values();
 
-  public static AirQualityDataOptionsBuf valueOf(
+  public static OccupationDataOptionsBuf valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -113,10 +113,10 @@ public enum AirQualityDataOptionsBuf
 
   private final int value;
 
-  private AirQualityDataOptionsBuf(int value) {
+  private OccupationDataOptionsBuf(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.AirQualityDataOptionsBuf)
+  // @@protoc_insertion_point(enum_scope:pt.sharespot.iot.core.OccupationDataOptionsBuf)
 }
 

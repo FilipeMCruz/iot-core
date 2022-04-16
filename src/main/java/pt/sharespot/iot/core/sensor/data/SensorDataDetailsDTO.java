@@ -32,6 +32,8 @@ public class SensorDataDetailsDTO {
 
     public PHDataDTO ph;
 
+    public OccupationDataDTO occupation;
+
     public boolean hasProperty(PropertyName property) {
         return switch (property) {
             case ALTITUDE -> gps != null && gps.existsAltitude();
@@ -54,12 +56,18 @@ public class SensorDataDetailsDTO {
             case MAX_DISTANCE -> distance != null && distance.existsMaxDistance();
             case MIN_DISTANCE -> distance != null && distance.existsMinDistance();
             case PH -> ph != null && ph.exists();
+            case OCCUPATION -> occupation != null && occupation.exists();
             default -> false;
         };
     }
 
     public SensorDataDetailsDTO withBattery(BatteryDataDTO battery) {
         this.battery = battery;
+        return this;
+    }
+
+    public SensorDataDetailsDTO withOccupation(OccupationDataDTO occupation) {
+        this.occupation = occupation;
         return this;
     }
 

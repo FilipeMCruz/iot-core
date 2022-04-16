@@ -41,6 +41,7 @@ message SensorData {
   WaterPressure water_pressure = 12;
   PH ph = 13;
   Distance distance = 14;
+  Occupation occupation = 15;
 }
 
 message GPS {
@@ -61,6 +62,10 @@ enum MotionType {
 
 message Temperature {
   float celsius = 1;
+}
+
+message Occupation {
+  float percentage = 1;
 }
 
 message AirQuality {
@@ -157,6 +162,12 @@ message RoutingKeysBuf {
   WaterPressureDataOptionsBuf water_pressure = 20;
   PHDataOptionsBuf ph = 21;
   DistanceDataOptionsBuf distance = 22;
+  OccupationDataOptionsBuf occupation = 23;
+}
+enum OccupationDataOptionsBuf {
+  UNIDENTIFIED_OCCUPATION_DATA = 0;
+  WITH_OCCUPATION_DATA = 1;
+  WITHOUT_OCCUPATION_DATA = 2;
 }
 enum PHDataOptionsBuf  {
   UNIDENTIFIED_PH_DATA = 0;

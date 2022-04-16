@@ -157,7 +157,7 @@ public enum ContainerTypeOptionsBuf
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(19);
+    return pt.sharespot.iot.core.buf.model.MessageOuterClass.getDescriptor().getEnumTypes().get(20);
   }
 
   private static final ContainerTypeOptionsBuf[] VALUES = values();

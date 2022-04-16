@@ -53,6 +53,8 @@ public class RoutingKeys {
 
     public RoutingKeyOption<DistanceDataOptions> distance;
 
+    public RoutingKeyOption<OccupationDataOptions> occupation;
+
     public RoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
                        String version,
                        RoutingKeyOption<InfoTypeOptions> infoType,
@@ -74,7 +76,8 @@ public class RoutingKeys {
                        RoutingKeyOption<DataLegitimacyOptions> legitimacy,
                        RoutingKeyOption<WaterPressureDataOptions> waterPressure,
                        RoutingKeyOption<PHDataOptions> ph,
-                       RoutingKeyOption<DistanceDataOptions> distance) {
+                       RoutingKeyOption<DistanceDataOptions> distance,
+                       RoutingKeyOption<OccupationDataOptions> occupation) {
         this.containerType = containerType;
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
@@ -97,6 +100,7 @@ public class RoutingKeys {
         this.waterPressure = waterPressure;
         this.ph = ph;
         this.distance = distance;
+        this.occupation = occupation;
     }
 
     public RoutingKeys() {
@@ -104,7 +108,7 @@ public class RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.#",
                 containerType.value(),
                 version,
                 infoType.value(),
@@ -126,11 +130,12 @@ public class RoutingKeys {
                 battery.value(),
                 waterPressure.value(),
                 ph.value(),
-                distance.value());
+                distance.value(),
+                occupation.value());
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.#",
+        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.#",
                 containerType.details(),
                 version,
                 infoType.details(),
@@ -152,7 +157,8 @@ public class RoutingKeys {
                 battery.details(),
                 waterPressure.details(),
                 ph.details(),
-                distance.value());
+                distance.details(),
+                occupation.details());
     }
 
     public static RoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -210,6 +216,8 @@ public class RoutingKeys {
 
         private RoutingKeyOption<DistanceDataOptions> distance;
 
+        private RoutingKeyOption<OccupationDataOptions> occupation;
+
         private final RoutingKeysBuilderOptions options;
 
         private RoutingKeysBuilder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -220,6 +228,11 @@ public class RoutingKeys {
 
         public RoutingKeysBuilder withContainerType(ContainerTypeOptions containerType) {
             this.containerType = RoutingKeyOption.of(containerType);
+            return this;
+        }
+
+        public RoutingKeysBuilder withOccupation(OccupationDataOptions occupation) {
+            this.occupation = RoutingKeyOption.of(occupation);
             return this;
         }
 
@@ -340,6 +353,7 @@ public class RoutingKeys {
             this.waterPressure = RoutingKeyOption.of(WaterPressureDataOptions.UNIDENTIFIED_WATER_PRESSURE_DATA);
             this.ph = RoutingKeyOption.of(PHDataOptions.UNIDENTIFIED_PH_DATA);
             this.distance = RoutingKeyOption.of(DistanceDataOptions.UNIDENTIFIED_DISTANCE_DATA);
+            this.occupation = RoutingKeyOption.of(OccupationDataOptions.UNIDENTIFIED_OCCUPATION_DATA);
             return this;
         }
 
@@ -373,6 +387,8 @@ public class RoutingKeys {
                     PHDataOptions.WITH_PH_DATA : PHDataOptions.WITHOUT_PH_DATA);
             this.distance = RoutingKeyOption.of(data.hasAllProperties(PropertyName.DISTANCE) ?
                     DistanceDataOptions.WITH_DISTANCE_DATA : DistanceDataOptions.WITHOUT_DISTANCE_DATA);
+            this.occupation = RoutingKeyOption.of(data.hasAllProperties(PropertyName.OCCUPATION) ?
+                    OccupationDataOptions.WITH_OCCUPATION_DATA : OccupationDataOptions.WITHOUT_OCCUPATION_DATA);
             return this;
         }
 
@@ -398,6 +414,7 @@ public class RoutingKeys {
             this.waterPressure = this.waterPressure == null ? RoutingKeyOption.any() : this.waterPressure;
             this.ph = this.ph == null ? RoutingKeyOption.any() : this.ph;
             this.distance = this.distance == null ? RoutingKeyOption.any() : this.distance;
+            this.occupation = this.occupation == null ? RoutingKeyOption.any() : this.occupation;
             return build();
         }
 
@@ -422,13 +439,14 @@ public class RoutingKeys {
             this.waterPressure = this.waterPressure == null ? consumer.waterPressure : this.waterPressure;
             this.ph = this.ph == null ? consumer.ph : this.ph;
             this.distance = this.distance == null ? consumer.distance : this.distance;
+            this.occupation = this.occupation == null ? consumer.occupation : this.occupation;
             return build();
         }
 
         public Optional<RoutingKeys> from(String routingKeys) {
             var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
             var splinted = info.split("\\.");
-            if (splinted.length < 17) {
+            if (splinted.length < 21) {
                 return Optional.empty();
             }
             this.infoType = InfoTypeOptions.extract(splinted[1]);
@@ -451,6 +469,7 @@ public class RoutingKeys {
             this.waterPressure = WaterPressureDataOptions.extract(splinted[18]);
             this.ph = PHDataOptions.extract(splinted[19]);
             this.distance = DistanceDataOptions.extract(splinted[20]);
+            this.occupation = OccupationDataOptions.extract(splinted[21]);
             return build();
         }
 
@@ -480,7 +499,8 @@ public class RoutingKeys {
                     legitimacy,
                     waterPressure,
                     ph,
-                    distance);
+                    distance,
+                    occupation);
             return toOptional(routingKeys);
         }
 
@@ -505,6 +525,7 @@ public class RoutingKeys {
                     routingKeys.waterPressure == null ||
                     routingKeys.ph == null ||
                     routingKeys.distance == null ||
+                    routingKeys.occupation == null ||
                     !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+") && !ANY.equals(routingKeys.sensorTypeId) ||
                     routingKeys.legitimacy == null) {
                 return Optional.empty();
@@ -531,6 +552,7 @@ public class RoutingKeys {
                         routingKeys.waterPressure.isAny() ||
                         routingKeys.ph.isAny() ||
                         routingKeys.distance.isAny() ||
+                        routingKeys.occupation.isAny() ||
                         !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+")) {
                     return Optional.empty();
                 }

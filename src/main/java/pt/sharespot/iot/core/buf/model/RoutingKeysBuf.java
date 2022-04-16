@@ -38,6 +38,7 @@ private static final long serialVersionUID = 0L;
     waterPressure_ = 0;
     ph_ = 0;
     distance_ = 0;
+    occupation_ = 0;
   }
 
   @java.lang.Override
@@ -200,6 +201,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             distance_ = rawValue;
+            break;
+          }
+          case 184: {
+            int rawValue = input.readEnum();
+
+            occupation_ = rawValue;
             break;
           }
           default: {
@@ -709,6 +716,25 @@ private static final long serialVersionUID = 0L;
     return result == null ? pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf.UNRECOGNIZED : result;
   }
 
+  public static final int OCCUPATION_FIELD_NUMBER = 23;
+  private int occupation_;
+  /**
+   * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+   * @return The enum numeric value on the wire for occupation.
+   */
+  @java.lang.Override public int getOccupationValue() {
+    return occupation_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+   * @return The occupation.
+   */
+  @java.lang.Override public pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf getOccupation() {
+    @SuppressWarnings("deprecation")
+    pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf result = pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf.valueOf(occupation_);
+    return result == null ? pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -788,6 +814,9 @@ private static final long serialVersionUID = 0L;
     }
     if (distance_ != pt.sharespot.iot.core.buf.model.DistanceDataOptionsBuf.UNIDENTIFIED_DISTANCE_DATA.getNumber()) {
       output.writeEnum(22, distance_);
+    }
+    if (occupation_ != pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf.UNIDENTIFIED_OCCUPATION_DATA.getNumber()) {
+      output.writeEnum(23, occupation_);
     }
     unknownFields.writeTo(output);
   }
@@ -883,6 +912,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(22, distance_);
     }
+    if (occupation_ != pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf.UNIDENTIFIED_OCCUPATION_DATA.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(23, occupation_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -923,6 +956,7 @@ private static final long serialVersionUID = 0L;
     if (waterPressure_ != other.waterPressure_) return false;
     if (ph_ != other.ph_) return false;
     if (distance_ != other.distance_) return false;
+    if (occupation_ != other.occupation_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -978,6 +1012,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + ph_;
     hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
     hash = (53 * hash) + distance_;
+    hash = (37 * hash) + OCCUPATION_FIELD_NUMBER;
+    hash = (53 * hash) + occupation_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1155,6 +1191,8 @@ private static final long serialVersionUID = 0L;
 
       distance_ = 0;
 
+      occupation_ = 0;
+
       return this;
     }
 
@@ -1203,6 +1241,7 @@ private static final long serialVersionUID = 0L;
       result.waterPressure_ = waterPressure_;
       result.ph_ = ph_;
       result.distance_ = distance_;
+      result.occupation_ = occupation_;
       onBuilt();
       return result;
     }
@@ -1319,6 +1358,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.distance_ != 0) {
         setDistanceValue(other.getDistanceValue());
+      }
+      if (other.occupation_ != 0) {
+        setOccupationValue(other.getOccupationValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2599,6 +2641,60 @@ private static final long serialVersionUID = 0L;
     public Builder clearDistance() {
       
       distance_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int occupation_ = 0;
+    /**
+     * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+     * @return The enum numeric value on the wire for occupation.
+     */
+    @java.lang.Override public int getOccupationValue() {
+      return occupation_;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+     * @param value The enum numeric value on the wire for occupation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOccupationValue(int value) {
+      
+      occupation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+     * @return The occupation.
+     */
+    @java.lang.Override
+    public pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf getOccupation() {
+      @SuppressWarnings("deprecation")
+      pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf result = pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf.valueOf(occupation_);
+      return result == null ? pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+     * @param value The occupation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOccupation(pt.sharespot.iot.core.buf.model.OccupationDataOptionsBuf value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      occupation_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.OccupationDataOptionsBuf occupation = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOccupation() {
+      
+      occupation_ = 0;
       onChanged();
       return this;
     }

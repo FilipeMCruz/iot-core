@@ -230,6 +230,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 122: {
+            pt.sharespot.iot.core.buf.model.Occupation.Builder subBuilder = null;
+            if (occupation_ != null) {
+              subBuilder = occupation_.toBuilder();
+            }
+            occupation_ = input.readMessage(pt.sharespot.iot.core.buf.model.Occupation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(occupation_);
+              occupation_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -626,6 +639,32 @@ private static final long serialVersionUID = 0L;
     return getDistance();
   }
 
+  public static final int OCCUPATION_FIELD_NUMBER = 15;
+  private pt.sharespot.iot.core.buf.model.Occupation occupation_;
+  /**
+   * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+   * @return Whether the occupation field is set.
+   */
+  @java.lang.Override
+  public boolean hasOccupation() {
+    return occupation_ != null;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+   * @return The occupation.
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.Occupation getOccupation() {
+    return occupation_ == null ? pt.sharespot.iot.core.buf.model.Occupation.getDefaultInstance() : occupation_;
+  }
+  /**
+   * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+   */
+  @java.lang.Override
+  public pt.sharespot.iot.core.buf.model.OccupationOrBuilder getOccupationOrBuilder() {
+    return getOccupation();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -681,6 +720,9 @@ private static final long serialVersionUID = 0L;
     }
     if (distance_ != null) {
       output.writeMessage(14, getDistance());
+    }
+    if (occupation_ != null) {
+      output.writeMessage(15, getOccupation());
     }
     unknownFields.writeTo(output);
   }
@@ -746,6 +788,10 @@ private static final long serialVersionUID = 0L;
     if (distance_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getDistance());
+    }
+    if (occupation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getOccupation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -832,6 +878,11 @@ private static final long serialVersionUID = 0L;
       if (!getDistance()
           .equals(other.getDistance())) return false;
     }
+    if (hasOccupation() != other.hasOccupation()) return false;
+    if (hasOccupation()) {
+      if (!getOccupation()
+          .equals(other.getOccupation())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -898,6 +949,10 @@ private static final long serialVersionUID = 0L;
     if (hasDistance()) {
       hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
       hash = (53 * hash) + getDistance().hashCode();
+    }
+    if (hasOccupation()) {
+      hash = (37 * hash) + OCCUPATION_FIELD_NUMBER;
+      hash = (53 * hash) + getOccupation().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1116,6 +1171,12 @@ private static final long serialVersionUID = 0L;
         distance_ = null;
         distanceBuilder_ = null;
       }
+      if (occupationBuilder_ == null) {
+        occupation_ = null;
+      } else {
+        occupation_ = null;
+        occupationBuilder_ = null;
+      }
       return this;
     }
 
@@ -1212,6 +1273,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.distance_ = distanceBuilder_.build();
       }
+      if (occupationBuilder_ == null) {
+        result.occupation_ = occupation_;
+      } else {
+        result.occupation_ = occupationBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1301,6 +1367,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDistance()) {
         mergeDistance(other.getDistance());
+      }
+      if (other.hasOccupation()) {
+        mergeOccupation(other.getOccupation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2995,6 +3064,125 @@ private static final long serialVersionUID = 0L;
         distance_ = null;
       }
       return distanceBuilder_;
+    }
+
+    private pt.sharespot.iot.core.buf.model.Occupation occupation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.Occupation, pt.sharespot.iot.core.buf.model.Occupation.Builder, pt.sharespot.iot.core.buf.model.OccupationOrBuilder> occupationBuilder_;
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     * @return Whether the occupation field is set.
+     */
+    public boolean hasOccupation() {
+      return occupationBuilder_ != null || occupation_ != null;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     * @return The occupation.
+     */
+    public pt.sharespot.iot.core.buf.model.Occupation getOccupation() {
+      if (occupationBuilder_ == null) {
+        return occupation_ == null ? pt.sharespot.iot.core.buf.model.Occupation.getDefaultInstance() : occupation_;
+      } else {
+        return occupationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     */
+    public Builder setOccupation(pt.sharespot.iot.core.buf.model.Occupation value) {
+      if (occupationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        occupation_ = value;
+        onChanged();
+      } else {
+        occupationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     */
+    public Builder setOccupation(
+        pt.sharespot.iot.core.buf.model.Occupation.Builder builderForValue) {
+      if (occupationBuilder_ == null) {
+        occupation_ = builderForValue.build();
+        onChanged();
+      } else {
+        occupationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     */
+    public Builder mergeOccupation(pt.sharespot.iot.core.buf.model.Occupation value) {
+      if (occupationBuilder_ == null) {
+        if (occupation_ != null) {
+          occupation_ =
+            pt.sharespot.iot.core.buf.model.Occupation.newBuilder(occupation_).mergeFrom(value).buildPartial();
+        } else {
+          occupation_ = value;
+        }
+        onChanged();
+      } else {
+        occupationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     */
+    public Builder clearOccupation() {
+      if (occupationBuilder_ == null) {
+        occupation_ = null;
+        onChanged();
+      } else {
+        occupation_ = null;
+        occupationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.Occupation.Builder getOccupationBuilder() {
+      
+      onChanged();
+      return getOccupationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     */
+    public pt.sharespot.iot.core.buf.model.OccupationOrBuilder getOccupationOrBuilder() {
+      if (occupationBuilder_ != null) {
+        return occupationBuilder_.getMessageOrBuilder();
+      } else {
+        return occupation_ == null ?
+            pt.sharespot.iot.core.buf.model.Occupation.getDefaultInstance() : occupation_;
+      }
+    }
+    /**
+     * <code>.pt.sharespot.iot.core.Occupation occupation = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        pt.sharespot.iot.core.buf.model.Occupation, pt.sharespot.iot.core.buf.model.Occupation.Builder, pt.sharespot.iot.core.buf.model.OccupationOrBuilder> 
+        getOccupationFieldBuilder() {
+      if (occupationBuilder_ == null) {
+        occupationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            pt.sharespot.iot.core.buf.model.Occupation, pt.sharespot.iot.core.buf.model.Occupation.Builder, pt.sharespot.iot.core.buf.model.OccupationOrBuilder>(
+                getOccupation(),
+                getParentForChildren(),
+                isClean());
+        occupation_ = null;
+      }
+      return occupationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

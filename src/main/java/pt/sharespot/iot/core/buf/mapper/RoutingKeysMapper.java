@@ -29,6 +29,7 @@ public class RoutingKeysMapper {
                 .setTrigger(toBuf(dto.trigger.get()))
                 .setPh(toBuf(dto.ph.get()))
                 .setDistance(toBuf(dto.distance.get()))
+                .setOccupation(toBuf(dto.occupation.get()))
                 .setWaterPressure(toBuf(dto.waterPressure.get()));
     }
 
@@ -55,6 +56,7 @@ public class RoutingKeysMapper {
                 .withWaterPressure(toModel(buf.getWaterPressure()))
                 .withPh(toModel(buf.getPh()))
                 .withDistance(toModel(buf.getDistance()))
+                .withOccupation(toModel(buf.getOccupation()))
                 .build()
                 .orElseThrow(() -> new RuntimeException("Wrong Routing Keys"));
     }
@@ -346,6 +348,22 @@ public class RoutingKeysMapper {
             default -> DistanceDataOptions.UNIDENTIFIED_DISTANCE_DATA;
             case WITH_DISTANCE_DATA -> DistanceDataOptions.WITH_DISTANCE_DATA;
             case WITHOUT_DISTANCE_DATA -> DistanceDataOptions.WITHOUT_DISTANCE_DATA;
+        };
+    }
+
+    private static OccupationDataOptionsBuf toBuf(OccupationDataOptions dto) {
+        return switch (dto) {
+            case UNIDENTIFIED_OCCUPATION_DATA -> OccupationDataOptionsBuf.UNIDENTIFIED_OCCUPATION_DATA;
+            case WITH_OCCUPATION_DATA -> OccupationDataOptionsBuf.WITH_OCCUPATION_DATA;
+            case WITHOUT_OCCUPATION_DATA -> OccupationDataOptionsBuf.WITHOUT_OCCUPATION_DATA;
+        };
+    }
+
+    private static OccupationDataOptions toModel(OccupationDataOptionsBuf buf) {
+        return switch (buf) {
+            default -> OccupationDataOptions.UNIDENTIFIED_OCCUPATION_DATA;
+            case WITH_OCCUPATION_DATA -> OccupationDataOptions.WITH_OCCUPATION_DATA;
+            case WITHOUT_OCCUPATION_DATA -> OccupationDataOptions.WITHOUT_OCCUPATION_DATA;
         };
     }
 
