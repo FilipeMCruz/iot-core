@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.CO2;
-import pt.sharespot.iot.core.sensor.data.CO2DataDTO;
+import pt.sharespot.iot.core.sensor.data.types.CO2DataDTO;
 
 public class CO2Mapper {
 

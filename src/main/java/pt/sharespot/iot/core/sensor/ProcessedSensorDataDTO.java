@@ -4,6 +4,7 @@ import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
 import pt.sharespot.iot.core.sensor.device.DeviceInformationDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
+import java.util.Map;
 import java.util.UUID;
 
 public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
@@ -13,7 +14,7 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
     public ProcessedSensorDataDTO(UUID dataId,
                                   DeviceInformationDTO device,
                                   Long reportedAt,
-                                  SensorDataDetailsDTO data) {
+                                  Map<Integer, SensorDataDetailsDTO> data) {
         super(dataId, reportedAt, data);
         this.device = device;
     }
@@ -33,7 +34,8 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
                     WATER_PRESSURE, PH, OCCUPATION, SOIL_CONDUCTIVITY, AIR_PRESSURE,
                     ILLUMINANCE, TRIGGER, BATTERY_MAX_VOLTS, BATTERY_MIN_VOLTS,
                     O3, CO2, CO, NH3, NO2, VOC, PM10, PM2_5,
-                    BATTERY_PERCENTAGE, BATTERY_VOLTS, SOIL_MOISTURE -> data.hasProperty(property);
+                    BATTERY_PERCENTAGE, BATTERY_VOLTS, SOIL_MOISTURE ->
+                    measures.get(0) != null && measures.get(0).hasProperty(property);
         };
     }
 }

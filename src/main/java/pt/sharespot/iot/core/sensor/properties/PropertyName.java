@@ -2,164 +2,164 @@ package pt.sharespot.iot.core.sensor.properties;
 
 public enum PropertyName {
     DATA_ID {
-        public String path() {
+        public String path(Integer sensorID) {
             return "dataId";
         }
     }, DEVICE_ID {
-        public String path() {
+        public String path(Integer sensorID) {
             return "device.id";
         }
     }, DEVICE_NAME {
-        public String path() {
+        public String path(Integer sensorID) {
             return "device.name";
         }
     }, DEVICE_RECORDS {
-        public String path() {
+        public String path(Integer sensorID) {
             return "device.records";
         }
     }, READ_PERMISSIONS {
-        public String path() {
+        public String path(Integer sensorID) {
             return "device.domains.read";
         }
     }, READ_WRITE_PERMISSIONS {
-        public String path() {
+        public String path(Integer sensorID) {
             return "device.domains.readWrite";
         }
     }, REPORTED_AT {
-        public String path() {
+        public String path(Integer sensorID) {
             return "reportedAt";
         }
     }, LATITUDE {
-        public String path() {
-            return "data.gps.latitude";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".gps.latitude";
         }
     }, LONGITUDE {
-        public String path() {
-            return "data.gps.longitude";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".gps.longitude";
         }
     }, ALTITUDE {
-        public String path() {
-            return "data.gps.altitude";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".gps.altitude";
         }
     }, TEMPERATURE {
-        public String path() {
-            return "data.temperature.celsius";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".temperature.celsius";
         }
     }, MOTION {
-        public String path() {
-            return "data.motion.value";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".motion.value";
         }
     }, VELOCITY {
-        public String path() {
-            return "data.velocity.kilometerPerHour";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".velocity.kilometerPerHour";
         }
     }, AQI {
-        public String path() {
-            return "data.aqi.value";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".aqi.value";
         }
     }, AIR_HUMIDITY_GRAMS_PER_CUBIC_METER {
-        public String path() {
-            return "data.airHumidity.gramsPerCubicMeter";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".airHumidity.gramsPerCubicMeter";
         }
     }, AIR_HUMIDITY_RELATIVE_PERCENTAGE {
-        public String path() {
-            return "data.airHumidity.relativePercentage";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".airHumidity.relativePercentage";
         }
     }, AIR_PRESSURE {
-        public String path() {
-            return "data.airPressure.hectoPascal";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".airPressure.hectoPascal";
         }
     }, WATER_PRESSURE {
-        public String path() {
-            return "data.waterPressure.bar";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".waterPressure.bar";
         }
     }, BATTERY_PERCENTAGE {
-        public String path() {
-            return "data.battery.percentage";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".battery.percentage";
         }
     }, BATTERY_VOLTS {
-        public String path() {
-            return "data.battery.volts";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".battery.volts";
         }
     }, BATTERY_MIN_VOLTS {
-        public String path() {
-            return "data.battery.minVolts";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".battery.minVolts";
         }
     }, BATTERY_MAX_VOLTS {
-        public String path() {
-            return "data.battery.maxVolts";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".battery.maxVolts";
         }
     }, PH {
-        public String path() {
-            return "data.ph.value";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".ph.value";
         }
     }, SOIL_MOISTURE {
-        public String path() {
-            return "data.soilMoisture.relativePercentage";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".soilMoisture.relativePercentage";
         }
     }, ILLUMINANCE {
-        public String path() {
-            return "data.illuminance.lux";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".illuminance.lux";
         }
     }, TRIGGER {
-        public String path() {
-            return "data.trigger.value";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".trigger.value";
         }
     }, DISTANCE {
-        public String path() {
-            return "data.distance.millimeters";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".distance.millimeters";
         }
     }, MIN_DISTANCE {
-        public String path() {
-            return "data.distance.minMillimeters";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".distance.minMillimeters";
         }
     }, MAX_DISTANCE {
-        public String path() {
-            return "data.distance.maxMillimeters";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".distance.maxMillimeters";
         }
     }, OCCUPATION {
-        public String path() {
-            return "data.occupation.percentage";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".occupation.percentage";
         }
     }, SOIL_CONDUCTIVITY {
-        public String path() {
-            return "data.soilConductivity.microSiemensPerCentimeter";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".soilConductivity.microSiemensPerCentimeter";
         }
     }, CO2 {
-        public String path() {
-            return "data.co2.ppm";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".co2.ppm";
         }
     }, CO {
-        public String path() {
-            return "data.co.ppm";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".co.ppm";
         }
     }, NH3 {
-        public String path() {
-            return "data.nh3.ppm";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".nh3.ppm";
         }
     }, O3 {
-        public String path() {
-            return "data.o3.ppm";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".o3.ppm";
         }
     }, NO2 {
-        public String path() {
-            return "data.no2.ppm";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".no2.ppm";
         }
     }, VOC {
-        public String path() {
-            return "data.voc.ppm";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".voc.ppm";
         }
     }, PM2_5 {
-        public String path() {
-            return "data.pm2_5.microGramsPerCubicMeter";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".pm2_5.microGramsPerCubicMeter";
         }
     }, PM10 {
-        public String path() {
-            return "data.pm10.microGramsPerCubicMeter";
+        public String path(Integer sensorID) {
+            return "measures." + sensorID + ".pm10.microGramsPerCubicMeter";
         }
     };
 
-    public String path() {
+    public String path(Integer sensorID) {
         return "";
     }
 }

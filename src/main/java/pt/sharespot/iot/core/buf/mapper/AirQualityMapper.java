@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.AirQuality;
-import pt.sharespot.iot.core.sensor.data.AirQualityDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.AirQualityDataDTO;
 
 public class AirQualityMapper {
 

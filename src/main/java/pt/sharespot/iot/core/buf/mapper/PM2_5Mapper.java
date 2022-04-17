@@ -1,9 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
-import pt.sharespot.iot.core.buf.model.PM10;
 import pt.sharespot.iot.core.buf.model.PM2_5;
-import pt.sharespot.iot.core.sensor.data.PM10DataDTO;
-import pt.sharespot.iot.core.sensor.data.PM2_5DataDTO;
+import pt.sharespot.iot.core.sensor.data.types.PM2_5DataDTO;
 
 public class PM2_5Mapper {
 

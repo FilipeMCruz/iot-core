@@ -23,7 +23,7 @@ message Data {
   string data_id = 1;
   int64 reported_at = 2;
   Device device = 3;
-  SensorData sensor_data = 4;
+  map<int32, SensorData> measures = 4;
 }
 
 message SensorData {

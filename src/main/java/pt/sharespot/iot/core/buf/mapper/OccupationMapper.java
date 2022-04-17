@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Occupation;
-import pt.sharespot.iot.core.sensor.data.OccupationDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.OccupationDataDTO;
 
 public class OccupationMapper {
 

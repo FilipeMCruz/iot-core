@@ -41,17 +41,36 @@ public interface DataOrBuilder extends
   pt.sharespot.iot.core.buf.model.DeviceOrBuilder getDeviceOrBuilder();
 
   /**
-   * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-   * @return Whether the sensorData field is set.
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
    */
-  boolean hasSensorData();
+  int getMeasuresCount();
   /**
-   * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-   * @return The sensorData.
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
    */
-  pt.sharespot.iot.core.buf.model.SensorData getSensorData();
+  boolean containsMeasures(
+      int key);
   /**
-   * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
+   * Use {@link #getMeasuresMap()} instead.
    */
-  pt.sharespot.iot.core.buf.model.SensorDataOrBuilder getSensorDataOrBuilder();
+  @java.lang.Deprecated
+  java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>
+  getMeasures();
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   */
+  java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>
+  getMeasuresMap();
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   */
+
+  pt.sharespot.iot.core.buf.model.SensorData getMeasuresOrDefault(
+      int key,
+      pt.sharespot.iot.core.buf.model.SensorData defaultValue);
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   */
+
+  pt.sharespot.iot.core.buf.model.SensorData getMeasuresOrThrow(
+      int key);
 }

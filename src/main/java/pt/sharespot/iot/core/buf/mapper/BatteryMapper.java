@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Battery;
-import pt.sharespot.iot.core.sensor.data.BatteryDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.BatteryDataDTO;
 
 public class BatteryMapper {
 

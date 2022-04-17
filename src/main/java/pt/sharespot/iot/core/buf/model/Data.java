@@ -39,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,16 +75,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            pt.sharespot.iot.core.buf.model.SensorData.Builder subBuilder = null;
-            if (sensorData_ != null) {
-              subBuilder = sensorData_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              measures_ = com.google.protobuf.MapField.newMapField(
+                  MeasuresDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
             }
-            sensorData_ = input.readMessage(pt.sharespot.iot.core.buf.model.SensorData.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(sensorData_);
-              sensorData_ = subBuilder.buildPartial();
-            }
-
+            com.google.protobuf.MapEntry<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>
+            measures__ = input.readMessage(
+                MeasuresDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            measures_.getMutableMap().put(
+                measures__.getKey(), measures__.getValue());
             break;
           }
           default: {
@@ -110,6 +111,18 @@ private static final long serialVersionUID = 0L;
     return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Data_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 4:
+        return internalGetMeasures();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -193,30 +206,85 @@ private static final long serialVersionUID = 0L;
     return getDevice();
   }
 
-  public static final int SENSOR_DATA_FIELD_NUMBER = 4;
-  private pt.sharespot.iot.core.buf.model.SensorData sensorData_;
-  /**
-   * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-   * @return Whether the sensorData field is set.
-   */
-  @java.lang.Override
-  public boolean hasSensorData() {
-    return sensorData_ != null;
+  public static final int MEASURES_FIELD_NUMBER = 4;
+  private static final class MeasuresDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>newDefaultInstance(
+                pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Data_MeasuresEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.INT32,
+                0,
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                pt.sharespot.iot.core.buf.model.SensorData.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> measures_;
+  private com.google.protobuf.MapField<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>
+  internalGetMeasures() {
+    if (measures_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          MeasuresDefaultEntryHolder.defaultEntry);
+    }
+    return measures_;
+  }
+
+  public int getMeasuresCount() {
+    return internalGetMeasures().getMap().size();
   }
   /**
-   * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-   * @return The sensorData.
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
    */
+
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.SensorData getSensorData() {
-    return sensorData_ == null ? pt.sharespot.iot.core.buf.model.SensorData.getDefaultInstance() : sensorData_;
+  public boolean containsMeasures(
+      int key) {
+    
+    return internalGetMeasures().getMap().containsKey(key);
   }
   /**
-   * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
+   * Use {@link #getMeasuresMap()} instead.
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.buf.model.SensorDataOrBuilder getSensorDataOrBuilder() {
-    return getSensorData();
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> getMeasures() {
+    return getMeasuresMap();
+  }
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> getMeasuresMap() {
+    return internalGetMeasures().getMap();
+  }
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   */
+  @java.lang.Override
+
+  public pt.sharespot.iot.core.buf.model.SensorData getMeasuresOrDefault(
+      int key,
+      pt.sharespot.iot.core.buf.model.SensorData defaultValue) {
+    
+    java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> map =
+        internalGetMeasures().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   */
+  @java.lang.Override
+
+  public pt.sharespot.iot.core.buf.model.SensorData getMeasuresOrThrow(
+      int key) {
+    
+    java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> map =
+        internalGetMeasures().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -242,9 +310,12 @@ private static final long serialVersionUID = 0L;
     if (device_ != null) {
       output.writeMessage(3, getDevice());
     }
-    if (sensorData_ != null) {
-      output.writeMessage(4, getSensorData());
-    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeIntegerMapTo(
+        output,
+        internalGetMeasures(),
+        MeasuresDefaultEntryHolder.defaultEntry,
+        4);
     unknownFields.writeTo(output);
   }
 
@@ -265,9 +336,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getDevice());
     }
-    if (sensorData_ != null) {
+    for (java.util.Map.Entry<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> entry
+         : internalGetMeasures().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>
+      measures__ = MeasuresDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getSensorData());
+          .computeMessageSize(4, measures__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -293,11 +370,8 @@ private static final long serialVersionUID = 0L;
       if (!getDevice()
           .equals(other.getDevice())) return false;
     }
-    if (hasSensorData() != other.hasSensorData()) return false;
-    if (hasSensorData()) {
-      if (!getSensorData()
-          .equals(other.getSensorData())) return false;
-    }
+    if (!internalGetMeasures().equals(
+        other.internalGetMeasures())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -318,9 +392,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DEVICE_FIELD_NUMBER;
       hash = (53 * hash) + getDevice().hashCode();
     }
-    if (hasSensorData()) {
-      hash = (37 * hash) + SENSOR_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getSensorData().hashCode();
+    if (!internalGetMeasures().getMap().isEmpty()) {
+      hash = (37 * hash) + MEASURES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMeasures().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -429,6 +503,28 @@ private static final long serialVersionUID = 0L;
       return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Data_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMeasures();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableMeasures();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -465,12 +561,7 @@ private static final long serialVersionUID = 0L;
         device_ = null;
         deviceBuilder_ = null;
       }
-      if (sensorDataBuilder_ == null) {
-        sensorData_ = null;
-      } else {
-        sensorData_ = null;
-        sensorDataBuilder_ = null;
-      }
+      internalGetMutableMeasures().clear();
       return this;
     }
 
@@ -497,6 +588,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Data buildPartial() {
       pt.sharespot.iot.core.buf.model.Data result = new pt.sharespot.iot.core.buf.model.Data(this);
+      int from_bitField0_ = bitField0_;
       result.dataId_ = dataId_;
       result.reportedAt_ = reportedAt_;
       if (deviceBuilder_ == null) {
@@ -504,11 +596,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.device_ = deviceBuilder_.build();
       }
-      if (sensorDataBuilder_ == null) {
-        result.sensorData_ = sensorData_;
-      } else {
-        result.sensorData_ = sensorDataBuilder_.build();
-      }
+      result.measures_ = internalGetMeasures();
+      result.measures_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -567,9 +656,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasDevice()) {
         mergeDevice(other.getDevice());
       }
-      if (other.hasSensorData()) {
-        mergeSensorData(other.getSensorData());
-      }
+      internalGetMutableMeasures().mergeFrom(
+          other.internalGetMeasures());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -598,6 +686,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object dataId_ = "";
     /**
@@ -825,123 +914,135 @@ private static final long serialVersionUID = 0L;
       return deviceBuilder_;
     }
 
-    private pt.sharespot.iot.core.buf.model.SensorData sensorData_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.SensorData, pt.sharespot.iot.core.buf.model.SensorData.Builder, pt.sharespot.iot.core.buf.model.SensorDataOrBuilder> sensorDataBuilder_;
-    /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-     * @return Whether the sensorData field is set.
-     */
-    public boolean hasSensorData() {
-      return sensorDataBuilder_ != null || sensorData_ != null;
-    }
-    /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-     * @return The sensorData.
-     */
-    public pt.sharespot.iot.core.buf.model.SensorData getSensorData() {
-      if (sensorDataBuilder_ == null) {
-        return sensorData_ == null ? pt.sharespot.iot.core.buf.model.SensorData.getDefaultInstance() : sensorData_;
-      } else {
-        return sensorDataBuilder_.getMessage();
+    private com.google.protobuf.MapField<
+        java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> measures_;
+    private com.google.protobuf.MapField<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>
+    internalGetMeasures() {
+      if (measures_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MeasuresDefaultEntryHolder.defaultEntry);
       }
+      return measures_;
     }
-    /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-     */
-    public Builder setSensorData(pt.sharespot.iot.core.buf.model.SensorData value) {
-      if (sensorDataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        sensorData_ = value;
-        onChanged();
-      } else {
-        sensorDataBuilder_.setMessage(value);
+    private com.google.protobuf.MapField<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>
+    internalGetMutableMeasures() {
+      onChanged();;
+      if (measures_ == null) {
+        measures_ = com.google.protobuf.MapField.newMapField(
+            MeasuresDefaultEntryHolder.defaultEntry);
       }
+      if (!measures_.isMutable()) {
+        measures_ = measures_.copy();
+      }
+      return measures_;
+    }
 
-      return this;
+    public int getMeasuresCount() {
+      return internalGetMeasures().getMap().size();
     }
     /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
+     * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
      */
-    public Builder setSensorData(
-        pt.sharespot.iot.core.buf.model.SensorData.Builder builderForValue) {
-      if (sensorDataBuilder_ == null) {
-        sensorData_ = builderForValue.build();
-        onChanged();
-      } else {
-        sensorDataBuilder_.setMessage(builderForValue.build());
-      }
 
-      return this;
-    }
-    /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-     */
-    public Builder mergeSensorData(pt.sharespot.iot.core.buf.model.SensorData value) {
-      if (sensorDataBuilder_ == null) {
-        if (sensorData_ != null) {
-          sensorData_ =
-            pt.sharespot.iot.core.buf.model.SensorData.newBuilder(sensorData_).mergeFrom(value).buildPartial();
-        } else {
-          sensorData_ = value;
-        }
-        onChanged();
-      } else {
-        sensorDataBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-     */
-    public Builder clearSensorData() {
-      if (sensorDataBuilder_ == null) {
-        sensorData_ = null;
-        onChanged();
-      } else {
-        sensorData_ = null;
-        sensorDataBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
-     */
-    public pt.sharespot.iot.core.buf.model.SensorData.Builder getSensorDataBuilder() {
+    @java.lang.Override
+    public boolean containsMeasures(
+        int key) {
       
-      onChanged();
-      return getSensorDataFieldBuilder().getBuilder();
+      return internalGetMeasures().getMap().containsKey(key);
     }
     /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
+     * Use {@link #getMeasuresMap()} instead.
      */
-    public pt.sharespot.iot.core.buf.model.SensorDataOrBuilder getSensorDataOrBuilder() {
-      if (sensorDataBuilder_ != null) {
-        return sensorDataBuilder_.getMessageOrBuilder();
-      } else {
-        return sensorData_ == null ?
-            pt.sharespot.iot.core.buf.model.SensorData.getDefaultInstance() : sensorData_;
-      }
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> getMeasures() {
+      return getMeasuresMap();
     }
     /**
-     * <code>.pt.sharespot.iot.core.SensorData sensor_data = 4;</code>
+     * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.buf.model.SensorData, pt.sharespot.iot.core.buf.model.SensorData.Builder, pt.sharespot.iot.core.buf.model.SensorDataOrBuilder> 
-        getSensorDataFieldBuilder() {
-      if (sensorDataBuilder_ == null) {
-        sensorDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            pt.sharespot.iot.core.buf.model.SensorData, pt.sharespot.iot.core.buf.model.SensorData.Builder, pt.sharespot.iot.core.buf.model.SensorDataOrBuilder>(
-                getSensorData(),
-                getParentForChildren(),
-                isClean());
-        sensorData_ = null;
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> getMeasuresMap() {
+      return internalGetMeasures().getMap();
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+     */
+    @java.lang.Override
+
+    public pt.sharespot.iot.core.buf.model.SensorData getMeasuresOrDefault(
+        int key,
+        pt.sharespot.iot.core.buf.model.SensorData defaultValue) {
+      
+      java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> map =
+          internalGetMeasures().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+     */
+    @java.lang.Override
+
+    public pt.sharespot.iot.core.buf.model.SensorData getMeasuresOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> map =
+          internalGetMeasures().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
-      return sensorDataBuilder_;
+      return map.get(key);
+    }
+
+    public Builder clearMeasures() {
+      internalGetMutableMeasures().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+     */
+
+    public Builder removeMeasures(
+        int key) {
+      
+      internalGetMutableMeasures().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData>
+    getMutableMeasures() {
+      return internalGetMutableMeasures().getMutableMap();
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+     */
+    public Builder putMeasures(
+        int key,
+        pt.sharespot.iot.core.buf.model.SensorData value) {
+      
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+      internalGetMutableMeasures().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+     */
+
+    public Builder putAllMeasures(
+        java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.SensorData> values) {
+      internalGetMutableMeasures().getMutableMap()
+          .putAll(values);
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

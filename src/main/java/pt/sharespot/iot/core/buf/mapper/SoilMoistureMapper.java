@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.SoilMoisture;
-import pt.sharespot.iot.core.sensor.data.SoilMoistureDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.SoilMoistureDataDTO;
 
 public class SoilMoistureMapper {
 

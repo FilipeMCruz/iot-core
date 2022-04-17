@@ -5,9 +5,16 @@ public class KnownPropertyTransformation extends PropertyTransformation {
     private final String oldPath;
     private final PropertyName newPath;
 
-    KnownPropertyTransformation(String oldPath, PropertyName newPath) {
+    private final Integer subSensorId;
+
+    KnownPropertyTransformation(String oldPath, PropertyName newPath, Integer subSensorId) {
         this.oldPath = oldPath;
         this.newPath = newPath;
+        this.subSensorId = subSensorId;
+    }
+
+    public Integer subSensorId() {
+        return subSensorId;
     }
 
     public PropertyName newPathLiteral() {
@@ -16,7 +23,7 @@ public class KnownPropertyTransformation extends PropertyTransformation {
 
     @Override
     public String newPath() {
-        return newPath.path();
+        return newPath.path(subSensorId);
     }
 
     @Override

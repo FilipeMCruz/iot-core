@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Illuminance;
-import pt.sharespot.iot.core.sensor.data.IlluminanceDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.IlluminanceDataDTO;
 
 public class IlluminanceMapper {
 

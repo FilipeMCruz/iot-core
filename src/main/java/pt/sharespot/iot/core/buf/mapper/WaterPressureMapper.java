@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.WaterPressure;
-import pt.sharespot.iot.core.sensor.data.WaterPressureDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.WaterPressureDataDTO;
 
 public class WaterPressureMapper {
 

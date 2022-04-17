@@ -19,4 +19,9 @@ public class UnknownPropertyTransformation extends PropertyTransformation {
     public String oldPath() {
         return oldPath;
     }
+
+    @Override
+    public Integer subSensorId() {
+        return 0;
+    }
 }

@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Trigger;
-import pt.sharespot.iot.core.sensor.data.TriggerDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.TriggerDataDTO;
 
 public class TriggerMapper {
 

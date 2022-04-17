@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Distance;
-import pt.sharespot.iot.core.sensor.data.DistanceDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.DistanceDataDTO;
 
 public class DistanceMapper {
 

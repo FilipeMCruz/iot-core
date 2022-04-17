@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.AirPressure;
-import pt.sharespot.iot.core.sensor.data.AirPressureDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.AirPressureDataDTO;
 
 public class AirPressureMapper {
 

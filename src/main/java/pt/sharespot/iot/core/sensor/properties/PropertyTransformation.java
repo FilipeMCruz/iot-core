@@ -12,6 +12,8 @@ public abstract class PropertyTransformation {
 
     public abstract String oldPath();
 
+    public abstract Integer subSensorId();
+
     public void transfer(JsonNode old, ObjectNode processed) {
         var newPathQueue = new LinkedList<>(List.of(newPath().split("\\.")));
         var lastFromNew = newPathQueue.pollLast();
@@ -42,11 +44,12 @@ public abstract class PropertyTransformation {
         return getInternalPath(newNode, path);
     }
 
+
     public static PropertyTransformation create(String oldPath, String newPath) {
         return new UnknownPropertyTransformation(oldPath, newPath);
     }
 
-    public static PropertyTransformation create(String oldPath, PropertyName newPath) {
-        return new KnownPropertyTransformation(oldPath, newPath);
+    public static PropertyTransformation create(String oldPath, PropertyName newPath, Integer sensorID) {
+        return new KnownPropertyTransformation(oldPath, newPath, sensorID);
     }
 }

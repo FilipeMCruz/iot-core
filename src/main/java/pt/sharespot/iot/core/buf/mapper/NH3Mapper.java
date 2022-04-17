@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.NH3;
-import pt.sharespot.iot.core.sensor.data.NH3DataDTO;
+import pt.sharespot.iot.core.sensor.data.types.NH3DataDTO;
 
 public class NH3Mapper {
 

@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Temperature;
-import pt.sharespot.iot.core.sensor.data.TemperatureDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.TemperatureDataDTO;
 
 public class TemperatureMapper {
 

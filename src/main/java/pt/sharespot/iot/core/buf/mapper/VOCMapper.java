@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.VOC;
-import pt.sharespot.iot.core.sensor.data.VOCDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.VOCDataDTO;
 
 public class VOCMapper {
 

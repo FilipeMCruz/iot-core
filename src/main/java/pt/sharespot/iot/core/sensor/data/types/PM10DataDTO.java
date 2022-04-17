@@ -1,11 +1,11 @@
-package pt.sharespot.iot.core.sensor.data;
+package pt.sharespot.iot.core.sensor.data.types;
 
-public class PM2_5DataDTO implements DataTypeDTO {
+public class PM10DataDTO implements DataTypeDTO {
 
     public Float microGramsPerCubicMeter;
 
-    public static PM2_5DataDTO of(Float microGramsPerCubicMeter) {
-        var dataDTO = new PM2_5DataDTO();
+    public static PM10DataDTO of(Float microGramsPerCubicMeter) {
+        var dataDTO = new PM10DataDTO();
         dataDTO.microGramsPerCubicMeter = microGramsPerCubicMeter;
         return dataDTO;
     }

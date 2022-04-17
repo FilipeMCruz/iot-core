@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.PH;
-import pt.sharespot.iot.core.sensor.data.PHDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.PHDataDTO;
 
 public class PHMapper {
 

@@ -1,9 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
-import pt.sharespot.iot.core.buf.model.CO2;
 import pt.sharespot.iot.core.buf.model.PM10;
-import pt.sharespot.iot.core.sensor.data.CO2DataDTO;
-import pt.sharespot.iot.core.sensor.data.PM10DataDTO;
+import pt.sharespot.iot.core.sensor.data.types.PM10DataDTO;
 
 public class PM10Mapper {
 

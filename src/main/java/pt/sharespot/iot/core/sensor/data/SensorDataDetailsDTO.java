@@ -1,5 +1,6 @@
 package pt.sharespot.iot.core.sensor.data;
 
+import pt.sharespot.iot.core.sensor.data.types.*;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
 public class SensorDataDetailsDTO {

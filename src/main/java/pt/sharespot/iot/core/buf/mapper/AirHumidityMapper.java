@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.AirHumidity;
-import pt.sharespot.iot.core.sensor.data.AirHumidityDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.AirHumidityDataDTO;
 
 public class AirHumidityMapper {
 

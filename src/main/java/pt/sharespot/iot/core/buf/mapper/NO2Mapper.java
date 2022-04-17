@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.NO2;
-import pt.sharespot.iot.core.sensor.data.NO2DataDTO;
+import pt.sharespot.iot.core.sensor.data.types.NO2DataDTO;
 
 public class NO2Mapper {
 

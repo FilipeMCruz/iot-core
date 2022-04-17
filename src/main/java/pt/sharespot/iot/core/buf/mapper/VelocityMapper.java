@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Velocity;
-import pt.sharespot.iot.core.sensor.data.VelocityDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.VelocityDataDTO;
 
 public class VelocityMapper {
 

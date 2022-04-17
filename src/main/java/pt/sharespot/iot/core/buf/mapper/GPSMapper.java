@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.GPS;
-import pt.sharespot.iot.core.sensor.data.GPSDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.GPSDataDTO;
 
 public class GPSMapper {
 

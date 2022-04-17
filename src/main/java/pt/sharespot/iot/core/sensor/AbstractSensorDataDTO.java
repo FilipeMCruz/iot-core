@@ -4,6 +4,7 @@ import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.UUID;
 
 public abstract class AbstractSensorDataDTO implements SensorDataDTO {
@@ -12,14 +13,14 @@ public abstract class AbstractSensorDataDTO implements SensorDataDTO {
 
     public Long reportedAt;
 
-    public SensorDataDetailsDTO data;
+    public Map<Integer, SensorDataDetailsDTO> measures;
 
     public AbstractSensorDataDTO(UUID dataId,
                                  Long reportedAt,
-                                 SensorDataDetailsDTO data) {
+                                 Map<Integer, SensorDataDetailsDTO> measures) {
         this.dataId = dataId;
         this.reportedAt = reportedAt;
-        this.data = data;
+        this.measures = measures;
     }
 
     public AbstractSensorDataDTO() {

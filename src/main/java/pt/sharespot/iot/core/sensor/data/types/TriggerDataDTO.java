@@ -1,4 +1,4 @@
-package pt.sharespot.iot.core.sensor.data;
+package pt.sharespot.iot.core.sensor.data.types;
 
 public class TriggerDataDTO implements DataTypeDTO {
 

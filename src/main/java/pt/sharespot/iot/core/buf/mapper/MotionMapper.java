@@ -2,7 +2,7 @@ package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.Motion;
 import pt.sharespot.iot.core.buf.model.MotionType;
-import pt.sharespot.iot.core.sensor.data.MotionDataDTO;
+import pt.sharespot.iot.core.sensor.data.types.MotionDataDTO;
 
 public class MotionMapper {
 

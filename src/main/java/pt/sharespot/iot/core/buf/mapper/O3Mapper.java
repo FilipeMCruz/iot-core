@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.buf.mapper;
 
 import pt.sharespot.iot.core.buf.model.O3;
-import pt.sharespot.iot.core.sensor.data.O3DataDTO;
+import pt.sharespot.iot.core.sensor.data.types.O3DataDTO;
 
 public class O3Mapper {
 
