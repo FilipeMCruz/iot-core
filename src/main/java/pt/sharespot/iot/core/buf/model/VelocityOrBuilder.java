@@ -8,8 +8,17 @@ public interface VelocityOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float kilometers_per_hour = 1;</code>
+   * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+   * @return Whether the kilometersPerHour field is set.
+   */
+  boolean hasKilometersPerHour();
+  /**
+   * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
    * @return The kilometersPerHour.
    */
-  float getKilometersPerHour();
+  com.google.protobuf.FloatValue getKilometersPerHour();
+  /**
+   * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getKilometersPerHourOrBuilder();
 }

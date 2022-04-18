@@ -8,8 +8,17 @@ public interface NO2OrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float ppm = 1;</code>
+   * <code>.google.protobuf.FloatValue ppm = 1;</code>
+   * @return Whether the ppm field is set.
+   */
+  boolean hasPpm();
+  /**
+   * <code>.google.protobuf.FloatValue ppm = 1;</code>
    * @return The ppm.
    */
-  float getPpm();
+  com.google.protobuf.FloatValue getPpm();
+  /**
+   * <code>.google.protobuf.FloatValue ppm = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getPpmOrBuilder();
 }

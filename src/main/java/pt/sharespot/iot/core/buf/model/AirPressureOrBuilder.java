@@ -8,8 +8,17 @@ public interface AirPressureOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float hecto_pascal = 1;</code>
+   * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+   * @return Whether the hectoPascal field is set.
+   */
+  boolean hasHectoPascal();
+  /**
+   * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
    * @return The hectoPascal.
    */
-  float getHectoPascal();
+  com.google.protobuf.FloatValue getHectoPascal();
+  /**
+   * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getHectoPascalOrBuilder();
 }

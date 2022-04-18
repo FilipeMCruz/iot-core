@@ -19,6 +19,12 @@ public class BatteryDataDTO implements DataTypeDTO {
         return this;
     }
 
+    public BatteryDataDTO with(Float maxVolts, Float minVolts) {
+        this.maxVolts = maxVolts;
+        this.minVolts = minVolts;
+        return this;
+    }
+
     public static BatteryDataDTO ofPercentage(Float percentage) {
         var batteryDataDTO = new BatteryDataDTO();
         batteryDataDTO.percentage = percentage;
@@ -28,13 +34,6 @@ public class BatteryDataDTO implements DataTypeDTO {
     public static BatteryDataDTO ofVolts(Float volts) {
         var batteryDataDTO = new BatteryDataDTO();
         batteryDataDTO.volts = volts;
-        return batteryDataDTO;
-    }
-
-    public BatteryDataDTO with(Float maxVolts, Float minVolts) {
-        var batteryDataDTO = new BatteryDataDTO();
-        batteryDataDTO.maxVolts = maxVolts;
-        batteryDataDTO.minVolts = minVolts;
         return batteryDataDTO;
     }
 

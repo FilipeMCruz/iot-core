@@ -2,16 +2,16 @@ package pt.sharespot.iot.core.sensor.data.types;
 
 public class VelocityDataDTO implements DataTypeDTO {
 
-    public Float kilometerPerHour;
+    public Float kilometersPerHour;
 
     public static VelocityDataDTO of(Float velocity) {
         var dataDTO = new VelocityDataDTO();
-        dataDTO.kilometerPerHour = velocity;
+        dataDTO.kilometersPerHour = velocity;
         return dataDTO;
     }
 
     @Override
     public boolean exists() {
-        return kilometerPerHour != null;
+        return kilometersPerHour != null;
     }
 }

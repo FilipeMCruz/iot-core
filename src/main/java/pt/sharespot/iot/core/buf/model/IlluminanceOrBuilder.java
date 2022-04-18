@@ -8,8 +8,17 @@ public interface IlluminanceOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float lux = 1;</code>
+   * <code>.google.protobuf.FloatValue lux = 1;</code>
+   * @return Whether the lux field is set.
+   */
+  boolean hasLux();
+  /**
+   * <code>.google.protobuf.FloatValue lux = 1;</code>
    * @return The lux.
    */
-  float getLux();
+  com.google.protobuf.FloatValue getLux();
+  /**
+   * <code>.google.protobuf.FloatValue lux = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getLuxOrBuilder();
 }

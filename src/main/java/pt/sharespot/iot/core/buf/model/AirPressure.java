@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (hectoPascal_ != null) {
+              subBuilder = hectoPascal_.toBuilder();
+            }
+            hectoPascal_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(hectoPascal_);
+              hectoPascal_ = subBuilder.buildPartial();
+            }
 
-            hectoPascal_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HECTO_PASCAL_FIELD_NUMBER = 1;
-  private float hectoPascal_;
+  private com.google.protobuf.FloatValue hectoPascal_;
   /**
-   * <code>float hecto_pascal = 1;</code>
+   * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+   * @return Whether the hectoPascal field is set.
+   */
+  @java.lang.Override
+  public boolean hasHectoPascal() {
+    return hectoPascal_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
    * @return The hectoPascal.
    */
   @java.lang.Override
-  public float getHectoPascal() {
-    return hectoPascal_;
+  public com.google.protobuf.FloatValue getHectoPascal() {
+    return hectoPascal_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : hectoPascal_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getHectoPascalOrBuilder() {
+    return getHectoPascal();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(hectoPascal_) != 0) {
-      output.writeFloat(1, hectoPascal_);
+    if (hectoPascal_ != null) {
+      output.writeMessage(1, getHectoPascal());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(hectoPascal_) != 0) {
+    if (hectoPascal_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, hectoPascal_);
+        .computeMessageSize(1, getHectoPascal());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.AirPressure other = (pt.sharespot.iot.core.buf.model.AirPressure) obj;
 
-    if (java.lang.Float.floatToIntBits(getHectoPascal())
-        != java.lang.Float.floatToIntBits(
-            other.getHectoPascal())) return false;
+    if (hasHectoPascal() != other.hasHectoPascal()) return false;
+    if (hasHectoPascal()) {
+      if (!getHectoPascal()
+          .equals(other.getHectoPascal())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + HECTO_PASCAL_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getHectoPascal());
+    if (hasHectoPascal()) {
+      hash = (37 * hash) + HECTO_PASCAL_FIELD_NUMBER;
+      hash = (53 * hash) + getHectoPascal().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      hectoPascal_ = 0F;
-
+      if (hectoPascalBuilder_ == null) {
+        hectoPascal_ = null;
+      } else {
+        hectoPascal_ = null;
+        hectoPascalBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.AirPressure buildPartial() {
       pt.sharespot.iot.core.buf.model.AirPressure result = new pt.sharespot.iot.core.buf.model.AirPressure(this);
-      result.hectoPascal_ = hectoPascal_;
+      if (hectoPascalBuilder_ == null) {
+        result.hectoPascal_ = hectoPascal_;
+      } else {
+        result.hectoPascal_ = hectoPascalBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.AirPressure other) {
       if (other == pt.sharespot.iot.core.buf.model.AirPressure.getDefaultInstance()) return this;
-      if (other.getHectoPascal() != 0F) {
-        setHectoPascal(other.getHectoPascal());
+      if (other.hasHectoPascal()) {
+        mergeHectoPascal(other.getHectoPascal());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float hectoPascal_ ;
+    private com.google.protobuf.FloatValue hectoPascal_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> hectoPascalBuilder_;
     /**
-     * <code>float hecto_pascal = 1;</code>
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+     * @return Whether the hectoPascal field is set.
+     */
+    public boolean hasHectoPascal() {
+      return hectoPascalBuilder_ != null || hectoPascal_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
      * @return The hectoPascal.
      */
-    @java.lang.Override
-    public float getHectoPascal() {
-      return hectoPascal_;
+    public com.google.protobuf.FloatValue getHectoPascal() {
+      if (hectoPascalBuilder_ == null) {
+        return hectoPascal_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : hectoPascal_;
+      } else {
+        return hectoPascalBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float hecto_pascal = 1;</code>
-     * @param value The hectoPascal to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
      */
-    public Builder setHectoPascal(float value) {
-      
-      hectoPascal_ = value;
-      onChanged();
+    public Builder setHectoPascal(com.google.protobuf.FloatValue value) {
+      if (hectoPascalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hectoPascal_ = value;
+        onChanged();
+      } else {
+        hectoPascalBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float hecto_pascal = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+     */
+    public Builder setHectoPascal(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (hectoPascalBuilder_ == null) {
+        hectoPascal_ = builderForValue.build();
+        onChanged();
+      } else {
+        hectoPascalBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+     */
+    public Builder mergeHectoPascal(com.google.protobuf.FloatValue value) {
+      if (hectoPascalBuilder_ == null) {
+        if (hectoPascal_ != null) {
+          hectoPascal_ =
+            com.google.protobuf.FloatValue.newBuilder(hectoPascal_).mergeFrom(value).buildPartial();
+        } else {
+          hectoPascal_ = value;
+        }
+        onChanged();
+      } else {
+        hectoPascalBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
      */
     public Builder clearHectoPascal() {
-      
-      hectoPascal_ = 0F;
-      onChanged();
+      if (hectoPascalBuilder_ == null) {
+        hectoPascal_ = null;
+        onChanged();
+      } else {
+        hectoPascal_ = null;
+        hectoPascalBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getHectoPascalBuilder() {
+      
+      onChanged();
+      return getHectoPascalFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getHectoPascalOrBuilder() {
+      if (hectoPascalBuilder_ != null) {
+        return hectoPascalBuilder_.getMessageOrBuilder();
+      } else {
+        return hectoPascal_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : hectoPascal_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue hecto_pascal = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getHectoPascalFieldBuilder() {
+      if (hectoPascalBuilder_ == null) {
+        hectoPascalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getHectoPascal(),
+                getParentForChildren(),
+                isClean());
+        hectoPascal_ = null;
+      }
+      return hectoPascalBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -14,8 +14,8 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
     public ProcessedSensorDataDTO(UUID dataId,
                                   DeviceInformationDTO device,
                                   Long reportedAt,
-                                  Map<Integer, SensorDataDetailsDTO> data) {
-        super(dataId, reportedAt, data);
+                                  Map<Integer, SensorDataDetailsDTO> measures) {
+        super(dataId, reportedAt, measures);
         this.device = device;
     }
 
@@ -24,6 +24,11 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
 
     @Override
     public boolean hasProperty(PropertyName property) {
+        return hasProperty(0, property);
+    }
+
+    @Override
+    public boolean hasProperty(Integer subSensorId, PropertyName property) {
         return switch (property) {
             case DATA_ID, REPORTED_AT -> true;
             case DEVICE_ID, DEVICE_NAME, DEVICE_RECORDS,
@@ -35,7 +40,7 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
                     ILLUMINANCE, TRIGGER, BATTERY_MAX_VOLTS, BATTERY_MIN_VOLTS,
                     O3, CO2, CO, NH3, NO2, VOC, PM10, PM2_5,
                     BATTERY_PERCENTAGE, BATTERY_VOLTS, SOIL_MOISTURE ->
-                    measures.get(0) != null && measures.get(0).hasProperty(property);
+                    measures.get(subSensorId) != null && measures.get(subSensorId).hasProperty(property);
         };
     }
 }

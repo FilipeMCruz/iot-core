@@ -8,14 +8,32 @@ public interface AirHumidityOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float grams_per_cubic_meter = 1;</code>
+   * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+   * @return Whether the gramsPerCubicMeter field is set.
+   */
+  boolean hasGramsPerCubicMeter();
+  /**
+   * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
    * @return The gramsPerCubicMeter.
    */
-  float getGramsPerCubicMeter();
+  com.google.protobuf.FloatValue getGramsPerCubicMeter();
+  /**
+   * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getGramsPerCubicMeterOrBuilder();
 
   /**
-   * <code>float relative_percentage = 2;</code>
+   * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+   * @return Whether the relativePercentage field is set.
+   */
+  boolean hasRelativePercentage();
+  /**
+   * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
    * @return The relativePercentage.
    */
-  float getRelativePercentage();
+  com.google.protobuf.FloatValue getRelativePercentage();
+  /**
+   * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getRelativePercentageOrBuilder();
 }

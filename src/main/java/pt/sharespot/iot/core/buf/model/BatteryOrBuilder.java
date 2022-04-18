@@ -8,26 +8,62 @@ public interface BatteryOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float percentage = 1;</code>
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
+   * @return Whether the percentage field is set.
+   */
+  boolean hasPercentage();
+  /**
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
    * @return The percentage.
    */
-  float getPercentage();
+  com.google.protobuf.FloatValue getPercentage();
+  /**
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getPercentageOrBuilder();
 
   /**
-   * <code>float volts = 2;</code>
+   * <code>.google.protobuf.FloatValue volts = 2;</code>
+   * @return Whether the volts field is set.
+   */
+  boolean hasVolts();
+  /**
+   * <code>.google.protobuf.FloatValue volts = 2;</code>
    * @return The volts.
    */
-  float getVolts();
+  com.google.protobuf.FloatValue getVolts();
+  /**
+   * <code>.google.protobuf.FloatValue volts = 2;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getVoltsOrBuilder();
 
   /**
-   * <code>float max_volts = 3;</code>
+   * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+   * @return Whether the maxVolts field is set.
+   */
+  boolean hasMaxVolts();
+  /**
+   * <code>.google.protobuf.FloatValue max_volts = 3;</code>
    * @return The maxVolts.
    */
-  float getMaxVolts();
+  com.google.protobuf.FloatValue getMaxVolts();
+  /**
+   * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getMaxVoltsOrBuilder();
 
   /**
-   * <code>float min_volts = 4;</code>
+   * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+   * @return Whether the minVolts field is set.
+   */
+  boolean hasMinVolts();
+  /**
+   * <code>.google.protobuf.FloatValue min_volts = 4;</code>
    * @return The minVolts.
    */
-  float getMinVolts();
+  com.google.protobuf.FloatValue getMinVolts();
+  /**
+   * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getMinVoltsOrBuilder();
 }

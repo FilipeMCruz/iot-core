@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (lux_ != null) {
+              subBuilder = lux_.toBuilder();
+            }
+            lux_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(lux_);
+              lux_ = subBuilder.buildPartial();
+            }
 
-            lux_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LUX_FIELD_NUMBER = 1;
-  private float lux_;
+  private com.google.protobuf.FloatValue lux_;
   /**
-   * <code>float lux = 1;</code>
+   * <code>.google.protobuf.FloatValue lux = 1;</code>
+   * @return Whether the lux field is set.
+   */
+  @java.lang.Override
+  public boolean hasLux() {
+    return lux_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue lux = 1;</code>
    * @return The lux.
    */
   @java.lang.Override
-  public float getLux() {
-    return lux_;
+  public com.google.protobuf.FloatValue getLux() {
+    return lux_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : lux_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue lux = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getLuxOrBuilder() {
+    return getLux();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(lux_) != 0) {
-      output.writeFloat(1, lux_);
+    if (lux_ != null) {
+      output.writeMessage(1, getLux());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(lux_) != 0) {
+    if (lux_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, lux_);
+        .computeMessageSize(1, getLux());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.Illuminance other = (pt.sharespot.iot.core.buf.model.Illuminance) obj;
 
-    if (java.lang.Float.floatToIntBits(getLux())
-        != java.lang.Float.floatToIntBits(
-            other.getLux())) return false;
+    if (hasLux() != other.hasLux()) return false;
+    if (hasLux()) {
+      if (!getLux()
+          .equals(other.getLux())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + LUX_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getLux());
+    if (hasLux()) {
+      hash = (37 * hash) + LUX_FIELD_NUMBER;
+      hash = (53 * hash) + getLux().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      lux_ = 0F;
-
+      if (luxBuilder_ == null) {
+        lux_ = null;
+      } else {
+        lux_ = null;
+        luxBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Illuminance buildPartial() {
       pt.sharespot.iot.core.buf.model.Illuminance result = new pt.sharespot.iot.core.buf.model.Illuminance(this);
-      result.lux_ = lux_;
+      if (luxBuilder_ == null) {
+        result.lux_ = lux_;
+      } else {
+        result.lux_ = luxBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Illuminance other) {
       if (other == pt.sharespot.iot.core.buf.model.Illuminance.getDefaultInstance()) return this;
-      if (other.getLux() != 0F) {
-        setLux(other.getLux());
+      if (other.hasLux()) {
+        mergeLux(other.getLux());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float lux_ ;
+    private com.google.protobuf.FloatValue lux_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> luxBuilder_;
     /**
-     * <code>float lux = 1;</code>
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
+     * @return Whether the lux field is set.
+     */
+    public boolean hasLux() {
+      return luxBuilder_ != null || lux_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
      * @return The lux.
      */
-    @java.lang.Override
-    public float getLux() {
-      return lux_;
+    public com.google.protobuf.FloatValue getLux() {
+      if (luxBuilder_ == null) {
+        return lux_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : lux_;
+      } else {
+        return luxBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float lux = 1;</code>
-     * @param value The lux to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
      */
-    public Builder setLux(float value) {
-      
-      lux_ = value;
-      onChanged();
+    public Builder setLux(com.google.protobuf.FloatValue value) {
+      if (luxBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lux_ = value;
+        onChanged();
+      } else {
+        luxBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float lux = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
+     */
+    public Builder setLux(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (luxBuilder_ == null) {
+        lux_ = builderForValue.build();
+        onChanged();
+      } else {
+        luxBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
+     */
+    public Builder mergeLux(com.google.protobuf.FloatValue value) {
+      if (luxBuilder_ == null) {
+        if (lux_ != null) {
+          lux_ =
+            com.google.protobuf.FloatValue.newBuilder(lux_).mergeFrom(value).buildPartial();
+        } else {
+          lux_ = value;
+        }
+        onChanged();
+      } else {
+        luxBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
      */
     public Builder clearLux() {
-      
-      lux_ = 0F;
-      onChanged();
+      if (luxBuilder_ == null) {
+        lux_ = null;
+        onChanged();
+      } else {
+        lux_ = null;
+        luxBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getLuxBuilder() {
+      
+      onChanged();
+      return getLuxFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getLuxOrBuilder() {
+      if (luxBuilder_ != null) {
+        return luxBuilder_.getMessageOrBuilder();
+      } else {
+        return lux_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : lux_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue lux = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getLuxFieldBuilder() {
+      if (luxBuilder_ == null) {
+        luxBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getLux(),
+                getParentForChildren(),
+                isClean());
+        lux_ = null;
+      }
+      return luxBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

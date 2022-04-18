@@ -48,19 +48,43 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (millimeters_ != null) {
+              subBuilder = millimeters_.toBuilder();
+            }
+            millimeters_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(millimeters_);
+              millimeters_ = subBuilder.buildPartial();
+            }
 
-            millimeters_ = input.readFloat();
             break;
           }
-          case 21: {
+          case 18: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (maxMillimeters_ != null) {
+              subBuilder = maxMillimeters_.toBuilder();
+            }
+            maxMillimeters_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(maxMillimeters_);
+              maxMillimeters_ = subBuilder.buildPartial();
+            }
 
-            maxMillimeters_ = input.readFloat();
             break;
           }
-          case 29: {
+          case 26: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (minMillimeters_ != null) {
+              subBuilder = minMillimeters_.toBuilder();
+            }
+            minMillimeters_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(minMillimeters_);
+              minMillimeters_ = subBuilder.buildPartial();
+            }
 
-            minMillimeters_ = input.readFloat();
             break;
           }
           default: {
@@ -96,36 +120,81 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MILLIMETERS_FIELD_NUMBER = 1;
-  private float millimeters_;
+  private com.google.protobuf.FloatValue millimeters_;
   /**
-   * <code>float millimeters = 1;</code>
+   * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+   * @return Whether the millimeters field is set.
+   */
+  @java.lang.Override
+  public boolean hasMillimeters() {
+    return millimeters_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue millimeters = 1;</code>
    * @return The millimeters.
    */
   @java.lang.Override
-  public float getMillimeters() {
-    return millimeters_;
+  public com.google.protobuf.FloatValue getMillimeters() {
+    return millimeters_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : millimeters_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getMillimetersOrBuilder() {
+    return getMillimeters();
   }
 
   public static final int MAXMILLIMETERS_FIELD_NUMBER = 2;
-  private float maxMillimeters_;
+  private com.google.protobuf.FloatValue maxMillimeters_;
   /**
-   * <code>float maxMillimeters = 2;</code>
+   * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+   * @return Whether the maxMillimeters field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxMillimeters() {
+    return maxMillimeters_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
    * @return The maxMillimeters.
    */
   @java.lang.Override
-  public float getMaxMillimeters() {
-    return maxMillimeters_;
+  public com.google.protobuf.FloatValue getMaxMillimeters() {
+    return maxMillimeters_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : maxMillimeters_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getMaxMillimetersOrBuilder() {
+    return getMaxMillimeters();
   }
 
   public static final int MINMILLIMETERS_FIELD_NUMBER = 3;
-  private float minMillimeters_;
+  private com.google.protobuf.FloatValue minMillimeters_;
   /**
-   * <code>float minMillimeters = 3;</code>
+   * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+   * @return Whether the minMillimeters field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinMillimeters() {
+    return minMillimeters_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
    * @return The minMillimeters.
    */
   @java.lang.Override
-  public float getMinMillimeters() {
-    return minMillimeters_;
+  public com.google.protobuf.FloatValue getMinMillimeters() {
+    return minMillimeters_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : minMillimeters_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getMinMillimetersOrBuilder() {
+    return getMinMillimeters();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -142,14 +211,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(millimeters_) != 0) {
-      output.writeFloat(1, millimeters_);
+    if (millimeters_ != null) {
+      output.writeMessage(1, getMillimeters());
     }
-    if (java.lang.Float.floatToRawIntBits(maxMillimeters_) != 0) {
-      output.writeFloat(2, maxMillimeters_);
+    if (maxMillimeters_ != null) {
+      output.writeMessage(2, getMaxMillimeters());
     }
-    if (java.lang.Float.floatToRawIntBits(minMillimeters_) != 0) {
-      output.writeFloat(3, minMillimeters_);
+    if (minMillimeters_ != null) {
+      output.writeMessage(3, getMinMillimeters());
     }
     unknownFields.writeTo(output);
   }
@@ -160,17 +229,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(millimeters_) != 0) {
+    if (millimeters_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, millimeters_);
+        .computeMessageSize(1, getMillimeters());
     }
-    if (java.lang.Float.floatToRawIntBits(maxMillimeters_) != 0) {
+    if (maxMillimeters_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, maxMillimeters_);
+        .computeMessageSize(2, getMaxMillimeters());
     }
-    if (java.lang.Float.floatToRawIntBits(minMillimeters_) != 0) {
+    if (minMillimeters_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(3, minMillimeters_);
+        .computeMessageSize(3, getMinMillimeters());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -187,15 +256,21 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.Distance other = (pt.sharespot.iot.core.buf.model.Distance) obj;
 
-    if (java.lang.Float.floatToIntBits(getMillimeters())
-        != java.lang.Float.floatToIntBits(
-            other.getMillimeters())) return false;
-    if (java.lang.Float.floatToIntBits(getMaxMillimeters())
-        != java.lang.Float.floatToIntBits(
-            other.getMaxMillimeters())) return false;
-    if (java.lang.Float.floatToIntBits(getMinMillimeters())
-        != java.lang.Float.floatToIntBits(
-            other.getMinMillimeters())) return false;
+    if (hasMillimeters() != other.hasMillimeters()) return false;
+    if (hasMillimeters()) {
+      if (!getMillimeters()
+          .equals(other.getMillimeters())) return false;
+    }
+    if (hasMaxMillimeters() != other.hasMaxMillimeters()) return false;
+    if (hasMaxMillimeters()) {
+      if (!getMaxMillimeters()
+          .equals(other.getMaxMillimeters())) return false;
+    }
+    if (hasMinMillimeters() != other.hasMinMillimeters()) return false;
+    if (hasMinMillimeters()) {
+      if (!getMinMillimeters()
+          .equals(other.getMinMillimeters())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -207,15 +282,18 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MILLIMETERS_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getMillimeters());
-    hash = (37 * hash) + MAXMILLIMETERS_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getMaxMillimeters());
-    hash = (37 * hash) + MINMILLIMETERS_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getMinMillimeters());
+    if (hasMillimeters()) {
+      hash = (37 * hash) + MILLIMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getMillimeters().hashCode();
+    }
+    if (hasMaxMillimeters()) {
+      hash = (37 * hash) + MAXMILLIMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxMillimeters().hashCode();
+    }
+    if (hasMinMillimeters()) {
+      hash = (37 * hash) + MINMILLIMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getMinMillimeters().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -349,12 +427,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      millimeters_ = 0F;
-
-      maxMillimeters_ = 0F;
-
-      minMillimeters_ = 0F;
-
+      if (millimetersBuilder_ == null) {
+        millimeters_ = null;
+      } else {
+        millimeters_ = null;
+        millimetersBuilder_ = null;
+      }
+      if (maxMillimetersBuilder_ == null) {
+        maxMillimeters_ = null;
+      } else {
+        maxMillimeters_ = null;
+        maxMillimetersBuilder_ = null;
+      }
+      if (minMillimetersBuilder_ == null) {
+        minMillimeters_ = null;
+      } else {
+        minMillimeters_ = null;
+        minMillimetersBuilder_ = null;
+      }
       return this;
     }
 
@@ -381,9 +471,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Distance buildPartial() {
       pt.sharespot.iot.core.buf.model.Distance result = new pt.sharespot.iot.core.buf.model.Distance(this);
-      result.millimeters_ = millimeters_;
-      result.maxMillimeters_ = maxMillimeters_;
-      result.minMillimeters_ = minMillimeters_;
+      if (millimetersBuilder_ == null) {
+        result.millimeters_ = millimeters_;
+      } else {
+        result.millimeters_ = millimetersBuilder_.build();
+      }
+      if (maxMillimetersBuilder_ == null) {
+        result.maxMillimeters_ = maxMillimeters_;
+      } else {
+        result.maxMillimeters_ = maxMillimetersBuilder_.build();
+      }
+      if (minMillimetersBuilder_ == null) {
+        result.minMillimeters_ = minMillimeters_;
+      } else {
+        result.minMillimeters_ = minMillimetersBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -432,14 +534,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Distance other) {
       if (other == pt.sharespot.iot.core.buf.model.Distance.getDefaultInstance()) return this;
-      if (other.getMillimeters() != 0F) {
-        setMillimeters(other.getMillimeters());
+      if (other.hasMillimeters()) {
+        mergeMillimeters(other.getMillimeters());
       }
-      if (other.getMaxMillimeters() != 0F) {
-        setMaxMillimeters(other.getMaxMillimeters());
+      if (other.hasMaxMillimeters()) {
+        mergeMaxMillimeters(other.getMaxMillimeters());
       }
-      if (other.getMinMillimeters() != 0F) {
-        setMinMillimeters(other.getMinMillimeters());
+      if (other.hasMinMillimeters()) {
+        mergeMinMillimeters(other.getMinMillimeters());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -470,97 +572,361 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float millimeters_ ;
+    private com.google.protobuf.FloatValue millimeters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> millimetersBuilder_;
     /**
-     * <code>float millimeters = 1;</code>
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+     * @return Whether the millimeters field is set.
+     */
+    public boolean hasMillimeters() {
+      return millimetersBuilder_ != null || millimeters_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
      * @return The millimeters.
      */
-    @java.lang.Override
-    public float getMillimeters() {
-      return millimeters_;
+    public com.google.protobuf.FloatValue getMillimeters() {
+      if (millimetersBuilder_ == null) {
+        return millimeters_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : millimeters_;
+      } else {
+        return millimetersBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float millimeters = 1;</code>
-     * @param value The millimeters to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
      */
-    public Builder setMillimeters(float value) {
-      
-      millimeters_ = value;
-      onChanged();
+    public Builder setMillimeters(com.google.protobuf.FloatValue value) {
+      if (millimetersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        millimeters_ = value;
+        onChanged();
+      } else {
+        millimetersBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float millimeters = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+     */
+    public Builder setMillimeters(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (millimetersBuilder_ == null) {
+        millimeters_ = builderForValue.build();
+        onChanged();
+      } else {
+        millimetersBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+     */
+    public Builder mergeMillimeters(com.google.protobuf.FloatValue value) {
+      if (millimetersBuilder_ == null) {
+        if (millimeters_ != null) {
+          millimeters_ =
+            com.google.protobuf.FloatValue.newBuilder(millimeters_).mergeFrom(value).buildPartial();
+        } else {
+          millimeters_ = value;
+        }
+        onChanged();
+      } else {
+        millimetersBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
      */
     public Builder clearMillimeters() {
-      
-      millimeters_ = 0F;
-      onChanged();
+      if (millimetersBuilder_ == null) {
+        millimeters_ = null;
+        onChanged();
+      } else {
+        millimeters_ = null;
+        millimetersBuilder_ = null;
+      }
+
       return this;
     }
-
-    private float maxMillimeters_ ;
     /**
-     * <code>float maxMillimeters = 2;</code>
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getMillimetersBuilder() {
+      
+      onChanged();
+      return getMillimetersFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getMillimetersOrBuilder() {
+      if (millimetersBuilder_ != null) {
+        return millimetersBuilder_.getMessageOrBuilder();
+      } else {
+        return millimeters_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : millimeters_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getMillimetersFieldBuilder() {
+      if (millimetersBuilder_ == null) {
+        millimetersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getMillimeters(),
+                getParentForChildren(),
+                isClean());
+        millimeters_ = null;
+      }
+      return millimetersBuilder_;
+    }
+
+    private com.google.protobuf.FloatValue maxMillimeters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> maxMillimetersBuilder_;
+    /**
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+     * @return Whether the maxMillimeters field is set.
+     */
+    public boolean hasMaxMillimeters() {
+      return maxMillimetersBuilder_ != null || maxMillimeters_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
      * @return The maxMillimeters.
      */
-    @java.lang.Override
-    public float getMaxMillimeters() {
-      return maxMillimeters_;
+    public com.google.protobuf.FloatValue getMaxMillimeters() {
+      if (maxMillimetersBuilder_ == null) {
+        return maxMillimeters_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : maxMillimeters_;
+      } else {
+        return maxMillimetersBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float maxMillimeters = 2;</code>
-     * @param value The maxMillimeters to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
      */
-    public Builder setMaxMillimeters(float value) {
-      
-      maxMillimeters_ = value;
-      onChanged();
+    public Builder setMaxMillimeters(com.google.protobuf.FloatValue value) {
+      if (maxMillimetersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxMillimeters_ = value;
+        onChanged();
+      } else {
+        maxMillimetersBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float maxMillimeters = 2;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+     */
+    public Builder setMaxMillimeters(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (maxMillimetersBuilder_ == null) {
+        maxMillimeters_ = builderForValue.build();
+        onChanged();
+      } else {
+        maxMillimetersBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+     */
+    public Builder mergeMaxMillimeters(com.google.protobuf.FloatValue value) {
+      if (maxMillimetersBuilder_ == null) {
+        if (maxMillimeters_ != null) {
+          maxMillimeters_ =
+            com.google.protobuf.FloatValue.newBuilder(maxMillimeters_).mergeFrom(value).buildPartial();
+        } else {
+          maxMillimeters_ = value;
+        }
+        onChanged();
+      } else {
+        maxMillimetersBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
      */
     public Builder clearMaxMillimeters() {
-      
-      maxMillimeters_ = 0F;
-      onChanged();
+      if (maxMillimetersBuilder_ == null) {
+        maxMillimeters_ = null;
+        onChanged();
+      } else {
+        maxMillimeters_ = null;
+        maxMillimetersBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getMaxMillimetersBuilder() {
+      
+      onChanged();
+      return getMaxMillimetersFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getMaxMillimetersOrBuilder() {
+      if (maxMillimetersBuilder_ != null) {
+        return maxMillimetersBuilder_.getMessageOrBuilder();
+      } else {
+        return maxMillimeters_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : maxMillimeters_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getMaxMillimetersFieldBuilder() {
+      if (maxMillimetersBuilder_ == null) {
+        maxMillimetersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getMaxMillimeters(),
+                getParentForChildren(),
+                isClean());
+        maxMillimeters_ = null;
+      }
+      return maxMillimetersBuilder_;
     }
 
-    private float minMillimeters_ ;
+    private com.google.protobuf.FloatValue minMillimeters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> minMillimetersBuilder_;
     /**
-     * <code>float minMillimeters = 3;</code>
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+     * @return Whether the minMillimeters field is set.
+     */
+    public boolean hasMinMillimeters() {
+      return minMillimetersBuilder_ != null || minMillimeters_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
      * @return The minMillimeters.
      */
-    @java.lang.Override
-    public float getMinMillimeters() {
-      return minMillimeters_;
+    public com.google.protobuf.FloatValue getMinMillimeters() {
+      if (minMillimetersBuilder_ == null) {
+        return minMillimeters_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : minMillimeters_;
+      } else {
+        return minMillimetersBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float minMillimeters = 3;</code>
-     * @param value The minMillimeters to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
      */
-    public Builder setMinMillimeters(float value) {
-      
-      minMillimeters_ = value;
-      onChanged();
+    public Builder setMinMillimeters(com.google.protobuf.FloatValue value) {
+      if (minMillimetersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        minMillimeters_ = value;
+        onChanged();
+      } else {
+        minMillimetersBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float minMillimeters = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+     */
+    public Builder setMinMillimeters(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (minMillimetersBuilder_ == null) {
+        minMillimeters_ = builderForValue.build();
+        onChanged();
+      } else {
+        minMillimetersBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+     */
+    public Builder mergeMinMillimeters(com.google.protobuf.FloatValue value) {
+      if (minMillimetersBuilder_ == null) {
+        if (minMillimeters_ != null) {
+          minMillimeters_ =
+            com.google.protobuf.FloatValue.newBuilder(minMillimeters_).mergeFrom(value).buildPartial();
+        } else {
+          minMillimeters_ = value;
+        }
+        onChanged();
+      } else {
+        minMillimetersBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
      */
     public Builder clearMinMillimeters() {
-      
-      minMillimeters_ = 0F;
-      onChanged();
+      if (minMillimetersBuilder_ == null) {
+        minMillimeters_ = null;
+        onChanged();
+      } else {
+        minMillimeters_ = null;
+        minMillimetersBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getMinMillimetersBuilder() {
+      
+      onChanged();
+      return getMinMillimetersFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getMinMillimetersOrBuilder() {
+      if (minMillimetersBuilder_ != null) {
+        return minMillimetersBuilder_.getMessageOrBuilder();
+      } else {
+        return minMillimeters_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : minMillimeters_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getMinMillimetersFieldBuilder() {
+      if (minMillimetersBuilder_ == null) {
+        minMillimetersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getMinMillimeters(),
+                getParentForChildren(),
+                isClean());
+        minMillimeters_ = null;
+      }
+      return minMillimetersBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

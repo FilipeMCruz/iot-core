@@ -8,20 +8,47 @@ public interface GPSOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>double latitude = 1;</code>
+   * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+   * @return Whether the latitude field is set.
+   */
+  boolean hasLatitude();
+  /**
+   * <code>.google.protobuf.DoubleValue latitude = 1;</code>
    * @return The latitude.
    */
-  double getLatitude();
+  com.google.protobuf.DoubleValue getLatitude();
+  /**
+   * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+   */
+  com.google.protobuf.DoubleValueOrBuilder getLatitudeOrBuilder();
 
   /**
-   * <code>double longitude = 2;</code>
+   * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+   * @return Whether the longitude field is set.
+   */
+  boolean hasLongitude();
+  /**
+   * <code>.google.protobuf.DoubleValue longitude = 2;</code>
    * @return The longitude.
    */
-  double getLongitude();
+  com.google.protobuf.DoubleValue getLongitude();
+  /**
+   * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+   */
+  com.google.protobuf.DoubleValueOrBuilder getLongitudeOrBuilder();
 
   /**
-   * <code>float altitude = 3;</code>
+   * <code>.google.protobuf.FloatValue altitude = 3;</code>
+   * @return Whether the altitude field is set.
+   */
+  boolean hasAltitude();
+  /**
+   * <code>.google.protobuf.FloatValue altitude = 3;</code>
    * @return The altitude.
    */
-  float getAltitude();
+  com.google.protobuf.FloatValue getAltitude();
+  /**
+   * <code>.google.protobuf.FloatValue altitude = 3;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getAltitudeOrBuilder();
 }

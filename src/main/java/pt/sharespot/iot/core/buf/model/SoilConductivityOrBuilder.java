@@ -8,8 +8,17 @@ public interface SoilConductivityOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float micro_siemens_per_centimeter = 1;</code>
+   * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+   * @return Whether the microSiemensPerCentimeter field is set.
+   */
+  boolean hasMicroSiemensPerCentimeter();
+  /**
+   * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
    * @return The microSiemensPerCentimeter.
    */
-  float getMicroSiemensPerCentimeter();
+  com.google.protobuf.FloatValue getMicroSiemensPerCentimeter();
+  /**
+   * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getMicroSiemensPerCentimeterOrBuilder();
 }

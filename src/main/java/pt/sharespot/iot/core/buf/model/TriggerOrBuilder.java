@@ -8,8 +8,17 @@ public interface TriggerOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool value = 1;</code>
+   * <code>.google.protobuf.BoolValue value = 1;</code>
+   * @return Whether the value field is set.
+   */
+  boolean hasValue();
+  /**
+   * <code>.google.protobuf.BoolValue value = 1;</code>
    * @return The value.
    */
-  boolean getValue();
+  com.google.protobuf.BoolValue getValue();
+  /**
+   * <code>.google.protobuf.BoolValue value = 1;</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getValueOrBuilder();
 }

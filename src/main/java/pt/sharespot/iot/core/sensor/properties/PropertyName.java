@@ -51,7 +51,7 @@ public enum PropertyName {
         }
     }, VELOCITY {
         public String path(Integer sensorID) {
-            return "measures." + sensorID + ".velocity.kilometerPerHour";
+            return "measures." + sensorID + ".velocity.kilometersPerHour";
         }
     }, AQI {
         public String path(Integer sensorID) {

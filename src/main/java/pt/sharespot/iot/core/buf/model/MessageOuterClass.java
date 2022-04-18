@@ -194,214 +194,239 @@ public final class MessageOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n src/main/resources/message.proto\022\025pt.s" +
-      "harespot.iot.core\"\206\001\n\022UnprocessedMessage" +
-      "\022\013\n\003oid\030\001 \001(\t\022;\n\014routing_keys\030\002 \001(\0132%.pt" +
-      ".sharespot.iot.core.RoutingKeysBuf\022\014\n\004ho" +
-      "ps\030\003 \001(\005\022\030\n\020unprocessed_data\030\004 \001(\t\"\214\001\n\007M" +
-      "essage\022\013\n\003oid\030\001 \001(\t\022;\n\014routing_keys\030\002 \001(" +
-      "\0132%.pt.sharespot.iot.core.RoutingKeysBuf" +
-      "\022\014\n\004hops\030\003 \001(\005\022)\n\004data\030\004 \001(\0132\033.pt.shares" +
-      "pot.iot.core.Data\"\354\001\n\004Data\022\017\n\007data_id\030\001 " +
-      "\001(\t\022\023\n\013reported_at\030\002 \001(\003\022-\n\006device\030\003 \001(\013" +
-      "2\035.pt.sharespot.iot.core.Device\022;\n\010measu" +
-      "res\030\004 \003(\0132).pt.sharespot.iot.core.Data.M" +
-      "easuresEntry\032R\n\rMeasuresEntry\022\013\n\003key\030\001 \001" +
-      "(\005\0220\n\005value\030\002 \001(\0132!.pt.sharespot.iot.cor" +
-      "e.SensorData:\0028\001\"\250\t\n\nSensorData\022\'\n\003gps\030\001" +
-      " \001(\0132\032.pt.sharespot.iot.core.GPS\0227\n\013temp" +
-      "erature\030\002 \001(\0132\".pt.sharespot.iot.core.Te" +
-      "mperature\022-\n\006motion\030\003 \001(\0132\035.pt.sharespot" +
-      ".iot.core.Motion\022.\n\003aqi\030\004 \001(\0132!.pt.share" +
-      "spot.iot.core.AirQuality\0221\n\010velocity\030\005 \001" +
-      "(\0132\037.pt.sharespot.iot.core.Velocity\0228\n\014a" +
-      "ir_humidity\030\006 \001(\0132\".pt.sharespot.iot.cor" +
-      "e.AirHumidity\0228\n\014air_pressure\030\007 \001(\0132\".pt" +
-      ".sharespot.iot.core.AirPressure\022/\n\007batte" +
-      "ry\030\010 \001(\0132\036.pt.sharespot.iot.core.Battery" +
-      "\022:\n\rsoil_moisture\030\t \001(\0132#.pt.sharespot.i" +
-      "ot.core.SoilMoisture\0227\n\013illuminance\030\n \001(" +
-      "\0132\".pt.sharespot.iot.core.Illuminance\022/\n" +
-      "\007trigger\030\013 \001(\0132\036.pt.sharespot.iot.core.T" +
-      "rigger\022<\n\016water_pressure\030\014 \001(\0132$.pt.shar" +
-      "espot.iot.core.WaterPressure\022%\n\002ph\030\r \001(\013" +
-      "2\031.pt.sharespot.iot.core.PH\0221\n\010distance\030" +
-      "\016 \001(\0132\037.pt.sharespot.iot.core.Distance\0225" +
-      "\n\noccupation\030\017 \001(\0132!.pt.sharespot.iot.co" +
-      "re.Occupation\022B\n\021soil_conductivity\030\020 \001(\013" +
-      "2\'.pt.sharespot.iot.core.SoilConductivit" +
-      "y\022\'\n\003co2\030\021 \001(\0132\032.pt.sharespot.iot.core.C" +
-      "O2\022%\n\002co\030\022 \001(\0132\031.pt.sharespot.iot.core.C" +
-      "O\022\'\n\003nh3\030\023 \001(\0132\032.pt.sharespot.iot.core.N" +
-      "H3\022\'\n\003no2\030\024 \001(\0132\032.pt.sharespot.iot.core." +
-      "NO2\022%\n\002o3\030\025 \001(\0132\031.pt.sharespot.iot.core." +
-      "O3\022\'\n\003voc\030\026 \001(\0132\032.pt.sharespot.iot.core." +
-      "VOC\022+\n\005pm2_5\030\027 \001(\0132\034.pt.sharespot.iot.co" +
-      "re.PM2_5\022)\n\004pm10\030\030 \001(\0132\033.pt.sharespot.io" +
-      "t.core.PM10\",\n\005PM2_5\022#\n\033micro_grams_per_" +
-      "cubic_meter\030\001 \001(\002\"+\n\004PM10\022#\n\033micro_grams" +
-      "_per_cubic_meter\030\001 \001(\002\"\022\n\003CO2\022\013\n\003ppm\030\001 \001" +
-      "(\002\"\021\n\002CO\022\013\n\003ppm\030\001 \001(\002\"\022\n\003NH3\022\013\n\003ppm\030\001 \001(" +
-      "\002\"\022\n\003NO2\022\013\n\003ppm\030\001 \001(\002\"\021\n\002O3\022\013\n\003ppm\030\001 \001(\002" +
-      "\"\022\n\003VOC\022\013\n\003ppm\030\001 \001(\002\"<\n\003GPS\022\020\n\010latitude\030" +
-      "\001 \001(\001\022\021\n\tlongitude\030\002 \001(\001\022\020\n\010altitude\030\003 \001" +
-      "(\002\"8\n\020SoilConductivity\022$\n\034micro_siemens_" +
-      "per_centimeter\030\001 \001(\002\":\n\006Motion\0220\n\005value\030" +
-      "\001 \001(\0162!.pt.sharespot.iot.core.MotionType" +
-      "\"\036\n\013Temperature\022\017\n\007celsius\030\001 \001(\002\" \n\nOccu" +
-      "pation\022\022\n\npercentage\030\001 \001(\002\"\033\n\nAirQuality" +
-      "\022\r\n\005value\030\001 \001(\002\"\023\n\002PH\022\r\n\005value\030\001 \001(\002\"O\n\010" +
-      "Distance\022\023\n\013millimeters\030\001 \001(\002\022\026\n\016maxMill" +
-      "imeters\030\002 \001(\002\022\026\n\016minMillimeters\030\003 \001(\002\"\'\n" +
-      "\010Velocity\022\033\n\023kilometers_per_hour\030\001 \001(\002\"I" +
-      "\n\013AirHumidity\022\035\n\025grams_per_cubic_meter\030\001" +
-      " \001(\002\022\033\n\023relative_percentage\030\002 \001(\002\"#\n\013Air" +
-      "Pressure\022\024\n\014hecto_pascal\030\001 \001(\002\"\034\n\rWaterP" +
-      "ressure\022\013\n\003bar\030\001 \001(\002\"R\n\007Battery\022\022\n\nperce" +
-      "ntage\030\001 \001(\002\022\r\n\005volts\030\002 \001(\002\022\021\n\tmax_volts\030" +
-      "\003 \001(\002\022\021\n\tmin_volts\030\004 \001(\002\"+\n\014SoilMoisture" +
-      "\022\033\n\023relative_percentage\030\001 \001(\002\"\032\n\013Illumin" +
-      "ance\022\013\n\003lux\030\001 \001(\002\"\030\n\007Trigger\022\r\n\005value\030\001 " +
-      "\001(\010\"\216\001\n\006Device\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t" +
-      "\0223\n\007records\030\003 \001(\0132\".pt.sharespot.iot.cor" +
-      "e.RecordEntry\0225\n\007domains\030\004 \001(\0132$.pt.shar" +
-      "espot.iot.core.DeviceDomains\"<\n\013RecordEn" +
-      "try\022-\n\007entries\030\001 \003(\0132\034.pt.sharespot.iot." +
-      "core.Entry\"\'\n\005Entry\022\r\n\005label\030\001 \001(\t\022\017\n\007co" +
-      "ntent\030\002 \001(\t\"1\n\rDeviceDomains\022\014\n\004read\030\001 \003" +
-      "(\t\022\022\n\nread_write\030\002 \003(\t\"\376\016\n\016RoutingKeysBu" +
-      "f\022\017\n\007version\030\001 \001(\t\022F\n\016container_type\030\002 \001" +
-      "(\0162..pt.sharespot.iot.core.ContainerType" +
-      "OptionsBuf\022<\n\tinfo_type\030\003 \001(\0162).pt.share" +
-      "spot.iot.core.InfoTypeOptionsBuf\022\023\n\013sens" +
-      "or_type\030\004 \001(\t\022\017\n\007channel\030\005 \001(\t\0229\n\007record" +
-      "s\030\006 \001(\0162(.pt.sharespot.iot.core.RecordsO" +
-      "ptionsBuf\0225\n\003gps\030\007 \001(\0162(.pt.sharespot.io" +
-      "t.core.GPSDataOptionsBuf\022E\n\013temperature\030" +
-      "\010 \001(\01620.pt.sharespot.iot.core.Temperatur" +
-      "eDataOptionsBuf\022C\n\nlegitimacy\030\t \001(\0162/.pt" +
-      ".sharespot.iot.core.DataLegitimacyOption" +
-      "sBuf\022<\n\003aqi\030\n \001(\0162/.pt.sharespot.iot.cor" +
-      "e.AirQualityDataOptionsBuf\022F\n\014air_humidi" +
-      "ty\030\013 \001(\01620.pt.sharespot.iot.core.AirHumi" +
-      "dityDataOptionsBuf\022;\n\006motion\030\014 \001(\0162+.pt." +
-      "sharespot.iot.core.MotionDataOptionsBuf\022" +
-      "?\n\010velocity\030\r \001(\0162-.pt.sharespot.iot.cor" +
-      "e.VelocityDataOptionsBuf\022F\n\014air_pressure" +
-      "\030\016 \001(\01620.pt.sharespot.iot.core.AirPressu" +
-      "reDataOptionsBuf\022=\n\007battery\030\017 \001(\0162,.pt.s" +
-      "harespot.iot.core.BatteryDataOptionsBuf\022" +
-      "H\n\rsoil_moisture\030\020 \001(\01621.pt.sharespot.io" +
-      "t.core.SoilMoistureDataOptionsBuf\022E\n\013ill" +
-      "uminance\030\021 \001(\01620.pt.sharespot.iot.core.I" +
-      "lluminanceDataOptionsBuf\022C\n\townership\030\022 " +
-      "\001(\01620.pt.sharespot.iot.core.DomainOwners" +
-      "hipOptionsBuf\022=\n\007trigger\030\023 \001(\0162,.pt.shar" +
-      "espot.iot.core.TriggerDataOptionsBuf\022J\n\016" +
-      "water_pressure\030\024 \001(\01622.pt.sharespot.iot." +
-      "core.WaterPressureDataOptionsBuf\0223\n\002ph\030\025" +
-      " \001(\0162\'.pt.sharespot.iot.core.PHDataOptio" +
-      "nsBuf\022?\n\010distance\030\026 \001(\0162-.pt.sharespot.i" +
-      "ot.core.DistanceDataOptionsBuf\022C\n\noccupa" +
-      "tion\030\027 \001(\0162/.pt.sharespot.iot.core.Occup" +
-      "ationDataOptionsBuf\022P\n\021soil_conductivity" +
-      "\030\030 \001(\01625.pt.sharespot.iot.core.SoilCondu" +
-      "ctivityDataOptionsBuf\0225\n\003co2\030\031 \001(\0162(.pt." +
-      "sharespot.iot.core.CO2DataOptionsBuf\0223\n\002" +
-      "co\030\032 \001(\0162\'.pt.sharespot.iot.core.CODataO" +
-      "ptionsBuf\0225\n\003nh3\030\033 \001(\0162(.pt.sharespot.io" +
-      "t.core.NH3DataOptionsBuf\0225\n\003no2\030\034 \001(\0162(." +
-      "pt.sharespot.iot.core.NO2DataOptionsBuf\022" +
-      "3\n\002o3\030\035 \001(\0162\'.pt.sharespot.iot.core.O3Da" +
-      "taOptionsBuf\0225\n\003voc\030\036 \001(\0162(.pt.sharespot" +
-      ".iot.core.VOCDataOptionsBuf\0229\n\005pm2_5\030\037 \001" +
-      "(\0162*.pt.sharespot.iot.core.PM2_5DataOpti" +
-      "onsBuf\0227\n\004pm10\030  \001(\0162).pt.sharespot.iot." +
-      "core.PM10DataOptionsBuf*3\n\nMotionType\022\013\n" +
-      "\007UNKNOWN\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002*[\n\022" +
-      "PM10DataOptionsBuf\022\032\n\026UNIDENTIFIED_PM10_" +
-      "DATA\020\000\022\022\n\016WITH_PM10_DATA\020\001\022\025\n\021WITHOUT_PM" +
-      "10_DATA\020\002*_\n\023PM2_5DataOptionsBuf\022\033\n\027UNID" +
-      "ENTIFIED_PM2_5_DATA\020\000\022\023\n\017WITH_PM2_5_DATA" +
-      "\020\001\022\026\n\022WITHOUT_PM2_5_DATA\020\002*W\n\021CO2DataOpt" +
-      "ionsBuf\022\031\n\025UNIDENTIFIED_CO2_DATA\020\000\022\021\n\rWI" +
-      "TH_CO2_DATA\020\001\022\024\n\020WITHOUT_CO2_DATA\020\002*S\n\020C" +
-      "ODataOptionsBuf\022\030\n\024UNIDENTIFIED_CO_DATA\020" +
-      "\000\022\020\n\014WITH_CO_DATA\020\001\022\023\n\017WITHOUT_CO_DATA\020\002" +
-      "*W\n\021NH3DataOptionsBuf\022\031\n\025UNIDENTIFIED_NH" +
-      "3_DATA\020\000\022\021\n\rWITH_NH3_DATA\020\001\022\024\n\020WITHOUT_N" +
-      "H3_DATA\020\002*W\n\021NO2DataOptionsBuf\022\031\n\025UNIDEN" +
-      "TIFIED_NO2_DATA\020\000\022\021\n\rWITH_NO2_DATA\020\001\022\024\n\020" +
-      "WITHOUT_NO2_DATA\020\002*S\n\020O3DataOptionsBuf\022\030" +
-      "\n\024UNIDENTIFIED_O3_DATA\020\000\022\020\n\014WITH_O3_DATA" +
-      "\020\001\022\023\n\017WITHOUT_O3_DATA\020\002*W\n\021VOCDataOption" +
-      "sBuf\022\031\n\025UNIDENTIFIED_VOC_DATA\020\000\022\021\n\rWITH_" +
-      "VOC_DATA\020\001\022\024\n\020WITHOUT_VOC_DATA\020\002*\216\001\n\036Soi" +
-      "lConductivityDataOptionsBuf\022\'\n#UNIDENTIF" +
-      "IED_SOIL_CONDUCTIVITY_DATA\020\000\022\037\n\033WITH_SOI" +
-      "L_CONDUCTIVITY_DATA\020\001\022\"\n\036WITHOUT_SOIL_CO" +
-      "NDUCTIVITY_DATA\020\002*s\n\030OccupationDataOptio" +
-      "nsBuf\022 \n\034UNIDENTIFIED_OCCUPATION_DATA\020\000\022" +
-      "\030\n\024WITH_OCCUPATION_DATA\020\001\022\033\n\027WITHOUT_OCC" +
-      "UPATION_DATA\020\002*S\n\020PHDataOptionsBuf\022\030\n\024UN" +
-      "IDENTIFIED_PH_DATA\020\000\022\020\n\014WITH_PH_DATA\020\001\022\023" +
-      "\n\017WITHOUT_PH_DATA\020\002*k\n\026DistanceDataOptio" +
-      "nsBuf\022\036\n\032UNIDENTIFIED_DISTANCE_DATA\020\000\022\026\n" +
-      "\022WITH_DISTANCE_DATA\020\001\022\031\n\025WITHOUT_DISTANC" +
-      "E_DATA\020\002*g\n\025TriggerDataOptionsBuf\022\035\n\031UNI" +
-      "DENTIFIED_TRIGGER_DATA\020\000\022\025\n\021WITH_TRIGGER" +
-      "_DATA\020\001\022\030\n\024WITHOUT_TRIGGER_DATA\020\002*w\n\031Dom" +
-      "ainOwnershipOptionsBuf\022!\n\035UNIDENTIFIED_D" +
-      "OMAIN_OWNERSHIP\020\000\022\031\n\025WITH_DOMAIN_OWNERSH" +
-      "IP\020\001\022\034\n\030WITHOUT_DOMAIN_OWNERSHIP\020\002*w\n\031Il" +
-      "luminanceDataOptionsBuf\022!\n\035UNIDENTIFIED_" +
-      "ILLUMINANCE_DATA\020\000\022\031\n\025WITH_ILLUMINANCE_D" +
-      "ATA\020\001\022\034\n\030WITHOUT_ILLUMINANCE_DATA\020\002*~\n\032S" +
-      "oilMoistureDataOptionsBuf\022#\n\037UNIDENTIFIE" +
-      "D_SOIL_MOISTURE_DATA\020\000\022\033\n\027WITH_SOIL_MOIS" +
-      "TURE_DATA\020\001\022\036\n\032WITHOUT_SOIL_MOISTURE_DAT" +
-      "A\020\002*g\n\025BatteryDataOptionsBuf\022\035\n\031UNIDENTI" +
-      "FIED_BATTERY_DATA\020\000\022\025\n\021WITH_BATTERY_DATA" +
-      "\020\001\022\030\n\024WITHOUT_BATTERY_DATA\020\002*z\n\031AirPress" +
-      "ureDataOptionsBuf\022\"\n\036UNIDENTIFIED_AIR_PR" +
-      "ESSURE_DATA\020\000\022\032\n\026WITH_AIR_PRESSURE_DATA\020" +
-      "\001\022\035\n\031WITHOUT_AIR_PRESSURE_DATA\020\002*k\n\026Velo" +
-      "cityDataOptionsBuf\022\036\n\032UNIDENTIFIED_VELOC" +
-      "ITY_DATA\020\000\022\026\n\022WITH_VELOCITY_DATA\020\001\022\031\n\025WI" +
-      "THOUT_VELOCITY_DATA\020\002*c\n\024MotionDataOptio" +
-      "nsBuf\022\034\n\030UNIDENTIFIED_MOTION_DATA\020\000\022\024\n\020W" +
-      "ITH_MOTION_DATA\020\001\022\027\n\023WITHOUT_MOTION_DATA" +
-      "\020\002*z\n\031AirHumidityDataOptionsBuf\022\"\n\036UNIDE" +
-      "NTIFIED_AIR_HUMIDITY_DATA\020\000\022\032\n\026WITH_AIR_" +
-      "HUMIDITY_DATA\020\001\022\035\n\031WITHOUT_AIR_HUMIDITY_" +
-      "DATA\020\002*^\n\030AirQualityDataOptionsBuf\022\031\n\025UN" +
-      "IDENTIFIED_AQI_DATA\020\000\022\021\n\rWITH_AQI_DATA\020\001" +
-      "\022\024\n\020WITHOUT_AQI_DATA\020\002*\202\001\n\033WaterPressure" +
-      "DataOptionsBuf\022$\n UNIDENTIFIED_WATER_PRE" +
-      "SSURE_DATA\020\000\022\034\n\030WITH_WATER_PRESSURE_DATA" +
-      "\020\001\022\037\n\033WITHOUT_WATER_PRESSURE_DATA\020\002*\201\001\n\030" +
-      "DataLegitimacyOptionsBuf\022\026\n\022UNKNOWN_LEGI" +
-      "TIMACY\020\000\022\026\n\022CORRECT_LEGITIMACY\020\001\022\030\n\024INCO" +
-      "RRECT_LEGITIMACY\020\002\022\033\n\027UNDETERMINED_LEGIT" +
-      "IMACY\020\003*w\n\031TemperatureDataOptionsBuf\022!\n\035" +
-      "UNIDENTIFIED_TEMPERATURE_DATA\020\000\022\031\n\025WITH_" +
-      "TEMPERATURE_DATA\020\001\022\034\n\030WITHOUT_TEMPERATUR" +
-      "E_DATA\020\002*W\n\021GPSDataOptionsBuf\022\031\n\025UNIDENT" +
-      "IFIED_GPS_DATA\020\000\022\021\n\rWITH_GPS_DATA\020\001\022\024\n\020W" +
-      "ITHOUT_GPS_DATA\020\002*T\n\021RecordsOptionsBuf\022\030" +
-      "\n\024UNIDENTIFIED_RECORDS\020\000\022\020\n\014WITH_RECORDS" +
-      "\020\001\022\023\n\017WITHOUT_RECORDS\020\002*=\n\022InfoTypeOptio" +
-      "nsBuf\022\013\n\007ENCODED\020\000\022\013\n\007DECODED\020\001\022\r\n\tPROCE" +
-      "SSED\020\002*\331\001\n\027ContainerTypeOptionsBuf\022\t\n\005OT" +
-      "HER\020\000\022\020\n\014DATA_GATEWAY\020\001\022\022\n\016DATA_PROCESSO" +
-      "R\020\002\022\020\n\014DATA_DECODER\020\003\022\022\n\016DATA_VALIDATOR\020" +
-      "\004\022\016\n\nDATA_STORE\020\005\022\027\n\023IDENTITY_MANAGEMENT" +
-      "\020\006\022\022\n\016DEVICE_RECORDS\020\007\022\024\n\020FLEET_MANAGEME" +
-      "NT\020\010\022\024\n\020SMART_IRRIGATION\020\tB#\n\037pt.sharesp" +
-      "ot.iot.core.buf.modelP\001b\006proto3"
+      "harespot.iot.core\032\036google/protobuf/wrapp" +
+      "ers.proto\"\206\001\n\022UnprocessedMessage\022\013\n\003oid\030" +
+      "\001 \001(\t\022;\n\014routing_keys\030\002 \001(\0132%.pt.sharesp" +
+      "ot.iot.core.RoutingKeysBuf\022\014\n\004hops\030\003 \001(\005" +
+      "\022\030\n\020unprocessed_data\030\004 \001(\t\"\214\001\n\007Message\022\013" +
+      "\n\003oid\030\001 \001(\t\022;\n\014routing_keys\030\002 \001(\0132%.pt.s" +
+      "harespot.iot.core.RoutingKeysBuf\022\014\n\004hops" +
+      "\030\003 \001(\005\022)\n\004data\030\004 \001(\0132\033.pt.sharespot.iot." +
+      "core.Data\"\354\001\n\004Data\022\017\n\007data_id\030\001 \001(\t\022\023\n\013r" +
+      "eported_at\030\002 \001(\003\022-\n\006device\030\003 \001(\0132\035.pt.sh" +
+      "arespot.iot.core.Device\022;\n\010measures\030\004 \003(" +
+      "\0132).pt.sharespot.iot.core.Data.MeasuresE" +
+      "ntry\032R\n\rMeasuresEntry\022\013\n\003key\030\001 \001(\005\0220\n\005va" +
+      "lue\030\002 \001(\0132!.pt.sharespot.iot.core.Sensor" +
+      "Data:\0028\001\"\250\t\n\nSensorData\022\'\n\003gps\030\001 \001(\0132\032.p" +
+      "t.sharespot.iot.core.GPS\0227\n\013temperature\030" +
+      "\002 \001(\0132\".pt.sharespot.iot.core.Temperatur" +
+      "e\022-\n\006motion\030\003 \001(\0132\035.pt.sharespot.iot.cor" +
+      "e.Motion\022.\n\003aqi\030\004 \001(\0132!.pt.sharespot.iot" +
+      ".core.AirQuality\0221\n\010velocity\030\005 \001(\0132\037.pt." +
+      "sharespot.iot.core.Velocity\0228\n\014air_humid" +
+      "ity\030\006 \001(\0132\".pt.sharespot.iot.core.AirHum" +
+      "idity\0228\n\014air_pressure\030\007 \001(\0132\".pt.sharesp" +
+      "ot.iot.core.AirPressure\022/\n\007battery\030\010 \001(\013" +
+      "2\036.pt.sharespot.iot.core.Battery\022:\n\rsoil" +
+      "_moisture\030\t \001(\0132#.pt.sharespot.iot.core." +
+      "SoilMoisture\0227\n\013illuminance\030\n \001(\0132\".pt.s" +
+      "harespot.iot.core.Illuminance\022/\n\007trigger" +
+      "\030\013 \001(\0132\036.pt.sharespot.iot.core.Trigger\022<" +
+      "\n\016water_pressure\030\014 \001(\0132$.pt.sharespot.io" +
+      "t.core.WaterPressure\022%\n\002ph\030\r \001(\0132\031.pt.sh" +
+      "arespot.iot.core.PH\0221\n\010distance\030\016 \001(\0132\037." +
+      "pt.sharespot.iot.core.Distance\0225\n\noccupa" +
+      "tion\030\017 \001(\0132!.pt.sharespot.iot.core.Occup" +
+      "ation\022B\n\021soil_conductivity\030\020 \001(\0132\'.pt.sh" +
+      "arespot.iot.core.SoilConductivity\022\'\n\003co2" +
+      "\030\021 \001(\0132\032.pt.sharespot.iot.core.CO2\022%\n\002co" +
+      "\030\022 \001(\0132\031.pt.sharespot.iot.core.CO\022\'\n\003nh3" +
+      "\030\023 \001(\0132\032.pt.sharespot.iot.core.NH3\022\'\n\003no" +
+      "2\030\024 \001(\0132\032.pt.sharespot.iot.core.NO2\022%\n\002o" +
+      "3\030\025 \001(\0132\031.pt.sharespot.iot.core.O3\022\'\n\003vo" +
+      "c\030\026 \001(\0132\032.pt.sharespot.iot.core.VOC\022+\n\005p" +
+      "m2_5\030\027 \001(\0132\034.pt.sharespot.iot.core.PM2_5" +
+      "\022)\n\004pm10\030\030 \001(\0132\033.pt.sharespot.iot.core.P" +
+      "M10\"I\n\005PM2_5\022@\n\033micro_grams_per_cubic_me" +
+      "ter\030\001 \001(\0132\033.google.protobuf.FloatValue\"H" +
+      "\n\004PM10\022@\n\033micro_grams_per_cubic_meter\030\001 " +
+      "\001(\0132\033.google.protobuf.FloatValue\"/\n\003CO2\022" +
+      "(\n\003ppm\030\001 \001(\0132\033.google.protobuf.FloatValu" +
+      "e\".\n\002CO\022(\n\003ppm\030\001 \001(\0132\033.google.protobuf.F" +
+      "loatValue\"/\n\003NH3\022(\n\003ppm\030\001 \001(\0132\033.google.p" +
+      "rotobuf.FloatValue\"/\n\003NO2\022(\n\003ppm\030\001 \001(\0132\033" +
+      ".google.protobuf.FloatValue\".\n\002O3\022(\n\003ppm" +
+      "\030\001 \001(\0132\033.google.protobuf.FloatValue\"/\n\003V" +
+      "OC\022(\n\003ppm\030\001 \001(\0132\033.google.protobuf.FloatV" +
+      "alue\"\225\001\n\003GPS\022.\n\010latitude\030\001 \001(\0132\034.google." +
+      "protobuf.DoubleValue\022/\n\tlongitude\030\002 \001(\0132" +
+      "\034.google.protobuf.DoubleValue\022-\n\010altitud" +
+      "e\030\003 \001(\0132\033.google.protobuf.FloatValue\"U\n\020" +
+      "SoilConductivity\022A\n\034micro_siemens_per_ce" +
+      "ntimeter\030\001 \001(\0132\033.google.protobuf.FloatVa" +
+      "lue\":\n\006Motion\0220\n\005value\030\001 \001(\0162!.pt.shares" +
+      "pot.iot.core.MotionType\";\n\013Temperature\022," +
+      "\n\007celsius\030\001 \001(\0132\033.google.protobuf.FloatV" +
+      "alue\"=\n\nOccupation\022/\n\npercentage\030\001 \001(\0132\033" +
+      ".google.protobuf.FloatValue\"8\n\nAirQualit" +
+      "y\022*\n\005value\030\001 \001(\0132\033.google.protobuf.Float" +
+      "Value\"0\n\002PH\022*\n\005value\030\001 \001(\0132\033.google.prot" +
+      "obuf.FloatValue\"\246\001\n\010Distance\0220\n\013millimet" +
+      "ers\030\001 \001(\0132\033.google.protobuf.FloatValue\0223" +
+      "\n\016maxMillimeters\030\002 \001(\0132\033.google.protobuf" +
+      ".FloatValue\0223\n\016minMillimeters\030\003 \001(\0132\033.go" +
+      "ogle.protobuf.FloatValue\"D\n\010Velocity\0228\n\023" +
+      "kilometers_per_hour\030\001 \001(\0132\033.google.proto" +
+      "buf.FloatValue\"\203\001\n\013AirHumidity\022:\n\025grams_" +
+      "per_cubic_meter\030\001 \001(\0132\033.google.protobuf." +
+      "FloatValue\0228\n\023relative_percentage\030\002 \001(\0132" +
+      "\033.google.protobuf.FloatValue\"@\n\013AirPress" +
+      "ure\0221\n\014hecto_pascal\030\001 \001(\0132\033.google.proto" +
+      "buf.FloatValue\"9\n\rWaterPressure\022(\n\003bar\030\001" +
+      " \001(\0132\033.google.protobuf.FloatValue\"\306\001\n\007Ba" +
+      "ttery\022/\n\npercentage\030\001 \001(\0132\033.google.proto" +
+      "buf.FloatValue\022*\n\005volts\030\002 \001(\0132\033.google.p" +
+      "rotobuf.FloatValue\022.\n\tmax_volts\030\003 \001(\0132\033." +
+      "google.protobuf.FloatValue\022.\n\tmin_volts\030" +
+      "\004 \001(\0132\033.google.protobuf.FloatValue\"H\n\014So" +
+      "ilMoisture\0228\n\023relative_percentage\030\001 \001(\0132" +
+      "\033.google.protobuf.FloatValue\"7\n\013Illumina" +
+      "nce\022(\n\003lux\030\001 \001(\0132\033.google.protobuf.Float" +
+      "Value\"4\n\007Trigger\022)\n\005value\030\001 \001(\0132\032.google" +
+      ".protobuf.BoolValue\"\216\001\n\006Device\022\n\n\002id\030\001 \001" +
+      "(\t\022\014\n\004name\030\002 \001(\t\0223\n\007records\030\003 \001(\0132\".pt.s" +
+      "harespot.iot.core.RecordEntry\0225\n\007domains" +
+      "\030\004 \001(\0132$.pt.sharespot.iot.core.DeviceDom" +
+      "ains\"<\n\013RecordEntry\022-\n\007entries\030\001 \003(\0132\034.p" +
+      "t.sharespot.iot.core.Entry\"\'\n\005Entry\022\r\n\005l" +
+      "abel\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\"1\n\rDeviceDom" +
+      "ains\022\014\n\004read\030\001 \003(\t\022\022\n\nread_write\030\002 \003(\t\"\376" +
+      "\016\n\016RoutingKeysBuf\022\017\n\007version\030\001 \001(\t\022F\n\016co" +
+      "ntainer_type\030\002 \001(\0162..pt.sharespot.iot.co" +
+      "re.ContainerTypeOptionsBuf\022<\n\tinfo_type\030" +
+      "\003 \001(\0162).pt.sharespot.iot.core.InfoTypeOp" +
+      "tionsBuf\022\023\n\013sensor_type\030\004 \001(\t\022\017\n\007channel" +
+      "\030\005 \001(\t\0229\n\007records\030\006 \001(\0162(.pt.sharespot.i" +
+      "ot.core.RecordsOptionsBuf\0225\n\003gps\030\007 \001(\0162(" +
+      ".pt.sharespot.iot.core.GPSDataOptionsBuf" +
+      "\022E\n\013temperature\030\010 \001(\01620.pt.sharespot.iot" +
+      ".core.TemperatureDataOptionsBuf\022C\n\nlegit" +
+      "imacy\030\t \001(\0162/.pt.sharespot.iot.core.Data" +
+      "LegitimacyOptionsBuf\022<\n\003aqi\030\n \001(\0162/.pt.s" +
+      "harespot.iot.core.AirQualityDataOptionsB" +
+      "uf\022F\n\014air_humidity\030\013 \001(\01620.pt.sharespot." +
+      "iot.core.AirHumidityDataOptionsBuf\022;\n\006mo" +
+      "tion\030\014 \001(\0162+.pt.sharespot.iot.core.Motio" +
+      "nDataOptionsBuf\022?\n\010velocity\030\r \001(\0162-.pt.s" +
+      "harespot.iot.core.VelocityDataOptionsBuf" +
+      "\022F\n\014air_pressure\030\016 \001(\01620.pt.sharespot.io" +
+      "t.core.AirPressureDataOptionsBuf\022=\n\007batt" +
+      "ery\030\017 \001(\0162,.pt.sharespot.iot.core.Batter" +
+      "yDataOptionsBuf\022H\n\rsoil_moisture\030\020 \001(\01621" +
+      ".pt.sharespot.iot.core.SoilMoistureDataO" +
+      "ptionsBuf\022E\n\013illuminance\030\021 \001(\01620.pt.shar" +
+      "espot.iot.core.IlluminanceDataOptionsBuf" +
+      "\022C\n\townership\030\022 \001(\01620.pt.sharespot.iot.c" +
+      "ore.DomainOwnershipOptionsBuf\022=\n\007trigger" +
+      "\030\023 \001(\0162,.pt.sharespot.iot.core.TriggerDa" +
+      "taOptionsBuf\022J\n\016water_pressure\030\024 \001(\01622.p" +
+      "t.sharespot.iot.core.WaterPressureDataOp" +
+      "tionsBuf\0223\n\002ph\030\025 \001(\0162\'.pt.sharespot.iot." +
+      "core.PHDataOptionsBuf\022?\n\010distance\030\026 \001(\0162" +
+      "-.pt.sharespot.iot.core.DistanceDataOpti" +
+      "onsBuf\022C\n\noccupation\030\027 \001(\0162/.pt.sharespo" +
+      "t.iot.core.OccupationDataOptionsBuf\022P\n\021s" +
+      "oil_conductivity\030\030 \001(\01625.pt.sharespot.io" +
+      "t.core.SoilConductivityDataOptionsBuf\0225\n" +
+      "\003co2\030\031 \001(\0162(.pt.sharespot.iot.core.CO2Da" +
+      "taOptionsBuf\0223\n\002co\030\032 \001(\0162\'.pt.sharespot." +
+      "iot.core.CODataOptionsBuf\0225\n\003nh3\030\033 \001(\0162(" +
+      ".pt.sharespot.iot.core.NH3DataOptionsBuf" +
+      "\0225\n\003no2\030\034 \001(\0162(.pt.sharespot.iot.core.NO" +
+      "2DataOptionsBuf\0223\n\002o3\030\035 \001(\0162\'.pt.sharesp" +
+      "ot.iot.core.O3DataOptionsBuf\0225\n\003voc\030\036 \001(" +
+      "\0162(.pt.sharespot.iot.core.VOCDataOptions" +
+      "Buf\0229\n\005pm2_5\030\037 \001(\0162*.pt.sharespot.iot.co" +
+      "re.PM2_5DataOptionsBuf\0227\n\004pm10\030  \001(\0162).p" +
+      "t.sharespot.iot.core.PM10DataOptionsBuf*" +
+      "3\n\nMotionType\022\013\n\007UNKNOWN\020\000\022\n\n\006ACTIVE\020\001\022\014" +
+      "\n\010INACTIVE\020\002*[\n\022PM10DataOptionsBuf\022\032\n\026UN" +
+      "IDENTIFIED_PM10_DATA\020\000\022\022\n\016WITH_PM10_DATA" +
+      "\020\001\022\025\n\021WITHOUT_PM10_DATA\020\002*_\n\023PM2_5DataOp" +
+      "tionsBuf\022\033\n\027UNIDENTIFIED_PM2_5_DATA\020\000\022\023\n" +
+      "\017WITH_PM2_5_DATA\020\001\022\026\n\022WITHOUT_PM2_5_DATA" +
+      "\020\002*W\n\021CO2DataOptionsBuf\022\031\n\025UNIDENTIFIED_" +
+      "CO2_DATA\020\000\022\021\n\rWITH_CO2_DATA\020\001\022\024\n\020WITHOUT" +
+      "_CO2_DATA\020\002*S\n\020CODataOptionsBuf\022\030\n\024UNIDE" +
+      "NTIFIED_CO_DATA\020\000\022\020\n\014WITH_CO_DATA\020\001\022\023\n\017W" +
+      "ITHOUT_CO_DATA\020\002*W\n\021NH3DataOptionsBuf\022\031\n" +
+      "\025UNIDENTIFIED_NH3_DATA\020\000\022\021\n\rWITH_NH3_DAT" +
+      "A\020\001\022\024\n\020WITHOUT_NH3_DATA\020\002*W\n\021NO2DataOpti" +
+      "onsBuf\022\031\n\025UNIDENTIFIED_NO2_DATA\020\000\022\021\n\rWIT" +
+      "H_NO2_DATA\020\001\022\024\n\020WITHOUT_NO2_DATA\020\002*S\n\020O3" +
+      "DataOptionsBuf\022\030\n\024UNIDENTIFIED_O3_DATA\020\000" +
+      "\022\020\n\014WITH_O3_DATA\020\001\022\023\n\017WITHOUT_O3_DATA\020\002*" +
+      "W\n\021VOCDataOptionsBuf\022\031\n\025UNIDENTIFIED_VOC" +
+      "_DATA\020\000\022\021\n\rWITH_VOC_DATA\020\001\022\024\n\020WITHOUT_VO" +
+      "C_DATA\020\002*\216\001\n\036SoilConductivityDataOptions" +
+      "Buf\022\'\n#UNIDENTIFIED_SOIL_CONDUCTIVITY_DA" +
+      "TA\020\000\022\037\n\033WITH_SOIL_CONDUCTIVITY_DATA\020\001\022\"\n" +
+      "\036WITHOUT_SOIL_CONDUCTIVITY_DATA\020\002*s\n\030Occ" +
+      "upationDataOptionsBuf\022 \n\034UNIDENTIFIED_OC" +
+      "CUPATION_DATA\020\000\022\030\n\024WITH_OCCUPATION_DATA\020" +
+      "\001\022\033\n\027WITHOUT_OCCUPATION_DATA\020\002*S\n\020PHData" +
+      "OptionsBuf\022\030\n\024UNIDENTIFIED_PH_DATA\020\000\022\020\n\014" +
+      "WITH_PH_DATA\020\001\022\023\n\017WITHOUT_PH_DATA\020\002*k\n\026D" +
+      "istanceDataOptionsBuf\022\036\n\032UNIDENTIFIED_DI" +
+      "STANCE_DATA\020\000\022\026\n\022WITH_DISTANCE_DATA\020\001\022\031\n" +
+      "\025WITHOUT_DISTANCE_DATA\020\002*g\n\025TriggerDataO" +
+      "ptionsBuf\022\035\n\031UNIDENTIFIED_TRIGGER_DATA\020\000" +
+      "\022\025\n\021WITH_TRIGGER_DATA\020\001\022\030\n\024WITHOUT_TRIGG" +
+      "ER_DATA\020\002*w\n\031DomainOwnershipOptionsBuf\022!" +
+      "\n\035UNIDENTIFIED_DOMAIN_OWNERSHIP\020\000\022\031\n\025WIT" +
+      "H_DOMAIN_OWNERSHIP\020\001\022\034\n\030WITHOUT_DOMAIN_O" +
+      "WNERSHIP\020\002*w\n\031IlluminanceDataOptionsBuf\022" +
+      "!\n\035UNIDENTIFIED_ILLUMINANCE_DATA\020\000\022\031\n\025WI" +
+      "TH_ILLUMINANCE_DATA\020\001\022\034\n\030WITHOUT_ILLUMIN" +
+      "ANCE_DATA\020\002*~\n\032SoilMoistureDataOptionsBu" +
+      "f\022#\n\037UNIDENTIFIED_SOIL_MOISTURE_DATA\020\000\022\033" +
+      "\n\027WITH_SOIL_MOISTURE_DATA\020\001\022\036\n\032WITHOUT_S" +
+      "OIL_MOISTURE_DATA\020\002*g\n\025BatteryDataOption" +
+      "sBuf\022\035\n\031UNIDENTIFIED_BATTERY_DATA\020\000\022\025\n\021W" +
+      "ITH_BATTERY_DATA\020\001\022\030\n\024WITHOUT_BATTERY_DA" +
+      "TA\020\002*z\n\031AirPressureDataOptionsBuf\022\"\n\036UNI" +
+      "DENTIFIED_AIR_PRESSURE_DATA\020\000\022\032\n\026WITH_AI" +
+      "R_PRESSURE_DATA\020\001\022\035\n\031WITHOUT_AIR_PRESSUR" +
+      "E_DATA\020\002*k\n\026VelocityDataOptionsBuf\022\036\n\032UN" +
+      "IDENTIFIED_VELOCITY_DATA\020\000\022\026\n\022WITH_VELOC" +
+      "ITY_DATA\020\001\022\031\n\025WITHOUT_VELOCITY_DATA\020\002*c\n" +
+      "\024MotionDataOptionsBuf\022\034\n\030UNIDENTIFIED_MO" +
+      "TION_DATA\020\000\022\024\n\020WITH_MOTION_DATA\020\001\022\027\n\023WIT" +
+      "HOUT_MOTION_DATA\020\002*z\n\031AirHumidityDataOpt" +
+      "ionsBuf\022\"\n\036UNIDENTIFIED_AIR_HUMIDITY_DAT" +
+      "A\020\000\022\032\n\026WITH_AIR_HUMIDITY_DATA\020\001\022\035\n\031WITHO" +
+      "UT_AIR_HUMIDITY_DATA\020\002*^\n\030AirQualityData" +
+      "OptionsBuf\022\031\n\025UNIDENTIFIED_AQI_DATA\020\000\022\021\n" +
+      "\rWITH_AQI_DATA\020\001\022\024\n\020WITHOUT_AQI_DATA\020\002*\202" +
+      "\001\n\033WaterPressureDataOptionsBuf\022$\n UNIDEN" +
+      "TIFIED_WATER_PRESSURE_DATA\020\000\022\034\n\030WITH_WAT" +
+      "ER_PRESSURE_DATA\020\001\022\037\n\033WITHOUT_WATER_PRES" +
+      "SURE_DATA\020\002*\201\001\n\030DataLegitimacyOptionsBuf" +
+      "\022\026\n\022UNKNOWN_LEGITIMACY\020\000\022\026\n\022CORRECT_LEGI" +
+      "TIMACY\020\001\022\030\n\024INCORRECT_LEGITIMACY\020\002\022\033\n\027UN" +
+      "DETERMINED_LEGITIMACY\020\003*w\n\031TemperatureDa" +
+      "taOptionsBuf\022!\n\035UNIDENTIFIED_TEMPERATURE" +
+      "_DATA\020\000\022\031\n\025WITH_TEMPERATURE_DATA\020\001\022\034\n\030WI" +
+      "THOUT_TEMPERATURE_DATA\020\002*W\n\021GPSDataOptio" +
+      "nsBuf\022\031\n\025UNIDENTIFIED_GPS_DATA\020\000\022\021\n\rWITH" +
+      "_GPS_DATA\020\001\022\024\n\020WITHOUT_GPS_DATA\020\002*T\n\021Rec" +
+      "ordsOptionsBuf\022\030\n\024UNIDENTIFIED_RECORDS\020\000" +
+      "\022\020\n\014WITH_RECORDS\020\001\022\023\n\017WITHOUT_RECORDS\020\002*" +
+      "=\n\022InfoTypeOptionsBuf\022\013\n\007ENCODED\020\000\022\013\n\007DE" +
+      "CODED\020\001\022\r\n\tPROCESSED\020\002*\331\001\n\027ContainerType" +
+      "OptionsBuf\022\t\n\005OTHER\020\000\022\020\n\014DATA_GATEWAY\020\001\022" +
+      "\022\n\016DATA_PROCESSOR\020\002\022\020\n\014DATA_DECODER\020\003\022\022\n" +
+      "\016DATA_VALIDATOR\020\004\022\016\n\nDATA_STORE\020\005\022\027\n\023IDE" +
+      "NTITY_MANAGEMENT\020\006\022\022\n\016DEVICE_RECORDS\020\007\022\024" +
+      "\n\020FLEET_MANAGEMENT\020\010\022\024\n\020SMART_IRRIGATION" +
+      "\020\tB#\n\037pt.sharespot.iot.core.buf.modelP\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.WrappersProto.getDescriptor(),
         });
     internal_static_pt_sharespot_iot_core_UnprocessedMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -607,6 +632,7 @@ public final class MessageOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pt_sharespot_iot_core_RoutingKeysBuf_descriptor,
         new java.lang.String[] { "Version", "ContainerType", "InfoType", "SensorType", "Channel", "Records", "Gps", "Temperature", "Legitimacy", "Aqi", "AirHumidity", "Motion", "Velocity", "AirPressure", "Battery", "SoilMoisture", "Illuminance", "Ownership", "Trigger", "WaterPressure", "Ph", "Distance", "Occupation", "SoilConductivity", "Co2", "Co", "Nh3", "No2", "O3", "Voc", "Pm25", "Pm10", });
+    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

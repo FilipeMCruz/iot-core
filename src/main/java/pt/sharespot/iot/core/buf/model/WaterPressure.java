@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (bar_ != null) {
+              subBuilder = bar_.toBuilder();
+            }
+            bar_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(bar_);
+              bar_ = subBuilder.buildPartial();
+            }
 
-            bar_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BAR_FIELD_NUMBER = 1;
-  private float bar_;
+  private com.google.protobuf.FloatValue bar_;
   /**
-   * <code>float bar = 1;</code>
+   * <code>.google.protobuf.FloatValue bar = 1;</code>
+   * @return Whether the bar field is set.
+   */
+  @java.lang.Override
+  public boolean hasBar() {
+    return bar_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue bar = 1;</code>
    * @return The bar.
    */
   @java.lang.Override
-  public float getBar() {
-    return bar_;
+  public com.google.protobuf.FloatValue getBar() {
+    return bar_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : bar_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue bar = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getBarOrBuilder() {
+    return getBar();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(bar_) != 0) {
-      output.writeFloat(1, bar_);
+    if (bar_ != null) {
+      output.writeMessage(1, getBar());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(bar_) != 0) {
+    if (bar_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, bar_);
+        .computeMessageSize(1, getBar());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.WaterPressure other = (pt.sharespot.iot.core.buf.model.WaterPressure) obj;
 
-    if (java.lang.Float.floatToIntBits(getBar())
-        != java.lang.Float.floatToIntBits(
-            other.getBar())) return false;
+    if (hasBar() != other.hasBar()) return false;
+    if (hasBar()) {
+      if (!getBar()
+          .equals(other.getBar())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + BAR_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getBar());
+    if (hasBar()) {
+      hash = (37 * hash) + BAR_FIELD_NUMBER;
+      hash = (53 * hash) + getBar().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      bar_ = 0F;
-
+      if (barBuilder_ == null) {
+        bar_ = null;
+      } else {
+        bar_ = null;
+        barBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.WaterPressure buildPartial() {
       pt.sharespot.iot.core.buf.model.WaterPressure result = new pt.sharespot.iot.core.buf.model.WaterPressure(this);
-      result.bar_ = bar_;
+      if (barBuilder_ == null) {
+        result.bar_ = bar_;
+      } else {
+        result.bar_ = barBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.WaterPressure other) {
       if (other == pt.sharespot.iot.core.buf.model.WaterPressure.getDefaultInstance()) return this;
-      if (other.getBar() != 0F) {
-        setBar(other.getBar());
+      if (other.hasBar()) {
+        mergeBar(other.getBar());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float bar_ ;
+    private com.google.protobuf.FloatValue bar_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> barBuilder_;
     /**
-     * <code>float bar = 1;</code>
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
+     * @return Whether the bar field is set.
+     */
+    public boolean hasBar() {
+      return barBuilder_ != null || bar_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
      * @return The bar.
      */
-    @java.lang.Override
-    public float getBar() {
-      return bar_;
+    public com.google.protobuf.FloatValue getBar() {
+      if (barBuilder_ == null) {
+        return bar_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : bar_;
+      } else {
+        return barBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float bar = 1;</code>
-     * @param value The bar to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
      */
-    public Builder setBar(float value) {
-      
-      bar_ = value;
-      onChanged();
+    public Builder setBar(com.google.protobuf.FloatValue value) {
+      if (barBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bar_ = value;
+        onChanged();
+      } else {
+        barBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float bar = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
+     */
+    public Builder setBar(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (barBuilder_ == null) {
+        bar_ = builderForValue.build();
+        onChanged();
+      } else {
+        barBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
+     */
+    public Builder mergeBar(com.google.protobuf.FloatValue value) {
+      if (barBuilder_ == null) {
+        if (bar_ != null) {
+          bar_ =
+            com.google.protobuf.FloatValue.newBuilder(bar_).mergeFrom(value).buildPartial();
+        } else {
+          bar_ = value;
+        }
+        onChanged();
+      } else {
+        barBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
      */
     public Builder clearBar() {
-      
-      bar_ = 0F;
-      onChanged();
+      if (barBuilder_ == null) {
+        bar_ = null;
+        onChanged();
+      } else {
+        bar_ = null;
+        barBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getBarBuilder() {
+      
+      onChanged();
+      return getBarFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getBarOrBuilder() {
+      if (barBuilder_ != null) {
+        return barBuilder_.getMessageOrBuilder();
+      } else {
+        return bar_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : bar_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue bar = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getBarFieldBuilder() {
+      if (barBuilder_ == null) {
+        barBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getBar(),
+                getParentForChildren(),
+                isClean());
+        bar_ = null;
+      }
+      return barBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

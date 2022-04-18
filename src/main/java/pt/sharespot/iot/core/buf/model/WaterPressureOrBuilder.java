@@ -8,8 +8,17 @@ public interface WaterPressureOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float bar = 1;</code>
+   * <code>.google.protobuf.FloatValue bar = 1;</code>
+   * @return Whether the bar field is set.
+   */
+  boolean hasBar();
+  /**
+   * <code>.google.protobuf.FloatValue bar = 1;</code>
    * @return The bar.
    */
-  float getBar();
+  com.google.protobuf.FloatValue getBar();
+  /**
+   * <code>.google.protobuf.FloatValue bar = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getBarOrBuilder();
 }

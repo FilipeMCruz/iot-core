@@ -48,19 +48,43 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 9: {
+          case 10: {
+            com.google.protobuf.DoubleValue.Builder subBuilder = null;
+            if (latitude_ != null) {
+              subBuilder = latitude_.toBuilder();
+            }
+            latitude_ = input.readMessage(com.google.protobuf.DoubleValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(latitude_);
+              latitude_ = subBuilder.buildPartial();
+            }
 
-            latitude_ = input.readDouble();
             break;
           }
-          case 17: {
+          case 18: {
+            com.google.protobuf.DoubleValue.Builder subBuilder = null;
+            if (longitude_ != null) {
+              subBuilder = longitude_.toBuilder();
+            }
+            longitude_ = input.readMessage(com.google.protobuf.DoubleValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(longitude_);
+              longitude_ = subBuilder.buildPartial();
+            }
 
-            longitude_ = input.readDouble();
             break;
           }
-          case 29: {
+          case 26: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (altitude_ != null) {
+              subBuilder = altitude_.toBuilder();
+            }
+            altitude_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(altitude_);
+              altitude_ = subBuilder.buildPartial();
+            }
 
-            altitude_ = input.readFloat();
             break;
           }
           default: {
@@ -96,36 +120,81 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LATITUDE_FIELD_NUMBER = 1;
-  private double latitude_;
+  private com.google.protobuf.DoubleValue latitude_;
   /**
-   * <code>double latitude = 1;</code>
+   * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+   * @return Whether the latitude field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatitude() {
+    return latitude_ != null;
+  }
+  /**
+   * <code>.google.protobuf.DoubleValue latitude = 1;</code>
    * @return The latitude.
    */
   @java.lang.Override
-  public double getLatitude() {
-    return latitude_;
+  public com.google.protobuf.DoubleValue getLatitude() {
+    return latitude_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : latitude_;
+  }
+  /**
+   * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DoubleValueOrBuilder getLatitudeOrBuilder() {
+    return getLatitude();
   }
 
   public static final int LONGITUDE_FIELD_NUMBER = 2;
-  private double longitude_;
+  private com.google.protobuf.DoubleValue longitude_;
   /**
-   * <code>double longitude = 2;</code>
+   * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+   * @return Whether the longitude field is set.
+   */
+  @java.lang.Override
+  public boolean hasLongitude() {
+    return longitude_ != null;
+  }
+  /**
+   * <code>.google.protobuf.DoubleValue longitude = 2;</code>
    * @return The longitude.
    */
   @java.lang.Override
-  public double getLongitude() {
-    return longitude_;
+  public com.google.protobuf.DoubleValue getLongitude() {
+    return longitude_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : longitude_;
+  }
+  /**
+   * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DoubleValueOrBuilder getLongitudeOrBuilder() {
+    return getLongitude();
   }
 
   public static final int ALTITUDE_FIELD_NUMBER = 3;
-  private float altitude_;
+  private com.google.protobuf.FloatValue altitude_;
   /**
-   * <code>float altitude = 3;</code>
+   * <code>.google.protobuf.FloatValue altitude = 3;</code>
+   * @return Whether the altitude field is set.
+   */
+  @java.lang.Override
+  public boolean hasAltitude() {
+    return altitude_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue altitude = 3;</code>
    * @return The altitude.
    */
   @java.lang.Override
-  public float getAltitude() {
-    return altitude_;
+  public com.google.protobuf.FloatValue getAltitude() {
+    return altitude_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : altitude_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue altitude = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getAltitudeOrBuilder() {
+    return getAltitude();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -142,14 +211,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Double.doubleToRawLongBits(latitude_) != 0) {
-      output.writeDouble(1, latitude_);
+    if (latitude_ != null) {
+      output.writeMessage(1, getLatitude());
     }
-    if (java.lang.Double.doubleToRawLongBits(longitude_) != 0) {
-      output.writeDouble(2, longitude_);
+    if (longitude_ != null) {
+      output.writeMessage(2, getLongitude());
     }
-    if (java.lang.Float.floatToRawIntBits(altitude_) != 0) {
-      output.writeFloat(3, altitude_);
+    if (altitude_ != null) {
+      output.writeMessage(3, getAltitude());
     }
     unknownFields.writeTo(output);
   }
@@ -160,17 +229,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Double.doubleToRawLongBits(latitude_) != 0) {
+    if (latitude_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(1, latitude_);
+        .computeMessageSize(1, getLatitude());
     }
-    if (java.lang.Double.doubleToRawLongBits(longitude_) != 0) {
+    if (longitude_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, longitude_);
+        .computeMessageSize(2, getLongitude());
     }
-    if (java.lang.Float.floatToRawIntBits(altitude_) != 0) {
+    if (altitude_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(3, altitude_);
+        .computeMessageSize(3, getAltitude());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -187,15 +256,21 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.GPS other = (pt.sharespot.iot.core.buf.model.GPS) obj;
 
-    if (java.lang.Double.doubleToLongBits(getLatitude())
-        != java.lang.Double.doubleToLongBits(
-            other.getLatitude())) return false;
-    if (java.lang.Double.doubleToLongBits(getLongitude())
-        != java.lang.Double.doubleToLongBits(
-            other.getLongitude())) return false;
-    if (java.lang.Float.floatToIntBits(getAltitude())
-        != java.lang.Float.floatToIntBits(
-            other.getAltitude())) return false;
+    if (hasLatitude() != other.hasLatitude()) return false;
+    if (hasLatitude()) {
+      if (!getLatitude()
+          .equals(other.getLatitude())) return false;
+    }
+    if (hasLongitude() != other.hasLongitude()) return false;
+    if (hasLongitude()) {
+      if (!getLongitude()
+          .equals(other.getLongitude())) return false;
+    }
+    if (hasAltitude() != other.hasAltitude()) return false;
+    if (hasAltitude()) {
+      if (!getAltitude()
+          .equals(other.getAltitude())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -207,15 +282,18 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getLatitude()));
-    hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getLongitude()));
-    hash = (37 * hash) + ALTITUDE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getAltitude());
+    if (hasLatitude()) {
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + getLatitude().hashCode();
+    }
+    if (hasLongitude()) {
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + getLongitude().hashCode();
+    }
+    if (hasAltitude()) {
+      hash = (37 * hash) + ALTITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + getAltitude().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -349,12 +427,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      latitude_ = 0D;
-
-      longitude_ = 0D;
-
-      altitude_ = 0F;
-
+      if (latitudeBuilder_ == null) {
+        latitude_ = null;
+      } else {
+        latitude_ = null;
+        latitudeBuilder_ = null;
+      }
+      if (longitudeBuilder_ == null) {
+        longitude_ = null;
+      } else {
+        longitude_ = null;
+        longitudeBuilder_ = null;
+      }
+      if (altitudeBuilder_ == null) {
+        altitude_ = null;
+      } else {
+        altitude_ = null;
+        altitudeBuilder_ = null;
+      }
       return this;
     }
 
@@ -381,9 +471,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.GPS buildPartial() {
       pt.sharespot.iot.core.buf.model.GPS result = new pt.sharespot.iot.core.buf.model.GPS(this);
-      result.latitude_ = latitude_;
-      result.longitude_ = longitude_;
-      result.altitude_ = altitude_;
+      if (latitudeBuilder_ == null) {
+        result.latitude_ = latitude_;
+      } else {
+        result.latitude_ = latitudeBuilder_.build();
+      }
+      if (longitudeBuilder_ == null) {
+        result.longitude_ = longitude_;
+      } else {
+        result.longitude_ = longitudeBuilder_.build();
+      }
+      if (altitudeBuilder_ == null) {
+        result.altitude_ = altitude_;
+      } else {
+        result.altitude_ = altitudeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -432,14 +534,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.GPS other) {
       if (other == pt.sharespot.iot.core.buf.model.GPS.getDefaultInstance()) return this;
-      if (other.getLatitude() != 0D) {
-        setLatitude(other.getLatitude());
+      if (other.hasLatitude()) {
+        mergeLatitude(other.getLatitude());
       }
-      if (other.getLongitude() != 0D) {
-        setLongitude(other.getLongitude());
+      if (other.hasLongitude()) {
+        mergeLongitude(other.getLongitude());
       }
-      if (other.getAltitude() != 0F) {
-        setAltitude(other.getAltitude());
+      if (other.hasAltitude()) {
+        mergeAltitude(other.getAltitude());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -470,97 +572,361 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double latitude_ ;
+    private com.google.protobuf.DoubleValue latitude_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.DoubleValue, com.google.protobuf.DoubleValue.Builder, com.google.protobuf.DoubleValueOrBuilder> latitudeBuilder_;
     /**
-     * <code>double latitude = 1;</code>
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+     * @return Whether the latitude field is set.
+     */
+    public boolean hasLatitude() {
+      return latitudeBuilder_ != null || latitude_ != null;
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
      * @return The latitude.
      */
-    @java.lang.Override
-    public double getLatitude() {
-      return latitude_;
+    public com.google.protobuf.DoubleValue getLatitude() {
+      if (latitudeBuilder_ == null) {
+        return latitude_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : latitude_;
+      } else {
+        return latitudeBuilder_.getMessage();
+      }
     }
     /**
-     * <code>double latitude = 1;</code>
-     * @param value The latitude to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
      */
-    public Builder setLatitude(double value) {
-      
-      latitude_ = value;
-      onChanged();
+    public Builder setLatitude(com.google.protobuf.DoubleValue value) {
+      if (latitudeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        latitude_ = value;
+        onChanged();
+      } else {
+        latitudeBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>double latitude = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+     */
+    public Builder setLatitude(
+        com.google.protobuf.DoubleValue.Builder builderForValue) {
+      if (latitudeBuilder_ == null) {
+        latitude_ = builderForValue.build();
+        onChanged();
+      } else {
+        latitudeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+     */
+    public Builder mergeLatitude(com.google.protobuf.DoubleValue value) {
+      if (latitudeBuilder_ == null) {
+        if (latitude_ != null) {
+          latitude_ =
+            com.google.protobuf.DoubleValue.newBuilder(latitude_).mergeFrom(value).buildPartial();
+        } else {
+          latitude_ = value;
+        }
+        onChanged();
+      } else {
+        latitudeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
      */
     public Builder clearLatitude() {
-      
-      latitude_ = 0D;
-      onChanged();
+      if (latitudeBuilder_ == null) {
+        latitude_ = null;
+        onChanged();
+      } else {
+        latitude_ = null;
+        latitudeBuilder_ = null;
+      }
+
       return this;
     }
-
-    private double longitude_ ;
     /**
-     * <code>double longitude = 2;</code>
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+     */
+    public com.google.protobuf.DoubleValue.Builder getLatitudeBuilder() {
+      
+      onChanged();
+      return getLatitudeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+     */
+    public com.google.protobuf.DoubleValueOrBuilder getLatitudeOrBuilder() {
+      if (latitudeBuilder_ != null) {
+        return latitudeBuilder_.getMessageOrBuilder();
+      } else {
+        return latitude_ == null ?
+            com.google.protobuf.DoubleValue.getDefaultInstance() : latitude_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue latitude = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.DoubleValue, com.google.protobuf.DoubleValue.Builder, com.google.protobuf.DoubleValueOrBuilder> 
+        getLatitudeFieldBuilder() {
+      if (latitudeBuilder_ == null) {
+        latitudeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.DoubleValue, com.google.protobuf.DoubleValue.Builder, com.google.protobuf.DoubleValueOrBuilder>(
+                getLatitude(),
+                getParentForChildren(),
+                isClean());
+        latitude_ = null;
+      }
+      return latitudeBuilder_;
+    }
+
+    private com.google.protobuf.DoubleValue longitude_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.DoubleValue, com.google.protobuf.DoubleValue.Builder, com.google.protobuf.DoubleValueOrBuilder> longitudeBuilder_;
+    /**
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+     * @return Whether the longitude field is set.
+     */
+    public boolean hasLongitude() {
+      return longitudeBuilder_ != null || longitude_ != null;
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
      * @return The longitude.
      */
-    @java.lang.Override
-    public double getLongitude() {
-      return longitude_;
+    public com.google.protobuf.DoubleValue getLongitude() {
+      if (longitudeBuilder_ == null) {
+        return longitude_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : longitude_;
+      } else {
+        return longitudeBuilder_.getMessage();
+      }
     }
     /**
-     * <code>double longitude = 2;</code>
-     * @param value The longitude to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
      */
-    public Builder setLongitude(double value) {
-      
-      longitude_ = value;
-      onChanged();
+    public Builder setLongitude(com.google.protobuf.DoubleValue value) {
+      if (longitudeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        longitude_ = value;
+        onChanged();
+      } else {
+        longitudeBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>double longitude = 2;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+     */
+    public Builder setLongitude(
+        com.google.protobuf.DoubleValue.Builder builderForValue) {
+      if (longitudeBuilder_ == null) {
+        longitude_ = builderForValue.build();
+        onChanged();
+      } else {
+        longitudeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+     */
+    public Builder mergeLongitude(com.google.protobuf.DoubleValue value) {
+      if (longitudeBuilder_ == null) {
+        if (longitude_ != null) {
+          longitude_ =
+            com.google.protobuf.DoubleValue.newBuilder(longitude_).mergeFrom(value).buildPartial();
+        } else {
+          longitude_ = value;
+        }
+        onChanged();
+      } else {
+        longitudeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
      */
     public Builder clearLongitude() {
-      
-      longitude_ = 0D;
-      onChanged();
+      if (longitudeBuilder_ == null) {
+        longitude_ = null;
+        onChanged();
+      } else {
+        longitude_ = null;
+        longitudeBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+     */
+    public com.google.protobuf.DoubleValue.Builder getLongitudeBuilder() {
+      
+      onChanged();
+      return getLongitudeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+     */
+    public com.google.protobuf.DoubleValueOrBuilder getLongitudeOrBuilder() {
+      if (longitudeBuilder_ != null) {
+        return longitudeBuilder_.getMessageOrBuilder();
+      } else {
+        return longitude_ == null ?
+            com.google.protobuf.DoubleValue.getDefaultInstance() : longitude_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.DoubleValue longitude = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.DoubleValue, com.google.protobuf.DoubleValue.Builder, com.google.protobuf.DoubleValueOrBuilder> 
+        getLongitudeFieldBuilder() {
+      if (longitudeBuilder_ == null) {
+        longitudeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.DoubleValue, com.google.protobuf.DoubleValue.Builder, com.google.protobuf.DoubleValueOrBuilder>(
+                getLongitude(),
+                getParentForChildren(),
+                isClean());
+        longitude_ = null;
+      }
+      return longitudeBuilder_;
     }
 
-    private float altitude_ ;
+    private com.google.protobuf.FloatValue altitude_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> altitudeBuilder_;
     /**
-     * <code>float altitude = 3;</code>
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
+     * @return Whether the altitude field is set.
+     */
+    public boolean hasAltitude() {
+      return altitudeBuilder_ != null || altitude_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
      * @return The altitude.
      */
-    @java.lang.Override
-    public float getAltitude() {
-      return altitude_;
+    public com.google.protobuf.FloatValue getAltitude() {
+      if (altitudeBuilder_ == null) {
+        return altitude_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : altitude_;
+      } else {
+        return altitudeBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float altitude = 3;</code>
-     * @param value The altitude to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
      */
-    public Builder setAltitude(float value) {
-      
-      altitude_ = value;
-      onChanged();
+    public Builder setAltitude(com.google.protobuf.FloatValue value) {
+      if (altitudeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        altitude_ = value;
+        onChanged();
+      } else {
+        altitudeBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float altitude = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
+     */
+    public Builder setAltitude(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (altitudeBuilder_ == null) {
+        altitude_ = builderForValue.build();
+        onChanged();
+      } else {
+        altitudeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
+     */
+    public Builder mergeAltitude(com.google.protobuf.FloatValue value) {
+      if (altitudeBuilder_ == null) {
+        if (altitude_ != null) {
+          altitude_ =
+            com.google.protobuf.FloatValue.newBuilder(altitude_).mergeFrom(value).buildPartial();
+        } else {
+          altitude_ = value;
+        }
+        onChanged();
+      } else {
+        altitudeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
      */
     public Builder clearAltitude() {
-      
-      altitude_ = 0F;
-      onChanged();
+      if (altitudeBuilder_ == null) {
+        altitude_ = null;
+        onChanged();
+      } else {
+        altitude_ = null;
+        altitudeBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getAltitudeBuilder() {
+      
+      onChanged();
+      return getAltitudeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getAltitudeOrBuilder() {
+      if (altitudeBuilder_ != null) {
+        return altitudeBuilder_.getMessageOrBuilder();
+      } else {
+        return altitude_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : altitude_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue altitude = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getAltitudeFieldBuilder() {
+      if (altitudeBuilder_ == null) {
+        altitudeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getAltitude(),
+                getParentForChildren(),
+                isClean());
+        altitude_ = null;
+      }
+      return altitudeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

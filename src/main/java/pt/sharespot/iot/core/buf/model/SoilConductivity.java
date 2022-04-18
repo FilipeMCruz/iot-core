@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (microSiemensPerCentimeter_ != null) {
+              subBuilder = microSiemensPerCentimeter_.toBuilder();
+            }
+            microSiemensPerCentimeter_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(microSiemensPerCentimeter_);
+              microSiemensPerCentimeter_ = subBuilder.buildPartial();
+            }
 
-            microSiemensPerCentimeter_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MICRO_SIEMENS_PER_CENTIMETER_FIELD_NUMBER = 1;
-  private float microSiemensPerCentimeter_;
+  private com.google.protobuf.FloatValue microSiemensPerCentimeter_;
   /**
-   * <code>float micro_siemens_per_centimeter = 1;</code>
+   * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+   * @return Whether the microSiemensPerCentimeter field is set.
+   */
+  @java.lang.Override
+  public boolean hasMicroSiemensPerCentimeter() {
+    return microSiemensPerCentimeter_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
    * @return The microSiemensPerCentimeter.
    */
   @java.lang.Override
-  public float getMicroSiemensPerCentimeter() {
-    return microSiemensPerCentimeter_;
+  public com.google.protobuf.FloatValue getMicroSiemensPerCentimeter() {
+    return microSiemensPerCentimeter_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : microSiemensPerCentimeter_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getMicroSiemensPerCentimeterOrBuilder() {
+    return getMicroSiemensPerCentimeter();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(microSiemensPerCentimeter_) != 0) {
-      output.writeFloat(1, microSiemensPerCentimeter_);
+    if (microSiemensPerCentimeter_ != null) {
+      output.writeMessage(1, getMicroSiemensPerCentimeter());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(microSiemensPerCentimeter_) != 0) {
+    if (microSiemensPerCentimeter_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, microSiemensPerCentimeter_);
+        .computeMessageSize(1, getMicroSiemensPerCentimeter());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.SoilConductivity other = (pt.sharespot.iot.core.buf.model.SoilConductivity) obj;
 
-    if (java.lang.Float.floatToIntBits(getMicroSiemensPerCentimeter())
-        != java.lang.Float.floatToIntBits(
-            other.getMicroSiemensPerCentimeter())) return false;
+    if (hasMicroSiemensPerCentimeter() != other.hasMicroSiemensPerCentimeter()) return false;
+    if (hasMicroSiemensPerCentimeter()) {
+      if (!getMicroSiemensPerCentimeter()
+          .equals(other.getMicroSiemensPerCentimeter())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MICRO_SIEMENS_PER_CENTIMETER_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getMicroSiemensPerCentimeter());
+    if (hasMicroSiemensPerCentimeter()) {
+      hash = (37 * hash) + MICRO_SIEMENS_PER_CENTIMETER_FIELD_NUMBER;
+      hash = (53 * hash) + getMicroSiemensPerCentimeter().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      microSiemensPerCentimeter_ = 0F;
-
+      if (microSiemensPerCentimeterBuilder_ == null) {
+        microSiemensPerCentimeter_ = null;
+      } else {
+        microSiemensPerCentimeter_ = null;
+        microSiemensPerCentimeterBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.SoilConductivity buildPartial() {
       pt.sharespot.iot.core.buf.model.SoilConductivity result = new pt.sharespot.iot.core.buf.model.SoilConductivity(this);
-      result.microSiemensPerCentimeter_ = microSiemensPerCentimeter_;
+      if (microSiemensPerCentimeterBuilder_ == null) {
+        result.microSiemensPerCentimeter_ = microSiemensPerCentimeter_;
+      } else {
+        result.microSiemensPerCentimeter_ = microSiemensPerCentimeterBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.SoilConductivity other) {
       if (other == pt.sharespot.iot.core.buf.model.SoilConductivity.getDefaultInstance()) return this;
-      if (other.getMicroSiemensPerCentimeter() != 0F) {
-        setMicroSiemensPerCentimeter(other.getMicroSiemensPerCentimeter());
+      if (other.hasMicroSiemensPerCentimeter()) {
+        mergeMicroSiemensPerCentimeter(other.getMicroSiemensPerCentimeter());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float microSiemensPerCentimeter_ ;
+    private com.google.protobuf.FloatValue microSiemensPerCentimeter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> microSiemensPerCentimeterBuilder_;
     /**
-     * <code>float micro_siemens_per_centimeter = 1;</code>
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+     * @return Whether the microSiemensPerCentimeter field is set.
+     */
+    public boolean hasMicroSiemensPerCentimeter() {
+      return microSiemensPerCentimeterBuilder_ != null || microSiemensPerCentimeter_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
      * @return The microSiemensPerCentimeter.
      */
-    @java.lang.Override
-    public float getMicroSiemensPerCentimeter() {
-      return microSiemensPerCentimeter_;
+    public com.google.protobuf.FloatValue getMicroSiemensPerCentimeter() {
+      if (microSiemensPerCentimeterBuilder_ == null) {
+        return microSiemensPerCentimeter_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : microSiemensPerCentimeter_;
+      } else {
+        return microSiemensPerCentimeterBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float micro_siemens_per_centimeter = 1;</code>
-     * @param value The microSiemensPerCentimeter to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
      */
-    public Builder setMicroSiemensPerCentimeter(float value) {
-      
-      microSiemensPerCentimeter_ = value;
-      onChanged();
+    public Builder setMicroSiemensPerCentimeter(com.google.protobuf.FloatValue value) {
+      if (microSiemensPerCentimeterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        microSiemensPerCentimeter_ = value;
+        onChanged();
+      } else {
+        microSiemensPerCentimeterBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float micro_siemens_per_centimeter = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+     */
+    public Builder setMicroSiemensPerCentimeter(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (microSiemensPerCentimeterBuilder_ == null) {
+        microSiemensPerCentimeter_ = builderForValue.build();
+        onChanged();
+      } else {
+        microSiemensPerCentimeterBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+     */
+    public Builder mergeMicroSiemensPerCentimeter(com.google.protobuf.FloatValue value) {
+      if (microSiemensPerCentimeterBuilder_ == null) {
+        if (microSiemensPerCentimeter_ != null) {
+          microSiemensPerCentimeter_ =
+            com.google.protobuf.FloatValue.newBuilder(microSiemensPerCentimeter_).mergeFrom(value).buildPartial();
+        } else {
+          microSiemensPerCentimeter_ = value;
+        }
+        onChanged();
+      } else {
+        microSiemensPerCentimeterBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
      */
     public Builder clearMicroSiemensPerCentimeter() {
-      
-      microSiemensPerCentimeter_ = 0F;
-      onChanged();
+      if (microSiemensPerCentimeterBuilder_ == null) {
+        microSiemensPerCentimeter_ = null;
+        onChanged();
+      } else {
+        microSiemensPerCentimeter_ = null;
+        microSiemensPerCentimeterBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getMicroSiemensPerCentimeterBuilder() {
+      
+      onChanged();
+      return getMicroSiemensPerCentimeterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getMicroSiemensPerCentimeterOrBuilder() {
+      if (microSiemensPerCentimeterBuilder_ != null) {
+        return microSiemensPerCentimeterBuilder_.getMessageOrBuilder();
+      } else {
+        return microSiemensPerCentimeter_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : microSiemensPerCentimeter_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_siemens_per_centimeter = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getMicroSiemensPerCentimeterFieldBuilder() {
+      if (microSiemensPerCentimeterBuilder_ == null) {
+        microSiemensPerCentimeterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getMicroSiemensPerCentimeter(),
+                getParentForChildren(),
+                isClean());
+        microSiemensPerCentimeter_ = null;
+      }
+      return microSiemensPerCentimeterBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

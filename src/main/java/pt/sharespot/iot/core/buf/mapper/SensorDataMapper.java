@@ -83,30 +83,80 @@ public class SensorDataMapper {
     }
 
     public static SensorDataDetailsDTO toModel(SensorData buf) {
-        return new SensorDataDetailsDTO()
-                .withAQI(AirQualityMapper.toModel(buf.getAqi()))
-                .withAlarm(TriggerMapper.toModel(buf.getTrigger()))
-                .withBattery(BatteryMapper.toModel(buf.getBattery()))
-                .withGps(GPSMapper.toModel(buf.getGps()))
-                .withHumidity(AirHumidityMapper.toModel(buf.getAirHumidity()))
-                .withIlluminance(IlluminanceMapper.toModel(buf.getIlluminance()))
-                .withMotion(MotionMapper.toModel(buf.getMotion()))
-                .withPressure(AirPressureMapper.toModel(buf.getAirPressure()))
-                .withSoilMoisture(SoilMoistureMapper.toModel(buf.getSoilMoisture()))
-                .withTemperature(TemperatureMapper.toModel(buf.getTemperature()))
-                .withVelocity(VelocityMapper.toModel(buf.getVelocity()))
-                .withPh(PHMapper.toModel(buf.getPh()))
-                .withDistance(DistanceMapper.toModel(buf.getDistance()))
-                .withOccupation(OccupationMapper.toModel(buf.getOccupation()))
-                .withSoilConductivity(SoilConductivityMapper.toModel(buf.getSoilConductivity()))
-                .withCO2(CO2Mapper.toModel(buf.getCo2()))
-                .withCO(COMapper.toModel(buf.getCo()))
-                .withNH3(NH3Mapper.toModel(buf.getNh3()))
-                .withNO2(NO2Mapper.toModel(buf.getNo2()))
-                .withO3(O3Mapper.toModel(buf.getO3()))
-                .withVOC(VOCMapper.toModel(buf.getVoc()))
-                .withPM2_5(PM2_5Mapper.toModel(buf.getPm25()))
-                .withPM10(PM10Mapper.toModel(buf.getPm10()))
-                .withWaterPressure(WaterPressureMapper.toModel(buf.getWaterPressure()));
+        var model = new SensorDataDetailsDTO();
+
+        if (buf.hasAqi())
+            model.withAQI(AirQualityMapper.toModel(buf.getAqi()));
+
+        if (buf.hasTrigger())
+            model.withTrigger(TriggerMapper.toModel(buf.getTrigger()));
+
+        if (buf.hasBattery())
+            model.withBattery(BatteryMapper.toModel(buf.getBattery()));
+
+        if (buf.hasGps())
+            model.withGps(GPSMapper.toModel(buf.getGps()));
+
+        if (buf.hasAirHumidity())
+            model.withAirHumidity(AirHumidityMapper.toModel(buf.getAirHumidity()));
+
+        if (buf.hasIlluminance())
+            model.withIlluminance(IlluminanceMapper.toModel(buf.getIlluminance()));
+
+        if (buf.hasMotion())
+            model.withMotion(MotionMapper.toModel(buf.getMotion()));
+
+        if (buf.hasAirPressure())
+            model.withAirPressure(AirPressureMapper.toModel(buf.getAirPressure()));
+
+        if (buf.hasSoilMoisture())
+            model.withSoilMoisture(SoilMoistureMapper.toModel(buf.getSoilMoisture()));
+
+        if (buf.hasTemperature())
+            model.withTemperature(TemperatureMapper.toModel(buf.getTemperature()));
+
+        if (buf.hasVelocity())
+            model.withVelocity(VelocityMapper.toModel(buf.getVelocity()));
+
+        if (buf.hasPh())
+            model.withPh(PHMapper.toModel(buf.getPh()));
+
+        if (buf.hasDistance())
+            model.withDistance(DistanceMapper.toModel(buf.getDistance()));
+
+        if (buf.hasOccupation())
+            model.withOccupation(OccupationMapper.toModel(buf.getOccupation()));
+
+        if (buf.hasSoilConductivity())
+            model.withSoilConductivity(SoilConductivityMapper.toModel(buf.getSoilConductivity()));
+
+        if (buf.hasCo2())
+            model.withCO2(CO2Mapper.toModel(buf.getCo2()));
+
+        if (buf.hasCo())
+            model.withCO(COMapper.toModel(buf.getCo()));
+
+        if (buf.hasNh3())
+            model.withNH3(NH3Mapper.toModel(buf.getNh3()));
+
+        if (buf.hasNo2())
+            model.withNO2(NO2Mapper.toModel(buf.getNo2()));
+
+        if (buf.hasO3())
+            model.withO3(O3Mapper.toModel(buf.getO3()));
+
+        if (buf.hasVoc())
+            model.withVOC(VOCMapper.toModel(buf.getVoc()));
+
+        if (buf.hasPm25())
+            model.withPM2_5(PM2_5Mapper.toModel(buf.getPm25()));
+
+        if (buf.hasPm10())
+            model.withPM10(PM10Mapper.toModel(buf.getPm10()));
+
+        if (buf.hasWaterPressure())
+            model.withWaterPressure(WaterPressureMapper.toModel(buf.getWaterPressure()));
+
+        return model;
     }
 }

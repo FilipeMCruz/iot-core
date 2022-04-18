@@ -8,8 +8,17 @@ public interface TemperatureOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float celsius = 1;</code>
+   * <code>.google.protobuf.FloatValue celsius = 1;</code>
+   * @return Whether the celsius field is set.
+   */
+  boolean hasCelsius();
+  /**
+   * <code>.google.protobuf.FloatValue celsius = 1;</code>
    * @return The celsius.
    */
-  float getCelsius();
+  com.google.protobuf.FloatValue getCelsius();
+  /**
+   * <code>.google.protobuf.FloatValue celsius = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getCelsiusOrBuilder();
 }

@@ -3,6 +3,7 @@ package pt.sharespot.iot.core.buf.mapper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.google.protobuf.InvalidProtocolBufferException;
 import pt.sharespot.iot.core.buf.model.Message;
 import pt.sharespot.iot.core.buf.model.UnprocessedMessage;
 import pt.sharespot.iot.core.routing.MessageConsumed;
@@ -31,7 +32,11 @@ public class MessageMapper {
                 .build();
     }
 
-    public static MessageConsumed<ObjectNode> toUnprocessedModel(UnprocessedMessage message) throws JsonProcessingException {
+    public static MessageConsumed<ObjectNode> toUnprocessedModel(byte[] message) throws InvalidProtocolBufferException, JsonProcessingException {
+        return MessageMapper.toUnprocessedModel(UnprocessedMessage.parseFrom(message));
+    }
+
+    private static MessageConsumed<ObjectNode> toUnprocessedModel(UnprocessedMessage message) throws JsonProcessingException {
         var consumed = new MessageConsumed<ObjectNode>();
         consumed.hops = message.getHops();
         consumed.oid = UUID.fromString(message.getOid());
@@ -40,7 +45,11 @@ public class MessageMapper {
         return consumed;
     }
 
-    public static MessageConsumed<ProcessedSensorDataDTO> toModel(Message message) {
+    public static MessageConsumed<ProcessedSensorDataDTO> toModel(byte[] message) throws InvalidProtocolBufferException {
+        return MessageMapper.toModel(Message.parseFrom(message));
+    }
+
+    private static MessageConsumed<ProcessedSensorDataDTO> toModel(Message message) {
         var consumed = new MessageConsumed<ProcessedSensorDataDTO>();
         consumed.hops = message.getHops();
         consumed.oid = UUID.fromString(message.getOid());

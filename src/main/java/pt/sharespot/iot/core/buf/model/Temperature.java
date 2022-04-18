@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (celsius_ != null) {
+              subBuilder = celsius_.toBuilder();
+            }
+            celsius_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(celsius_);
+              celsius_ = subBuilder.buildPartial();
+            }
 
-            celsius_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CELSIUS_FIELD_NUMBER = 1;
-  private float celsius_;
+  private com.google.protobuf.FloatValue celsius_;
   /**
-   * <code>float celsius = 1;</code>
+   * <code>.google.protobuf.FloatValue celsius = 1;</code>
+   * @return Whether the celsius field is set.
+   */
+  @java.lang.Override
+  public boolean hasCelsius() {
+    return celsius_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue celsius = 1;</code>
    * @return The celsius.
    */
   @java.lang.Override
-  public float getCelsius() {
-    return celsius_;
+  public com.google.protobuf.FloatValue getCelsius() {
+    return celsius_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : celsius_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue celsius = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getCelsiusOrBuilder() {
+    return getCelsius();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(celsius_) != 0) {
-      output.writeFloat(1, celsius_);
+    if (celsius_ != null) {
+      output.writeMessage(1, getCelsius());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(celsius_) != 0) {
+    if (celsius_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, celsius_);
+        .computeMessageSize(1, getCelsius());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.Temperature other = (pt.sharespot.iot.core.buf.model.Temperature) obj;
 
-    if (java.lang.Float.floatToIntBits(getCelsius())
-        != java.lang.Float.floatToIntBits(
-            other.getCelsius())) return false;
+    if (hasCelsius() != other.hasCelsius()) return false;
+    if (hasCelsius()) {
+      if (!getCelsius()
+          .equals(other.getCelsius())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CELSIUS_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getCelsius());
+    if (hasCelsius()) {
+      hash = (37 * hash) + CELSIUS_FIELD_NUMBER;
+      hash = (53 * hash) + getCelsius().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      celsius_ = 0F;
-
+      if (celsiusBuilder_ == null) {
+        celsius_ = null;
+      } else {
+        celsius_ = null;
+        celsiusBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Temperature buildPartial() {
       pt.sharespot.iot.core.buf.model.Temperature result = new pt.sharespot.iot.core.buf.model.Temperature(this);
-      result.celsius_ = celsius_;
+      if (celsiusBuilder_ == null) {
+        result.celsius_ = celsius_;
+      } else {
+        result.celsius_ = celsiusBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Temperature other) {
       if (other == pt.sharespot.iot.core.buf.model.Temperature.getDefaultInstance()) return this;
-      if (other.getCelsius() != 0F) {
-        setCelsius(other.getCelsius());
+      if (other.hasCelsius()) {
+        mergeCelsius(other.getCelsius());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float celsius_ ;
+    private com.google.protobuf.FloatValue celsius_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> celsiusBuilder_;
     /**
-     * <code>float celsius = 1;</code>
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
+     * @return Whether the celsius field is set.
+     */
+    public boolean hasCelsius() {
+      return celsiusBuilder_ != null || celsius_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
      * @return The celsius.
      */
-    @java.lang.Override
-    public float getCelsius() {
-      return celsius_;
+    public com.google.protobuf.FloatValue getCelsius() {
+      if (celsiusBuilder_ == null) {
+        return celsius_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : celsius_;
+      } else {
+        return celsiusBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float celsius = 1;</code>
-     * @param value The celsius to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
      */
-    public Builder setCelsius(float value) {
-      
-      celsius_ = value;
-      onChanged();
+    public Builder setCelsius(com.google.protobuf.FloatValue value) {
+      if (celsiusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        celsius_ = value;
+        onChanged();
+      } else {
+        celsiusBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float celsius = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
+     */
+    public Builder setCelsius(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (celsiusBuilder_ == null) {
+        celsius_ = builderForValue.build();
+        onChanged();
+      } else {
+        celsiusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
+     */
+    public Builder mergeCelsius(com.google.protobuf.FloatValue value) {
+      if (celsiusBuilder_ == null) {
+        if (celsius_ != null) {
+          celsius_ =
+            com.google.protobuf.FloatValue.newBuilder(celsius_).mergeFrom(value).buildPartial();
+        } else {
+          celsius_ = value;
+        }
+        onChanged();
+      } else {
+        celsiusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
      */
     public Builder clearCelsius() {
-      
-      celsius_ = 0F;
-      onChanged();
+      if (celsiusBuilder_ == null) {
+        celsius_ = null;
+        onChanged();
+      } else {
+        celsius_ = null;
+        celsiusBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getCelsiusBuilder() {
+      
+      onChanged();
+      return getCelsiusFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getCelsiusOrBuilder() {
+      if (celsiusBuilder_ != null) {
+        return celsiusBuilder_.getMessageOrBuilder();
+      } else {
+        return celsius_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : celsius_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue celsius = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getCelsiusFieldBuilder() {
+      if (celsiusBuilder_ == null) {
+        celsiusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getCelsius(),
+                getParentForChildren(),
+                isClean());
+        celsius_ = null;
+      }
+      return celsiusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

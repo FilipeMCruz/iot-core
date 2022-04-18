@@ -8,8 +8,17 @@ public interface AirQualityOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float value = 1;</code>
+   * <code>.google.protobuf.FloatValue value = 1;</code>
+   * @return Whether the value field is set.
+   */
+  boolean hasValue();
+  /**
+   * <code>.google.protobuf.FloatValue value = 1;</code>
    * @return The value.
    */
-  float getValue();
+  com.google.protobuf.FloatValue getValue();
+  /**
+   * <code>.google.protobuf.FloatValue value = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getValueOrBuilder();
 }

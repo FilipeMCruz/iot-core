@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/wrappers.proto";
+
 package pt.sharespot.iot.core;
 
 option java_package = "pt.sharespot.iot.core.buf.model";
@@ -54,45 +56,45 @@ message SensorData {
 }
 
 message PM2_5 {
-  float micro_grams_per_cubic_meter = 1;
+  google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;
 }
 
 message PM10 {
-  float micro_grams_per_cubic_meter = 1;
+  google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;
 }
 
 message CO2 {
-  float ppm = 1;
+  google.protobuf.FloatValue ppm = 1;
 }
 
 message CO {
-  float ppm = 1;
+  google.protobuf.FloatValue ppm = 1;
 }
 
 message NH3 {
-  float ppm = 1;
+  google.protobuf.FloatValue ppm = 1;
 }
 
 message NO2 {
-  float ppm = 1;
+  google.protobuf.FloatValue ppm = 1;
 }
 
 message O3 {
-  float ppm = 1;
+  google.protobuf.FloatValue ppm = 1;
 }
 
 message VOC {
-  float ppm = 1;
+  google.protobuf.FloatValue ppm = 1;
 }
 
 message GPS {
-  double latitude = 1;
-  double longitude = 2;
-  float altitude = 3;
+  google.protobuf.DoubleValue latitude = 1;
+  google.protobuf.DoubleValue longitude = 2;
+  google.protobuf.FloatValue altitude = 3;
 }
 
 message SoilConductivity {
-  float micro_siemens_per_centimeter = 1;
+  google.protobuf.FloatValue micro_siemens_per_centimeter = 1;
 }
 
 message Motion {
@@ -106,61 +108,61 @@ enum MotionType {
 }
 
 message Temperature {
-  float celsius = 1;
+  google.protobuf.FloatValue celsius = 1;
 }
 
 message Occupation {
-  float percentage = 1;
+  google.protobuf.FloatValue percentage = 1;
 }
 
 message AirQuality {
-  float value = 1;
+  google.protobuf.FloatValue value = 1;
 }
 
 message PH {
-  float value = 1;
+  google.protobuf.FloatValue value = 1;
 }
 
 message Distance {
-  float millimeters = 1;
-  float maxMillimeters = 2;
-  float minMillimeters = 3;
+  google.protobuf.FloatValue millimeters = 1;
+  google.protobuf.FloatValue maxMillimeters = 2;
+  google.protobuf.FloatValue minMillimeters = 3;
 }
 
 message Velocity {
-  float kilometers_per_hour = 1;
+  google.protobuf.FloatValue kilometers_per_hour = 1;
 }
 
 message AirHumidity {
-  float grams_per_cubic_meter = 1;
-  float relative_percentage = 2;
+  google.protobuf.FloatValue grams_per_cubic_meter = 1;
+  google.protobuf.FloatValue relative_percentage = 2;
 }
 
 message AirPressure {
-  float hecto_pascal = 1;
+  google.protobuf.FloatValue hecto_pascal = 1;
 }
 
 message WaterPressure {
-  float bar = 1;
+  google.protobuf.FloatValue bar = 1;
 }
 
 message Battery {
-  float percentage = 1;
-  float volts = 2;
-  float max_volts = 3;
-  float min_volts = 4;
+  google.protobuf.FloatValue percentage = 1;
+  google.protobuf.FloatValue volts = 2;
+  google.protobuf.FloatValue max_volts = 3;
+  google.protobuf.FloatValue min_volts = 4;
 }
 
 message SoilMoisture {
-  float relative_percentage = 1;
+  google.protobuf.FloatValue relative_percentage = 1;
 }
 
 message Illuminance {
-  float lux = 1;
+  google.protobuf.FloatValue lux = 1;
 }
 
 message Trigger {
-  bool value = 1;
+  google.protobuf.BoolValue value = 1;
 }
 
 message Device {

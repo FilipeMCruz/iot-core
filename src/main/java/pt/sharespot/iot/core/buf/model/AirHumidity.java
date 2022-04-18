@@ -48,14 +48,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (gramsPerCubicMeter_ != null) {
+              subBuilder = gramsPerCubicMeter_.toBuilder();
+            }
+            gramsPerCubicMeter_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(gramsPerCubicMeter_);
+              gramsPerCubicMeter_ = subBuilder.buildPartial();
+            }
 
-            gramsPerCubicMeter_ = input.readFloat();
             break;
           }
-          case 21: {
+          case 18: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (relativePercentage_ != null) {
+              subBuilder = relativePercentage_.toBuilder();
+            }
+            relativePercentage_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(relativePercentage_);
+              relativePercentage_ = subBuilder.buildPartial();
+            }
 
-            relativePercentage_ = input.readFloat();
             break;
           }
           default: {
@@ -91,25 +107,55 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int GRAMS_PER_CUBIC_METER_FIELD_NUMBER = 1;
-  private float gramsPerCubicMeter_;
+  private com.google.protobuf.FloatValue gramsPerCubicMeter_;
   /**
-   * <code>float grams_per_cubic_meter = 1;</code>
+   * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+   * @return Whether the gramsPerCubicMeter field is set.
+   */
+  @java.lang.Override
+  public boolean hasGramsPerCubicMeter() {
+    return gramsPerCubicMeter_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
    * @return The gramsPerCubicMeter.
    */
   @java.lang.Override
-  public float getGramsPerCubicMeter() {
-    return gramsPerCubicMeter_;
+  public com.google.protobuf.FloatValue getGramsPerCubicMeter() {
+    return gramsPerCubicMeter_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : gramsPerCubicMeter_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getGramsPerCubicMeterOrBuilder() {
+    return getGramsPerCubicMeter();
   }
 
   public static final int RELATIVE_PERCENTAGE_FIELD_NUMBER = 2;
-  private float relativePercentage_;
+  private com.google.protobuf.FloatValue relativePercentage_;
   /**
-   * <code>float relative_percentage = 2;</code>
+   * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+   * @return Whether the relativePercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelativePercentage() {
+    return relativePercentage_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
    * @return The relativePercentage.
    */
   @java.lang.Override
-  public float getRelativePercentage() {
-    return relativePercentage_;
+  public com.google.protobuf.FloatValue getRelativePercentage() {
+    return relativePercentage_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : relativePercentage_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getRelativePercentageOrBuilder() {
+    return getRelativePercentage();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -126,11 +172,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(gramsPerCubicMeter_) != 0) {
-      output.writeFloat(1, gramsPerCubicMeter_);
+    if (gramsPerCubicMeter_ != null) {
+      output.writeMessage(1, getGramsPerCubicMeter());
     }
-    if (java.lang.Float.floatToRawIntBits(relativePercentage_) != 0) {
-      output.writeFloat(2, relativePercentage_);
+    if (relativePercentage_ != null) {
+      output.writeMessage(2, getRelativePercentage());
     }
     unknownFields.writeTo(output);
   }
@@ -141,13 +187,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(gramsPerCubicMeter_) != 0) {
+    if (gramsPerCubicMeter_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, gramsPerCubicMeter_);
+        .computeMessageSize(1, getGramsPerCubicMeter());
     }
-    if (java.lang.Float.floatToRawIntBits(relativePercentage_) != 0) {
+    if (relativePercentage_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, relativePercentage_);
+        .computeMessageSize(2, getRelativePercentage());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,12 +210,16 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.AirHumidity other = (pt.sharespot.iot.core.buf.model.AirHumidity) obj;
 
-    if (java.lang.Float.floatToIntBits(getGramsPerCubicMeter())
-        != java.lang.Float.floatToIntBits(
-            other.getGramsPerCubicMeter())) return false;
-    if (java.lang.Float.floatToIntBits(getRelativePercentage())
-        != java.lang.Float.floatToIntBits(
-            other.getRelativePercentage())) return false;
+    if (hasGramsPerCubicMeter() != other.hasGramsPerCubicMeter()) return false;
+    if (hasGramsPerCubicMeter()) {
+      if (!getGramsPerCubicMeter()
+          .equals(other.getGramsPerCubicMeter())) return false;
+    }
+    if (hasRelativePercentage() != other.hasRelativePercentage()) return false;
+    if (hasRelativePercentage()) {
+      if (!getRelativePercentage()
+          .equals(other.getRelativePercentage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -181,12 +231,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + GRAMS_PER_CUBIC_METER_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getGramsPerCubicMeter());
-    hash = (37 * hash) + RELATIVE_PERCENTAGE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getRelativePercentage());
+    if (hasGramsPerCubicMeter()) {
+      hash = (37 * hash) + GRAMS_PER_CUBIC_METER_FIELD_NUMBER;
+      hash = (53 * hash) + getGramsPerCubicMeter().hashCode();
+    }
+    if (hasRelativePercentage()) {
+      hash = (37 * hash) + RELATIVE_PERCENTAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getRelativePercentage().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -320,10 +372,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      gramsPerCubicMeter_ = 0F;
-
-      relativePercentage_ = 0F;
-
+      if (gramsPerCubicMeterBuilder_ == null) {
+        gramsPerCubicMeter_ = null;
+      } else {
+        gramsPerCubicMeter_ = null;
+        gramsPerCubicMeterBuilder_ = null;
+      }
+      if (relativePercentageBuilder_ == null) {
+        relativePercentage_ = null;
+      } else {
+        relativePercentage_ = null;
+        relativePercentageBuilder_ = null;
+      }
       return this;
     }
 
@@ -350,8 +410,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.AirHumidity buildPartial() {
       pt.sharespot.iot.core.buf.model.AirHumidity result = new pt.sharespot.iot.core.buf.model.AirHumidity(this);
-      result.gramsPerCubicMeter_ = gramsPerCubicMeter_;
-      result.relativePercentage_ = relativePercentage_;
+      if (gramsPerCubicMeterBuilder_ == null) {
+        result.gramsPerCubicMeter_ = gramsPerCubicMeter_;
+      } else {
+        result.gramsPerCubicMeter_ = gramsPerCubicMeterBuilder_.build();
+      }
+      if (relativePercentageBuilder_ == null) {
+        result.relativePercentage_ = relativePercentage_;
+      } else {
+        result.relativePercentage_ = relativePercentageBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -400,11 +468,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.AirHumidity other) {
       if (other == pt.sharespot.iot.core.buf.model.AirHumidity.getDefaultInstance()) return this;
-      if (other.getGramsPerCubicMeter() != 0F) {
-        setGramsPerCubicMeter(other.getGramsPerCubicMeter());
+      if (other.hasGramsPerCubicMeter()) {
+        mergeGramsPerCubicMeter(other.getGramsPerCubicMeter());
       }
-      if (other.getRelativePercentage() != 0F) {
-        setRelativePercentage(other.getRelativePercentage());
+      if (other.hasRelativePercentage()) {
+        mergeRelativePercentage(other.getRelativePercentage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -435,66 +503,242 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float gramsPerCubicMeter_ ;
+    private com.google.protobuf.FloatValue gramsPerCubicMeter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> gramsPerCubicMeterBuilder_;
     /**
-     * <code>float grams_per_cubic_meter = 1;</code>
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+     * @return Whether the gramsPerCubicMeter field is set.
+     */
+    public boolean hasGramsPerCubicMeter() {
+      return gramsPerCubicMeterBuilder_ != null || gramsPerCubicMeter_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
      * @return The gramsPerCubicMeter.
      */
-    @java.lang.Override
-    public float getGramsPerCubicMeter() {
-      return gramsPerCubicMeter_;
+    public com.google.protobuf.FloatValue getGramsPerCubicMeter() {
+      if (gramsPerCubicMeterBuilder_ == null) {
+        return gramsPerCubicMeter_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : gramsPerCubicMeter_;
+      } else {
+        return gramsPerCubicMeterBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float grams_per_cubic_meter = 1;</code>
-     * @param value The gramsPerCubicMeter to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
      */
-    public Builder setGramsPerCubicMeter(float value) {
-      
-      gramsPerCubicMeter_ = value;
-      onChanged();
+    public Builder setGramsPerCubicMeter(com.google.protobuf.FloatValue value) {
+      if (gramsPerCubicMeterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gramsPerCubicMeter_ = value;
+        onChanged();
+      } else {
+        gramsPerCubicMeterBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float grams_per_cubic_meter = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+     */
+    public Builder setGramsPerCubicMeter(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (gramsPerCubicMeterBuilder_ == null) {
+        gramsPerCubicMeter_ = builderForValue.build();
+        onChanged();
+      } else {
+        gramsPerCubicMeterBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+     */
+    public Builder mergeGramsPerCubicMeter(com.google.protobuf.FloatValue value) {
+      if (gramsPerCubicMeterBuilder_ == null) {
+        if (gramsPerCubicMeter_ != null) {
+          gramsPerCubicMeter_ =
+            com.google.protobuf.FloatValue.newBuilder(gramsPerCubicMeter_).mergeFrom(value).buildPartial();
+        } else {
+          gramsPerCubicMeter_ = value;
+        }
+        onChanged();
+      } else {
+        gramsPerCubicMeterBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
      */
     public Builder clearGramsPerCubicMeter() {
-      
-      gramsPerCubicMeter_ = 0F;
-      onChanged();
+      if (gramsPerCubicMeterBuilder_ == null) {
+        gramsPerCubicMeter_ = null;
+        onChanged();
+      } else {
+        gramsPerCubicMeter_ = null;
+        gramsPerCubicMeterBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getGramsPerCubicMeterBuilder() {
+      
+      onChanged();
+      return getGramsPerCubicMeterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getGramsPerCubicMeterOrBuilder() {
+      if (gramsPerCubicMeterBuilder_ != null) {
+        return gramsPerCubicMeterBuilder_.getMessageOrBuilder();
+      } else {
+        return gramsPerCubicMeter_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : gramsPerCubicMeter_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue grams_per_cubic_meter = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getGramsPerCubicMeterFieldBuilder() {
+      if (gramsPerCubicMeterBuilder_ == null) {
+        gramsPerCubicMeterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getGramsPerCubicMeter(),
+                getParentForChildren(),
+                isClean());
+        gramsPerCubicMeter_ = null;
+      }
+      return gramsPerCubicMeterBuilder_;
     }
 
-    private float relativePercentage_ ;
+    private com.google.protobuf.FloatValue relativePercentage_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> relativePercentageBuilder_;
     /**
-     * <code>float relative_percentage = 2;</code>
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+     * @return Whether the relativePercentage field is set.
+     */
+    public boolean hasRelativePercentage() {
+      return relativePercentageBuilder_ != null || relativePercentage_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
      * @return The relativePercentage.
      */
-    @java.lang.Override
-    public float getRelativePercentage() {
-      return relativePercentage_;
+    public com.google.protobuf.FloatValue getRelativePercentage() {
+      if (relativePercentageBuilder_ == null) {
+        return relativePercentage_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : relativePercentage_;
+      } else {
+        return relativePercentageBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float relative_percentage = 2;</code>
-     * @param value The relativePercentage to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
      */
-    public Builder setRelativePercentage(float value) {
-      
-      relativePercentage_ = value;
-      onChanged();
+    public Builder setRelativePercentage(com.google.protobuf.FloatValue value) {
+      if (relativePercentageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        relativePercentage_ = value;
+        onChanged();
+      } else {
+        relativePercentageBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float relative_percentage = 2;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+     */
+    public Builder setRelativePercentage(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (relativePercentageBuilder_ == null) {
+        relativePercentage_ = builderForValue.build();
+        onChanged();
+      } else {
+        relativePercentageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+     */
+    public Builder mergeRelativePercentage(com.google.protobuf.FloatValue value) {
+      if (relativePercentageBuilder_ == null) {
+        if (relativePercentage_ != null) {
+          relativePercentage_ =
+            com.google.protobuf.FloatValue.newBuilder(relativePercentage_).mergeFrom(value).buildPartial();
+        } else {
+          relativePercentage_ = value;
+        }
+        onChanged();
+      } else {
+        relativePercentageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
      */
     public Builder clearRelativePercentage() {
-      
-      relativePercentage_ = 0F;
-      onChanged();
+      if (relativePercentageBuilder_ == null) {
+        relativePercentage_ = null;
+        onChanged();
+      } else {
+        relativePercentage_ = null;
+        relativePercentageBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getRelativePercentageBuilder() {
+      
+      onChanged();
+      return getRelativePercentageFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getRelativePercentageOrBuilder() {
+      if (relativePercentageBuilder_ != null) {
+        return relativePercentageBuilder_.getMessageOrBuilder();
+      } else {
+        return relativePercentage_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : relativePercentage_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getRelativePercentageFieldBuilder() {
+      if (relativePercentageBuilder_ == null) {
+        relativePercentageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getRelativePercentage(),
+                getParentForChildren(),
+                isClean());
+        relativePercentage_ = null;
+      }
+      return relativePercentageBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

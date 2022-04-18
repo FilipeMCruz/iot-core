@@ -15,9 +15,7 @@ public abstract class AbstractSensorDataDTO implements SensorDataDTO {
 
     public Map<Integer, SensorDataDetailsDTO> measures;
 
-    public AbstractSensorDataDTO(UUID dataId,
-                                 Long reportedAt,
-                                 Map<Integer, SensorDataDetailsDTO> measures) {
+    public AbstractSensorDataDTO(UUID dataId, Long reportedAt, Map<Integer, SensorDataDetailsDTO> measures) {
         this.dataId = dataId;
         this.reportedAt = reportedAt;
         this.measures = measures;
@@ -39,5 +37,23 @@ public abstract class AbstractSensorDataDTO implements SensorDataDTO {
     @Override
     public boolean hasAnyProperties(PropertyName... properties) {
         return Arrays.stream(properties).anyMatch(this::hasProperty);
+    }
+
+    @Override
+    public boolean hasAllProperties(Integer subSensorId, PropertyName... properties) {
+        return Arrays.stream(properties).anyMatch(p -> this.hasProperty(subSensorId, p));
+    }
+
+    @Override
+    public boolean hasAnyProperties(Integer subSensorId, PropertyName... properties) {
+        return Arrays.stream(properties).anyMatch(p -> this.hasProperty(subSensorId, p));
+    }
+
+    @Override
+    public SensorDataDetailsDTO getSensorData() {
+        if (measures.get(0) == null) {
+            measures.put(0, new SensorDataDetailsDTO());
+        }
+        return measures.get(0);
     }
 }

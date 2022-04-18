@@ -8,8 +8,17 @@ public interface SoilMoistureOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float relative_percentage = 1;</code>
+   * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+   * @return Whether the relativePercentage field is set.
+   */
+  boolean hasRelativePercentage();
+  /**
+   * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
    * @return The relativePercentage.
    */
-  float getRelativePercentage();
+  com.google.protobuf.FloatValue getRelativePercentage();
+  /**
+   * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getRelativePercentageOrBuilder();
 }

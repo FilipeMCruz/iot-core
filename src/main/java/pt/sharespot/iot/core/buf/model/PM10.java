@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (microGramsPerCubicMeter_ != null) {
+              subBuilder = microGramsPerCubicMeter_.toBuilder();
+            }
+            microGramsPerCubicMeter_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(microGramsPerCubicMeter_);
+              microGramsPerCubicMeter_ = subBuilder.buildPartial();
+            }
 
-            microGramsPerCubicMeter_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MICRO_GRAMS_PER_CUBIC_METER_FIELD_NUMBER = 1;
-  private float microGramsPerCubicMeter_;
+  private com.google.protobuf.FloatValue microGramsPerCubicMeter_;
   /**
-   * <code>float micro_grams_per_cubic_meter = 1;</code>
+   * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+   * @return Whether the microGramsPerCubicMeter field is set.
+   */
+  @java.lang.Override
+  public boolean hasMicroGramsPerCubicMeter() {
+    return microGramsPerCubicMeter_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
    * @return The microGramsPerCubicMeter.
    */
   @java.lang.Override
-  public float getMicroGramsPerCubicMeter() {
-    return microGramsPerCubicMeter_;
+  public com.google.protobuf.FloatValue getMicroGramsPerCubicMeter() {
+    return microGramsPerCubicMeter_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : microGramsPerCubicMeter_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getMicroGramsPerCubicMeterOrBuilder() {
+    return getMicroGramsPerCubicMeter();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(microGramsPerCubicMeter_) != 0) {
-      output.writeFloat(1, microGramsPerCubicMeter_);
+    if (microGramsPerCubicMeter_ != null) {
+      output.writeMessage(1, getMicroGramsPerCubicMeter());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(microGramsPerCubicMeter_) != 0) {
+    if (microGramsPerCubicMeter_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, microGramsPerCubicMeter_);
+        .computeMessageSize(1, getMicroGramsPerCubicMeter());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.PM10 other = (pt.sharespot.iot.core.buf.model.PM10) obj;
 
-    if (java.lang.Float.floatToIntBits(getMicroGramsPerCubicMeter())
-        != java.lang.Float.floatToIntBits(
-            other.getMicroGramsPerCubicMeter())) return false;
+    if (hasMicroGramsPerCubicMeter() != other.hasMicroGramsPerCubicMeter()) return false;
+    if (hasMicroGramsPerCubicMeter()) {
+      if (!getMicroGramsPerCubicMeter()
+          .equals(other.getMicroGramsPerCubicMeter())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MICRO_GRAMS_PER_CUBIC_METER_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getMicroGramsPerCubicMeter());
+    if (hasMicroGramsPerCubicMeter()) {
+      hash = (37 * hash) + MICRO_GRAMS_PER_CUBIC_METER_FIELD_NUMBER;
+      hash = (53 * hash) + getMicroGramsPerCubicMeter().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      microGramsPerCubicMeter_ = 0F;
-
+      if (microGramsPerCubicMeterBuilder_ == null) {
+        microGramsPerCubicMeter_ = null;
+      } else {
+        microGramsPerCubicMeter_ = null;
+        microGramsPerCubicMeterBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.PM10 buildPartial() {
       pt.sharespot.iot.core.buf.model.PM10 result = new pt.sharespot.iot.core.buf.model.PM10(this);
-      result.microGramsPerCubicMeter_ = microGramsPerCubicMeter_;
+      if (microGramsPerCubicMeterBuilder_ == null) {
+        result.microGramsPerCubicMeter_ = microGramsPerCubicMeter_;
+      } else {
+        result.microGramsPerCubicMeter_ = microGramsPerCubicMeterBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.PM10 other) {
       if (other == pt.sharespot.iot.core.buf.model.PM10.getDefaultInstance()) return this;
-      if (other.getMicroGramsPerCubicMeter() != 0F) {
-        setMicroGramsPerCubicMeter(other.getMicroGramsPerCubicMeter());
+      if (other.hasMicroGramsPerCubicMeter()) {
+        mergeMicroGramsPerCubicMeter(other.getMicroGramsPerCubicMeter());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float microGramsPerCubicMeter_ ;
+    private com.google.protobuf.FloatValue microGramsPerCubicMeter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> microGramsPerCubicMeterBuilder_;
     /**
-     * <code>float micro_grams_per_cubic_meter = 1;</code>
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+     * @return Whether the microGramsPerCubicMeter field is set.
+     */
+    public boolean hasMicroGramsPerCubicMeter() {
+      return microGramsPerCubicMeterBuilder_ != null || microGramsPerCubicMeter_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
      * @return The microGramsPerCubicMeter.
      */
-    @java.lang.Override
-    public float getMicroGramsPerCubicMeter() {
-      return microGramsPerCubicMeter_;
+    public com.google.protobuf.FloatValue getMicroGramsPerCubicMeter() {
+      if (microGramsPerCubicMeterBuilder_ == null) {
+        return microGramsPerCubicMeter_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : microGramsPerCubicMeter_;
+      } else {
+        return microGramsPerCubicMeterBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float micro_grams_per_cubic_meter = 1;</code>
-     * @param value The microGramsPerCubicMeter to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
      */
-    public Builder setMicroGramsPerCubicMeter(float value) {
-      
-      microGramsPerCubicMeter_ = value;
-      onChanged();
+    public Builder setMicroGramsPerCubicMeter(com.google.protobuf.FloatValue value) {
+      if (microGramsPerCubicMeterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        microGramsPerCubicMeter_ = value;
+        onChanged();
+      } else {
+        microGramsPerCubicMeterBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float micro_grams_per_cubic_meter = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+     */
+    public Builder setMicroGramsPerCubicMeter(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (microGramsPerCubicMeterBuilder_ == null) {
+        microGramsPerCubicMeter_ = builderForValue.build();
+        onChanged();
+      } else {
+        microGramsPerCubicMeterBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+     */
+    public Builder mergeMicroGramsPerCubicMeter(com.google.protobuf.FloatValue value) {
+      if (microGramsPerCubicMeterBuilder_ == null) {
+        if (microGramsPerCubicMeter_ != null) {
+          microGramsPerCubicMeter_ =
+            com.google.protobuf.FloatValue.newBuilder(microGramsPerCubicMeter_).mergeFrom(value).buildPartial();
+        } else {
+          microGramsPerCubicMeter_ = value;
+        }
+        onChanged();
+      } else {
+        microGramsPerCubicMeterBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
      */
     public Builder clearMicroGramsPerCubicMeter() {
-      
-      microGramsPerCubicMeter_ = 0F;
-      onChanged();
+      if (microGramsPerCubicMeterBuilder_ == null) {
+        microGramsPerCubicMeter_ = null;
+        onChanged();
+      } else {
+        microGramsPerCubicMeter_ = null;
+        microGramsPerCubicMeterBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getMicroGramsPerCubicMeterBuilder() {
+      
+      onChanged();
+      return getMicroGramsPerCubicMeterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getMicroGramsPerCubicMeterOrBuilder() {
+      if (microGramsPerCubicMeterBuilder_ != null) {
+        return microGramsPerCubicMeterBuilder_.getMessageOrBuilder();
+      } else {
+        return microGramsPerCubicMeter_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : microGramsPerCubicMeter_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getMicroGramsPerCubicMeterFieldBuilder() {
+      if (microGramsPerCubicMeterBuilder_ == null) {
+        microGramsPerCubicMeterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getMicroGramsPerCubicMeter(),
+                getParentForChildren(),
+                isClean());
+        microGramsPerCubicMeter_ = null;
+      }
+      return microGramsPerCubicMeterBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

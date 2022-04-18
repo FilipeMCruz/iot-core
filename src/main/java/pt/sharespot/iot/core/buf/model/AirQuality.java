@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (value_ != null) {
+              subBuilder = value_.toBuilder();
+            }
+            value_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(value_);
+              value_ = subBuilder.buildPartial();
+            }
 
-            value_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
-  private float value_;
+  private com.google.protobuf.FloatValue value_;
   /**
-   * <code>float value = 1;</code>
+   * <code>.google.protobuf.FloatValue value = 1;</code>
+   * @return Whether the value field is set.
+   */
+  @java.lang.Override
+  public boolean hasValue() {
+    return value_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue value = 1;</code>
    * @return The value.
    */
   @java.lang.Override
-  public float getValue() {
-    return value_;
+  public com.google.protobuf.FloatValue getValue() {
+    return value_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : value_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue value = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getValueOrBuilder() {
+    return getValue();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
-      output.writeFloat(1, value_);
+    if (value_ != null) {
+      output.writeMessage(1, getValue());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
+    if (value_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, value_);
+        .computeMessageSize(1, getValue());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.AirQuality other = (pt.sharespot.iot.core.buf.model.AirQuality) obj;
 
-    if (java.lang.Float.floatToIntBits(getValue())
-        != java.lang.Float.floatToIntBits(
-            other.getValue())) return false;
+    if (hasValue() != other.hasValue()) return false;
+    if (hasValue()) {
+      if (!getValue()
+          .equals(other.getValue())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getValue());
+    if (hasValue()) {
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      value_ = 0F;
-
+      if (valueBuilder_ == null) {
+        value_ = null;
+      } else {
+        value_ = null;
+        valueBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.AirQuality buildPartial() {
       pt.sharespot.iot.core.buf.model.AirQuality result = new pt.sharespot.iot.core.buf.model.AirQuality(this);
-      result.value_ = value_;
+      if (valueBuilder_ == null) {
+        result.value_ = value_;
+      } else {
+        result.value_ = valueBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.AirQuality other) {
       if (other == pt.sharespot.iot.core.buf.model.AirQuality.getDefaultInstance()) return this;
-      if (other.getValue() != 0F) {
-        setValue(other.getValue());
+      if (other.hasValue()) {
+        mergeValue(other.getValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float value_ ;
+    private com.google.protobuf.FloatValue value_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> valueBuilder_;
     /**
-     * <code>float value = 1;</code>
+     * <code>.google.protobuf.FloatValue value = 1;</code>
+     * @return Whether the value field is set.
+     */
+    public boolean hasValue() {
+      return valueBuilder_ != null || value_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue value = 1;</code>
      * @return The value.
      */
-    @java.lang.Override
-    public float getValue() {
-      return value_;
+    public com.google.protobuf.FloatValue getValue() {
+      if (valueBuilder_ == null) {
+        return value_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : value_;
+      } else {
+        return valueBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float value = 1;</code>
-     * @param value The value to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue value = 1;</code>
      */
-    public Builder setValue(float value) {
-      
-      value_ = value;
-      onChanged();
+    public Builder setValue(com.google.protobuf.FloatValue value) {
+      if (valueBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        onChanged();
+      } else {
+        valueBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float value = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue value = 1;</code>
+     */
+    public Builder setValue(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (valueBuilder_ == null) {
+        value_ = builderForValue.build();
+        onChanged();
+      } else {
+        valueBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue value = 1;</code>
+     */
+    public Builder mergeValue(com.google.protobuf.FloatValue value) {
+      if (valueBuilder_ == null) {
+        if (value_ != null) {
+          value_ =
+            com.google.protobuf.FloatValue.newBuilder(value_).mergeFrom(value).buildPartial();
+        } else {
+          value_ = value;
+        }
+        onChanged();
+      } else {
+        valueBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue value = 1;</code>
      */
     public Builder clearValue() {
-      
-      value_ = 0F;
-      onChanged();
+      if (valueBuilder_ == null) {
+        value_ = null;
+        onChanged();
+      } else {
+        value_ = null;
+        valueBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue value = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getValueBuilder() {
+      
+      onChanged();
+      return getValueFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue value = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getValueOrBuilder() {
+      if (valueBuilder_ != null) {
+        return valueBuilder_.getMessageOrBuilder();
+      } else {
+        return value_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : value_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue value = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getValueFieldBuilder() {
+      if (valueBuilder_ == null) {
+        valueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getValue(),
+                getParentForChildren(),
+                isClean());
+        value_ = null;
+      }
+      return valueBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

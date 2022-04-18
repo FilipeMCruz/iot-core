@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (relativePercentage_ != null) {
+              subBuilder = relativePercentage_.toBuilder();
+            }
+            relativePercentage_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(relativePercentage_);
+              relativePercentage_ = subBuilder.buildPartial();
+            }
 
-            relativePercentage_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RELATIVE_PERCENTAGE_FIELD_NUMBER = 1;
-  private float relativePercentage_;
+  private com.google.protobuf.FloatValue relativePercentage_;
   /**
-   * <code>float relative_percentage = 1;</code>
+   * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+   * @return Whether the relativePercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelativePercentage() {
+    return relativePercentage_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
    * @return The relativePercentage.
    */
   @java.lang.Override
-  public float getRelativePercentage() {
-    return relativePercentage_;
+  public com.google.protobuf.FloatValue getRelativePercentage() {
+    return relativePercentage_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : relativePercentage_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getRelativePercentageOrBuilder() {
+    return getRelativePercentage();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(relativePercentage_) != 0) {
-      output.writeFloat(1, relativePercentage_);
+    if (relativePercentage_ != null) {
+      output.writeMessage(1, getRelativePercentage());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(relativePercentage_) != 0) {
+    if (relativePercentage_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, relativePercentage_);
+        .computeMessageSize(1, getRelativePercentage());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.SoilMoisture other = (pt.sharespot.iot.core.buf.model.SoilMoisture) obj;
 
-    if (java.lang.Float.floatToIntBits(getRelativePercentage())
-        != java.lang.Float.floatToIntBits(
-            other.getRelativePercentage())) return false;
+    if (hasRelativePercentage() != other.hasRelativePercentage()) return false;
+    if (hasRelativePercentage()) {
+      if (!getRelativePercentage()
+          .equals(other.getRelativePercentage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RELATIVE_PERCENTAGE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getRelativePercentage());
+    if (hasRelativePercentage()) {
+      hash = (37 * hash) + RELATIVE_PERCENTAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getRelativePercentage().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      relativePercentage_ = 0F;
-
+      if (relativePercentageBuilder_ == null) {
+        relativePercentage_ = null;
+      } else {
+        relativePercentage_ = null;
+        relativePercentageBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.SoilMoisture buildPartial() {
       pt.sharespot.iot.core.buf.model.SoilMoisture result = new pt.sharespot.iot.core.buf.model.SoilMoisture(this);
-      result.relativePercentage_ = relativePercentage_;
+      if (relativePercentageBuilder_ == null) {
+        result.relativePercentage_ = relativePercentage_;
+      } else {
+        result.relativePercentage_ = relativePercentageBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.SoilMoisture other) {
       if (other == pt.sharespot.iot.core.buf.model.SoilMoisture.getDefaultInstance()) return this;
-      if (other.getRelativePercentage() != 0F) {
-        setRelativePercentage(other.getRelativePercentage());
+      if (other.hasRelativePercentage()) {
+        mergeRelativePercentage(other.getRelativePercentage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float relativePercentage_ ;
+    private com.google.protobuf.FloatValue relativePercentage_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> relativePercentageBuilder_;
     /**
-     * <code>float relative_percentage = 1;</code>
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+     * @return Whether the relativePercentage field is set.
+     */
+    public boolean hasRelativePercentage() {
+      return relativePercentageBuilder_ != null || relativePercentage_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
      * @return The relativePercentage.
      */
-    @java.lang.Override
-    public float getRelativePercentage() {
-      return relativePercentage_;
+    public com.google.protobuf.FloatValue getRelativePercentage() {
+      if (relativePercentageBuilder_ == null) {
+        return relativePercentage_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : relativePercentage_;
+      } else {
+        return relativePercentageBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float relative_percentage = 1;</code>
-     * @param value The relativePercentage to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
      */
-    public Builder setRelativePercentage(float value) {
-      
-      relativePercentage_ = value;
-      onChanged();
+    public Builder setRelativePercentage(com.google.protobuf.FloatValue value) {
+      if (relativePercentageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        relativePercentage_ = value;
+        onChanged();
+      } else {
+        relativePercentageBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float relative_percentage = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+     */
+    public Builder setRelativePercentage(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (relativePercentageBuilder_ == null) {
+        relativePercentage_ = builderForValue.build();
+        onChanged();
+      } else {
+        relativePercentageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+     */
+    public Builder mergeRelativePercentage(com.google.protobuf.FloatValue value) {
+      if (relativePercentageBuilder_ == null) {
+        if (relativePercentage_ != null) {
+          relativePercentage_ =
+            com.google.protobuf.FloatValue.newBuilder(relativePercentage_).mergeFrom(value).buildPartial();
+        } else {
+          relativePercentage_ = value;
+        }
+        onChanged();
+      } else {
+        relativePercentageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
      */
     public Builder clearRelativePercentage() {
-      
-      relativePercentage_ = 0F;
-      onChanged();
+      if (relativePercentageBuilder_ == null) {
+        relativePercentage_ = null;
+        onChanged();
+      } else {
+        relativePercentage_ = null;
+        relativePercentageBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getRelativePercentageBuilder() {
+      
+      onChanged();
+      return getRelativePercentageFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getRelativePercentageOrBuilder() {
+      if (relativePercentageBuilder_ != null) {
+        return relativePercentageBuilder_.getMessageOrBuilder();
+      } else {
+        return relativePercentage_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : relativePercentage_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue relative_percentage = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getRelativePercentageFieldBuilder() {
+      if (relativePercentageBuilder_ == null) {
+        relativePercentageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getRelativePercentage(),
+                getParentForChildren(),
+                isClean());
+        relativePercentage_ = null;
+      }
+      return relativePercentageBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

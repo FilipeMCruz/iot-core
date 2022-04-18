@@ -85,6 +85,7 @@ public class SensorDataDetailsDTO {
             case VOC -> voc != null && voc.exists();
             case PM2_5 -> pm2_5 != null && pm2_5.exists();
             case PM10 -> pm10 != null && pm10.exists();
+            case TRIGGER -> trigger != null && trigger.exists();
             default -> false;
         };
     }
@@ -159,7 +160,7 @@ public class SensorDataDetailsDTO {
         return this;
     }
 
-    public SensorDataDetailsDTO withAlarm(TriggerDataDTO alarm) {
+    public SensorDataDetailsDTO withTrigger(TriggerDataDTO alarm) {
         this.trigger = alarm;
         return this;
     }
@@ -199,12 +200,12 @@ public class SensorDataDetailsDTO {
         return this;
     }
 
-    public SensorDataDetailsDTO withHumidity(AirHumidityDataDTO humidity) {
+    public SensorDataDetailsDTO withAirHumidity(AirHumidityDataDTO humidity) {
         this.airHumidity = humidity;
         return this;
     }
 
-    public SensorDataDetailsDTO withPressure(AirPressureDataDTO pressure) {
+    public SensorDataDetailsDTO withAirPressure(AirPressureDataDTO pressure) {
         this.airPressure = pressure;
         return this;
     }

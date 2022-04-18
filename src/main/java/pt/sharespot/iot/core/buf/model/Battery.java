@@ -48,24 +48,56 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (percentage_ != null) {
+              subBuilder = percentage_.toBuilder();
+            }
+            percentage_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(percentage_);
+              percentage_ = subBuilder.buildPartial();
+            }
 
-            percentage_ = input.readFloat();
             break;
           }
-          case 21: {
+          case 18: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (volts_ != null) {
+              subBuilder = volts_.toBuilder();
+            }
+            volts_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(volts_);
+              volts_ = subBuilder.buildPartial();
+            }
 
-            volts_ = input.readFloat();
             break;
           }
-          case 29: {
+          case 26: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (maxVolts_ != null) {
+              subBuilder = maxVolts_.toBuilder();
+            }
+            maxVolts_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(maxVolts_);
+              maxVolts_ = subBuilder.buildPartial();
+            }
 
-            maxVolts_ = input.readFloat();
             break;
           }
-          case 37: {
+          case 34: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (minVolts_ != null) {
+              subBuilder = minVolts_.toBuilder();
+            }
+            minVolts_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(minVolts_);
+              minVolts_ = subBuilder.buildPartial();
+            }
 
-            minVolts_ = input.readFloat();
             break;
           }
           default: {
@@ -101,47 +133,107 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PERCENTAGE_FIELD_NUMBER = 1;
-  private float percentage_;
+  private com.google.protobuf.FloatValue percentage_;
   /**
-   * <code>float percentage = 1;</code>
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
+   * @return Whether the percentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasPercentage() {
+    return percentage_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
    * @return The percentage.
    */
   @java.lang.Override
-  public float getPercentage() {
-    return percentage_;
+  public com.google.protobuf.FloatValue getPercentage() {
+    return percentage_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : percentage_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getPercentageOrBuilder() {
+    return getPercentage();
   }
 
   public static final int VOLTS_FIELD_NUMBER = 2;
-  private float volts_;
+  private com.google.protobuf.FloatValue volts_;
   /**
-   * <code>float volts = 2;</code>
+   * <code>.google.protobuf.FloatValue volts = 2;</code>
+   * @return Whether the volts field is set.
+   */
+  @java.lang.Override
+  public boolean hasVolts() {
+    return volts_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue volts = 2;</code>
    * @return The volts.
    */
   @java.lang.Override
-  public float getVolts() {
-    return volts_;
+  public com.google.protobuf.FloatValue getVolts() {
+    return volts_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : volts_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue volts = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getVoltsOrBuilder() {
+    return getVolts();
   }
 
   public static final int MAX_VOLTS_FIELD_NUMBER = 3;
-  private float maxVolts_;
+  private com.google.protobuf.FloatValue maxVolts_;
   /**
-   * <code>float max_volts = 3;</code>
+   * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+   * @return Whether the maxVolts field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxVolts() {
+    return maxVolts_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue max_volts = 3;</code>
    * @return The maxVolts.
    */
   @java.lang.Override
-  public float getMaxVolts() {
-    return maxVolts_;
+  public com.google.protobuf.FloatValue getMaxVolts() {
+    return maxVolts_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : maxVolts_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getMaxVoltsOrBuilder() {
+    return getMaxVolts();
   }
 
   public static final int MIN_VOLTS_FIELD_NUMBER = 4;
-  private float minVolts_;
+  private com.google.protobuf.FloatValue minVolts_;
   /**
-   * <code>float min_volts = 4;</code>
+   * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+   * @return Whether the minVolts field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinVolts() {
+    return minVolts_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue min_volts = 4;</code>
    * @return The minVolts.
    */
   @java.lang.Override
-  public float getMinVolts() {
-    return minVolts_;
+  public com.google.protobuf.FloatValue getMinVolts() {
+    return minVolts_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : minVolts_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getMinVoltsOrBuilder() {
+    return getMinVolts();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -158,17 +250,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(percentage_) != 0) {
-      output.writeFloat(1, percentage_);
+    if (percentage_ != null) {
+      output.writeMessage(1, getPercentage());
     }
-    if (java.lang.Float.floatToRawIntBits(volts_) != 0) {
-      output.writeFloat(2, volts_);
+    if (volts_ != null) {
+      output.writeMessage(2, getVolts());
     }
-    if (java.lang.Float.floatToRawIntBits(maxVolts_) != 0) {
-      output.writeFloat(3, maxVolts_);
+    if (maxVolts_ != null) {
+      output.writeMessage(3, getMaxVolts());
     }
-    if (java.lang.Float.floatToRawIntBits(minVolts_) != 0) {
-      output.writeFloat(4, minVolts_);
+    if (minVolts_ != null) {
+      output.writeMessage(4, getMinVolts());
     }
     unknownFields.writeTo(output);
   }
@@ -179,21 +271,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(percentage_) != 0) {
+    if (percentage_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, percentage_);
+        .computeMessageSize(1, getPercentage());
     }
-    if (java.lang.Float.floatToRawIntBits(volts_) != 0) {
+    if (volts_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, volts_);
+        .computeMessageSize(2, getVolts());
     }
-    if (java.lang.Float.floatToRawIntBits(maxVolts_) != 0) {
+    if (maxVolts_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(3, maxVolts_);
+        .computeMessageSize(3, getMaxVolts());
     }
-    if (java.lang.Float.floatToRawIntBits(minVolts_) != 0) {
+    if (minVolts_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(4, minVolts_);
+        .computeMessageSize(4, getMinVolts());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -210,18 +302,26 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.Battery other = (pt.sharespot.iot.core.buf.model.Battery) obj;
 
-    if (java.lang.Float.floatToIntBits(getPercentage())
-        != java.lang.Float.floatToIntBits(
-            other.getPercentage())) return false;
-    if (java.lang.Float.floatToIntBits(getVolts())
-        != java.lang.Float.floatToIntBits(
-            other.getVolts())) return false;
-    if (java.lang.Float.floatToIntBits(getMaxVolts())
-        != java.lang.Float.floatToIntBits(
-            other.getMaxVolts())) return false;
-    if (java.lang.Float.floatToIntBits(getMinVolts())
-        != java.lang.Float.floatToIntBits(
-            other.getMinVolts())) return false;
+    if (hasPercentage() != other.hasPercentage()) return false;
+    if (hasPercentage()) {
+      if (!getPercentage()
+          .equals(other.getPercentage())) return false;
+    }
+    if (hasVolts() != other.hasVolts()) return false;
+    if (hasVolts()) {
+      if (!getVolts()
+          .equals(other.getVolts())) return false;
+    }
+    if (hasMaxVolts() != other.hasMaxVolts()) return false;
+    if (hasMaxVolts()) {
+      if (!getMaxVolts()
+          .equals(other.getMaxVolts())) return false;
+    }
+    if (hasMinVolts() != other.hasMinVolts()) return false;
+    if (hasMinVolts()) {
+      if (!getMinVolts()
+          .equals(other.getMinVolts())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -233,18 +333,22 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getPercentage());
-    hash = (37 * hash) + VOLTS_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getVolts());
-    hash = (37 * hash) + MAX_VOLTS_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getMaxVolts());
-    hash = (37 * hash) + MIN_VOLTS_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getMinVolts());
+    if (hasPercentage()) {
+      hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPercentage().hashCode();
+    }
+    if (hasVolts()) {
+      hash = (37 * hash) + VOLTS_FIELD_NUMBER;
+      hash = (53 * hash) + getVolts().hashCode();
+    }
+    if (hasMaxVolts()) {
+      hash = (37 * hash) + MAX_VOLTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxVolts().hashCode();
+    }
+    if (hasMinVolts()) {
+      hash = (37 * hash) + MIN_VOLTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMinVolts().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,14 +482,30 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      percentage_ = 0F;
-
-      volts_ = 0F;
-
-      maxVolts_ = 0F;
-
-      minVolts_ = 0F;
-
+      if (percentageBuilder_ == null) {
+        percentage_ = null;
+      } else {
+        percentage_ = null;
+        percentageBuilder_ = null;
+      }
+      if (voltsBuilder_ == null) {
+        volts_ = null;
+      } else {
+        volts_ = null;
+        voltsBuilder_ = null;
+      }
+      if (maxVoltsBuilder_ == null) {
+        maxVolts_ = null;
+      } else {
+        maxVolts_ = null;
+        maxVoltsBuilder_ = null;
+      }
+      if (minVoltsBuilder_ == null) {
+        minVolts_ = null;
+      } else {
+        minVolts_ = null;
+        minVoltsBuilder_ = null;
+      }
       return this;
     }
 
@@ -412,10 +532,26 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Battery buildPartial() {
       pt.sharespot.iot.core.buf.model.Battery result = new pt.sharespot.iot.core.buf.model.Battery(this);
-      result.percentage_ = percentage_;
-      result.volts_ = volts_;
-      result.maxVolts_ = maxVolts_;
-      result.minVolts_ = minVolts_;
+      if (percentageBuilder_ == null) {
+        result.percentage_ = percentage_;
+      } else {
+        result.percentage_ = percentageBuilder_.build();
+      }
+      if (voltsBuilder_ == null) {
+        result.volts_ = volts_;
+      } else {
+        result.volts_ = voltsBuilder_.build();
+      }
+      if (maxVoltsBuilder_ == null) {
+        result.maxVolts_ = maxVolts_;
+      } else {
+        result.maxVolts_ = maxVoltsBuilder_.build();
+      }
+      if (minVoltsBuilder_ == null) {
+        result.minVolts_ = minVolts_;
+      } else {
+        result.minVolts_ = minVoltsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -464,17 +600,17 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Battery other) {
       if (other == pt.sharespot.iot.core.buf.model.Battery.getDefaultInstance()) return this;
-      if (other.getPercentage() != 0F) {
-        setPercentage(other.getPercentage());
+      if (other.hasPercentage()) {
+        mergePercentage(other.getPercentage());
       }
-      if (other.getVolts() != 0F) {
-        setVolts(other.getVolts());
+      if (other.hasVolts()) {
+        mergeVolts(other.getVolts());
       }
-      if (other.getMaxVolts() != 0F) {
-        setMaxVolts(other.getMaxVolts());
+      if (other.hasMaxVolts()) {
+        mergeMaxVolts(other.getMaxVolts());
       }
-      if (other.getMinVolts() != 0F) {
-        setMinVolts(other.getMinVolts());
+      if (other.hasMinVolts()) {
+        mergeMinVolts(other.getMinVolts());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -505,128 +641,480 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float percentage_ ;
+    private com.google.protobuf.FloatValue percentage_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> percentageBuilder_;
     /**
-     * <code>float percentage = 1;</code>
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     * @return Whether the percentage field is set.
+     */
+    public boolean hasPercentage() {
+      return percentageBuilder_ != null || percentage_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
      * @return The percentage.
      */
-    @java.lang.Override
-    public float getPercentage() {
-      return percentage_;
+    public com.google.protobuf.FloatValue getPercentage() {
+      if (percentageBuilder_ == null) {
+        return percentage_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : percentage_;
+      } else {
+        return percentageBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float percentage = 1;</code>
-     * @param value The percentage to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
      */
-    public Builder setPercentage(float value) {
-      
-      percentage_ = value;
-      onChanged();
+    public Builder setPercentage(com.google.protobuf.FloatValue value) {
+      if (percentageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        percentage_ = value;
+        onChanged();
+      } else {
+        percentageBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float percentage = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    public Builder setPercentage(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (percentageBuilder_ == null) {
+        percentage_ = builderForValue.build();
+        onChanged();
+      } else {
+        percentageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    public Builder mergePercentage(com.google.protobuf.FloatValue value) {
+      if (percentageBuilder_ == null) {
+        if (percentage_ != null) {
+          percentage_ =
+            com.google.protobuf.FloatValue.newBuilder(percentage_).mergeFrom(value).buildPartial();
+        } else {
+          percentage_ = value;
+        }
+        onChanged();
+      } else {
+        percentageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
      */
     public Builder clearPercentage() {
-      
-      percentage_ = 0F;
-      onChanged();
+      if (percentageBuilder_ == null) {
+        percentage_ = null;
+        onChanged();
+      } else {
+        percentage_ = null;
+        percentageBuilder_ = null;
+      }
+
       return this;
     }
-
-    private float volts_ ;
     /**
-     * <code>float volts = 2;</code>
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getPercentageBuilder() {
+      
+      onChanged();
+      return getPercentageFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getPercentageOrBuilder() {
+      if (percentageBuilder_ != null) {
+        return percentageBuilder_.getMessageOrBuilder();
+      } else {
+        return percentage_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : percentage_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getPercentageFieldBuilder() {
+      if (percentageBuilder_ == null) {
+        percentageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getPercentage(),
+                getParentForChildren(),
+                isClean());
+        percentage_ = null;
+      }
+      return percentageBuilder_;
+    }
+
+    private com.google.protobuf.FloatValue volts_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> voltsBuilder_;
+    /**
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
+     * @return Whether the volts field is set.
+     */
+    public boolean hasVolts() {
+      return voltsBuilder_ != null || volts_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
      * @return The volts.
      */
-    @java.lang.Override
-    public float getVolts() {
-      return volts_;
+    public com.google.protobuf.FloatValue getVolts() {
+      if (voltsBuilder_ == null) {
+        return volts_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : volts_;
+      } else {
+        return voltsBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float volts = 2;</code>
-     * @param value The volts to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
      */
-    public Builder setVolts(float value) {
-      
-      volts_ = value;
-      onChanged();
+    public Builder setVolts(com.google.protobuf.FloatValue value) {
+      if (voltsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        volts_ = value;
+        onChanged();
+      } else {
+        voltsBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float volts = 2;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
+     */
+    public Builder setVolts(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (voltsBuilder_ == null) {
+        volts_ = builderForValue.build();
+        onChanged();
+      } else {
+        voltsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
+     */
+    public Builder mergeVolts(com.google.protobuf.FloatValue value) {
+      if (voltsBuilder_ == null) {
+        if (volts_ != null) {
+          volts_ =
+            com.google.protobuf.FloatValue.newBuilder(volts_).mergeFrom(value).buildPartial();
+        } else {
+          volts_ = value;
+        }
+        onChanged();
+      } else {
+        voltsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
      */
     public Builder clearVolts() {
-      
-      volts_ = 0F;
-      onChanged();
+      if (voltsBuilder_ == null) {
+        volts_ = null;
+        onChanged();
+      } else {
+        volts_ = null;
+        voltsBuilder_ = null;
+      }
+
       return this;
     }
-
-    private float maxVolts_ ;
     /**
-     * <code>float max_volts = 3;</code>
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getVoltsBuilder() {
+      
+      onChanged();
+      return getVoltsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getVoltsOrBuilder() {
+      if (voltsBuilder_ != null) {
+        return voltsBuilder_.getMessageOrBuilder();
+      } else {
+        return volts_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : volts_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue volts = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getVoltsFieldBuilder() {
+      if (voltsBuilder_ == null) {
+        voltsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getVolts(),
+                getParentForChildren(),
+                isClean());
+        volts_ = null;
+      }
+      return voltsBuilder_;
+    }
+
+    private com.google.protobuf.FloatValue maxVolts_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> maxVoltsBuilder_;
+    /**
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+     * @return Whether the maxVolts field is set.
+     */
+    public boolean hasMaxVolts() {
+      return maxVoltsBuilder_ != null || maxVolts_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
      * @return The maxVolts.
      */
-    @java.lang.Override
-    public float getMaxVolts() {
-      return maxVolts_;
+    public com.google.protobuf.FloatValue getMaxVolts() {
+      if (maxVoltsBuilder_ == null) {
+        return maxVolts_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : maxVolts_;
+      } else {
+        return maxVoltsBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float max_volts = 3;</code>
-     * @param value The maxVolts to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
      */
-    public Builder setMaxVolts(float value) {
-      
-      maxVolts_ = value;
-      onChanged();
+    public Builder setMaxVolts(com.google.protobuf.FloatValue value) {
+      if (maxVoltsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxVolts_ = value;
+        onChanged();
+      } else {
+        maxVoltsBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float max_volts = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+     */
+    public Builder setMaxVolts(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (maxVoltsBuilder_ == null) {
+        maxVolts_ = builderForValue.build();
+        onChanged();
+      } else {
+        maxVoltsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+     */
+    public Builder mergeMaxVolts(com.google.protobuf.FloatValue value) {
+      if (maxVoltsBuilder_ == null) {
+        if (maxVolts_ != null) {
+          maxVolts_ =
+            com.google.protobuf.FloatValue.newBuilder(maxVolts_).mergeFrom(value).buildPartial();
+        } else {
+          maxVolts_ = value;
+        }
+        onChanged();
+      } else {
+        maxVoltsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
      */
     public Builder clearMaxVolts() {
-      
-      maxVolts_ = 0F;
-      onChanged();
+      if (maxVoltsBuilder_ == null) {
+        maxVolts_ = null;
+        onChanged();
+      } else {
+        maxVolts_ = null;
+        maxVoltsBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getMaxVoltsBuilder() {
+      
+      onChanged();
+      return getMaxVoltsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getMaxVoltsOrBuilder() {
+      if (maxVoltsBuilder_ != null) {
+        return maxVoltsBuilder_.getMessageOrBuilder();
+      } else {
+        return maxVolts_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : maxVolts_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue max_volts = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getMaxVoltsFieldBuilder() {
+      if (maxVoltsBuilder_ == null) {
+        maxVoltsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getMaxVolts(),
+                getParentForChildren(),
+                isClean());
+        maxVolts_ = null;
+      }
+      return maxVoltsBuilder_;
     }
 
-    private float minVolts_ ;
+    private com.google.protobuf.FloatValue minVolts_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> minVoltsBuilder_;
     /**
-     * <code>float min_volts = 4;</code>
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+     * @return Whether the minVolts field is set.
+     */
+    public boolean hasMinVolts() {
+      return minVoltsBuilder_ != null || minVolts_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
      * @return The minVolts.
      */
-    @java.lang.Override
-    public float getMinVolts() {
-      return minVolts_;
+    public com.google.protobuf.FloatValue getMinVolts() {
+      if (minVoltsBuilder_ == null) {
+        return minVolts_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : minVolts_;
+      } else {
+        return minVoltsBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float min_volts = 4;</code>
-     * @param value The minVolts to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
      */
-    public Builder setMinVolts(float value) {
-      
-      minVolts_ = value;
-      onChanged();
+    public Builder setMinVolts(com.google.protobuf.FloatValue value) {
+      if (minVoltsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        minVolts_ = value;
+        onChanged();
+      } else {
+        minVoltsBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float min_volts = 4;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+     */
+    public Builder setMinVolts(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (minVoltsBuilder_ == null) {
+        minVolts_ = builderForValue.build();
+        onChanged();
+      } else {
+        minVoltsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+     */
+    public Builder mergeMinVolts(com.google.protobuf.FloatValue value) {
+      if (minVoltsBuilder_ == null) {
+        if (minVolts_ != null) {
+          minVolts_ =
+            com.google.protobuf.FloatValue.newBuilder(minVolts_).mergeFrom(value).buildPartial();
+        } else {
+          minVolts_ = value;
+        }
+        onChanged();
+      } else {
+        minVoltsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
      */
     public Builder clearMinVolts() {
-      
-      minVolts_ = 0F;
-      onChanged();
+      if (minVoltsBuilder_ == null) {
+        minVolts_ = null;
+        onChanged();
+      } else {
+        minVolts_ = null;
+        minVoltsBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getMinVoltsBuilder() {
+      
+      onChanged();
+      return getMinVoltsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getMinVoltsOrBuilder() {
+      if (minVoltsBuilder_ != null) {
+        return minVoltsBuilder_.getMessageOrBuilder();
+      } else {
+        return minVolts_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : minVolts_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue min_volts = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getMinVoltsFieldBuilder() {
+      if (minVoltsBuilder_ == null) {
+        minVoltsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getMinVolts(),
+                getParentForChildren(),
+                isClean());
+        minVolts_ = null;
+      }
+      return minVoltsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

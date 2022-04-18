@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (percentage_ != null) {
+              subBuilder = percentage_.toBuilder();
+            }
+            percentage_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(percentage_);
+              percentage_ = subBuilder.buildPartial();
+            }
 
-            percentage_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PERCENTAGE_FIELD_NUMBER = 1;
-  private float percentage_;
+  private com.google.protobuf.FloatValue percentage_;
   /**
-   * <code>float percentage = 1;</code>
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
+   * @return Whether the percentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasPercentage() {
+    return percentage_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
    * @return The percentage.
    */
   @java.lang.Override
-  public float getPercentage() {
-    return percentage_;
+  public com.google.protobuf.FloatValue getPercentage() {
+    return percentage_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : percentage_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getPercentageOrBuilder() {
+    return getPercentage();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(percentage_) != 0) {
-      output.writeFloat(1, percentage_);
+    if (percentage_ != null) {
+      output.writeMessage(1, getPercentage());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(percentage_) != 0) {
+    if (percentage_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, percentage_);
+        .computeMessageSize(1, getPercentage());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.Occupation other = (pt.sharespot.iot.core.buf.model.Occupation) obj;
 
-    if (java.lang.Float.floatToIntBits(getPercentage())
-        != java.lang.Float.floatToIntBits(
-            other.getPercentage())) return false;
+    if (hasPercentage() != other.hasPercentage()) return false;
+    if (hasPercentage()) {
+      if (!getPercentage()
+          .equals(other.getPercentage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getPercentage());
+    if (hasPercentage()) {
+      hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPercentage().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      percentage_ = 0F;
-
+      if (percentageBuilder_ == null) {
+        percentage_ = null;
+      } else {
+        percentage_ = null;
+        percentageBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Occupation buildPartial() {
       pt.sharespot.iot.core.buf.model.Occupation result = new pt.sharespot.iot.core.buf.model.Occupation(this);
-      result.percentage_ = percentage_;
+      if (percentageBuilder_ == null) {
+        result.percentage_ = percentage_;
+      } else {
+        result.percentage_ = percentageBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Occupation other) {
       if (other == pt.sharespot.iot.core.buf.model.Occupation.getDefaultInstance()) return this;
-      if (other.getPercentage() != 0F) {
-        setPercentage(other.getPercentage());
+      if (other.hasPercentage()) {
+        mergePercentage(other.getPercentage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float percentage_ ;
+    private com.google.protobuf.FloatValue percentage_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> percentageBuilder_;
     /**
-     * <code>float percentage = 1;</code>
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     * @return Whether the percentage field is set.
+     */
+    public boolean hasPercentage() {
+      return percentageBuilder_ != null || percentage_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
      * @return The percentage.
      */
-    @java.lang.Override
-    public float getPercentage() {
-      return percentage_;
+    public com.google.protobuf.FloatValue getPercentage() {
+      if (percentageBuilder_ == null) {
+        return percentage_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : percentage_;
+      } else {
+        return percentageBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float percentage = 1;</code>
-     * @param value The percentage to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
      */
-    public Builder setPercentage(float value) {
-      
-      percentage_ = value;
-      onChanged();
+    public Builder setPercentage(com.google.protobuf.FloatValue value) {
+      if (percentageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        percentage_ = value;
+        onChanged();
+      } else {
+        percentageBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float percentage = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    public Builder setPercentage(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (percentageBuilder_ == null) {
+        percentage_ = builderForValue.build();
+        onChanged();
+      } else {
+        percentageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    public Builder mergePercentage(com.google.protobuf.FloatValue value) {
+      if (percentageBuilder_ == null) {
+        if (percentage_ != null) {
+          percentage_ =
+            com.google.protobuf.FloatValue.newBuilder(percentage_).mergeFrom(value).buildPartial();
+        } else {
+          percentage_ = value;
+        }
+        onChanged();
+      } else {
+        percentageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
      */
     public Builder clearPercentage() {
-      
-      percentage_ = 0F;
-      onChanged();
+      if (percentageBuilder_ == null) {
+        percentage_ = null;
+        onChanged();
+      } else {
+        percentage_ = null;
+        percentageBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getPercentageBuilder() {
+      
+      onChanged();
+      return getPercentageFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getPercentageOrBuilder() {
+      if (percentageBuilder_ != null) {
+        return percentageBuilder_.getMessageOrBuilder();
+      } else {
+        return percentage_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : percentage_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue percentage = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getPercentageFieldBuilder() {
+      if (percentageBuilder_ == null) {
+        percentageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getPercentage(),
+                getParentForChildren(),
+                isClean());
+        percentage_ = null;
+      }
+      return percentageBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

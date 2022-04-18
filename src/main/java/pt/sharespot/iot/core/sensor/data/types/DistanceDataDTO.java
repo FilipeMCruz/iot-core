@@ -7,16 +7,15 @@ public class DistanceDataDTO implements DataTypeDTO {
 
     public Float minMillimeters;
 
+    public DistanceDataDTO with(Float maxMillimeters, Float minMillimeters) {
+        this.maxMillimeters = maxMillimeters;
+        this.minMillimeters = minMillimeters;
+        return this;
+    }
+
     public static DistanceDataDTO of(Float millimeters) {
         var dataDTO = new DistanceDataDTO();
         dataDTO.millimeters = millimeters;
-        return dataDTO;
-    }
-
-    public DistanceDataDTO with(Float maxMillimeters, Float minMillimeters) {
-        var dataDTO = new DistanceDataDTO();
-        dataDTO.maxMillimeters = maxMillimeters;
-        dataDTO.minMillimeters = minMillimeters;
         return dataDTO;
     }
 

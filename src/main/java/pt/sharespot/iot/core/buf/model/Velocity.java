@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
+          case 10: {
+            com.google.protobuf.FloatValue.Builder subBuilder = null;
+            if (kilometersPerHour_ != null) {
+              subBuilder = kilometersPerHour_.toBuilder();
+            }
+            kilometersPerHour_ = input.readMessage(com.google.protobuf.FloatValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(kilometersPerHour_);
+              kilometersPerHour_ = subBuilder.buildPartial();
+            }
 
-            kilometersPerHour_ = input.readFloat();
             break;
           }
           default: {
@@ -86,14 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int KILOMETERS_PER_HOUR_FIELD_NUMBER = 1;
-  private float kilometersPerHour_;
+  private com.google.protobuf.FloatValue kilometersPerHour_;
   /**
-   * <code>float kilometers_per_hour = 1;</code>
+   * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+   * @return Whether the kilometersPerHour field is set.
+   */
+  @java.lang.Override
+  public boolean hasKilometersPerHour() {
+    return kilometersPerHour_ != null;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
    * @return The kilometersPerHour.
    */
   @java.lang.Override
-  public float getKilometersPerHour() {
-    return kilometersPerHour_;
+  public com.google.protobuf.FloatValue getKilometersPerHour() {
+    return kilometersPerHour_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : kilometersPerHour_;
+  }
+  /**
+   * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FloatValueOrBuilder getKilometersPerHourOrBuilder() {
+    return getKilometersPerHour();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (java.lang.Float.floatToRawIntBits(kilometersPerHour_) != 0) {
-      output.writeFloat(1, kilometersPerHour_);
+    if (kilometersPerHour_ != null) {
+      output.writeMessage(1, getKilometersPerHour());
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Float.floatToRawIntBits(kilometersPerHour_) != 0) {
+    if (kilometersPerHour_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, kilometersPerHour_);
+        .computeMessageSize(1, getKilometersPerHour());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,9 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     pt.sharespot.iot.core.buf.model.Velocity other = (pt.sharespot.iot.core.buf.model.Velocity) obj;
 
-    if (java.lang.Float.floatToIntBits(getKilometersPerHour())
-        != java.lang.Float.floatToIntBits(
-            other.getKilometersPerHour())) return false;
+    if (hasKilometersPerHour() != other.hasKilometersPerHour()) return false;
+    if (hasKilometersPerHour()) {
+      if (!getKilometersPerHour()
+          .equals(other.getKilometersPerHour())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -155,9 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KILOMETERS_PER_HOUR_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getKilometersPerHour());
+    if (hasKilometersPerHour()) {
+      hash = (37 * hash) + KILOMETERS_PER_HOUR_FIELD_NUMBER;
+      hash = (53 * hash) + getKilometersPerHour().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -291,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      kilometersPerHour_ = 0F;
-
+      if (kilometersPerHourBuilder_ == null) {
+        kilometersPerHour_ = null;
+      } else {
+        kilometersPerHour_ = null;
+        kilometersPerHourBuilder_ = null;
+      }
       return this;
     }
 
@@ -319,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Velocity buildPartial() {
       pt.sharespot.iot.core.buf.model.Velocity result = new pt.sharespot.iot.core.buf.model.Velocity(this);
-      result.kilometersPerHour_ = kilometersPerHour_;
+      if (kilometersPerHourBuilder_ == null) {
+        result.kilometersPerHour_ = kilometersPerHour_;
+      } else {
+        result.kilometersPerHour_ = kilometersPerHourBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -368,8 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pt.sharespot.iot.core.buf.model.Velocity other) {
       if (other == pt.sharespot.iot.core.buf.model.Velocity.getDefaultInstance()) return this;
-      if (other.getKilometersPerHour() != 0F) {
-        setKilometersPerHour(other.getKilometersPerHour());
+      if (other.hasKilometersPerHour()) {
+        mergeKilometersPerHour(other.getKilometersPerHour());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -400,35 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float kilometersPerHour_ ;
+    private com.google.protobuf.FloatValue kilometersPerHour_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> kilometersPerHourBuilder_;
     /**
-     * <code>float kilometers_per_hour = 1;</code>
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+     * @return Whether the kilometersPerHour field is set.
+     */
+    public boolean hasKilometersPerHour() {
+      return kilometersPerHourBuilder_ != null || kilometersPerHour_ != null;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
      * @return The kilometersPerHour.
      */
-    @java.lang.Override
-    public float getKilometersPerHour() {
-      return kilometersPerHour_;
+    public com.google.protobuf.FloatValue getKilometersPerHour() {
+      if (kilometersPerHourBuilder_ == null) {
+        return kilometersPerHour_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : kilometersPerHour_;
+      } else {
+        return kilometersPerHourBuilder_.getMessage();
+      }
     }
     /**
-     * <code>float kilometers_per_hour = 1;</code>
-     * @param value The kilometersPerHour to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
      */
-    public Builder setKilometersPerHour(float value) {
-      
-      kilometersPerHour_ = value;
-      onChanged();
+    public Builder setKilometersPerHour(com.google.protobuf.FloatValue value) {
+      if (kilometersPerHourBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kilometersPerHour_ = value;
+        onChanged();
+      } else {
+        kilometersPerHourBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>float kilometers_per_hour = 1;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+     */
+    public Builder setKilometersPerHour(
+        com.google.protobuf.FloatValue.Builder builderForValue) {
+      if (kilometersPerHourBuilder_ == null) {
+        kilometersPerHour_ = builderForValue.build();
+        onChanged();
+      } else {
+        kilometersPerHourBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+     */
+    public Builder mergeKilometersPerHour(com.google.protobuf.FloatValue value) {
+      if (kilometersPerHourBuilder_ == null) {
+        if (kilometersPerHour_ != null) {
+          kilometersPerHour_ =
+            com.google.protobuf.FloatValue.newBuilder(kilometersPerHour_).mergeFrom(value).buildPartial();
+        } else {
+          kilometersPerHour_ = value;
+        }
+        onChanged();
+      } else {
+        kilometersPerHourBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
      */
     public Builder clearKilometersPerHour() {
-      
-      kilometersPerHour_ = 0F;
-      onChanged();
+      if (kilometersPerHourBuilder_ == null) {
+        kilometersPerHour_ = null;
+        onChanged();
+      } else {
+        kilometersPerHour_ = null;
+        kilometersPerHourBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+     */
+    public com.google.protobuf.FloatValue.Builder getKilometersPerHourBuilder() {
+      
+      onChanged();
+      return getKilometersPerHourFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+     */
+    public com.google.protobuf.FloatValueOrBuilder getKilometersPerHourOrBuilder() {
+      if (kilometersPerHourBuilder_ != null) {
+        return kilometersPerHourBuilder_.getMessageOrBuilder();
+      } else {
+        return kilometersPerHour_ == null ?
+            com.google.protobuf.FloatValue.getDefaultInstance() : kilometersPerHour_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.FloatValue kilometers_per_hour = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder> 
+        getKilometersPerHourFieldBuilder() {
+      if (kilometersPerHourBuilder_ == null) {
+        kilometersPerHourBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FloatValue, com.google.protobuf.FloatValue.Builder, com.google.protobuf.FloatValueOrBuilder>(
+                getKilometersPerHour(),
+                getParentForChildren(),
+                isClean());
+        kilometersPerHour_ = null;
+      }
+      return kilometersPerHourBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

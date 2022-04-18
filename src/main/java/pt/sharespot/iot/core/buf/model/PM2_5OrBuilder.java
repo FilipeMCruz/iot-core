@@ -8,8 +8,17 @@ public interface PM2_5OrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float micro_grams_per_cubic_meter = 1;</code>
+   * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+   * @return Whether the microGramsPerCubicMeter field is set.
+   */
+  boolean hasMicroGramsPerCubicMeter();
+  /**
+   * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
    * @return The microGramsPerCubicMeter.
    */
-  float getMicroGramsPerCubicMeter();
+  com.google.protobuf.FloatValue getMicroGramsPerCubicMeter();
+  /**
+   * <code>.google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getMicroGramsPerCubicMeterOrBuilder();
 }

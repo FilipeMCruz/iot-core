@@ -8,20 +8,47 @@ public interface DistanceOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float millimeters = 1;</code>
+   * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+   * @return Whether the millimeters field is set.
+   */
+  boolean hasMillimeters();
+  /**
+   * <code>.google.protobuf.FloatValue millimeters = 1;</code>
    * @return The millimeters.
    */
-  float getMillimeters();
+  com.google.protobuf.FloatValue getMillimeters();
+  /**
+   * <code>.google.protobuf.FloatValue millimeters = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getMillimetersOrBuilder();
 
   /**
-   * <code>float maxMillimeters = 2;</code>
+   * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+   * @return Whether the maxMillimeters field is set.
+   */
+  boolean hasMaxMillimeters();
+  /**
+   * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
    * @return The maxMillimeters.
    */
-  float getMaxMillimeters();
+  com.google.protobuf.FloatValue getMaxMillimeters();
+  /**
+   * <code>.google.protobuf.FloatValue maxMillimeters = 2;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getMaxMillimetersOrBuilder();
 
   /**
-   * <code>float minMillimeters = 3;</code>
+   * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+   * @return Whether the minMillimeters field is set.
+   */
+  boolean hasMinMillimeters();
+  /**
+   * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
    * @return The minMillimeters.
    */
-  float getMinMillimeters();
+  com.google.protobuf.FloatValue getMinMillimeters();
+  /**
+   * <code>.google.protobuf.FloatValue minMillimeters = 3;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getMinMillimetersOrBuilder();
 }

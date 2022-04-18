@@ -8,8 +8,17 @@ public interface OccupationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float percentage = 1;</code>
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
+   * @return Whether the percentage field is set.
+   */
+  boolean hasPercentage();
+  /**
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
    * @return The percentage.
    */
-  float getPercentage();
+  com.google.protobuf.FloatValue getPercentage();
+  /**
+   * <code>.google.protobuf.FloatValue percentage = 1;</code>
+   */
+  com.google.protobuf.FloatValueOrBuilder getPercentageOrBuilder();
 }
