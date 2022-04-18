@@ -378,7 +378,7 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withHumidity(AirHumidityDataOptions humidity) {
+        public RoutingKeysBuilder withAirHumidity(AirHumidityDataOptions humidity) {
             this.airHumidity = RoutingKeyOption.of(humidity);
             return this;
         }
@@ -398,7 +398,7 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withPressure(AirPressureDataOptions pressure) {
+        public RoutingKeysBuilder withAirPressure(AirPressureDataOptions pressure) {
             this.airPressure = RoutingKeyOption.of(pressure);
             return this;
         }
@@ -413,7 +413,7 @@ public class RoutingKeys {
             return this;
         }
 
-        public RoutingKeysBuilder withAlarm(TriggerDataOptions alarm) {
+        public RoutingKeysBuilder withTrigger(TriggerDataOptions alarm) {
             this.trigger = RoutingKeyOption.of(alarm);
             return this;
         }
