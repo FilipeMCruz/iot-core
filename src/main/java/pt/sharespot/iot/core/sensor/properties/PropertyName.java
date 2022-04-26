@@ -157,6 +157,10 @@ public enum PropertyName {
         public String path(Integer sensorID) {
             return "measures." + sensorID + ".pm10.microGramsPerCubicMeter";
         }
+    }, DEVICE_DOWNLINK {
+        public String path(Integer sensorID) {
+            return "device.downlink";
+        }
     };
 
     public String path(Integer sensorID) {
