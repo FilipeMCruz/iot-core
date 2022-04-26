@@ -2,8 +2,10 @@ package pt.sharespot.iot.core.sensor;
 
 import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
 import pt.sharespot.iot.core.sensor.device.DeviceInformationDTO;
+import pt.sharespot.iot.core.sensor.device.controls.DeviceCommand;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -42,5 +44,13 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
                     BATTERY_PERCENTAGE, BATTERY_VOLTS, SOIL_MOISTURE ->
                     measures.get(subSensorId) != null && measures.get(subSensorId).hasProperty(property);
         };
+    }
+
+    @Override
+    public List<DeviceCommand> getSensorCommands() {
+        if (device.commands.get(0) == null) {
+            device.commands.put(0, List.of(new DeviceCommand()));
+        }
+        return device.commands.get(0);
     }
 }

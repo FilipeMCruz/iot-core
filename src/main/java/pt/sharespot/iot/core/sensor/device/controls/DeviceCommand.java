@@ -10,6 +10,9 @@ public class DeviceCommand {
 
     public Integer port;
 
+    public DeviceCommand() {
+    }
+
     public DeviceCommand(String id, String name, String payload, Integer port) {
         this.id = id;
         this.name = name;

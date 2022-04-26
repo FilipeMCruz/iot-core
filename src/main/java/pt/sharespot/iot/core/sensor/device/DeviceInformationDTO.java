@@ -21,7 +21,7 @@ public class DeviceInformationDTO {
     public DeviceRecordDTO records;
 
     public DeviceDomainPermissionsDTO domains;
-    private Map<Integer, List<DeviceCommand>> commands = new HashMap<>();
+    public Map<Integer, List<DeviceCommand>> commands = new HashMap<>();
 
     public DeviceInformationDTO() {
     }
