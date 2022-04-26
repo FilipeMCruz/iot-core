@@ -7,7 +7,7 @@ public enum ContainerTypeOptions implements RoutingKey {
     DATA_VALIDATOR,
     DATA_STORE,
     IDENTITY_MANAGEMENT,
-    DEVICE_RECORDS,
+    DEVICE_MANAGEMENT,
     FLEET_MANAGEMENT,
     SMART_IRRIGATION,
     OTHER;
@@ -19,7 +19,7 @@ public enum ContainerTypeOptions implements RoutingKey {
             case DATA_PROCESSOR -> "proce";
             case DATA_VALIDATOR -> "valid";
             case DATA_STORE -> "store";
-            case DEVICE_RECORDS -> "recor";
+            case DEVICE_MANAGEMENT -> "devic";
             case FLEET_MANAGEMENT -> "fleet";
             case IDENTITY_MANAGEMENT -> "idman";
             case SMART_IRRIGATION -> "irrig";
@@ -42,8 +42,8 @@ public enum ContainerTypeOptions implements RoutingKey {
             return ContainerTypeOptions.DATA_VALIDATOR.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("store")) {
             return ContainerTypeOptions.DATA_STORE.toString().toLowerCase();
-        } else if (value.equalsIgnoreCase("recor")) {
-            return ContainerTypeOptions.DEVICE_RECORDS.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("devic")) {
+            return ContainerTypeOptions.DEVICE_MANAGEMENT.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("fleet")) {
             return ContainerTypeOptions.FLEET_MANAGEMENT.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("idman")) {

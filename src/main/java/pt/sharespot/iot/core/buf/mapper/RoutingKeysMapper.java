@@ -538,7 +538,7 @@ public class RoutingKeysMapper {
             case DATA_PROCESSOR -> ContainerTypeOptionsBuf.DATA_PROCESSOR;
             case DATA_STORE -> ContainerTypeOptionsBuf.DATA_STORE;
             case DATA_VALIDATOR -> ContainerTypeOptionsBuf.DATA_VALIDATOR;
-            case DEVICE_RECORDS -> ContainerTypeOptionsBuf.DEVICE_RECORDS;
+            case DEVICE_MANAGEMENT -> ContainerTypeOptionsBuf.DEVICE_RECORDS;
             case FLEET_MANAGEMENT -> ContainerTypeOptionsBuf.FLEET_MANAGEMENT;
             case IDENTITY_MANAGEMENT -> ContainerTypeOptionsBuf.IDENTITY_MANAGEMENT;
             case SMART_IRRIGATION -> ContainerTypeOptionsBuf.SMART_IRRIGATION;
@@ -553,7 +553,7 @@ public class RoutingKeysMapper {
             case DATA_PROCESSOR -> ContainerTypeOptions.DATA_PROCESSOR;
             case DATA_STORE -> ContainerTypeOptions.DATA_STORE;
             case DATA_VALIDATOR -> ContainerTypeOptions.DATA_VALIDATOR;
-            case DEVICE_RECORDS -> ContainerTypeOptions.DEVICE_RECORDS;
+            case DEVICE_RECORDS -> ContainerTypeOptions.DEVICE_MANAGEMENT;
             case FLEET_MANAGEMENT -> ContainerTypeOptions.FLEET_MANAGEMENT;
             case IDENTITY_MANAGEMENT -> ContainerTypeOptions.IDENTITY_MANAGEMENT;
             case SMART_IRRIGATION -> ContainerTypeOptions.SMART_IRRIGATION;
