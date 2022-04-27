@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private Device() {
     id_ = "";
     name_ = "";
+    downlink_ = "";
   }
 
   @java.lang.Override
@@ -40,6 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -88,6 +90,25 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            downlink_ = s;
+            break;
+          }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              commands_ = com.google.protobuf.MapField.newMapField(
+                  CommandsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>
+            commands__ = input.readMessage(
+                CommandsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            commands_.getMutableMap().put(
+                commands__.getKey(), commands__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -99,6 +120,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -112,6 +135,18 @@ private static final long serialVersionUID = 0L;
     return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Device_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 6:
+        return internalGetCommands();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -248,6 +283,125 @@ private static final long serialVersionUID = 0L;
     return getDomains();
   }
 
+  public static final int DOWNLINK_FIELD_NUMBER = 5;
+  private volatile java.lang.Object downlink_;
+  /**
+   * <code>string downlink = 5;</code>
+   * @return The downlink.
+   */
+  @java.lang.Override
+  public java.lang.String getDownlink() {
+    java.lang.Object ref = downlink_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      downlink_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string downlink = 5;</code>
+   * @return The bytes for downlink.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDownlinkBytes() {
+    java.lang.Object ref = downlink_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      downlink_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COMMANDS_FIELD_NUMBER = 6;
+  private static final class CommandsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>newDefaultInstance(
+                pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Device_CommandsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.INT32,
+                0,
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                pt.sharespot.iot.core.buf.model.DeviceCommands.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> commands_;
+  private com.google.protobuf.MapField<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>
+  internalGetCommands() {
+    if (commands_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          CommandsDefaultEntryHolder.defaultEntry);
+    }
+    return commands_;
+  }
+
+  public int getCommandsCount() {
+    return internalGetCommands().getMap().size();
+  }
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+
+  @java.lang.Override
+  public boolean containsCommands(
+      int key) {
+    
+    return internalGetCommands().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getCommandsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> getCommands() {
+    return getCommandsMap();
+  }
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> getCommandsMap() {
+    return internalGetCommands().getMap();
+  }
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+  @java.lang.Override
+
+  public pt.sharespot.iot.core.buf.model.DeviceCommands getCommandsOrDefault(
+      int key,
+      pt.sharespot.iot.core.buf.model.DeviceCommands defaultValue) {
+    
+    java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> map =
+        internalGetCommands().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+  @java.lang.Override
+
+  public pt.sharespot.iot.core.buf.model.DeviceCommands getCommandsOrThrow(
+      int key) {
+    
+    java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> map =
+        internalGetCommands().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -274,6 +428,15 @@ private static final long serialVersionUID = 0L;
     if (domains_ != null) {
       output.writeMessage(4, getDomains());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downlink_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, downlink_);
+    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeIntegerMapTo(
+        output,
+        internalGetCommands(),
+        CommandsDefaultEntryHolder.defaultEntry,
+        6);
     unknownFields.writeTo(output);
   }
 
@@ -296,6 +459,19 @@ private static final long serialVersionUID = 0L;
     if (domains_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getDomains());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downlink_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, downlink_);
+    }
+    for (java.util.Map.Entry<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> entry
+         : internalGetCommands().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>
+      commands__ = CommandsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, commands__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -326,6 +502,10 @@ private static final long serialVersionUID = 0L;
       if (!getDomains()
           .equals(other.getDomains())) return false;
     }
+    if (!getDownlink()
+        .equals(other.getDownlink())) return false;
+    if (!internalGetCommands().equals(
+        other.internalGetCommands())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -348,6 +528,12 @@ private static final long serialVersionUID = 0L;
     if (hasDomains()) {
       hash = (37 * hash) + DOMAINS_FIELD_NUMBER;
       hash = (53 * hash) + getDomains().hashCode();
+    }
+    hash = (37 * hash) + DOWNLINK_FIELD_NUMBER;
+    hash = (53 * hash) + getDownlink().hashCode();
+    if (!internalGetCommands().getMap().isEmpty()) {
+      hash = (37 * hash) + COMMANDS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetCommands().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -456,6 +642,28 @@ private static final long serialVersionUID = 0L;
       return pt.sharespot.iot.core.buf.model.MessageOuterClass.internal_static_pt_sharespot_iot_core_Device_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetCommands();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableCommands();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -498,6 +706,9 @@ private static final long serialVersionUID = 0L;
         domains_ = null;
         domainsBuilder_ = null;
       }
+      downlink_ = "";
+
+      internalGetMutableCommands().clear();
       return this;
     }
 
@@ -524,6 +735,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public pt.sharespot.iot.core.buf.model.Device buildPartial() {
       pt.sharespot.iot.core.buf.model.Device result = new pt.sharespot.iot.core.buf.model.Device(this);
+      int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.name_ = name_;
       if (recordsBuilder_ == null) {
@@ -536,6 +748,9 @@ private static final long serialVersionUID = 0L;
       } else {
         result.domains_ = domainsBuilder_.build();
       }
+      result.downlink_ = downlink_;
+      result.commands_ = internalGetCommands();
+      result.commands_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -598,6 +813,12 @@ private static final long serialVersionUID = 0L;
       if (other.hasDomains()) {
         mergeDomains(other.getDomains());
       }
+      if (!other.getDownlink().isEmpty()) {
+        downlink_ = other.downlink_;
+        onChanged();
+      }
+      internalGetMutableCommands().mergeFrom(
+          other.internalGetCommands());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -626,6 +847,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1015,6 +1237,213 @@ private static final long serialVersionUID = 0L;
         domains_ = null;
       }
       return domainsBuilder_;
+    }
+
+    private java.lang.Object downlink_ = "";
+    /**
+     * <code>string downlink = 5;</code>
+     * @return The downlink.
+     */
+    public java.lang.String getDownlink() {
+      java.lang.Object ref = downlink_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        downlink_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string downlink = 5;</code>
+     * @return The bytes for downlink.
+     */
+    public com.google.protobuf.ByteString
+        getDownlinkBytes() {
+      java.lang.Object ref = downlink_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        downlink_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string downlink = 5;</code>
+     * @param value The downlink to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDownlink(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      downlink_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string downlink = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDownlink() {
+      
+      downlink_ = getDefaultInstance().getDownlink();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string downlink = 5;</code>
+     * @param value The bytes for downlink to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDownlinkBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      downlink_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> commands_;
+    private com.google.protobuf.MapField<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>
+    internalGetCommands() {
+      if (commands_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            CommandsDefaultEntryHolder.defaultEntry);
+      }
+      return commands_;
+    }
+    private com.google.protobuf.MapField<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>
+    internalGetMutableCommands() {
+      onChanged();;
+      if (commands_ == null) {
+        commands_ = com.google.protobuf.MapField.newMapField(
+            CommandsDefaultEntryHolder.defaultEntry);
+      }
+      if (!commands_.isMutable()) {
+        commands_ = commands_.copy();
+      }
+      return commands_;
+    }
+
+    public int getCommandsCount() {
+      return internalGetCommands().getMap().size();
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsCommands(
+        int key) {
+      
+      return internalGetCommands().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getCommandsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> getCommands() {
+      return getCommandsMap();
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> getCommandsMap() {
+      return internalGetCommands().getMap();
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+     */
+    @java.lang.Override
+
+    public pt.sharespot.iot.core.buf.model.DeviceCommands getCommandsOrDefault(
+        int key,
+        pt.sharespot.iot.core.buf.model.DeviceCommands defaultValue) {
+      
+      java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> map =
+          internalGetCommands().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+     */
+    @java.lang.Override
+
+    public pt.sharespot.iot.core.buf.model.DeviceCommands getCommandsOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> map =
+          internalGetCommands().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearCommands() {
+      internalGetMutableCommands().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+     */
+
+    public Builder removeCommands(
+        int key) {
+      
+      internalGetMutableCommands().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>
+    getMutableCommands() {
+      return internalGetMutableCommands().getMutableMap();
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+     */
+    public Builder putCommands(
+        int key,
+        pt.sharespot.iot.core.buf.model.DeviceCommands value) {
+      
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+      internalGetMutableCommands().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+     */
+
+    public Builder putAllCommands(
+        java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands> values) {
+      internalGetMutableCommands().getMutableMap()
+          .putAll(values);
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

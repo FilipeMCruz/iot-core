@@ -1,6 +1,6 @@
 package pt.sharespot.iot.core.sensor.device;
 
-import pt.sharespot.iot.core.sensor.device.controls.DeviceCommand;
+import pt.sharespot.iot.core.sensor.device.controls.DeviceCommandDTO;
 import pt.sharespot.iot.core.sensor.device.domains.DeviceDomainPermissionsDTO;
 import pt.sharespot.iot.core.sensor.device.records.DeviceRecordDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
@@ -21,7 +21,7 @@ public class DeviceInformationDTO {
     public DeviceRecordDTO records;
 
     public DeviceDomainPermissionsDTO domains;
-    public Map<Integer, List<DeviceCommand>> commands = new HashMap<>();
+    public Map<Integer, List<DeviceCommandDTO>> commands = new HashMap<>();
 
     public DeviceInformationDTO() {
     }
@@ -31,7 +31,7 @@ public class DeviceInformationDTO {
                                 String downlink,
                                 DeviceRecordDTO records,
                                 DeviceDomainPermissionsDTO domains,
-                                Map<Integer, List<DeviceCommand>> commands) {
+                                Map<Integer, List<DeviceCommandDTO>> commands) {
         this.id = id;
         this.name = name;
         this.downlink = downlink;
@@ -48,6 +48,8 @@ public class DeviceInformationDTO {
             case READ_PERMISSIONS -> domains != null && domains.read != null;
             case READ_WRITE_PERMISSIONS -> domains != null && domains.readWrite != null;
             case DEVICE_DOWNLINK -> downlink != null;
+            case DEVICE_COMMANDS ->
+                    commands != null && !commands.isEmpty() && commands.get(0) != null && !commands.get(0).isEmpty();
             default -> false;
         };
     }

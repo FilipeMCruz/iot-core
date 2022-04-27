@@ -2,7 +2,7 @@ package pt.sharespot.iot.core.sensor;
 
 import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
 import pt.sharespot.iot.core.sensor.device.DeviceInformationDTO;
-import pt.sharespot.iot.core.sensor.device.controls.DeviceCommand;
+import pt.sharespot.iot.core.sensor.device.controls.DeviceCommandDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
 import java.util.List;
@@ -33,7 +33,7 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
     public boolean hasProperty(Integer subSensorId, PropertyName property) {
         return switch (property) {
             case DATA_ID, REPORTED_AT -> true;
-            case DEVICE_ID, DEVICE_NAME, DEVICE_RECORDS, DEVICE_DOWNLINK,
+            case DEVICE_ID, DEVICE_NAME, DEVICE_RECORDS, DEVICE_DOWNLINK, DEVICE_COMMANDS,
                     READ_PERMISSIONS, READ_WRITE_PERMISSIONS -> device.hasProperty(property);
             case LATITUDE, LONGITUDE, TEMPERATURE, MOTION, ALTITUDE,
                     VELOCITY, AQI, AIR_HUMIDITY_RELATIVE_PERCENTAGE, DISTANCE,
@@ -47,9 +47,9 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
     }
 
     @Override
-    public List<DeviceCommand> getSensorCommands() {
+    public List<DeviceCommandDTO> getSensorCommands() {
         if (device.commands.get(0) == null) {
-            device.commands.put(0, List.of(new DeviceCommand()));
+            device.commands.put(0, List.of(new DeviceCommandDTO()));
         }
         return device.commands.get(0);
     }

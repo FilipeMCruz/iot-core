@@ -64,9 +64,11 @@ public interface DataOrBuilder extends
    * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
    */
 
-  pt.sharespot.iot.core.buf.model.SensorData getMeasuresOrDefault(
+  /* nullable */
+pt.sharespot.iot.core.buf.model.SensorData getMeasuresOrDefault(
       int key,
-      pt.sharespot.iot.core.buf.model.SensorData defaultValue);
+      /* nullable */
+pt.sharespot.iot.core.buf.model.SensorData defaultValue);
   /**
    * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
    */

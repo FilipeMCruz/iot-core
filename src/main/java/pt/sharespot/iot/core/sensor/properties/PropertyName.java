@@ -161,6 +161,10 @@ public enum PropertyName {
         public String path(Integer sensorID) {
             return "device.downlink";
         }
+    }, DEVICE_COMMANDS {
+        public String path(Integer sensorID) {
+            return "device.commands";
+        }
     };
 
     public String path(Integer sensorID) {

@@ -60,4 +60,52 @@ public interface DeviceOrBuilder extends
    * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
    */
   pt.sharespot.iot.core.buf.model.DeviceDomainsOrBuilder getDomainsOrBuilder();
+
+  /**
+   * <code>string downlink = 5;</code>
+   * @return The downlink.
+   */
+  java.lang.String getDownlink();
+  /**
+   * <code>string downlink = 5;</code>
+   * @return The bytes for downlink.
+   */
+  com.google.protobuf.ByteString
+      getDownlinkBytes();
+
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+  int getCommandsCount();
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+  boolean containsCommands(
+      int key);
+  /**
+   * Use {@link #getCommandsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>
+  getCommands();
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+  java.util.Map<java.lang.Integer, pt.sharespot.iot.core.buf.model.DeviceCommands>
+  getCommandsMap();
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+
+  /* nullable */
+pt.sharespot.iot.core.buf.model.DeviceCommands getCommandsOrDefault(
+      int key,
+      /* nullable */
+pt.sharespot.iot.core.buf.model.DeviceCommands defaultValue);
+  /**
+   * <code>map&lt;int32, .pt.sharespot.iot.core.DeviceCommands&gt; commands = 6;</code>
+   */
+
+  pt.sharespot.iot.core.buf.model.DeviceCommands getCommandsOrThrow(
+      int key);
 }

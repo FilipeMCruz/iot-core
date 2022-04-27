@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.sensor;
 
 import pt.sharespot.iot.core.sensor.data.SensorDataDetailsDTO;
-import pt.sharespot.iot.core.sensor.device.controls.DeviceCommand;
+import pt.sharespot.iot.core.sensor.device.controls.DeviceCommandDTO;
 import pt.sharespot.iot.core.sensor.properties.PropertyName;
 
 import java.util.List;
@@ -24,5 +24,5 @@ public interface SensorDataDTO {
 
     boolean hasAnyProperties(Integer subSensorId, PropertyName... properties);
 
-    List<DeviceCommand> getSensorCommands();
+    List<DeviceCommandDTO> getSensorCommands();
 }

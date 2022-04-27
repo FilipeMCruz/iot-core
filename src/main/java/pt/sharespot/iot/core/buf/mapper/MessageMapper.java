@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.protobuf.InvalidProtocolBufferException;
+import pt.sharespot.iot.core.buf.mapper.data.DataMapper;
 import pt.sharespot.iot.core.buf.model.Message;
 import pt.sharespot.iot.core.buf.model.UnprocessedMessage;
 import pt.sharespot.iot.core.routing.MessageConsumed;

@@ -170,6 +170,19 @@ message Device {
   string name = 2;
   RecordEntry records = 3;
   DeviceDomains domains = 4;
+  string downlink = 5;
+  map<int32, DeviceCommands> commands = 6;
+}
+
+message DeviceCommands {
+  repeated DeviceCommand command = 1;
+}
+
+message DeviceCommand {
+  string id = 1;
+  string name = 2;
+  string payload = 3;
+  int32 port = 4;
 }
 
 message RecordEntry {
