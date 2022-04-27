@@ -23,6 +23,9 @@ public class DeviceMapper {
         if (dto.hasProperty(PropertyName.DEVICE_RECORDS))
             builder.setRecords(RecordEntryMapper.toBuf(dto.records));
 
+        if (dto.hasProperty(PropertyName.DEVICE_DOWNLINK))
+            builder.setDownlink(dto.downlink);
+
         if (dto.hasProperty(PropertyName.READ_WRITE_PERMISSIONS) || dto.hasProperty(PropertyName.READ_PERMISSIONS))
             builder.setDomains(DomainMapper.toBuf(dto.domains));
 
@@ -39,6 +42,7 @@ public class DeviceMapper {
         device.id = UUID.fromString(buf.getId());
         device.records = RecordEntryMapper.toModel(buf.getRecords());
         device.domains = DomainMapper.toModel(buf.getDomains());
+        device.downlink = buf.getDownlink();
         device.commands = new HashMap<>();
         buf.getCommandsMap().forEach((key, value) -> device.commands.put(key, CommandMapper.toModel(value)));
         return device;
