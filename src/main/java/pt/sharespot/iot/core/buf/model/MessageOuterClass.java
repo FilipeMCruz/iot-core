@@ -437,14 +437,14 @@ public final class MessageOuterClass {
       "OptionsBuf\022\030\n\024UNIDENTIFIED_RECORDS\020\000\022\020\n\014" +
       "WITH_RECORDS\020\001\022\023\n\017WITHOUT_RECORDS\020\002*=\n\022I" +
       "nfoTypeOptionsBuf\022\013\n\007ENCODED\020\000\022\013\n\007DECODE" +
-      "D\020\001\022\r\n\tPROCESSED\020\002*\331\001\n\027ContainerTypeOpti" +
+      "D\020\001\022\r\n\tPROCESSED\020\002*\362\001\n\027ContainerTypeOpti" +
       "onsBuf\022\t\n\005OTHER\020\000\022\020\n\014DATA_GATEWAY\020\001\022\022\n\016D" +
       "ATA_PROCESSOR\020\002\022\020\n\014DATA_DECODER\020\003\022\022\n\016DAT" +
       "A_VALIDATOR\020\004\022\016\n\nDATA_STORE\020\005\022\027\n\023IDENTIT" +
-      "Y_MANAGEMENT\020\006\022\022\n\016DEVICE_RECORDS\020\007\022\024\n\020FL" +
-      "EET_MANAGEMENT\020\010\022\024\n\020SMART_IRRIGATION\020\tB#" +
-      "\n\037pt.sharespot.iot.core.buf.modelP\001b\006pro" +
-      "to3"
+      "Y_MANAGEMENT\020\006\022\025\n\021DEVICE_MANAGEMENT\020\007\022\024\n" +
+      "\020FLEET_MANAGEMENT\020\010\022\024\n\020SMART_IRRIGATION\020" +
+      "\t\022\024\n\020DEVICE_COMMANDER\020\nB#\n\037pt.sharespot." +
+      "iot.core.buf.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

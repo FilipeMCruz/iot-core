@@ -37,9 +37,9 @@ public enum ContainerTypeOptionsBuf
    */
   IDENTITY_MANAGEMENT(6),
   /**
-   * <code>DEVICE_RECORDS = 7;</code>
+   * <code>DEVICE_MANAGEMENT = 7;</code>
    */
-  DEVICE_RECORDS(7),
+  DEVICE_MANAGEMENT(7),
   /**
    * <code>FLEET_MANAGEMENT = 8;</code>
    */
@@ -48,6 +48,10 @@ public enum ContainerTypeOptionsBuf
    * <code>SMART_IRRIGATION = 9;</code>
    */
   SMART_IRRIGATION(9),
+  /**
+   * <code>DEVICE_COMMANDER = 10;</code>
+   */
+  DEVICE_COMMANDER(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -80,9 +84,9 @@ public enum ContainerTypeOptionsBuf
    */
   public static final int IDENTITY_MANAGEMENT_VALUE = 6;
   /**
-   * <code>DEVICE_RECORDS = 7;</code>
+   * <code>DEVICE_MANAGEMENT = 7;</code>
    */
-  public static final int DEVICE_RECORDS_VALUE = 7;
+  public static final int DEVICE_MANAGEMENT_VALUE = 7;
   /**
    * <code>FLEET_MANAGEMENT = 8;</code>
    */
@@ -91,6 +95,10 @@ public enum ContainerTypeOptionsBuf
    * <code>SMART_IRRIGATION = 9;</code>
    */
   public static final int SMART_IRRIGATION_VALUE = 9;
+  /**
+   * <code>DEVICE_COMMANDER = 10;</code>
+   */
+  public static final int DEVICE_COMMANDER_VALUE = 10;
 
 
   public final int getNumber() {
@@ -124,9 +132,10 @@ public enum ContainerTypeOptionsBuf
       case 4: return DATA_VALIDATOR;
       case 5: return DATA_STORE;
       case 6: return IDENTITY_MANAGEMENT;
-      case 7: return DEVICE_RECORDS;
+      case 7: return DEVICE_MANAGEMENT;
       case 8: return FLEET_MANAGEMENT;
       case 9: return SMART_IRRIGATION;
+      case 10: return DEVICE_COMMANDER;
       default: return null;
     }
   }
