@@ -1,0 +1,418 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+package pt.sharespot.iot.core;
+
+option java_package = "pt.sharespot.iot.core.sensor.buf";
+option java_multiple_files = true;
+
+message UnprocessedMessage {
+  string oid = 1;
+  RoutingKeysBuf routing_keys = 2;
+  int32  hops = 3;
+  string unprocessed_data = 4;
+}
+
+message Message {
+  string oid = 1;
+  RoutingKeysBuf routing_keys = 2;
+  int32  hops = 3;
+  Data data = 4;
+}
+
+message Data {
+  string data_id = 1;
+  int64 reported_at = 2;
+  Device device = 3;
+  map<int32, SensorData> measures = 4;
+}
+
+message SensorData {
+  GPS gps = 1;
+  Temperature temperature = 2;
+  Motion motion = 3;
+  AirQuality aqi = 4;
+  Velocity velocity = 5;
+  AirHumidity air_humidity = 6;
+  AirPressure air_pressure = 7;
+  Battery battery = 8;
+  SoilMoisture soil_moisture = 9;
+  Illuminance illuminance = 10;
+  Trigger trigger = 11;
+  WaterPressure water_pressure = 12;
+  PH ph = 13;
+  Distance distance = 14;
+  Occupation occupation = 15;
+  SoilConductivity soil_conductivity = 16;
+  CO2 co2 = 17;
+  CO co = 18;
+  NH3 nh3 = 19;
+  NO2 no2 = 20;
+  O3 o3 = 21;
+  VOC voc = 22;
+  PM2_5 pm2_5 = 23;
+  PM10 pm10 = 24;
+}
+
+message PM2_5 {
+  google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;
+}
+
+message PM10 {
+  google.protobuf.FloatValue micro_grams_per_cubic_meter = 1;
+}
+
+message CO2 {
+  google.protobuf.FloatValue ppm = 1;
+}
+
+message CO {
+  google.protobuf.FloatValue ppm = 1;
+}
+
+message NH3 {
+  google.protobuf.FloatValue ppm = 1;
+}
+
+message NO2 {
+  google.protobuf.FloatValue ppm = 1;
+}
+
+message O3 {
+  google.protobuf.FloatValue ppm = 1;
+}
+
+message VOC {
+  google.protobuf.FloatValue ppm = 1;
+}
+
+message GPS {
+  google.protobuf.DoubleValue latitude = 1;
+  google.protobuf.DoubleValue longitude = 2;
+  google.protobuf.FloatValue altitude = 3;
+}
+
+message SoilConductivity {
+  google.protobuf.FloatValue micro_siemens_per_centimeter = 1;
+}
+
+message Motion {
+  MotionType value = 1;
+}
+
+enum MotionType {
+  UNKNOWN = 0;
+  ACTIVE = 1;
+  INACTIVE = 2;
+}
+
+message Temperature {
+  google.protobuf.FloatValue celsius = 1;
+}
+
+message Occupation {
+  google.protobuf.FloatValue percentage = 1;
+}
+
+message AirQuality {
+  google.protobuf.FloatValue value = 1;
+}
+
+message PH {
+  google.protobuf.FloatValue value = 1;
+}
+
+message Distance {
+  google.protobuf.FloatValue millimeters = 1;
+  google.protobuf.FloatValue maxMillimeters = 2;
+  google.protobuf.FloatValue minMillimeters = 3;
+}
+
+message Velocity {
+  google.protobuf.FloatValue kilometers_per_hour = 1;
+}
+
+message AirHumidity {
+  google.protobuf.FloatValue grams_per_cubic_meter = 1;
+  google.protobuf.FloatValue relative_percentage = 2;
+}
+
+message AirPressure {
+  google.protobuf.FloatValue hecto_pascal = 1;
+}
+
+message WaterPressure {
+  google.protobuf.FloatValue bar = 1;
+}
+
+message Battery {
+  google.protobuf.FloatValue percentage = 1;
+  google.protobuf.FloatValue volts = 2;
+  google.protobuf.FloatValue max_volts = 3;
+  google.protobuf.FloatValue min_volts = 4;
+}
+
+message SoilMoisture {
+  google.protobuf.FloatValue relative_percentage = 1;
+}
+
+message Illuminance {
+  google.protobuf.FloatValue lux = 1;
+}
+
+message Trigger {
+  google.protobuf.BoolValue value = 1;
+}
+
+message Device {
+  string id = 1;
+  string name = 2;
+  RecordEntry records = 3;
+  DeviceDomains domains = 4;
+  string downlink = 5;
+  map<int32, DeviceCommands> commands = 6;
+}
+
+message DeviceCommands {
+  repeated DeviceCommand command = 1;
+}
+
+message DeviceCommand {
+  string id = 1;
+  string name = 2;
+  string payload = 3;
+  int32 port = 4;
+}
+
+message RecordEntry {
+  repeated Entry entries = 1;
+}
+
+message Entry {
+  string label = 1;
+  string content = 2;
+}
+
+message DeviceDomains {
+  repeated string read = 1;
+  repeated string read_write = 2;
+}
+
+message RoutingKeysBuf {
+  string version = 1;
+  ContainerTypeOptionsBuf container_type = 2;
+  InfoTypeOptionsBuf info_type = 3;
+  string sensor_type = 4;
+  string channel = 5;
+  RecordsOptionsBuf records = 6;
+  GPSDataOptionsBuf gps = 7;
+  TemperatureDataOptionsBuf temperature = 8;
+  DataLegitimacyOptionsBuf legitimacy = 9;
+  AirQualityDataOptionsBuf aqi = 10;
+  AirHumidityDataOptionsBuf air_humidity = 11;
+  MotionDataOptionsBuf motion = 12;
+  VelocityDataOptionsBuf velocity = 13;
+  AirPressureDataOptionsBuf air_pressure = 14;
+  BatteryDataOptionsBuf battery = 15;
+  SoilMoistureDataOptionsBuf soil_moisture = 16;
+  IlluminanceDataOptionsBuf illuminance = 17;
+  DomainOwnershipOptionsBuf ownership = 18;
+  TriggerDataOptionsBuf trigger = 19;
+  WaterPressureDataOptionsBuf water_pressure = 20;
+  PHDataOptionsBuf ph = 21;
+  DistanceDataOptionsBuf distance = 22;
+  OccupationDataOptionsBuf occupation = 23;
+  SoilConductivityDataOptionsBuf soil_conductivity = 24;
+  CO2DataOptionsBuf co2 = 25;
+  CODataOptionsBuf co = 26;
+  NH3DataOptionsBuf nh3 = 27;
+  NO2DataOptionsBuf no2 = 28;
+  O3DataOptionsBuf o3 = 29;
+  VOCDataOptionsBuf voc = 30;
+  PM2_5DataOptionsBuf pm2_5 = 31;
+  PM10DataOptionsBuf pm10 = 32;
+}
+
+enum PM10DataOptionsBuf {
+  UNIDENTIFIED_PM10_DATA = 0;
+  WITH_PM10_DATA = 1;
+  WITHOUT_PM10_DATA = 2;
+}
+
+enum PM2_5DataOptionsBuf {
+  UNIDENTIFIED_PM2_5_DATA = 0;
+  WITH_PM2_5_DATA = 1;
+  WITHOUT_PM2_5_DATA = 2;
+}
+
+enum CO2DataOptionsBuf {
+  UNIDENTIFIED_CO2_DATA = 0;
+  WITH_CO2_DATA = 1;
+  WITHOUT_CO2_DATA = 2;
+}
+
+enum CODataOptionsBuf {
+  UNIDENTIFIED_CO_DATA = 0;
+  WITH_CO_DATA = 1;
+  WITHOUT_CO_DATA = 2;
+}
+
+enum NH3DataOptionsBuf {
+  UNIDENTIFIED_NH3_DATA = 0;
+  WITH_NH3_DATA = 1;
+  WITHOUT_NH3_DATA = 2;
+}
+
+enum NO2DataOptionsBuf {
+  UNIDENTIFIED_NO2_DATA = 0;
+  WITH_NO2_DATA = 1;
+  WITHOUT_NO2_DATA = 2;
+}
+
+enum O3DataOptionsBuf {
+  UNIDENTIFIED_O3_DATA = 0;
+  WITH_O3_DATA = 1;
+  WITHOUT_O3_DATA = 2;
+}
+
+enum VOCDataOptionsBuf {
+  UNIDENTIFIED_VOC_DATA = 0;
+  WITH_VOC_DATA = 1;
+  WITHOUT_VOC_DATA = 2;
+}
+
+enum SoilConductivityDataOptionsBuf {
+  UNIDENTIFIED_SOIL_CONDUCTIVITY_DATA = 0;
+  WITH_SOIL_CONDUCTIVITY_DATA = 1;
+  WITHOUT_SOIL_CONDUCTIVITY_DATA = 2;
+}
+
+enum OccupationDataOptionsBuf {
+  UNIDENTIFIED_OCCUPATION_DATA = 0;
+  WITH_OCCUPATION_DATA = 1;
+  WITHOUT_OCCUPATION_DATA = 2;
+}
+
+enum PHDataOptionsBuf  {
+  UNIDENTIFIED_PH_DATA = 0;
+  WITH_PH_DATA = 1;
+  WITHOUT_PH_DATA = 2;
+}
+
+enum DistanceDataOptionsBuf  {
+  UNIDENTIFIED_DISTANCE_DATA = 0;
+  WITH_DISTANCE_DATA = 1;
+  WITHOUT_DISTANCE_DATA = 2;
+}
+
+enum TriggerDataOptionsBuf {
+  UNIDENTIFIED_TRIGGER_DATA = 0;
+  WITH_TRIGGER_DATA = 1;
+  WITHOUT_TRIGGER_DATA = 2;
+}
+
+enum DomainOwnershipOptionsBuf {
+  UNIDENTIFIED_DOMAIN_OWNERSHIP = 0;
+  WITH_DOMAIN_OWNERSHIP = 1;
+  WITHOUT_DOMAIN_OWNERSHIP = 2;
+}
+
+enum IlluminanceDataOptionsBuf {
+  UNIDENTIFIED_ILLUMINANCE_DATA = 0;
+  WITH_ILLUMINANCE_DATA = 1;
+  WITHOUT_ILLUMINANCE_DATA = 2;
+}
+
+enum SoilMoistureDataOptionsBuf {
+  UNIDENTIFIED_SOIL_MOISTURE_DATA = 0;
+  WITH_SOIL_MOISTURE_DATA = 1;
+  WITHOUT_SOIL_MOISTURE_DATA = 2;
+}
+
+enum BatteryDataOptionsBuf {
+  UNIDENTIFIED_BATTERY_DATA = 0;
+  WITH_BATTERY_DATA = 1;
+  WITHOUT_BATTERY_DATA = 2;
+}
+
+enum AirPressureDataOptionsBuf {
+  UNIDENTIFIED_AIR_PRESSURE_DATA = 0;
+  WITH_AIR_PRESSURE_DATA = 1;
+  WITHOUT_AIR_PRESSURE_DATA = 2;
+}
+
+enum VelocityDataOptionsBuf {
+  UNIDENTIFIED_VELOCITY_DATA = 0;
+  WITH_VELOCITY_DATA = 1;
+  WITHOUT_VELOCITY_DATA = 2;
+}
+
+enum MotionDataOptionsBuf {
+  UNIDENTIFIED_MOTION_DATA = 0;
+  WITH_MOTION_DATA = 1;
+  WITHOUT_MOTION_DATA = 2;
+}
+
+enum AirHumidityDataOptionsBuf {
+  UNIDENTIFIED_AIR_HUMIDITY_DATA = 0;
+  WITH_AIR_HUMIDITY_DATA = 1;
+  WITHOUT_AIR_HUMIDITY_DATA = 2;
+}
+
+enum AirQualityDataOptionsBuf {
+  UNIDENTIFIED_AQI_DATA = 0;
+  WITH_AQI_DATA = 1;
+  WITHOUT_AQI_DATA = 2;
+}
+
+enum WaterPressureDataOptionsBuf {
+  UNIDENTIFIED_WATER_PRESSURE_DATA = 0;
+  WITH_WATER_PRESSURE_DATA = 1;
+  WITHOUT_WATER_PRESSURE_DATA = 2;
+}
+
+enum DataLegitimacyOptionsBuf {
+  UNKNOWN_LEGITIMACY = 0;
+  CORRECT_LEGITIMACY = 1;
+  INCORRECT_LEGITIMACY = 2;
+  UNDETERMINED_LEGITIMACY = 3;
+}
+
+enum TemperatureDataOptionsBuf {
+  UNIDENTIFIED_TEMPERATURE_DATA = 0;
+  WITH_TEMPERATURE_DATA = 1;
+  WITHOUT_TEMPERATURE_DATA = 2;
+}
+
+enum GPSDataOptionsBuf {
+  UNIDENTIFIED_GPS_DATA = 0;
+  WITH_GPS_DATA = 1;
+  WITHOUT_GPS_DATA = 2;
+}
+
+enum RecordsOptionsBuf {
+  UNIDENTIFIED_RECORDS = 0;
+  WITH_RECORDS = 1;
+  WITHOUT_RECORDS = 2;
+}
+
+enum InfoTypeOptionsBuf {
+  ENCODED = 0;
+  DECODED = 1;
+  PROCESSED = 2;
+}
+
+enum ContainerTypeOptionsBuf {
+  OTHER = 0;
+  DATA_GATEWAY = 1;
+  DATA_PROCESSOR = 2;
+  DATA_DECODER = 3;
+  DATA_VALIDATOR = 4;
+  DATA_STORE = 5;
+  IDENTITY_MANAGEMENT = 6;
+  DEVICE_MANAGEMENT = 7;
+  FLEET_MANAGEMENT = 8;
+  SMART_IRRIGATION = 9;
+  DEVICE_COMMANDER = 10;
+}
