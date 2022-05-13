@@ -48,11 +48,11 @@ public class InternalRoutingKeys {
 
         private final RoutingKeysBuilderOptions options;
 
-        public RoutingKeyOption<ContainerTypeOptions> containerType;
+        private RoutingKeyOption<ContainerTypeOptions> containerType;
 
-        public RoutingKeyOption<ContextTypeOptions> contextType;
+        private RoutingKeyOption<ContextTypeOptions> contextType;
 
-        public RoutingKeyOption<OperationTypeOptions> operationType;
+        private RoutingKeyOption<OperationTypeOptions> operationType;
 
         private InternalRoutingKeysBuilder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.thisContainerType = RoutingKeyOption.of(type);
