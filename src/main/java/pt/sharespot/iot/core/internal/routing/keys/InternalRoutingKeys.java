@@ -36,11 +36,11 @@ public class InternalRoutingKeys {
         return MessageFormat.format("{0}.{1}.internal.{2}.{3}", containerType.details(), version, contextType.details(), operationType.details());
     }
 
-    public static InternalRoutingKeys.InternalRoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
-        return new InternalRoutingKeys.InternalRoutingKeysBuilder(type, options, version);
+    public static Builder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
+        return new Builder(type, options, version);
     }
 
-    public static class InternalRoutingKeysBuilder {
+    public static class Builder {
 
         private final RoutingKeyOption<ContainerTypeOptions> thisContainerType;
 
@@ -54,23 +54,23 @@ public class InternalRoutingKeys {
 
         private RoutingKeyOption<OperationTypeOptions> operationType;
 
-        private InternalRoutingKeysBuilder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
+        private Builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.thisContainerType = RoutingKeyOption.of(type);
             this.version = version;
             this.options = options;
         }
 
-        public InternalRoutingKeys.InternalRoutingKeysBuilder withContainerType(ContainerTypeOptions containerType) {
+        public Builder withContainerType(ContainerTypeOptions containerType) {
             this.containerType = RoutingKeyOption.of(containerType);
             return this;
         }
 
-        public InternalRoutingKeys.InternalRoutingKeysBuilder withContextType(ContextTypeOptions contextType) {
+        public Builder withContextType(ContextTypeOptions contextType) {
             this.contextType = RoutingKeyOption.of(contextType);
             return this;
         }
 
-        public InternalRoutingKeys.InternalRoutingKeysBuilder withOperationType(OperationTypeOptions operationType) {
+        public Builder withOperationType(OperationTypeOptions operationType) {
             this.operationType = RoutingKeyOption.of(operationType);
             return this;
         }

@@ -10,7 +10,6 @@ public enum ContainerTypeOptions implements RoutingKey {
     DEVICE_MANAGEMENT,
     FLEET_MANAGEMENT,
     SMART_IRRIGATION,
-
     DEVICE_COMMANDER,
     OTHER;
 

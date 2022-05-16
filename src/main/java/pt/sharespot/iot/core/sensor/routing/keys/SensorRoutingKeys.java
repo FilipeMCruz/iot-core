@@ -218,11 +218,11 @@ public class SensorRoutingKeys {
                 pm10.details());
     }
 
-    public static SensorRoutingKeysBuilder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
-        return new SensorRoutingKeysBuilder(type, options, version);
+    public static Builder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
+        return new Builder(type, options, version);
     }
 
-    public static class SensorRoutingKeysBuilder {
+    public static class Builder {
 
         public static final String ANY = "*";
 
@@ -296,168 +296,168 @@ public class SensorRoutingKeys {
         private RoutingKeyOption<PM10DataOptions> pm10;
 
 
-        private SensorRoutingKeysBuilder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
+        private Builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.options = options;
             this.thisContainerType = RoutingKeyOption.of(type);
             this.version = version;
         }
 
-        public SensorRoutingKeysBuilder withContainerType(ContainerTypeOptions containerType) {
+        public Builder withContainerType(ContainerTypeOptions containerType) {
             this.containerType = RoutingKeyOption.of(containerType);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withPm2_5(PM2_5DataOptions pm2_5) {
+        public Builder withPm2_5(PM2_5DataOptions pm2_5) {
             this.pm2_5 = RoutingKeyOption.of(pm2_5);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withPm10(PM10DataOptions pm10) {
+        public Builder withPm10(PM10DataOptions pm10) {
             this.pm10 = RoutingKeyOption.of(pm10);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withOccupation(OccupationDataOptions occupation) {
+        public Builder withOccupation(OccupationDataOptions occupation) {
             this.occupation = RoutingKeyOption.of(occupation);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withSoilConductivity(SoilConductivityDataOptions soilConductivity) {
+        public Builder withSoilConductivity(SoilConductivityDataOptions soilConductivity) {
             this.soilConductivity = RoutingKeyOption.of(soilConductivity);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withWaterPressure(WaterPressureDataOptions waterPressure) {
+        public Builder withWaterPressure(WaterPressureDataOptions waterPressure) {
             this.waterPressure = RoutingKeyOption.of(waterPressure);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withDistance(DistanceDataOptions distance) {
+        public Builder withDistance(DistanceDataOptions distance) {
             this.distance = RoutingKeyOption.of(distance);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withPh(PHDataOptions ph) {
+        public Builder withPh(PHDataOptions ph) {
             this.ph = RoutingKeyOption.of(ph);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withInfoType(InfoTypeOptions infoType) {
+        public Builder withInfoType(InfoTypeOptions infoType) {
             this.infoType = RoutingKeyOption.of(infoType);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withSensorTypeId(String sensorTypeId) {
+        public Builder withSensorTypeId(String sensorTypeId) {
             this.sensorTypeId = sensorTypeId;
             return this;
         }
 
-        public SensorRoutingKeysBuilder withChannel(String channel) {
+        public Builder withChannel(String channel) {
             this.channel = channel;
             return this;
         }
 
-        public SensorRoutingKeysBuilder withRecords(RecordsOptions records) {
+        public Builder withRecords(RecordsOptions records) {
             this.records = RoutingKeyOption.of(records);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withOwnership(DomainOwnershipOptions ownership) {
+        public Builder withOwnership(DomainOwnershipOptions ownership) {
             this.ownership = RoutingKeyOption.of(ownership);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withLegitimacyType(DataLegitimacyOptions legitimacyType) {
+        public Builder withLegitimacyType(DataLegitimacyOptions legitimacyType) {
             this.legitimacy = RoutingKeyOption.of(legitimacyType);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withGps(GPSDataOptions gps) {
+        public Builder withGps(GPSDataOptions gps) {
             this.gps = RoutingKeyOption.of(gps);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withAQI(AirQualityDataOptions aqi) {
+        public Builder withAQI(AirQualityDataOptions aqi) {
             this.aqi = RoutingKeyOption.of(aqi);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withAirHumidity(AirHumidityDataOptions humidity) {
+        public Builder withAirHumidity(AirHumidityDataOptions humidity) {
             this.airHumidity = RoutingKeyOption.of(humidity);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withTemperature(TemperatureDataOptions temperature) {
+        public Builder withTemperature(TemperatureDataOptions temperature) {
             this.temperature = RoutingKeyOption.of(temperature);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withMotion(MotionDataOptions motion) {
+        public Builder withMotion(MotionDataOptions motion) {
             this.motion = RoutingKeyOption.of(motion);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withVelocity(VelocityDataOptions velocity) {
+        public Builder withVelocity(VelocityDataOptions velocity) {
             this.velocity = RoutingKeyOption.of(velocity);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withAirPressure(AirPressureDataOptions pressure) {
+        public Builder withAirPressure(AirPressureDataOptions pressure) {
             this.airPressure = RoutingKeyOption.of(pressure);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withSoilMoisture(SoilMoistureDataOptions moisture) {
+        public Builder withSoilMoisture(SoilMoistureDataOptions moisture) {
             this.soilMoisture = RoutingKeyOption.of(moisture);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withIlluminance(IlluminanceDataOptions illuminance) {
+        public Builder withIlluminance(IlluminanceDataOptions illuminance) {
             this.illuminance = RoutingKeyOption.of(illuminance);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withTrigger(TriggerDataOptions alarm) {
+        public Builder withTrigger(TriggerDataOptions alarm) {
             this.trigger = RoutingKeyOption.of(alarm);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withBattery(BatteryDataOptions battery) {
+        public Builder withBattery(BatteryDataOptions battery) {
             this.battery = RoutingKeyOption.of(battery);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withCO(CODataOptions co) {
+        public Builder withCO(CODataOptions co) {
             this.co = RoutingKeyOption.of(co);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withNH3(NH3DataOptions nh3) {
+        public Builder withNH3(NH3DataOptions nh3) {
             this.nh3 = RoutingKeyOption.of(nh3);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withNO2(NO2DataOptions no2) {
+        public Builder withNO2(NO2DataOptions no2) {
             this.no2 = RoutingKeyOption.of(no2);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withO3(O3DataOptions o3) {
+        public Builder withO3(O3DataOptions o3) {
             this.o3 = RoutingKeyOption.of(o3);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withVOC(VOCDataOptions voc) {
+        public Builder withVOC(VOCDataOptions voc) {
             this.voc = RoutingKeyOption.of(voc);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withCO2(CO2DataOptions co2) {
+        public Builder withCO2(CO2DataOptions co2) {
             this.co2 = RoutingKeyOption.of(co2);
             return this;
         }
 
-        public SensorRoutingKeysBuilder withUnidentifiedData() {
+        public Builder withUnidentifiedData() {
             this.temperature = RoutingKeyOption.of(TemperatureDataOptions.UNIDENTIFIED_TEMPERATURE_DATA);
             this.gps = RoutingKeyOption.of(GPSDataOptions.UNIDENTIFIED_GPS_DATA);
             this.aqi = RoutingKeyOption.of(AirQualityDataOptions.UNIDENTIFIED_AQI_DATA);
@@ -487,7 +487,7 @@ public class SensorRoutingKeys {
             return this;
         }
 
-        public SensorRoutingKeysBuilder withUpdated(SensorDataDTO data) {
+        public Builder withUpdated(SensorDataDTO data) {
             this.infoType = RoutingKeyOption.of(InfoTypeOptions.PROCESSED);
             this.gps = RoutingKeyOption.of(data.hasAllProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
                     GPSDataOptions.WITH_GPS_DATA : GPSDataOptions.WITHOUT_GPS_DATA);

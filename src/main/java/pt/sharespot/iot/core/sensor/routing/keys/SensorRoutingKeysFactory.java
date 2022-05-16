@@ -11,7 +11,7 @@ public class SensorRoutingKeysFactory {
         this.version = getClass().getPackage().getImplementationVersion();
     }
 
-    public SensorRoutingKeys.SensorRoutingKeysBuilder getBuilder(ContainerTypeOptions containerType, RoutingKeysBuilderOptions options) {
+    public SensorRoutingKeys.Builder getBuilder(ContainerTypeOptions containerType, RoutingKeysBuilderOptions options) {
         return SensorRoutingKeys.builder(containerType, options, version);
     }
 }
