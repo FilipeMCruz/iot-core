@@ -2,6 +2,7 @@ package pt.sharespot.iot.core.sensor.routing;
 
 import pt.sharespot.iot.core.sensor.routing.keys.SensorRoutingKeys;
 
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.function.BiFunction;
@@ -32,5 +33,20 @@ public class MessageConsumed<T> {
         return updateData.apply(data, routingKeys)
                 .flatMap(data -> updateRoutingKeys.apply(data, this.routingKeys)
                         .flatMap(keys -> MessageSupplied.from(this, data, keys)));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MessageConsumed<?> that = (MessageConsumed<?>) o;
+
+        return Objects.equals(oid, that.oid);
+    }
+
+    @Override
+    public int hashCode() {
+        return oid != null ? oid.hashCode() : 0;
     }
 }

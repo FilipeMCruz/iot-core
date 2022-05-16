@@ -2,6 +2,7 @@ package pt.sharespot.iot.core.sensor.routing;
 
 import pt.sharespot.iot.core.sensor.routing.keys.SensorRoutingKeys;
 
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -34,5 +35,20 @@ public class MessageSupplied<A> {
 
     public static <A> MessageSupplied<A> create(A data, SensorRoutingKeys routingKeys) {
         return new MessageSupplied<>(UUID.randomUUID(), 0, data, routingKeys);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MessageSupplied<?> that = (MessageSupplied<?>) o;
+
+        return Objects.equals(oid, that.oid);
+    }
+
+    @Override
+    public int hashCode() {
+        return oid != null ? oid.hashCode() : 0;
     }
 }
