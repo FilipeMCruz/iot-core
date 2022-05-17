@@ -47,19 +47,19 @@ public interface DeviceOrBuilder extends
   pt.sharespot.iot.core.sensor.buf.RecordEntryOrBuilder getRecordsOrBuilder();
 
   /**
-   * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+   * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
    * @return Whether the domains field is set.
    */
   boolean hasDomains();
   /**
-   * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+   * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
    * @return The domains.
    */
-  pt.sharespot.iot.core.sensor.buf.DeviceDomains getDomains();
+  pt.sharespot.iot.core.sensor.buf.DomainOwnership getDomains();
   /**
-   * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+   * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
    */
-  pt.sharespot.iot.core.sensor.buf.DeviceDomainsOrBuilder getDomainsOrBuilder();
+  pt.sharespot.iot.core.sensor.buf.DomainOwnershipOrBuilder getDomainsOrBuilder();
 
   /**
    * <code>string downlink = 5;</code>

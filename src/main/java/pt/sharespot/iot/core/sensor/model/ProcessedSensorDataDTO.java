@@ -34,7 +34,7 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
         return switch (property) {
             case DATA_ID, REPORTED_AT -> true;
             case DEVICE_ID, DEVICE_NAME, DEVICE_RECORDS, DEVICE_DOWNLINK, DEVICE_COMMANDS,
-                    READ_PERMISSIONS, READ_WRITE_PERMISSIONS -> device.hasProperty(property);
+                    DOMAIN_OWNERSHIP -> device.hasProperty(property);
             case LATITUDE, LONGITUDE, TEMPERATURE, MOTION, ALTITUDE,
                     VELOCITY, AQI, AIR_HUMIDITY_RELATIVE_PERCENTAGE, DISTANCE,
                     MAX_DISTANCE, MIN_DISTANCE, AIR_HUMIDITY_GRAMS_PER_CUBIC_METER,

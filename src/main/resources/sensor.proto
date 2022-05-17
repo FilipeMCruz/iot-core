@@ -169,7 +169,7 @@ message Device {
   string id = 1;
   string name = 2;
   RecordEntry records = 3;
-  DeviceDomains domains = 4;
+  DomainOwnership domains = 4;
   string downlink = 5;
   map<int32, DeviceCommands> commands = 6;
 }
@@ -194,9 +194,8 @@ message Entry {
   string content = 2;
 }
 
-message DeviceDomains {
-  repeated string read = 1;
-  repeated string read_write = 2;
+message DomainOwnership {
+  repeated string ownership = 1;
 }
 
 message RoutingKeysBuf {

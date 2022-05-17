@@ -5,9 +5,7 @@ import java.util.UUID;
 
 public class DeviceDomainPermissionsDTO {
 
-    public Set<UUID> read;
-
-    public Set<UUID> readWrite;
+    public Set<UUID> ownership;
 
     public DeviceDomainPermissionsDTO() {
     }

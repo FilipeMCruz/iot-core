@@ -78,11 +78,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            pt.sharespot.iot.core.sensor.buf.DeviceDomains.Builder subBuilder = null;
+            pt.sharespot.iot.core.sensor.buf.DomainOwnership.Builder subBuilder = null;
             if (domains_ != null) {
               subBuilder = domains_.toBuilder();
             }
-            domains_ = input.readMessage(pt.sharespot.iot.core.sensor.buf.DeviceDomains.parser(), extensionRegistry);
+            domains_ = input.readMessage(pt.sharespot.iot.core.sensor.buf.DomainOwnership.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(domains_);
               domains_ = subBuilder.buildPartial();
@@ -258,9 +258,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DOMAINS_FIELD_NUMBER = 4;
-  private pt.sharespot.iot.core.sensor.buf.DeviceDomains domains_;
+  private pt.sharespot.iot.core.sensor.buf.DomainOwnership domains_;
   /**
-   * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+   * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
    * @return Whether the domains field is set.
    */
   @java.lang.Override
@@ -268,18 +268,18 @@ private static final long serialVersionUID = 0L;
     return domains_ != null;
   }
   /**
-   * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+   * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
    * @return The domains.
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.sensor.buf.DeviceDomains getDomains() {
-    return domains_ == null ? pt.sharespot.iot.core.sensor.buf.DeviceDomains.getDefaultInstance() : domains_;
+  public pt.sharespot.iot.core.sensor.buf.DomainOwnership getDomains() {
+    return domains_ == null ? pt.sharespot.iot.core.sensor.buf.DomainOwnership.getDefaultInstance() : domains_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+   * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.sensor.buf.DeviceDomainsOrBuilder getDomainsOrBuilder() {
+  public pt.sharespot.iot.core.sensor.buf.DomainOwnershipOrBuilder getDomainsOrBuilder() {
     return getDomains();
   }
 
@@ -1120,31 +1120,31 @@ private static final long serialVersionUID = 0L;
       return recordsBuilder_;
     }
 
-    private pt.sharespot.iot.core.sensor.buf.DeviceDomains domains_;
+    private pt.sharespot.iot.core.sensor.buf.DomainOwnership domains_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.sensor.buf.DeviceDomains, pt.sharespot.iot.core.sensor.buf.DeviceDomains.Builder, pt.sharespot.iot.core.sensor.buf.DeviceDomainsOrBuilder> domainsBuilder_;
+        pt.sharespot.iot.core.sensor.buf.DomainOwnership, pt.sharespot.iot.core.sensor.buf.DomainOwnership.Builder, pt.sharespot.iot.core.sensor.buf.DomainOwnershipOrBuilder> domainsBuilder_;
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      * @return Whether the domains field is set.
      */
     public boolean hasDomains() {
       return domainsBuilder_ != null || domains_ != null;
     }
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      * @return The domains.
      */
-    public pt.sharespot.iot.core.sensor.buf.DeviceDomains getDomains() {
+    public pt.sharespot.iot.core.sensor.buf.DomainOwnership getDomains() {
       if (domainsBuilder_ == null) {
-        return domains_ == null ? pt.sharespot.iot.core.sensor.buf.DeviceDomains.getDefaultInstance() : domains_;
+        return domains_ == null ? pt.sharespot.iot.core.sensor.buf.DomainOwnership.getDefaultInstance() : domains_;
       } else {
         return domainsBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      */
-    public Builder setDomains(pt.sharespot.iot.core.sensor.buf.DeviceDomains value) {
+    public Builder setDomains(pt.sharespot.iot.core.sensor.buf.DomainOwnership value) {
       if (domainsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1158,10 +1158,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      */
     public Builder setDomains(
-        pt.sharespot.iot.core.sensor.buf.DeviceDomains.Builder builderForValue) {
+        pt.sharespot.iot.core.sensor.buf.DomainOwnership.Builder builderForValue) {
       if (domainsBuilder_ == null) {
         domains_ = builderForValue.build();
         onChanged();
@@ -1172,13 +1172,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      */
-    public Builder mergeDomains(pt.sharespot.iot.core.sensor.buf.DeviceDomains value) {
+    public Builder mergeDomains(pt.sharespot.iot.core.sensor.buf.DomainOwnership value) {
       if (domainsBuilder_ == null) {
         if (domains_ != null) {
           domains_ =
-            pt.sharespot.iot.core.sensor.buf.DeviceDomains.newBuilder(domains_).mergeFrom(value).buildPartial();
+            pt.sharespot.iot.core.sensor.buf.DomainOwnership.newBuilder(domains_).mergeFrom(value).buildPartial();
         } else {
           domains_ = value;
         }
@@ -1190,7 +1190,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      */
     public Builder clearDomains() {
       if (domainsBuilder_ == null) {
@@ -1204,33 +1204,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      */
-    public pt.sharespot.iot.core.sensor.buf.DeviceDomains.Builder getDomainsBuilder() {
+    public pt.sharespot.iot.core.sensor.buf.DomainOwnership.Builder getDomainsBuilder() {
       
       onChanged();
       return getDomainsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      */
-    public pt.sharespot.iot.core.sensor.buf.DeviceDomainsOrBuilder getDomainsOrBuilder() {
+    public pt.sharespot.iot.core.sensor.buf.DomainOwnershipOrBuilder getDomainsOrBuilder() {
       if (domainsBuilder_ != null) {
         return domainsBuilder_.getMessageOrBuilder();
       } else {
         return domains_ == null ?
-            pt.sharespot.iot.core.sensor.buf.DeviceDomains.getDefaultInstance() : domains_;
+            pt.sharespot.iot.core.sensor.buf.DomainOwnership.getDefaultInstance() : domains_;
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.DeviceDomains domains = 4;</code>
+     * <code>.pt.sharespot.iot.core.DomainOwnership domains = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.sensor.buf.DeviceDomains, pt.sharespot.iot.core.sensor.buf.DeviceDomains.Builder, pt.sharespot.iot.core.sensor.buf.DeviceDomainsOrBuilder> 
+        pt.sharespot.iot.core.sensor.buf.DomainOwnership, pt.sharespot.iot.core.sensor.buf.DomainOwnership.Builder, pt.sharespot.iot.core.sensor.buf.DomainOwnershipOrBuilder> 
         getDomainsFieldBuilder() {
       if (domainsBuilder_ == null) {
         domainsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            pt.sharespot.iot.core.sensor.buf.DeviceDomains, pt.sharespot.iot.core.sensor.buf.DeviceDomains.Builder, pt.sharespot.iot.core.sensor.buf.DeviceDomainsOrBuilder>(
+            pt.sharespot.iot.core.sensor.buf.DomainOwnership, pt.sharespot.iot.core.sensor.buf.DomainOwnership.Builder, pt.sharespot.iot.core.sensor.buf.DomainOwnershipOrBuilder>(
                 getDomains(),
                 getParentForChildren(),
                 isClean());

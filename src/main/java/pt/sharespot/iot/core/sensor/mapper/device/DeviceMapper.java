@@ -24,7 +24,7 @@ public class DeviceMapper {
         if (dto.hasProperty(PropertyName.DEVICE_DOWNLINK))
             builder.setDownlink(dto.downlink);
 
-        if (dto.hasProperty(PropertyName.READ_WRITE_PERMISSIONS) || dto.hasProperty(PropertyName.READ_PERMISSIONS))
+        if (dto.hasProperty(PropertyName.DOMAIN_OWNERSHIP))
             builder.setDomains(DomainMapper.toBuf(dto.domains));
 
         if (dto.commands != null) {

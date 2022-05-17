@@ -45,8 +45,7 @@ public class DeviceInformationDTO {
             case DEVICE_ID -> id != null;
             case DEVICE_NAME -> name != null;
             case DEVICE_RECORDS -> records != null;
-            case READ_PERMISSIONS -> domains != null && domains.read != null;
-            case READ_WRITE_PERMISSIONS -> domains != null && domains.readWrite != null;
+            case DOMAIN_OWNERSHIP -> domains != null && domains.ownership != null;
             case DEVICE_DOWNLINK -> downlink != null;
             case DEVICE_COMMANDS ->
                     commands != null && !commands.isEmpty() && commands.get(0) != null && !commands.get(0).isEmpty();

@@ -17,13 +17,9 @@ public enum PropertyName {
         public String path(Integer sensorID) {
             return "device.records";
         }
-    }, READ_PERMISSIONS {
+    }, DOMAIN_OWNERSHIP {
         public String path(Integer sensorID) {
-            return "device.domains.read";
-        }
-    }, READ_WRITE_PERMISSIONS {
-        public String path(Integer sensorID) {
-            return "device.domains.readWrite";
+            return "device.domains.ownership";
         }
     }, REPORTED_AT {
         public String path(Integer sensorID) {
