@@ -1,14 +1,10 @@
 package pt.sharespot.iot.core.sensor.model.device;
 
 import pt.sharespot.iot.core.sensor.model.device.controls.DeviceCommandDTO;
-import pt.sharespot.iot.core.sensor.model.device.domains.DeviceDomainPermissionsDTO;
-import pt.sharespot.iot.core.sensor.model.device.records.DeviceRecordDTO;
+import pt.sharespot.iot.core.sensor.model.device.records.DeviceRecordEntryDTO;
 import pt.sharespot.iot.core.sensor.model.properties.PropertyName;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class DeviceInformationDTO {
 
@@ -18,9 +14,9 @@ public class DeviceInformationDTO {
 
     public String downlink;
 
-    public DeviceRecordDTO records;
+    public Set<DeviceRecordEntryDTO> records;
 
-    public DeviceDomainPermissionsDTO domains;
+    public Set<UUID> domains;
     public Map<Integer, List<DeviceCommandDTO>> commands = new HashMap<>();
 
     public DeviceInformationDTO() {
@@ -29,8 +25,8 @@ public class DeviceInformationDTO {
     public DeviceInformationDTO(UUID id,
                                 String name,
                                 String downlink,
-                                DeviceRecordDTO records,
-                                DeviceDomainPermissionsDTO domains,
+                                Set<DeviceRecordEntryDTO> records,
+                                Set<UUID> domains,
                                 Map<Integer, List<DeviceCommandDTO>> commands) {
         this.id = id;
         this.name = name;
@@ -45,7 +41,7 @@ public class DeviceInformationDTO {
             case DEVICE_ID -> id != null;
             case DEVICE_NAME -> name != null;
             case DEVICE_RECORDS -> records != null;
-            case DOMAIN_OWNERSHIP -> domains != null && domains.ownership != null;
+            case DOMAIN_OWNERSHIP -> domains != null;
             case DEVICE_DOWNLINK -> downlink != null;
             case DEVICE_COMMANDS ->
                     commands != null && !commands.isEmpty() && commands.get(0) != null && !commands.get(0).isEmpty();

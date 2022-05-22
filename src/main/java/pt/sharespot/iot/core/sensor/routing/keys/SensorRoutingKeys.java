@@ -3,7 +3,7 @@ package pt.sharespot.iot.core.sensor.routing.keys;
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
 import pt.sharespot.iot.core.keys.RoutingKeyOption;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
-import pt.sharespot.iot.core.sensor.model.SensorDataDTO;
+import pt.sharespot.iot.core.sensor.model.ProcessedSensorDataDTO;
 import pt.sharespot.iot.core.sensor.model.properties.PropertyName;
 import pt.sharespot.iot.core.sensor.routing.keys.data.*;
 
@@ -487,7 +487,7 @@ public class SensorRoutingKeys {
             return this;
         }
 
-        public Builder withUpdated(SensorDataDTO data) {
+        public Builder withUpdated(ProcessedSensorDataDTO data) {
             this.infoType = RoutingKeyOption.of(InfoTypeOptions.PROCESSED);
             this.gps = RoutingKeyOption.of(data.hasAllProperties(PropertyName.LATITUDE, PropertyName.LONGITUDE) ?
                     GPSDataOptions.WITH_GPS_DATA : GPSDataOptions.WITHOUT_GPS_DATA);

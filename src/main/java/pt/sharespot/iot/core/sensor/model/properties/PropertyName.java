@@ -19,7 +19,7 @@ public enum PropertyName {
         }
     }, DOMAIN_OWNERSHIP {
         public String path(Integer sensorID) {
-            return "device.domains.ownership";
+            return "device.domains";
         }
     }, REPORTED_AT {
         public String path(Integer sensorID) {

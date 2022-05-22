@@ -5,11 +5,18 @@ import pt.sharespot.iot.core.sensor.model.device.DeviceInformationDTO;
 import pt.sharespot.iot.core.sensor.model.device.controls.DeviceCommandDTO;
 import pt.sharespot.iot.core.sensor.model.properties.PropertyName;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
+public class ProcessedSensorDataDTO {
+
+    public UUID dataId;
+
+    public Long reportedAt;
+
+    public Map<Integer, SensorDataDetailsDTO> measures;
 
     public DeviceInformationDTO device;
 
@@ -17,20 +24,20 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
                                   DeviceInformationDTO device,
                                   Long reportedAt,
                                   Map<Integer, SensorDataDetailsDTO> measures) {
-        super(dataId, reportedAt, measures);
+        this.dataId = dataId;
+        this.reportedAt = reportedAt;
+        this.measures = measures;
         this.device = device;
     }
 
     public ProcessedSensorDataDTO() {
     }
 
-    @Override
     public boolean hasProperty(PropertyName property) {
-        return hasProperty(0, property);
+        return hasPropertyInSubDevice(0, property);
     }
 
-    @Override
-    public boolean hasProperty(Integer subSensorId, PropertyName property) {
+    public boolean hasPropertyInSubDevice(Integer subSensorId, PropertyName property) {
         return switch (property) {
             case DATA_ID, REPORTED_AT -> true;
             case DEVICE_ID, DEVICE_NAME, DEVICE_RECORDS, DEVICE_DOWNLINK, DEVICE_COMMANDS,
@@ -46,11 +53,33 @@ public class ProcessedSensorDataDTO extends AbstractSensorDataDTO {
         };
     }
 
-    @Override
+    public boolean hasAllProperties(PropertyName... properties) {
+        return Arrays.stream(properties).allMatch(this::hasProperty);
+    }
+
+    public boolean hasAllPropertiesInSubDevice(Integer subSensorId, PropertyName... properties) {
+        return Arrays.stream(properties).anyMatch(p -> this.hasPropertyInSubDevice(subSensorId, p));
+    }
+
+    public boolean hasAnyProperties(PropertyName... properties) {
+        return Arrays.stream(properties).anyMatch(this::hasProperty);
+    }
+
+    public boolean hasAnyPropertiesInSubDevice(Integer subSensorId, PropertyName... properties) {
+        return Arrays.stream(properties).anyMatch(p -> this.hasPropertyInSubDevice(subSensorId, p));
+    }
+
     public List<DeviceCommandDTO> getSensorCommands() {
         if (device.commands.get(0) == null) {
             device.commands.put(0, List.of(new DeviceCommandDTO()));
         }
         return device.commands.get(0);
+    }
+
+    public SensorDataDetailsDTO getSensorData() {
+        if (measures.get(0) == null) {
+            measures.put(0, new SensorDataDetailsDTO());
+        }
+        return measures.get(0);
     }
 }
