@@ -7,7 +7,9 @@ public enum ContextTypeOptions implements RoutingKey {
     DATA_PROCESSOR,
     DEVICE_MANAGEMENT,
     DATA_DECODER,
-    DEVICE_IDENTITY;
+    DEVICE_IDENTITY,
+    
+    RULE_MANAGEMENT;
 
     public String value() {
         return details();
@@ -27,6 +29,9 @@ public enum ContextTypeOptions implements RoutingKey {
         }
         if (value.equalsIgnoreCase(ContextTypeOptions.DATA_DECODER.value())) {
             return RoutingKeyOption.of(ContextTypeOptions.DATA_DECODER);
+        }
+        if (value.equalsIgnoreCase(ContextTypeOptions.RULE_MANAGEMENT.value())) {
+            return RoutingKeyOption.of(ContextTypeOptions.RULE_MANAGEMENT);
         }
         if (value.equalsIgnoreCase(ContextTypeOptions.DEVICE_IDENTITY.value())) {
             return RoutingKeyOption.of(ContextTypeOptions.DEVICE_IDENTITY);
