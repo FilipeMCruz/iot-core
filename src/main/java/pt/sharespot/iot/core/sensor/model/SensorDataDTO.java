@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class ProcessedSensorDataDTO {
+public class SensorDataDTO {
 
     public UUID dataId;
 
@@ -20,17 +20,17 @@ public class ProcessedSensorDataDTO {
 
     public DeviceInformationDTO device;
 
-    public ProcessedSensorDataDTO(UUID dataId,
-                                  DeviceInformationDTO device,
-                                  Long reportedAt,
-                                  Map<Integer, SensorDataDetailsDTO> measures) {
+    public SensorDataDTO(UUID dataId,
+                         DeviceInformationDTO device,
+                         Long reportedAt,
+                         Map<Integer, SensorDataDetailsDTO> measures) {
         this.dataId = dataId;
         this.reportedAt = reportedAt;
         this.measures = measures;
         this.device = device;
     }
 
-    public ProcessedSensorDataDTO() {
+    public SensorDataDTO() {
     }
 
     public boolean hasProperty(PropertyName property) {

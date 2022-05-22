@@ -9,13 +9,13 @@ import pt.sharespot.iot.core.sensor.routing.MessageConsumed;
 import pt.sharespot.iot.core.sensor.routing.MessageSupplied;
 import pt.sharespot.iot.core.sensor.buf.Message;
 import pt.sharespot.iot.core.sensor.buf.UnprocessedMessage;
-import pt.sharespot.iot.core.sensor.model.ProcessedSensorDataDTO;
+import pt.sharespot.iot.core.sensor.model.SensorDataDTO;
 
 import java.util.UUID;
 
 public class MessageMapper {
 
-    public static Message toBuf(MessageSupplied<ProcessedSensorDataDTO> message) {
+    public static Message toBuf(MessageSupplied<SensorDataDTO> message) {
         return Message.newBuilder()
                 .setOid(message.oid.toString())
                 .setHops(message.hops)
@@ -46,12 +46,12 @@ public class MessageMapper {
         return consumed;
     }
 
-    public static MessageConsumed<ProcessedSensorDataDTO> toModel(byte[] message) throws InvalidProtocolBufferException {
+    public static MessageConsumed<SensorDataDTO> toModel(byte[] message) throws InvalidProtocolBufferException {
         return MessageMapper.toModel(Message.parseFrom(message));
     }
 
-    private static MessageConsumed<ProcessedSensorDataDTO> toModel(Message message) {
-        var consumed = new MessageConsumed<ProcessedSensorDataDTO>();
+    private static MessageConsumed<SensorDataDTO> toModel(Message message) {
+        var consumed = new MessageConsumed<SensorDataDTO>();
         consumed.hops = message.getHops();
         consumed.oid = UUID.fromString(message.getOid());
         consumed.routingKeys = RoutingKeysMapper.toModel(message.getRoutingKeys());

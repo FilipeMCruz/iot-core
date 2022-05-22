@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import pt.sharespot.iot.core.sensor.model.ProcessedSensorDataDTO;
+import pt.sharespot.iot.core.sensor.model.SensorDataDTO;
 
 import java.util.Optional;
 
@@ -16,11 +16,11 @@ public class ProcessedSensorDataMapper {
         this.mapper = mapper;
     }
 
-    public Optional<ProcessedSensorDataDTO> process(PropertyTransformations transformations, JsonNode in) {
+    public Optional<SensorDataDTO> process(PropertyTransformations transformations, JsonNode in) {
         ObjectNode newNode = mapper.createObjectNode();
         transformations.getTransform().forEach(property -> property.transfer(in, newNode));
         try {
-            return Optional.of(mapper.treeToValue(newNode, ProcessedSensorDataDTO.class));
+            return Optional.of(mapper.treeToValue(newNode, SensorDataDTO.class));
         } catch (JsonProcessingException e) {
             return Optional.empty();
         }
