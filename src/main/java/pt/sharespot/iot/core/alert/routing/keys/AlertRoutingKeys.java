@@ -1,6 +1,5 @@
 package pt.sharespot.iot.core.alert.routing.keys;
 
-import pt.sharespot.iot.core.internal.routing.keys.OperationTypeOptions;
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
 import pt.sharespot.iot.core.keys.RoutingKeyOption;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;

@@ -545,6 +545,7 @@ public class RoutingKeysMapper {
             case FLEET_MANAGEMENT -> ContainerTypeOptionsBuf.FLEET_MANAGEMENT;
             case IDENTITY_MANAGEMENT -> ContainerTypeOptionsBuf.IDENTITY_MANAGEMENT;
             case SMART_IRRIGATION -> ContainerTypeOptionsBuf.SMART_IRRIGATION;
+            case RULE_MANAGEMENT -> ContainerTypeOptionsBuf.RULE_MANAGEMENT;
         };
     }
 

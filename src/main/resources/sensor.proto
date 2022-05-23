@@ -414,4 +414,5 @@ enum ContainerTypeOptionsBuf {
   FLEET_MANAGEMENT = 8;
   SMART_IRRIGATION = 9;
   DEVICE_COMMANDER = 10;
+  RULE_MANAGEMENT = 11;
 }
