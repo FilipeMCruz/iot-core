@@ -12,7 +12,7 @@ public enum ContainerTypeOptions implements RoutingKey {
     SMART_IRRIGATION,
     DEVICE_COMMANDER,
 
-    RULE_MANAGEMENT,
+    ALERT_DISPATCHER,
 
     OTHER;
 
@@ -28,7 +28,7 @@ public enum ContainerTypeOptions implements RoutingKey {
             case FLEET_MANAGEMENT -> "fleet";
             case IDENTITY_MANAGEMENT -> "idman";
             case SMART_IRRIGATION -> "irrig";
-            case RULE_MANAGEMENT -> "rules";
+            case ALERT_DISPATCHER -> "alert";
             case OTHER -> "other";
         };
     }
@@ -58,8 +58,8 @@ public enum ContainerTypeOptions implements RoutingKey {
             return ContainerTypeOptions.IDENTITY_MANAGEMENT.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("irrig")) {
             return ContainerTypeOptions.SMART_IRRIGATION.toString().toLowerCase();
-        } else if (value.equalsIgnoreCase("rules")) {
-            return ContainerTypeOptions.RULE_MANAGEMENT.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("alert")) {
+            return ContainerTypeOptions.ALERT_DISPATCHER.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("other")) {
             return ContainerTypeOptions.OTHER.toString().toLowerCase();
         } else {

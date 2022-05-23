@@ -1,6 +1,7 @@
 package pt.sharespot.iot.core.sensor.mapper;
 
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
+import pt.sharespot.iot.core.keys.DataLegitimacyOptions;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
 import pt.sharespot.iot.core.sensor.buf.*;
 import pt.sharespot.iot.core.sensor.routing.keys.*;
@@ -545,7 +546,7 @@ public class RoutingKeysMapper {
             case FLEET_MANAGEMENT -> ContainerTypeOptionsBuf.FLEET_MANAGEMENT;
             case IDENTITY_MANAGEMENT -> ContainerTypeOptionsBuf.IDENTITY_MANAGEMENT;
             case SMART_IRRIGATION -> ContainerTypeOptionsBuf.SMART_IRRIGATION;
-            case RULE_MANAGEMENT -> ContainerTypeOptionsBuf.RULE_MANAGEMENT;
+            case ALERT_DISPATCHER -> ContainerTypeOptionsBuf.ALERT_DISPATCHER;
         };
     }
 
@@ -562,6 +563,7 @@ public class RoutingKeysMapper {
             case FLEET_MANAGEMENT -> ContainerTypeOptions.FLEET_MANAGEMENT;
             case IDENTITY_MANAGEMENT -> ContainerTypeOptions.IDENTITY_MANAGEMENT;
             case SMART_IRRIGATION -> ContainerTypeOptions.SMART_IRRIGATION;
+            case ALERT_DISPATCHER -> ContainerTypeOptions.ALERT_DISPATCHER;
         };
     }
 }

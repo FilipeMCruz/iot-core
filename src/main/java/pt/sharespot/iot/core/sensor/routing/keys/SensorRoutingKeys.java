@@ -1,6 +1,7 @@
 package pt.sharespot.iot.core.sensor.routing.keys;
 
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
+import pt.sharespot.iot.core.keys.DataLegitimacyOptions;
 import pt.sharespot.iot.core.keys.RoutingKeyOption;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
 import pt.sharespot.iot.core.sensor.model.SensorDataDTO;

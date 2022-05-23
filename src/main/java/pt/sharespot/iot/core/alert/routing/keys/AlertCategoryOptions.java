@@ -7,19 +7,20 @@ public class AlertCategoryOptions implements RoutingKey {
     private final String category;
 
     public AlertCategoryOptions(String category) {
-        if (!category.matches("^[a-zA-Z0-9]+$")) {
-            throw new RuntimeException("Can't create routing key Alert Category with key: " + category);
-        }
         this.category = category;
+    }
+    
+    public static AlertCategoryOptions of(String category) {
+        return new AlertCategoryOptions(category);
     }
 
     @Override
     public String value() {
-        return null;
+        return category;
     }
 
     @Override
     public String details() {
-        return null;
+        return category;
     }
 }
