@@ -1,4 +1,4 @@
-package pt.sharespot.iot.core.alert;
+package pt.sharespot.iot.core.alert.model;
 
 public enum AlertLevelDTO {
     INFORMATION,

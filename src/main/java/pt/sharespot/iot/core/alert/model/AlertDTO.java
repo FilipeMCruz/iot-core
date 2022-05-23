@@ -1,8 +1,8 @@
-package pt.sharespot.iot.core.alert;
+package pt.sharespot.iot.core.alert.model;
 
 public class AlertDTO {
 
-    public String name;
+    public String category;
     
     public String description;
     
