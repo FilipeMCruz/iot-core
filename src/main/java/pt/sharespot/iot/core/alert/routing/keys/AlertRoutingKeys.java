@@ -1,9 +1,9 @@
 package pt.sharespot.iot.core.alert.routing.keys;
 
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
+import pt.sharespot.iot.core.keys.OwnershipOptions;
 import pt.sharespot.iot.core.keys.RoutingKeyOption;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
-import pt.sharespot.iot.core.keys.DataLegitimacyOptions;
 
 import java.text.MessageFormat;
 import java.util.Optional;
@@ -18,9 +18,9 @@ public class AlertRoutingKeys {
 
     public RoutingKeyOption<AlertCategoryOptions> categoryType;
 
-    public RoutingKeyOption<DataLegitimacyOptions> legitimacyType;
+    public RoutingKeyOption<OwnershipOptions> legitimacyType;
 
-    public AlertRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType, String version, RoutingKeyOption<AlertSeverityOptions> severityType, RoutingKeyOption<AlertCategoryOptions> categoryType, RoutingKeyOption<DataLegitimacyOptions> legitimacyType) {
+    public AlertRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType, String version, RoutingKeyOption<AlertSeverityOptions> severityType, RoutingKeyOption<AlertCategoryOptions> categoryType, RoutingKeyOption<OwnershipOptions> legitimacyType) {
         this.containerType = containerType;
         this.version = version;
         this.legitimacyType = legitimacyType;
@@ -58,7 +58,7 @@ public class AlertRoutingKeys {
 
         private RoutingKeyOption<AlertCategoryOptions> categoryType;
 
-        private RoutingKeyOption<DataLegitimacyOptions> legitimacyType;
+        private RoutingKeyOption<OwnershipOptions> legitimacyType;
 
         private Builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.thisContainerType = RoutingKeyOption.of(type);
@@ -81,7 +81,7 @@ public class AlertRoutingKeys {
             return this;
         }
 
-        public Builder withLegitimacyType(DataLegitimacyOptions legitimacyType) {
+        public Builder withOwnershipType(OwnershipOptions legitimacyType) {
             this.legitimacyType = RoutingKeyOption.of(legitimacyType);
             return this;
         }

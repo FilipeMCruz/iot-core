@@ -1,4 +1,7 @@
-package pt.sharespot.iot.core.keys;
+package pt.sharespot.iot.core.sensor.routing.keys;
+
+import pt.sharespot.iot.core.keys.RoutingKey;
+import pt.sharespot.iot.core.keys.RoutingKeyOption;
 
 public enum DataLegitimacyOptions implements RoutingKey {
     UNKNOWN,

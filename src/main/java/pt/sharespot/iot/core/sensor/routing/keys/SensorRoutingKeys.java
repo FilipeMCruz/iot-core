@@ -1,7 +1,7 @@
 package pt.sharespot.iot.core.sensor.routing.keys;
 
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
-import pt.sharespot.iot.core.keys.DataLegitimacyOptions;
+import pt.sharespot.iot.core.keys.OwnershipOptions;
 import pt.sharespot.iot.core.keys.RoutingKeyOption;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
 import pt.sharespot.iot.core.sensor.model.SensorDataDTO;
@@ -47,7 +47,7 @@ public class SensorRoutingKeys {
 
     public RoutingKeyOption<IlluminanceDataOptions> illuminance;
 
-    public RoutingKeyOption<DomainOwnershipOptions> ownership;
+    public RoutingKeyOption<OwnershipOptions> ownership;
 
     public RoutingKeyOption<TriggerDataOptions> trigger;
 
@@ -82,7 +82,7 @@ public class SensorRoutingKeys {
                              RoutingKeyOption<InfoTypeOptions> infoType,
                              String sensorTypeId,
                              String channel,
-                             RoutingKeyOption<DomainOwnershipOptions> ownership,
+                             RoutingKeyOption<OwnershipOptions> ownership,
                              RoutingKeyOption<RecordsOptions> records,
                              RoutingKeyOption<GPSDataOptions> gps,
                              RoutingKeyOption<TemperatureDataOptions> temperature,
@@ -241,7 +241,7 @@ public class SensorRoutingKeys {
 
         private String channel;
 
-        private RoutingKeyOption<DomainOwnershipOptions> ownership;
+        private RoutingKeyOption<OwnershipOptions> ownership;
 
         private RoutingKeyOption<RecordsOptions> records;
 
@@ -363,7 +363,7 @@ public class SensorRoutingKeys {
             return this;
         }
 
-        public Builder withOwnership(DomainOwnershipOptions ownership) {
+        public Builder withOwnership(OwnershipOptions ownership) {
             this.ownership = RoutingKeyOption.of(ownership);
             return this;
         }
@@ -470,7 +470,7 @@ public class SensorRoutingKeys {
             this.soilMoisture = RoutingKeyOption.of(SoilMoistureDataOptions.UNIDENTIFIED_SOIL_MOISTURE_DATA);
             this.illuminance = RoutingKeyOption.of(IlluminanceDataOptions.UNIDENTIFIED_ILLUMINANCE_DATA);
             this.legitimacy = RoutingKeyOption.of(DataLegitimacyOptions.UNKNOWN);
-            this.ownership = RoutingKeyOption.of(DomainOwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP);
+            this.ownership = RoutingKeyOption.of(OwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP);
             this.trigger = RoutingKeyOption.of(TriggerDataOptions.UNIDENTIFIED_TRIGGER_DATA);
             this.waterPressure = RoutingKeyOption.of(WaterPressureDataOptions.UNIDENTIFIED_WATER_PRESSURE_DATA);
             this.ph = RoutingKeyOption.of(PHDataOptions.UNIDENTIFIED_PH_DATA);
@@ -619,7 +619,7 @@ public class SensorRoutingKeys {
             this.infoType = InfoTypeOptions.extract(splinted[1]);
             this.sensorTypeId = splinted[2];
             this.channel = splinted[3];
-            this.ownership = DomainOwnershipOptions.extract(splinted[4]);
+            this.ownership = OwnershipOptions.extract(splinted[4]);
             this.records = RecordsOptions.extract(splinted[5]);
             this.legitimacy = DataLegitimacyOptions.extract(splinted[6]);
             this.gps = GPSDataOptions.extract(splinted[7]);

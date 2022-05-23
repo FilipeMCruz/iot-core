@@ -1,7 +1,8 @@
 package pt.sharespot.iot.core.sensor.mapper;
 
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
-import pt.sharespot.iot.core.keys.DataLegitimacyOptions;
+import pt.sharespot.iot.core.keys.OwnershipOptions;
+import pt.sharespot.iot.core.sensor.routing.keys.DataLegitimacyOptions;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
 import pt.sharespot.iot.core.sensor.buf.*;
 import pt.sharespot.iot.core.sensor.routing.keys.*;
@@ -324,7 +325,7 @@ public class RoutingKeysMapper {
         };
     }
 
-    private static DomainOwnershipOptionsBuf toBuf(DomainOwnershipOptions dto) {
+    private static DomainOwnershipOptionsBuf toBuf(OwnershipOptions dto) {
         return switch (dto) {
             case UNIDENTIFIED_DOMAIN_OWNERSHIP -> DomainOwnershipOptionsBuf.UNIDENTIFIED_DOMAIN_OWNERSHIP;
             case WITH_DOMAIN_OWNERSHIP -> DomainOwnershipOptionsBuf.WITH_DOMAIN_OWNERSHIP;
@@ -332,11 +333,11 @@ public class RoutingKeysMapper {
         };
     }
 
-    private static DomainOwnershipOptions toModel(DomainOwnershipOptionsBuf buf) {
+    private static OwnershipOptions toModel(DomainOwnershipOptionsBuf buf) {
         return switch (buf) {
-            default -> DomainOwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP;
-            case WITH_DOMAIN_OWNERSHIP -> DomainOwnershipOptions.WITH_DOMAIN_OWNERSHIP;
-            case WITHOUT_DOMAIN_OWNERSHIP -> DomainOwnershipOptions.WITHOUT_DOMAIN_OWNERSHIP;
+            default -> OwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP;
+            case WITH_DOMAIN_OWNERSHIP -> OwnershipOptions.WITH_DOMAIN_OWNERSHIP;
+            case WITHOUT_DOMAIN_OWNERSHIP -> OwnershipOptions.WITHOUT_DOMAIN_OWNERSHIP;
         };
     }
 

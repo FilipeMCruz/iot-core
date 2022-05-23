@@ -1,9 +1,6 @@
-package pt.sharespot.iot.core.sensor.routing.keys;
+package pt.sharespot.iot.core.keys;
 
-import pt.sharespot.iot.core.keys.RoutingKey;
-import pt.sharespot.iot.core.keys.RoutingKeyOption;
-
-public enum DomainOwnershipOptions implements RoutingKey {
+public enum OwnershipOptions implements RoutingKey {
     UNIDENTIFIED_DOMAIN_OWNERSHIP,
     WITH_DOMAIN_OWNERSHIP,
     WITHOUT_DOMAIN_OWNERSHIP;
@@ -22,13 +19,13 @@ public enum DomainOwnershipOptions implements RoutingKey {
         return this.toString().toLowerCase();
     }
 
-    public static RoutingKeyOption<DomainOwnershipOptions> extract(String value) {
+    public static RoutingKeyOption<OwnershipOptions> extract(String value) {
         if (value.equalsIgnoreCase("u")) {
-            return RoutingKeyOption.of(DomainOwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP);
+            return RoutingKeyOption.of(OwnershipOptions.UNIDENTIFIED_DOMAIN_OWNERSHIP);
         } else if (value.equalsIgnoreCase("y")) {
-            return RoutingKeyOption.of(DomainOwnershipOptions.WITH_DOMAIN_OWNERSHIP);
+            return RoutingKeyOption.of(OwnershipOptions.WITH_DOMAIN_OWNERSHIP);
         } else if (value.equalsIgnoreCase("n")) {
-            return RoutingKeyOption.of(DomainOwnershipOptions.WITHOUT_DOMAIN_OWNERSHIP);
+            return RoutingKeyOption.of(OwnershipOptions.WITHOUT_DOMAIN_OWNERSHIP);
         } else {
             return RoutingKeyOption.any();
         }
