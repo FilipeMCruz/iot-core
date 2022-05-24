@@ -14,6 +14,8 @@ public enum ContainerTypeOptions implements RoutingKey {
 
     ALERT_DISPATCHER,
 
+    RULE_MANAGEMENT,
+
     OTHER;
 
     public String value() {
@@ -29,6 +31,7 @@ public enum ContainerTypeOptions implements RoutingKey {
             case IDENTITY_MANAGEMENT -> "idman";
             case SMART_IRRIGATION -> "irrig";
             case ALERT_DISPATCHER -> "alert";
+            case RULE_MANAGEMENT -> "rules";
             case OTHER -> "other";
         };
     }
@@ -60,6 +63,8 @@ public enum ContainerTypeOptions implements RoutingKey {
             return ContainerTypeOptions.SMART_IRRIGATION.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("alert")) {
             return ContainerTypeOptions.ALERT_DISPATCHER.toString().toLowerCase();
+        } else if (value.equalsIgnoreCase("rules")) {
+            return ContainerTypeOptions.RULE_MANAGEMENT.toString().toLowerCase();
         } else if (value.equalsIgnoreCase("other")) {
             return ContainerTypeOptions.OTHER.toString().toLowerCase();
         } else {

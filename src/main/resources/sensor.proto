@@ -415,4 +415,5 @@ enum ContainerTypeOptionsBuf {
   SMART_IRRIGATION = 9;
   DEVICE_COMMANDER = 10;
   ALERT_DISPATCHER = 11;
+  RULE_MANAGEMENT = 12;
 }

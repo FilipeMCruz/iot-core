@@ -56,6 +56,10 @@ public enum ContainerTypeOptionsBuf
    * <code>ALERT_DISPATCHER = 11;</code>
    */
   ALERT_DISPATCHER(11),
+  /**
+   * <code>RULE_MANAGEMENT = 12;</code>
+   */
+  RULE_MANAGEMENT(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -107,6 +111,10 @@ public enum ContainerTypeOptionsBuf
    * <code>ALERT_DISPATCHER = 11;</code>
    */
   public static final int ALERT_DISPATCHER_VALUE = 11;
+  /**
+   * <code>RULE_MANAGEMENT = 12;</code>
+   */
+  public static final int RULE_MANAGEMENT_VALUE = 12;
 
 
   public final int getNumber() {
@@ -145,6 +153,7 @@ public enum ContainerTypeOptionsBuf
       case 9: return SMART_IRRIGATION;
       case 10: return DEVICE_COMMANDER;
       case 11: return ALERT_DISPATCHER;
+      case 12: return RULE_MANAGEMENT;
       default: return null;
     }
   }
