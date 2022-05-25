@@ -18,12 +18,16 @@ public class AlertRoutingKeys {
 
     public RoutingKeyOption<AlertCategoryOptions> categoryType;
 
-    public RoutingKeyOption<OwnershipOptions> legitimacyType;
+    public RoutingKeyOption<OwnershipOptions> ownershipType;
 
-    public AlertRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType, String version, RoutingKeyOption<AlertSeverityOptions> severityType, RoutingKeyOption<AlertCategoryOptions> categoryType, RoutingKeyOption<OwnershipOptions> legitimacyType) {
+    public AlertRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
+                            String version,
+                            RoutingKeyOption<AlertSeverityOptions> severityType,
+                            RoutingKeyOption<AlertCategoryOptions> categoryType,
+                            RoutingKeyOption<OwnershipOptions> ownershipType) {
         this.containerType = containerType;
         this.version = version;
-        this.legitimacyType = legitimacyType;
+        this.ownershipType = ownershipType;
         this.severityType = severityType;
         this.categoryType = categoryType;
     }
@@ -33,11 +37,11 @@ public class AlertRoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}", containerType.value(), version, legitimacyType.value(), categoryType.value(), severityType.value());
+        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}", containerType.value(), version, ownershipType.value(), categoryType.value(), severityType.value());
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}", containerType.details(), version, legitimacyType.details(), categoryType.details(), severityType.details());
+        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}", containerType.details(), version, ownershipType.details(), categoryType.details(), severityType.details());
     }
 
     public static Builder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -58,7 +62,7 @@ public class AlertRoutingKeys {
 
         private RoutingKeyOption<AlertCategoryOptions> categoryType;
 
-        private RoutingKeyOption<OwnershipOptions> legitimacyType;
+        private RoutingKeyOption<OwnershipOptions> ownershipType;
 
         private Builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.thisContainerType = RoutingKeyOption.of(type);
@@ -82,7 +86,7 @@ public class AlertRoutingKeys {
         }
 
         public Builder withOwnershipType(OwnershipOptions legitimacyType) {
-            this.legitimacyType = RoutingKeyOption.of(legitimacyType);
+            this.ownershipType = RoutingKeyOption.of(legitimacyType);
             return this;
         }
 
@@ -90,7 +94,15 @@ public class AlertRoutingKeys {
             this.containerType = this.containerType == null ? RoutingKeyOption.any() : this.containerType;
             this.categoryType = this.categoryType == null ? RoutingKeyOption.any() : this.categoryType;
             this.severityType = this.severityType == null ? RoutingKeyOption.any() : this.severityType;
-            this.legitimacyType = this.legitimacyType == null ? RoutingKeyOption.any() : this.legitimacyType;
+            this.ownershipType = this.ownershipType == null ? RoutingKeyOption.any() : this.ownershipType;
+            return build();
+        }
+
+        public Optional<AlertRoutingKeys> from(AlertRoutingKeys consumer) {
+            this.severityType = this.severityType == null ? consumer.severityType : this.severityType;
+            this.categoryType = this.categoryType == null ? consumer.categoryType : this.categoryType;
+            this.ownershipType = this.ownershipType == null ? consumer.ownershipType : this.ownershipType;
+            this.containerType = this.containerType == null ? consumer.containerType : this.containerType;
             return build();
         }
 
@@ -99,16 +111,16 @@ public class AlertRoutingKeys {
                 this.containerType = thisContainerType;
             }
 
-            var routingKeys = new AlertRoutingKeys(containerType, version, severityType, categoryType, legitimacyType);
+            var routingKeys = new AlertRoutingKeys(containerType, version, severityType, categoryType, ownershipType);
             return toOptional(routingKeys);
         }
 
         private Optional<AlertRoutingKeys> toOptional(AlertRoutingKeys routingKeys) {
-            if (routingKeys.containerType == null || routingKeys.severityType == null || routingKeys.categoryType == null || routingKeys.version == null || routingKeys.legitimacyType == null) {
+            if (routingKeys.containerType == null || routingKeys.severityType == null || routingKeys.categoryType == null || routingKeys.version == null || routingKeys.ownershipType == null) {
                 return Optional.empty();
             }
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
-                if (routingKeys.containerType.isAny() || routingKeys.severityType.isAny() || routingKeys.categoryType.isAny() || routingKeys.legitimacyType.isAny()) {
+                if (routingKeys.containerType.isAny() || routingKeys.severityType.isAny() || routingKeys.categoryType.isAny() || routingKeys.ownershipType.isAny()) {
                     return Optional.empty();
                 }
                 if (!routingKeys.categoryType.value().matches("^[a-zA-Z0-9]+$")) {

@@ -613,7 +613,7 @@ public class SensorRoutingKeys {
         public Optional<SensorRoutingKeys> from(String routingKeys) {
             var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
             var splinted = info.split("\\.");
-            if (splinted.length < 28) {
+            if (splinted.length < 31) {
                 return Optional.empty();
             }
             this.infoType = InfoTypeOptions.extract(splinted[1]);

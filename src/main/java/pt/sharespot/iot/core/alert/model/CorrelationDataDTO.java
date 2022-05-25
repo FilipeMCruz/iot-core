@@ -1,22 +1,28 @@
 package pt.sharespot.iot.core.alert.model;
 
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class CorrelationDataDTO {
 
-    public List<UUID> dataIds;
+    public Set<UUID> dataIds = new HashSet<>();
 
-    public List<UUID> deviceIds;
+    public Set<UUID> deviceIds = new HashSet<>();
 
-    public List<UUID> domainIds;
+    public Set<UUID> domainIds = new HashSet<>();
 
     public String other;
 
-    public CorrelationDataDTO(List<UUID> dataIds, List<UUID> deviceIds, List<UUID> domainIds, String other) {
+    public CorrelationDataDTO() {
+    }
+
+    public CorrelationDataDTO(Set<UUID> dataIds, Set<UUID> deviceIds, Set<UUID> domainIds, String other) {
         this.domainIds = domainIds;
         this.dataIds = dataIds;
         this.deviceIds = deviceIds;
         this.other = other;
+    }
+
+    public static CorrelationDataDTO empty() {
+        return new CorrelationDataDTO();
     }
 }

@@ -1,14 +1,12 @@
 package pt.sharespot.iot.core.alert.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class CorrelationDataBuilder {
-    private List<UUID> dataIds = new ArrayList<>();
-    private List<UUID> deviceIds = new ArrayList<>();
+    private Set<UUID> dataIds = new HashSet<>();
+    private Set<UUID> deviceIds = new HashSet<>();
 
-    public List<UUID> domainIds = new ArrayList<>();
+    public Set<UUID> domainIds = new HashSet<>();
     private String other = "none";
 
     public static CorrelationDataBuilder create() {
@@ -16,12 +14,12 @@ public class CorrelationDataBuilder {
     }
 
     public CorrelationDataBuilder setDataIds(UUID... dataIds) {
-        this.dataIds = List.of(dataIds);
+        this.dataIds = Set.of(dataIds);
         return this;
     }
 
     public CorrelationDataBuilder setDeviceIds(UUID... deviceIds) {
-        this.deviceIds = List.of(deviceIds);
+        this.deviceIds = Set.of(deviceIds);
         return this;
     }
 
