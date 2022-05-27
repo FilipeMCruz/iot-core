@@ -7,7 +7,7 @@ public class CorrelationDataBuilder {
     private Set<UUID> deviceIds = new HashSet<>();
 
     public Set<UUID> domainIds = new HashSet<>();
-    private String other = "none";
+    private String other = "";
 
     public static CorrelationDataBuilder create() {
         return new CorrelationDataBuilder();

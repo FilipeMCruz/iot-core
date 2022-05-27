@@ -2,8 +2,10 @@ package pt.sharespot.iot.core.alert.model;
 
 public class AlertBuilder {
     private String category;
+
+    private String subCategory;
     private String description;
-    private AlertLevelDTO level = AlertLevelDTO.INFORMATION;
+    private AlertLevel level = AlertLevel.INFORMATION;
     private CorrelationDataDTO context = CorrelationDataDTO.empty();
 
     private final Long reportedAt = System.currentTimeMillis();
@@ -17,12 +19,17 @@ public class AlertBuilder {
         return this;
     }
 
+    public AlertBuilder setSubCategory(String subCategory) {
+        this.subCategory = subCategory;
+        return this;
+    }
+
     public AlertBuilder setDescription(String description) {
         this.description = description;
         return this;
     }
 
-    public AlertBuilder setLevel(AlertLevelDTO level) {
+    public AlertBuilder setLevel(AlertLevel level) {
         this.level = level;
         return this;
     }
@@ -33,6 +40,6 @@ public class AlertBuilder {
     }
 
     public AlertDTO build() {
-        return new AlertDTO(category, description, level, reportedAt, context);
+        return new AlertDTO(category, subCategory, description, level, reportedAt, context);
     }
 }

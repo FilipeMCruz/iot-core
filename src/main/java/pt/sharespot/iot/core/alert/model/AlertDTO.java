@@ -8,9 +8,11 @@ public class AlertDTO {
 
     public String category;
 
+    public String subCategory;
+
     public String description;
 
-    public AlertLevelDTO level;
+    public AlertLevel level;
 
     public Long reportedAt;
 
@@ -19,9 +21,10 @@ public class AlertDTO {
     public AlertDTO() {
     }
 
-    public AlertDTO(String category, String description, AlertLevelDTO level, Long reportedAt, CorrelationDataDTO context) {
+    public AlertDTO(String category, String subCategory, String description, AlertLevel level, Long reportedAt, CorrelationDataDTO context) {
         this.id = UUID.randomUUID();
         this.category = category;
+        this.subCategory = subCategory;
         this.description = description;
         this.level = level;
         this.reportedAt = reportedAt;

@@ -1,12 +1,18 @@
 package pt.sharespot.iot.core.alert.routing.keys;
 
-import pt.sharespot.iot.core.alert.model.AlertLevelDTO;
+import pt.sharespot.iot.core.alert.model.AlertLevel;
 import pt.sharespot.iot.core.keys.RoutingKey;
 import pt.sharespot.iot.core.keys.RoutingKeyOption;
+
+import java.util.Locale;
 
 public enum AlertSeverityOptions implements RoutingKey {
 
     INFORMATION,
+
+    WATCH,
+
+    ADVISORY,
 
     WARNING,
 
@@ -21,25 +27,20 @@ public enum AlertSeverityOptions implements RoutingKey {
     }
 
     public static RoutingKeyOption<AlertSeverityOptions> extract(String value) {
-        if (value.equalsIgnoreCase(INFORMATION.value())) {
-            return RoutingKeyOption.of(AlertSeverityOptions.INFORMATION);
-        } else if (value.equalsIgnoreCase(WARNING.value())) {
-            return RoutingKeyOption.of(AlertSeverityOptions.WARNING);
-        } else if (value.equalsIgnoreCase(CRITICAL.value())) {
-            return RoutingKeyOption.of(AlertSeverityOptions.CRITICAL);
-        } else {
+        try {
+            return RoutingKeyOption.of(AlertSeverityOptions.valueOf(value.toUpperCase(Locale.ROOT)));
+        } catch (IllegalArgumentException ex) {
             return RoutingKeyOption.any();
         }
     }
 
-    public static AlertSeverityOptions extract(AlertLevelDTO dto) {
-        if (dto.equals(AlertLevelDTO.INFORMATION)) {
-            return INFORMATION;
-        } else if (dto.equals(AlertLevelDTO.WARNING)) {
-            return WARNING;
-        } else if (dto.equals(AlertLevelDTO.CRITICAL)) {
-            return CRITICAL;
-        }
-        return INFORMATION;
+    public static AlertSeverityOptions extract(AlertLevel dto) {
+        return switch (dto) {
+            case INFORMATION -> INFORMATION;
+            case WATCH -> WATCH;
+            case ADVISORY -> ADVISORY;
+            case WARNING -> WARNING;
+            case CRITICAL -> CRITICAL;
+        };
     }
 }
