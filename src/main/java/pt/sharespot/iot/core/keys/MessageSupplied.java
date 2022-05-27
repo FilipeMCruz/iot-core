@@ -1,6 +1,4 @@
-package pt.sharespot.iot.core.sensor.routing;
-
-import pt.sharespot.iot.core.sensor.routing.keys.SensorRoutingKeys;
+package pt.sharespot.iot.core.keys;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -12,20 +10,20 @@ public class MessageSupplied<A> {
 
     public UUID oid;
 
-    public SensorRoutingKeys routingKeys;
+    public RoutingKeys routingKeys;
 
     public A data;
 
     public int hops;
 
-    private MessageSupplied(UUID id, int hops, A updateData, SensorRoutingKeys updateRoutingKeys) {
+    private MessageSupplied(UUID id, int hops, A updateData, RoutingKeys updateRoutingKeys) {
         this.oid = id;
         this.hops = hops;
         this.routingKeys = updateRoutingKeys;
         this.data = updateData;
     }
 
-    public static <T, A> Optional<MessageSupplied<A>> from(MessageConsumed<T> message, A updateData, SensorRoutingKeys updateRoutingKeys) {
+    public static <T, A> Optional<MessageSupplied<A>> from(MessageConsumed<T> message, A updateData, RoutingKeys updateRoutingKeys) {
         int hops = message.hops + 1;
         if (hops >= TIME_TO_LIVE) {
             return Optional.empty();
@@ -33,7 +31,7 @@ public class MessageSupplied<A> {
         return Optional.of(new MessageSupplied<>(message.oid, hops, updateData, updateRoutingKeys));
     }
 
-    public static <A> MessageSupplied<A> create(A data, SensorRoutingKeys routingKeys) {
+    public static <A> MessageSupplied<A> create(A data, RoutingKeys routingKeys) {
         return new MessageSupplied<>(UUID.randomUUID(), 0, data, routingKeys);
     }
 

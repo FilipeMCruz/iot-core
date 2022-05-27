@@ -5,11 +5,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.protobuf.InvalidProtocolBufferException;
 import pt.sharespot.iot.core.sensor.mapper.data.DataMapper;
-import pt.sharespot.iot.core.sensor.routing.MessageConsumed;
-import pt.sharespot.iot.core.sensor.routing.MessageSupplied;
+import pt.sharespot.iot.core.keys.MessageConsumed;
+import pt.sharespot.iot.core.keys.MessageSupplied;
 import pt.sharespot.iot.core.sensor.buf.Message;
 import pt.sharespot.iot.core.sensor.buf.UnprocessedMessage;
 import pt.sharespot.iot.core.sensor.model.SensorDataDTO;
+import pt.sharespot.iot.core.sensor.routing.keys.SensorRoutingKeys;
 
 import java.util.UUID;
 
@@ -19,7 +20,7 @@ public class MessageMapper {
         return Message.newBuilder()
                 .setOid(message.oid.toString())
                 .setHops(message.hops)
-                .setRoutingKeys(RoutingKeysMapper.toBuf(message.routingKeys))
+                .setRoutingKeys(RoutingKeysMapper.toBuf((SensorRoutingKeys) message.routingKeys))
                 .setData(DataMapper.toBuf(message.data))
                 .build();
     }
@@ -28,7 +29,7 @@ public class MessageMapper {
         return UnprocessedMessage.newBuilder()
                 .setOid(message.oid.toString())
                 .setHops(message.hops)
-                .setRoutingKeys(RoutingKeysMapper.toBuf(message.routingKeys))
+                .setRoutingKeys(RoutingKeysMapper.toBuf((SensorRoutingKeys) message.routingKeys))
                 .setUnprocessedData(message.data.toString())
                 .build();
     }

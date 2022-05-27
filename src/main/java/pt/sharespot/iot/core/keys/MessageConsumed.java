@@ -1,6 +1,4 @@
-package pt.sharespot.iot.core.sensor.routing;
-
-import pt.sharespot.iot.core.sensor.routing.keys.SensorRoutingKeys;
+package pt.sharespot.iot.core.keys;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -11,7 +9,7 @@ public class MessageConsumed<T> {
 
     public UUID oid;
 
-    public SensorRoutingKeys routingKeys;
+    public RoutingKeys routingKeys;
 
     public T data;
 
@@ -29,7 +27,7 @@ public class MessageConsumed<T> {
      * @param <A>               data type in message supplied
      * @return if everything goes well, new message supplied updated, else empty object
      */
-    public <A> Optional<MessageSupplied<A>> toSupplied(BiFunction<T, SensorRoutingKeys, Optional<A>> updateData, BiFunction<A, SensorRoutingKeys, Optional<SensorRoutingKeys>> updateRoutingKeys) {
+    public <A> Optional<MessageSupplied<A>> toSupplied(BiFunction<T, RoutingKeys, Optional<A>> updateData, BiFunction<A, RoutingKeys, Optional<RoutingKeys>> updateRoutingKeys) {
         return updateData.apply(data, routingKeys)
                 .flatMap(data -> updateRoutingKeys.apply(data, this.routingKeys)
                         .flatMap(keys -> MessageSupplied.from(this, data, keys)));

@@ -2,12 +2,13 @@ package pt.sharespot.iot.core.internal.routing.keys;
 
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
 import pt.sharespot.iot.core.keys.RoutingKeyOption;
+import pt.sharespot.iot.core.keys.RoutingKeys;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
 
 import java.text.MessageFormat;
 import java.util.Optional;
 
-public class InternalRoutingKeys {
+public class InternalRoutingKeys implements RoutingKeys {
 
     public String version;
 
@@ -30,6 +31,11 @@ public class InternalRoutingKeys {
     @Override
     public String toString() {
         return MessageFormat.format("{0}.{1}.internal.{2}.{3}", containerType.value(), version, contextType.value(), operationType.value());
+    }
+
+    @Override
+    public String keys() {
+        return toString();
     }
 
     public String details() {

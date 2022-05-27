@@ -1,14 +1,12 @@
 package pt.sharespot.iot.core.alert.routing.keys;
 
-import pt.sharespot.iot.core.keys.ContainerTypeOptions;
-import pt.sharespot.iot.core.keys.OwnershipOptions;
-import pt.sharespot.iot.core.keys.RoutingKeyOption;
-import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
+import pt.sharespot.iot.core.alert.model.AlertDTO;
+import pt.sharespot.iot.core.keys.*;
 
 import java.text.MessageFormat;
 import java.util.Optional;
 
-public class AlertRoutingKeys {
+public class AlertRoutingKeys implements RoutingKeys {
 
     public String version;
 
@@ -37,6 +35,11 @@ public class AlertRoutingKeys {
     @Override
     public String toString() {
         return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}.{5}", containerType.value(), version, ownershipType.value(), categoryType.value(), subCategoryType.value(), severityType.value());
+    }
+
+    @Override
+    public String keys() {
+        return toString();
     }
 
     public String details() {
@@ -93,6 +96,13 @@ public class AlertRoutingKeys {
 
         public Builder withOwnershipType(OwnershipOptions legitimacyType) {
             this.ownershipType = RoutingKeyOption.of(legitimacyType);
+            return this;
+        }
+
+        public Builder withAlert(AlertDTO alert) {
+            this.categoryType = RoutingKeyOption.of(AlertCategoryOptions.of(alert.category));
+            this.subCategoryType = RoutingKeyOption.of(AlertSubCategoryOptions.of(alert.subCategory));
+            this.severityType = RoutingKeyOption.of(AlertSeverityOptions.extract(alert.level));
             return this;
         }
 

@@ -1,9 +1,6 @@
 package pt.sharespot.iot.core.sensor.routing.keys;
 
-import pt.sharespot.iot.core.keys.ContainerTypeOptions;
-import pt.sharespot.iot.core.keys.OwnershipOptions;
-import pt.sharespot.iot.core.keys.RoutingKeyOption;
-import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
+import pt.sharespot.iot.core.keys.*;
 import pt.sharespot.iot.core.sensor.model.SensorDataDTO;
 import pt.sharespot.iot.core.sensor.model.properties.PropertyName;
 import pt.sharespot.iot.core.sensor.routing.keys.data.*;
@@ -11,7 +8,7 @@ import pt.sharespot.iot.core.sensor.routing.keys.data.*;
 import java.text.MessageFormat;
 import java.util.Optional;
 
-public class SensorRoutingKeys {
+public class SensorRoutingKeys implements RoutingKeys {
 
     public String version;
 
@@ -181,6 +178,11 @@ public class SensorRoutingKeys {
                 voc.value(),
                 pm2_5.value(),
                 pm10.value());
+    }
+
+    @Override
+    public String keys() {
+        return toString();
     }
 
     public String details() {
