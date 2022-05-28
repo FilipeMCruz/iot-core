@@ -3,6 +3,8 @@ package pt.sharespot.iot.core.internal.routing.keys;
 import pt.sharespot.iot.core.keys.RoutingKey;
 import pt.sharespot.iot.core.keys.RoutingKeyOption;
 
+import java.util.Locale;
+
 public enum OperationTypeOptions implements RoutingKey {
     REQUEST,
     INFO,
@@ -17,17 +19,10 @@ public enum OperationTypeOptions implements RoutingKey {
     }
 
     public static RoutingKeyOption<OperationTypeOptions> extract(String value) {
-
-        if (value.equalsIgnoreCase(OperationTypeOptions.REQUEST.value())) {
-            return RoutingKeyOption.of(OperationTypeOptions.REQUEST);
+        try {
+            return RoutingKeyOption.of(OperationTypeOptions.valueOf(value.toUpperCase(Locale.ROOT)));
+        } catch (IllegalArgumentException ex) {
+            return RoutingKeyOption.any();
         }
-        if (value.equalsIgnoreCase(OperationTypeOptions.INFO.value())) {
-            return RoutingKeyOption.of(OperationTypeOptions.INFO);
-        }
-        if (value.equalsIgnoreCase(OperationTypeOptions.PING.value())) {
-            return RoutingKeyOption.of(OperationTypeOptions.PING);
-        }
-
-        return RoutingKeyOption.any();
     }
 }
