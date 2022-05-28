@@ -437,15 +437,16 @@ public final class Sensor {
       "\n\024UNIDENTIFIED_RECORDS\020\000\022\020\n\014WITH_RECORDS" +
       "\020\001\022\023\n\017WITHOUT_RECORDS\020\002*=\n\022InfoTypeOptio" +
       "nsBuf\022\013\n\007ENCODED\020\000\022\013\n\007DECODED\020\001\022\r\n\tPROCE" +
-      "SSED\020\002*\235\002\n\027ContainerTypeOptionsBuf\022\t\n\005OT" +
+      "SSED\020\002*\272\002\n\027ContainerTypeOptionsBuf\022\t\n\005OT" +
       "HER\020\000\022\020\n\014DATA_GATEWAY\020\001\022\022\n\016DATA_PROCESSO" +
       "R\020\002\022\020\n\014DATA_DECODER\020\003\022\022\n\016DATA_VALIDATOR\020" +
       "\004\022\016\n\nDATA_STORE\020\005\022\027\n\023IDENTITY_MANAGEMENT" +
       "\020\006\022\025\n\021DEVICE_MANAGEMENT\020\007\022\024\n\020FLEET_MANAG" +
       "EMENT\020\010\022\024\n\020SMART_IRRIGATION\020\t\022\024\n\020DEVICE_" +
       "COMMANDER\020\n\022\024\n\020ALERT_DISPATCHER\020\013\022\023\n\017RUL" +
-      "E_MANAGEMENT\020\014B$\n pt.sharespot.iot.core." +
-      "sensor.bufP\001b\006proto3"
+      "E_MANAGEMENT\020\014\022\033\n\027NOTIFICATION_MANAGEMEN" +
+      "T\020\rB$\n pt.sharespot.iot.core.sensor.bufP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

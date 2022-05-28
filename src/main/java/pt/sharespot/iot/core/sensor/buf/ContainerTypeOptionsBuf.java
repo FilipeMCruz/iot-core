@@ -60,6 +60,10 @@ public enum ContainerTypeOptionsBuf
    * <code>RULE_MANAGEMENT = 12;</code>
    */
   RULE_MANAGEMENT(12),
+  /**
+   * <code>NOTIFICATION_MANAGEMENT = 13;</code>
+   */
+  NOTIFICATION_MANAGEMENT(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -115,6 +119,10 @@ public enum ContainerTypeOptionsBuf
    * <code>RULE_MANAGEMENT = 12;</code>
    */
   public static final int RULE_MANAGEMENT_VALUE = 12;
+  /**
+   * <code>NOTIFICATION_MANAGEMENT = 13;</code>
+   */
+  public static final int NOTIFICATION_MANAGEMENT_VALUE = 13;
 
 
   public final int getNumber() {
@@ -154,6 +162,7 @@ public enum ContainerTypeOptionsBuf
       case 10: return DEVICE_COMMANDER;
       case 11: return ALERT_DISPATCHER;
       case 12: return RULE_MANAGEMENT;
+      case 13: return NOTIFICATION_MANAGEMENT;
       default: return null;
     }
   }

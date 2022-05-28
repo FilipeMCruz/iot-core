@@ -6,8 +6,15 @@ import pt.sharespot.iot.core.keys.RoutingKeyOption;
 import java.util.Locale;
 
 public enum OperationTypeOptions implements RoutingKey {
-    REQUEST,
+    
+    SYNC,
+    
     INFO,
+    
+    REQUEST,
+    
+    INIT,
+    
     PING;
 
     public String value() {

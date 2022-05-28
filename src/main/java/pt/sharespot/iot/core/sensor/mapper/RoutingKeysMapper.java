@@ -549,6 +549,7 @@ public class RoutingKeysMapper {
             case SMART_IRRIGATION -> ContainerTypeOptionsBuf.SMART_IRRIGATION;
             case ALERT_DISPATCHER -> ContainerTypeOptionsBuf.ALERT_DISPATCHER;
             case RULE_MANAGEMENT -> ContainerTypeOptionsBuf.RULE_MANAGEMENT;
+            case NOTIFICATION_MANAGEMENT -> ContainerTypeOptionsBuf.NOTIFICATION_MANAGEMENT;
         };
     }
 
@@ -567,6 +568,7 @@ public class RoutingKeysMapper {
             case SMART_IRRIGATION -> ContainerTypeOptions.SMART_IRRIGATION;
             case ALERT_DISPATCHER -> ContainerTypeOptions.ALERT_DISPATCHER;
             case RULE_MANAGEMENT -> ContainerTypeOptions.RULE_MANAGEMENT;
+            case NOTIFICATION_MANAGEMENT -> ContainerTypeOptions.NOTIFICATION_MANAGEMENT;
         };
     }
 }
