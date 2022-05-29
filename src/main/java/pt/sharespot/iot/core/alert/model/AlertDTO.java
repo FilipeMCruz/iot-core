@@ -14,20 +14,18 @@ public class AlertDTO {
 
     public AlertLevel level;
 
-    public Long reportedAt;
+    public Long reportedAt = System.currentTimeMillis();
 
     public CorrelationDataDTO context;
 
     public AlertDTO() {
     }
 
-    public AlertDTO(String category, String subCategory, String description, AlertLevel level, Long reportedAt, CorrelationDataDTO context) {
-        this.id = UUID.randomUUID();
+    public AlertDTO(String category, String subCategory, String description, AlertLevel level, CorrelationDataDTO context) {
         this.category = category;
         this.subCategory = subCategory;
         this.description = description;
         this.level = level;
-        this.reportedAt = reportedAt;
         this.context = context;
     }
 }

@@ -5,11 +5,11 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.BiFunction;
 
-public class MessageConsumed<T> {
+public class MessageConsumed<T, R extends RoutingKeys> {
 
     public UUID oid;
 
-    public RoutingKeys routingKeys;
+    public R routingKeys;
 
     public T data;
 
@@ -27,7 +27,7 @@ public class MessageConsumed<T> {
      * @param <A>               data type in message supplied
      * @return if everything goes well, new message supplied updated, else empty object
      */
-    public <A> Optional<MessageSupplied<A>> toSupplied(BiFunction<T, RoutingKeys, Optional<A>> updateData, BiFunction<A, RoutingKeys, Optional<RoutingKeys>> updateRoutingKeys) {
+    public <A> Optional<MessageSupplied<A, R>> toSupplied(BiFunction<T, R, Optional<A>> updateData, BiFunction<A, R, Optional<R>> updateRoutingKeys) {
         return updateData.apply(data, routingKeys)
                 .flatMap(data -> updateRoutingKeys.apply(data, this.routingKeys)
                         .flatMap(keys -> MessageSupplied.from(this, data, keys)));
@@ -38,7 +38,7 @@ public class MessageConsumed<T> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        MessageConsumed<?> that = (MessageConsumed<?>) o;
+        MessageConsumed<?, ?> that = (MessageConsumed<?, ?>) o;
 
         return Objects.equals(oid, that.oid);
     }

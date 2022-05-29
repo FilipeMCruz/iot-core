@@ -16,30 +16,30 @@ import java.util.UUID;
 
 public class MessageMapper {
 
-    public static Message toBuf(MessageSupplied<SensorDataDTO> message) {
+    public static Message toBuf(MessageSupplied<SensorDataDTO, SensorRoutingKeys> message) {
         return Message.newBuilder()
                 .setOid(message.oid.toString())
                 .setHops(message.hops)
-                .setRoutingKeys(RoutingKeysMapper.toBuf((SensorRoutingKeys) message.routingKeys))
+                .setRoutingKeys(RoutingKeysMapper.toBuf(message.routingKeys))
                 .setData(DataMapper.toBuf(message.data))
                 .build();
     }
 
-    public static UnprocessedMessage toUnprocessedBuf(MessageSupplied<ObjectNode> message) {
+    public static UnprocessedMessage toUnprocessedBuf(MessageSupplied<ObjectNode, SensorRoutingKeys> message) {
         return UnprocessedMessage.newBuilder()
                 .setOid(message.oid.toString())
                 .setHops(message.hops)
-                .setRoutingKeys(RoutingKeysMapper.toBuf((SensorRoutingKeys) message.routingKeys))
+                .setRoutingKeys(RoutingKeysMapper.toBuf(message.routingKeys))
                 .setUnprocessedData(message.data.toString())
                 .build();
     }
 
-    public static MessageConsumed<ObjectNode> toUnprocessedModel(byte[] message) throws InvalidProtocolBufferException, JsonProcessingException {
+    public static MessageConsumed<ObjectNode, SensorRoutingKeys> toUnprocessedModel(byte[] message) throws InvalidProtocolBufferException, JsonProcessingException {
         return MessageMapper.toUnprocessedModel(UnprocessedMessage.parseFrom(message));
     }
 
-    private static MessageConsumed<ObjectNode> toUnprocessedModel(UnprocessedMessage message) throws JsonProcessingException {
-        var consumed = new MessageConsumed<ObjectNode>();
+    private static MessageConsumed<ObjectNode,SensorRoutingKeys> toUnprocessedModel(UnprocessedMessage message) throws JsonProcessingException {
+        var consumed = new MessageConsumed<ObjectNode,SensorRoutingKeys>();
         consumed.hops = message.getHops();
         consumed.oid = UUID.fromString(message.getOid());
         consumed.routingKeys = RoutingKeysMapper.toModel(message.getRoutingKeys());
@@ -47,12 +47,12 @@ public class MessageMapper {
         return consumed;
     }
 
-    public static MessageConsumed<SensorDataDTO> toModel(byte[] message) throws InvalidProtocolBufferException {
+    public static MessageConsumed<SensorDataDTO,SensorRoutingKeys> toModel(byte[] message) throws InvalidProtocolBufferException {
         return MessageMapper.toModel(Message.parseFrom(message));
     }
 
-    private static MessageConsumed<SensorDataDTO> toModel(Message message) {
-        var consumed = new MessageConsumed<SensorDataDTO>();
+    private static MessageConsumed<SensorDataDTO, SensorRoutingKeys> toModel(Message message) {
+        var consumed = new MessageConsumed<SensorDataDTO, SensorRoutingKeys>();
         consumed.hops = message.getHops();
         consumed.oid = UUID.fromString(message.getOid());
         consumed.routingKeys = RoutingKeysMapper.toModel(message.getRoutingKeys());

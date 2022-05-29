@@ -4,11 +4,9 @@ public class AlertBuilder {
     private String category;
 
     private String subCategory;
-    private String description;
+    private String description = "";
     private AlertLevel level = AlertLevel.INFORMATION;
     private CorrelationDataDTO context = CorrelationDataDTO.empty();
-
-    private final Long reportedAt = System.currentTimeMillis();
 
     public static AlertBuilder create() {
         return new AlertBuilder();
@@ -40,6 +38,6 @@ public class AlertBuilder {
     }
 
     public AlertDTO build() {
-        return new AlertDTO(category, subCategory, description, level, reportedAt, context);
+        return new AlertDTO(category, subCategory, description, level, context);
     }
 }
