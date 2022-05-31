@@ -5,14 +5,12 @@ import pt.sharespot.iot.core.keys.RoutingKeyOption;
 
 public class AlertSubCategoryOptions implements RoutingKey {
 
-    private final String subCategory;
+    public String subCategory;
 
-    public AlertSubCategoryOptions(String subCategory) {
-        this.subCategory = subCategory;
-    }
-
-    public static AlertSubCategoryOptions of(String category) {
-        return new AlertSubCategoryOptions(category);
+    public static AlertSubCategoryOptions of(String subCategory) {
+        var alertCategoryOptions = new AlertSubCategoryOptions();
+        alertCategoryOptions.subCategory = subCategory;
+        return alertCategoryOptions;
     }
 
     public static RoutingKeyOption<AlertSubCategoryOptions> extract(String s) {

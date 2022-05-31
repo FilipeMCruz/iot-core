@@ -16,7 +16,7 @@ public class AlertRoutingKeys implements RoutingKeys {
 
     public RoutingKeyOption<AlertCategoryOptions> categoryType;
 
-    private RoutingKeyOption<AlertSubCategoryOptions> subCategoryType;
+    public RoutingKeyOption<AlertSubCategoryOptions> subCategoryType;
 
     public RoutingKeyOption<OwnershipOptions> ownershipType;
 
