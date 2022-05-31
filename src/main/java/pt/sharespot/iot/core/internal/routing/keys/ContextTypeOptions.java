@@ -17,6 +17,8 @@ public enum ContextTypeOptions implements RoutingKey {
 
     TENANT_IDENTITY,
 
+    ADDRESSEE_CONFIGURATION,
+
     RULE_MANAGEMENT;
 
     public String value() {

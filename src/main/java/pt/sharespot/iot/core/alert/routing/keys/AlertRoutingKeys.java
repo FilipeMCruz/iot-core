@@ -20,7 +20,12 @@ public class AlertRoutingKeys implements RoutingKeys {
 
     public RoutingKeyOption<OwnershipOptions> ownershipType;
 
-    public AlertRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType, String version, RoutingKeyOption<AlertSeverityOptions> severityType, RoutingKeyOption<AlertCategoryOptions> categoryType, RoutingKeyOption<AlertSubCategoryOptions> subCategoryType, RoutingKeyOption<OwnershipOptions> ownershipType) {
+    public AlertRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
+                            String version,
+                            RoutingKeyOption<AlertSeverityOptions> severityType,
+                            RoutingKeyOption<AlertCategoryOptions> categoryType,
+                            RoutingKeyOption<AlertSubCategoryOptions> subCategoryType,
+                            RoutingKeyOption<OwnershipOptions> ownershipType) {
         this.containerType = containerType;
         this.version = version;
         this.ownershipType = ownershipType;
@@ -34,7 +39,13 @@ public class AlertRoutingKeys implements RoutingKeys {
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}.{5}", containerType.value(), version, ownershipType.value(), categoryType.value(), subCategoryType.value(), severityType.value());
+        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}.{5}",
+                containerType.value(),
+                version,
+                ownershipType.value(),
+                categoryType.value(),
+                subCategoryType.value(),
+                severityType.value());
     }
 
     @Override
@@ -43,7 +54,13 @@ public class AlertRoutingKeys implements RoutingKeys {
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}.{5}", containerType.details(), version, ownershipType.details(), categoryType.details(), subCategoryType.value(), severityType.details());
+        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}.{5}",
+                containerType.details(),
+                version,
+                ownershipType.details(),
+                categoryType.details(),
+                subCategoryType.value(),
+                severityType.details());
     }
 
     public static Builder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
