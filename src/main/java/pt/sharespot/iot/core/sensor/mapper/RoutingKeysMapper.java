@@ -12,11 +12,11 @@ public class RoutingKeysMapper {
 
     public static RoutingKeysBuf.Builder toBuf(SensorRoutingKeys dto) {
         return RoutingKeysBuf.newBuilder()
-                .setVersion(dto.version)
+                .setVersion(dto.version.value())
                 .setContainerType(toBuf(dto.containerType.get()))
                 .setInfoType(toBuf(dto.infoType.get()))
-                .setSensorType(dto.sensorTypeId)
-                .setChannel(dto.channel)
+                .setSensorType(dto.sensorTypeId.value())
+                .setChannel(dto.channel.value())
                 .setRecords(toBuf(dto.records.get()))
                 .setGps(toBuf(dto.gps.get()))
                 .setTemperature(toBuf(dto.temperature.get()))

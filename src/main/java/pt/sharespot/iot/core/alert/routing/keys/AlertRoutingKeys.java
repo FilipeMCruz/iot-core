@@ -3,12 +3,13 @@ package pt.sharespot.iot.core.alert.routing.keys;
 import pt.sharespot.iot.core.alert.model.AlertDTO;
 import pt.sharespot.iot.core.keys.*;
 
-import java.text.MessageFormat;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class AlertRoutingKeys implements RoutingKeys {
 
-    public String version;
+    public RoutingKeyOption<ProtocolVersionOptions> version;
 
     public RoutingKeyOption<ContainerTypeOptions> containerType;
 
@@ -21,7 +22,7 @@ public class AlertRoutingKeys implements RoutingKeys {
     public RoutingKeyOption<OwnershipOptions> ownershipType;
 
     public AlertRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
-                            String version,
+                            RoutingKeyOption<ProtocolVersionOptions> version,
                             RoutingKeyOption<AlertSeverityOptions> severityType,
                             RoutingKeyOption<AlertCategoryOptions> categoryType,
                             RoutingKeyOption<AlertSubCategoryOptions> subCategoryType,
@@ -37,15 +38,15 @@ public class AlertRoutingKeys implements RoutingKeys {
     public AlertRoutingKeys() {
     }
 
+    private Stream<RoutingKeyOption<? extends RoutingKey>> orderedKeys() {
+        return Stream.of(containerType, version, RoutingKeyOption.of(ExchangeOptions.of("alert")), ownershipType, categoryType, subCategoryType, severityType);
+    }
+
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}.{5}",
-                containerType.value(),
-                version,
-                ownershipType.value(),
-                categoryType.value(),
-                subCategoryType.value(),
-                severityType.value());
+        return orderedKeys()
+                .map(RoutingKeyOption::value)
+                .collect(Collectors.joining("."));
     }
 
     @Override
@@ -53,14 +54,11 @@ public class AlertRoutingKeys implements RoutingKeys {
         return toString();
     }
 
+    @Override
     public String details() {
-        return MessageFormat.format("{0}.{1}.alert.{2}.{3}.{4}.{5}",
-                containerType.details(),
-                version,
-                ownershipType.details(),
-                categoryType.details(),
-                subCategoryType.value(),
-                severityType.details());
+        return orderedKeys()
+                .map(RoutingKeyOption::details)
+                .collect(Collectors.joining("."));
     }
 
     public static Builder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -71,7 +69,7 @@ public class AlertRoutingKeys implements RoutingKeys {
 
         private final RoutingKeyOption<ContainerTypeOptions> thisContainerType;
 
-        private final String version;
+        private final RoutingKeyOption<ProtocolVersionOptions> version;
 
         private final RoutingKeysBuilderOptions options;
 
@@ -87,7 +85,7 @@ public class AlertRoutingKeys implements RoutingKeys {
 
         private Builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.thisContainerType = RoutingKeyOption.of(type);
-            this.version = version;
+            this.version = RoutingKeyOption.of(ProtocolVersionOptions.of(version));
             this.options = options;
         }
 

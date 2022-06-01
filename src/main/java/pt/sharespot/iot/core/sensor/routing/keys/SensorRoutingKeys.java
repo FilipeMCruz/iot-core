@@ -7,18 +7,20 @@ import pt.sharespot.iot.core.sensor.routing.keys.data.*;
 
 import java.text.MessageFormat;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SensorRoutingKeys implements RoutingKeys {
 
-    public String version;
+    public RoutingKeyOption<ProtocolVersionOptions> version;
 
     public RoutingKeyOption<ContainerTypeOptions> containerType;
 
     public RoutingKeyOption<InfoTypeOptions> infoType;
 
-    public String sensorTypeId;
+    public RoutingKeyOption<SensorTypeOptions> sensorTypeId;
 
-    public String channel;
+    public RoutingKeyOption<ChannelOptions> channel;
 
     public RoutingKeyOption<RecordsOptions> records;
 
@@ -75,10 +77,10 @@ public class SensorRoutingKeys implements RoutingKeys {
     public RoutingKeyOption<PM10DataOptions> pm10;
 
     public SensorRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
-                             String version,
+                             RoutingKeyOption<ProtocolVersionOptions> version,
                              RoutingKeyOption<InfoTypeOptions> infoType,
-                             String sensorTypeId,
-                             String channel,
+                             RoutingKeyOption<SensorTypeOptions> sensorTypeId,
+                             RoutingKeyOption<ChannelOptions> channel,
                              RoutingKeyOption<OwnershipOptions> ownership,
                              RoutingKeyOption<RecordsOptions> records,
                              RoutingKeyOption<GPSDataOptions> gps,
@@ -143,41 +145,18 @@ public class SensorRoutingKeys implements RoutingKeys {
     public SensorRoutingKeys() {
     }
 
+    private Stream<RoutingKeyOption<? extends RoutingKey>> orderedKeys() {
+        return Stream.of(containerType, version, RoutingKeyOption.of(ExchangeOptions.of("data")), infoType,
+                sensorTypeId, channel, ownership, records, legitimacy, gps, temperature, aqi, airHumidity,
+                motion, velocity, airPressure, soilMoisture, illuminance, trigger, battery, waterPressure,
+                ph, distance, occupation, soilConductivity, co2, co, nh3, no2, o3, voc, pm2_5, pm10);
+    }
+
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.{24}.{25}.{26}.{27}.{28}.{29}.{30}.{31}.#",
-                containerType.value(),
-                version,
-                infoType.value(),
-                sensorTypeId,
-                channel,
-                ownership.value(),
-                records.value(),
-                legitimacy.value(),
-                gps.value(),
-                temperature.value(),
-                aqi.value(),
-                airHumidity.value(),
-                motion.value(),
-                velocity.value(),
-                airPressure.value(),
-                soilMoisture.value(),
-                illuminance.value(),
-                trigger.value(),
-                battery.value(),
-                waterPressure.value(),
-                ph.value(),
-                distance.value(),
-                occupation.value(),
-                soilConductivity.value(),
-                co2.value(),
-                co.value(),
-                nh3.value(),
-                no2.value(),
-                o3.value(),
-                voc.value(),
-                pm2_5.value(),
-                pm10.value());
+        return orderedKeys()
+                .map(RoutingKeyOption::value)
+                .collect(Collectors.joining(".", "", ".#"));
     }
 
     @Override
@@ -186,39 +165,9 @@ public class SensorRoutingKeys implements RoutingKeys {
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.data.{2}.{3}.{4}.{5}.{6}.{7}.{8}.{9}.{10}.{11}.{12}.{13}.{14}.{15}.{16}.{17}.{18}.{19}.{20}.{21}.{22}.{23}.{24}.{25}.{26}.{27}.{28}.{29}.{30}.{31}.#",
-                containerType.details(),
-                version,
-                infoType.details(),
-                sensorTypeId,
-                channel,
-                ownership.details(),
-                records.details(),
-                legitimacy.details(),
-                gps.details(),
-                temperature.details(),
-                aqi.details(),
-                airHumidity.details(),
-                motion.details(),
-                velocity.details(),
-                airPressure.details(),
-                soilMoisture.details(),
-                illuminance.details(),
-                trigger.details(),
-                battery.details(),
-                waterPressure.details(),
-                ph.details(),
-                distance.details(),
-                occupation.details(),
-                soilConductivity.details(),
-                co2.details(),
-                co.details(),
-                nh3.details(),
-                no2.details(),
-                o3.details(),
-                voc.details(),
-                pm2_5.details(),
-                pm10.details());
+        return orderedKeys()
+                .map(RoutingKeyOption::details)
+                .collect(Collectors.joining(".", "", ".#"));
     }
 
     public static Builder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -227,11 +176,9 @@ public class SensorRoutingKeys implements RoutingKeys {
 
     public static class Builder {
 
-        public static final String ANY = "*";
-
         private final RoutingKeyOption<ContainerTypeOptions> thisContainerType;
 
-        private final String version;
+        private final RoutingKeyOption<ProtocolVersionOptions> version;
 
         private final RoutingKeysBuilderOptions options;
 
@@ -239,9 +186,9 @@ public class SensorRoutingKeys implements RoutingKeys {
 
         private RoutingKeyOption<InfoTypeOptions> infoType;
 
-        private String sensorTypeId;
+        private RoutingKeyOption<SensorTypeOptions> sensorTypeId;
 
-        private String channel;
+        private RoutingKeyOption<ChannelOptions> channel;
 
         private RoutingKeyOption<OwnershipOptions> ownership;
 
@@ -302,7 +249,7 @@ public class SensorRoutingKeys implements RoutingKeys {
         private Builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.options = options;
             this.thisContainerType = RoutingKeyOption.of(type);
-            this.version = version;
+            this.version = RoutingKeyOption.of(ProtocolVersionOptions.of(version));
         }
 
         public Builder withContainerType(ContainerTypeOptions containerType) {
@@ -351,12 +298,12 @@ public class SensorRoutingKeys implements RoutingKeys {
         }
 
         public Builder withSensorTypeId(String sensorTypeId) {
-            this.sensorTypeId = sensorTypeId;
+            this.sensorTypeId = RoutingKeyOption.of(SensorTypeOptions.of(sensorTypeId));
             return this;
         }
 
         public Builder withChannel(String channel) {
-            this.channel = channel;
+            this.channel = RoutingKeyOption.of(ChannelOptions.of(channel));
             return this;
         }
 
@@ -546,8 +493,8 @@ public class SensorRoutingKeys implements RoutingKeys {
         public Optional<SensorRoutingKeys> missingAsAny() {
             this.containerType = this.containerType == null ? RoutingKeyOption.any() : this.containerType;
             this.infoType = this.infoType == null ? RoutingKeyOption.any() : this.infoType;
-            this.sensorTypeId = (this.sensorTypeId == null || this.sensorTypeId.isBlank()) ? ANY : this.sensorTypeId;
-            this.channel = (this.channel == null || this.channel.isBlank()) ? ANY : this.channel;
+            this.sensorTypeId = this.sensorTypeId == null ? RoutingKeyOption.any() : this.sensorTypeId;
+            this.channel = this.channel == null ? RoutingKeyOption.any() : this.channel;
             this.records = this.records == null ? RoutingKeyOption.any() : this.records;
             this.ownership = this.ownership == null ? RoutingKeyOption.any() : this.ownership;
             this.gps = this.gps == null ? RoutingKeyOption.any() : this.gps;
@@ -619,8 +566,8 @@ public class SensorRoutingKeys implements RoutingKeys {
                 return Optional.empty();
             }
             this.infoType = InfoTypeOptions.extract(splinted[1]);
-            this.sensorTypeId = splinted[2];
-            this.channel = splinted[3];
+            this.sensorTypeId = RoutingKeyOption.of(SensorTypeOptions.of(splinted[2]));
+            this.channel = RoutingKeyOption.of(ChannelOptions.of(splinted[3]));
             this.ownership = OwnershipOptions.extract(splinted[4]);
             this.records = RecordsOptions.extract(splinted[5]);
             this.legitimacy = DataLegitimacyOptions.extract(splinted[6]);
@@ -694,8 +641,8 @@ public class SensorRoutingKeys implements RoutingKeys {
         private Optional<SensorRoutingKeys> toOptional(SensorRoutingKeys routingKeys) {
             if (routingKeys.containerType == null ||
                     routingKeys.infoType == null ||
-                    routingKeys.sensorTypeId == null || routingKeys.sensorTypeId.isBlank() ||
-                    routingKeys.channel == null || routingKeys.channel.isBlank() ||
+                    routingKeys.sensorTypeId == null ||
+                    routingKeys.channel == null ||
                     routingKeys.ownership == null ||
                     routingKeys.records == null ||
                     routingKeys.gps == null ||
@@ -722,15 +669,15 @@ public class SensorRoutingKeys implements RoutingKeys {
                     routingKeys.voc == null ||
                     routingKeys.pm2_5 == null ||
                     routingKeys.pm10 == null ||
-                    !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+") && !ANY.equals(routingKeys.sensorTypeId) ||
+                    !routingKeys.sensorTypeId.value().matches("[a-zA-Z\\d]+") && !routingKeys.sensorTypeId.isAny() ||
                     routingKeys.legitimacy == null) {
                 return Optional.empty();
             }
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
                 if (routingKeys.containerType.isAny() ||
                         routingKeys.infoType.isAny() ||
-                        ANY.equals(routingKeys.sensorTypeId) ||
-                        ANY.equals(routingKeys.channel) ||
+                        routingKeys.sensorTypeId.isAny() ||
+                        routingKeys.channel.isAny() ||
                         routingKeys.ownership.isAny() ||
                         routingKeys.records.isAny() ||
                         routingKeys.gps.isAny() ||
@@ -758,7 +705,7 @@ public class SensorRoutingKeys implements RoutingKeys {
                         routingKeys.voc.isAny() ||
                         routingKeys.pm2_5.isAny() ||
                         routingKeys.pm10.isAny() ||
-                        !routingKeys.sensorTypeId.matches("[a-zA-Z\\d]+")) {
+                        !routingKeys.sensorTypeId.value().matches("[a-zA-Z\\d]+")) {
                     return Optional.empty();
                 }
             }

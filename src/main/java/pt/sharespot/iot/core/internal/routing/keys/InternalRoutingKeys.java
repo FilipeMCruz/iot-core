@@ -1,16 +1,14 @@
 package pt.sharespot.iot.core.internal.routing.keys;
 
-import pt.sharespot.iot.core.keys.ContainerTypeOptions;
-import pt.sharespot.iot.core.keys.RoutingKeyOption;
-import pt.sharespot.iot.core.keys.RoutingKeys;
-import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
+import pt.sharespot.iot.core.keys.*;
 
-import java.text.MessageFormat;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class InternalRoutingKeys implements RoutingKeys {
 
-    public String version;
+    public RoutingKeyOption<ProtocolVersionOptions> version;
 
     public RoutingKeyOption<ContainerTypeOptions> containerType;
 
@@ -18,7 +16,7 @@ public class InternalRoutingKeys implements RoutingKeys {
 
     public RoutingKeyOption<OperationTypeOptions> operationType;
 
-    public InternalRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType, String version, RoutingKeyOption<ContextTypeOptions> contextType, RoutingKeyOption<OperationTypeOptions> operationType) {
+    public InternalRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType, RoutingKeyOption<ProtocolVersionOptions> version, RoutingKeyOption<ContextTypeOptions> contextType, RoutingKeyOption<OperationTypeOptions> operationType) {
         this.containerType = containerType;
         this.version = version;
         this.contextType = contextType;
@@ -28,9 +26,15 @@ public class InternalRoutingKeys implements RoutingKeys {
     public InternalRoutingKeys() {
     }
 
+    private Stream<RoutingKeyOption<? extends RoutingKey>> orderedKeys() {
+        return Stream.of(containerType, version, RoutingKeyOption.of(ExchangeOptions.of("internal")), contextType, operationType);
+    }
+
     @Override
     public String toString() {
-        return MessageFormat.format("{0}.{1}.internal.{2}.{3}", containerType.value(), version, contextType.value(), operationType.value());
+        return orderedKeys()
+                .map(RoutingKeyOption::value)
+                .collect(Collectors.joining("."));
     }
 
     @Override
@@ -39,7 +43,9 @@ public class InternalRoutingKeys implements RoutingKeys {
     }
 
     public String details() {
-        return MessageFormat.format("{0}.{1}.internal.{2}.{3}", containerType.details(), version, contextType.details(), operationType.details());
+        return orderedKeys()
+                .map(RoutingKeyOption::details)
+                .collect(Collectors.joining("."));
     }
 
     public static Builder builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
@@ -50,7 +56,7 @@ public class InternalRoutingKeys implements RoutingKeys {
 
         private final RoutingKeyOption<ContainerTypeOptions> thisContainerType;
 
-        private final String version;
+        private final RoutingKeyOption<ProtocolVersionOptions> version;
 
         private final RoutingKeysBuilderOptions options;
 
@@ -62,7 +68,7 @@ public class InternalRoutingKeys implements RoutingKeys {
 
         private Builder(ContainerTypeOptions type, RoutingKeysBuilderOptions options, String version) {
             this.thisContainerType = RoutingKeyOption.of(type);
-            this.version = version;
+            this.version = RoutingKeyOption.of(ProtocolVersionOptions.of(version));
             this.options = options;
         }
 
