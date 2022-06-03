@@ -10,8 +10,8 @@ public enum OperationTypeOptions implements RoutingKey {
     SYNC,
     
     INFO,
-    
-    REQUEST,
+
+    UNKNOWN,
     
     INIT,
     
