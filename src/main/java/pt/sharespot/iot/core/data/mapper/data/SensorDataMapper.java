@@ -1,12 +1,12 @@
 package pt.sharespot.iot.core.data.mapper.data;
 
 import pt.sharespot.iot.core.data.buf.Readings;
-import pt.sharespot.iot.core.data.model.data.DataUnitDetailsDTO;
+import pt.sharespot.iot.core.data.model.data.DataUnitReadingsDTO;
 import pt.sharespot.iot.core.data.model.properties.PropertyName;
 
 public class SensorDataMapper {
 
-    public static Readings.Builder toBuf(DataUnitDetailsDTO dto) {
+    public static Readings.Builder toBuf(DataUnitReadingsDTO dto) {
         var builder = Readings.newBuilder();
 
         if (dto.hasProperty(PropertyName.AQI)) builder.setAqi(AirQualityMapper.toBuf(dto.aqi));
@@ -82,8 +82,8 @@ public class SensorDataMapper {
         return builder;
     }
 
-    public static DataUnitDetailsDTO toModel(Readings buf) {
-        var model = new DataUnitDetailsDTO();
+    public static DataUnitReadingsDTO toModel(Readings buf) {
+        var model = new DataUnitReadingsDTO();
 
         if (buf.hasAqi())
             model.withAQI(AirQualityMapper.toModel(buf.getAqi()));

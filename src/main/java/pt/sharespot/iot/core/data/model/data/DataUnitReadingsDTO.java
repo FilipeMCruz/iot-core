@@ -3,7 +3,7 @@ package pt.sharespot.iot.core.data.model.data;
 import pt.sharespot.iot.core.data.model.data.types.*;
 import pt.sharespot.iot.core.data.model.properties.PropertyName;
 
-public class DataUnitDetailsDTO {
+public class DataUnitReadingsDTO {
 
     public GPSDataDTO gps;
 
@@ -90,122 +90,122 @@ public class DataUnitDetailsDTO {
         };
     }
 
-    public DataUnitDetailsDTO withCO2(CO2DataDTO co2) {
+    public DataUnitReadingsDTO withCO2(CO2DataDTO co2) {
         this.co2 = co2;
         return this;
     }
 
-    public DataUnitDetailsDTO withPM2_5(PM2_5DataDTO pm2_5) {
+    public DataUnitReadingsDTO withPM2_5(PM2_5DataDTO pm2_5) {
         this.pm2_5 = pm2_5;
         return this;
     }
 
-    public DataUnitDetailsDTO withPM10(PM10DataDTO pm10) {
+    public DataUnitReadingsDTO withPM10(PM10DataDTO pm10) {
         this.pm10 = pm10;
         return this;
     }
 
-    public DataUnitDetailsDTO withCO(CODataDTO co) {
+    public DataUnitReadingsDTO withCO(CODataDTO co) {
         this.co = co;
         return this;
     }
 
-    public DataUnitDetailsDTO withNH3(NH3DataDTO nh3) {
+    public DataUnitReadingsDTO withNH3(NH3DataDTO nh3) {
         this.nh3 = nh3;
         return this;
     }
 
-    public DataUnitDetailsDTO withNO2(NO2DataDTO no2) {
+    public DataUnitReadingsDTO withNO2(NO2DataDTO no2) {
         this.no2 = no2;
         return this;
     }
 
-    public DataUnitDetailsDTO withO3(O3DataDTO o3) {
+    public DataUnitReadingsDTO withO3(O3DataDTO o3) {
         this.o3 = o3;
         return this;
     }
 
-    public DataUnitDetailsDTO withVOC(VOCDataDTO voc) {
+    public DataUnitReadingsDTO withVOC(VOCDataDTO voc) {
         this.voc = voc;
         return this;
     }
 
-    public DataUnitDetailsDTO withBattery(BatteryDataDTO battery) {
+    public DataUnitReadingsDTO withBattery(BatteryDataDTO battery) {
         this.battery = battery;
         return this;
     }
 
-    public DataUnitDetailsDTO withSoilConductivity(SoilConductivityDataDTO soilConductivity) {
+    public DataUnitReadingsDTO withSoilConductivity(SoilConductivityDataDTO soilConductivity) {
         this.soilConductivity = soilConductivity;
         return this;
     }
 
-    public DataUnitDetailsDTO withOccupation(OccupationDataDTO occupation) {
+    public DataUnitReadingsDTO withOccupation(OccupationDataDTO occupation) {
         this.occupation = occupation;
         return this;
     }
 
-    public DataUnitDetailsDTO withDistance(DistanceDataDTO distance) {
+    public DataUnitReadingsDTO withDistance(DistanceDataDTO distance) {
         this.distance = distance;
         return this;
     }
 
-    public DataUnitDetailsDTO withPh(PHDataDTO ph) {
+    public DataUnitReadingsDTO withPh(PHDataDTO ph) {
         this.ph = ph;
         return this;
     }
 
-    public DataUnitDetailsDTO withWaterPressure(WaterPressureDataDTO waterPressure) {
+    public DataUnitReadingsDTO withWaterPressure(WaterPressureDataDTO waterPressure) {
         this.waterPressure = waterPressure;
         return this;
     }
 
-    public DataUnitDetailsDTO withTrigger(TriggerDataDTO alarm) {
+    public DataUnitReadingsDTO withTrigger(TriggerDataDTO alarm) {
         this.trigger = alarm;
         return this;
     }
 
-    public DataUnitDetailsDTO withIlluminance(IlluminanceDataDTO illuminance) {
+    public DataUnitReadingsDTO withIlluminance(IlluminanceDataDTO illuminance) {
         this.illuminance = illuminance;
         return this;
     }
 
-    public DataUnitDetailsDTO withSoilMoisture(SoilMoistureDataDTO moisture) {
+    public DataUnitReadingsDTO withSoilMoisture(SoilMoistureDataDTO moisture) {
         this.soilMoisture = moisture;
         return this;
     }
 
-    public DataUnitDetailsDTO withGps(GPSDataDTO gps) {
+    public DataUnitReadingsDTO withGps(GPSDataDTO gps) {
         this.gps = gps;
         return this;
     }
 
-    public DataUnitDetailsDTO withTemperature(TemperatureDataDTO temperature) {
+    public DataUnitReadingsDTO withTemperature(TemperatureDataDTO temperature) {
         this.temperature = temperature;
         return this;
     }
 
-    public DataUnitDetailsDTO withMotion(MotionDataDTO motion) {
+    public DataUnitReadingsDTO withMotion(MotionDataDTO motion) {
         this.motion = motion;
         return this;
     }
 
-    public DataUnitDetailsDTO withAQI(AirQualityDataDTO aqi) {
+    public DataUnitReadingsDTO withAQI(AirQualityDataDTO aqi) {
         this.aqi = aqi;
         return this;
     }
 
-    public DataUnitDetailsDTO withVelocity(VelocityDataDTO velocity) {
+    public DataUnitReadingsDTO withVelocity(VelocityDataDTO velocity) {
         this.velocity = velocity;
         return this;
     }
 
-    public DataUnitDetailsDTO withAirHumidity(AirHumidityDataDTO humidity) {
+    public DataUnitReadingsDTO withAirHumidity(AirHumidityDataDTO humidity) {
         this.airHumidity = humidity;
         return this;
     }
 
-    public DataUnitDetailsDTO withAirPressure(AirPressureDataDTO pressure) {
+    public DataUnitReadingsDTO withAirPressure(AirPressureDataDTO pressure) {
         this.airPressure = pressure;
         return this;
     }

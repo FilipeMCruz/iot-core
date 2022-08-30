@@ -1,6 +1,6 @@
 package pt.sharespot.iot.core.data.model;
 
-import pt.sharespot.iot.core.data.model.data.DataUnitDetailsDTO;
+import pt.sharespot.iot.core.data.model.data.DataUnitReadingsDTO;
 import pt.sharespot.iot.core.data.model.device.DeviceInformationDTO;
 import pt.sharespot.iot.core.data.model.device.controls.DeviceCommandDTO;
 import pt.sharespot.iot.core.data.model.properties.PropertyName;
@@ -16,14 +16,14 @@ public class DataUnitDTO {
 
     public Long reportedAt;
 
-    public Map<Integer, DataUnitDetailsDTO> measures;
+    public Map<Integer, DataUnitReadingsDTO> measures;
 
     public DeviceInformationDTO device;
 
     public DataUnitDTO(UUID dataId,
                        DeviceInformationDTO device,
                        Long reportedAt,
-                       Map<Integer, DataUnitDetailsDTO> measures) {
+                       Map<Integer, DataUnitReadingsDTO> measures) {
         this.dataId = dataId;
         this.reportedAt = reportedAt;
         this.measures = measures;
@@ -76,9 +76,9 @@ public class DataUnitDTO {
         return device.commands.get(0);
     }
 
-    public DataUnitDetailsDTO getSensorData() {
+    public DataUnitReadingsDTO getSensorData() {
         if (measures.get(0) == null) {
-            measures.put(0, new DataUnitDetailsDTO());
+            measures.put(0, new DataUnitReadingsDTO());
         }
         return measures.get(0);
     }
