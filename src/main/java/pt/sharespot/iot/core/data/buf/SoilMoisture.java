@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.SoilMoisture.class, pt.sharespot.iot.core.data.buf.SoilMoisture.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.SoilMoisture.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.SoilMoisture.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

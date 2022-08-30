@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.NH3.class, pt.sharespot.iot.core.data.buf.NH3.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.NH3.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.NH3.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

@@ -3,8 +3,8 @@
 
 package pt.sharespot.iot.core.data.buf;
 
-public interface SensorDataOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pt.sharespot.iot.core.SensorData)
+public interface ReadingsOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:pt.sharespot.iot.core.Readings)
     com.google.protobuf.MessageOrBuilder {
 
   /**

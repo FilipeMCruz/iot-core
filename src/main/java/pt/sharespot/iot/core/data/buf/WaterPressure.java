@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.WaterPressure.class, pt.sharespot.iot.core.data.buf.WaterPressure.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.WaterPressure.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.WaterPressure.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

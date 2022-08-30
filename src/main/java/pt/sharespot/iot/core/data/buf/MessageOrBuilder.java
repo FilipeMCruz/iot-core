@@ -41,17 +41,17 @@ public interface MessageOrBuilder extends
   int getHops();
 
   /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+   * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
    * @return Whether the data field is set.
    */
   boolean hasData();
   /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+   * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
    * @return The data.
    */
-  pt.sharespot.iot.core.data.buf.Data getData();
+  pt.sharespot.iot.core.data.buf.DataUnit getData();
   /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+   * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
    */
-  pt.sharespot.iot.core.data.buf.DataOrBuilder getDataOrBuilder();
+  pt.sharespot.iot.core.data.buf.DataUnitOrBuilder getDataOrBuilder();
 }

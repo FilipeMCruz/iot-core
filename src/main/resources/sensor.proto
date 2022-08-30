@@ -4,7 +4,7 @@ import "google/protobuf/wrappers.proto";
 
 package pt.sharespot.iot.core;
 
-option java_package = "pt.sharespot.iot.core.sensor.buf";
+option java_package = "pt.sharespot.iot.core.data.buf";
 option java_multiple_files = true;
 
 message UnprocessedMessage {
@@ -18,17 +18,17 @@ message Message {
   string oid = 1;
   RoutingKeysBuf routing_keys = 2;
   int32  hops = 3;
-  Data data = 4;
+  DataUnit data = 4;
 }
 
-message Data {
+message DataUnit {
   string data_id = 1;
   int64 reported_at = 2;
   Device device = 3;
-  map<int32, SensorData> measures = 4;
+  map<int32, Readings> measures = 4;
 }
 
-message SensorData {
+message Readings {
   GPS gps = 1;
   Temperature temperature = 2;
   Motion motion = 3;

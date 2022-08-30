@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.Motion.class, pt.sharespot.iot.core.data.buf.Motion.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.Motion.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.Motion.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

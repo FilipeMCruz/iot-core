@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.AirPressure.class, pt.sharespot.iot.core.data.buf.AirPressure.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.AirPressure.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.AirPressure.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

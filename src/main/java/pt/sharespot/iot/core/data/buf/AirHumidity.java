@@ -356,7 +356,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.AirHumidity.class, pt.sharespot.iot.core.data.buf.AirHumidity.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.AirHumidity.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.AirHumidity.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.SoilConductivity.class, pt.sharespot.iot.core.data.buf.SoilConductivity.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.SoilConductivity.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.SoilConductivity.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

@@ -74,11 +74,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            pt.sharespot.iot.core.data.buf.Data.Builder subBuilder = null;
+            pt.sharespot.iot.core.data.buf.DataUnit.Builder subBuilder = null;
             if (data_ != null) {
               subBuilder = data_.toBuilder();
             }
-            data_ = input.readMessage(pt.sharespot.iot.core.data.buf.Data.parser(), extensionRegistry);
+            data_ = input.readMessage(pt.sharespot.iot.core.data.buf.DataUnit.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(data_);
               data_ = subBuilder.buildPartial();
@@ -196,9 +196,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATA_FIELD_NUMBER = 4;
-  private pt.sharespot.iot.core.data.buf.Data data_;
+  private pt.sharespot.iot.core.data.buf.DataUnit data_;
   /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+   * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
    * @return Whether the data field is set.
    */
   @java.lang.Override
@@ -206,18 +206,18 @@ private static final long serialVersionUID = 0L;
     return data_ != null;
   }
   /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+   * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
    * @return The data.
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.data.buf.Data getData() {
-    return data_ == null ? pt.sharespot.iot.core.data.buf.Data.getDefaultInstance() : data_;
+  public pt.sharespot.iot.core.data.buf.DataUnit getData() {
+    return data_ == null ? pt.sharespot.iot.core.data.buf.DataUnit.getDefaultInstance() : data_;
   }
   /**
-   * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+   * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
    */
   @java.lang.Override
-  public pt.sharespot.iot.core.data.buf.DataOrBuilder getDataOrBuilder() {
+  public pt.sharespot.iot.core.data.buf.DataUnitOrBuilder getDataOrBuilder() {
     return getData();
   }
 
@@ -438,7 +438,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.Message.class, pt.sharespot.iot.core.data.buf.Message.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.Message.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.Message.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -826,31 +826,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private pt.sharespot.iot.core.data.buf.Data data_;
+    private pt.sharespot.iot.core.data.buf.DataUnit data_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.data.buf.Data, pt.sharespot.iot.core.data.buf.Data.Builder, pt.sharespot.iot.core.data.buf.DataOrBuilder> dataBuilder_;
+        pt.sharespot.iot.core.data.buf.DataUnit, pt.sharespot.iot.core.data.buf.DataUnit.Builder, pt.sharespot.iot.core.data.buf.DataUnitOrBuilder> dataBuilder_;
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      * @return Whether the data field is set.
      */
     public boolean hasData() {
       return dataBuilder_ != null || data_ != null;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      * @return The data.
      */
-    public pt.sharespot.iot.core.data.buf.Data getData() {
+    public pt.sharespot.iot.core.data.buf.DataUnit getData() {
       if (dataBuilder_ == null) {
-        return data_ == null ? pt.sharespot.iot.core.data.buf.Data.getDefaultInstance() : data_;
+        return data_ == null ? pt.sharespot.iot.core.data.buf.DataUnit.getDefaultInstance() : data_;
       } else {
         return dataBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      */
-    public Builder setData(pt.sharespot.iot.core.data.buf.Data value) {
+    public Builder setData(pt.sharespot.iot.core.data.buf.DataUnit value) {
       if (dataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -864,10 +864,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      */
     public Builder setData(
-        pt.sharespot.iot.core.data.buf.Data.Builder builderForValue) {
+        pt.sharespot.iot.core.data.buf.DataUnit.Builder builderForValue) {
       if (dataBuilder_ == null) {
         data_ = builderForValue.build();
         onChanged();
@@ -878,13 +878,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      */
-    public Builder mergeData(pt.sharespot.iot.core.data.buf.Data value) {
+    public Builder mergeData(pt.sharespot.iot.core.data.buf.DataUnit value) {
       if (dataBuilder_ == null) {
         if (data_ != null) {
           data_ =
-            pt.sharespot.iot.core.data.buf.Data.newBuilder(data_).mergeFrom(value).buildPartial();
+            pt.sharespot.iot.core.data.buf.DataUnit.newBuilder(data_).mergeFrom(value).buildPartial();
         } else {
           data_ = value;
         }
@@ -896,7 +896,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      */
     public Builder clearData() {
       if (dataBuilder_ == null) {
@@ -910,33 +910,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      */
-    public pt.sharespot.iot.core.data.buf.Data.Builder getDataBuilder() {
+    public pt.sharespot.iot.core.data.buf.DataUnit.Builder getDataBuilder() {
       
       onChanged();
       return getDataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      */
-    public pt.sharespot.iot.core.data.buf.DataOrBuilder getDataOrBuilder() {
+    public pt.sharespot.iot.core.data.buf.DataUnitOrBuilder getDataOrBuilder() {
       if (dataBuilder_ != null) {
         return dataBuilder_.getMessageOrBuilder();
       } else {
         return data_ == null ?
-            pt.sharespot.iot.core.data.buf.Data.getDefaultInstance() : data_;
+            pt.sharespot.iot.core.data.buf.DataUnit.getDefaultInstance() : data_;
       }
     }
     /**
-     * <code>.pt.sharespot.iot.core.Data data = 4;</code>
+     * <code>.pt.sharespot.iot.core.DataUnit data = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        pt.sharespot.iot.core.data.buf.Data, pt.sharespot.iot.core.data.buf.Data.Builder, pt.sharespot.iot.core.data.buf.DataOrBuilder> 
+        pt.sharespot.iot.core.data.buf.DataUnit, pt.sharespot.iot.core.data.buf.DataUnit.Builder, pt.sharespot.iot.core.data.buf.DataUnitOrBuilder> 
         getDataFieldBuilder() {
       if (dataBuilder_ == null) {
         dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            pt.sharespot.iot.core.data.buf.Data, pt.sharespot.iot.core.data.buf.Data.Builder, pt.sharespot.iot.core.data.buf.DataOrBuilder>(
+            pt.sharespot.iot.core.data.buf.DataUnit, pt.sharespot.iot.core.data.buf.DataUnit.Builder, pt.sharespot.iot.core.data.buf.DataUnitOrBuilder>(
                 getData(),
                 getParentForChildren(),
                 isClean());

@@ -10,7 +10,7 @@ import pt.sharespot.iot.core.data.routing.keys.data.*;
 
 public class RoutingKeysMapper {
 
-    public static RoutingKeysBuf.Builder toBuf(SensorRoutingKeys dto) {
+    public static RoutingKeysBuf.Builder toBuf(DataRoutingKeys dto) {
         return RoutingKeysBuf.newBuilder()
                 .setVersion(dto.version.value())
                 .setContainerType(toBuf(dto.containerType.get()))
@@ -46,8 +46,8 @@ public class RoutingKeysMapper {
                 .setWaterPressure(toBuf(dto.waterPressure.get()));
     }
 
-    public static SensorRoutingKeys toModel(RoutingKeysBuf buf) {
-        return new SensorRoutingKeysFactory().getBuilder(toModel(buf.getContainerType()), RoutingKeysBuilderOptions.CONSUMER)
+    public static DataRoutingKeys toModel(RoutingKeysBuf buf) {
+        return new DataRoutingKeysFactory().getBuilder(toModel(buf.getContainerType()), RoutingKeysBuilderOptions.CONSUMER)
                 .withInfoType(toModel(buf.getInfoType()))
                 .withContainerType(toModel(buf.getContainerType()))
                 .withSensorTypeId(buf.getSensorType())

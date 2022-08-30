@@ -1455,7 +1455,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.RoutingKeysBuf.class, pt.sharespot.iot.core.data.buf.RoutingKeysBuf.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.RoutingKeysBuf.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.RoutingKeysBuf.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

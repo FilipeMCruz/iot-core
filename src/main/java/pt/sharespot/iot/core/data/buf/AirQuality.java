@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.AirQuality.class, pt.sharespot.iot.core.data.buf.AirQuality.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.AirQuality.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.AirQuality.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

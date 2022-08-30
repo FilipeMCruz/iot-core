@@ -3,8 +3,8 @@
 
 package pt.sharespot.iot.core.data.buf;
 
-public interface DataOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pt.sharespot.iot.core.Data)
+public interface DataUnitOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:pt.sharespot.iot.core.DataUnit)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -41,11 +41,11 @@ public interface DataOrBuilder extends
   pt.sharespot.iot.core.data.buf.DeviceOrBuilder getDeviceOrBuilder();
 
   /**
-   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   * <code>map&lt;int32, .pt.sharespot.iot.core.Readings&gt; measures = 4;</code>
    */
   int getMeasuresCount();
   /**
-   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   * <code>map&lt;int32, .pt.sharespot.iot.core.Readings&gt; measures = 4;</code>
    */
   boolean containsMeasures(
       int key);
@@ -53,26 +53,26 @@ public interface DataOrBuilder extends
    * Use {@link #getMeasuresMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.Integer, pt.sharespot.iot.core.data.buf.SensorData>
+  java.util.Map<java.lang.Integer, pt.sharespot.iot.core.data.buf.Readings>
   getMeasures();
   /**
-   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   * <code>map&lt;int32, .pt.sharespot.iot.core.Readings&gt; measures = 4;</code>
    */
-  java.util.Map<java.lang.Integer, pt.sharespot.iot.core.data.buf.SensorData>
+  java.util.Map<java.lang.Integer, pt.sharespot.iot.core.data.buf.Readings>
   getMeasuresMap();
   /**
-   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   * <code>map&lt;int32, .pt.sharespot.iot.core.Readings&gt; measures = 4;</code>
    */
 
   /* nullable */
-pt.sharespot.iot.core.data.buf.SensorData getMeasuresOrDefault(
+pt.sharespot.iot.core.data.buf.Readings getMeasuresOrDefault(
       int key,
       /* nullable */
-pt.sharespot.iot.core.data.buf.SensorData defaultValue);
+pt.sharespot.iot.core.data.buf.Readings defaultValue);
   /**
-   * <code>map&lt;int32, .pt.sharespot.iot.core.SensorData&gt; measures = 4;</code>
+   * <code>map&lt;int32, .pt.sharespot.iot.core.Readings&gt; measures = 4;</code>
    */
 
-  pt.sharespot.iot.core.data.buf.SensorData getMeasuresOrThrow(
+  pt.sharespot.iot.core.data.buf.Readings getMeasuresOrThrow(
       int key);
 }

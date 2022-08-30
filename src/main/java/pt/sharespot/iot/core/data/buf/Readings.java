@@ -4,25 +4,25 @@
 package pt.sharespot.iot.core.data.buf;
 
 /**
- * Protobuf type {@code pt.sharespot.iot.core.SensorData}
+ * Protobuf type {@code pt.sharespot.iot.core.Readings}
  */
-public final class SensorData extends
+public final class Readings extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pt.sharespot.iot.core.SensorData)
-    SensorDataOrBuilder {
+    // @@protoc_insertion_point(message_implements:pt.sharespot.iot.core.Readings)
+    ReadingsOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SensorData.newBuilder() to construct.
-  private SensorData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Readings.newBuilder() to construct.
+  private Readings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SensorData() {
+  private Readings() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SensorData();
+    return new Readings();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SensorData(
+  private Readings(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -383,15 +383,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_SensorData_descriptor;
+    return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_Readings_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_SensorData_fieldAccessorTable
+    return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_Readings_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            pt.sharespot.iot.core.data.buf.SensorData.class, pt.sharespot.iot.core.data.buf.SensorData.Builder.class);
+            pt.sharespot.iot.core.data.buf.Readings.class, pt.sharespot.iot.core.data.buf.Readings.Builder.class);
   }
 
   public static final int GPS_FIELD_NUMBER = 1;
@@ -1219,10 +1219,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof pt.sharespot.iot.core.data.buf.SensorData)) {
+    if (!(obj instanceof pt.sharespot.iot.core.data.buf.Readings)) {
       return super.equals(obj);
     }
-    pt.sharespot.iot.core.data.buf.SensorData other = (pt.sharespot.iot.core.data.buf.SensorData) obj;
+    pt.sharespot.iot.core.data.buf.Readings other = (pt.sharespot.iot.core.data.buf.Readings) obj;
 
     if (hasGps() != other.hasGps()) return false;
     if (hasGps()) {
@@ -1456,69 +1456,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(byte[] data)
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(java.io.InputStream input)
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseDelimitedFrom(java.io.InputStream input)
+  public static pt.sharespot.iot.core.data.buf.Readings parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseDelimitedFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static pt.sharespot.iot.core.data.buf.SensorData parseFrom(
+  public static pt.sharespot.iot.core.data.buf.Readings parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -1531,7 +1531,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(pt.sharespot.iot.core.data.buf.SensorData prototype) {
+  public static Builder newBuilder(pt.sharespot.iot.core.data.buf.Readings prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -1547,26 +1547,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pt.sharespot.iot.core.SensorData}
+   * Protobuf type {@code pt.sharespot.iot.core.Readings}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pt.sharespot.iot.core.SensorData)
-      pt.sharespot.iot.core.data.buf.SensorDataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pt.sharespot.iot.core.Readings)
+      pt.sharespot.iot.core.data.buf.ReadingsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_SensorData_descriptor;
+      return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_Readings_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_SensorData_fieldAccessorTable
+      return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_Readings_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pt.sharespot.iot.core.data.buf.SensorData.class, pt.sharespot.iot.core.data.buf.SensorData.Builder.class);
+              pt.sharespot.iot.core.data.buf.Readings.class, pt.sharespot.iot.core.data.buf.Readings.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.SensorData.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.Readings.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -1734,17 +1734,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_SensorData_descriptor;
+      return pt.sharespot.iot.core.data.buf.Sensor.internal_static_pt_sharespot_iot_core_Readings_descriptor;
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.data.buf.SensorData getDefaultInstanceForType() {
-      return pt.sharespot.iot.core.data.buf.SensorData.getDefaultInstance();
+    public pt.sharespot.iot.core.data.buf.Readings getDefaultInstanceForType() {
+      return pt.sharespot.iot.core.data.buf.Readings.getDefaultInstance();
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.data.buf.SensorData build() {
-      pt.sharespot.iot.core.data.buf.SensorData result = buildPartial();
+    public pt.sharespot.iot.core.data.buf.Readings build() {
+      pt.sharespot.iot.core.data.buf.Readings result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -1752,8 +1752,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public pt.sharespot.iot.core.data.buf.SensorData buildPartial() {
-      pt.sharespot.iot.core.data.buf.SensorData result = new pt.sharespot.iot.core.data.buf.SensorData(this);
+    public pt.sharespot.iot.core.data.buf.Readings buildPartial() {
+      pt.sharespot.iot.core.data.buf.Readings result = new pt.sharespot.iot.core.data.buf.Readings(this);
       if (gpsBuilder_ == null) {
         result.gps_ = gps_;
       } else {
@@ -1912,16 +1912,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof pt.sharespot.iot.core.data.buf.SensorData) {
-        return mergeFrom((pt.sharespot.iot.core.data.buf.SensorData)other);
+      if (other instanceof pt.sharespot.iot.core.data.buf.Readings) {
+        return mergeFrom((pt.sharespot.iot.core.data.buf.Readings)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(pt.sharespot.iot.core.data.buf.SensorData other) {
-      if (other == pt.sharespot.iot.core.data.buf.SensorData.getDefaultInstance()) return this;
+    public Builder mergeFrom(pt.sharespot.iot.core.data.buf.Readings other) {
+      if (other == pt.sharespot.iot.core.data.buf.Readings.getDefaultInstance()) return this;
       if (other.hasGps()) {
         mergeGps(other.getGps());
       }
@@ -2009,11 +2009,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      pt.sharespot.iot.core.data.buf.SensorData parsedMessage = null;
+      pt.sharespot.iot.core.data.buf.Readings parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (pt.sharespot.iot.core.data.buf.SensorData) e.getUnfinishedMessage();
+        parsedMessage = (pt.sharespot.iot.core.data.buf.Readings) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -4891,41 +4891,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pt.sharespot.iot.core.SensorData)
+    // @@protoc_insertion_point(builder_scope:pt.sharespot.iot.core.Readings)
   }
 
-  // @@protoc_insertion_point(class_scope:pt.sharespot.iot.core.SensorData)
-  private static final pt.sharespot.iot.core.data.buf.SensorData DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pt.sharespot.iot.core.Readings)
+  private static final pt.sharespot.iot.core.data.buf.Readings DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new pt.sharespot.iot.core.data.buf.SensorData();
+    DEFAULT_INSTANCE = new pt.sharespot.iot.core.data.buf.Readings();
   }
 
-  public static pt.sharespot.iot.core.data.buf.SensorData getDefaultInstance() {
+  public static pt.sharespot.iot.core.data.buf.Readings getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SensorData>
-      PARSER = new com.google.protobuf.AbstractParser<SensorData>() {
+  private static final com.google.protobuf.Parser<Readings>
+      PARSER = new com.google.protobuf.AbstractParser<Readings>() {
     @java.lang.Override
-    public SensorData parsePartialFrom(
+    public Readings parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SensorData(input, extensionRegistry);
+      return new Readings(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SensorData> parser() {
+  public static com.google.protobuf.Parser<Readings> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SensorData> getParserForType() {
+  public com.google.protobuf.Parser<Readings> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public pt.sharespot.iot.core.data.buf.SensorData getDefaultInstanceForType() {
+  public pt.sharespot.iot.core.data.buf.Readings getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

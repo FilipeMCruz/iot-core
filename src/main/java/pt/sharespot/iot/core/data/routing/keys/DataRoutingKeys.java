@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class SensorRoutingKeys implements RoutingKeys {
+public class DataRoutingKeys implements RoutingKeys {
 
     public RoutingKeyOption<ProtocolVersionOptions> version;
 
@@ -75,38 +75,38 @@ public class SensorRoutingKeys implements RoutingKeys {
 
     public RoutingKeyOption<PM10DataOptions> pm10;
 
-    public SensorRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
-                             RoutingKeyOption<ProtocolVersionOptions> version,
-                             RoutingKeyOption<InfoTypeOptions> infoType,
-                             RoutingKeyOption<DeviceTypeOptions> sensorTypeId,
-                             RoutingKeyOption<ChannelOptions> channel,
-                             RoutingKeyOption<OwnershipOptions> ownership,
-                             RoutingKeyOption<RecordsOptions> records,
-                             RoutingKeyOption<GPSDataOptions> gps,
-                             RoutingKeyOption<TemperatureDataOptions> temperature,
-                             RoutingKeyOption<AirQualityDataOptions> aqi,
-                             RoutingKeyOption<AirHumidityDataOptions> airHumidity,
-                             RoutingKeyOption<MotionDataOptions> motion,
-                             RoutingKeyOption<VelocityDataOptions> velocity,
-                             RoutingKeyOption<AirPressureDataOptions> airPressure,
-                             RoutingKeyOption<BatteryDataOptions> battery,
-                             RoutingKeyOption<SoilMoistureDataOptions> soilMoisture,
-                             RoutingKeyOption<IlluminanceDataOptions> illuminance,
-                             RoutingKeyOption<TriggerDataOptions> trigger,
-                             RoutingKeyOption<DataLegitimacyOptions> legitimacy,
-                             RoutingKeyOption<WaterPressureDataOptions> waterPressure,
-                             RoutingKeyOption<PHDataOptions> ph,
-                             RoutingKeyOption<DistanceDataOptions> distance,
-                             RoutingKeyOption<OccupationDataOptions> occupation,
-                             RoutingKeyOption<SoilConductivityDataOptions> soilConductivity,
-                             RoutingKeyOption<CO2DataOptions> co2,
-                             RoutingKeyOption<CODataOptions> co,
-                             RoutingKeyOption<NH3DataOptions> nh3,
-                             RoutingKeyOption<NO2DataOptions> no2,
-                             RoutingKeyOption<O3DataOptions> o3,
-                             RoutingKeyOption<VOCDataOptions> voc,
-                             RoutingKeyOption<PM2_5DataOptions> pm2_5,
-                             RoutingKeyOption<PM10DataOptions> pm10) {
+    public DataRoutingKeys(RoutingKeyOption<ContainerTypeOptions> containerType,
+                           RoutingKeyOption<ProtocolVersionOptions> version,
+                           RoutingKeyOption<InfoTypeOptions> infoType,
+                           RoutingKeyOption<DeviceTypeOptions> sensorTypeId,
+                           RoutingKeyOption<ChannelOptions> channel,
+                           RoutingKeyOption<OwnershipOptions> ownership,
+                           RoutingKeyOption<RecordsOptions> records,
+                           RoutingKeyOption<GPSDataOptions> gps,
+                           RoutingKeyOption<TemperatureDataOptions> temperature,
+                           RoutingKeyOption<AirQualityDataOptions> aqi,
+                           RoutingKeyOption<AirHumidityDataOptions> airHumidity,
+                           RoutingKeyOption<MotionDataOptions> motion,
+                           RoutingKeyOption<VelocityDataOptions> velocity,
+                           RoutingKeyOption<AirPressureDataOptions> airPressure,
+                           RoutingKeyOption<BatteryDataOptions> battery,
+                           RoutingKeyOption<SoilMoistureDataOptions> soilMoisture,
+                           RoutingKeyOption<IlluminanceDataOptions> illuminance,
+                           RoutingKeyOption<TriggerDataOptions> trigger,
+                           RoutingKeyOption<DataLegitimacyOptions> legitimacy,
+                           RoutingKeyOption<WaterPressureDataOptions> waterPressure,
+                           RoutingKeyOption<PHDataOptions> ph,
+                           RoutingKeyOption<DistanceDataOptions> distance,
+                           RoutingKeyOption<OccupationDataOptions> occupation,
+                           RoutingKeyOption<SoilConductivityDataOptions> soilConductivity,
+                           RoutingKeyOption<CO2DataOptions> co2,
+                           RoutingKeyOption<CODataOptions> co,
+                           RoutingKeyOption<NH3DataOptions> nh3,
+                           RoutingKeyOption<NO2DataOptions> no2,
+                           RoutingKeyOption<O3DataOptions> o3,
+                           RoutingKeyOption<VOCDataOptions> voc,
+                           RoutingKeyOption<PM2_5DataOptions> pm2_5,
+                           RoutingKeyOption<PM10DataOptions> pm10) {
         this.containerType = containerType;
         this.infoType = infoType;
         this.sensorTypeId = sensorTypeId;
@@ -141,7 +141,7 @@ public class SensorRoutingKeys implements RoutingKeys {
         this.pm10 = pm10;
     }
 
-    public SensorRoutingKeys() {
+    public DataRoutingKeys() {
     }
 
     private Stream<RoutingKeyOption<? extends RoutingKey>> orderedKeys() {
@@ -489,7 +489,7 @@ public class SensorRoutingKeys implements RoutingKeys {
             return this;
         }
 
-        public Optional<SensorRoutingKeys> missingAsAny() {
+        public Optional<DataRoutingKeys> missingAsAny() {
             this.containerType = this.containerType == null ? RoutingKeyOption.any() : this.containerType;
             this.infoType = this.infoType == null ? RoutingKeyOption.any() : this.infoType;
             this.sensorTypeId = this.sensorTypeId == null ? RoutingKeyOption.any() : this.sensorTypeId;
@@ -524,7 +524,7 @@ public class SensorRoutingKeys implements RoutingKeys {
             return build();
         }
 
-        public Optional<SensorRoutingKeys> from(SensorRoutingKeys consumer) {
+        public Optional<DataRoutingKeys> from(DataRoutingKeys consumer) {
             this.infoType = this.infoType == null ? consumer.infoType : this.infoType;
             this.sensorTypeId = this.sensorTypeId == null ? consumer.sensorTypeId : this.sensorTypeId;
             this.channel = this.channel == null ? consumer.channel : this.channel;
@@ -558,7 +558,7 @@ public class SensorRoutingKeys implements RoutingKeys {
             return build();
         }
 
-        public Optional<SensorRoutingKeys> from(String routingKeys) {
+        public Optional<DataRoutingKeys> from(String routingKeys) {
             var info = routingKeys.substring(routingKeys.lastIndexOf(".data.") + 1);
             var splinted = info.split("\\.");
             if (splinted.length < 31) {
@@ -597,12 +597,12 @@ public class SensorRoutingKeys implements RoutingKeys {
             return build();
         }
 
-        public Optional<SensorRoutingKeys> build() {
+        public Optional<DataRoutingKeys> build() {
             if (RoutingKeysBuilderOptions.SUPPLIER.equals(options)) {
                 this.containerType = thisContainerType;
             }
 
-            var routingKeys = new SensorRoutingKeys(containerType,
+            var routingKeys = new DataRoutingKeys(containerType,
                     version,
                     infoType,
                     sensorTypeId,
@@ -637,7 +637,7 @@ public class SensorRoutingKeys implements RoutingKeys {
             return toOptional(routingKeys);
         }
 
-        private Optional<SensorRoutingKeys> toOptional(SensorRoutingKeys routingKeys) {
+        private Optional<DataRoutingKeys> toOptional(DataRoutingKeys routingKeys) {
             if (routingKeys.containerType == null ||
                     routingKeys.infoType == null ||
                     routingKeys.sensorTypeId == null ||

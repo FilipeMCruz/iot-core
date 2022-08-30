@@ -1,6 +1,6 @@
 package pt.sharespot.iot.core.data.mapper.data;
 
-import pt.sharespot.iot.core.data.buf.Data;
+import pt.sharespot.iot.core.data.buf.DataUnit;
 import pt.sharespot.iot.core.data.model.DataUnitDTO;
 import pt.sharespot.iot.core.data.model.data.DataUnitDetailsDTO;
 import pt.sharespot.iot.core.data.model.properties.PropertyName;
@@ -11,8 +11,8 @@ import java.util.UUID;
 
 public class DataMapper {
 
-    public static Data.Builder toBuf(DataUnitDTO dto) {
-        var builder = Data.newBuilder();
+    public static DataUnit.Builder toBuf(DataUnitDTO dto) {
+        var builder = DataUnit.newBuilder();
         if (dto.hasProperty(PropertyName.DATA_ID)) builder.setDataId(dto.dataId.toString());
 
         if (dto.hasProperty(PropertyName.REPORTED_AT)) builder.setReportedAt(dto.reportedAt);
@@ -25,7 +25,7 @@ public class DataMapper {
         return builder;
     }
 
-    public static DataUnitDTO toModel(Data buf) {
+    public static DataUnitDTO toModel(DataUnit buf) {
 
         var measures = new HashMap<Integer, DataUnitDetailsDTO>();
         buf.getMeasuresMap().forEach((key, value) -> measures.put(key, SensorDataMapper.toModel(value)));

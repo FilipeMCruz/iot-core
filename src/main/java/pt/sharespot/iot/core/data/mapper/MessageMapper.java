@@ -10,13 +10,13 @@ import pt.sharespot.iot.core.keys.MessageSupplied;
 import pt.sharespot.iot.core.data.buf.Message;
 import pt.sharespot.iot.core.data.buf.UnprocessedMessage;
 import pt.sharespot.iot.core.data.model.DataUnitDTO;
-import pt.sharespot.iot.core.data.routing.keys.SensorRoutingKeys;
+import pt.sharespot.iot.core.data.routing.keys.DataRoutingKeys;
 
 import java.util.UUID;
 
 public class MessageMapper {
 
-    public static Message toBuf(MessageSupplied<DataUnitDTO, SensorRoutingKeys> message) {
+    public static Message toBuf(MessageSupplied<DataUnitDTO, DataRoutingKeys> message) {
         return Message.newBuilder()
                 .setOid(message.oid.toString())
                 .setHops(message.hops)
@@ -25,7 +25,7 @@ public class MessageMapper {
                 .build();
     }
 
-    public static UnprocessedMessage toUnprocessedBuf(MessageSupplied<ObjectNode, SensorRoutingKeys> message) {
+    public static UnprocessedMessage toUnprocessedBuf(MessageSupplied<ObjectNode, DataRoutingKeys> message) {
         return UnprocessedMessage.newBuilder()
                 .setOid(message.oid.toString())
                 .setHops(message.hops)
@@ -34,12 +34,12 @@ public class MessageMapper {
                 .build();
     }
 
-    public static MessageConsumed<ObjectNode, SensorRoutingKeys> toUnprocessedModel(byte[] message) throws InvalidProtocolBufferException, JsonProcessingException {
+    public static MessageConsumed<ObjectNode, DataRoutingKeys> toUnprocessedModel(byte[] message) throws InvalidProtocolBufferException, JsonProcessingException {
         return MessageMapper.toUnprocessedModel(UnprocessedMessage.parseFrom(message));
     }
 
-    private static MessageConsumed<ObjectNode,SensorRoutingKeys> toUnprocessedModel(UnprocessedMessage message) throws JsonProcessingException {
-        var consumed = new MessageConsumed<ObjectNode,SensorRoutingKeys>();
+    private static MessageConsumed<ObjectNode, DataRoutingKeys> toUnprocessedModel(UnprocessedMessage message) throws JsonProcessingException {
+        var consumed = new MessageConsumed<ObjectNode, DataRoutingKeys>();
         consumed.hops = message.getHops();
         consumed.oid = UUID.fromString(message.getOid());
         consumed.routingKeys = RoutingKeysMapper.toModel(message.getRoutingKeys());
@@ -47,12 +47,12 @@ public class MessageMapper {
         return consumed;
     }
 
-    public static MessageConsumed<DataUnitDTO,SensorRoutingKeys> toModel(byte[] message) throws InvalidProtocolBufferException {
+    public static MessageConsumed<DataUnitDTO, DataRoutingKeys> toModel(byte[] message) throws InvalidProtocolBufferException {
         return MessageMapper.toModel(Message.parseFrom(message));
     }
 
-    private static MessageConsumed<DataUnitDTO, SensorRoutingKeys> toModel(Message message) {
-        var consumed = new MessageConsumed<DataUnitDTO, SensorRoutingKeys>();
+    private static MessageConsumed<DataUnitDTO, DataRoutingKeys> toModel(Message message) {
+        var consumed = new MessageConsumed<DataUnitDTO, DataRoutingKeys>();
         consumed.hops = message.getHops();
         consumed.oid = UUID.fromString(message.getOid());
         consumed.routingKeys = RoutingKeysMapper.toModel(message.getRoutingKeys());

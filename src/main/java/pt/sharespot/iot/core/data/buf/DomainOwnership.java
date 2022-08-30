@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
               pt.sharespot.iot.core.data.buf.DomainOwnership.class, pt.sharespot.iot.core.data.buf.DomainOwnership.Builder.class);
     }
 
-    // Construct using pt.sharespot.iot.core.sensor.buf.DomainOwnership.newBuilder()
+    // Construct using pt.sharespot.iot.core.data.buf.DomainOwnership.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }

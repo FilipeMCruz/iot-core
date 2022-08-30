@@ -3,15 +3,15 @@ package pt.sharespot.iot.core.data.routing.keys;
 import pt.sharespot.iot.core.keys.ContainerTypeOptions;
 import pt.sharespot.iot.core.keys.RoutingKeysBuilderOptions;
 
-public class SensorRoutingKeysFactory {
+public class DataRoutingKeysFactory {
 
     private final String version;
 
-    public SensorRoutingKeysFactory() {
+    public DataRoutingKeysFactory() {
         this.version = getClass().getPackage().getImplementationVersion();
     }
 
-    public SensorRoutingKeys.Builder getBuilder(ContainerTypeOptions containerType, RoutingKeysBuilderOptions options) {
-        return SensorRoutingKeys.builder(containerType, options, version);
+    public DataRoutingKeys.Builder getBuilder(ContainerTypeOptions containerType, RoutingKeysBuilderOptions options) {
+        return DataRoutingKeys.builder(containerType, options, version);
     }
 }
