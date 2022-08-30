@@ -27,7 +27,7 @@ public class InternalRoutingKeys implements RoutingKeys {
     }
 
     private Stream<RoutingKeyOption<? extends RoutingKey>> orderedKeys() {
-        return Stream.of(containerType, version, RoutingKeyOption.of(ExchangeOptions.of("internal")), contextType, operationType);
+        return Stream.of(containerType, version, RoutingKeyOption.of(TopicTypeOptions.of("internal")), contextType, operationType);
     }
 
     @Override

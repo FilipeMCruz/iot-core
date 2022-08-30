@@ -39,7 +39,7 @@ public class AlertRoutingKeys implements RoutingKeys {
     }
 
     private Stream<RoutingKeyOption<? extends RoutingKey>> orderedKeys() {
-        return Stream.of(containerType, version, RoutingKeyOption.of(ExchangeOptions.of("alert")), ownershipType, categoryType, subCategoryType, severityType);
+        return Stream.of(containerType, version, RoutingKeyOption.of(TopicTypeOptions.of("alert")), ownershipType, categoryType, subCategoryType, severityType);
     }
 
     @Override

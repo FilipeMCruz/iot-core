@@ -9,7 +9,7 @@ public enum ContextTypeOptions implements RoutingKey {
 
     DATA_PROCESSOR,
 
-    DEVICE_MANAGEMENT,
+    DEVICE_INFORMATION,
 
     DATA_DECODER,
 
