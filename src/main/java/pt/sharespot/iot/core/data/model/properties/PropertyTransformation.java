@@ -1,11 +1,15 @@
 package pt.sharespot.iot.core.data.model.properties;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.JsonSerializable;
+import com.fasterxml.jackson.databind.node.MissingNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class PropertyTransformation {
     public abstract String newPath();
@@ -13,6 +17,8 @@ public abstract class PropertyTransformation {
     public abstract String oldPath();
 
     public abstract Integer subSensorId();
+
+    public static Pattern r = Pattern.compile("^(.*)\\[(.*)]$");
 
     public void transfer(JsonNode old, ObjectNode processed) {
         var newPathQueue = new LinkedList<>(List.of(newPath().split("\\.")));
@@ -40,7 +46,22 @@ public abstract class PropertyTransformation {
         if (path.size() == 0) return node;
 
         var poll = path.poll();
-        JsonNode newNode = poll.matches("^d+$") ? node.path(Integer.parseInt(poll)) : node.path(poll);
+
+        if (poll.matches("^\\w+\\[\\d]$")) {
+            var matcher = r.matcher(poll);
+            if (!matcher.find())
+                return MissingNode.getInstance();
+            
+            var index = Integer.parseInt(matcher.group(2));
+            var objectNode = node.path(matcher.group(1));
+            
+            if (!objectNode.has(index))
+                return MissingNode.getInstance();
+            
+            return getInternalPath(objectNode.get(index), path);
+        }
+        
+        var newNode = node.path(poll);
         return getInternalPath(newNode, path);
     }
 
