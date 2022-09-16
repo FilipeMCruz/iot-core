@@ -51,20 +51,19 @@ public abstract class PropertyTransformation {
             var matcher = r.matcher(poll);
             if (!matcher.find())
                 return MissingNode.getInstance();
-            
+
             var index = Integer.parseInt(matcher.group(2));
             var objectNode = node.path(matcher.group(1));
-            
+
             if (!objectNode.has(index))
                 return MissingNode.getInstance();
-            
+
             return getInternalPath(objectNode.get(index), path);
         }
-        
+
         var newNode = node.path(poll);
         return getInternalPath(newNode, path);
     }
-
 
     public static PropertyTransformation create(String oldPath, String newPath) {
         return new UnknownPropertyTransformation(oldPath, newPath);

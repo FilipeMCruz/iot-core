@@ -39,7 +39,8 @@ public class DataUnitDTO {
 
     public boolean hasPropertyInSubDevice(Integer subSensorId, PropertyName property) {
         return switch (property) {
-            case DATA_ID, REPORTED_AT -> true;
+            case DATA_ID -> this.dataId != null;
+            case REPORTED_AT -> this.reportedAt != null;
             case DEVICE_ID, DEVICE_NAME, DEVICE_RECORDS, DEVICE_DOWNLINK, DEVICE_COMMANDS,
                     DOMAIN_OWNERSHIP -> device.hasProperty(property);
             case LATITUDE, LONGITUDE, TEMPERATURE, MOTION, ALTITUDE,
