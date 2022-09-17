@@ -6,7 +6,7 @@
 
     <groupId>pt.sharespot</groupId>
     <artifactId>iot-core</artifactId>
-    <version>0.1.20</version>
+    <version>0.1.21</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Core library to handle the structure and behaviour of messages inside Sensae Console</description>
